@@ -1,0 +1,37 @@
+class card{
+    constructor(layer,x,y,type,level){
+        this.layer=layer
+        this.position={x:x,y:y}
+        this.type=type
+        this.level=level
+        this.name=types.card[this.type].name
+        this.damage=types.card[this.type].stats[this.level].damage
+        this.size=0
+        this.fade=1
+        this.used=false
+        this.remove=false
+    }
+    display(){
+        if(this.size>0){
+            this.layer.translate(this.position.x,this.position.y)
+            this.layer.scale(this.size)
+            this.layer.fill(200,160,200,this.fade)
+            this.layer.stroke(160,120,160,this.fade)
+            this.layer.strokeWeight(5)
+            this.layer.rect(0,0,80,120,5)
+            this.layer.fill(0,this.fade)
+            this.layer.noStroke()
+            this.layer.textSize(12)
+            this.layer.text(this.name,0,-45)
+            this.layer.scale(1/this.size)
+            this.layer.translate(-this.position.x,-this.position.y)
+        }
+    }
+    update(){
+        if(this.size<1&&!this.used){
+            this.size=round(this.size*5+1)*0.2
+        }else if(this.size>0&&this.used){
+            this.size=round(this.size*5-1)*0.2
+        }
+    }
+}
