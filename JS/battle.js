@@ -4,9 +4,11 @@ class battle{
         this.hand=new group(this.layer)
         this.reserve=new group(this.layer)
         this.deck=new group(this.layer)
+        this.attack=new attack(this.layer,this)
         this.particles=[]
         this.combatants=[]
-        this.combatants.push(new combatant(this.layer,100,300,1,0))
+        this.combatants.push(new combatant(this.layer,100,350,1,0))
+        this.mana={main:3,max:3}
         this.deck.initial()
         this.initialReserve()
         this.reserve.shuffle()
@@ -16,7 +18,7 @@ class battle{
     }
     create(combatants){
         for(e=0,le=combatants.length;e<le;e++){
-            this.combatants.push(new combatant(this.layer,300+e*100,300,combatants[e].type,1))
+            this.combatants.push(new combatant(this.layer,300+e*100,350,combatants[e].type,1))
         }
     }
     initialReserve(){
@@ -38,7 +40,15 @@ class battle{
             this.combatants[e].display()
         }
         this.layer.fill(60)
-        this.layer.rect(450,450,910,300)
+        this.layer.rect(450,475,910,250)
+        this.layer.fill(200,225,250,this.fade)
+        this.layer.stroke(150,200,250,this.fade)
+        this.layer.strokeWeight(6)
+        this.layer.quad(8,390,32,358,56,390,32,422)
+        this.layer.fill(0,this.fade)
+        this.layer.noStroke()
+        this.layer.textSize(20)
+        this.layer.text(this.mana.main+'/'+this.mana.max,32,390)
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].displayInfo()
         }
@@ -60,7 +70,8 @@ class battle{
         this.reserve.update()
         this.deck.update()
         this.hand.updateHand()
-        this.reserve.updateReserve()
-        this.deck.updateDeck()
+    }
+    onClick(){
+        this.hand.onClickHand()
     }
 }

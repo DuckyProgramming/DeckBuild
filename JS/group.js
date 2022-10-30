@@ -3,6 +3,8 @@ class group{
         this.layer=layer
         this.storage={cards:[]}
         this.cards=[]
+        this.select=false
+        this.trigger=false
     }
     initial(){
         for(g=0;g<5;g++){
@@ -13,7 +15,7 @@ class group{
         }
     }
     add(type,level){
-        this.cards.push(new card(this.layer,1200,475,type,level))
+        this.cards.push(new card(this.layer,1200,500,type,level))
     }
     shuffle(){
         for(e=0,le=this.cards.length;e<le;e++){
@@ -26,7 +28,7 @@ class group{
             this.storage.cards.splice(e,1)
         }
     }
-    display(){
+    display(){ 
         for(g=0,lg=this.cards.length;g<lg;g++){
             this.cards[g].display()
         }
@@ -43,18 +45,34 @@ class group{
     updateHand(){
         for(g=0,lg=this.cards.length;g<lg;g++){
             this.cards[g].update()
+            if((inputs.rel.x>this.cards[g].position.x-this.cards[g].width/2&&inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2&&inputs.rel.y>350||this.cards[g].select)&&(!this.trigger||this.cards[g].trigger)&&this.cards[g].position.y>325){
+                this.cards[g].position.y-=20
+            }else if(!((inputs.rel.x>this.cards[g].position.x-this.cards[g].width/2&&inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2&&inputs.rel.y>300||this.cards[g].select)&&(!this.trigger||this.cards[g].trigger))&&this.cards[g].position.y<500){
+                this.cards[g].position.y+=20
+            }
             if(this.cards[g].position.x>g*80+120&&(this.cards[g].position.x>this.cards[max(0,g-1)].position.x+80||g==0)){
                 this.cards[g].position.x-=20
             }
-            if(inputs.rel.x>this.cards[g].position.x-this.cards[g].width/2&&(inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2-40||inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2&&g==lg-1)&&inputs.rel.y>300&&this.cards[g].position.y>325){
-                this.cards[g].position.y-=20
-            }else if(!(inputs.rel.x>this.cards[g].position.x-this.cards[g].width/2&&(inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2-40||inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2&&g==lg-1)&inputs.rel.y>300)&&this.cards[g].position.y<475){
-                this.cards[g].position.y+=20
-            }
         }
     }
-    updateReserve(){
-    }
-    updateDeck(){
+    onClickHand(){
+        if(!this.trigger){
+            for(g=0,lg=this.cards.length;g<lg;g++){
+                if(inputs.rel.x>this.cards[g].position.x-this.cards[g].width/2&&inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2&&inputs.rel.y>this.cards[g].position.y-this.cards[g].height/2&&inputs.rel.y<this.cards[g].position.y+this.cards[g].height/2&&this.select&&this.cards[g].select){
+                    this.trigger=true
+                    this.cards[g].trigger=true
+                    this.select=false
+                    current.attack.set(this.cards[g].type,this.cards[g].level)
+                }
+                if(this.select&&this.cards[g].select){
+                    this.cards[g].select=false
+                    this.select=false
+                }
+                if(inputs.rel.x>this.cards[g].position.x-this.cards[g].width/2&&inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2&&inputs.rel.y>350&&!this.select){
+                    this.cards[g].select=true
+                    this.select=true
+                }
+            }
+        }
     }
 }

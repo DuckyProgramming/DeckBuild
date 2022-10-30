@@ -8,18 +8,24 @@ class card{
         this.damage=types.card[this.type].stats[this.level].damage
         this.cost=types.card[this.type].stats[this.level].cost
         this.desc=types.card[this.type].stats[this.level].desc
-        this.anim={}
+        this.anim={select:0}
         this.width=120
         this.height=160
         this.size=0
         this.fade=1
+        this.calcDirection=0
         this.used=false
         this.remove=false
+        this.select=false
+        this.trigger=false
     }
     display(){
         if(this.size>0){
             this.layer.translate(this.position.x,this.position.y)
             this.layer.scale(this.size)
+            this.layer.fill(255,this.fade*this.anim.select)
+            this.layer.noStroke()
+            this.layer.rect(0,0,this.width+15,this.height+15,10)
             this.layer.fill(200,160,200,this.fade)
             this.layer.stroke(160,120,160,this.fade)
             this.layer.strokeWeight(5)
@@ -45,6 +51,21 @@ class card{
             this.size=round(this.size*5+1)*0.2
         }else if(this.size>0&&this.used){
             this.size=round(this.size*5-1)*0.2
+        }
+        if(this.select&&this.anim.select<1){
+            this.anim.select+=0.1
+        }else if(!this.select&&this.anim.select>0){
+            this.anim.select-=0.1
+        }
+        if(this.trigger){
+            if(dist(this.position.x,this.position.y,100,120)<20){
+                this.position.x=100
+                this.position.y=120
+            }else{
+                this.calcDirection=atan2(100-this.position.x,120-this.position.y)
+                this.position.x+=sin(this.calcDirection)*20
+                this.position.y+=cos(this.calcDirection)*20
+            }
         }
     }
 }
