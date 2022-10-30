@@ -4,13 +4,13 @@ types={
         stats:[],
         },{name:'Strike',
         stats:[
-            {damage:6},
-            {damage:9},
+            {damage:6,cost:1,desc:'Deal 6\nDamage'},
+            {damage:9,cost:1,desc:'Deal 9\nDamage'},
         ],
         },{name:'Defend',
         stats:[
-            {damage:5},
-            {damage:8},
+            {damage:5,cost:1,desc:'Add 5\nBlock'},
+            {damage:8,cost:1,desc:'Add 8\nBlock'},
         ],
         },
     ],combatant:[

@@ -6,6 +6,11 @@ class card{
         this.level=level
         this.name=types.card[this.type].name
         this.damage=types.card[this.type].stats[this.level].damage
+        this.cost=types.card[this.type].stats[this.level].cost
+        this.desc=types.card[this.type].stats[this.level].desc
+        this.anim={}
+        this.width=120
+        this.height=160
         this.size=0
         this.fade=1
         this.used=false
@@ -18,11 +23,19 @@ class card{
             this.layer.fill(200,160,200,this.fade)
             this.layer.stroke(160,120,160,this.fade)
             this.layer.strokeWeight(5)
-            this.layer.rect(0,0,80,120,5)
+            this.layer.rect(0,0,this.width,this.height,5)
+            this.layer.fill(200,225,250,this.fade)
+            this.layer.stroke(150,200,250,this.fade)
+            this.layer.strokeWeight(3)
+            this.layer.quad(-this.width/2+4,-this.height/2+20,-this.width/2+16,-this.height/2+4,-this.width/2+28,-this.height/2+20,-this.width/2+16,-this.height/2+36)
             this.layer.fill(0,this.fade)
             this.layer.noStroke()
+            this.layer.textSize(20)
+            this.layer.text(this.cost,-this.width/2+16,-this.height/2+20)
+            this.layer.textSize(16)
+            this.layer.text(this.name,0,-this.height/2+20)
             this.layer.textSize(12)
-            this.layer.text(this.name,0,-45)
+            this.layer.text(this.desc,0,10)
             this.layer.scale(1/this.size)
             this.layer.translate(-this.position.x,-this.position.y)
         }

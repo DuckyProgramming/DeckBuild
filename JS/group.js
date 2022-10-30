@@ -13,7 +13,7 @@ class group{
         }
     }
     add(type,level){
-        this.cards.push(new card(this.layer,1200,525,type,level))
+        this.cards.push(new card(this.layer,1200,475,type,level))
     }
     shuffle(){
         for(e=0,le=this.cards.length;e<le;e++){
@@ -43,8 +43,13 @@ class group{
     updateHand(){
         for(g=0,lg=this.cards.length;g<lg;g++){
             this.cards[g].update()
-            if(this.cards[g].position.x>g*120+60&&(this.cards[g].position.x>this.cards[max(0,g-1)].position.x+120||g==0)){
-                this.cards[g].position.x-=30
+            if(this.cards[g].position.x>g*80+120&&(this.cards[g].position.x>this.cards[max(0,g-1)].position.x+80||g==0)){
+                this.cards[g].position.x-=20
+            }
+            if(inputs.rel.x>this.cards[g].position.x-this.cards[g].width/2&&(inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2-40||inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2&&g==lg-1)&&inputs.rel.y>300&&this.cards[g].position.y>325){
+                this.cards[g].position.y-=20
+            }else if(!(inputs.rel.x>this.cards[g].position.x-this.cards[g].width/2&&(inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2-40||inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2&&g==lg-1)&inputs.rel.y>300)&&this.cards[g].position.y<475){
+                this.cards[g].position.y+=20
             }
         }
     }
