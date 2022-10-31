@@ -11,7 +11,7 @@ class group{
     initial(type){
         switch(type){
             case 1:
-                for(e=0;e<5;e++){
+                /*for(e=0;e<5;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<5;e++){
@@ -20,8 +20,8 @@ class group{
                 this.add(3,0,this.battle.player)
                 this.add(4,0,this.battle.player)
                 this.add(5,0,this.battle.player)
-                this.add(7,0,this.battle.player)
-                //this.add(8,0,this.battle.player)
+                this.add(7,0,this.battle.player)*/
+                this.add(8,0,this.battle.player)
             break
         }
     }
@@ -114,6 +114,7 @@ class group{
                     this.cards[e].trigger=true
                     this.select=false
                     this.battle.attack.damage=this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0]))
+                    this.battle.attack.alt=this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0]))
                     this.battle.mana.main-=this.cards[e].cost
                     this.battle.attack.type=this.cards[e].attack
                     this.battle.attack.level=this.cards[e].level

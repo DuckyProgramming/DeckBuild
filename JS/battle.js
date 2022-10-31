@@ -10,7 +10,7 @@ class battle{
         this.attack=new attack(this.layer,this)
         this.particles=[]
         this.combatants=[]
-        this.combatants.push(new combatant(this.layer,100,350,player,0))
+        this.combatants.push(new combatant(this.layer,100,350,player,0,0))
         this.mana={main:3,max:3}
         this.anim={turn:0}
         this.deck.initial(player)
@@ -25,7 +25,7 @@ class battle{
     }
     create(combatants){
         for(e=0,le=combatants.length;e<le;e++){
-            this.combatants.push(new combatant(this.layer,300+e*100,350,combatants[e].type,1))
+            this.combatants.push(new combatant(this.layer,300+e*100,350,combatants[e].type,1,e+1))
         }
         for(e=1,le=this.combatants.length;e<le;e++){
             this.combatants[e].setupIntent()
@@ -123,6 +123,7 @@ class battle{
             }else{
                 this.attack.user=this.turn
                 this.attack.damage=this.combatants[this.turn].damage[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0]))
+                this.attack.alt=this.combatants[this.turn].alt[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0]))
                 this.attack.update(this.combatants[this.turn].attacks[this.combatants[this.turn].intent],0,1)
                 this.turnTimer=20
                 this.turn++

@@ -7,6 +7,7 @@ class card{
         this.color=color
         this.name=types.card[this.type].name
         this.damage=types.card[this.type].stats[this.level].damage
+        this.alt=types.card[this.type].stats[this.level].alt
         this.cost=types.card[this.type].stats[this.level].cost
         this.attack=types.card[this.type].stats[this.level].attack
         this.target=types.card[this.type].stats[this.level].target
@@ -33,6 +34,10 @@ class card{
             this.layer.rect(0,0,this.width+15,this.height+15,10)
             switch(this.color){
                 case 1:
+                    this.layer.fill(160,200,160,this.fade)
+                    this.layer.stroke(120,160,120,this.fade)
+                break
+                case 2:
                     this.layer.fill(200,160,200,this.fade)
                     this.layer.stroke(160,120,160,this.fade)
                 break
@@ -57,12 +62,22 @@ class card{
             }
             this.layer.textSize(16)
             if(this.level==1){
-                this.layer.fill(100,0,100,this.fade)
-                this.layer.text(this.name,0,-this.height/2+20)
+                switch(this.color){
+                    case 1:
+                        this.layer.fill(50,100,50,this.fade)
+                    break
+                    case 2:
+                        this.layer.fill(100,50,100,this.fade)
+                    break
+                    case 4:
+                        this.layer.fill(40,this.fade)
+                    break
+                }
+                this.layer.text(this.name+'+',0,-this.height/2+20)
                 this.layer.fill(0,this.fade)
             }else{
-                this.layer.text(this.name,0,-this.height/2+20)
                 this.layer.fill(0,this.fade)
+                this.layer.text(this.name,0,-this.height/2+20)
             }
             this.layer.textSize(12)
             this.layer.text(this.desc,0,10)

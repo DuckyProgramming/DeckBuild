@@ -1,9 +1,10 @@
 class combatant{
-    constructor(layer,x,y,type,team){
+    constructor(layer,x,y,type,team,id){
         this.layer=layer
         this.position={x:x,y:y}
         this.type=type
         this.team=team
+		this.id=id
         this.size=1
 		this.flip=1-this.team*2
 		this.direction=0
@@ -18,8 +19,8 @@ class combatant{
         this.collect={life:this.life}
 		this.calc={damage:0}
 		this.boost={main:[0,0],fade:[0,0],display:[],color:[[200,0,0],[0,150,255]],infoFade:[0,0],name:['Attack','Defense']}
-		this.status={main:[],fade:[],display:[],color:[],infoFade:[],name:[],class:[]}
-		for(g=0;g<29;g++){
+		this.status={main:[],fade:[],display:[],color:[[255,125,0]],infoFade:[],name:[],class:[]}
+		for(g=0;g<1;g++){
 			this.status.main.push(0)
 			this.status.fade.push(0)
 			this.status.infoFade.push(0)
@@ -47,6 +48,29 @@ class combatant{
         this.layer.scale(this.size*this.flip,this.size)
         switch(this.type){
             case 1:
+				this.layer.stroke(25,30,30,this.fade)
+				this.layer.strokeWeight(4)
+				this.layer.line(-4,-30,-8,0)
+				this.layer.line(4,-30,8,0)
+				this.layer.stroke(30,35,35,this.fade)
+				this.layer.line(-6,-48,-15,-24)
+				this.layer.line(6,-48,15,-24)
+				this.layer.noStroke()
+				this.layer.fill(35,40,40,this.fade)
+				this.layer.ellipse(0,-47,18,42)
+				this.layer.fill(30,25,0,this.fade)
+				this.layer.rect(-7,-45,5,2)
+				this.layer.rect(0,-45,5,2)
+				this.layer.rect(7,-45,5,2)
+				this.layer.fill(240,220,180,this.fade)
+				this.layer.ellipse(0,-78,30,30)
+				this.layer.fill(0,this.fade)
+				this.layer.ellipse(4,-75,4,4)
+				this.layer.ellipse(12,-75,4,4)
+				this.layer.fill(30,35,35,this.fade)
+				this.layer.arc(0,-78,36,36,-180,0)
+				this.layer.fill(200,this.fade/2)
+				this.layer.rect(8,-75,20,6)
 			break
 			case 4:
 				this.layer.stroke(80,this.fade)
@@ -181,7 +205,7 @@ class combatant{
 		}
 		this.layer.translate(-this.base.position.x,-this.base.position.y)
     }
-	take(damage){
+	take(damage,user){
 		this.calc.damage=damage/(2+max(0,this.boost.main[1]))*(2-min(0,this.boost.main[1]))
 		if(this.block>this.calc.damage){
 			this.block-=this.calc.damage
@@ -191,6 +215,9 @@ class combatant{
 			this.life-=this.calc.damage
 		}else{
 			this.life-=this.calc.damage
+		}
+		if(this.status.main[0]>0){
+			current.combatants[user].take(this.status.main[0],this.id)
 		}
 		current.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))
 		current.particles[current.particles.length-1].text=round(damage*10)/10

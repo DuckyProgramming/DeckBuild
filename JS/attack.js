@@ -6,6 +6,7 @@ class attack{
         this.level=0
         this.side=0
         this.damage=0
+        this.alt=0
         this.user=0
         this.target=[1]
         this.targetType=0
@@ -18,13 +19,13 @@ class attack{
         if(side==0){
             switch(type){
                 case 1:
-                    this.battle.combatants[this.target].take(this.damage)
+                    this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2:
                     this.battle.combatants[0].block+=this.damage
                 break
                 case 3:
-                    this.battle.combatants[this.target].take(this.damage)
+                    this.battle.combatants[this.target].take(this.damage,this.user)
                     this.attacks.push([0,20,this.target,this.damage])
                 break
                 case 4:
@@ -35,11 +36,15 @@ class attack{
                 case 5:
                     this.battle.combatants[this.target].boost.main[0]-=this.damage
                 break
+                case 6:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].status.main[0]+=this.alt
+                break
             }
         }else{
             switch(type){
                 case 1:
-                    this.battle.combatants[0].take(this.damage)
+                    this.battle.combatants[0].take(this.damage,this.user)
                     this.attacks.push([1,12,this.user,this.damage])
                 break
                 case 2:
@@ -55,14 +60,14 @@ class attack{
             switch(this.attacks[g][0]){
                 case 0:
                     if(this.attacks[g][1]==0||this.attacks[g][1]==10){
-                        this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3])
+                        this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3],0)
                     }
                 break
                 case 1:
                     if(this.attacks[g][1]>=6){
-                        this.battle.combatants[this.user].position.x-=10
+                        this.battle.combatants[this.attacks[g][2]].position.x-=10
                     }else{
-                        this.battle.combatants[this.user].position.x+=10
+                        this.battle.combatants[this.attacks[g][2]].position.x+=10
                     }
                 break
             }
