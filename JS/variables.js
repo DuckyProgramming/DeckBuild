@@ -22,6 +22,11 @@ types={
             {damage:3,cost:1,attack:3,target:1,desc:'Deal 3\nDamage 3\nTimes'},
             {damage:4,cost:1,attack:3,target:1,desc:'Deal 4\nDamage 3\nTimes'},
         ],
+        },{name:'Think',
+        stats:[
+            {damage:2,cost:1,attack:4,target:0,desc:'Draw 2 Cards'},
+            {damage:2,cost:0,attack:4,target:0,desc:'Draw 2 Cards'},
+        ],
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[]},

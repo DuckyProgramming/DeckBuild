@@ -39,6 +39,9 @@ class battle{
             this.hand.cards.push(copyCard(this.reserve.cards[0]))
             this.reserve.cards.splice(0,1)
         }
+        if(this.reserve.cards.length<=0){
+            this.return()
+        }
     }
     return(){
         while(this.discard.cards.length>0){
@@ -124,9 +127,6 @@ class battle{
             if(this.turn==0){
                 for(e=0;e<this.drawAmount;e++){
                     this.draw()
-                }
-                if(this.reserve.cards.length<=0){
-                    this.return()
                 }
                 this.endTurn()
                 this.mana.main=this.mana.max

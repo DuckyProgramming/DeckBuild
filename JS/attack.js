@@ -27,6 +27,11 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage)
                     this.attacks.push([0,20,this.target,this.damage])
                 break
+                case 4:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                break
             }
         }else{
             switch(type){

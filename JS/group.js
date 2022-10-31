@@ -15,6 +15,9 @@ class group{
         for(e=0;e<5;e++){
             this.add(2,0)
         }
+        this.add(3,0)
+        this.add(4,0)
+        this.add(5,0)
     }
     add(type,level){
         this.cards.push(new card(this.layer,1206,500,type,level))
