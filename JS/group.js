@@ -1,16 +1,17 @@
 class group{
-    constructor(layer){
+    constructor(layer,battle){
         this.layer=layer
+        this.battle=battle
         this.storage={cards:[]}
         this.cards=[]
         this.select=false
         this.trigger=false
     }
     initial(){
-        for(g=0;g<5;g++){
-            this.add(1,0)
+        for(e=0;e<5;e++){
+            this.add(2,0)
         }
-        for(g=0;g<5;g++){
+        for(e=0;e<5;e++){
             this.add(2,0)
         }
     }
@@ -29,47 +30,59 @@ class group{
         }
     }
     display(){ 
-        for(g=0,lg=this.cards.length;g<lg;g++){
-            this.cards[g].display()
+        for(e=0,le=this.cards.length;e<le;e++){
+            this.cards[e].display()
         }
     }
     update(){
-        for(g=0,lg=this.cards.length;g<lg;g++){
-            if(this.cards[g].remove){
-                this.cards.splice(g,1)
-                g--
-                lg--
+        for(e=0,le=this.cards.length;e<le;e++){
+            if(this.cards[e].remove){
+                this.cards.splice(e,1)
+                e--
+                le--
+            }
+            if(this.cards[e].discard){
+                this.battle.discard.cards.push(copyCard(this.cards[e]))
+                this.cards.splice(e,1)
+                e--
+                le--
             }
         }
     }
     updateHand(){
-        for(g=0,lg=this.cards.length;g<lg;g++){
-            this.cards[g].update()
-            if((inputs.rel.x>this.cards[g].position.x-this.cards[g].width/2&&inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2&&inputs.rel.y>350||this.cards[g].select)&&(!this.trigger||this.cards[g].trigger)&&this.cards[g].position.y>325){
-                this.cards[g].position.y-=20
-            }else if(!((inputs.rel.x>this.cards[g].position.x-this.cards[g].width/2&&inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2&&inputs.rel.y>300||this.cards[g].select)&&(!this.trigger||this.cards[g].trigger))&&this.cards[g].position.y<500){
-                this.cards[g].position.y+=20
+        for(e=0,le=this.cards.length;e<le;e++){
+            this.cards[e].update(this.battle.mana)
+            if((inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>350||this.cards[e].select)&&(!this.trigger||this.cards[e].trigger)&&this.cards[e].position.y>325){
+                this.cards[e].position.y-=20
+            }else if(!((inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>300||this.cards[e].select)&&(!this.trigger||this.cards[e].trigger))&&this.cards[e].position.y<500){
+                this.cards[e].position.y+=20
             }
-            if(this.cards[g].position.x>g*80+120&&(this.cards[g].position.x>this.cards[max(0,g-1)].position.x+80||g==0)){
-                this.cards[g].position.x-=20
+            if(this.cards[e].position.x>e*80+120&&(this.cards[e].position.x>this.cards[max(0,e-1)].position.x+80||e==0)){
+                this.cards[e].position.x-=20
             }
         }
     }
     onClickHand(){
         if(!this.trigger){
-            for(g=0,lg=this.cards.length;g<lg;g++){
-                if(inputs.rel.x>this.cards[g].position.x-this.cards[g].width/2&&inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2&&inputs.rel.y>this.cards[g].position.y-this.cards[g].height/2&&inputs.rel.y<this.cards[g].position.y+this.cards[g].height/2&&this.select&&this.cards[g].select){
+            for(e=0,le=this.cards.length;e<le;e++){
+                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.select&&this.cards[e].select&&this.battle.mana.main>=this.cards[e].cost){
                     this.trigger=true
-                    this.cards[g].trigger=true
+                    this.cards[e].trigger=true
                     this.select=false
-                    current.attack.set(this.cards[g].type,this.cards[g].level)
+                    this.battle.attack.damage=this.cards[e].damage
+                    this.battle.mana.main-=this.cards[e].cost
+                    if(this.cards[e].target==0){
+                        this.battle.attack.set(this.cards[e].type,this.cards[e].level)
+                        this.cards[e].used=true
+                        this.trigger=false
+                    }
                 }
-                if(this.select&&this.cards[g].select){
-                    this.cards[g].select=false
+                if(this.select&&this.cards[e].select){
+                    this.cards[e].select=false
                     this.select=false
                 }
-                if(inputs.rel.x>this.cards[g].position.x-this.cards[g].width/2&&inputs.rel.x<this.cards[g].position.x+this.cards[g].width/2&&inputs.rel.y>350&&!this.select){
-                    this.cards[g].select=true
+                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>350&&!this.select&&!this.cards[e].trigger){
+                    this.cards[e].select=true
                     this.select=true
                 }
             }

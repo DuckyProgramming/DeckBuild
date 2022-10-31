@@ -4,19 +4,19 @@ types={
         stats:[],
         },{name:'Strike',
         stats:[
-            {damage:6,cost:1,desc:'Deal 6\nDamage'},
-            {damage:9,cost:1,desc:'Deal 9\nDamage'},
+            {damage:6,cost:1,target:1,desc:'Deal 6\nDamage'},
+            {damage:9,cost:1,target:1,desc:'Deal 9\nDamage'},
         ],
         },{name:'Defend',
         stats:[
-            {damage:5,cost:1,desc:'Add 5\nBlock'},
-            {damage:8,cost:1,desc:'Add 8\nBlock'},
+            {damage:5,cost:1,target:0,desc:'Add 5\nBlock'},
+            {damage:8,cost:1,target:0,desc:'Add 8\nBlock'},
         ],
         },
     ],combatant:[
         {name:'',alt:'',life:0},
-        {name:'Player',alt:'',life:10},
-        {name:'Human',alt:'',life:10},
+        {name:'Player',alt:'',life:40},
+        {name:'Human',alt:'',life:20},
     ],
 }
 combatants=[

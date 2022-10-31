@@ -12,6 +12,9 @@ class combatant{
         this.life=types.combatant[this.type].life
         this.base={life:this.life}
         this.collect={life:this.life}
+		this.calc={damage:0}
+		this.block=0
+		this.fades={block:0}
         if(this.type==0){
             this.fade=0
         }else{
@@ -62,22 +65,43 @@ class combatant{
 			this.layer.fill(min(255,510-max(0,this.collect.life)/this.base.life*510)-max(0,5-max(0,this.collect.life)/this.base.life*30)*25,max(0,this.collect.life)/this.base.life*510,0,this.fade)
 			this.layer.rect((max(0,this.collect.life)/this.base.life)*30-30,20,(max(0,this.collect.life)/this.base.life)*60,2+min((max(0,this.collect.life)/this.base.life)*90,6),3)
 		}
-        if(this.alt==''){
-			this.layer.fill(0,this.fade)
-			this.layer.textSize(8)
-			this.layer.text(max(0,ceil(this.life*10)/10)+"/"+max(0,ceil(this.base.life)),0,21)
-			this.layer.textSize(10)
-			this.layer.text(this.name,0,32)
-		}else{
-			this.layer.fill(0,this.fade)
-			this.layer.textSize(8)
-			this.layer.text(max(0,ceil(this.life*10)/10)+"/"+max(0,ceil(this.base.life)),0,21)
-			this.layer.textSize(10)
-			this.layer.text(this.name,0,32)
+		if(this.fades.block>0){
+			this.layer.fill(0,this.fade*this.fades.block)
+			this.layer.ellipse(-30,20,16,16)
+			this.layer.fill(150,175,200,this.fade*this.fades.block)
+			this.layer.ellipse(-30,20,14,14)
+		}
+		this.layer.fill(0,this.fade)
+		this.layer.textSize(8)
+		this.layer.text(max(0,ceil(this.life*10)/10)+"/"+max(0,ceil(this.base.life)),0,21)
+		if(this.fades.block>0){
+			this.layer.text(this.block,-30,20)
+		}
+		this.layer.textSize(10)
+		this.layer.text(this.name,0,32)
+        if(this.alt!=''){
 			this.layer.text(this.alt,0,40)
 		}
         this.layer.translate(-this.position.x,-this.position.y)
     }
+	take(damage){
+		this.calc.damage=damage
+		if(this.block>this.calc.damage){
+			this.block-=this.calc.damage
+		}else if(this.block>0){
+			this.calc.damage-=this.block
+			this.block=0
+			this.life-=this.calc.damage
+		}else{
+			this.life-=this.calc.damage
+		}
+	}
     update(){
+		this.collect.life=this.collect.life*0.9+this.life*0.1
+		if(this.fades.block<1&&this.block>0){
+			this.fades.block=round(this.fades.block*10+1)/10
+		}else if(this.fades.block>0&&this.block<=0){
+			this.fades.block=round(this.fades.block*10-1)/10
+		}
     }
 }

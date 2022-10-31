@@ -1,9 +1,10 @@
 class battle{
     constructor(layer){
         this.layer=layer
-        this.hand=new group(this.layer)
-        this.reserve=new group(this.layer)
-        this.deck=new group(this.layer)
+        this.hand=new group(this.layer,this)
+        this.reserve=new group(this.layer,this)
+        this.deck=new group(this.layer,this)
+        this.discard=new group(this.layer,this)
         this.attack=new attack(this.layer,this)
         this.particles=[]
         this.combatants=[]
@@ -69,6 +70,7 @@ class battle{
         this.hand.update()
         this.reserve.update()
         this.deck.update()
+        this.discard.update()
         this.hand.updateHand()
     }
     onClick(){

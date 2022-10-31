@@ -7,17 +7,19 @@ class card{
         this.name=types.card[this.type].name
         this.damage=types.card[this.type].stats[this.level].damage
         this.cost=types.card[this.type].stats[this.level].cost
+        this.target=types.card[this.type].stats[this.level].target
         this.desc=types.card[this.type].stats[this.level].desc
-        this.anim={select:0}
+        this.anim={select:0,afford:0}
         this.width=120
         this.height=160
         this.size=0
         this.fade=1
         this.calcDirection=0
-        this.used=false
         this.remove=false
+        this.discard=false
         this.select=false
         this.trigger=false
+        this.used=false
     }
     display(){
         if(this.size>0){
@@ -34,10 +36,11 @@ class card{
             this.layer.stroke(150,200,250,this.fade)
             this.layer.strokeWeight(3)
             this.layer.quad(-this.width/2+4,-this.height/2+20,-this.width/2+16,-this.height/2+4,-this.width/2+28,-this.height/2+20,-this.width/2+16,-this.height/2+36)
-            this.layer.fill(0,this.fade)
+            this.layer.fill(this.anim.afford*240,0,0,this.fade)
             this.layer.noStroke()
             this.layer.textSize(20)
             this.layer.text(this.cost,-this.width/2+16,-this.height/2+20)
+            this.layer.fill(0,this.fade)
             this.layer.textSize(16)
             this.layer.text(this.name,0,-this.height/2+20)
             this.layer.textSize(12)
@@ -46,18 +49,26 @@ class card{
             this.layer.translate(-this.position.x,-this.position.y)
         }
     }
-    update(){
+    update(mana){
         if(this.size<1&&!this.used){
             this.size=round(this.size*5+1)*0.2
         }else if(this.size>0&&this.used){
             this.size=round(this.size*5-1)*0.2
+        }
+        if(this.size<=0&&this.used){
+            this.discard=true
         }
         if(this.select&&this.anim.select<1){
             this.anim.select+=0.1
         }else if(!this.select&&this.anim.select>0){
             this.anim.select-=0.1
         }
-        if(this.trigger){
+        if(mana.main<this.cost&&this.anim.afford<1){
+            this.anim.afford+=0.1
+        }else if(mana.main>=this.cost&&this.anim.afford>0){
+            this.anim.afford-=0.1
+        }
+        if(this.trigger&&!this.used){
             if(dist(this.position.x,this.position.y,100,120)<20){
                 this.position.x=100
                 this.position.y=120
