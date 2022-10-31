@@ -18,6 +18,7 @@ class group{
         this.add(3,0)
         this.add(4,0)
         this.add(5,0)
+        this.add(7,0)
     }
     add(type,level){
         this.cards.push(new card(this.layer,1206,500,type,level))
@@ -107,7 +108,7 @@ class group{
                     this.trigger=true
                     this.cards[e].trigger=true
                     this.select=false
-                    this.battle.attack.damage=this.cards[e].damage
+                    this.battle.attack.damage=this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0]))
                     this.battle.mana.main-=this.cards[e].cost
                     this.battle.attack.type=this.cards[e].attack
                     this.battle.attack.level=this.cards[e].level

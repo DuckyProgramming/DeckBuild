@@ -17,6 +17,14 @@ class combatant{
 		this.base={life:this.life,position:{x:this.position.x,y:this.position.y}}
         this.collect={life:this.life}
 		this.calc={damage:0}
+		this.boost={main:[0,0],fade:[0,0],display:[],color:[[200,0,0],[0,150,255]],infoFade:[0,0],name:['Attack','Defense']}
+		this.status={main:[],fade:[],display:[],color:[],infoFade:[],name:[],class:[]}
+		for(g=0;g<29;g++){
+			this.status.main.push(0)
+			this.status.fade.push(0)
+			this.status.infoFade.push(0)
+			this.status.class.push(0)
+		}
 		this.block=0
 		this.fades={block:0,info:0}
 		this.intent=0
@@ -103,8 +111,57 @@ class combatant{
 		}
 		this.layer.textSize(10)
 		this.layer.text(this.name,0,32)
-        if(this.alt!=''){
+        if(this.alt==''){
+			for(g=0,lg=this.boost.display.length;g<lg;g++){
+				this.layer.fill(this.boost.color[this.boost.display[g]][0],this.boost.color[this.boost.display[g]][1],this.boost.color[this.boost.display[g]][2],this.boost.fade[this.boost.display[g]]*this.fade)
+				this.layer.ellipse(-21+g*14,50,12,12)
+				this.layer.fill(150,this.fade*this.boost.fade[this.boost.display[g]]*this.boost.infoFade[g])
+				this.layer.rect(0,80,45,15,3)
+			}
+			for(g=0,lg=this.status.display.length;g<lg;g++){
+				this.layer.fill(this.status.color[this.status.display[g]][0],this.status.color[this.status.display[g]][1],this.status.color[this.status.display[g]][2],this.status.fade[this.status.display[g]]*this.fade)
+				this.layer.ellipse(-21+g*14,64,12,12)
+				this.layer.fill(150,this.fade*this.status.fade[this.status.display[g]]*this.status.infoFade[g])
+				this.layer.rect(0,80,45,15,3)
+			}
+			for(g=0,lg=this.boost.display.length;g<lg;g++){
+				this.layer.fill(0,this.boost.fade[this.boost.display[g]]*this.fade)
+				if(this.boost[this.boost.display[g]]>0){
+					this.layer.text('+'+round(this.boost.main[this.boost.display[g]]),-21+g*14,50)
+				}else{
+					this.layer.text(round(this.boost.main[this.boost.display[g]]),-21+g*14,50)
+				}
+			}
+			for(g=0,lg=this.status.display.length;g<lg;g++){
+				this.layer.fill(0,this.status.fade[this.status.display[g]]*this.fade)
+				this.layer.text(round(this.status.main[this.status.display[g]]),-21+g*14,64)
+			}
+		}else{
 			this.layer.text(this.alt,0,40)
+			for(g=0,lg=this.boost.display.length;g<lg;g++){
+				this.layer.fill(this.boost.color[this.boost.display[g]][0],this.boost.color[this.boost.display[g]][1],this.boost.color[this.boost.display[g]][2],this.boost.fade[this.boost.display[g]]*this.fade)
+				this.layer.ellipse(-21+g*14,58,12,12)
+				this.layer.fill(150,this.fade*this.boost.fade[this.boost.display[g]]*this.boost.infoFade[g])
+				this.layer.rect(0,80,45,15,3)
+			}
+			for(g=0,lg=this.status.display.length;g<lg;g++){
+				this.layer.fill(this.status.color[this.status.display[g]][0],this.status.color[this.status.display[g]][1],this.status.color[this.status.display[g]][2],this.status.fade[this.status.display[g]]*this.fade)
+				this.layer.ellipse(-21+g*14,72,12,12)
+				this.layer.fill(150,this.fade*this.status.fade[this.status.display[g]]*this.status.infoFade[g])
+				this.layer.rect(0,80,45,15,3)
+			}
+			for(g=0,lg=this.boost.display.length;g<lg;g++){
+				this.layer.fill(0,this.boost.fade[this.boost.display[g]]*this.fade)
+				if(this.boost[this.boost.display[g]]>0){
+					this.layer.text('+'+round(this.boost.main[this.boost.display[g]]),-21+g*14,58)
+				}else{
+					this.layer.text(round(this.boost.main[this.boost.display[g]]),-21+g*14,58)
+				}
+			}
+			for(g=0,lg=this.status.display.length;g<lg;g++){
+				this.layer.fill(0,this.status.fade[this.status.display[g]]*this.fade)
+				this.layer.text(round(this.status.main[this.status.display[g]]),-21+g*14,72)
+			}
 		}
 		if(this.team==1){
 			switch(this.attacks[this.intent]){
@@ -123,7 +180,7 @@ class combatant{
 		this.layer.translate(-this.base.position.x,-this.base.position.y)
     }
 	take(damage){
-		this.calc.damage=damage
+		this.calc.damage=damage/(2+max(0,this.boost.main[1]))*(2-min(0,this.boost.main[1]))
 		if(this.block>this.calc.damage){
 			this.block-=this.calc.damage
 		}else if(this.block>0){
@@ -137,16 +194,40 @@ class combatant{
 		current.particles[current.particles.length-1].text=round(damage*10)/10
 	}
     update(){
+		this.boost.display=[]
+		this.status.display=[]
+		for(g=0,lg=this.boost.main.length;g<lg;g++){
+			if(this.boost.fade[g]!=0){
+				this.boost.display.push(g)
+			}
+			if(this.boost.fade[g]<1&&this.boost.main[g]!=0){
+				this.boost.fade[g]=round(this.boost.fade[g]*10+1)/10
+			}
+			if(this.boost.fade[g]>0&&this.boost.main[g]==0){
+				this.boost.fade[g]=round(this.boost.fade[g]*10-1)/10
+			}
+		}
+		for(g=0,lg=this.status.main.length;g<lg;g++){
+			if(this.status.fade[g]!=0){
+				this.statusDisplay.push(g)
+			}
+			if(this.status.fade[g]<1&&this.status.main[g]!=0){
+				this.status.fade[g]=round(this.status.fade[g]*5+1)/5
+			}
+			if(this.status.fade[g]>0&&this.status.main[g]==0){
+				this.status.fade[g]=round(this.status.fade[g]*5-1)/5
+			}
+		}
 		this.collect.life=this.collect.life*0.9+this.life*0.1
 		if(this.fades.block<1&&this.block>0){
-			this.fades.block=round(this.fades.block*10+1)/10
+			this.fades.block=round(this.fades.block*5+1)/5
 		}else if(this.fades.block>0&&this.block<=0){
-			this.fades.block=round(this.fades.block*10-1)/10
+			this.fades.block=round(this.fades.block*5-1)/5
 		}
 		if(this.fade<1&&this.life>0){
-			this.fade=round(this.fade*10+1)/10
+			this.fade=round(this.fade*5+1)/5
 		}else if(this.fade>0&&this.life<=0){
-			this.fade=round(this.fade*10-1)/10
+			this.fade=round(this.fade*5-1)/5
 		}
     }
 }

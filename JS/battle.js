@@ -55,6 +55,12 @@ class battle{
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].block=0
             this.combatants[e].setupIntent()
+            for(f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
+                this.combatants[e].boost.main[f]=0
+            }
+            for(f=0,lf=this.combatants[e].status.main.lengthW;f<lf;f++){
+                this.combatants[e].status.main[f]=0
+            }
         }
     }
     display(){
@@ -115,7 +121,7 @@ class battle{
                 this.turnTimer--
             }else{
                 this.attack.user=this.turn
-                this.attack.damage=this.combatants[this.turn].damage[this.combatants[this.turn].intent]
+                this.attack.damage=this.combatants[this.turn].damage[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0]))
                 this.attack.update(this.combatants[this.turn].attacks[this.combatants[this.turn].intent],0,1)
                 this.turnTimer=20
                 this.turn++

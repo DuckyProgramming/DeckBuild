@@ -32,6 +32,9 @@ class attack{
                         this.battle.draw()
                     }
                 break
+                case 5:
+                    this.battle.combatants[this.target].boost.main[0]-=this.damage
+                break
             }
         }else{
             switch(type){

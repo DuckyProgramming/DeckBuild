@@ -32,6 +32,11 @@ types={
             {damage:0,cost:0,attack:0,target:0,desc:'Unplayable',spec:1},
             {damage:0,cost:0,attack:0,target:0,desc:'Unplayable',spec:1},
         ],
+        },{name:'Weaken',
+        stats:[
+            {damage:1,cost:0,attack:5,target:1,desc:'Apply 1\nWeak',spec:0},
+            {damage:2,cost:0,attack:5,target:1,desc:'Apply 2\nWeak',spec:0},
+        ],
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[]},

@@ -70,14 +70,14 @@ class card{
             this.discard=true
         }
         if(this.select&&this.anim.select<1){
-            this.anim.select+=0.2
+            this.anim.select=round(this.anim.select*5+1)/5
         }else if(!this.select&&this.anim.select>0){
-            this.anim.select-=0.2
+            this.anim.select=round(this.anim.select*5-1)/5
         }
         if(mana.main<this.cost&&this.anim.afford<1){
-            this.anim.afford+=0.2
+            this.anim.afford=round(this.anim.afford*5+1)/5
         }else if(mana.main>=this.cost&&this.anim.afford>0){
-            this.anim.afford-=0.2
+            this.anim.afford=round(this.anim.afford*5-1)/5
         }
         if(this.trigger&&!this.used){
             if(dist(this.position.x,this.position.y,100,120)<20){
