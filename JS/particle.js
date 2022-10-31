@@ -26,9 +26,11 @@ class particle{
             this.layer.noStroke()
             switch(this.type){
                 case 0:
+                    this.layer.rotate(-this.direction)
                     this.layer.fill(this.color[0],this.color[1],this.color[2],this.fade)
-                    this.layer.textSize(25)
+                    this.layer.textSize(10)
                     this.layer.text(this.text,0,0)
+                    this.layer.rotate(this.direction)
                 break
             }
             this.layer.scale(1/this.size/this.sizing)
@@ -40,18 +42,16 @@ class particle{
         this.time++
         switch(this.type){
             case 0:
-                this.position.x+=sin(this.direction)*this.speed*5
-                this.position.y-=cos(this.direction)*this.speed*5
+                this.position.x+=sin(this.direction)*this.speed*2
+                this.position.y-=cos(this.direction)*this.speed*2
                 if(this.trigger){
                     this.fade-=0.1*this.speed
-                    this.sizing-=0.1*this.speed
                     if(this.fade<0){
                         this.remove=true
                     }
                 }else{
                     this.fade+=0.1*this.speed
-                    this.sizing+=0.1*this.speed
-                    if(this.fade>2){
+                    if(this.fade>3){
                         this.trigger=true
                     }
                 }

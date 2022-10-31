@@ -34,9 +34,6 @@ class battle{
         }
     }
     display(){
-        for(e=0,le=this.particles.length;e<le;e++){
-            this.particles[e].display()
-        }
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].display()
         }
@@ -54,6 +51,9 @@ class battle{
             this.combatants[e].displayInfo()
         }
         this.hand.display()
+        for(e=0,le=this.particles.length;e<le;e++){
+            this.particles[e].display()
+        }
     }
     update(){
         for(e=0,le=this.particles.length;e<le;e++){

@@ -10,11 +10,12 @@ class combatant{
         this.name=types.combatant[this.type].name
         this.alt=types.combatant[this.type].alt
         this.life=types.combatant[this.type].life
-        this.base={life:this.life}
+		this.height=types.combatant[this.type].height
+        this.base={life:this.life,position:{x:this.position.x,y:this.position.y}}
         this.collect={life:this.life}
 		this.calc={damage:0}
 		this.block=0
-		this.fades={block:0}
+		this.fades={block:0,info:0}
         if(this.type==0){
             this.fade=0
         }else{
@@ -48,7 +49,7 @@ class combatant{
         this.layer.translate(-this.position.x,-this.position.y)
     }
     displayInfo(){
-        this.layer.translate(this.position.x,this.position.y)
+        this.layer.translate(this.base.position.x,this.base.position.y)
         this.layer.noStroke()
 		this.layer.fill(0,this.fade)
 		this.layer.rect(0,20,62,10,4)
@@ -82,7 +83,7 @@ class combatant{
         if(this.alt!=''){
 			this.layer.text(this.alt,0,40)
 		}
-        this.layer.translate(-this.position.x,-this.position.y)
+		this.layer.translate(-this.base.position.x,-this.base.position.y)
     }
 	take(damage){
 		this.calc.damage=damage
@@ -95,6 +96,8 @@ class combatant{
 		}else{
 			this.life-=this.calc.damage
 		}
+		current.particles.push(new particle(this.layer,this.position.x,this.position.y,0,random(0,360),4,1.5,[255,0,0]))
+		current.particles[current.particles.length-1].text=round(damage*10)/10
 	}
     update(){
 		this.collect.life=this.collect.life*0.9+this.life*0.1

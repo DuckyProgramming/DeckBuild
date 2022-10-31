@@ -14,9 +14,9 @@ types={
         ],
         },
     ],combatant:[
-        {name:'',alt:'',life:0},
-        {name:'Player',alt:'',life:40},
-        {name:'Human',alt:'',life:20},
+        {name:'',alt:'',life:0,height:0},
+        {name:'Player',alt:'',life:40,height:75},
+        {name:'Human',alt:'',life:20,height:75},
     ],
 }
 combatants=[
