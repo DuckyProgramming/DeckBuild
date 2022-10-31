@@ -5,6 +5,7 @@ class group{
         this.storage={cards:[]}
         this.cards=[]
         this.select=false
+        this.selcted=false
         this.trigger=false
     }
     initial(){
@@ -74,7 +75,7 @@ class group{
                     for(e=1,le=this.battle.combatants.length;e<le;e++){
                         if(pointInsideBox({position:inputs.rel},{position:{x:this.battle.combatants[e].position.x,y:this.battle.combatants[e].position.y-this.battle.combatants[e].height/2},width:80,height:160})&&this.battle.combatants[e].life>0){
                             this.battle.attack.target=e
-                            this.battle.attack.update(this.battle.attack.type,this.battle.attack.level)
+                            this.battle.attack.update(this.battle.attack.type,this.battle.attack.level,0)
                             for(f=0,lf=this.cards.length;f<lf;f++){
                                 if(this.cards[f].trigger){
                                     this.cards[f].used=true
@@ -86,6 +87,7 @@ class group{
                 break
             }
         }else{
+            this.selected=false
             for(e=0,le=this.cards.length;e<le;e++){
                 if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.select&&this.cards[e].select&&this.battle.mana.main>=this.cards[e].cost){
                     this.trigger=true
@@ -96,7 +98,7 @@ class group{
                     this.battle.attack.type=this.cards[e].attack
                     this.battle.attack.level=this.cards[e].level
                     if(this.cards[e].target==0){
-                        this.battle.attack.update(this.cards[e].attack,this.cards[e].level)
+                        this.battle.attack.update(this.cards[e].attack,this.cards[e].level,0)
                         this.cards[e].used=true
                         this.trigger=false
                     }else{
@@ -110,7 +112,11 @@ class group{
                 if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger){
                     this.cards[e].select=true
                     this.select=true
+                    this.selected=true
                 }
+            }
+            if(!this.selected){
+                this.select=false
             }
             if(this.trigger){
                 for(e=0,le=this.cards.length;e<le;e++){

@@ -84,8 +84,8 @@ class combatant{
 			this.layer.ellipse(-30,20,14,14)
 		}
 		if(this.team==1){
-			switch(this.intent){
-				case 0:
+			switch(this.attacks[this.intent]){
+				case 1:
 					this.layer.fill(255,50,50,this.fade)
 					this.layer.noStroke()
 					this.layer.triangle(-20,-this.height-30,15,-this.height-36,15,-this.height-24)
@@ -104,8 +104,8 @@ class combatant{
 			this.layer.text(this.alt,0,40)
 		}
 		if(this.team==1){
-			switch(this.intent){
-				case 0:
+			switch(this.attacks[this.intent]){
+				case 1:
 					this.layer.fill(255,this.fade)
 					this.layer.textSize(20)
 					this.layer.text(this.damage[this.intent],0,-this.height-30)

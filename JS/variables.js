@@ -26,12 +26,16 @@ types={
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[]},
         {name:'Player',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[]},
-        {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[0],damage:[4]},
+        {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1],damage:[4]},
     ],
 }
 combatants=[
     {type:2},
     {type:2},
+    {type:0},
+    {type:0},
+    {type:0},
+    {type:0},
 ]
 stage={scale:0,scene:'battle'}
 graphics={main:0}

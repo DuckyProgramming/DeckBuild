@@ -15,7 +15,9 @@ class battle{
         this.initialReserve()
         this.reserve.shuffle()
         this.turn=0
-        for(e=0;e<4;e++){
+        this.turnTimer=0
+        this.drawAmount=5
+        for(e=0;e<this.drawAmount;e++){
             this.draw()
         }
     }
@@ -36,6 +38,18 @@ class battle{
         if(this.reserve.cards.length>0){
             this.hand.cards.push(copyCard(this.reserve.cards[0]))
             this.reserve.cards.splice(0,1)
+        }
+    }
+    return(){
+        while(this.discard.cards.length>0){
+            this.reserve.cards.push(copyCard(this.discard.cards[0]))
+            this.reserve.cards[this.reserve.cards.length-1].position.x=1206
+            this.discard.cards.splice(0,1)
+        }
+    }
+    endTurn(){
+        for(e=0,le=this.combatants.length;e<le;e++){
+            this.combatants[e].block=0
         }
     }
     display(){
@@ -88,13 +102,50 @@ class battle{
         this.deck.update()
         this.discard.update()
         this.hand.updateHand()
+        if(this.turn>0){
+            if(this.turnTimer>0){
+                this.turnTimer--
+            }else{
+                this.attack.user=this.turn
+                this.attack.damage=this.combatants[this.turn].damage[this.combatants[this.turn].intent]
+                this.attack.update(this.combatants[this.turn].attacks[this.combatants[this.turn].intent],0,1)
+                this.turnTimer=20
+                this.turn++
+                if(this.turn>=this.combatants.length){
+                    this.turn=0
+                }
+                while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
+                    this.turn++
+                    if(this.turn>=this.combatants.length){
+                        this.turn=0
+                    }
+                }
+            }
+            if(this.turn==0){
+                for(e=0;e<this.drawAmount;e++){
+                    this.draw()
+                }
+                if(this.reserve.cards.length<=0){
+                    this.return()
+                }
+                this.endTurn()
+                this.mana.main=this.mana.max
+            }
+        }
     }
     onClick(){
         if(this.turn==0){
             this.hand.onClickHand()
             if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:565},width:40,height:30})){
                 this.turn++
+                this.turnTimer=20
                 this.hand.discard()
+                while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
+                    this.turn++
+                    if(this.turn>=this.combatants.length){
+                        this.turn=0
+                    }
+                }
             }
         }
     }
