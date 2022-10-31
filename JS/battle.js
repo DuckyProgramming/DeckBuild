@@ -23,6 +23,9 @@ class battle{
         for(e=0,le=combatants.length;e<le;e++){
             this.combatants.push(new combatant(this.layer,300+e*100,350,combatants[e].type,1))
         }
+        for(e=1,le=this.combatants.length;e<le;e++){
+            this.combatants[e].setupIntent()
+        }
     }
     initialReserve(){
         for(e=0,le=this.deck.cards.length;e<le;e++){

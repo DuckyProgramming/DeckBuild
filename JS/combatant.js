@@ -19,12 +19,20 @@ class combatant{
 		this.calc={damage:0}
 		this.block=0
 		this.fades={block:0,info:0}
+		this.intent=0
         if(this.type==0){
             this.fade=0
         }else{
             this.fade=1
         }
     }
+	setupIntent(){
+		switch(this.behavior){
+			case 0:
+				this.intent=floor(random(0,this.attacks.length))
+			break
+		}
+	}
     display(){
         this.layer.translate(this.position.x,this.position.y)
         this.layer.rotate(this.direction)
@@ -75,6 +83,15 @@ class combatant{
 			this.layer.fill(150,175,200,this.fade*this.fades.block)
 			this.layer.ellipse(-30,20,14,14)
 		}
+		if(this.team==1){
+			switch(this.intent){
+				case 0:
+					this.layer.fill(255,50,50,this.fade)
+					this.layer.noStroke()
+					this.layer.triangle(-20,-this.height-30,15,-this.height-36,15,-this.height-24)
+				break
+			}
+		}
 		this.layer.fill(0,this.fade)
 		this.layer.textSize(8)
 		this.layer.text(max(0,ceil(this.life*10)/10)+"/"+max(0,ceil(this.base.life)),0,21)
@@ -85,6 +102,15 @@ class combatant{
 		this.layer.text(this.name,0,32)
         if(this.alt!=''){
 			this.layer.text(this.alt,0,40)
+		}
+		if(this.team==1){
+			switch(this.intent){
+				case 0:
+					this.layer.fill(255,this.fade)
+					this.layer.textSize(20)
+					this.layer.text(this.damage[this.intent],0,-this.height-30)
+				break
+			}
 		}
 		this.layer.translate(-this.base.position.x,-this.base.position.y)
     }
