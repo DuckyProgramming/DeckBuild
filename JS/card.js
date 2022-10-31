@@ -1,9 +1,10 @@
 class card{
-    constructor(layer,x,y,type,level){
+    constructor(layer,x,y,type,level,color){
         this.layer=layer
         this.position={x:x,y:y}
         this.type=type
         this.level=level
+        this.color=color
         this.name=types.card[this.type].name
         this.damage=types.card[this.type].stats[this.level].damage
         this.cost=types.card[this.type].stats[this.level].cost
@@ -30,20 +31,23 @@ class card{
             this.layer.fill(255,this.fade*this.anim.select)
             this.layer.noStroke()
             this.layer.rect(0,0,this.width+15,this.height+15,10)
+            switch(this.color){
+                case 1:
+                    this.layer.fill(200,160,200,this.fade)
+                    this.layer.stroke(160,120,160,this.fade)
+                break
+                case 4:
+                    this.layer.fill(120,this.fade)
+                    this.layer.stroke(80,this.fade)
+                break
+            }
+            this.layer.strokeWeight(5)
+            this.layer.rect(0,0,this.width,this.height,5)
             if(this.spec!=1){
-                this.layer.fill(200,160,200,this.fade)
-                this.layer.stroke(160,120,160,this.fade)
-                this.layer.strokeWeight(5)
-                this.layer.rect(0,0,this.width,this.height,5)
                 this.layer.fill(200,225,250,this.fade)
                 this.layer.stroke(150,200,250,this.fade)
                 this.layer.strokeWeight(3)
                 this.layer.quad(-this.width/2+4,-this.height/2+20,-this.width/2+16,-this.height/2+4,-this.width/2+28,-this.height/2+20,-this.width/2+16,-this.height/2+36)
-            }else{
-                this.layer.fill(120,this.fade)
-                this.layer.stroke(80,this.fade)
-                this.layer.strokeWeight(5)
-                this.layer.rect(0,0,this.width,this.height,5)
             }
             this.layer.fill(this.anim.afford*240,0,0,this.fade)
             this.layer.noStroke()
@@ -51,9 +55,15 @@ class card{
                 this.layer.textSize(20)
                 this.layer.text(this.cost,-this.width/2+16,-this.height/2+20)
             }
-            this.layer.fill(0,this.fade)
             this.layer.textSize(16)
-            this.layer.text(this.name,0,-this.height/2+20)
+            if(this.level==1){
+                this.layer.fill(100,0,100,this.fade)
+                this.layer.text(this.name,0,-this.height/2+20)
+                this.layer.fill(0,this.fade)
+            }else{
+                this.layer.text(this.name,0,-this.height/2+20)
+                this.layer.fill(0,this.fade)
+            }
             this.layer.textSize(12)
             this.layer.text(this.desc,0,10)
             this.layer.scale(1/this.size)

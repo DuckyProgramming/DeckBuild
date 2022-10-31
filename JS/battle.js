@@ -1,6 +1,7 @@
 class battle{
-    constructor(layer){
+    constructor(layer,player){
         this.layer=layer
+        this.player=player
         this.hand=new group(this.layer,this)
         this.reserve=new group(this.layer,this)
         this.deck=new group(this.layer,this)
@@ -9,10 +10,10 @@ class battle{
         this.attack=new attack(this.layer,this)
         this.particles=[]
         this.combatants=[]
-        this.combatants.push(new combatant(this.layer,100,350,1,0))
+        this.combatants.push(new combatant(this.layer,100,350,player,0))
         this.mana={main:3,max:3}
         this.anim={turn:0}
-        this.deck.initial()
+        this.deck.initial(player)
         this.initialReserve()
         this.reserve.shuffle()
         this.turn=0

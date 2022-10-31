@@ -8,23 +8,28 @@ class group{
         this.selcted=false
         this.trigger=false
     }
-    initial(){
-        for(e=0;e<5;e++){
-            this.add(1,0)
+    initial(type){
+        switch(type){
+            case 1:
+                for(e=0;e<5;e++){
+                    this.add(1,0,this.battle.player)
+                }
+                for(e=0;e<5;e++){
+                    this.add(2,0,this.battle.player)
+                }
+                this.add(3,0,this.battle.player)
+                this.add(4,0,this.battle.player)
+                this.add(5,0,this.battle.player)
+                this.add(7,0,this.battle.player)
+                //this.add(8,0,this.battle.player)
+            break
         }
-        for(e=0;e<5;e++){
-            this.add(2,0)
-        }
-        this.add(3,0)
-        this.add(4,0)
-        this.add(5,0)
-        this.add(7,0)
     }
-    add(type,level){
-        this.cards.push(new card(this.layer,1206,500,type,level))
+    add(type,level,color){
+        this.cards.push(new card(this.layer,1206,500,type,level,color))
     }
-    addDrop(type,level){
-        this.cards.push(new card(this.layer,50,-200,type,level))
+    addDrop(type,level,color){
+        this.cards.push(new card(this.layer,50,-200,type,level,color))
     }
     shuffle(){
         for(e=0,le=this.cards.length;e<le;e++){

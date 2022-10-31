@@ -46,7 +46,9 @@ class combatant{
         this.layer.rotate(this.direction)
         this.layer.scale(this.size*this.flip,this.size)
         switch(this.type){
-            case 1: case 2:
+            case 1:
+			break
+			case 4:
 				this.layer.stroke(80,this.fade)
 				this.layer.strokeWeight(4)
 				this.layer.line(-4,-30,-8,0)
