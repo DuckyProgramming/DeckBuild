@@ -10,9 +10,11 @@ class battle{
         this.combatants=[]
         this.combatants.push(new combatant(this.layer,100,350,1,0))
         this.mana={main:3,max:3}
+        this.anim={turn:0}
         this.deck.initial()
         this.initialReserve()
         this.reserve.shuffle()
+        this.turn=0
         for(e=0;e<4;e++){
             this.draw()
         }
@@ -42,11 +44,16 @@ class battle{
         this.layer.fill(200,225,250,this.fade)
         this.layer.stroke(150,200,250,this.fade)
         this.layer.strokeWeight(6)
-        this.layer.quad(8,390,32,358,56,390,32,422)
+        this.layer.quad(-92+this.anim.turn*100,390,-68+this.anim.turn*100,358,-44+this.anim.turn*100,390,-68+this.anim.turn*100,422)
+        this.layer.fill(200,160,200,this.fade)
+        this.layer.stroke(160,120,160,this.fade)
+        this.layer.strokeWeight(5)
+        this.layer.rect(-68+this.anim.turn*100,565,40,30,5)
         this.layer.fill(0,this.fade)
         this.layer.noStroke()
         this.layer.textSize(20)
-        this.layer.text(this.mana.main+'/'+this.mana.max,32,390)
+        this.layer.text(this.mana.main+'/'+this.mana.max,-68+this.anim.turn*100,390)
+        this.layer.text('End',-68+this.anim.turn*100,565)
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].displayInfo()
         }
@@ -67,6 +74,12 @@ class battle{
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].update()
         }
+        if(this.turn==0&&this.anim.turn<1){
+            this.anim.turn=round(this.anim.turn*10+1)/10
+        }else if(this.turn!=0&&this.anim.turn>0){
+            this.anim.turn=round(this.anim.turn*10-1)/10
+        }
+        this.attack.run()
         this.hand.update()
         this.reserve.update()
         this.deck.update()
@@ -74,6 +87,12 @@ class battle{
         this.hand.updateHand()
     }
     onClick(){
-        this.hand.onClickHand()
+        if(this.turn==0){
+            this.hand.onClickHand()
+            if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:565},width:40,height:30})){
+                this.turn++
+                this.hand.discard()
+            }
+        }
     }
 }

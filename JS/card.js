@@ -7,6 +7,7 @@ class card{
         this.name=types.card[this.type].name
         this.damage=types.card[this.type].stats[this.level].damage
         this.cost=types.card[this.type].stats[this.level].cost
+        this.attack=types.card[this.type].stats[this.level].attack
         this.target=types.card[this.type].stats[this.level].target
         this.desc=types.card[this.type].stats[this.level].desc
         this.anim={select:0,afford:0}

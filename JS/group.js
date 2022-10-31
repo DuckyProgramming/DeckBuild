@@ -16,7 +16,7 @@ class group{
         }
     }
     add(type,level){
-        this.cards.push(new card(this.layer,1200,500,type,level))
+        this.cards.push(new card(this.layer,1206,500,type,level))
     }
     shuffle(){
         for(e=0,le=this.cards.length;e<le;e++){
@@ -27,6 +27,11 @@ class group{
             e=floor(random(0,this.storage.cards.length))
             this.cards.push(copyCard(this.storage.cards[e]))
             this.storage.cards.splice(e,1)
+        }
+    }
+    discard(){
+        for(e=0,le=this.cards.length;e<le;e++){
+            this.cards[e].used=true
         }
     }
     display(){ 
@@ -57,7 +62,7 @@ class group{
             }else if(!((inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250||this.cards[e].select)&&(!this.trigger||this.cards[e].trigger))&&this.cards[e].position.y<500){
                 this.cards[e].position.y+=20
             }
-            if(this.cards[e].position.x>e*80+120&&(this.cards[e].position.x>this.cards[max(0,e-1)].position.x+80||e==0)){
+            if(this.cards[e].position.x>e*80+126&&(this.cards[e].position.x>this.cards[max(0,e-1)].position.x+80||e==0)){
                 this.cards[e].position.x-=20
             }
         }
@@ -88,10 +93,10 @@ class group{
                     this.select=false
                     this.battle.attack.damage=this.cards[e].damage
                     this.battle.mana.main-=this.cards[e].cost
-                    this.battle.attack.type=this.cards[e].type
+                    this.battle.attack.type=this.cards[e].attack
                     this.battle.attack.level=this.cards[e].level
                     if(this.cards[e].target==0){
-                        this.battle.attack.update(this.cards[e].type,this.cards[e].level)
+                        this.battle.attack.update(this.cards[e].attack,this.cards[e].level)
                         this.cards[e].used=true
                         this.trigger=false
                     }else{

@@ -7,9 +7,11 @@ class attack{
         this.damage=0
         this.target=[1]
         this.targetType=0
+        this.attacks=[]
     }
     update(type,level){
         this.type=type
+        this.level=level
         switch(type){
             case 1:
                 this.battle.combatants[this.target].take(this.damage)
@@ -17,6 +19,27 @@ class attack{
             case 2:
                 this.battle.combatants[0].block+=this.damage
             break
+            case 3:
+                this.battle.combatants[this.target].take(this.damage)
+                this.attacks.push([0,20,this.target,this.damage])
+            break
+        }
+    }
+    run(){
+        for(g=0,lg=this.attacks.length;g<lg;g++){
+            this.attacks[g][1]--
+            switch(this.attacks[g][0]){
+                case 0:
+                    if(this.attacks[g][1]==0||this.attacks[g][1]==10){
+                        this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3])
+                    }
+                break
+            }
+            if(this.attacks[g][1]<=0){
+                this.attacks.splice(g,1)
+                g--
+                lg--
+            }
         }
     }
 }
