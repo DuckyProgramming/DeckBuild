@@ -4,34 +4,39 @@ types={
         stats:[],
         },{name:'Strike',
         stats:[
-            {damage:6,cost:1,attack:1,target:1,desc:'Deal 6\nDamage'},
-            {damage:9,cost:1,attack:1,target:1,desc:'Deal 9\nDamage'},
+            {damage:6,cost:1,attack:1,target:1,desc:'Deal 6\nDamage',spec:0},
+            {damage:9,cost:1,attack:1,target:1,desc:'Deal 9\nDamage',spec:0},
         ],
         },{name:'Defend',
         stats:[
-            {damage:5,cost:1,attack:2,target:0,desc:'Add 5\nBlock'},
-            {damage:8,cost:1,attack:2,target:0,desc:'Add 8\nBlock'},
+            {damage:5,cost:1,attack:2,target:0,desc:'Add 5\nBlock',spec:0},
+            {damage:8,cost:1,attack:2,target:0,desc:'Add 8\nBlock',spec:0},
         ],
         },{name:'Big Strike',
         stats:[
-            {damage:14,cost:2,attack:1,target:1,desc:'Deal 14\nDamage'},
-            {damage:22,cost:2,attack:1,target:1,desc:'Deal 22\nDamage'},
+            {damage:14,cost:2,attack:1,target:1,desc:'Deal 14\nDamage',spec:0},
+            {damage:22,cost:2,attack:1,target:1,desc:'Deal 22\nDamage',spec:0},
         ],
         },{name:'Triple',
         stats:[
-            {damage:3,cost:1,attack:3,target:1,desc:'Deal 3\nDamage 3\nTimes'},
-            {damage:4,cost:1,attack:3,target:1,desc:'Deal 4\nDamage 3\nTimes'},
+            {damage:3,cost:1,attack:3,target:1,desc:'Deal 3\nDamage 3\nTimes',spec:0},
+            {damage:4,cost:1,attack:3,target:1,desc:'Deal 4\nDamage 3\nTimes',spec:0},
         ],
         },{name:'Think',
         stats:[
-            {damage:2,cost:1,attack:4,target:0,desc:'Draw 2 Cards'},
-            {damage:2,cost:0,attack:4,target:0,desc:'Draw 2 Cards'},
+            {damage:2,cost:1,attack:4,target:0,desc:'Draw 2 Cards',spec:0},
+            {damage:2,cost:0,attack:4,target:0,desc:'Draw 2 Cards',spec:0},
+        ],
+        },{name:'Confusion',
+        stats:[
+            {damage:0,cost:0,attack:0,target:0,desc:'Unplayable',spec:1},
+            {damage:0,cost:0,attack:0,target:0,desc:'Unplayable',spec:1},
         ],
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[]},
         {name:'Player',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[]},
-        {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1],damage:[4]},
+        {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1,2],damage:[4]},
     ],
 }
 combatants=[

@@ -22,6 +22,9 @@ class group{
     add(type,level){
         this.cards.push(new card(this.layer,1206,500,type,level))
     }
+    addDrop(type,level){
+        this.cards.push(new card(this.layer,50,-200,type,level))
+    }
     shuffle(){
         for(e=0,le=this.cards.length;e<le;e++){
             this.storage.cards.push(copyCard(this.cards[e]))
@@ -45,13 +48,12 @@ class group{
     }
     update(){
         for(e=0,le=this.cards.length;e<le;e++){
-            if(this.cards[e].remove){
+            if(this.cards[e].discard){
+                this.battle.discard.cards.push(copyCard(this.cards[e]))
                 this.cards.splice(e,1)
                 e--
                 le--
-            }
-            if(this.cards[e].discard){
-                this.battle.discard.cards.push(copyCard(this.cards[e]))
+            }else if(this.cards[e].remove){
                 this.cards.splice(e,1)
                 e--
                 le--
@@ -68,6 +70,15 @@ class group{
             }
             if(this.cards[e].position.x>e*80+126&&(this.cards[e].position.x>this.cards[max(0,e-1)].position.x+80||e==0)){
                 this.cards[e].position.x-=20
+            }
+        }
+    }
+    updateDrop(){
+        for(e=0,le=this.cards.length;e<le;e++){
+            this.cards[e].size=0.5
+            this.cards[e].position.y+=20
+            if(this.cards[e].position.y>800){
+                this.cards[e].remove=true
             }
         }
     }
@@ -112,7 +123,7 @@ class group{
                     this.cards[e].select=false
                     this.select=false
                 }
-                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger){
+                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&this.cards[e].spec!=1){
                     this.cards[e].select=true
                     this.select=true
                     this.selected=true

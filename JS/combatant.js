@@ -87,8 +87,11 @@ class combatant{
 			switch(this.attacks[this.intent]){
 				case 1:
 					this.layer.fill(255,50,50,this.fade)
-					this.layer.noStroke()
 					this.layer.triangle(-20,-this.height-30,15,-this.height-36,15,-this.height-24)
+				break
+				case 2:
+					this.layer.fill(125,255,255,this.fade)
+					this.layer.ellipse(0,-this.height-33,24,24)
 				break
 			}
 		}
@@ -109,6 +112,11 @@ class combatant{
 					this.layer.fill(255,this.fade)
 					this.layer.textSize(20)
 					this.layer.text(this.damage[this.intent],0,-this.height-30)
+				break
+				case 2:
+					this.layer.fill(255,this.fade)
+					this.layer.textSize(20)
+					this.layer.text('?',0,-this.height-32)
 				break
 			}
 		}

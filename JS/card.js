@@ -10,6 +10,7 @@ class card{
         this.attack=types.card[this.type].stats[this.level].attack
         this.target=types.card[this.type].stats[this.level].target
         this.desc=types.card[this.type].stats[this.level].desc
+        this.spec=types.card[this.type].stats[this.level].spec
         this.anim={select:0,afford:0}
         this.width=120
         this.height=160
@@ -29,18 +30,27 @@ class card{
             this.layer.fill(255,this.fade*this.anim.select)
             this.layer.noStroke()
             this.layer.rect(0,0,this.width+15,this.height+15,10)
-            this.layer.fill(200,160,200,this.fade)
-            this.layer.stroke(160,120,160,this.fade)
-            this.layer.strokeWeight(5)
-            this.layer.rect(0,0,this.width,this.height,5)
-            this.layer.fill(200,225,250,this.fade)
-            this.layer.stroke(150,200,250,this.fade)
-            this.layer.strokeWeight(3)
-            this.layer.quad(-this.width/2+4,-this.height/2+20,-this.width/2+16,-this.height/2+4,-this.width/2+28,-this.height/2+20,-this.width/2+16,-this.height/2+36)
+            if(this.spec!=1){
+                this.layer.fill(200,160,200,this.fade)
+                this.layer.stroke(160,120,160,this.fade)
+                this.layer.strokeWeight(5)
+                this.layer.rect(0,0,this.width,this.height,5)
+                this.layer.fill(200,225,250,this.fade)
+                this.layer.stroke(150,200,250,this.fade)
+                this.layer.strokeWeight(3)
+                this.layer.quad(-this.width/2+4,-this.height/2+20,-this.width/2+16,-this.height/2+4,-this.width/2+28,-this.height/2+20,-this.width/2+16,-this.height/2+36)
+            }else{
+                this.layer.fill(120,this.fade)
+                this.layer.stroke(80,this.fade)
+                this.layer.strokeWeight(5)
+                this.layer.rect(0,0,this.width,this.height,5)
+            }
             this.layer.fill(this.anim.afford*240,0,0,this.fade)
             this.layer.noStroke()
-            this.layer.textSize(20)
-            this.layer.text(this.cost,-this.width/2+16,-this.height/2+20)
+            if(this.spec!=1){
+                this.layer.textSize(20)
+                this.layer.text(this.cost,-this.width/2+16,-this.height/2+20)
+            }
             this.layer.fill(0,this.fade)
             this.layer.textSize(16)
             this.layer.text(this.name,0,-this.height/2+20)
@@ -60,14 +70,14 @@ class card{
             this.discard=true
         }
         if(this.select&&this.anim.select<1){
-            this.anim.select+=0.1
+            this.anim.select+=0.2
         }else if(!this.select&&this.anim.select>0){
-            this.anim.select-=0.1
+            this.anim.select-=0.2
         }
         if(mana.main<this.cost&&this.anim.afford<1){
-            this.anim.afford+=0.1
+            this.anim.afford+=0.2
         }else if(mana.main>=this.cost&&this.anim.afford>0){
-            this.anim.afford-=0.1
+            this.anim.afford-=0.2
         }
         if(this.trigger&&!this.used){
             if(dist(this.position.x,this.position.y,100,120)<20){

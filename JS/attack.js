@@ -39,6 +39,10 @@ class attack{
                     this.battle.combatants[0].take(this.damage)
                     this.attacks.push([1,12,this.user,this.damage])
                 break
+                case 2:
+                    this.battle.drop.addDrop(6,0)
+                    this.battle.reserve.add(6,0)
+                break
             }
         }
     }

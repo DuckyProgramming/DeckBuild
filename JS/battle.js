@@ -5,6 +5,7 @@ class battle{
         this.reserve=new group(this.layer,this)
         this.deck=new group(this.layer,this)
         this.discard=new group(this.layer,this)
+        this.drop=new group(this.layer,this)
         this.attack=new attack(this.layer,this)
         this.particles=[]
         this.combatants=[]
@@ -53,6 +54,7 @@ class battle{
     endTurn(){
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].block=0
+            this.combatants[e].setupIntent()
         }
     }
     display(){
@@ -78,6 +80,7 @@ class battle{
             this.combatants[e].displayInfo()
         }
         this.hand.display()
+        this.drop.display()
         for(e=0,le=this.particles.length;e<le;e++){
             this.particles[e].display()
         }
@@ -104,7 +107,9 @@ class battle{
         this.reserve.update()
         this.deck.update()
         this.discard.update()
+        this.drop.update()
         this.hand.updateHand()
+        this.drop.updateDrop()
         if(this.turn>0){
             if(this.turnTimer>0){
                 this.turnTimer--
@@ -125,6 +130,7 @@ class battle{
                 }
             }
             if(this.turn==0){
+                this.reserve.shuffle()
                 for(e=0;e<this.drawAmount;e++){
                     this.draw()
                 }
