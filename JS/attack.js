@@ -80,9 +80,29 @@ class attack{
                     for(g=0;g<this.damage;g++){
                         this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[0])
                     }
-                    this.battle.combatants[0].ammo[0]=this.battle.combatants[0].ammo[1]
-                    this.battle.combatants[0].ammo[1]=this.battle.combatants[0].ammo[2]
-                    this.battle.combatants[0].ammo[2]=-1
+                    for(g=0,lg=this.battle.combatants[0].ammo.length-1;g<lg;g++){
+                        this.battle.combatants[0].ammo[g]=this.battle.combatants[0].ammo[g+1]
+                    }
+                    this.battle.combatants[0].ammo[this.battle.combatants[0].ammo.length-1]=-1
+                break
+                case 15:
+                    this.battle.combatants[0].load(1)
+                break
+                case 16:
+                    this.battle.combatants[0].load(2)
+                    if(this.level>=1){
+                        this.battle.combatants[0].load(2)
+                    }
+                break
+                case 17:
+                    for(g=0,lg=this.battle.combatants[0].ammo.length;g<lg;g++){
+                        this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[g])
+                        this.battle.combatants[0].ammo[g]=-1
+                    }
+                break
+                case 18:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.allDiscard()
                 break
             }
         }else{

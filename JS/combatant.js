@@ -223,6 +223,24 @@ class combatant{
 					}
 				}
 			break
+			case 1:
+				i=0
+				for(h=1,lh=current.combatants.length;h<lh;h++){
+					if(i==0&&current.combatants[h].life>0){
+						current.combatants[h].take(12,0)
+						if(current.combatants[h+1].life>0){
+							current.combatants[h+1].take(4,0)
+						}
+						if(current.combatants[h-1].life>0&&h>1){
+							current.combatants[h-1].take(4,0)
+						}
+						i=1
+					}
+				}
+			break
+			case 2:
+				this.block+=10
+			break
 		}
 	}
 	load(type){

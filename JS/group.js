@@ -22,14 +22,18 @@ class group{
                 this.add(5,0,this.battle.player)
                 this.add(7,0,this.battle.player)
                 this.add(8,0,this.battle.player)
-                this.add(9,0,this.battle.player)
+                this.add(9,0,this.battle.player)*/
                 this.add(10,0,this.battle.player)
-                this.add(12,0,this.battle.player)*/
+                this.add(12,0,this.battle.player)
                 this.add(13,0,this.battle.player)
                 this.add(14,0,this.battle.player)
                 this.add(15,0,this.battle.player)
                 this.add(16,0,this.battle.player)
                 this.add(17,0,this.battle.player)
+                this.add(18,0,this.battle.player)
+                this.add(19,0,this.battle.player)
+                this.add(20,0,this.battle.player)
+                this.add(21,0,this.battle.player)
             break
         }
     }

@@ -36,6 +36,17 @@ function displayAmmo(layer,x,y,type,fade){
 			layer.strokeWeight(3)
 			layer.line(-6,0,6,0)
 		break
+		case 1:
+			layer.stroke(255,50,50,fade)
+			layer.strokeWeight(3)
+			layer.line(-6,0,6,0)
+		break
+		case 2:
+			layer.noFill()
+			layer.stroke(50,255,255,fade)
+			layer.strokeWeight(2)
+			layer.quad(-4,0,0,-4,4,0,0,4)
+		break
 	}
 	layer.translate(-x,-y)
 }

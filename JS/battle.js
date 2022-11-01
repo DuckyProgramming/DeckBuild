@@ -82,7 +82,14 @@ class battle{
             }
         }
         if(this.calc.list.length>0){
-            this.hand.cards[this.calc.list[floor(random(0,this.calc.list.length))]].discard=true
+            this.hand.cards[this.calc.list[floor(random(0,this.calc.list.length))]].used=true
+        }
+    }
+    allDiscard(){
+        for(g=0,lg=this.hand.cards.length;g<lg;g++){
+            if(!this.hand.cards[g].trigger){
+                this.hand.cards[g].used=true
+            }
         }
     }
     display(){

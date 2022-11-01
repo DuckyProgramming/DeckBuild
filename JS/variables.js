@@ -59,8 +59,8 @@ types={
         ],
         },{name:'Exhausting\nStrike',
         stats:[
-            {damage:8,alt:0,cost:0,attack:9,target:1,desc:'Deal 9 Damage\nDiscard a Card',spec:0,class:1},
-            {damage:12,alt:0,cost:0,attack:9,target:1,desc:'Deal 13 Damage\nDiscard a Card',spec:0,class:1},
+            {damage:8,alt:0,cost:0,attack:9,target:1,desc:'Deal 8 Damage\nDiscard a Card',spec:0,class:1},
+            {damage:12,alt:0,cost:0,attack:9,target:1,desc:'Deal 12 Damage\nDiscard a Card',spec:0,class:1},
         ],
         },{name:'Chain\nStrike',
         stats:[
@@ -86,6 +86,26 @@ types={
         stats:[
             {damage:2,alt:0,cost:1,attack:14,target:0,desc:'Fire 1st Bullet\n2 Times',spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:14,target:0,desc:'Fire 1st Bullet\n3 Times',spec:0,class:2},
+        ],
+        },{name:'Explode',
+        stats:[
+            {damage:0,alt:0,cost:1,attack:15,target:0,desc:'Hold 1\nExplosive Bullet',spec:0,class:3},
+            {damage:0,alt:0,cost:0,attack:15,target:0,desc:'Hold 1\nExplosive Bullet',spec:0,class:3},
+        ],
+        },{name:'Shields',
+        stats:[
+            {damage:0,alt:0,cost:0,attack:16,target:0,desc:'Hold 1\nShield Charge',spec:0,class:3},
+            {damage:0,alt:0,cost:0,attack:16,target:0,desc:'Hold 2\nShield Charge',spec:0,class:3},
+        ],
+        },{name:'Unload',
+        stats:[
+            {damage:0,alt:0,cost:2,attack:17,target:0,desc:'Fire All\nBullets',spec:0,class:2},
+            {damage:0,alt:0,cost:1,attack:17,target:0,desc:'Fire All\nBullets',spec:0,class:2},
+        ],
+        },{name:'Head\nSmash',
+        stats:[
+            {damage:22,alt:0,cost:3,attack:18,target:1,desc:'Deal 22 Damage\nDiscard Hand',spec:0,class:0},
+            {damage:30,alt:0,cost:3,attack:18,target:1,desc:'Deal 30 Damage\nDiscard Hand',spec:0,class:0},
         ],
         },
     ],combatant:[
