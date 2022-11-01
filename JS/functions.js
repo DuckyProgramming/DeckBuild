@@ -47,6 +47,12 @@ function displayAmmo(layer,x,y,type,fade){
 			layer.strokeWeight(2)
 			layer.quad(-4,0,0,-4,4,0,0,4)
 		break
+		case 3:
+			layer.noFill()
+			layer.stroke(255,255,125,fade)
+			layer.strokeWeight(2)
+			layer.ellipse(0,0,8,8)
+		break
 	}
 	layer.translate(-x,-y)
 }

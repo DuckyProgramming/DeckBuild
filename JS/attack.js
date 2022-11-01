@@ -104,6 +104,13 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.allDiscard()
                 break
+                case 19:
+                    this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[this.battle.combatants[0].ammo.length-1].type)
+                    this.battle.combatants[0].ammo.splice(this.battle.combatants[0].ammo.length-1,1)
+                break
+                case 20:
+                    this.battle.combatants[0].load(3)
+                break
             }
         }else{
             switch(type){

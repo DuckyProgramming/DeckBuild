@@ -11,7 +11,7 @@ class group{
     initial(type){
         switch(type){
             case 1:
-                /*for(e=0;e<5;e++){
+                for(e=0;e<5;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<5;e++){
@@ -22,7 +22,7 @@ class group{
                 this.add(5,0,this.battle.player)
                 this.add(7,0,this.battle.player)
                 this.add(8,0,this.battle.player)
-                this.add(9,0,this.battle.player)*/
+                this.add(9,0,this.battle.player)
                 this.add(10,0,this.battle.player)
                 this.add(12,0,this.battle.player)
                 this.add(13,0,this.battle.player)
@@ -34,6 +34,8 @@ class group{
                 this.add(19,0,this.battle.player)
                 this.add(20,0,this.battle.player)
                 this.add(21,0,this.battle.player)
+                this.add(22,0,this.battle.player)
+                this.add(23,0,this.battle.player)
             break
         }
     }

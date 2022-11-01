@@ -107,6 +107,16 @@ types={
             {damage:22,alt:0,cost:3,attack:18,target:1,desc:'Deal 22 Damage\nDiscard Hand',spec:0,class:0},
             {damage:30,alt:0,cost:3,attack:18,target:1,desc:'Deal 30 Damage\nDiscard Hand',spec:0,class:0},
         ],
+        },{name:'Streamline',
+        stats:[
+            {damage:1,alt:0,cost:1,attack:19,target:0,desc:'Lose 1\nAmmo Slot',spec:0,class:3},
+            {damage:2,alt:0,cost:0,attack:19,target:0,desc:'Lose 1\nAmmo Slot',spec:0,class:3},
+        ],
+        },{name:'Energize',
+        stats:[
+            {damage:0,alt:0,cost:2,attack:20,target:0,desc:'Hold 1\nEnergy Charge',spec:0,class:3},
+            {damage:0,alt:0,cost:1,attack:20,target:0,desc:'Hold 1\nEnergy Charge',spec:0,class:3},
+        ],
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],alt:[]},

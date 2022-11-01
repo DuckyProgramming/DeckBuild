@@ -72,12 +72,26 @@ class combatant{
 				this.layer.fill(200,this.fade/2)
 				this.layer.rect(8,-75,20,6)
 				this.layer.fill(255,this.fade/5)
-				this.layer.ellipse(0,-120,20,20)
-				this.layer.ellipse(-25,-110,20,20)
-				this.layer.ellipse(25,-110,20,20)
-				displayAmmo(this.layer,25,-110,this.ammo[0],this.fade)
-				displayAmmo(this.layer,0,-120,this.ammo[1],this.fade)
-				displayAmmo(this.layer,-25,-110,this.ammo[2],this.fade)
+				switch(this.ammo.length){
+					case 3:
+						this.layer.ellipse(0,-120,20,20)
+						this.layer.ellipse(-25,-110,20,20)
+						this.layer.ellipse(25,-110,20,20)
+						displayAmmo(this.layer,25,-110,this.ammo[0],this.fade)
+						displayAmmo(this.layer,0,-120,this.ammo[1],this.fade)
+						displayAmmo(this.layer,-25,-110,this.ammo[2],this.fade)
+					break
+					case 2:
+						this.layer.ellipse(-15,-115,20,20)
+						this.layer.ellipse(15,-115,20,20)
+						displayAmmo(this.layer,15,-115,this.ammo[0],this.fade)
+						displayAmmo(this.layer,-15,-115,this.ammo[1],this.fade)
+					break
+					case 1:
+						this.layer.ellipse(0,-120,20,20)
+						displayAmmo(this.layer,0,-120,this.ammo[0],this.fade)
+					break
+				}
 			break
 			case 4:
 				this.layer.stroke(80,this.fade)
@@ -241,21 +255,25 @@ class combatant{
 			case 2:
 				this.block+=10
 			break
+			case 3:
+				current.mana.main+=3
+			break
 		}
 	}
 	load(type){
-		if(this.ammo[0]==-1){
-			this.ammo[0]=type
-		}else if(this.ammo[1]==-1){
-			this.ammo[1]=type
-		}else if(this.ammo[2]==-1){
-			this.ammo[2]=type
-		}else{
+		this.loaded=false
+		for(h=0,lh=this.ammo.length;h<lh;h++){
+			if(this.ammo[h]==-1&&!this.loaded){
+				this.ammo[h]=type
+				this.loaded=true
+			}
+		}
+		if(!this.loaded){
 			this.evoke(this.ammo[0])
-			this.ammo.splice(0,1)
-			this.ammo[0]=this.ammo[1]
-			this.ammo[1]=this.ammo[2]
-			this.ammo[2]=type
+			for(h=0,lh=this.ammo.length-1;h<lh;h++){
+				this.ammo[h]=this.ammo[h+1]
+			}
+			this.ammo[this.ammo.length-1]=type
 		}
 	}
 	take(damage,user){
