@@ -19,6 +19,7 @@ class battle{
         this.turn=0
         this.turnTimer=0
         this.drawAmount=5
+        this.calc={list:[]}
         for(e=0;e<this.drawAmount;e++){
             this.draw()
         }
@@ -69,6 +70,17 @@ class battle{
             if(this.hand.cards[g].type==11){
                 this.combatants[0].take(1,0)
             }
+        }
+    }
+    randomDiscard(){
+        this.calc.list=[]
+        for(g=0,lg=this.hand.cards.length;g<lg;g++){
+            if(!this.hand.cards[g].discard){
+                this.calc.list.push(g)
+            }
+        }
+        if(this.calc.list.length>0){
+            this.hand.cards[this.calc.list[floor(random(0,this.calc.list.length))]].discard=true
         }
     }
     display(){

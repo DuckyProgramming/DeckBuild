@@ -57,6 +57,11 @@ types={
             {damage:0,alt:0,cost:0,attack:0,target:0,desc:'Unplayable\nTake 1 Damage\nper Card Played',spec:1},
             {damage:0,alt:0,cost:0,attack:0,target:0,desc:'Unplayable\nTake 1 Damage\nper Card Played',spec:1},
         ],
+        },{name:'Exhausting\nStrike',
+        stats:[
+            {damage:8,alt:0,cost:0,attack:9,target:1,desc:'Deal 9 Damage\nDiscard a Card',spec:0},
+            {damage:12,alt:0,cost:0,attack:9,target:1,desc:'Deal 13 Damage\nDiscard a Card',spec:0},
+        ],
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[]},

@@ -49,6 +49,10 @@ class attack{
                     this.battle.drop.addDrop(11,0,4)
                     this.battle.reserve.add(11,0,4)
                 break
+                case 9:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.randomDiscard()
+                break
             }
         }else{
             switch(type){
