@@ -54,6 +54,8 @@ class battle{
         }
     }
     endTurn(){
+        this.mana.main=this.mana.max
+        this.mana.main+=this.combatants[0].status.main[1]
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].block=0
             this.combatants[e].setupIntent()
@@ -162,7 +164,6 @@ class battle{
                     this.draw()
                 }
                 this.endTurn()
-                this.mana.main=this.mana.max
             }
         }
     }

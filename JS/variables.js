@@ -67,20 +67,25 @@ types={
             {damage:5,alt:0,cost:1,attack:10,target:1,desc:'Deal 5 Damage\nIf Fatal, gain\n1 Energy',spec:0},
             {damage:7,alt:0,cost:0,attack:10,target:1,desc:'Deal 7 Damage\nIf Fatal, gain\n1 Energy',spec:0},
         ],
+        },{name:'Hook Strike',
+        stats:[
+            {damage:4,alt:2,cost:1,attack:11,target:1,desc:'Deal 4 Damage\nGain 2 Mana\nNext Turn',spec:0},
+            {damage:6,alt:2,cost:1,attack:11,target:1,desc:'Deal 6 Damage\nGain 2 Mana\nNext Turn',spec:0},
+        ],
         },
     ],combatant:[
-        {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[]},
-        {name:'Agent',alt:'',life:80,height:75,behavior:0,attacks:[],damage:[]},
-        {name:'Player',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[]},
-        {name:'Player',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[]},
-        {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1,2],damage:[4]},
+        {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],alt:[]},
+        {name:'Agent',alt:'',life:80,height:75,behavior:0,attacks:[],damage:[],alt:[]},
+        {name:'Player',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],alt:[]},
+        {name:'Player',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],alt:[]},
+        {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1,2],damage:[4],alt:[]},
     ],
 }
 combatants=[
     {type:4},
     {type:4},
-    {type:0},
-    {type:0},
+    {type:4},
+    {type:4},
     {type:0},
     {type:0},
 ]

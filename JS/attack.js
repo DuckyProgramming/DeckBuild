@@ -59,6 +59,10 @@ class attack{
                         this.battle.mana.main++
                     }
                 break
+                case 11:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].status.main[1]+=this.alt
+                break
             }
         }else{
             switch(type){

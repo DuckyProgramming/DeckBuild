@@ -19,12 +19,11 @@ class combatant{
         this.collect={life:this.life}
 		this.calc={damage:0}
 		this.boost={main:[0,0],fade:[0,0],display:[],color:[[200,0,0],[0,150,255]],infoFade:[0,0],name:['Attack','Defense']}
-		this.status={main:[],fade:[],display:[],color:[[255,125,0]],infoFade:[],name:[],class:[]}
-		for(g=0;g<1;g++){
+		this.status={main:[],fade:[],display:[],color:[[255,125,0],[200,225,250]],infoFade:[],name:[],class:[1,1]}
+		for(g=0;g<2;g++){
 			this.status.main.push(0)
 			this.status.fade.push(0)
 			this.status.infoFade.push(0)
-			this.status.class.push(0)
 		}
 		this.block=0
 		this.fades={block:0,info:0}

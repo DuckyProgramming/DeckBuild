@@ -26,6 +26,7 @@ class group{
                 this.add(10,0,this.battle.player)
                 this.add(12,0,this.battle.player)
                 this.add(13,0,this.battle.player)
+                this.add(14,0,this.battle.player)
             break
         }
     }
@@ -119,7 +120,7 @@ class group{
                     this.cards[e].trigger=true
                     this.select=false
                     this.battle.attack.damage=this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0]))
-                    this.battle.attack.alt=this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0]))
+                    this.battle.attack.alt=this.cards[e].alt*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0]))
                     this.battle.attack.mana=this.battle.mana.main
                     if(this.cards[e].cost==-1){
                         this.battle.mana.main=0
