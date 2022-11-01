@@ -62,6 +62,11 @@ types={
             {damage:8,alt:0,cost:0,attack:9,target:1,desc:'Deal 9 Damage\nDiscard a Card',spec:0},
             {damage:12,alt:0,cost:0,attack:9,target:1,desc:'Deal 13 Damage\nDiscard a Card',spec:0},
         ],
+        },{name:'Chain\nStrike',
+        stats:[
+            {damage:5,alt:0,cost:1,attack:10,target:1,desc:'Deal 5 Damage\nIf Fatal, gain\n1 Energy',spec:0},
+            {damage:7,alt:0,cost:0,attack:10,target:1,desc:'Deal 7 Damage\nIf Fatal, gain\n1 Energy',spec:0},
+        ],
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[]},

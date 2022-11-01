@@ -53,6 +53,12 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.randomDiscard()
                 break
+                case 10:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].life<=0){
+                        this.battle.mana.main++
+                    }
+                break
             }
         }else{
             switch(type){
