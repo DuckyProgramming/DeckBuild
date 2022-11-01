@@ -56,7 +56,10 @@ class card{
             }
             this.layer.fill(this.anim.afford*240,0,0,this.fade)
             this.layer.noStroke()
-            if(this.spec!=1){
+            if(this.cost==-1){
+                this.layer.textSize(20)
+                this.layer.text('X',-this.width/2+16,-this.height/2+20)
+            }else if(this.spec!=1){
                 this.layer.textSize(20)
                 this.layer.text(this.cost,-this.width/2+16,-this.height/2+20)
             }
@@ -73,11 +76,11 @@ class card{
                         this.layer.fill(40,this.fade)
                     break
                 }
-                this.layer.text(this.name+'+',0,-this.height/2+20)
+                this.layer.text(this.name+'+',0,-this.height/2+24)
                 this.layer.fill(0,this.fade)
             }else{
                 this.layer.fill(0,this.fade)
-                this.layer.text(this.name,0,-this.height/2+20)
+                this.layer.text(this.name,0,-this.height/2+24)
             }
             this.layer.textSize(12)
             this.layer.text(this.desc,0,10)

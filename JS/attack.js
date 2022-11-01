@@ -5,6 +5,7 @@ class attack{
         this.type=0
         this.level=0
         this.side=0
+        this.mana=0
         this.damage=0
         this.alt=0
         this.user=0
@@ -39,6 +40,9 @@ class attack{
                 case 6:
                     this.battle.combatants[0].block+=this.damage
                     this.battle.combatants[0].status.main[0]+=this.alt
+                break
+                case 7:
+                    this.battle.combatants[0].block+=this.damage*this.mana
                 break
             }
         }else{

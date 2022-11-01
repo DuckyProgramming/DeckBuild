@@ -59,7 +59,7 @@ class battle{
             for(f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
                 this.combatants[e].boost.main[f]=0
             }
-            for(f=0,lf=this.combatants[e].status.main.lengthW;f<lf;f++){
+            for(f=0,lf=this.combatants[e].status.main.length;f<lf;f++){
                 this.combatants[e].status.main[f]=0
             }
         }

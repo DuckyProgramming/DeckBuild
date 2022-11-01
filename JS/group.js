@@ -17,11 +17,12 @@ class group{
                 for(e=0;e<5;e++){
                     this.add(2,0,this.battle.player)
                 }
-                this.add(3,0,this.battle.player)
+                this.add(3,0,this.battle.player)*/
                 this.add(4,0,this.battle.player)
                 this.add(5,0,this.battle.player)
-                this.add(7,0,this.battle.player)*/
+                this.add(7,0,this.battle.player)
                 this.add(8,0,this.battle.player)
+                this.add(9,0,this.battle.player)
             break
         }
     }
@@ -115,7 +116,12 @@ class group{
                     this.select=false
                     this.battle.attack.damage=this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0]))
                     this.battle.attack.alt=this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0]))
-                    this.battle.mana.main-=this.cards[e].cost
+                    this.battle.attack.mana=this.battle.mana.main
+                    if(this.cards[e].cost==-1){
+                        this.battle.mana.main=0
+                    }else{
+                        this.battle.mana.main-=this.cards[e].cost
+                    }
                     this.battle.attack.type=this.cards[e].attack
                     this.battle.attack.level=this.cards[e].level
                     if(this.cards[e].target==0){

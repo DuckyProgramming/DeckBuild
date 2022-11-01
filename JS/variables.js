@@ -39,8 +39,13 @@ types={
         ],
         },{name:'Electrify',
         stats:[
-            {damage:3,alt:4,cost:1,attack:6,target:0,desc:'Add 3 Block\nDeal 4 Damage\nWhen Attacked',spec:0},
-            {damage:6,alt:8,cost:1,attack:6,target:0,desc:'Add 6 Block\nDeal 8 Damage\nWhen Attacked',spec:0},
+            {damage:3,alt:4,cost:1,attack:6,target:0,desc:'Add 3 Block\nCounter 4',spec:0},
+            {damage:6,alt:8,cost:1,attack:6,target:0,desc:'Add 6 Block\nCounter 8',spec:0},
+        ],
+        },{name:'Dynamic\nShield',
+        stats:[
+            {damage:4,alt:0,cost:-1,attack:7,target:0,desc:'Add 4X\nBlock',spec:0},
+            {damage:6,alt:0,cost:-1,attack:7,target:0,desc:'Add 6X\nBlock',spec:0},
         ],
         },
     ],combatant:[

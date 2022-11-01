@@ -238,7 +238,7 @@ class combatant{
 		}
 		for(g=0,lg=this.status.main.length;g<lg;g++){
 			if(this.status.fade[g]!=0){
-				this.statusDisplay.push(g)
+				this.status.display.push(g)
 			}
 			if(this.status.fade[g]<1&&this.status.main[g]!=0){
 				this.status.fade[g]=round(this.status.fade[g]*5+1)/5
