@@ -20,6 +20,7 @@ class combatant{
 		this.calc={damage:0}
 		this.boost={main:[0,0],fade:[0,0],display:[],color:[[200,0,0],[0,150,255]],infoFade:[0,0],name:['Attack','Defense']}
 		this.status={main:[],fade:[],display:[],color:[[255,125,0],[200,225,250]],infoFade:[],name:[],class:[1,1]}
+		this.ammo=[-1,-1,-1]
 		for(g=0;g<2;g++){
 			this.status.main.push(0)
 			this.status.fade.push(0)
@@ -70,6 +71,13 @@ class combatant{
 				this.layer.arc(0,-78,36,36,-180,0)
 				this.layer.fill(200,this.fade/2)
 				this.layer.rect(8,-75,20,6)
+				this.layer.fill(255,this.fade/5)
+				this.layer.ellipse(0,-120,20,20)
+				this.layer.ellipse(-25,-110,20,20)
+				this.layer.ellipse(25,-110,20,20)
+				displayAmmo(this.layer,25,-110,this.ammo[0],this.fade)
+				displayAmmo(this.layer,0,-120,this.ammo[1],this.fade)
+				displayAmmo(this.layer,-25,-110,this.ammo[2],this.fade)
 			break
 			case 4:
 				this.layer.stroke(80,this.fade)
@@ -204,6 +212,34 @@ class combatant{
 		}
 		this.layer.translate(-this.base.position.x,-this.base.position.y)
     }
+	evoke(type){
+		switch(type){
+			case 0:
+				i=0
+				for(h=1,lh=current.combatants.length;h<lh;h++){
+					if(i==0&&current.combatants[h].life>0){
+						current.combatants[h].take(8,0)
+						i=1
+					}
+				}
+			break
+		}
+	}
+	load(type){
+		if(this.ammo[0]==-1){
+			this.ammo[0]=type
+		}else if(this.ammo[1]==-1){
+			this.ammo[1]=type
+		}else if(this.ammo[2]==-1){
+			this.ammo[2]=type
+		}else{
+			this.evoke(this.ammo[0])
+			this.ammo.splice(0,1)
+			this.ammo[0]=this.ammo[1]
+			this.ammo[1]=this.ammo[2]
+			this.ammo[2]=type
+		}
+	}
 	take(damage,user){
 		this.calc.damage=damage/(2+max(0,this.boost.main[1]))*(2-min(0,this.boost.main[1]))
 		if(this.block>this.calc.damage){

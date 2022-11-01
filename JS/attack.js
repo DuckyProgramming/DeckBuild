@@ -63,6 +63,27 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.combatants[0].status.main[1]+=this.alt
                 break
+                case 12:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0){
+                            this.battle.combatants[g].take(this.damage,this.user)
+                        }
+                    }
+                break
+                case 13:
+                    this.battle.combatants[0].load(0)
+                    if(this.level>=1){
+                        this.battle.combatants[0].load(0)
+                    }
+                break
+                case 14:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[0])
+                    }
+                    this.battle.combatants[0].ammo[0]=this.battle.combatants[0].ammo[1]
+                    this.battle.combatants[0].ammo[1]=this.battle.combatants[0].ammo[2]
+                    this.battle.combatants[0].ammo[2]=-1
+                break
             }
         }else{
             switch(type){

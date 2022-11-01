@@ -28,6 +28,17 @@ function displayTransition(layer,transition){
 		transition.anim=round(transition.anim*10-1)/10
 	}
 }
+function displayAmmo(layer,x,y,type,fade){
+	layer.translate(x,y)
+	switch(type){
+		case 0:
+			layer.stroke(50,255,50,fade)
+			layer.strokeWeight(3)
+			layer.line(-6,0,6,0)
+		break
+	}
+	layer.translate(-x,-y)
+}
 function regTriangle(layer,x,y,radius,direction){
 	layer.triangle(x+sin(direction)*radius,y+cos(direction)*radius,x+sin(direction+120)*radius,y+cos(direction+120)*radius,x+sin(direction+240)*radius,y+cos(direction+240)*radius);
 }

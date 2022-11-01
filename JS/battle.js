@@ -77,7 +77,7 @@ class battle{
     randomDiscard(){
         this.calc.list=[]
         for(g=0,lg=this.hand.cards.length;g<lg;g++){
-            if(!this.hand.cards[g].discard){
+            if(!this.hand.cards[g].trigger){
                 this.calc.list.push(g)
             }
         }
@@ -143,8 +143,8 @@ class battle{
                 this.turnTimer--
             }else{
                 this.attack.user=this.turn
-                this.attack.damage=this.combatants[this.turn].damage[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0]))
-                this.attack.alt=this.combatants[this.turn].alt[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0]))
+                this.attack.damage=round(this.combatants[this.turn].damage[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0])))
+                this.attack.alt=round(this.combatants[this.turn].alt[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0])))
                 this.attack.update(this.combatants[this.turn].attacks[this.combatants[this.turn].intent],0,1)
                 this.turnTimer=20
                 this.turn++

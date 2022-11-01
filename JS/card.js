@@ -13,6 +13,7 @@ class card{
         this.target=types.card[this.type].stats[this.level].target
         this.desc=types.card[this.type].stats[this.level].desc
         this.spec=types.card[this.type].stats[this.level].spec
+        this.class=types.card[this.type].stats[this.level].class
         this.anim={select:0,afford:0}
         this.width=120
         this.height=160

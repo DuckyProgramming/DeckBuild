@@ -20,13 +20,16 @@ class group{
                 this.add(3,0,this.battle.player)
                 this.add(4,0,this.battle.player)
                 this.add(5,0,this.battle.player)
-                this.add(7,0,this.battle.player)*/
+                this.add(7,0,this.battle.player)
                 this.add(8,0,this.battle.player)
                 this.add(9,0,this.battle.player)
                 this.add(10,0,this.battle.player)
-                this.add(12,0,this.battle.player)
+                this.add(12,0,this.battle.player)*/
                 this.add(13,0,this.battle.player)
                 this.add(14,0,this.battle.player)
+                this.add(15,0,this.battle.player)
+                this.add(16,0,this.battle.player)
+                this.add(17,0,this.battle.player)
             break
         }
     }
@@ -119,8 +122,12 @@ class group{
                     this.trigger=true
                     this.cards[e].trigger=true
                     this.select=false
-                    this.battle.attack.damage=this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0]))
-                    this.battle.attack.alt=this.cards[e].alt*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0]))
+                    if(this.cards[e].class==1){
+                        this.battle.attack.damage=round(this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0])))
+                    }else{
+                        this.battle.attack.damage=round(this.cards[e].damage)
+                    }
+                    this.battle.attack.alt=round(this.cards[e].alt*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0])))
                     this.battle.attack.mana=this.battle.mana.main
                     if(this.cards[e].cost==-1){
                         this.battle.mana.main=0
