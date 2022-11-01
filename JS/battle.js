@@ -64,6 +64,13 @@ class battle{
             }
         }
     }
+    playCard(){
+        for(g=0,lg=this.hand.cards.length;g<lg;g++){
+            if(this.hand.cards[g].type==11){
+                this.combatants[0].take(1,0)
+            }
+        }
+    }
     display(){
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].display()

@@ -47,6 +47,16 @@ types={
             {damage:4,alt:0,cost:-1,attack:7,target:0,desc:'Add 4X\nBlock',spec:0},
             {damage:6,alt:0,cost:-1,attack:7,target:0,desc:'Add 6X\nBlock',spec:0},
         ],
+        },{name:'Limit\nBreak',
+        stats:[
+            {damage:12,alt:0,cost:0,attack:8,target:1,desc:'Deal 12 Damage\nAdd a Bleed\nto Deck',spec:0},
+            {damage:18,alt:0,cost:0,attack:8,target:1,desc:'Deal 18 Damage\nAdd a Bleed\nto Deck',spec:0},
+        ],
+        },{name:'Bleed',
+        stats:[
+            {damage:0,alt:0,cost:0,attack:0,target:0,desc:'Unplayable\nTake 1 Damage\nper Card Played',spec:1},
+            {damage:0,alt:0,cost:0,attack:0,target:0,desc:'Unplayable\nTake 1 Damage\nper Card Played',spec:1},
+        ],
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[]},

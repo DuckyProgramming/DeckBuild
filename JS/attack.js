@@ -44,6 +44,11 @@ class attack{
                 case 7:
                     this.battle.combatants[0].block+=this.damage*this.mana
                 break
+                case 8:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.drop.addDrop(11,0,4)
+                    this.battle.reserve.add(11,0,4)
+                break
             }
         }else{
             switch(type){
