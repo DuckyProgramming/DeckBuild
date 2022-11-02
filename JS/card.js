@@ -35,7 +35,7 @@ class card{
                 this.desc='Add '+this.damage+'\nBlock'
             break
             case 4:
-                this.desc='Deal '+this.damage+' Damage '+this.alt+'\nTimes'
+                this.desc='Deal '+this.damage+' Damage\n'+this.alt+' Times'
             break
             case 5:
                 this.desc='Draw 2 Cards'
@@ -99,6 +99,27 @@ class card{
             break                
             case 25:
                 this.desc='Deal '+this.damage+' Damage\nAll Claws gain\n+2 Damage'
+            break
+            case 26:
+                this.desc='Deal '+this.damage+'X\nDamage'
+            break
+            case 27:
+                this.desc='Deal '+this.damage+' Damage\nDraw 2 Cards'
+            break
+            case 28:
+                this.desc='Heal '+this.damage+' Health'
+            break
+            case 29:
+                this.desc='Deal '+this.damage+' Damage\n'+this.alt+' Times\nRetain'
+            break
+            case 30:
+                this.desc='Deal '+this.damage+' Damage\nGain '+this.alt+' Damage\nwhen Retained\nRetain'
+            break
+            case 31:
+                this.desc='Deal '+this.damage+' Damage\nExhaust'
+            break
+            case 32:
+                this.desc='Draw '+this.damage+' Shivs'
             break
         }
     }
@@ -173,7 +194,11 @@ class card{
             this.size=round(this.size*5-1)*0.2
         }
         if(this.size<=0&&this.used){
-            this.discard=true
+            if(this.spec==3){
+                this.remove=true
+            }else{
+                this.discard=true
+            }
         }
         if(this.select&&this.anim.select<1){
             this.anim.select=round(this.anim.select*5+1)/5

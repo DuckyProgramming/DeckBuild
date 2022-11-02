@@ -12,36 +12,14 @@ class group{
         switch(type){
             case 1:
                 for(e=0;e<5;e++){
-                    this.add(1,0,this.battle.player)
+                    //this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<5;e++){
-                    this.add(2,0,this.battle.player)
+                    //this.add(2,0,this.battle.player)
                 }
-                this.add(3,0,this.battle.player)
-                this.add(4,0,this.battle.player)
-                this.add(5,0,this.battle.player)
-                this.add(7,0,this.battle.player)
-                this.add(8,0,this.battle.player)
-                this.add(9,0,this.battle.player)
-                this.add(10,0,this.battle.player)
-                this.add(12,0,this.battle.player)
-                this.add(13,0,this.battle.player)
-                this.add(14,0,this.battle.player)
-                this.add(15,0,this.battle.player)
-                this.add(16,0,this.battle.player)
-                this.add(17,0,this.battle.player)
-                this.add(18,0,this.battle.player)
-                this.add(19,0,this.battle.player)
-                this.add(20,0,this.battle.player)
-                this.add(21,0,this.battle.player)
-                this.add(22,0,this.battle.player)
-                this.add(23,0,this.battle.player)
-                this.add(24,0,this.battle.player)
-                this.add(25,0,this.battle.player)
-                this.add(25,0,this.battle.player)
-                this.add(25,0,this.battle.player)
-                this.add(25,0,this.battle.player)
-                this.add(25,0,this.battle.player)
+                for(e=0;e<15;e++){
+                    this.add(floor(random(0,33)),0,this.battle.player)
+                }
             break
         }
     }
@@ -64,7 +42,11 @@ class group{
     }
     discard(){
         for(e=0,le=this.cards.length;e<le;e++){
-            this.cards[e].used=true
+            if(this.cards[e].spec!=2){
+                this.cards[e].used=true
+            }else if(this.cards[e].type==30){
+                this.cards[e].damage+=this.cards[e].alt
+            }
         }
     }
     display(){ 
@@ -141,6 +123,7 @@ class group{
                     }
                     this.battle.attack.alt=round(this.cards[e].alt)
                     this.battle.attack.mana=this.battle.mana.main
+                    this.battle.attack.color=this.cards[e].color
                     if(this.cards[e].cost==-1){
                         this.battle.mana.main=0
                     }else{

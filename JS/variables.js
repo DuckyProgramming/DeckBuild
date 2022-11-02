@@ -124,8 +124,43 @@ types={
         ],
         },{name:'Claw',
         stats:[
-            {damage:3,alt:0,cost:1,attack:22,target:1,desc:'',spec:0,class:0},
-            {damage:5,alt:0,cost:1,attack:22,target:1,desc:'',spec:0,class:0},
+            {damage:3,alt:0,cost:0,attack:22,target:1,desc:'',spec:0,class:0},
+            {damage:5,alt:0,cost:0,attack:22,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Charge\nStrike',
+        stats:[
+            {damage:5,alt:0,cost:-1,attack:23,target:1,desc:'',spec:0,class:0},
+            {damage:7,alt:0,cost:-1,attack:23,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Cycle\nStrike',
+        stats:[
+            {damage:12,alt:0,cost:2,attack:24,target:1,desc:'',spec:0,class:0},
+            {damage:18,alt:0,cost:2,attack:24,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Heal Up',
+        stats:[
+            {damage:4,alt:0,cost:1,attack:25,target:0,desc:'',spec:0,class:2},
+            {damage:6,alt:0,cost:1,attack:25,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Sweep',
+        stats:[
+            {damage:4,alt:2,cost:1,attack:3,target:1,desc:'',spec:2,class:0},
+            {damage:6,alt:2,cost:1,attack:3,target:1,desc:'',spec:2,class:0},
+        ],
+        },{name:'Spinning\nWhack',
+        stats:[
+            {damage:12,alt:4,cost:2,attack:1,target:1,desc:'',spec:2,class:0},
+            {damage:20,alt:4,cost:2,attack:1,target:1,desc:'',spec:2,class:0},
+        ],
+        },{name:'Shiv',
+        stats:[
+            {damage:4,alt:0,cost:0,attack:1,target:1,desc:'',spec:3,class:0},
+            {damage:6,alt:0,cost:0,attack:1,target:1,desc:'',spec:3,class:0},
+        ],
+        },{name:'Blade\nDance',
+        stats:[
+            {damage:3,alt:0,cost:1,attack:26,target:0,desc:'',spec:0,class:3},
+            {damage:4,alt:0,cost:1,attack:26,target:0,desc:'',spec:0,class:3},
         ],
         },
     ],combatant:[
@@ -133,7 +168,7 @@ types={
         {name:'Agent',alt:'',life:80,height:75,behavior:0,attacks:[],damage:[],alt:[]},
         {name:'Player',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],alt:[]},
         {name:'Player',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],alt:[]},
-        {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1,2],damage:[4],alt:[]},
+        {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1,1,2],damage:[4,4,4],alt:[]},
     ],
 }
 combatants=[
@@ -141,8 +176,8 @@ combatants=[
     {type:4},
     {type:4},
     {type:4},
-    {type:0},
-    {type:0},
+    {type:4},
+    {type:4},
 ]
 stage={scale:0,scene:'battle'}
 graphics={main:0}

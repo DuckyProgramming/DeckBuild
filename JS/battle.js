@@ -167,7 +167,7 @@ class battle{
             }
             if(this.turn==0){
                 this.reserve.shuffle()
-                for(e=0;e<this.drawAmount;e++){
+                for(e=0,le=this.drawAmount-this.hand.cards.length;e<le;e++){
                     this.draw()
                 }
                 this.endTurn()

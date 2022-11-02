@@ -6,6 +6,7 @@ class attack{
         this.level=0
         this.side=0
         this.mana=0
+        this.color=0
         this.damage=0
         this.alt=0
         this.user=0
@@ -27,7 +28,7 @@ class attack{
                 break
                 case 3:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.attacks.push([0,this.alt*10,this.target,this.damage])
+                    this.attacks.push([0,this.alt*10-10,this.target,this.damage])
                 break
                 case 4:
                     for(g=0;g<this.damage;g++){
@@ -126,6 +127,22 @@ class attack{
                         if(this.battle.reserve.cards[g].attack==22){
                             this.battle.reserve.cards[g].damage+=2
                         }
+                    }
+                break
+                case 23:
+                    this.battle.combatants[this.target].take(this.damage*this.mana,this.user)
+                break
+                case 24:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.draw()
+                    this.battle.draw()
+                break
+                case 25:
+                    this.battle.combatants[0].life=min(this.battle.combatants[0].life+this.damage,this.battle.combatants[0].base.life)
+                break
+                case 26:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.hand.add(31,0,this.color)
                     }
                 break
             }
