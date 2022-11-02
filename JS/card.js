@@ -1,14 +1,14 @@
 class card{
-    constructor(layer,x,y,type,level,color){
+    constructor(layer,x,y,type,level,color,damage,alt,cost){
         this.layer=layer
         this.position={x:x,y:y}
         this.type=type
         this.level=level
         this.color=color
         this.name=types.card[this.type].name
-        this.damage=types.card[this.type].stats[this.level].damage
-        this.alt=types.card[this.type].stats[this.level].alt
-        this.cost=types.card[this.type].stats[this.level].cost
+        this.damage=damage||types.card[this.type].stats[this.level].damage
+        this.alt=alt||types.card[this.type].stats[this.level].alt
+        this.cost=cost||types.card[this.type].stats[this.level].cost
         this.attack=types.card[this.type].stats[this.level].attack
         this.target=types.card[this.type].stats[this.level].target
         this.desc=types.card[this.type].stats[this.level].desc
@@ -26,7 +26,84 @@ class card{
         this.trigger=false
         this.used=false
     }
+    displayName(){
+        switch(this.type){
+            case 1: case 3:
+                this.desc='Deal '+this.damage+'\nDamage'
+            break
+            case 2:
+                this.desc='Add '+this.damage+'\nBlock'
+            break
+            case 4:
+                this.desc='Deal '+this.damage+' Damage '+this.alt+'\nTimes'
+            break
+            case 5:
+                this.desc='Draw 2 Cards'
+            break
+            case 6:
+                this.desc='Unplayable'
+            break
+            case 7:
+                this.desc='Apply '+this.damage+'\nWeak'
+            break
+            case 8:
+                this.desc='Add '+this.damage+' Block\nCounter '+this.alt
+            break
+            case 9:
+                this.desc='Add '+this.damage+'X\nBlock'
+            break
+            case 10:
+                this.desc='Deal '+this.damage+' Damage\nAdd a Bleed\nto Deck'
+            break
+            case 11:
+                this.desc='Unplayable\nTake 1 Damage\nper Card Played'
+            break
+            case 12:
+                this.desc='Deal '+this.damage+' Damage\nDiscard a Card'
+            break
+            case 13:
+                this.desc='Deal '+this.damage+' Damage\nIf Fatal, gain\n1 Energy'
+            break
+            case 14:
+                this.desc='Deal '+this.damage+' Damage\nGain 2 Mana\nNext Turn'
+            break
+            case 15:
+                this.desc='Deal '+this.damage+' Damage\nto All Enemies'
+            break
+            case 16:
+                this.desc='Hold '+this.damage+'\nBasic Bullet'
+            break
+            case 17:
+                this.desc='Fire 1st Bullet\n'+this.damage+' Times'
+            break
+            case 18:
+                this.desc='Hold '+this.damage+'\nExplosive Bullet'
+            break
+            case 19:
+                this.desc='Hold '+this.damage+'\nShield Charge'
+            break
+            case 20:
+                this.desc='Fire All\nBullets'
+            break
+            case 21:
+                this.desc='Deal '+this.damage+' Damage\nDiscard Hand'
+            break
+            case 22:
+                this.desc='Lose 1\nAmmo Slot'
+            break
+            case 23:
+                this.desc='Hold '+this.damage+'\nEnergy Charge'
+            break
+            case 24:
+                this.desc='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable'
+            break                
+            case 25:
+                this.desc='Deal '+this.damage+' Damage\nAll Claws gain\n+2 Damage'
+            break
+        }
+    }
     display(){
+        this.displayName()
         if(this.size>0){
             this.layer.translate(this.position.x,this.position.y)
             this.layer.scale(this.size)

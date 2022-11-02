@@ -36,6 +36,12 @@ class group{
                 this.add(21,0,this.battle.player)
                 this.add(22,0,this.battle.player)
                 this.add(23,0,this.battle.player)
+                this.add(24,0,this.battle.player)
+                this.add(25,0,this.battle.player)
+                this.add(25,0,this.battle.player)
+                this.add(25,0,this.battle.player)
+                this.add(25,0,this.battle.player)
+                this.add(25,0,this.battle.player)
             break
         }
     }
@@ -133,7 +139,7 @@ class group{
                     }else{
                         this.battle.attack.damage=round(this.cards[e].damage)
                     }
-                    this.battle.attack.alt=round(this.cards[e].alt*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0])))
+                    this.battle.attack.alt=round(this.cards[e].alt)
                     this.battle.attack.mana=this.battle.mana.main
                     if(this.cards[e].cost==-1){
                         this.battle.mana.main=0

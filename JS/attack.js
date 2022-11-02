@@ -27,7 +27,7 @@ class attack{
                 break
                 case 3:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.attacks.push([0,20,this.target,this.damage])
+                    this.attacks.push([0,this.alt*10,this.target,this.damage])
                 break
                 case 4:
                     for(g=0;g<this.damage;g++){
@@ -111,6 +111,23 @@ class attack{
                 case 20:
                     this.battle.combatants[0].load(3)
                 break
+                case 21:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target].boost.main[1]-=this.alt
+                break
+                case 22:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].attack==22){
+                            this.battle.hand.cards[g].damage+=2
+                        }
+                    }
+                    for(g=0,lg=this.battle.reserve.cards.length;g<lg;g++){
+                        if(this.battle.reserve.cards[g].attack==22){
+                            this.battle.reserve.cards[g].damage+=2
+                        }
+                    }
+                break
             }
         }else{
             switch(type){
@@ -130,7 +147,7 @@ class attack{
             this.attacks[g][1]--
             switch(this.attacks[g][0]){
                 case 0:
-                    if(this.attacks[g][1]==0||this.attacks[g][1]==10){
+                    if(this.attacks[g][1]%10==0){
                         this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3],0)
                     }
                 break
