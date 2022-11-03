@@ -71,19 +71,19 @@ class card{
                 this.desc='Deal '+this.damage+' Damage\nto All Enemies'
             break
             case 16:
-                this.desc='Hold '+this.damage+'\nBasic Bullet'
+                this.desc='Hold '+this.damage+'\nBasic Charge'
             break
             case 17:
-                this.desc='Fire 1st Bullet\n'+this.damage+' Times'
+                this.desc='Fire 1st Charge\n'+this.damage+' Times'
             break
             case 18:
-                this.desc='Hold '+this.damage+'\nExplosive Bullet'
+                this.desc='Hold '+this.damage+'\nExplosive Charge'
             break
             case 19:
                 this.desc='Hold '+this.damage+'\nShield Charge'
             break
             case 20:
-                this.desc='Fire All\nBullets'
+                this.desc='Fire All\nCharges'
             break
             case 21:
                 this.desc='Deal '+this.damage+' Damage\nDiscard Hand'
@@ -140,7 +140,16 @@ class card{
                 this.desc='Remove All\nBlock of Target\nDeal '+this.damage+' Damage'
             break
             case 39:
-                this.desc='Fire 1st Bullet\nHold that Bullet'
+                this.desc='Fire 1st Charge\nHold that Charge'
+            break
+            case 40:
+                this.desc='Deal '+this.damage+' Damage\nApply 6 Weak'
+            break
+            case 41:
+                this.desc='Gain '+this.damage+'\nCombo'
+            break
+            case 42:
+                this.desc='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo'
             break
         }
     }
@@ -161,6 +170,10 @@ class card{
                     this.layer.fill(200,160,200,this.fade)
                     this.layer.stroke(160,120,160,this.fade)
                 break
+                case 3:
+                    this.layer.fill(240,200,160,this.fade)
+                    this.layer.stroke(200,160,120,this.fade)
+                break
                 case 4:
                     this.layer.fill(120,this.fade)
                     this.layer.stroke(80,this.fade)
@@ -168,13 +181,22 @@ class card{
             }
             this.layer.strokeWeight(5)
             this.layer.rect(0,0,this.width,this.height,5)
-            if(this.spec!=1){
+            if(this.spec==4){
+                this.layer.noFill()
+				this.layer.stroke(240,240,40,this.fade)
+				this.layer.strokeWeight(4)
+				this.layer.strokeCap(SQUARE)
+				this.layer.arc(-this.width/2+17,-this.height/2+19,20,20,-45,135)
+				this.layer.arc(-this.width/2+15,-this.height/2+17,20,20,135,315)
+				this.layer.strokeCap(ROUND)
+                this.layer.fill(250-this.anim.afford*10,250-this.anim.afford*250,250-this.anim.afford*250,this.fade)
+            }else if(this.spec!=1){
                 this.layer.fill(200,225,250,this.fade)
                 this.layer.stroke(150,200,250,this.fade)
                 this.layer.strokeWeight(3)
                 this.layer.quad(-this.width/2+4,-this.height/2+20,-this.width/2+16,-this.height/2+4,-this.width/2+28,-this.height/2+20,-this.width/2+16,-this.height/2+36)
+                this.layer.fill(this.anim.afford*240,0,0,this.fade)
             }
-            this.layer.fill(this.anim.afford*240,0,0,this.fade)
             this.layer.noStroke()
             if(this.cost==-1){
                 this.layer.textSize(20)
@@ -192,6 +214,9 @@ class card{
                     case 2:
                         this.layer.fill(100,50,100,this.fade)
                     break
+                    case 3:
+                        this.layer.fill(150,100,50,this.fade)
+                    break
                     case 4:
                         this.layer.fill(40,this.fade)
                     break
@@ -208,7 +233,7 @@ class card{
             this.layer.translate(-this.position.x,-this.position.y)
         }
     }
-    update(mana){
+    update(mana,combo){
         if(this.size<1&&!this.used){
             this.size=round(this.size*5+1)*0.2
         }else if(this.size>0&&this.used){
@@ -226,9 +251,9 @@ class card{
         }else if(!this.select&&this.anim.select>0){
             this.anim.select=round(this.anim.select*5-1)/5
         }
-        if(mana.main<this.cost&&this.anim.afford<1){
+        if((mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4)&&this.anim.afford<1){
             this.anim.afford=round(this.anim.afford*5+1)/5
-        }else if(mana.main>=this.cost&&this.anim.afford>0){
+        }else if((mana.main>=this.cost&&this.spec!=4||combo>=this.cost&&this.spec==4)&&this.anim.afford>0){
             this.anim.afford=round(this.anim.afford*5-1)/5
         }
         if(this.trigger&&!this.used){

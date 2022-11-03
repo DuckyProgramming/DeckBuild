@@ -6,6 +6,7 @@ class attack{
         this.level=0
         this.side=0
         this.mana=0
+        this.combo=0
         this.color=0
         this.damage=0
         this.alt=0
@@ -182,6 +183,16 @@ class attack{
                     }
                     this.battle.combatants[0].ammo[this.battle.combatants[0].ammo.length-1]=-1
                     this.battle.combatants[0].load(this.hold.int)
+                break
+                case 34:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target].boost.main[0]-=6
+                break
+                case 35:
+                    this.battle.combatants[0].combo+=this.damage
+                break
+                case 36:
+                    this.battle.combatants[this.target].take(this.damage+this.alt*this.combo,this.user)
                 break
             }
         }else{

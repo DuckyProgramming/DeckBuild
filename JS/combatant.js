@@ -1,6 +1,7 @@
 class combatant{
-    constructor(layer,x,y,type,team,id){
+    constructor(layer,battle,x,y,type,team,id){
         this.layer=layer
+		this.battle=battle
         this.position={x:x,y:y}
         this.type=type
         this.team=team
@@ -20,6 +21,8 @@ class combatant{
 		this.calc={damage:0}
 		this.boost={main:[0,0],fade:[0,0],display:[],color:[[200,0,0],[0,150,255]],infoFade:[0,0],name:['Attack','Defense']}
 		this.status={main:[],fade:[],display:[],color:[[255,125,0],[200,225,250]],infoFade:[],name:[],class:[1,1]}
+		this.combo=0
+		this.stance=0
 		this.ammo=[-1,-1,-1]
 		for(g=0;g<2;g++){
 			this.status.main.push(0)
@@ -29,7 +32,6 @@ class combatant{
 		this.block=0
 		this.fades={block:0,info:0}
 		this.intent=0
-		this.stance=0
         if(this.type==0){
             this.fade=0
         }else{
@@ -46,7 +48,7 @@ class combatant{
 	changeStance(stance){
 		switch(this.stance){
 			case 1:
-				current.mana.main+=2
+				this.battle.mana.main+=2
 			break
 		}
 		this.stance=stance
@@ -82,6 +84,46 @@ class combatant{
 				this.layer.arc(0,-78,36,36,-180,0)
 				this.layer.fill(200,this.fade/2)
 				this.layer.rect(8,-75,20,6)
+				this.layer.noFill()
+				this.layer.stroke(240,240,40,this.fade)
+				this.layer.strokeWeight(4)
+				this.layer.strokeCap(SQUARE)
+				this.layer.arc(1,-119,20,20,-45,135)
+				this.layer.arc(-1,-121,20,20,135,315)
+				this.layer.strokeCap(ROUND)
+				this.layer.noStroke()
+				this.layer.fill(255,this.fade)
+				this.layer.textSize(16)
+				this.layer.text(this.combo,0,-118)
+			break
+			case 2:
+			break
+			case 3:
+				this.layer.noStroke()
+				this.layer.fill(40,35,30,this.fade)
+				this.layer.quad(-6,-60,6,-60,12,-15,-12,-15)
+				this.layer.arc(0,-15,24,12,0,180)
+				this.layer.stroke(80,70,60,this.fade)
+				this.layer.strokeWeight(4)
+				this.layer.line(-4,-30,-8,0)
+				this.layer.line(4,-30,8,0)
+				this.layer.line(-6,-48,-15,-24)
+				this.layer.line(6,-48,15,-24)
+				this.layer.noStroke()
+				this.layer.fill(80,70,60,this.fade)
+				this.layer.ellipse(0,-45,18,36)
+				this.layer.fill(240,220,180,this.fade)
+				this.layer.ellipse(0,-75,30,30)
+				this.layer.fill(100,0,0,this.fade)
+				this.layer.ellipse(4,-72,4,4)
+				this.layer.ellipse(12,-72,4,4)
+				this.layer.fill(60,50,40,this.fade)
+				this.layer.arc(0,-75,36,36,-180,0)
+				this.layer.arc(8,-75,52,44,135,180)
+				this.layer.arc(8,-75,20,36,0,45)
+				this.layer.fill(70,60,50,this.fade)
+				this.layer.ellipse(-4,-51,3,3)
+				this.layer.ellipse(-4,-46,3,3)
 				this.layer.fill(255,this.fade/5)
 				switch(this.ammo.length){
 					case 3:
@@ -105,6 +147,8 @@ class combatant{
 				}
 			break
 			case 4:
+			break
+			case 5:
 				this.layer.stroke(80,this.fade)
 				this.layer.strokeWeight(4)
 				this.layer.line(-4,-30,-8,0)
@@ -241,23 +285,23 @@ class combatant{
 		switch(type){
 			case 0:
 				i=0
-				for(h=1,lh=current.combatants.length;h<lh;h++){
-					if(i==0&&current.combatants[h].life>0){
-						current.combatants[h].take(8,0)
+				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
+					if(i==0&&this.battle.combatants[h].life>0){
+						this.battle.combatants[h].take(8,0)
 						i=1
 					}
 				}
 			break
 			case 1:
 				i=0
-				for(h=1,lh=current.combatants.length;h<lh;h++){
-					if(i==0&&current.combatants[h].life>0){
-						current.combatants[h].take(12,0)
-						if(current.combatants[h+1].life>0){
-							current.combatants[h+1].take(4,0)
+				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
+					if(i==0&&this.battle.combatants[h].life>0){
+						this.battle.combatants[h].take(12,0)
+						if(this.battle.combatants[h+1].life>0){
+							this.battle.combatants[h+1].take(4,0)
 						}
-						if(current.combatants[h-1].life>0&&h>1){
-							current.combatants[h-1].take(4,0)
+						if(this.battle.combatants[h-1].life>0&&h>1){
+							this.battle.combatants[h-1].take(4,0)
 						}
 						i=1
 					}
@@ -267,7 +311,7 @@ class combatant{
 				this.block+=10
 			break
 			case 3:
-				current.mana.main+=3
+				this.battle.mana.main+=3
 			break
 		}
 	}
@@ -299,10 +343,13 @@ class combatant{
 			this.life-=this.calc.damage
 		}
 		if(this.status.main[0]>0){
-			current.combatants[user].take(this.status.main[0],this.id)
+			this.battle.combatants[user].take(this.status.main[0],this.id)
 		}
-		current.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))
-		current.particles[current.particles.length-1].text=round(damage*10)/10
+		this.battle.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))
+		this.battle.particles[this.battle.particles.length-1].text=round(damage*10)/10
+		if(this.id>0&&this.battle.combatants[0].type==1){
+			this.battle.combatants[0].combo++
+		}
 	}
     update(){
 		this.boost.display=[]

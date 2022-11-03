@@ -77,27 +77,27 @@ types={
             {damage:6,alt:0,cost:2,attack:12,target:0,desc:'',spec:0,class:1},
             {damage:9,alt:0,cost:2,attack:12,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Load',rarity:0,
+        },{name:'Charge',rarity:0,
         stats:[
             {damage:1,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:3},
             {damage:2,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:3},
         ],
-        },{name:'Fire',rarity:0,
+        },{name:'Multicast',rarity:0,
         stats:[
             {damage:2,alt:0,cost:1,attack:14,target:0,desc:'',spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:14,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Explode',rarity:1,
+        },{name:'Detonate',rarity:1,
         stats:[
             {damage:1,alt:0,cost:1,attack:15,target:0,desc:'',spec:0,class:3},
             {damage:1,alt:0,cost:0,attack:15,target:0,desc:'',spec:0,class:3},
         ],
-        },{name:'Shields',rarity:0,
+        },{name:'Shielding',rarity:0,
         stats:[
             {damage:1,alt:0,cost:0,attack:16,target:0,desc:'',spec:0,class:3},
             {damage:2,alt:0,cost:0,attack:16,target:0,desc:'',spec:0,class:3},
         ],
-        },{name:'Unload',rarity:1,
+        },{name:'Outburst',rarity:1,
         stats:[
             {damage:0,alt:0,cost:2,attack:17,target:0,desc:'',spec:0,class:2},
             {damage:0,alt:0,cost:1,attack:17,target:0,desc:'',spec:0,class:2},
@@ -197,11 +197,27 @@ types={
             {damage:1,alt:0,cost:1,attack:33,target:0,desc:'',spec:0,class:2},
             {damage:1,alt:0,cost:0,attack:33,target:0,desc:'',spec:0,class:2},
         ],
+        },{name:'Disarm',rarity:0,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:34,target:1,desc:'',spec:0,class:0},
+            {damage:4,alt:0,cost:1,attack:34,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Jolt',rarity:0,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:35,target:0,desc:'',spec:0,class:0},
+            {damage:4,alt:0,cost:0,attack:35,target:0,desc:'',spec:0,class:0},
+        ],
+        },{name:'Combo\nFinish',rarity:0,
+        stats:[
+            {damage:14,alt:2,cost:3,attack:36,target:1,desc:'',spec:4,class:0},
+            {damage:22,alt:2,cost:3,attack:36,target:1,desc:'',spec:4,class:0},
+        ],
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],alt:[]},
         {name:'Agent',alt:'',life:80,height:75,behavior:0,attacks:[],damage:[],alt:[]},
         {name:'Player',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],alt:[]},
+        {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],alt:[]},
         {name:'Player',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],alt:[]},
         {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1,1,2],damage:[4,4,4],alt:[]},
     ],attack:[
@@ -211,12 +227,12 @@ types={
     ]
 }
 combatants=[
-    {type:4},
-    {type:4},
-    {type:4},
-    {type:4},
-    {type:4},
-    {type:4},
+    {type:5},
+    {type:5},
+    {type:5},
+    {type:5},
+    {type:5},
+    {type:5},
 ]
 stage={scale:0,scene:'battle'}
 graphics={main:0}

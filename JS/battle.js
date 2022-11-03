@@ -10,7 +10,7 @@ class battle{
         this.attack=new attack(this.layer,this)
         this.particles=[]
         this.combatants=[]
-        this.combatants.push(new combatant(this.layer,100,350,player,0,0))
+        this.combatants.push(new combatant(this.layer,this,100,350,player,0,0))
         this.mana={main:3,max:3}
         this.anim={turn:0}
         this.deck.initial(player)
@@ -26,7 +26,7 @@ class battle{
     }
     create(combatants){
         for(e=0,le=combatants.length;e<le;e++){
-            this.combatants.push(new combatant(this.layer,300+e*100,350,combatants[e].type,1,e+1))
+            this.combatants.push(new combatant(this.layer,this,300+e*100,350,combatants[e].type,1,e+1))
         }
         for(e=1,le=this.combatants.length;e<le;e++){
             this.combatants[e].setupIntent()
