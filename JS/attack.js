@@ -13,6 +13,7 @@ class attack{
         this.target=[1]
         this.targetType=0
         this.attacks=[]
+        this.hold={int:0}
     }
     update(type,level,side){
         this.type=type
@@ -144,6 +145,43 @@ class attack{
                     for(g=0;g<this.damage;g++){
                         this.battle.hand.add(31,0,this.color)
                     }
+                break
+                case 27:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].changeStance(1)
+                break
+                case 28:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].changeStance(0)
+                break
+                case 29:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(types.attack[this.battle.combatants[this.target].attacks[this.battle.combatants[this.target].intent]].class==0){
+                        this.battle.combatants[0].changeStance(1)
+                    }
+                break
+                case 30:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].changeStance(0)
+                break
+                case 31:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                    this.battle.combatants[0].changeStance(0)
+                break
+                case 32:
+                    this.battle.combatants[this.target].block=0
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                break
+                case 33:
+                    this.hold.int=this.battle.combatants[0].ammo[0]
+                    this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[0])
+                    for(g=0,lg=this.battle.combatants[0].ammo.length-1;g<lg;g++){
+                        this.battle.combatants[0].ammo[g]=this.battle.combatants[0].ammo[g+1]
+                    }
+                    this.battle.combatants[0].ammo[this.battle.combatants[0].ammo.length-1]=-1
+                    this.battle.combatants[0].load(this.hold.int)
                 break
             }
         }else{

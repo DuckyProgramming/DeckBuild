@@ -18,8 +18,9 @@ class group{
                     //this.add(2,0,this.battle.player)
                 }
                 for(e=0;e<15;e++){
-                    this.add(floor(random(0,33)),0,this.battle.player)
+                    this.add(floor(random(0,40)),0,this.battle.player)
                 }
+                //this.add(39,0,this.battle.player)
             break
         }
     }

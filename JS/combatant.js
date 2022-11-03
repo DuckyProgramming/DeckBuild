@@ -29,6 +29,7 @@ class combatant{
 		this.block=0
 		this.fades={block:0,info:0}
 		this.intent=0
+		this.stance=0
         if(this.type==0){
             this.fade=0
         }else{
@@ -40,6 +41,16 @@ class combatant{
 			case 0:
 				this.intent=floor(random(0,this.attacks.length))
 			break
+		}
+	}
+	changeStance(stance){
+		switch(this.stance){
+			case 1:
+				current.mana.main+=2
+			break
+		}
+		this.stance=stance
+		switch(this.stance){
 		}
 	}
     display(){

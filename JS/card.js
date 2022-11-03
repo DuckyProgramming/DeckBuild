@@ -121,6 +121,27 @@ class card{
             case 32:
                 this.desc='Draw '+this.damage+' Shivs'
             break
+            case 33:
+                this.desc='Add '+this.damage+' Block\nEnter Calm'
+            break
+            case 34:
+                this.desc='Add '+this.damage+' Block\nExit Stance'
+            break
+            case 35:
+                this.desc='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nEnter Calm.'
+            break
+            case 36:
+                this.desc='Deal '+this.damage+' Damage\nExit Stance'
+            break
+            case 37:
+                this.desc='Draw '+this.damage+' Cards\nExit Stance'
+            break
+            case 38:
+                this.desc='Remove All\nBlock of Target\nDeal '+this.damage+' Damage'
+            break
+            case 39:
+                this.desc='Fire 1st Bullet\nHold that Bullet'
+            break
         }
     }
     display(){
