@@ -169,6 +169,21 @@ class card{
             case 51:
                 this.desc='Deal '+this.damage+' Damage\nKnockdown'
             break
+            case 52:
+                this.desc='Deal '+this.damage+' Damage\nDeal '+this.alt+' Bonus\nDamage to Downed'
+            break
+            case 53:
+                this.desc='Deal '+this.damage+' Damage\n+1 Per Combo\n'+this.alt+' Times'
+            break
+            case 54:
+                this.desc='Deal '+this.damage+' Damage\nGain 1 Dodge'
+            break
+            case 55:
+                this.desc='Deal '+this.damage+' Damage\nDeal '+this.alt+' Damage\nto the Left'
+            break
+            case 56:
+                this.desc='Deal '+this.damage+' Damage\nDeal '+this.alt+' Damage\nto the Right'
+            break
         }
     }
     display(){

@@ -17,10 +17,11 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(2,0,this.battle.player)
                 }
-                this.add(47,0,this.battle.player)
-                this.add(48,0,this.battle.player)
-                this.add(49,0,this.battle.player)
-                this.add(51,0,this.battle.player)
+                this.add(52,0,this.battle.player)
+                this.add(53,0,this.battle.player)
+                this.add(54,0,this.battle.player)
+                this.add(55,0,this.battle.player)
+                this.add(56,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){

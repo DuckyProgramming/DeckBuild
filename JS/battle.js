@@ -68,7 +68,7 @@ class battle{
                 this.combatants[e].status.main[f]=0
             }
         }
-        this.combatants[0].boost[0]+=this.remember[0]
+        this.combatants[0].boost.main[0]+=this.remember[0]
     }
     playCard(){
         for(g=0,lg=this.hand.cards.length;g<lg;g++){

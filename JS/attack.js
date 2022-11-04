@@ -219,6 +219,30 @@ class attack{
                         this.battle.combatants[this.target].status.main[5]+=this.alt
                     }
                 break
+                case 43:
+                    if(this.battle.combatants[this.target].status.main[5]>0){
+                        this.battle.combatants[this.target].take(this.damage+this.alt,this.user)
+                    }else{
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
+                break
+                case 44:
+                    this.battle.combatants[this.target].take(this.damage+this.combo,this.user)
+                    this.attacks.push([2,this.alt*10-10,this.target,this.damage+this.combo])
+                    this.battle.combatants[0].combo=0
+                break
+                case 45:
+                    this.battle.combatants[this.target].take(this.damage+this.combo,this.user)
+                    this.battle.combatants[0].status.main[6]++
+                break
+                case 46:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.attacks.push([3,20,this.target,this.alt])
+                break
+                case 47:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.attacks.push([4,20,this.target,this.alt])
+                break
             }
         }else{
             switch(type){
@@ -247,6 +271,32 @@ class attack{
                         this.battle.combatants[this.attacks[g][2]].position.x-=10
                     }else{
                         this.battle.combatants[this.attacks[g][2]].position.x+=10
+                    }
+                break
+                case 2:
+                    if(this.attacks[g][1]%10==0){
+                        this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3],0)
+                        this.battle.combatants[0].combo=0
+                    }
+                break
+                case 3:
+                    if(this.attacks[g][1]<10){
+                        this.battle.combatants[this.attacks[g][2]].position.x+=8
+                    }else{
+                        this.battle.combatants[this.attacks[g][2]].position.x-=8
+                    }
+                    if(this.attacks[g][1]==10&&this.attacks[g][2]>1){
+                        this.battle.combatants[this.attacks[g][2]-1].take(this.attacks[g][3],0)
+                    }
+                break
+                case 4:
+                    if(this.attacks[g][1]<10){
+                        this.battle.combatants[this.attacks[g][2]].position.x-=8
+                    }else{
+                        this.battle.combatants[this.attacks[g][2]].position.x+=8
+                    }
+                    if(this.attacks[g][1]==10&&this.attacks[g][2]<this.battle.combatants.length-1){
+                        this.battle.combatants[this.attacks[g][2]+1].take(this.attacks[g][3],0)
                     }
                 break
             }

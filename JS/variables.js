@@ -209,8 +209,8 @@ types={
         ],
         },{name:'Combo\nFinish',rarity:1,
         stats:[
-            {damage:14,alt:2,cost:3,attack:36,target:1,desc:'',spec:4,class:0},
-            {damage:22,alt:2,cost:3,attack:36,target:1,desc:'',spec:4,class:0},
+            {damage:14,alt:2,cost:4,attack:36,target:1,desc:'',spec:4,class:0},
+            {damage:22,alt:2,cost:4,attack:36,target:1,desc:'',spec:4,class:0},
         ],
         },{name:'Hammer\nFist',rarity:0,
         stats:[
@@ -244,19 +244,44 @@ types={
         ],
         },{name:'Palm\nStrike',rarity:1,
         stats:[
-            {damage:8,alt:2,cost:3,attack:41,target:1,desc:'',spec:4,class:0},
-            {damage:10,alt:3,cost:3,attack:41,target:1,desc:'',spec:4,class:0},
+            {damage:8,alt:2,cost:4,attack:41,target:1,desc:'',spec:4,class:0},
+            {damage:10,alt:3,cost:4,attack:41,target:1,desc:'',spec:4,class:0},
         ],
         },{name:'Heavy\nOverhand',rarity:2,
         stats:[
-            {damage:28,alt:0,cost:8,attack:1,target:1,desc:'',spec:4,class:0},
-            {damage:44,alt:0,cost:8,attack:1,target:1,desc:'',spec:4,class:0},
+            {damage:28,alt:0,cost:10,attack:1,target:1,desc:'',spec:4,class:0},
+            {damage:44,alt:0,cost:10,attack:1,target:1,desc:'',spec:4,class:0},
         ], 
         },{name:'Throw',rarity:1,
         stats:[
             {damage:2,alt:1,cost:1,attack:42,target:1,desc:'',spec:0,class:0},
             {damage:6,alt:1,cost:1,attack:42,target:1,desc:'',spec:0,class:0},
         ],
+        },{name:'Stomp',rarity:1,
+        stats:[
+            {damage:4,alt:12,cost:1,attack:43,target:1,desc:'',spec:0,class:0},
+            {damage:5,alt:20,cost:1,attack:43,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Unleash',rarity:2,
+        stats:[
+            {damage:1,alt:3,cost:2,attack:44,target:1,desc:'',spec:0,class:0},
+            {damage:3,alt:3,cost:2,attack:44,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Jumping\nBack Kick',rarity:2,
+        stats:[
+            {damage:14,alt:0,cost:5,attack:45,target:1,desc:'',spec:4,class:0},
+            {damage:26,alt:0,cost:5,attack:45,target:1,desc:'',spec:4,class:0},
+        ], 
+        },{name:'Left\nSpin Kick',rarity:1,
+        stats:[
+            {damage:11,alt:6,cost:3,attack:46,target:1,desc:'',spec:4,class:0},
+            {damage:18,alt:10,cost:3,attack:46,target:1,desc:'',spec:4,class:0},
+        ], 
+        },{name:'Right\nSpin Kick',rarity:1,
+        stats:[
+            {damage:11,alt:6,cost:3,attack:47,target:1,desc:'',spec:4,class:0},
+            {damage:18,alt:10,cost:3,attack:47,target:1,desc:'',spec:4,class:0},
+        ], 
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
