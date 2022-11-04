@@ -39,8 +39,8 @@ types={
         ],
         },{name:'Electrify',rarity:1,
         stats:[
-            {damage:3,alt:4,cost:1,attack:6,target:0,desc:'',spec:0,class:1},
-            {damage:6,alt:8,cost:1,attack:6,target:0,desc:'',spec:0,class:1},
+            {damage:2,alt:3,cost:1,attack:6,target:0,desc:'',spec:0,class:1},
+            {damage:4,alt:6,cost:1,attack:6,target:0,desc:'',spec:0,class:1},
         ],
         },{name:'Dynamic\nShield',rarity:0,
         stats:[
@@ -207,19 +207,64 @@ types={
             {damage:2,alt:0,cost:0,attack:35,target:0,desc:'',spec:0,class:0},
             {damage:4,alt:0,cost:0,attack:35,target:0,desc:'',spec:0,class:0},
         ],
-        },{name:'Combo\nFinish',rarity:0,
+        },{name:'Combo\nFinish',rarity:1,
         stats:[
             {damage:14,alt:2,cost:3,attack:36,target:1,desc:'',spec:4,class:0},
             {damage:22,alt:2,cost:3,attack:36,target:1,desc:'',spec:4,class:0},
         ],
+        },{name:'Hammer\nFist',rarity:0,
+        stats:[
+            {damage:7,alt:1,cost:1,attack:37,target:1,desc:'',spec:0,class:0},
+            {damage:10,alt:1,cost:1,attack:37,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Strengthen',rarity:0,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:38,target:0,desc:'',spec:0,class:3},
+            {damage:2,alt:0,cost:1,attack:38,target:0,desc:'',spec:0,class:3},
+        ],
+        },{name:'Counter',rarity:0,
+        stats:[
+            {damage:4,alt:5,cost:1,attack:39,target:0,desc:'',spec:0,class:1},
+            {damage:7,alt:6,cost:1,attack:39,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Combo\nCounter',rarity:1,
+        stats:[
+            {damage:3,alt:2,cost:1,attack:40,target:0,desc:'',spec:0,class:1},
+            {damage:5,alt:6,cost:1,attack:40,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Combo\nStrike',rarity:0,
+        stats:[
+            {damage:9,alt:0,cost:2,attack:1,target:1,desc:'',spec:4,class:0},
+            {damage:14,alt:0,cost:2,attack:1,target:1,desc:'',spec:4,class:0},
+        ], 
+        },{name:'Virtuous\nCircle',rarity:1,
+        stats:[
+            {damage:7,alt:0,cost:5,attack:35,target:0,desc:'',spec:4,class:0},
+            {damage:9,alt:0,cost:5,attack:35,target:0,desc:'',spec:4,class:0},
+        ],
+        },{name:'Palm\nStrike',rarity:1,
+        stats:[
+            {damage:8,alt:2,cost:3,attack:41,target:1,desc:'',spec:4,class:0},
+            {damage:10,alt:3,cost:3,attack:41,target:1,desc:'',spec:4,class:0},
+        ],
+        },{name:'Heavy\nOverhand',rarity:2,
+        stats:[
+            {damage:28,alt:0,cost:8,attack:1,target:1,desc:'',spec:4,class:0},
+            {damage:44,alt:0,cost:8,attack:1,target:1,desc:'',spec:4,class:0},
+        ], 
+        },{name:'Throw',rarity:1,
+        stats:[
+            {damage:2,alt:1,cost:1,attack:42,target:1,desc:'',spec:0,class:0},
+            {damage:6,alt:1,cost:1,attack:42,target:1,desc:'',spec:0,class:0},
+        ],
         },
     ],combatant:[
-        {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],alt:[]},
-        {name:'Agent',alt:'',life:80,height:75,behavior:0,attacks:[],damage:[],alt:[]},
-        {name:'Player',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],alt:[]},
-        {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],alt:[]},
-        {name:'Player',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],alt:[]},
-        {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1,1,2],damage:[4,4,4],alt:[]},
+        {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
+        {name:'Agent',alt:'',life:80,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
+        {name:'Player',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
+        {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
+        {name:'Player',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
+        {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1,1,2],damage:[4,4,4],altAttack:[],class:0},
     ],attack:[
         {class:0},
         {class:0},

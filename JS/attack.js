@@ -193,6 +193,31 @@ class attack{
                 break
                 case 36:
                     this.battle.combatants[this.target].take(this.damage+this.alt*this.combo,this.user)
+                    this.battle.combatants[0].combo=0
+                break
+                case 37:
+                    this.battle.combatants[this.target].take(this.damage+this.alt*this.combo,this.user)
+                break
+                case 38:
+                    this.battle.combatants[0].status.main[2]+=this.damage
+                break
+                case 39:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].status.main[3]+=this.alt
+                break
+                case 40:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].status.main[3]+=this.alt+2*this.combo
+                break
+                case 41:
+                    this.battle.combatants[this.target].take(this.damage+this.alt*this.combo,this.user)
+                    this.battle.combatants[0].status.main[4]+=this.alt
+                break
+                case 42:
+                    this.battle.combatants[this.target].take(this.damage+this.alt*this.combo,this.user)
+                    if(this.battle.combatants[this.target].class==0){
+                        this.battle.combatants[this.target].status.main[5]+=this.alt
+                    }
                 break
             }
         }else{

@@ -17,8 +17,10 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(2,0,this.battle.player)
                 }
-                this.add(42,0,this.battle.player)
-                this.add(42,0,this.battle.player)
+                this.add(47,0,this.battle.player)
+                this.add(48,0,this.battle.player)
+                this.add(49,0,this.battle.player)
+                this.add(51,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -131,7 +133,7 @@ class group{
                     }
                     this.battle.attack.alt=round(this.cards[e].alt)
                     this.battle.attack.mana=this.battle.mana.main
-                    this.battle.attack.combo=this.battle.combantats[0].combo
+                    this.battle.attack.combo=this.battle.combatants[0].combo
                     this.battle.attack.color=this.cards[e].color
                     if(this.cards[e].spec==4){
                         this.battle.combatants[0].combo-=this.cards[e].cost

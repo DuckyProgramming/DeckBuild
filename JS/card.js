@@ -28,7 +28,7 @@ class card{
     }
     displayName(){
         switch(this.type){
-            case 1: case 3:
+            case 1: case 3: case 47: case 50:
                 this.desc='Deal '+this.damage+'\nDamage'
             break
             case 2:
@@ -47,7 +47,7 @@ class card{
                 this.desc='Apply '+this.damage+'\nWeak'
             break
             case 8:
-                this.desc='Add '+this.damage+' Block\nCounter '+this.alt
+                this.desc='Add '+this.damage+' Block\nCounter '+this.alt+' All'
             break
             case 9:
                 this.desc='Add '+this.damage+'X\nBlock'
@@ -145,11 +145,29 @@ class card{
             case 40:
                 this.desc='Deal '+this.damage+' Damage\nApply 6 Weak'
             break
-            case 41:
+            case 41: case 48:
                 this.desc='Gain '+this.damage+'\nCombo'
             break
             case 42:
+                this.desc='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo\nEnd Combo'
+            break
+            case 43:
                 this.desc='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo'
+            break
+            case 44:
+                this.desc='Next '+this.damage+'\nAttacks Deal\nDouble Damage'
+            break
+            case 45:
+                this.desc='Add '+this.damage+' Block\nCounter '+this.alt+' Once'
+            break
+            case 46:
+                this.desc='Add '+this.damage+' Block\nCounter '+this.alt+' +2\nPer Combo'+' Once'
+            break
+            case 49:
+                this.desc='Deal '+this.damage+' Damage\nGain +'+this.alt+' Damage\nNext Turn'
+            break
+            case 51:
+                this.desc='Deal '+this.damage+' Damage\nKnockdown'
             break
         }
     }
@@ -205,7 +223,7 @@ class card{
                 this.layer.textSize(20)
                 this.layer.text(this.cost,-this.width/2+16,-this.height/2+20)
             }
-            this.layer.textSize(16)
+            this.layer.textSize(14)
             if(this.level==1){
                 switch(this.color){
                     case 1:

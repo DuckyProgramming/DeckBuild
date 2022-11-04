@@ -20,6 +20,7 @@ class battle{
         this.turnTimer=0
         this.drawAmount=5
         this.calc={list:[]}
+        this.remember=[0]
         for(e=0;e<this.drawAmount;e++){
             this.draw()
         }
@@ -56,6 +57,7 @@ class battle{
     endTurn(){
         this.mana.main=this.mana.max
         this.mana.main+=this.combatants[0].status.main[1]
+        this.remember[0]+=this.combatants[0].status.main[4]
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].block=0
             this.combatants[e].setupIntent()
@@ -66,6 +68,7 @@ class battle{
                 this.combatants[e].status.main[f]=0
             }
         }
+        this.combatants[0].boost[0]+=this.remember[0]
     }
     playCard(){
         for(g=0,lg=this.hand.cards.length;g<lg;g++){
@@ -148,6 +151,17 @@ class battle{
         if(this.turn>0){
             if(this.turnTimer>0){
                 this.turnTimer--
+            }else if(this.combatants[this.turn].status.main[5]>0){
+                this.turn++
+                if(this.turn>=this.combatants.length){
+                    this.turn=0
+                }
+                while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
+                    this.turn++
+                    if(this.turn>=this.combatants.length){
+                        this.turn=0
+                    }
+                }
             }else{
                 this.attack.user=this.turn
                 this.attack.damage=round(this.combatants[this.turn].damage[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0])))

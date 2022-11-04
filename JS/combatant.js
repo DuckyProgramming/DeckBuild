@@ -16,15 +16,17 @@ class combatant{
 		this.behavior=types.combatant[this.type].behavior
         this.attacks=types.combatant[this.type].attacks
 		this.damage=types.combatant[this.type].damage
+		this.altAttack=types.combatant[this.type].altAttack
+		this.class=types.combatant[this.type].class
 		this.base={life:this.life,position:{x:this.position.x,y:this.position.y}}
         this.collect={life:this.life}
 		this.calc={damage:0}
 		this.boost={main:[0,0],fade:[0,0],display:[],color:[[200,0,0],[0,150,255]],infoFade:[0,0],name:['Attack','Defense']}
-		this.status={main:[],fade:[],display:[],color:[[255,125,0],[200,225,250]],infoFade:[],name:[],class:[1,1]}
+		this.status={main:[],fade:[],display:[],color:[[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120]],infoFade:[],name:['Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Damage','Downed'],class:[1,1]}
 		this.combo=0
 		this.stance=0
 		this.ammo=[-1,-1,-1]
-		for(g=0;g<2;g++){
+		for(g=0;g<this.status.name.length;g++){
 			this.status.main.push(0)
 			this.status.fade.push(0)
 			this.status.infoFade.push(0)
@@ -333,6 +335,9 @@ class combatant{
 	}
 	take(damage,user){
 		this.calc.damage=damage/(2+max(0,this.boost.main[1]))*(2-min(0,this.boost.main[1]))
+		if(this.battle.combatants[user].status.main[2]>0){
+			this.calc.damage*=2
+		}
 		if(this.block>this.calc.damage){
 			this.block-=this.calc.damage
 		}else if(this.block>0){
@@ -345,8 +350,12 @@ class combatant{
 		if(this.status.main[0]>0){
 			this.battle.combatants[user].take(this.status.main[0],this.id)
 		}
+		if(this.status.main[3]>0){
+			this.battle.combatants[user].take(this.status.main[3],this.id)
+			this.status.main[3]=0
+		}
 		this.battle.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))
-		this.battle.particles[this.battle.particles.length-1].text=round(damage*10)/10
+		this.battle.particles[this.battle.particles.length-1].text=round(this.calc.damage*10)/10
 		if(this.id>0&&this.battle.combatants[0].type==1){
 			this.battle.combatants[0].combo++
 		}
