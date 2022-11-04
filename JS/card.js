@@ -37,8 +37,8 @@ class card{
             case 4:
                 this.desc='Deal '+this.damage+' Damage\n'+this.alt+' Times'
             break
-            case 5:
-                this.desc='Draw 2 Cards'
+            case 5: case 59:
+                this.desc='Draw '+this.damage+' Cards'
             break
             case 6:
                 this.desc='Unplayable'
@@ -169,7 +169,7 @@ class card{
             case 51:
                 this.desc='Deal '+this.damage+' Damage\nKnockdown'
             break
-            case 52:
+            case 52: case 58:
                 this.desc='Deal '+this.damage+' Damage\nDeal '+this.alt+' Bonus\nDamage to Downed'
             break
             case 53:
@@ -183,6 +183,9 @@ class card{
             break
             case 56:
                 this.desc='Deal '+this.damage+' Damage\nDeal '+this.alt+' Damage\nto the Right'
+            break
+            case 57:
+                this.desc='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable'
             break
         }
     }

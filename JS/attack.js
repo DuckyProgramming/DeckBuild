@@ -243,6 +243,10 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.attacks.push([4,20,this.target,this.alt])
                 break
+                case 47:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target].boost.main[1]-=this.alt
+                break
             }
         }else{
             switch(type){

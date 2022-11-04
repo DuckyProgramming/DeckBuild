@@ -236,7 +236,7 @@ types={
         stats:[
             {damage:9,alt:0,cost:2,attack:1,target:1,desc:'',spec:4,class:0},
             {damage:14,alt:0,cost:2,attack:1,target:1,desc:'',spec:4,class:0},
-        ], 
+        ],
         },{name:'Virtuous\nCircle',rarity:1,
         stats:[
             {damage:7,alt:0,cost:5,attack:35,target:0,desc:'',spec:4,class:0},
@@ -271,17 +271,32 @@ types={
         stats:[
             {damage:14,alt:0,cost:5,attack:45,target:1,desc:'',spec:4,class:0},
             {damage:26,alt:0,cost:5,attack:45,target:1,desc:'',spec:4,class:0},
-        ], 
+        ],
         },{name:'Left\nSpin Kick',rarity:1,
         stats:[
             {damage:11,alt:6,cost:3,attack:46,target:1,desc:'',spec:4,class:0},
             {damage:18,alt:10,cost:3,attack:46,target:1,desc:'',spec:4,class:0},
-        ], 
+        ],
         },{name:'Right\nSpin Kick',rarity:1,
         stats:[
             {damage:11,alt:6,cost:3,attack:47,target:1,desc:'',spec:4,class:0},
             {damage:18,alt:10,cost:3,attack:47,target:1,desc:'',spec:4,class:0},
-        ], 
+        ],
+        },{name:'Brutal\nKick',rarity:0,
+        stats:[
+            {damage:24,alt:2,cost:4,attack:48,target:1,desc:'',spec:0,class:0},
+            {damage:34,alt:3,cost:4,attack:48,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Jumping\nGround Punch',rarity:2,
+        stats:[
+            {damage:8,alt:28,cost:6,attack:43,target:1,desc:'',spec:4,class:0},
+            {damage:12,alt:40,cost:6,attack:43,target:1,desc:'',spec:4,class:0},
+        ],
+        },{name:'Link',rarity:1,
+        stats:[
+            {damage:3,alt:0,cost:2,attack:4,target:0,desc:'',spec:4,class:0},
+            {damage:3,alt:0,cost:2,attack:4,target:0,desc:'',spec:4,class:0},
+        ],
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
