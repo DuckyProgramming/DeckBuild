@@ -34,6 +34,24 @@ class card{
             case -2:
                 this.desc='Unplayable\nTake 1 Damage\nper Card Played'
             break
+            case -3:
+                this.desc='Unplayable\nEthereal'
+            break
+            case -4:
+                this.desc='Unplayable\nAt End of Turn,\nGain 1 Weak'
+            break
+            case -5:
+                this.desc='Unplayable\nTake 1 Damage\nper Card Not Played'
+            break
+            case -6:
+                this.desc='Unplayable\nInnate'
+            break
+            case -7:
+                this.desc='Unplayable\nAt End of Turn,\nGain 1 Vulnerable'
+            break
+            case -8:
+                this.desc='Unplayable\nWhen Removed,\nLose 3 Max Health'
+            break
             case 1:
                 this.desc='Deal '+this.damage+'\nDamage'
             break
@@ -110,88 +128,91 @@ class card{
                 this.desc='Heal '+this.damage+' Health'
             break
             case 26:
-                this.desc='Deal '+this.damage+' Damage\n'+this.alt+' Times\nRetain'
-            break
-            case 27:
-                this.desc='Deal '+this.damage+' Damage\nGain '+this.alt+' Damage\nwhen Retained\nRetain'
-            break
-            case 28:
-                this.desc='Deal '+this.damage+' Damage\nExhaust'
-            break
-            case 29:
                 this.desc='Draw '+this.damage+' Shivs'
             break
-            case 30:
+            case 27:
                 this.desc='Add '+this.damage+' Block\nEnter Calm'
             break
-            case 31:
+            case 28:
                 this.desc='Add '+this.damage+' Block\nExit Stance'
             break
-            case 32:
+            case 29:
                 this.desc='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nEnter Calm.'
             break
-            case 33:
+            case 30:
                 this.desc='Deal '+this.damage+' Damage\nExit Stance'
             break
-            case 34:
+            case 31:
                 this.desc='Draw '+this.damage+' Cards\nExit Stance'
             break
-            case 35:
+            case 32:
                 this.desc='Remove All\nBlock of Target\nDeal '+this.damage+' Damage'
             break
-            case 36:
+            case 33:
                 this.desc='Fire 1st Charge\nHold that Charge'
             break
-            case 37:
+            case 34:
                 this.desc='Deal '+this.damage+' Damage\nApply 6 Weak'
             break
-            case 38:
+            case 35:
                 this.desc='Gain '+this.damage+'\nCombo'
             break
-            case 39:
+            case 36:
                 this.desc='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo\nEnd Combo'
             break
-            case 40:
+            case 37:
                 this.desc='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo'
             break
-            case 41:
+            case 38:
                 this.desc='Next '+this.damage+'\nAttacks Deal\nDouble Damage'
             break
-            case 42:
+            case 39:
                 this.desc='Add '+this.damage+' Block\nCounter '+this.alt+' Once'
             break
-            case 43:
+            case 40:
                 this.desc='Add '+this.damage+' Block\nCounter '+this.alt+' +2\nPer Combo'+' Once'
             break
-            case 44:
+            case 41:
                 this.desc='Deal '+this.damage+' Damage\nGain +'+this.alt+' Damage\nNext Turn'
             break
-            case 45:
+            case 42:
                 this.desc='Deal '+this.damage+' Damage\nKnockdown'
             break
-            case 46:
+            case 43:
                 this.desc='Deal '+this.damage+' Damage\nDeal '+this.alt+' Bonus\nDamage to Downed'
             break
-            case 47:
+            case 44:
                 this.desc='Deal '+this.damage+' Damage\n+1 Per Combo\n'+this.alt+' Times'
             break
-            case 48:
+            case 45:
                 this.desc='Deal '+this.damage+' Damage\nGain 1 Dodge'
             break
-            case 49:
+            case 46:
                 this.desc='Deal '+this.damage+' Damage\nDeal '+this.alt+' Damage\nto the Left'
             break
-            case 50:
+            case 47:
                 this.desc='Deal '+this.damage+' Damage\nDeal '+this.alt+' Damage\nto the Right'
             break
-            case 51:
+            case 48:
                 this.desc='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable'
             break
-            case 54:
+            case 49:
                 this.desc='Deal '+this.damage+' Damage\nto All Enemies\nDeal '+this.alt+' Bonus\nDamage to Downed'
             break
-            case 55:
+            case 50:
                 this.desc='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo\nTo 3 Enemies\nEnd Combo'
+            break
+            case 51:
+                this.desc='Deal '+this.damage+' Damage\n'+this.alt+' Times\nRetain'
+            break
+            case 52:
+                this.desc='Deal '+this.damage+' Damage\nGain '+this.alt+' Damage\nwhen Retained\nRetain'
+            break
+            case 53:
+                this.desc='Deal '+this.damage+' Damage\nExhaust'
+            break
+            case 54:
+                this.desc='Deal '+this.damage+' Damage\nIgnore Block'
             break
         }
     }
@@ -236,7 +257,7 @@ class card{
 				this.layer.arc(-this.width/2+15,-this.height/2+17,20,20,135,315)
 				this.layer.strokeCap(ROUND)
                 this.layer.fill(250-this.anim.afford*10,250-this.anim.afford*250,250-this.anim.afford*250,this.fade)
-            }else if(this.spec!=1){
+            }else if(this.spec!=1&&this.spec!=6&&this.spec!=7){
                 this.layer.fill(200,225,250,this.fade)
                 this.layer.stroke(150,200,250,this.fade)
                 this.layer.strokeWeight(3)
@@ -247,7 +268,7 @@ class card{
             if(this.cost==-1){
                 this.layer.textSize(20)
                 this.layer.text('X',-this.width/2+16,-this.height/2+20)
-            }else if(this.spec!=1){
+            }else if(this.spec!=1&&this.spec!=6&&this.spec!=7){
                 this.layer.textSize(20)
                 this.layer.text(this.cost,-this.width/2+16,-this.height/2+20)
             }

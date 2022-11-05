@@ -22,13 +22,13 @@ class attack{
         this.side=side
         if(side==0){
             switch(type){
-                case 1:
+                case 1: case 52: case 53:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2:
                     this.battle.combatants[0].block+=this.damage
                 break
-                case 3:
+                case 3: case 51:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.attacks.push([0,this.alt*10-10,this.target,this.damage])
                 break
@@ -214,7 +214,7 @@ class attack{
                     this.battle.combatants[0].status.main[4]+=this.alt
                 break
                 case 42:
-                    this.battle.combatants[this.target].take(this.damage+this.alt*this.combo,this.user)
+                    this.battle.combatants[this.target].take(this.damage,this.user)
                     if(this.battle.combatants[this.target].class==0){
                         this.battle.combatants[this.target].status.main[5]+=this.alt
                     }
@@ -267,6 +267,9 @@ class attack{
                         this.battle.combatants[this.target+1].take(this.damage+this.alt*this.combo,0)
                     }
                     this.battle.combatants[0].combo=0
+                break
+                case 54:
+                    this.battle.combatants[this.target].take(this.damage,this.user,1)
                 break
             }
         }else{

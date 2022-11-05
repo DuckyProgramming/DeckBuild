@@ -17,11 +17,12 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(2,0,this.battle.player)
                 }
-                this.add(59,0,this.battle.player)
-                this.add(60,0,this.battle.player)
-                this.add(61,0,this.battle.player)
+                /*for(e=0;e<20;e++){
+                    this.add(floor(random(1,64)),0,this.battle.player)
+                }*/
                 this.add(62,0,this.battle.player)
                 this.add(63,0,this.battle.player)
+                this.add(64,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -53,10 +54,24 @@ class group{
     }
     discard(){
         for(e=0,le=this.cards.length;e<le;e++){
-            if(this.cards[e].spec!=2){
-                this.cards[e].used=true
-            }else if(this.cards[e].type==30){
+            if(this.cards[e].attack==-5){
+                for(g=0,lg=this.cards.length;g<lg;g++){
+                    if(this.cards[g].attack>=0&&!this.cards[g].trigger){
+                        this.battle.combatants[0].take(1,0)
+                    }
+                }
+            }
+        }
+        for(e=0,le=this.cards.length;e<le;e++){
+            if(this.cards[e].spec==5){
                 this.cards[e].damage+=this.cards[e].alt
+            }else if(this.cards[e].spec!=2){
+                this.cards[e].used=true
+                if(this.cards[e].attack==-4){
+                    this.battle.combatants[0].status.main[7]++
+                }else if(this.cards[e].attack==-7){
+                    this.battle.combatants[0].status.main[8]++
+                }
             }
         }
     }
@@ -158,7 +173,7 @@ class group{
                     this.cards[e].select=false
                     this.select=false
                 }
-                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&this.cards[e].spec!=1){
+                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7){
                     this.cards[e].select=true
                     this.select=true
                     this.selected=true

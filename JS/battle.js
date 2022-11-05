@@ -20,8 +20,9 @@ class battle{
         this.turnTimer=0
         this.drawAmount=5
         this.calc={list:[]}
-        this.remember=[0]
-        for(e=0;e<this.drawAmount;e++){
+        this.remember=[0,0,0,0]
+        this.drawInitial()
+        for(e=0,le=this.drawAmount-this.hand.cards.length;e<le;e++){
             this.draw()
         }
     }
@@ -38,6 +39,16 @@ class battle{
             this.reserve.cards.push(copyCard(this.deck.cards[e]))
         }
     }
+    drawInitial(){
+        for(e=0,e<this.reserve.cards.length;e<le;e++){
+            if(this.reserve.cards[e].spec==7){
+                this.hand.cards.push(copyCard(this.reserve.cards[e]))
+                this.reserve.cards.splice(e,1)
+                e--
+                le--
+            }
+        }
+    }
     draw(){
         if(this.reserve.cards.length>0){
             this.hand.cards.push(copyCard(this.reserve.cards[0]))
@@ -49,15 +60,27 @@ class battle{
     }
     return(){
         while(this.discard.cards.length>0){
-            this.reserve.cards.push(copyCard(this.discard.cards[0]))
-            this.reserve.cards[this.reserve.cards.length-1].position.x=1206
+            if(this.discard.cards[0].spec!=6){
+                this.reserve.cards.push(copyCard(this.discard.cards[0]))
+                this.reserve.cards[this.reserve.cards.length-1].position.x=1206
+            }
             this.discard.cards.splice(0,1)
         }
+    }
+    removeCard(index){
+        if(this.deck.cards[index].attack==-8){
+            this.combatants[0].base.life-=3
+            this.combatants[0].life-=3
+        }
+        this.deck.cards.splice(index,1)
     }
     endTurn(){
         this.mana.main=this.mana.max
         this.mana.main+=this.combatants[0].status.main[1]
+        this.remember=[0,0,0,0]
         this.remember[0]+=this.combatants[0].status.main[4]
+        this.remember[1]+=this.combatants[0].status.main[7]
+        this.remember[3]+=this.combatants[0].status.main[8]
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].block=0
             this.combatants[e].setupIntent()
@@ -68,7 +91,8 @@ class battle{
                 this.combatants[e].status.main[f]=0
             }
         }
-        this.combatants[0].boost.main[0]+=this.remember[0]
+        this.combatants[0].boost.main[0]+=this.remember[0]-this.remember[1]
+        this.combatants[0].boost.main[1]+=this.remember[2]-this.remember[3]
     }
     playCard(){
         for(g=0,lg=this.hand.cards.length;g<lg;g++){

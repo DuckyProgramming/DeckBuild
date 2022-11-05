@@ -22,7 +22,7 @@ class combatant{
         this.collect={life:this.life}
 		this.calc={damage:0}
 		this.boost={main:[0,0],fade:[0,0],display:[],color:[[200,0,0],[0,150,255]],infoFade:[0,0],name:['Attack','Defense']}
-		this.status={main:[],fade:[],display:[],color:[[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120]],infoFade:[],name:['Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Damage','Downed','Dodge'],class:[1,1,1,1,1,1,1]}
+		this.status={main:[],fade:[],display:[],color:[[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120],[125,75,25],[25,125,175]],infoFade:[],name:['Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Vulnerability'],class:[1,1,1,1,1,0,1,0,0]}
 		this.combo=0
 		this.stance=0
 		this.ammo=[-1,-1,-1]
@@ -32,7 +32,7 @@ class combatant{
 			this.status.fade.push(0)
 			this.status.infoFade.push(0)
 		}
-		this.block=0
+		this.block=10
 		this.fades={block:0,info:0}
 		this.intent=0
         if(this.type==0){
@@ -620,7 +620,7 @@ class combatant{
 			this.ammo[this.ammo.length-1]=type
 		}
 	}
-	take(damage,user){
+	take(damage,user,extra){
 		if(this.life>0){
 			if(this.status.main[6]>0){
 				this.status.main[6]--
@@ -629,9 +629,9 @@ class combatant{
 				if(this.battle.combatants[user].status.main[2]>0){
 					this.calc.damage*=2
 				}
-				if(this.block>this.calc.damage){
+				if(this.block>this.calc.damage&&extra!=1){
 					this.block-=this.calc.damage
-				}else if(this.block>0){
+				}else if(this.block>0&&extra!=1){
 					this.calc.damage-=this.block
 					this.block=0
 					this.life-=this.calc.damage

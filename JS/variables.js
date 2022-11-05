@@ -144,18 +144,18 @@ types={
         ],
         },{name:'Sweep',rarity:0,
         stats:[
-            {damage:4,alt:2,cost:1,attack:3,target:1,desc:'',spec:2,class:0},
-            {damage:6,alt:2,cost:1,attack:3,target:1,desc:'',spec:2,class:0},
+            {damage:4,alt:2,cost:1,attack:51,target:1,desc:'',spec:2,class:0},
+            {damage:6,alt:2,cost:1,attack:51,target:1,desc:'',spec:2,class:0},
         ],
         },{name:'Spinning\nWhack',rarity:1,
         stats:[
-            {damage:12,alt:4,cost:2,attack:1,target:1,desc:'',spec:2,class:0},
-            {damage:20,alt:4,cost:2,attack:1,target:1,desc:'',spec:2,class:0},
+            {damage:12,alt:4,cost:2,attack:52,target:1,desc:'',spec:5,class:0},
+            {damage:20,alt:4,cost:2,attack:52,target:1,desc:'',spec:5,class:0},
         ],
         },{name:'Shiv',rarity:0,
         stats:[
-            {damage:4,alt:0,cost:0,attack:1,target:1,desc:'',spec:3,class:0},
-            {damage:6,alt:0,cost:0,attack:1,target:1,desc:'',spec:3,class:0},
+            {damage:4,alt:0,cost:0,attack:53,target:1,desc:'',spec:3,class:0},
+            {damage:6,alt:0,cost:0,attack:53,target:1,desc:'',spec:3,class:0},
         ],
         },{name:'Blade\nDance',rarity:2,
         stats:[
@@ -316,6 +316,41 @@ types={
         stats:[
             {damage:15,alt:1,cost:5,attack:42,target:1,desc:'',spec:4,class:0},
             {damage:15,alt:1,cost:4,attack:42,target:1,desc:'',spec:4,class:0},
+        ],
+        },{name:'Pressure\nPoint',rarity:0,
+        stats:[
+            {damage:15,alt:0,cost:4,attack:54,target:1,desc:'',spec:4,class:0},
+            {damage:23,alt:0,cost:4,attack:54,target:1,desc:'',spec:4,class:0},
+        ],
+        },{name:'Clumsy',rarity:-1,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:0},
+            {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:0},
+        ],
+        },{name:'Doubt',rarity:-1,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-4,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-4,target:0,desc:'',spec:1,class:0},
+        ],
+        },{name:'Regret',rarity:-1,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-5,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-5,target:0,desc:'',spec:1,class:0},
+        ],
+        },{name:'Writhe',rarity:-1,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-6,target:0,desc:'',spec:7,class:0},
+            {damage:0,alt:0,cost:0,attack:-6,target:0,desc:'',spec:7,class:0},
+        ],
+        },{name:'Shame',rarity:-1,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-7,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-7,target:0,desc:'',spec:1,class:0},
+        ],
+        },{name:'Parasite',rarity:-1,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-8,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-8,target:0,desc:'',spec:1,class:0},
         ],
         },
     ],combatant:[
