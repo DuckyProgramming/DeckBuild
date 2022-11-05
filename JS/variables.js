@@ -352,15 +352,20 @@ types={
             {damage:0,alt:0,cost:0,attack:-8,target:0,desc:'',spec:1,class:0},
             {damage:0,alt:0,cost:0,attack:-8,target:0,desc:'',spec:1,class:0},
         ],
-        },{name:'Breath',rarity:0,
+        },{name:'Breath',rarity:1,
         stats:[
             {damage:1,alt:0,cost:0,attack:55,target:0,desc:'',spec:0,class:3},
             {damage:2,alt:0,cost:0,attack:55,target:0,desc:'',spec:0,class:3},
         ],
-        },{name:'Entrance',rarity:0,
+        },{name:'Entrance',rarity:1,
         stats:[
-            {damage:8,alt:0,cost:2,attack:12,target:0,desc:'',spec:8,class:1},
-            {damage:12,alt:0,cost:2,attack:12,target:0,desc:'',spec:8,class:1},
+            {damage:8,alt:0,cost:0,attack:12,target:0,desc:'',spec:8,class:1},
+            {damage:12,alt:0,cost:0,attack:12,target:0,desc:'',spec:8,class:1},
+        ],
+        },{name:'Enlighten',rarity:1,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:53,target:0,desc:'',spec:0,class:3},
+            {damage:1,alt:0,cost:0,attack:53,target:0,desc:'',spec:2,class:3},
         ],
         },
     ],combatant:[

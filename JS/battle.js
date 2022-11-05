@@ -13,7 +13,7 @@ class battle{
         this.combatants.push(new combatant(this.layer,this,100,350,player,0,0))
         this.mana={main:3,max:3}
         this.anim={turn:0}
-        this.deck.initial(player)
+        this.deck.initial(this.player)
         this.initialReserve()
         this.reserve.shuffle()
         this.turn=0

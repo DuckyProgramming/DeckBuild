@@ -22,7 +22,7 @@ class attack{
         this.side=side
         if(side==0){
             switch(type){
-                case 1: case 52: case 53:
+                case 1: case 52:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2:
@@ -267,6 +267,11 @@ class attack{
                         this.battle.combatants[this.target+1].take(this.damage+this.alt*this.combo,0)
                     }
                     this.battle.combatants[0].combo=0
+                break
+                case 53:
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        this.battle.hand.cards[g].cost=min(this.damage,this.battle.hand.cards[g].cost)
+                    }
                 break
                 case 54:
                     this.battle.combatants[this.target].take(this.damage,this.user,1)

@@ -32,7 +32,7 @@ class combatant{
 			this.status.fade.push(0)
 			this.status.infoFade.push(0)
 		}
-		this.block=10
+		this.block=0
 		this.fades={block:0,info:0}
 		this.intent=0
         if(this.type==0){

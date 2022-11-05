@@ -14,6 +14,7 @@ class card{
         this.desc=types.card[this.type].stats[this.level].desc
         this.spec=types.card[this.type].stats[this.level].spec
         this.class=types.card[this.type].stats[this.level].class
+        this.base={cost:this.cost}
         this.anim={select:0,afford:0}
         this.width=120
         this.height=160
@@ -204,13 +205,13 @@ class card{
                 this.desc+='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo\nTo 3 Enemies\nEnd Combo'
             break
             case 51:
-                this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nRetain'
+                this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times'
             break
             case 52:
-                this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Damage\nwhen Retained\nRetain'
+                this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Damage\nwhen Retained'
             break
             case 53:
-                this.desc+=''
+                this.desc+='Reduce Cost of\nAll Cards in\nHand to '+this.damage
             break
             case 54:
                 this.desc+='Deal '+this.damage+' Damage\nIgnore Block'
@@ -220,6 +221,9 @@ class card{
             break
         }
         switch(this.spec){
+            case 2:
+                this.desc+='\nRetain'
+            break
             case 3: case 8:
                 this.desc+='\nExhaust'
             break

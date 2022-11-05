@@ -20,9 +20,9 @@ class group{
                 /*for(e=0;e<20;e++){
                     this.add(floor(random(1,64)),0,this.battle.player)
                 }*/
-                this.add(67,0,this.battle.player)
-                this.add(68,0,this.battle.player)
-                this.add(69,0,this.battle.player)
+                this.add(71,1,this.battle.player)
+                this.add(72,1,this.battle.player)
+                this.add(73,1,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -42,14 +42,15 @@ class group{
         this.cards.push(new card(this.layer,50,-200,type,level,color))
     }
     shuffle(){
-        for(e=0,le=this.cards.length;e<le;e++){
-            this.storage.cards.push(copyCard(this.cards[e]))
+        this.storage.cards=[]
+        while(this.cards.length>0){
+            this.storage.cards.push(copyCard(this.cards[0]))
+            this.cards.splice(0,1)
         }
-        this.cards=[]
         while(this.storage.cards.length>0){
-            e=floor(random(0,this.storage.cards.length))
-            this.cards.push(copyCard(this.storage.cards[e]))
-            this.storage.cards.splice(e,1)
+            h=floor(random(0,this.storage.cards.length))
+            this.cards.push(copyCard(this.storage.cards[h]))
+            this.storage.cards.splice(h,1)
         }
     }
     discard(){
