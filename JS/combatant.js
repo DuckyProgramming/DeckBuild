@@ -26,6 +26,7 @@ class combatant{
 		this.combo=0
 		this.stance=0
 		this.ammo=[-1,-1,-1]
+		this.meter=0
 		this.anim=[0,0,0,0,0]
 		for(g=0;g<this.status.name.length;g++){
 			this.status.main.push(0)
@@ -436,6 +437,10 @@ class combatant{
 					this.layer.image(graphics.minor[3],-3-15*(1-this.anim[3])*this.fade,-44-15*(1-this.anim[3])*this.fade,30*(1-this.anim[3])*this.fade,30*(1-this.anim[3])*this.fade)
 				}
 				this.layer.translate(0,1.25)
+				this.layer.image(graphics.minor[4],-40*this.fade,-110-10*this.fade,80*this.fade,20*this.fade)
+				this.layer.stroke(255,this.fade)
+				this.layer.strokeWeight(2)
+				this.layer.line(this.meter*4,-112,this.meter*4,-108)
 			break
 			case 5:
 				this.layer.stroke(80,this.fade)
@@ -656,6 +661,14 @@ class combatant{
     update(){
 		this.boost.display=[]
 		this.status.display=[]
+		if(this.type==4){
+			if(this.meter<-10){
+				this.meter=0
+				this.take(10,0)
+			}else if(this.meter>10){
+				this.battle.mana.main=0
+			}
+		}
 		for(g=0,lg=this.boost.main.length;g<lg;g++){
 			if(this.boost.fade[g]!=0){
 				this.boost.display.push(g)

@@ -106,6 +106,7 @@ class card{
             case 61: this.desc+='Shuffle '+this.damage+'\nRandom Skills\ninto Draw Pile.\nThey Cost 0'; break
             case 62: this.desc+='Deal Damage\nEqual to Number of\nCards in Deck\n('+deckSize+')'; break
             case 63: this.desc+='Deal '+this.damage+'\nDamage\nor\nAdd '+this.damage+'\nBlock'; break
+            case 64: this.desc+='Apply '+this.damage+' Weak\nand '+this.damage+' Vulnerable\nto All Enemies'; break
         }
         if(this.spec==2||this.spec==9){
             this.desc+='\nRetain'

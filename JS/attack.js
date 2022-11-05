@@ -318,6 +318,12 @@ class attack{
                 case 62:
                     this.battle.combatants[this.target].take(this.battle.deck.cards.length,this.user)
                 break
+                case 64:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        this.battle.combatants[g].boost.main[0]-=this.damage
+                        this.battle.combatants[g].boost.main[1]-=this.damage
+                    }
+                break
             }
         }else{
             switch(type){

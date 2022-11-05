@@ -9,6 +9,7 @@ function setupGraphics(){
 	graphics.minor.push(createGraphics(160,160))
 	graphics.minor.push(createGraphics(160,240))
 	graphics.minor.push(createGraphics(160,160))
+	graphics.minor.push(createGraphics(80,20))
 	for(a=0,la=graphics.minor.length;a<la;a++){
 		setupLayer(graphics.minor[a])
 	}
@@ -104,4 +105,13 @@ function setupGraphics(){
 	graphics.minor[3].fill(255,231,238)
 	graphics.minor[3].ellipse(0,0,4,4)
 	graphics.minor[3].translate(-80,-80)
+	graphics.minor[4].noStroke()
+	for(a=0;a<30;a++){
+		graphics.minor[4].fill(180+a*8,-30+a*8,-30+a*8)
+		graphics.minor[4].rect(11+a*2,10,2,8)
+	}
+	graphics.minor[4].noFill()
+	graphics.minor[4].stroke(0)
+	graphics.minor[4].strokeWeight(1)
+	graphics.minor[4].rect(40,10,61,9,3)
 }

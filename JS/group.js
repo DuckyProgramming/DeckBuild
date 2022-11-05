@@ -18,7 +18,7 @@ class group{
                     //this.add(2,0,this.battle.player)
                 }
                 /*for(e=0;e<20;e++){
-                    this.add(floor(random(1,64)),0,this.battle.player)
+                    this.add(floor(random(1,83)),0,this.battle.player)
                 }*/
                 this.add(82,0,this.battle.player)
             break
@@ -30,6 +30,16 @@ class group{
                     this.add(2,0,this.battle.player)
                 }
                 this.add(40,0,this.battle.player)
+            break
+            case 4:
+                for(e=0;e<4;e++){
+                    this.add(1,0,this.battle.player)
+                }
+                for(e=0;e<4;e++){
+                    //this.add(2,0,this.battle.player)
+                }
+                this.add(83,0,this.battle.player)
+                this.add(83,0,this.battle.player)
             break
         }
     }
