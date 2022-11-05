@@ -49,8 +49,8 @@ class attack{
                 break
                 case 8:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.battle.drop.addDrop(11,0,4)
-                    this.battle.reserve.add(11,0,4)
+                    this.battle.drop.addDrop(11,0,5)
+                    this.battle.reserve.add(11,0,5)
                 break
                 case 9:
                     this.battle.combatants[this.target].take(this.damage,this.user)
@@ -243,9 +243,30 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.attacks.push([4,20,this.target,this.alt])
                 break
-                case 47:
+                case 48:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.combatants[this.target].boost.main[1]-=this.alt
+                break
+                case 49:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0){
+                            if(this.battle.combatants[g].status.main[5]>0){
+                                this.battle.combatants[g].take(this.damage+this.alt,this.user)
+                            }else{
+                                this.battle.combatants[g].take(this.damage,this.user)
+                            }
+                        }
+                    }
+                break
+                case 50:
+                    this.battle.combatants[this.target].take(this.damage+this.alt*this.combo,this.user)
+                    if(this.target>1){
+                        this.battle.combatants[this.target-1].take(this.damage+this.alt*this.combo,0)
+                    }
+                    if(this.target<this.battle.combatants.length-1){
+                        this.battle.combatants[this.target+1].take(this.damage+this.alt*this.combo,0)
+                    }
+                    this.battle.combatants[0].combo=0
                 break
             }
         }else{
@@ -255,8 +276,8 @@ class attack{
                     this.attacks.push([1,12,this.user,this.damage])
                 break
                 case 2:
-                    this.battle.drop.addDrop(6,0,4)
-                    this.battle.reserve.add(6,0,4)
+                    this.battle.drop.addDrop(6,0,5)
+                    this.battle.reserve.add(6,0,5)
                 break
             }
         }
