@@ -271,6 +271,13 @@ class attack{
                 case 54:
                     this.battle.combatants[this.target].take(this.damage,this.user,1)
                 break
+                case 55:
+                    this.battle.return()
+                    this.battle.reserve.shuffle()
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                break
             }
         }else{
             switch(type){

@@ -27,193 +27,205 @@ class card{
         this.used=false
     }
     displayName(){
+        this.desc=''
+        if(this.spec==1||this.spec==6||this.spec==7){
+            this.desc+='Unplayable\n'
+        }
+        if(this.spec==7||this.spec==8){
+            this.desc+='Innate\n'
+        }
         switch(this.attack){
-            case -1:
-                this.desc='Unplayable'
-            break
             case -2:
-                this.desc='Unplayable\nTake 1 Damage\nper Card Played'
+                this.desc+='Take 1 Damage\nper Card Played'
             break
             case -3:
-                this.desc='Unplayable\nEthereal'
+                this.desc+='Ethereal'
             break
             case -4:
-                this.desc='Unplayable\nAt End of Turn,\nGain 1 Weak'
+                this.desc+='At End of Turn,\nGain 1 Weak'
             break
             case -5:
-                this.desc='Unplayable\nTake 1 Damage\nper Card Not Played'
-            break
-            case -6:
-                this.desc='Unplayable\nInnate'
+                this.desc+='Take 1 Damage\nper Card Not Played'
             break
             case -7:
-                this.desc='Unplayable\nAt End of Turn,\nGain 1 Vulnerable'
+                this.desc+='At End of Turn,\nGain 1 Vulnerable'
             break
             case -8:
-                this.desc='Unplayable\nWhen Removed,\nLose 3 Max Health'
+                this.desc+='When Removed,\nLose 3 Max Health'
             break
             case 1:
-                this.desc='Deal '+this.damage+'\nDamage'
+                this.desc+='Deal '+this.damage+'\nDamage'
             break
             case 2:
-                this.desc='Add '+this.damage+'\nBlock'
+                this.desc+='Add '+this.damage+'\nBlock'
             break
             case 3:
-                this.desc='Deal '+this.damage+' Damage\n'+this.alt+' Times'
+                this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times'
             break
             case 4:
-                this.desc='Draw '+this.damage+' Cards'
+                this.desc+='Draw '+this.damage+' Cards'
             break
             case 5:
-                this.desc='Apply '+this.damage+'\nWeak'
+                this.desc+='Apply '+this.damage+'\nWeak'
             break
             case 6:
-                this.desc='Add '+this.damage+' Block\nCounter '+this.alt+' All'
+                this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+' All'
             break
             case 7:
-                this.desc='Add '+this.damage+'X\nBlock'
+                this.desc+='Add '+this.damage+'X\nBlock'
             break
             case 8:
-                this.desc='Deal '+this.damage+' Damage\nAdd a Bleed\nto Deck'
+                this.desc+='Deal '+this.damage+' Damage\nAdd a Bleed\nto Deck'
             break
             case 9:
-                this.desc='Deal '+this.damage+' Damage\nDiscard a Card'
+                this.desc+='Deal '+this.damage+' Damage\nDiscard a Card'
             break
             case 10:
-                this.desc='Deal '+this.damage+' Damage\nIf Fatal, gain\n1 Energy'
+                this.desc+='Deal '+this.damage+' Damage\nIf Fatal, gain\n1 Energy'
             break
             case 11:
-                this.desc='Deal '+this.damage+' Damage\nGain 2 Mana\nNext Turn'
+                this.desc+='Deal '+this.damage+' Damage\nGain 2 Mana\nNext Turn'
             break
             case 12:
-                this.desc='Deal '+this.damage+' Damage\nto All Enemies'
+                this.desc+='Deal '+this.damage+' Damage\nto All Enemies'
             break
             case 13:
-                this.desc='Hold '+this.damage+'\nBasic Charge'
+                this.desc+='Hold '+this.damage+'\nBasic Charge'
             break
             case 14:
-                this.desc='Fire 1st Charge\n'+this.damage+' Times'
+                this.desc+='Fire 1st Charge\n'+this.damage+' Times'
             break
             case 15:
-                this.desc='Hold '+this.damage+'\nExplosive Charge'
+                this.desc+='Hold '+this.damage+'\nExplosive Charge'
             break
             case 16:
-                this.desc='Hold '+this.damage+'\nShield Charge'
+                this.desc+='Hold '+this.damage+'\nShield Charge'
             break
             case 17:
-                this.desc='Fire All\nCharges'
+                this.desc+='Fire All\nCharges'
             break
             case 18:
-                this.desc='Deal '+this.damage+' Damage\nDiscard Hand'
+                this.desc+='Deal '+this.damage+' Damage\nDiscard Hand'
             break
             case 19:
-                this.desc='Lose 1\nAmmo Slot'
+                this.desc+='Lose 1\nAmmo Slot'
             break
             case 20:
-                this.desc='Hold '+this.damage+'\nEnergy Charge'
+                this.desc+='Hold '+this.damage+'\nEnergy Charge'
             break
             case 21:
-                this.desc='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable'
+                this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable'
             break                
             case 22:
-                this.desc='Deal '+this.damage+' Damage\nAll Claws gain\n+2 Damage'
+                this.desc+='Deal '+this.damage+' Damage\nAll Claws gain\n+2 Damage'
             break
             case 23:
-                this.desc='Deal '+this.damage+'X\nDamage'
+                this.desc+='Deal '+this.damage+'X\nDamage'
             break
             case 24:
-                this.desc='Deal '+this.damage+' Damage\nDraw 2 Cards'
+                this.desc+='Deal '+this.damage+' Damage\nDraw 2 Cards'
             break
             case 25:
-                this.desc='Heal '+this.damage+' Health'
+                this.desc+='Heal '+this.damage+' Health'
             break
             case 26:
-                this.desc='Draw '+this.damage+' Shivs'
+                this.desc+='Draw '+this.damage+' Shivs'
             break
             case 27:
-                this.desc='Add '+this.damage+' Block\nEnter Calm'
+                this.desc+='Add '+this.damage+' Block\nEnter Calm'
             break
             case 28:
-                this.desc='Add '+this.damage+' Block\nExit Stance'
+                this.desc+='Add '+this.damage+' Block\nExit Stance'
             break
             case 29:
-                this.desc='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nEnter Calm.'
+                this.desc+='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nEnter Calm.'
             break
             case 30:
-                this.desc='Deal '+this.damage+' Damage\nExit Stance'
+                this.desc+='Deal '+this.damage+' Damage\nExit Stance'
             break
             case 31:
-                this.desc='Draw '+this.damage+' Cards\nExit Stance'
+                this.desc+='Draw '+this.damage+' Cards\nExit Stance'
             break
             case 32:
-                this.desc='Remove All\nBlock of Target\nDeal '+this.damage+' Damage'
+                this.desc+='Remove All\nBlock of Target\nDeal '+this.damage+' Damage'
             break
             case 33:
-                this.desc='Fire 1st Charge\nHold that Charge'
+                this.desc+='Fire 1st Charge\nHold that Charge'
             break
             case 34:
-                this.desc='Deal '+this.damage+' Damage\nApply 6 Weak'
+                this.desc+='Deal '+this.damage+' Damage\nApply 6 Weak'
             break
             case 35:
-                this.desc='Gain '+this.damage+'\nCombo'
+                this.desc+='Gain '+this.damage+'\nCombo'
             break
             case 36:
-                this.desc='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo\nEnd Combo'
+                this.desc+='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo\nEnd Combo'
             break
             case 37:
-                this.desc='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo'
+                this.desc+='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo'
             break
             case 38:
-                this.desc='Next '+this.damage+'\nAttacks Deal\nDouble Damage'
+                this.desc+='Next '+this.damage+'\nAttacks Deal\nDouble Damage'
             break
             case 39:
-                this.desc='Add '+this.damage+' Block\nCounter '+this.alt+' Once'
+                this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+' Once'
             break
             case 40:
-                this.desc='Add '+this.damage+' Block\nCounter '+this.alt+' +2\nPer Combo'+' Once'
+                this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+' +2\nPer Combo'+' Once'
             break
             case 41:
-                this.desc='Deal '+this.damage+' Damage\nGain +'+this.alt+' Damage\nNext Turn'
+                this.desc+='Deal '+this.damage+' Damage\nGain +'+this.alt+' Damage\nNext Turn'
             break
             case 42:
-                this.desc='Deal '+this.damage+' Damage\nKnockdown'
+                this.desc+='Deal '+this.damage+' Damage\nKnockdown'
             break
             case 43:
-                this.desc='Deal '+this.damage+' Damage\nDeal '+this.alt+' Bonus\nDamage to Downed'
+                this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Bonus\nDamage to Downed'
             break
             case 44:
-                this.desc='Deal '+this.damage+' Damage\n+1 Per Combo\n'+this.alt+' Times'
+                this.desc+='Deal '+this.damage+' Damage\n+1 Per Combo\n'+this.alt+' Times'
             break
             case 45:
-                this.desc='Deal '+this.damage+' Damage\nGain 1 Dodge'
+                this.desc+='Deal '+this.damage+' Damage\nGain 1 Dodge'
             break
             case 46:
-                this.desc='Deal '+this.damage+' Damage\nDeal '+this.alt+' Damage\nto the Left'
+                this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Damage\nto the Left'
             break
             case 47:
-                this.desc='Deal '+this.damage+' Damage\nDeal '+this.alt+' Damage\nto the Right'
+                this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Damage\nto the Right'
             break
             case 48:
-                this.desc='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable'
+                this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable'
             break
             case 49:
-                this.desc='Deal '+this.damage+' Damage\nto All Enemies\nDeal '+this.alt+' Bonus\nDamage to Downed'
+                this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nDeal '+this.alt+' Bonus\nDamage to Downed'
             break
             case 50:
-                this.desc='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo\nTo 3 Enemies\nEnd Combo'
+                this.desc+='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo\nTo 3 Enemies\nEnd Combo'
             break
             case 51:
-                this.desc='Deal '+this.damage+' Damage\n'+this.alt+' Times\nRetain'
+                this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nRetain'
             break
             case 52:
-                this.desc='Deal '+this.damage+' Damage\nGain '+this.alt+' Damage\nwhen Retained\nRetain'
+                this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Damage\nwhen Retained\nRetain'
             break
             case 53:
-                this.desc='Deal '+this.damage+' Damage\nExhaust'
+                this.desc+=''
             break
             case 54:
-                this.desc='Deal '+this.damage+' Damage\nIgnore Block'
+                this.desc+='Deal '+this.damage+' Damage\nIgnore Block'
             break
+            case 55:
+                this.desc+='Shuffle Discard\nPile into Draw Pile\nDraw '+this.damage+' Cards'
+            break
+        }
+        switch(this.spec){
+            case 3: case 8:
+                this.desc+='\nExhaust'
+            break
+        }
+        if(this.desc[this.desc.length-1]=='\n'){
+            this.desc=this.desc.substr(0,this.desc.length-1)
         }
     }
     display(){
@@ -244,6 +256,10 @@ class card{
                 case 5:
                     this.layer.fill(120,this.fade)
                     this.layer.stroke(80,this.fade)
+                break
+                case 6:
+                    this.layer.fill(80,this.fade)
+                    this.layer.stroke(50,this.fade)
                 break
             }
             this.layer.strokeWeight(5)
@@ -290,6 +306,9 @@ class card{
                     case 5:
                         this.layer.fill(40,this.fade)
                     break
+                    case 6:
+                        this.layer.fill(20,this.fade)
+                    break
                 }
                 this.layer.text(this.name+'+',0,-this.height/2+24)
                 this.layer.fill(0,this.fade)
@@ -310,7 +329,7 @@ class card{
             this.size=round(this.size*5-1)*0.2
         }
         if(this.size<=0&&this.used){
-            if(this.spec==3){
+            if(this.spec==3||this.spec==8){
                 this.remove=true
             }else{
                 this.discard=true

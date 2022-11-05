@@ -20,9 +20,9 @@ class group{
                 /*for(e=0;e<20;e++){
                     this.add(floor(random(1,64)),0,this.battle.player)
                 }*/
-                this.add(62,0,this.battle.player)
-                this.add(63,0,this.battle.player)
-                this.add(64,0,this.battle.player)
+                this.add(67,0,this.battle.player)
+                this.add(68,0,this.battle.player)
+                this.add(69,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){

@@ -139,8 +139,8 @@ types={
         ],
         },{name:'Heal Up',rarity:1,
         stats:[
-            {damage:4,alt:0,cost:1,attack:25,target:0,desc:'',spec:0,class:2},
-            {damage:6,alt:0,cost:1,attack:25,target:0,desc:'',spec:0,class:2},
+            {damage:4,alt:0,cost:1,attack:25,target:0,desc:'',spec:3,class:2},
+            {damage:6,alt:0,cost:1,attack:25,target:0,desc:'',spec:3,class:2},
         ],
         },{name:'Sweep',rarity:0,
         stats:[
@@ -154,8 +154,8 @@ types={
         ],
         },{name:'Shiv',rarity:0,
         stats:[
-            {damage:4,alt:0,cost:0,attack:53,target:1,desc:'',spec:3,class:0},
-            {damage:6,alt:0,cost:0,attack:53,target:1,desc:'',spec:3,class:0},
+            {damage:4,alt:0,cost:0,attack:1,target:1,desc:'',spec:3,class:0},
+            {damage:6,alt:0,cost:0,attack:1,target:1,desc:'',spec:3,class:0},
         ],
         },{name:'Blade\nDance',rarity:2,
         stats:[
@@ -351,6 +351,16 @@ types={
         stats:[
             {damage:0,alt:0,cost:0,attack:-8,target:0,desc:'',spec:1,class:0},
             {damage:0,alt:0,cost:0,attack:-8,target:0,desc:'',spec:1,class:0},
+        ],
+        },{name:'Breath',rarity:0,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:55,target:0,desc:'',spec:0,class:3},
+            {damage:2,alt:0,cost:0,attack:55,target:0,desc:'',spec:0,class:3},
+        ],
+        },{name:'Entrance',rarity:0,
+        stats:[
+            {damage:8,alt:0,cost:2,attack:12,target:0,desc:'',spec:8,class:1},
+            {damage:12,alt:0,cost:2,attack:12,target:0,desc:'',spec:8,class:1},
         ],
         },
     ],combatant:[

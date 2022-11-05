@@ -41,7 +41,7 @@ class battle{
     }
     drawInitial(){
         for(e=0,e<this.reserve.cards.length;e<le;e++){
-            if(this.reserve.cards[e].spec==7){
+            if(this.reserve.cards[e].spec==7||this.reserve.cards[e].spec==8){
                 this.hand.cards.push(copyCard(this.reserve.cards[e]))
                 this.reserve.cards.splice(e,1)
                 e--
