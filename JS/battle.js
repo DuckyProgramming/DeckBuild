@@ -21,6 +21,7 @@ class battle{
         this.drawAmount=5
         this.calc={list:[]}
         this.remember=[0,0,0,0]
+        this.currency={money:100}
         this.drawInitial()
         for(e=0,le=this.drawAmount-this.hand.cards.length;e<le;e++){
             this.draw()
@@ -41,7 +42,7 @@ class battle{
     }
     drawInitial(){
         for(e=0,e<this.reserve.cards.length;e<le;e++){
-            if(this.reserve.cards[e].spec==7||this.reserve.cards[e].spec==8){
+            if(this.reserve.cards[e].spec==7||this.reserve.cards[e].spec==8||this.reserve.cards[e].spec==10){
                 this.hand.cards.push(copyCard(this.reserve.cards[e]))
                 this.reserve.cards.splice(e,1)
                 e--
@@ -119,6 +120,19 @@ class battle{
             }
         }
     }
+    allExhaust(){
+        for(g=0,lg=this.hand.cards.length;g<lg;g++){
+            if(!this.hand.cards[g].trigger){
+                this.hand.cards[g].used=true
+                this.hand.cards[g].exhaust=true
+            }
+        }
+    }
+    allUpgrade(){
+        this.hand.allUpgrade()
+        this.reserve.allUpgrade()
+        this.discard.allUpgrade()
+    }
     display(){
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].display()
@@ -146,6 +160,16 @@ class battle{
         for(e=0,le=this.particles.length;e<le;e++){
             this.particles[e].display()
         }
+        this.layer.noStroke()
+        this.layer.fill(255,225,0)
+        this.layer.ellipse(20,16,16,16)
+        this.layer.fill(255,240,0)
+        this.layer.ellipse(20,16,10,10)
+        this.layer.fill(255,225,0)
+        this.layer.textSize(16)
+        this.layer.textAlign(LEFT,CENTER)
+        this.layer.text(this.currency.money,30,18)
+        this.layer.textAlign(CENTER,CENTER)
     }
     update(){
         for(e=0,le=this.particles.length;e<le;e++){

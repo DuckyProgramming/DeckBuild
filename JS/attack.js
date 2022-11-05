@@ -14,7 +14,7 @@ class attack{
         this.target=[1]
         this.targetType=0
         this.attacks=[]
-        this.hold={int:0}
+        this.hold={int:0,list:[]}
     }
     update(type,level,side){
         this.type=type
@@ -282,6 +282,41 @@ class attack{
                     for(g=0;g<this.damage;g++){
                         this.battle.draw()
                     }
+                break
+                case 56:
+                    this.battle.allExhaust()
+                break
+                case 57:
+                    this.battle.combatants[0].block+=this.damage
+                    for(g=0;g<this.alt;g++){
+                        this.battle.draw()
+                    }
+                break
+                case 58:
+                    this.battle.allUpgrade()
+                break
+                case 59: case 61:
+                    this.hold.list=[]
+                    for(g=0,lg=listing.card[this.battle.player].length;g<lg;g++){
+                        if(types.card[listing.card[this.battle.player][g]].rarity>=0&&(types.card[listing.card[this.battle.player][g]].stats[0].class==0&&this.type==59||(types.card[listing.card[this.battle.player][g]].stats[0].class==1||types.card[listing.card[this.battle.player][g]].stats[0].class==2)&&this.type==61)){
+                            this.hold.list.push(g)
+                        }
+                    }
+                    for(g=0;g<this.damage;g++){
+                        this.battle.reserve.add(this.hold.list[floor(random(0,this.hold.list.length))],0,this.color)
+                        this.battle.reserve.cards[this.battle.reserve.cards.length-1].cost=0
+                        this.battle.reserve.cards[this.battle.reserve.cards.length-1].base.cost=0
+                    }
+                    this.battle.reserve.shuffle()
+                break
+                case 60:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].life<=0){
+                        this.battle.currency.money+=this.alt
+                    }
+                break
+                case 62:
+                    this.battle.combatants[this.target].take(this.battle.deck.cards.length,this.user)
                 break
             }
         }else{

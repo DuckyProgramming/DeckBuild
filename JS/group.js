@@ -20,9 +20,7 @@ class group{
                 /*for(e=0;e<20;e++){
                     this.add(floor(random(1,64)),0,this.battle.player)
                 }*/
-                this.add(71,1,this.battle.player)
-                this.add(72,1,this.battle.player)
-                this.add(73,1,this.battle.player)
+                this.add(82,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -40,6 +38,18 @@ class group{
     }
     addDrop(type,level,color){
         this.cards.push(new card(this.layer,50,-200,type,level,color))
+    }
+    allUpgrade(){
+        this.storage.cards=[]
+        while(this.cards.length>0){
+            this.storage.cards.push(copyCard(this.cards[0]))
+            this.storage.cards[this.storage.cards.length-1].level=1
+            this.cards.splice(0,1)
+        }
+        while(this.storage.cards.length>0){
+            this.cards.push(copyCard(this.storage.cards[0]))
+            this.storage.cards.splice(0,1)
+        }
     }
     shuffle(){
         this.storage.cards=[]
@@ -66,7 +76,7 @@ class group{
         for(e=0,le=this.cards.length;e<le;e++){
             if(this.cards[e].spec==5){
                 this.cards[e].damage+=this.cards[e].alt
-            }else if(this.cards[e].spec!=2){
+            }else if(this.cards[e].spec!=2&&this.cards[e].spec!=9){
                 this.cards[e].used=true
                 if(this.cards[e].attack==-4){
                     this.battle.combatants[0].status.main[7]++
@@ -78,7 +88,7 @@ class group{
     }
     display(){ 
         for(e=0,le=this.cards.length;e<le;e++){
-            this.cards[e].display()
+            this.cards[e].display(this.battle.deck.cards.length)
         }
     }
     update(){
@@ -125,7 +135,11 @@ class group{
                         if(pointInsideBox({position:inputs.rel},{position:{x:this.battle.combatants[e].position.x,y:this.battle.combatants[e].position.y-this.battle.combatants[e].height/2},width:80,height:160})&&this.battle.combatants[e].life>0){
                             this.battle.attack.target=e
                             this.battle.playCard()
-                            this.battle.attack.update(this.battle.attack.type,this.battle.attack.level,0)
+                            if(this.battle.attack.type==63){
+                                this.battle.attack.update(1,this.battle.attack.level,0)
+                            }else{
+                                this.battle.attack.update(this.battle.attack.type,this.battle.attack.level,0)
+                            }
                             for(f=0,lf=this.cards.length;f<lf;f++){
                                 if(this.cards[f].trigger){
                                     this.cards[f].used=true
@@ -161,7 +175,16 @@ class group{
                     }
                     this.battle.attack.type=this.cards[e].attack
                     this.battle.attack.level=this.cards[e].level
-                    if(this.cards[e].target==0){
+                    if(this.cards[e].attack==63){
+                        if(inputs.rel.y>this.cards[e].position.y+10){
+                            this.battle.playCard()
+                            this.battle.attack.update(2,this.cards[e].level,0)
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }else{
+                            this.battle.attack.targetType=this.cards[e].target
+                        }
+                    }else if(this.cards[e].target==0){
                         this.battle.playCard()
                         this.battle.attack.update(this.cards[e].attack,this.cards[e].level,0)
                         this.cards[e].used=true
