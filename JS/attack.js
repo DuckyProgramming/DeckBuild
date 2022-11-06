@@ -324,6 +324,26 @@ class attack{
                         this.battle.combatants[g].boost.main[1]-=this.damage
                     }
                 break
+                case 65:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 66:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 67:
+                    if(this.battle.combatants[0].meter>0){
+                        this.battle.combatants[this.target].take(this.damage*this.battle.combatants[0].meter,this.user)
+                    }
+                    this.battle.combatants[0].meter=0
+                break
+                case 68:
+                    if(this.battle.combatants[0].meter<0){
+                        this.battle.combatants[0].block+=this.damage*-this.battle.combatants[0].meter
+                    }
+                    this.battle.combatants[0].meter=0
+                break
             }
         }else{
             switch(type){

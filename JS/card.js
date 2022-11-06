@@ -107,6 +107,11 @@ class card{
             case 62: this.desc+='Deal Damage\nEqual to Number of\nCards in Deck\n('+deckSize+')'; break
             case 63: this.desc+='Deal '+this.damage+'\nDamage\nor\nAdd '+this.damage+'\nBlock'; break
             case 64: this.desc+='Apply '+this.damage+' Weak\nand '+this.damage+' Vulnerable\nto All Enemies'; break
+            case 65: this.desc+='Deal '+this.damage+' Damage\n+2 Balance'; break
+            case 66: this.desc+='Add '+this.damage+' Block\n-2 Balance'; break
+            case 67: this.desc+='If Balance\nis Positive,\nDeal Damage\nEqual to Balance\nReset Balance'; break
+            case 68: this.desc+='If Balance\nis Negative, Gain\nBlock Equal to\nNegative Balance\nReset Balance'; break
+            case 69: this.desc+='Reset Balance'; break
         }
         if(this.spec==2||this.spec==9){
             this.desc+='\nRetain'

@@ -24,8 +24,8 @@ types={
         ],
         },{name:'Think',rarity:0,
         stats:[
-            {damage:2,alt:0,cost:1,attack:4,target:0,desc:'',spec:0,class:3},
-            {damage:2,alt:0,cost:0,attack:4,target:0,desc:'',spec:0,class:3},
+            {damage:2,alt:0,cost:1,attack:4,target:0,desc:'',spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:4,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Confusion',rarity:-1,
         stats:[
@@ -59,28 +59,28 @@ types={
         ],
         },{name:'Exhausting\nStrike',rarity:0,
         stats:[
-            {damage:9,alt:0,cost:0,attack:9,target:1,desc:'',spec:0,class:1},
-            {damage:12,alt:0,cost:0,attack:9,target:1,desc:'',spec:0,class:1},
+            {damage:9,alt:0,cost:0,attack:9,target:1,desc:'',spec:0,class:0},
+            {damage:12,alt:0,cost:0,attack:9,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Chain\nStrike',rarity:0,
         stats:[
-            {damage:5,alt:0,cost:1,attack:10,target:1,desc:'',spec:0,class:1},
-            {damage:7,alt:0,cost:0,attack:10,target:1,desc:'',spec:0,class:1},
+            {damage:5,alt:0,cost:1,attack:10,target:1,desc:'',spec:0,class:0},
+            {damage:7,alt:0,cost:0,attack:10,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Hook\nStrike',rarity:1,
         stats:[
-            {damage:4,alt:2,cost:1,attack:11,target:1,desc:'',spec:0,class:1},
-            {damage:6,alt:2,cost:1,attack:11,target:1,desc:'',spec:0,class:1},
+            {damage:4,alt:2,cost:1,attack:11,target:1,desc:'',spec:0,class:0},
+            {damage:6,alt:2,cost:1,attack:11,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Multi\nStrike',rarity:0,
         stats:[
-            {damage:6,alt:0,cost:2,attack:12,target:0,desc:'',spec:0,class:1},
-            {damage:9,alt:0,cost:2,attack:12,target:0,desc:'',spec:0,class:1},
+            {damage:6,alt:0,cost:2,attack:12,target:0,desc:'',spec:0,class:0},
+            {damage:9,alt:0,cost:2,attack:12,target:0,desc:'',spec:0,class:0},
         ],
         },{name:'Charge',rarity:0,
         stats:[
-            {damage:1,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:3},
-            {damage:2,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:3},
+            {damage:1,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Multicast',rarity:0,
         stats:[
@@ -89,13 +89,13 @@ types={
         ],
         },{name:'Detonate',rarity:1,
         stats:[
-            {damage:1,alt:0,cost:1,attack:15,target:0,desc:'',spec:0,class:3},
-            {damage:1,alt:0,cost:0,attack:15,target:0,desc:'',spec:0,class:3},
+            {damage:1,alt:0,cost:1,attack:15,target:0,desc:'',spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:15,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Shielding',rarity:0,
         stats:[
-            {damage:1,alt:0,cost:0,attack:16,target:0,desc:'',spec:0,class:3},
-            {damage:2,alt:0,cost:0,attack:16,target:0,desc:'',spec:0,class:3},
+            {damage:1,alt:0,cost:0,attack:16,target:0,desc:'',spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:16,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Outburst',rarity:1,
         stats:[
@@ -109,13 +109,13 @@ types={
         ],
         },{name:'Streamline',rarity:1,
         stats:[
-            {damage:1,alt:0,cost:1,attack:19,target:0,desc:'',spec:0,class:3},
-            {damage:2,alt:0,cost:0,attack:19,target:0,desc:'',spec:0,class:3},
+            {damage:1,alt:0,cost:1,attack:19,target:0,desc:'',spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:19,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Energize',rarity:1,
         stats:[
-            {damage:1,alt:0,cost:2,attack:20,target:0,desc:'',spec:0,class:3},
-            {damage:1,alt:0,cost:1,attack:20,target:0,desc:'',spec:0,class:3},
+            {damage:1,alt:0,cost:2,attack:20,target:0,desc:'',spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:20,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Beam\nPulse',rarity:0,
         stats:[
@@ -159,8 +159,8 @@ types={
         ],
         },{name:'Blade\nDance',rarity:2,
         stats:[
-            {damage:3,alt:0,cost:1,attack:26,target:0,desc:'',spec:0,class:3},
-            {damage:4,alt:0,cost:1,attack:26,target:0,desc:'',spec:0,class:3},
+            {damage:3,alt:0,cost:1,attack:26,target:0,desc:'',spec:0,class:2},
+            {damage:4,alt:0,cost:1,attack:26,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Vigilance',rarity:1,
         stats:[
@@ -184,8 +184,8 @@ types={
         ],
         },{name:'Empty\nMind',rarity:1,
         stats:[
-            {damage:2,alt:0,cost:1,attack:31,target:0,desc:'',spec:0,class:3},
-            {damage:3,alt:0,cost:1,attack:31,target:0,desc:'',spec:0,class:3},
+            {damage:2,alt:0,cost:1,attack:31,target:0,desc:'',spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:31,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Melt',rarity:1,
         stats:[
@@ -219,8 +219,8 @@ types={
         ],
         },{name:'Strengthen',rarity:0,
         stats:[
-            {damage:1,alt:0,cost:1,attack:38,target:0,desc:'',spec:0,class:3},
-            {damage:2,alt:0,cost:1,attack:38,target:0,desc:'',spec:0,class:3},
+            {damage:1,alt:0,cost:1,attack:38,target:0,desc:'',spec:0,class:2},
+            {damage:2,alt:0,cost:1,attack:38,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Counter',rarity:0,
         stats:[
@@ -354,8 +354,8 @@ types={
         ],
         },{name:'Breath',rarity:1,
         stats:[
-            {damage:1,alt:0,cost:0,attack:55,target:0,desc:'',spec:0,class:3},
-            {damage:2,alt:0,cost:0,attack:55,target:0,desc:'',spec:0,class:3},
+            {damage:1,alt:0,cost:0,attack:55,target:0,desc:'',spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:55,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Entrance',rarity:1,
         stats:[
@@ -364,8 +364,8 @@ types={
         ],
         },{name:'Enlighten',rarity:1,
         stats:[
-            {damage:1,alt:0,cost:0,attack:53,target:0,desc:'',spec:0,class:3},
-            {damage:1,alt:0,cost:0,attack:53,target:0,desc:'',spec:2,class:3},
+            {damage:1,alt:0,cost:0,attack:53,target:0,desc:'',spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:53,target:0,desc:'',spec:2,class:2},
         ],
         },{name:'Purity',rarity:1,
         stats:[
@@ -379,18 +379,18 @@ types={
         ],
         },{name:'Apotheosis',rarity:2,
         stats:[
-            {damage:0,alt:0,cost:2,attack:58,target:0,desc:'',spec:3,class:3},
-            {damage:0,alt:0,cost:1,attack:58,target:0,desc:'',spec:3,class:3},
+            {damage:0,alt:0,cost:2,attack:58,target:0,desc:'',spec:3,class:2},
+            {damage:0,alt:0,cost:1,attack:58,target:0,desc:'',spec:3,class:2},
         ],
         },{name:'Metamor\nphosis',rarity:2,
         stats:[
-            {damage:3,alt:0,cost:2,attack:59,target:0,desc:'',spec:3,class:3},
-            {damage:5,alt:0,cost:2,attack:59,target:0,desc:'',spec:3,class:3},
+            {damage:3,alt:0,cost:2,attack:59,target:0,desc:'',spec:3,class:2},
+            {damage:5,alt:0,cost:2,attack:59,target:0,desc:'',spec:3,class:2},
         ],
         },{name:'Strategist',rarity:2,
         stats:[
-            {damage:3,alt:0,cost:0,attack:4,target:0,desc:'',spec:0,class:3},
-            {damage:4,alt:0,cost:0,attack:4,target:0,desc:'',spec:0,class:3},
+            {damage:3,alt:0,cost:0,attack:4,target:0,desc:'',spec:0,class:2},
+            {damage:4,alt:0,cost:0,attack:4,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Hand of\nGreed',rarity:0,
         stats:[
@@ -399,8 +399,8 @@ types={
         ],
         },{name:'Chrysalis',rarity:2,
         stats:[
-            {damage:3,alt:0,cost:2,attack:61,target:0,desc:'',spec:3,class:3},
-            {damage:5,alt:0,cost:2,attack:61,target:0,desc:'',spec:3,class:3},
+            {damage:3,alt:0,cost:2,attack:61,target:0,desc:'',spec:3,class:2},
+            {damage:5,alt:0,cost:2,attack:61,target:0,desc:'',spec:3,class:2},
         ],
         },{name:'Mind Blast',rarity:0,
         stats:[
@@ -416,6 +416,31 @@ types={
         stats:[
             {damage:2,alt:2,cost:2,attack:64,target:0,desc:'',spec:0,class:2},
             {damage:3,alt:3,cost:2,attack:64,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Danger',rarity:0,
+        stats:[
+            {damage:8,alt:-4,cost:1,attack:65,target:1,desc:'',spec:0,class:0},
+            {damage:12,alt:-4,cost:1,attack:65,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Peace',rarity:0,
+        stats:[
+            {damage:7,alt:4,cost:1,attack:66,target:0,desc:'',spec:0,class:1},
+            {damage:11,alt:4,cost:1,attack:66,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Outburst',rarity:1,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:67,target:1,desc:'',spec:0,class:0},
+            {damage:1,alt:0,cost:0,attack:67,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Inburst',rarity:1,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:68,target:0,desc:'',spec:0,class:1},
+            {damage:1,alt:0,cost:0,attack:68,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Revert',rarity:0,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:69,target:0,desc:'',spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:69,target:0,desc:'',spec:2,class:2},
         ],
         },
     ],combatant:[
