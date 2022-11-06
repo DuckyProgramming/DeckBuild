@@ -376,6 +376,15 @@ class attack{
                 case 75:
                     this.battle.combatants[0].status.main[10]+=this.damage
                 break
+                case 76:
+                    this.battle.combatants[this.target].status.main[11]+=this.damage
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 77:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target].status.main[11]+=6+this.level*2
+                    this.battle.combatants[0].meter+=this.alt
+                break
             }
         }else{
             switch(type){

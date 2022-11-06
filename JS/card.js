@@ -114,10 +114,12 @@ class card{
             case 69: this.desc+='Reset Balance'; break
             case 70: this.desc+='Draw '+this.damage+' Cards\n'+nfp(this.alt)+' Balance'; break
             case 71: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\n'+nfp(this.alt)+' Balance\nPer Enemy'; break
-            case 72: this.desc+='Deal '+this.damage+' Damage\nApply 1 Stunned'; break
+            case 72: this.desc+='Deal '+this.damage+' Damage\nApply 1 Stunned\n'+nfp(this.alt)+' Balance'; break
             case 73: this.desc+='Deal '+this.damage+' Damage\nDisarm'; break
             case 74: this.desc+='Rearm'; break
-            case 75: this.desc+='Reflect Next\n'+this.damage+' Attacks'; break
+            case 75: this.desc+='Reflect Next\n'+this.damage+' Attacks\n'+nfp(this.alt)+' Balance'; break
+            case 76: this.desc+='Apply '+this.damage+'\nBleed\n'+nfp(this.alt)+' Balance'; break
+            case 77: this.desc+='Deal '+this.damage+' Damage\nApply '+(6+this.level*2)+' Bleed\n'+nfp(this.alt)+' Balance'; break
         }
         if(this.spec==2||this.spec==9){
             this.desc+='\nRetain'

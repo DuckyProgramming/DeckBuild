@@ -38,11 +38,11 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(2,0,this.battle.player)
                 }
-                this.add(90,0,this.battle.player)
-                this.add(91,0,this.battle.player)
                 this.add(92,0,this.battle.player)
                 this.add(93,0,this.battle.player)
                 this.add(94,0,this.battle.player)
+                this.add(95,0,this.battle.player)
+                this.add(96,0,this.battle.player)
             break
         }
     }

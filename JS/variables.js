@@ -459,8 +459,8 @@ types={
         ],
         },{name:'Throw',rarity:0,
         stats:[
-            {damage:20,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
-            {damage:30,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
+            {damage:24,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
+            {damage:32,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
         ],
         },{name:'Collect',rarity:0,
         stats:[
@@ -471,6 +471,16 @@ types={
         stats:[
             {damage:1,alt:-3,cost:1,attack:75,target:0,desc:'',spec:11,class:1},
             {damage:2,alt:-3,cost:1,attack:75,target:0,desc:'',spec:11,class:1},
+        ],
+        },{name:'Slash',rarity:0,
+        stats:[
+            {damage:5,alt:-6,cost:1,attack:76,target:1,desc:'',spec:11,class:0},
+            {damage:7,alt:-6,cost:1,attack:76,target:1,desc:'',spec:11,class:0},
+        ],
+        },{name:'Decisive\nStab',rarity:0,
+        stats:[
+            {damage:16,alt:-12,cost:2,attack:77,target:1,desc:'',spec:11,class:0},
+            {damage:25,alt:-12,cost:2,attack:77,target:1,desc:'',spec:11,class:0},
         ],
         },
     ],combatant:[

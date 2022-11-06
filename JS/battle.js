@@ -89,7 +89,12 @@ class battle{
                 this.combatants[e].boost.main[f]=0
             }
             for(f=0,lf=this.combatants[e].status.main.length;f<lf;f++){
-                this.combatants[e].status.main[f]=0
+                if(f==11&&this.combatants[e].status.main[f]>0){
+                    this.combatants[e].take(this.combatants[e].status.main[f],e)
+                    this.combatants[e].status.main[f]--
+                }else{
+                    this.combatants[e].status.main[f]=0
+                }
             }
         }
         this.combatants[0].boost.main[0]+=this.remember[0]-this.remember[1]
