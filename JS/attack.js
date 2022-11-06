@@ -385,6 +385,21 @@ class attack{
                     this.battle.combatants[this.target].status.main[11]+=6+this.level*2
                     this.battle.combatants[0].meter+=this.alt
                 break
+                case 78:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.attacks.push([0,50,this.target,this.damage])
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 79:
+                    if(this.battle.combatants[0].meter>0){
+                        this.battle.combatants[0].life=min(this.battle.combatants[0].life+this.damage*this.battle.combatants[0].meter,this.battle.combatants[0].base.life)
+                    }
+                    this.battle.combatants[0].meter=0
+                break
+                case 80:
+                    this.battle.combatants[0].status.main[12]++
+                    this.battle.combatants[0].meter+=this.alt
+                break
             }
         }else{
             switch(type){

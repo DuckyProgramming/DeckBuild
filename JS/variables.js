@@ -452,7 +452,7 @@ types={
             {damage:8,alt:-2,cost:2,attack:71,target:0,desc:'',spec:11,class:0},
             {damage:13,alt:-2,cost:2,attack:71,target:0,desc:'',spec:11,class:0},
         ],
-        },{name:'Petal\nCloud',rarity:0,
+        },{name:'Petal\nCloud',rarity:1,
         stats:[
             {damage:4,alt:6,cost:1,attack:72,target:1,desc:'',spec:0,class:0},
             {damage:12,alt:6,cost:1,attack:72,target:1,desc:'',spec:0,class:0},
@@ -464,8 +464,8 @@ types={
         ],
         },{name:'Collect',rarity:0,
         stats:[
-            {damage:0,alt:0,cost:1,attack:74,target:0,desc:'',spec:2,class:0},
-            {damage:0,alt:0,cost:0,attack:74,target:0,desc:'',spec:2,class:0},
+            {damage:0,alt:0,cost:1,attack:74,target:0,desc:'',spec:2,class:2},
+            {damage:0,alt:0,cost:0,attack:74,target:0,desc:'',spec:2,class:2},
         ],
         },{name:'Parry',rarity:0,
         stats:[
@@ -477,19 +477,34 @@ types={
             {damage:5,alt:-6,cost:1,attack:76,target:1,desc:'',spec:11,class:0},
             {damage:7,alt:-6,cost:1,attack:76,target:1,desc:'',spec:11,class:0},
         ],
-        },{name:'Decisive\nStab',rarity:0,
+        },{name:'Decisive\nStab',rarity:2,
         stats:[
             {damage:16,alt:-12,cost:2,attack:77,target:1,desc:'',spec:11,class:0},
             {damage:25,alt:-12,cost:2,attack:77,target:1,desc:'',spec:11,class:0},
         ],
-        },
+        },{name:'Flurry',rarity:1,
+        stats:[
+            {damage:2,alt:-5,cost:1,attack:78,target:1,desc:'',spec:0,class:0},
+            {damage:3,alt:-5,cost:1,attack:78,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Complete',rarity:2,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:79,target:0,desc:'',spec:3,class:2},
+            {damage:1,alt:0,cost:1,attack:79,target:0,desc:'',spec:3,class:2},
+        ],
+        },{name:'Evanes\ncence',rarity:0,
+        stats:[
+            {damage:1,alt:5,cost:1,attack:80,target:0,desc:'',spec:0,class:1},
+            {damage:1,alt:5,cost:1,attack:80,target:0,desc:'',spec:0,class:1},
+        ],
+        }
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Agent',alt:'',life:80,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Duelist',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Creation',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
-        {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1,1,2],damage:[4,4,4],altAttack:[],class:0},
+        {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1,1,1],damage:[4,4,4],altAttack:[],class:0},
     ],attack:[
         {class:0},
         {class:0},
@@ -520,7 +535,6 @@ inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,fal
 a=0;b=0;c=0;d=0;e=0;f=0;g=0;h=0;i=0;j=0;k=0;l=0;m=0;n=0;o=0;p=0
 la=0;lb=0;lc=0;ld=0;le=0;lf=0;lg=0;lh=0;li=0;lj=0;lk=0;ll=0;lm=0;ln=0;lo=0;lp=0
 /*
-        {name:'Decisive Stab'           ,damage:1.5 ,target:0,class:0,uses:10,accuracy:1   ,description:'Cause damage and bleeding'},
-        {name:'Rough Combat'            ,damage:0.25,target:0,class:0,uses:0 ,accuracy:1   ,description:'Beat up and get beat up'},
         {name:'Silence'                 ,damage:0   ,target:0,class:0,uses:0 ,accuracy:1   ,description:'Cancels abilities'},
-        {name:'Impale'                  ,damage:1   ,target:0,class:5,uses:0 ,accuracy:1   ,description:'Stab and disable'},*/
+        {name:'Impale'                  ,damage:1   ,target:0,class:5,uses:0 ,accuracy:1   ,description:'Stab and disable'},
+        Armaments*/

@@ -120,6 +120,9 @@ class card{
             case 75: this.desc+='Reflect Next\n'+this.damage+' Attacks\n'+nfp(this.alt)+' Balance'; break
             case 76: this.desc+='Apply '+this.damage+'\nBleed\n'+nfp(this.alt)+' Balance'; break
             case 77: this.desc+='Deal '+this.damage+' Damage\nApply '+(6+this.level*2)+' Bleed\n'+nfp(this.alt)+' Balance'; break
+            case 78: this.desc+='Deal '+this.damage+' Damage\n6 Times\n'+nfp(this.alt)+' Balance'; break
+            case 79: this.desc+='If Balance\nis Positive,\nHeal Health\nEqual to Balance\nReset Balance'; break
+            case 80: this.desc+='Gain '+this.damage+' Intangible\n'+nfp(this.alt)+' Balance'; break
         }
         if(this.spec==2||this.spec==9){
             this.desc+='\nRetain'
@@ -242,7 +245,7 @@ class card{
             this.size=round(this.size*5-1)*0.2
         }
         if(this.size<=0&&this.used){
-            if(this.spec==3||this.spec==8||this.spec==9||this.exhaust){
+            if((this.spec==3||this.spec==8||this.spec==9||this.exhaust)&&this.trigger){
                 this.remove=true
             }else{
                 this.discard=true
