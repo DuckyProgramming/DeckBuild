@@ -10,6 +10,7 @@ function setupGraphics(){
 	graphics.minor.push(createGraphics(160,240))
 	graphics.minor.push(createGraphics(160,160))
 	graphics.minor.push(createGraphics(80,20))
+	graphics.minor.push(createGraphics(200,200))
 	for(a=0,la=graphics.minor.length;a<la;a++){
 		setupLayer(graphics.minor[a])
 	}
@@ -107,11 +108,28 @@ function setupGraphics(){
 	graphics.minor[3].translate(-80,-80)
 	graphics.minor[4].noStroke()
 	for(a=0;a<30;a++){
-		graphics.minor[4].fill(180+a*8,-30+a*8,-30+a*8)
+		graphics.minor[4].fill(180+5,-30+5,-30+5)
 		graphics.minor[4].rect(11+a*2,10,2,8)
 	}
 	graphics.minor[4].noFill()
 	graphics.minor[4].stroke(0)
 	graphics.minor[4].strokeWeight(1)
 	graphics.minor[4].rect(40,10,61,9,3)
+	graphics.minor[5].noStroke()
+	graphics.minor[5].translate(100,100)
+	graphics.minor[5].rotate(-10)
+	graphics.minor[5].fill(138,141,207)
+	graphics.minor[5].arc(0,0,150,180,0,30)
+	graphics.minor[5].fill(111,114,178)
+	graphics.minor[5].arc(0,0,150,180,30,60)
+	graphics.minor[5].fill(88,82,128)
+	graphics.minor[5].arc(0,0,150,180,60,90)
+	graphics.minor[5].erase()
+	graphics.minor[5].arc(0,0,120,180,0,90)
+	graphics.minor[5].noErase()
+	graphics.minor[5].fill(189,187,237)
+	graphics.minor[5].rect(0,0,160,8,3)
+	graphics.minor[5].fill(90,80,131)
+	graphics.minor[5].rect(0,0,150,4,3)
+	
 }

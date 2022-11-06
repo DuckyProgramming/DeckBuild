@@ -73,7 +73,7 @@ class card{
             case 28: this.desc+='Add '+this.damage+' Block\nExit Stance'; break
             case 29: this.desc+='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nEnter Calm.'; break
             case 30: this.desc+='Deal '+this.damage+' Damage\nExit Stance'; break
-            case 31: this.desc+='Draw '+this.damage+' Cards\nEXit Stance'; break
+            case 31: this.desc+='Draw '+this.damage+' Cards\nExit Stance'; break
             case 32: this.desc+='Remove All\nBlock of Target\nDeal '+this.damage+' Damage'; break
             case 33: this.desc+='Fire 1st Charge\nHold that Charge'; break
             case 34: this.desc+='Deal '+this.damage+' Damage\nApply 6 Weak'; break
@@ -107,11 +107,14 @@ class card{
             case 62: this.desc+='Deal Damage\nEqual to Number of\nCards in Deck\n('+deckSize+')'; break
             case 63: this.desc+='Deal '+this.damage+'\nDamage\nor\nAdd '+this.damage+'\nBlock'; break
             case 64: this.desc+='Apply '+this.damage+' Weak\nand '+this.damage+' Vulnerable\nto All Enemies'; break
-            case 65: this.desc+='Deal '+this.damage+' Damage\n+2 Balance'; break
-            case 66: this.desc+='Add '+this.damage+' Block\n-2 Balance'; break
+            case 65: this.desc+='Deal '+this.damage+' Damage\n'+nfp(this.alt)+' Balance'; break
+            case 66: this.desc+='Add '+this.damage+' Block\n'+nfp(this.alt)+' Balance'; break
             case 67: this.desc+='If Balance\nis Positive,\nDeal Damage\nEqual to Balance\nReset Balance'; break
             case 68: this.desc+='If Balance\nis Negative, Gain\nBlock Equal to\nNegative Balance\nReset Balance'; break
             case 69: this.desc+='Reset Balance'; break
+            case 70: this.desc+='Draw '+this.damage+' Cards\n'+nfp(this.alt)+' Balance'; break
+            case 71: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\n'+nfp(this.alt)+' Balance\nPer Enemy'; break
+            case 72: this.desc+='Deal '+this.damage+' Damage\nApply 1 Stunned'; break
         }
         if(this.spec==2||this.spec==9){
             this.desc+='\nRetain'
@@ -162,6 +165,12 @@ class card{
             if(this.attack==63){
                 this.layer.rect(0,-this.height/4+5,this.width,this.height/2+10,5)
                 this.layer.rect(0,this.height/4+5,this.width,this.height/2-10,5)
+            }
+            if(this.spec==11){
+                this.layer.fill(138,141,207,this.fade)
+                this.layer.stroke(111,114,178,this.fade)
+                this.layer.strokeWeight(2)
+                this.layer.ellipse(-this.width/2+16,-this.height/2+20,30,30)
             }
             if(this.spec==4){
                 this.layer.noFill()
@@ -221,7 +230,7 @@ class card{
             this.layer.translate(-this.position.x,-this.position.y)
         }
     }
-    update(mana,combo){
+    update(mana,combo,armed){
         if(this.size<1&&!this.used){
             this.size=round(this.size*5+1)*0.2
         }else if(this.size>0&&this.used){
@@ -239,9 +248,9 @@ class card{
         }else if(!this.select&&this.anim.select>0){
             this.anim.select=round(this.anim.select*5-1)/5
         }
-        if((mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4)&&this.anim.afford<1){
+        if((mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4)&&!(this.spec==11&&!this.armed)&&this.anim.afford<1){
             this.anim.afford=round(this.anim.afford*5+1)/5
-        }else if((mana.main>=this.cost&&this.spec!=4||combo>=this.cost&&this.spec==4)&&this.anim.afford>0){
+        }else if(((mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4)&&!(this.spec==11&&!this.armed))&&this.anim.afford>0){
             this.anim.afford=round(this.anim.afford*5-1)/5
         }
         if(this.trigger&&!this.used){

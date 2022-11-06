@@ -199,7 +199,7 @@ class battle{
         if(this.turn>0){
             if(this.turnTimer>0){
                 this.turnTimer--
-            }else if(this.combatants[this.turn].status.main[5]>0){
+            }else if(this.combatants[this.turn].status.main[5]>0||this.combatants[this.turn].status.main[9]>0){
                 this.turn++
                 if(this.turn>=this.combatants.length){
                     this.turn=0

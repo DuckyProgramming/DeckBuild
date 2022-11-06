@@ -38,12 +38,11 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(2,0,this.battle.player)
                 }
-                this.add(83,0,this.battle.player)
-                this.add(84,0,this.battle.player)
-                this.add(85,0,this.battle.player)
                 this.add(86,0,this.battle.player)
                 this.add(87,0,this.battle.player)
                 this.add(88,0,this.battle.player)
+                this.add(90,0,this.battle.player)
+                this.add(91,0,this.battle.player)
             break
         }
     }
@@ -121,7 +120,7 @@ class group{
     }
     updateHand(){
         for(e=0,le=this.cards.length;e<le;e++){
-            this.cards[e].update(this.battle.mana,this.battle.combatants[0].combo)
+            this.cards[e].update(this.battle.mana,this.battle.combatants[0].combo,this.battle.combatants[0].armed)
             if((inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>350||this.cards[e].select)&&(!this.trigger||this.cards[e].trigger)&&this.cards[e].position.y>320){
                 this.cards[e].position.y-=20
             }else if(!((inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250||this.cards[e].select)&&(!this.trigger||this.cards[e].trigger))&&this.cards[e].position.y<500){
@@ -167,7 +166,7 @@ class group{
         }else{
             this.selected=false
             for(e=0,le=this.cards.length;e<le;e++){
-                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.select&&this.cards[e].select&&(this.battle.mana.main>=this.cards[e].cost&&this.cards[e].spec!=4||this.battle.combatants[0].combo>=this.cards[e].cost&&this.cards[e].spec==4)){
+                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.select&&this.cards[e].select&&(this.battle.mana.main>=this.cards[e].cost&&this.cards[e].spec!=4||this.battle.combatants[0].combo>=this.cards[e].cost&&this.cards[e].spec==4)&&!(this.cards[e].spec==11&&!this.battle.combatants[0].armed)){
                     this.trigger=true
                     this.cards[e].trigger=true
                     this.select=false

@@ -344,6 +344,28 @@ class attack{
                     }
                     this.battle.combatants[0].meter=0
                 break
+                case 69:
+                    this.battle.combatants[0].meter=0
+                break
+                case 70:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 71:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0){
+                            this.battle.combatants[g].take(this.damage,this.user)
+                            this.battle.combatants[0].meter+=this.alt
+                        }
+                    }
+                break
+                case 72:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target].status.main[9]++
+                    this.battle.combatants[0].meter+=this.alt
+                break
             }
         }else{
             switch(type){
