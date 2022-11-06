@@ -457,10 +457,20 @@ types={
             {damage:4,alt:6,cost:1,attack:72,target:1,desc:'',spec:0,class:0},
             {damage:12,alt:6,cost:1,attack:72,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Throw\nScythe',rarity:0,
+        },{name:'Throw',rarity:0,
         stats:[
-            {damage:8,alt:0,cost:1,attack:65,target:1,desc:'',spec:0,class:0},
-            {damage:12,alt:0,cost:1,attack:65,target:1,desc:'',spec:0,class:0},
+            {damage:20,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
+            {damage:30,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
+        ],
+        },{name:'Collect',rarity:0,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:74,target:0,desc:'',spec:2,class:0},
+            {damage:0,alt:0,cost:0,attack:74,target:0,desc:'',spec:2,class:0},
+        ],
+        },{name:'Parry',rarity:0,
+        stats:[
+            {damage:1,alt:-3,cost:1,attack:75,target:0,desc:'',spec:11,class:1},
+            {damage:2,alt:-3,cost:1,attack:75,target:0,desc:'',spec:11,class:1},
         ],
         },
     ],combatant:[
@@ -501,9 +511,6 @@ a=0;b=0;c=0;d=0;e=0;f=0;g=0;h=0;i=0;j=0;k=0;l=0;m=0;n=0;o=0;p=0
 la=0;lb=0;lc=0;ld=0;le=0;lf=0;lg=0;lh=0;li=0;lj=0;lk=0;ll=0;lm=0;ln=0;lo=0;lp=0
 /*
         {name:'Decisive Stab'           ,damage:1.5 ,target:0,class:0,uses:10,accuracy:1   ,description:'Cause damage and bleeding'},
-        {name:'Parry'                   ,damage:0   ,target:0,class:0,uses:5 ,accuracy:1   ,description:'Reverse next attack'},
-        {name:'Throw'                   ,damage:4   ,target:0,class:2,uses:0 ,accuracy:1   ,description:'Throw weapon'},//130
-        {name:'Collect'                 ,damage:0   ,target:2,class:0,uses:0 ,accuracy:1   ,description:'Pick up weapon'},
         {name:'Rough Combat'            ,damage:0.25,target:0,class:0,uses:0 ,accuracy:1   ,description:'Beat up and get beat up'},
         {name:'Silence'                 ,damage:0   ,target:0,class:0,uses:0 ,accuracy:1   ,description:'Cancels abilities'},
         {name:'Impale'                  ,damage:1   ,target:0,class:5,uses:0 ,accuracy:1   ,description:'Stab and disable'},*/

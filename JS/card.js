@@ -115,6 +115,9 @@ class card{
             case 70: this.desc+='Draw '+this.damage+' Cards\n'+nfp(this.alt)+' Balance'; break
             case 71: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\n'+nfp(this.alt)+' Balance\nPer Enemy'; break
             case 72: this.desc+='Deal '+this.damage+' Damage\nApply 1 Stunned'; break
+            case 73: this.desc+='Deal '+this.damage+' Damage\nDisarm'; break
+            case 74: this.desc+='Rearm'; break
+            case 75: this.desc+='Reflect Next\n'+this.damage+' Attacks'; break
         }
         if(this.spec==2||this.spec==9){
             this.desc+='\nRetain'
@@ -248,9 +251,9 @@ class card{
         }else if(!this.select&&this.anim.select>0){
             this.anim.select=round(this.anim.select*5-1)/5
         }
-        if((mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4)&&!(this.spec==11&&!this.armed)&&this.anim.afford<1){
+        if((mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==11&&!armed))&&this.anim.afford<1){
             this.anim.afford=round(this.anim.afford*5+1)/5
-        }else if(((mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4)&&!(this.spec==11&&!this.armed))&&this.anim.afford>0){
+        }else if(!(mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==11&&!armed))&&this.anim.afford>0){
             this.anim.afford=round(this.anim.afford*5-1)/5
         }
         if(this.trigger&&!this.used){

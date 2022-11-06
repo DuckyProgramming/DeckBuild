@@ -366,6 +366,16 @@ class attack{
                     this.battle.combatants[this.target].status.main[9]++
                     this.battle.combatants[0].meter+=this.alt
                 break
+                case 73:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].armed=false
+                break
+                case 74:
+                    this.battle.combatants[0].armed=true
+                break
+                case 75:
+                    this.battle.combatants[0].status.main[10]+=this.damage
+                break
             }
         }else{
             switch(type){

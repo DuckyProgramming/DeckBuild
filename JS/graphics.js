@@ -108,7 +108,7 @@ function setupGraphics(){
 	graphics.minor[3].translate(-80,-80)
 	graphics.minor[4].noStroke()
 	for(a=0;a<30;a++){
-		graphics.minor[4].fill(180+5,-30+5,-30+5)
+		graphics.minor[4].fill(180+a*8,-30+a*8,-30+a*8)
 		graphics.minor[4].rect(11+a*2,10,2,8)
 	}
 	graphics.minor[4].noFill()
@@ -124,12 +124,21 @@ function setupGraphics(){
 	graphics.minor[5].arc(0,0,150,180,30,60)
 	graphics.minor[5].fill(88,82,128)
 	graphics.minor[5].arc(0,0,150,180,60,90)
+
+	graphics.minor[5].fill(161,168,222)
+	graphics.minor[5].arc(0,0,135,180,0,15)
+	graphics.minor[5].fill(121,124,188)
+	graphics.minor[5].arc(0,0,135,180,15,45)
+	graphics.minor[5].fill(98,92,138)
+	graphics.minor[5].arc(0,0,135,180,45,75)
+	graphics.minor[5].fill(77,65,108)
+	graphics.minor[5].arc(0,0,135,180,75,90)
+
 	graphics.minor[5].erase()
 	graphics.minor[5].arc(0,0,120,180,0,90)
 	graphics.minor[5].noErase()
 	graphics.minor[5].fill(189,187,237)
 	graphics.minor[5].rect(0,0,160,8,3)
-	graphics.minor[5].fill(90,80,131)
-	graphics.minor[5].rect(0,0,150,4,3)
-	
+	graphics.minor[5].fill(149,134,184)
+	graphics.minor[5].rect(0,-2,160,4,3)
 }
