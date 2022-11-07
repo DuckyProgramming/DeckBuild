@@ -22,7 +22,7 @@ class combatant{
         this.collect={life:this.life}
 		this.calc={damage:0}
 		this.boost={main:[0,0],fade:[0,0],display:[],color:[[200,0,0],[0,150,255]],infoFade:[0,0],name:['Attack','Defense']}
-		this.status={main:[],fade:[],display:[],color:[[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120],[125,75,25],[25,125,175],[150,225,150],[100,200,200],[200,0,50],[100,50,150]],infoFade:[],name:['Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Vulnerability','Confused','Reflect','Bleed','Intangible'],class:[1,1,1,1,1,0,1,0,0,0,1,0,1]}
+		this.status={main:[],fade:[],display:[],color:[[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120],[125,75,25],[25,125,175],[150,225,150],[100,200,200],[200,0,50],[100,50,150],[50,100,50]],infoFade:[],name:['Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Vulnerability','Confused','Reflect','Bleed','Intangible','Sink'],class:[1,1,1,1,1,0,1,0,0,0,1,0,1,1]}
 		this.combo=0
 		this.stance=0
 		this.ammo=[-1,-1,-1]
@@ -654,6 +654,9 @@ class combatant{
 				if(this.status.main[3]>0){
 					this.battle.combatants[user].take(this.status.main[3],this.id)
 					this.status.main[3]=0
+				}
+				if(this.status.main[13]>0){
+					this.status.main[4]++
 				}
 				this.battle.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))
 				this.battle.particles[this.battle.particles.length-1].text=round(this.calc.damage*10)/10

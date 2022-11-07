@@ -132,8 +132,11 @@ class card{
             case 87: this.desc+='Add '+this.damage+' Block\nRearm'; break
             case 88: this.desc+='Add '+this.damage+' Block\nDisarm'; break
             case 89: this.desc+='Draw '+this.damage+' Cards\n'+nfp(this.alt)+' Balance\nIf Balance Maintained\nAll Cards Cost 0'; break
-            case 90: this.desc+='If Unarmed\nPush Collision\nDealing '+this.damage+' Damage'; break
+            case 90: this.desc+='If Unarmed\nPush Collision\nfor '+this.damage+' Damage'; break
             case 91: this.desc+='Deal '+this.damage+' Damage\nTo 3 Enemies\n'+nfp(this.alt)+' Balance'; break
+            case 92: this.desc+='Convert '+this.damage+'x Combo\nto Block\nEnd Combo'; break
+            case 93: this.desc+='Deal '+this.damage+' Damage\nPush Collision\nfor '+this.alt+' Damage'; break
+            case 94: this.desc+='Add '+this.damage+' Block\nGain 1 Strength\nwhen Attacked'; break
         }
         if(this.spec==2||this.spec==9||this.spec==12){
             this.desc+='\nRetain'

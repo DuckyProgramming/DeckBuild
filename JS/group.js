@@ -21,6 +21,9 @@ class group{
                     this.add(floor(random(1,83)),0,this.battle.player)
                 }*/
                 this.add(82,0,this.battle.player)
+                this.add(112,0,this.battle.player)
+                this.add(113,0,this.battle.player)
+                this.add(114,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -171,7 +174,7 @@ class group{
                     this.trigger=true
                     this.cards[e].trigger=true
                     this.select=false
-                    if(this.cards[e].class==1){
+                    if(this.cards[e].class==0){
                         this.battle.attack.damage=round(this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0])))
                     }else{
                         this.battle.attack.damage=round(this.cards[e].damage)

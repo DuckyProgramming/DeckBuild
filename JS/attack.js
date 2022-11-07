@@ -474,6 +474,18 @@ class attack{
                     this.battle.combatants[0].combo=0
                     this.battle.combatants[0].meter+=this.alt
                 break
+                case 92:
+                    this.battle.combatants[0].block+=this.battle.combatants[0].combo*this.damage
+                    this.battle.combatants[0].combo=0
+                break
+                case 93:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.attacks.push([5,20,this.target,this.alt])
+                break
+                case 94:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].status.main[13]++
+                break
             }
         }else{
             switch(type){

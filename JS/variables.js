@@ -239,8 +239,8 @@ types={
         ],
         },{name:'Virtuous\nCircle',rarity:1,
         stats:[
-            {damage:7,alt:0,cost:5,attack:35,target:0,desc:'',spec:4,class:0},
-            {damage:9,alt:0,cost:5,attack:35,target:0,desc:'',spec:4,class:0},
+            {damage:7,alt:0,cost:5,attack:35,target:0,desc:'',spec:4,class:2},
+            {damage:9,alt:0,cost:5,attack:35,target:0,desc:'',spec:4,class:2},
         ],
         },{name:'Palm\nStrike',rarity:1,
         stats:[
@@ -556,6 +556,21 @@ types={
         stats:[
             {damage:4,alt:-1,cost:1,attack:91,target:1,desc:'',spec:10,class:0},
             {damage:4,alt:-1,cost:0,attack:91,target:1,desc:'',spec:10,class:0},
+        ],
+        },{name:'Defensive\nStance',rarity:1,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:92,target:0,desc:'',spec:0,class:1},
+            {damage:6,alt:0,cost:1,attack:92,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Stagger',rarity:1,
+        stats:[
+            {damage:6,alt:12,cost:5,attack:93,target:1,desc:'',spec:4,class:0},
+            {damage:6,alt:12,cost:4,attack:93,target:1,desc:'',spec:4,class:0},
+        ],
+        },{name:'Power\nSink',rarity:1,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:94,target:0,desc:'',spec:0,class:1},
+            {damage:7,alt:0,cost:1,attack:94,target:0,desc:'',spec:0,class:1},
         ],
         },
     ],combatant:[
