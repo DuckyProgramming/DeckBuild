@@ -43,6 +43,8 @@ class card{
             case -5: this.desc+='Take 1 Damage\nper Card Not Played'; break
             case -7: this.desc+='At End of Turn,\nGain 1 Vulnerable'; break
             case -8: this.desc+='When Removed,\nLose 3 Max Health'; break
+            case -9: this.desc+='When Drawn,\nLose 1 Mana'; break
+            case -10: this.desc+='At End of Turn,\nTake 2 Damage'; break
             case 1: this.desc+='Deal '+this.damage+'\nDamage'; break
             case 2: this.desc+='Add '+this.damage+'\nBlock'; break
             case 3: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times'; break

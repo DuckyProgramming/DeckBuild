@@ -12,7 +12,7 @@ class battle{
         this.combatants=[]
         this.combatants.push(new combatant(this.layer,this,100,350,player,0,0))
         this.mana={main:3,max:3}
-        this.anim={turn:0}
+        this.anim={turn:0,lost:0}
         this.deck.initial(this.player)
         this.initialReserve()
         this.reserve.shuffle()
@@ -52,6 +52,11 @@ class battle{
     }
     draw(){
         if(this.reserve.cards.length>0){
+            switch(this.reserve.cards[0].attack){
+                case -9:
+                    this.mana.main--
+                break
+            }
             this.hand.cards.push(copyCard(this.reserve.cards[0]))
             this.reserve.cards.splice(0,1)
         }
@@ -172,6 +177,9 @@ class battle{
         this.layer.textAlign(LEFT,CENTER)
         this.layer.text(this.currency.money,30,18)
         this.layer.textAlign(CENTER,CENTER)
+        this.layer.fill(0,this.anim.lost)
+        this.layer.textSize(64)
+        this.layer.text('Defeat',this.layer.width/2,150)
     }
     update(){
         for(e=0,le=this.particles.length;e<le;e++){
@@ -198,7 +206,15 @@ class battle{
         this.drop.update()
         this.hand.updateHand()
         this.drop.updateDrop()
-        if(this.turn>0){
+        if(this.combatants[0].life<=0){
+            if(this.turn==0){
+                this.turn=-1
+                this.hand.discard()
+            }
+            if(this.anim.lost<1){
+                this.anim.lost=round(this.anim.lost*5+1)/5
+            }
+        }else if(this.turn>0){
             if(this.turnTimer>0){
                 this.turnTimer--
             }else if(this.combatants[this.turn].status.main[5]>0||this.combatants[this.turn].status.main[9]>0){
@@ -239,7 +255,7 @@ class battle{
         }
     }
     onClick(){
-        if(this.turn==0){
+        if(this.turn==0&&this.combatants[0].life>0){
             this.hand.onClickHand()
             if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:565},width:40,height:30})){
                 this.turn++

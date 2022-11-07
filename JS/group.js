@@ -15,15 +15,16 @@ class group{
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
-                    //this.add(2,0,this.battle.player)
+                    this.add(2,0,this.battle.player)
                 }
                 /*for(e=0;e<20;e++){
-                    this.add(floor(random(1,83)),0,this.battle.player)
+                    this.add(floor(random(1,119)),0,this.battle.player)
                 }*/
-                this.add(82,0,this.battle.player)
-                this.add(112,0,this.battle.player)
-                this.add(113,0,this.battle.player)
-                this.add(114,0,this.battle.player)
+                this.add(3,0,this.battle.player)
+                this.add(4,0,this.battle.player)
+                this.add(5,0,this.battle.player)
+                this.add(6,0,this.battle.player)
+                this.add(7,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -99,6 +100,8 @@ class group{
                     this.battle.combatants[0].status.main[7]++
                 }else if(this.cards[e].attack==-7){
                     this.battle.combatants[0].status.main[8]++
+                }else if(this.cards[e].attack==-10){
+                    this.battle.combatants[0].take(2,0)
                 }
             }
         }
