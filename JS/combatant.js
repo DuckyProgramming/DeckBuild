@@ -37,11 +37,7 @@ class combatant{
 		this.block=0
 		this.fades={block:0,info:0}
 		this.intent=0
-        if(this.type==0){
-            this.fade=0
-        }else{
-            this.fade=1
-        }
+        this.fade=0
     }
 	setupIntent(type){
 		if(type==-1){

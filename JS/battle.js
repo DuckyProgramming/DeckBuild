@@ -22,30 +22,32 @@ class battle{
         this.calc={list:[]}
         this.remember=[0,0,0,0]
         this.currency={money:100}
-        this.generation={
-            combatants:[5,0,0,0,0,0],
-        }
+        this.generation={combatants:[],reinforce:[],threshold:[]}
         this.objective=[]
-        this.counter={enemies:{dead:0,total:0}}
+        this.counter={enemies:{dead:0,total:0,alive:0},turn:1}
         this.drawInitial()
         for(e=0,le=this.drawAmount-this.hand.cards.length;e<le;e++){
             this.draw()
         }
     }
     create(){
-        this.counter={enemies:{dead:0,total:0}}
+        this.counter={enemies:{dead:0,total:0},turn:1}
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
         }
         for(e=0,le=this.generation.combatants.length;e<le;e++){
             this.combatants.push(new combatant(this.layer,this,300+e*100,350,this.generation.combatants[e],1,e+1))
         }
-        for(e=1,le=this.combatants.length;e<le;e++){
-            this.combatants[e].setupIntent(-1)
+        for(e=0,le=this.combatants.length;e<le;e++){
             if(this.combatants[e].type!=0){
-                this.counter.enemies.total++
+                this.combatants[e].fade=1
+                if(e>0){
+                    this.combatants[e].setupIntent(-1)
+                    this.counter.enemies.total++
+                }
             }
         }
+        this.counter.enemies.total+=this.generation.reinforce.length
     }
     initialReserve(){
         for(e=0,le=this.deck.cards.length;e<le;e++){
@@ -193,15 +195,19 @@ class battle{
         this.layer.text(this.currency.money,30,18)
         this.layer.fill(80)
         this.layer.rect(740,this.objective.length*10+10,300,this.objective.length*20,10)
-        this.layer.fill(255)
         this.layer.textSize(12)
         for(e=0,le=this.objective.length;e<le;e++){
+            if(this.objective[e][0]==1&&this.counter.turn>this.objective[e][1]){
+                this.layer.fill(150)
+            }else{
+                this.layer.fill(255)
+            }
             switch(this.objective[e][0]){
                 case 0:
                     this.layer.text('Defeat Enemies ('+this.counter.enemies.dead+'/'+this.counter.enemies.total+')',640,e*20+20)
                 break
                 case 1:
-                    this.layer.text('Complete Mission in '+this.objective[e][1]+' Turns',640,e*20+20)
+                    this.layer.text('Complete Mission in '+this.objective[e][1]+' Turns ('+this.counter.turn+')',640,e*20+20)
                 break
             }
             switch(this.objective[e][2]){
@@ -283,9 +289,32 @@ class battle{
                 }
             }
             if(this.turn==0){
+                this.counter.alive=0
+                for(e=1,le=this.combatants.length;e<le;e++){
+                    if(this.combatants[e].life<=0){
+                        this.combatants[e].type=0
+                    }else{
+                        this.counter.alive++
+                    }
+                }
+                if(this.counter.alive<this.generation.threshold&&this.generation.reinforce.length>0){
+                    e=1
+                    while(e<this.combatants.length){
+                        e++
+                        if(this.combatants[e].type==0){
+                            this.combatants[e]=new combatant(this.layer,this,200+e*100,350,this.generation.reinforce[0],1,e)
+                            this.generation.reinforce.splice(0,1)
+                            break
+                        }
+                    }
+                }
+                this.counter.turn++
                 this.reserve.shuffle()
                 for(e=0,le=this.drawAmount-this.hand.cards.length;e<le;e++){
                     this.draw()
+                }
+                for(e=0,le=this.hand.cards.length;e<le;e++){
+                    this.hand.cards[e].position.y=500
                 }
                 this.endTurn()
             }

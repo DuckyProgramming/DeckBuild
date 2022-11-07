@@ -49,8 +49,8 @@ class attack{
                 break
                 case 8:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.battle.drop.addDrop(11,0,5)
-                    this.battle.reserve.add(11,0,5)
+                    this.battle.drop.addDrop(findCard('Bleed'),0,5)
+                    this.battle.reserve.add(findCard('Bleed'),0,5)
                 break
                 case 9:
                     this.battle.combatants[this.target].take(this.damage,this.user)
@@ -144,7 +144,7 @@ class attack{
                 break
                 case 26:
                     for(g=0;g<this.damage;g++){
-                        this.battle.hand.add(31,0,this.color)
+                        this.battle.hand.add(findCard('Shiv'),0,this.color)
                     }
                 break
                 case 27:
@@ -494,8 +494,8 @@ class attack{
                     this.attacks.push([1,12,this.user,this.damage])
                 break
                 case 2:
-                    this.battle.drop.addDrop(6,0,5)
-                    this.battle.reserve.add(6,0,5)
+                    this.battle.drop.addDrop(findCard('Confusion'),0,5)
+                    this.battle.reserve.add(findCard('Confusion'),0,5)
                 break
             }
         }

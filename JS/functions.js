@@ -6,6 +6,8 @@ function setupLayer(layer){
 }
 function setupEncounter(battle,type){
 	battle.generation.combatants=encounters[type].combatants
+	battle.generation.reinforce=encounters[type].reinforce
+	battle.generation.threshold=encounters[type].threshold
 	battle.objective=encounters[type].objective
 }
 function displayTransition(layer,transition){
@@ -119,4 +121,12 @@ function generateListing(cards){
 			listing.card[cards[a].list].push(a)
 		}
 	}
+}
+function findCard(name){
+	for(i=0,li=types.card.length;i<li;i++){
+		if(types.card[i].name==name){
+			return i
+		}
+	}
+	return -1
 }
