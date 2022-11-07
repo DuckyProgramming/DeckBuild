@@ -492,19 +492,24 @@ types={
             {damage:1,alt:0,cost:2,attack:79,target:0,desc:'',spec:3,class:2},
             {damage:1,alt:0,cost:1,attack:79,target:0,desc:'',spec:3,class:2},
         ],
-        },{name:'Evanes\ncence',rarity:0,
+        },{name:'Evanes\ncence',rarity:1,
         stats:[
             {damage:1,alt:5,cost:1,attack:80,target:0,desc:'',spec:0,class:1},
             {damage:1,alt:5,cost:1,attack:80,target:0,desc:'',spec:0,class:1},
         ],
-        }
+        },{name:'Silence',rarity:1,
+        stats:[
+            {damage:0,alt:-3,cost:0,attack:81,target:1,desc:'',spec:3,class:1},
+            {damage:0,alt:-3,cost:0,attack:81,target:1,desc:'',spec:0,class:1},
+        ],
+        },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Agent',alt:'',life:80,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Duelist',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Creation',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
-        {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1,1,1],damage:[4,4,4],altAttack:[],class:0},
+        {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1,1,2],damage:[4,4,4],altAttack:[],class:0},
     ],attack:[
         {class:0},
         {class:0},
@@ -534,7 +539,3 @@ transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}
 a=0;b=0;c=0;d=0;e=0;f=0;g=0;h=0;i=0;j=0;k=0;l=0;m=0;n=0;o=0;p=0
 la=0;lb=0;lc=0;ld=0;le=0;lf=0;lg=0;lh=0;li=0;lj=0;lk=0;ll=0;lm=0;ln=0;lo=0;lp=0
-/*
-        {name:'Silence'                 ,damage:0   ,target:0,class:0,uses:0 ,accuracy:1   ,description:'Cancels abilities'},
-        {name:'Impale'                  ,damage:1   ,target:0,class:5,uses:0 ,accuracy:1   ,description:'Stab and disable'},
-        Armaments*/

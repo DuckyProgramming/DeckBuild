@@ -123,6 +123,7 @@ class card{
             case 78: this.desc+='Deal '+this.damage+' Damage\n6 Times\n'+nfp(this.alt)+' Balance'; break
             case 79: this.desc+='If Balance\nis Positive,\nHeal Health\nEqual to Balance\nReset Balance'; break
             case 80: this.desc+='Gain '+this.damage+' Intangible\n'+nfp(this.alt)+' Balance'; break
+            case 81: this.desc+='Reset Enemy\nIntent'; break
         }
         if(this.spec==2||this.spec==9){
             this.desc+='\nRetain'

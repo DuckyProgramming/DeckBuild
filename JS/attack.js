@@ -400,6 +400,9 @@ class attack{
                     this.battle.combatants[0].status.main[12]++
                     this.battle.combatants[0].meter+=this.alt
                 break
+                case 81:
+                    this.battle.combatants[this.target].setupIntent(0)
+                break
             }
         }else{
             switch(type){

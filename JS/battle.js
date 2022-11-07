@@ -32,7 +32,7 @@ class battle{
             this.combatants.push(new combatant(this.layer,this,300+e*100,350,combatants[e].type,1,e+1))
         }
         for(e=1,le=this.combatants.length;e<le;e++){
-            this.combatants[e].setupIntent()
+            this.combatants[e].setupIntent(-1)
         }
     }
     initialReserve(){
@@ -84,7 +84,7 @@ class battle{
         this.remember[3]+=this.combatants[0].status.main[8]
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].block=0
-            this.combatants[e].setupIntent()
+            this.combatants[e].setupIntent(-1)
             for(f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
                 this.combatants[e].boost.main[f]=0
             }

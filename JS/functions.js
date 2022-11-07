@@ -56,6 +56,32 @@ function displayAmmo(layer,x,y,type,fade){
 	}
 	layer.translate(-x,-y)
 }
+function displayIntent(layer,x,y,fade,size,damage,type){
+	layer.translate(x,y)
+	layer.scale(size)
+	switch(type){
+		case 1:
+			layer.fill(255,50,50,fade)
+			layer.triangle(-20,0,15,-6,15,6)
+		break
+		case 2:
+			layer.fill(125,255,255,fade)
+			layer.ellipse(0,-3,24,24)
+		break
+	}
+	layer.fill(255,fade)
+	layer.textSize(20)
+	switch(type){
+		case 1:
+			layer.text(damage,0,0)
+		break
+		case 2:
+			layer.text('?',0,-2)
+		break
+	}
+	layer.scale(1/size)
+	layer.translate(-x,-y)
+}
 function regTriangle(layer,x,y,radius,direction){
 	layer.triangle(x+sin(direction)*radius,y+cos(direction)*radius,x+sin(direction+120)*radius,y+cos(direction+120)*radius,x+sin(direction+240)*radius,y+cos(direction+240)*radius);
 }

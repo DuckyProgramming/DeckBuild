@@ -43,6 +43,7 @@ class group{
                 this.add(97,0,this.battle.player)
                 this.add(98,0,this.battle.player)
                 this.add(99,0,this.battle.player)
+                this.add(100,0,this.battle.player)
             break
         }
     }

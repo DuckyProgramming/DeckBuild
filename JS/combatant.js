@@ -43,11 +43,15 @@ class combatant{
             this.fade=1
         }
     }
-	setupIntent(){
-		switch(this.behavior){
-			case 0:
-				this.intent=floor(random(0,this.attacks.length))
-			break
+	setupIntent(type){
+		if(type==-1){
+			switch(this.behavior){
+				case 0:
+					this.intent=floor(random(0,this.attacks.length))
+				break
+			}
+		}else{
+			this.intent=type
 		}
 	}
 	changeStance(stance){
@@ -499,18 +503,6 @@ class combatant{
 			this.layer.fill(150,175,200,this.fade*this.fades.block)
 			this.layer.ellipse(-30,20,14,14)
 		}
-		if(this.team==1){
-			switch(this.attacks[this.intent]){
-				case 1:
-					this.layer.fill(255,50,50,this.fade)
-					this.layer.triangle(-20,-this.height-30,15,-this.height-36,15,-this.height-24)
-				break
-				case 2:
-					this.layer.fill(125,255,255,this.fade)
-					this.layer.ellipse(0,-this.height-33,24,24)
-				break
-			}
-		}
 		this.layer.fill(0,this.fade)
 		this.layer.textSize(8)
 		this.layer.text(max(0,ceil(this.life*10)/10)+"/"+max(0,ceil(this.base.life)),0,21)
@@ -572,17 +564,9 @@ class combatant{
 			}
 		}
 		if(this.team==1){
-			switch(this.attacks[this.intent]){
-				case 1:
-					this.layer.fill(255,this.fade)
-					this.layer.textSize(20)
-					this.layer.text(this.damage[this.intent],0,-this.height-30)
-				break
-				case 2:
-					this.layer.fill(255,this.fade)
-					this.layer.textSize(20)
-					this.layer.text('?',0,-this.height-32)
-				break
+			displayIntent(this.layer,0,-this.height-30,this.fade,1,this.damage[this.intent],this.attacks[this.intent])
+			if(this.battle.attack.type==81&&this.battle.hand.trigger){
+				displayIntent(this.layer,20,-this.height-50,this.fade,0.5,this.damage[0],this.attacks[0])
 			}
 		}
 		this.layer.translate(-this.base.position.x,-this.base.position.y)

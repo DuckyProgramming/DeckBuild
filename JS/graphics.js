@@ -124,7 +124,6 @@ function setupGraphics(){
 	graphics.minor[5].arc(0,0,150,180,30,60)
 	graphics.minor[5].fill(88,82,128)
 	graphics.minor[5].arc(0,0,150,180,60,90)
-
 	graphics.minor[5].fill(161,168,222)
 	graphics.minor[5].arc(0,0,135,180,0,15)
 	graphics.minor[5].fill(121,124,188)
@@ -133,7 +132,6 @@ function setupGraphics(){
 	graphics.minor[5].arc(0,0,135,180,45,75)
 	graphics.minor[5].fill(77,65,108)
 	graphics.minor[5].arc(0,0,135,180,75,90)
-
 	graphics.minor[5].erase()
 	graphics.minor[5].arc(0,0,120,180,0,90)
 	graphics.minor[5].noErase()
