@@ -4,6 +4,10 @@ function setupLayer(layer){
 	layer.rectMode(CENTER)
 	layer.colorMode(RGB,255,255,255,1)
 }
+function setupEncounter(battle,type){
+	battle.generation.combatants=encounters[type].combatants
+	battle.objective=encounters[type].objective
+}
 function displayTransition(layer,transition){
 	layer.noStroke()
 	layer.fill(0)
@@ -108,4 +112,11 @@ function updateMouse(layer){
 }
 function copyCard(base){
 	return new card(base.layer,base.position.x,base.position.y,base.type,base.level,base.color,base.damage,base.alt,base.base.cost)
+}
+function generateListing(cards){
+	for(a=0,la=cards.length;a<la;a++){
+		if(cards[a].list>=0){
+			listing.card[cards[a].list].push(a)
+		}
+	}
 }

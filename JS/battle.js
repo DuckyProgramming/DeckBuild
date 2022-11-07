@@ -10,7 +10,7 @@ class battle{
         this.attack=new attack(this.layer,this)
         this.particles=[]
         this.combatants=[]
-        this.combatants.push(new combatant(this.layer,this,100,350,player,0,0))
+        this.combatants.push(new combatant(this.layer,this,100,350,this.player,0,0))
         this.mana={main:3,max:3}
         this.anim={turn:0,lost:0}
         this.deck.initial(this.player)
@@ -22,17 +22,29 @@ class battle{
         this.calc={list:[]}
         this.remember=[0,0,0,0]
         this.currency={money:100}
+        this.generation={
+            combatants:[5,0,0,0,0,0],
+        }
+        this.objective=[]
+        this.counter={enemies:{dead:0,total:0}}
         this.drawInitial()
         for(e=0,le=this.drawAmount-this.hand.cards.length;e<le;e++){
             this.draw()
         }
     }
-    create(combatants){
-        for(e=0,le=combatants.length;e<le;e++){
-            this.combatants.push(new combatant(this.layer,this,300+e*100,350,combatants[e].type,1,e+1))
+    create(){
+        this.counter={enemies:{dead:0,total:0}}
+        while(this.combatants.length>1){
+            this.combatants.splice(this.combatants.length-1,1)
+        }
+        for(e=0,le=this.generation.combatants.length;e<le;e++){
+            this.combatants.push(new combatant(this.layer,this,300+e*100,350,this.generation.combatants[e],1,e+1))
         }
         for(e=1,le=this.combatants.length;e<le;e++){
             this.combatants[e].setupIntent(-1)
+            if(this.combatants[e].type!=0){
+                this.counter.enemies.total++
+            }
         }
     }
     initialReserve(){
@@ -172,14 +184,39 @@ class battle{
         this.layer.ellipse(20,16,16,16)
         this.layer.fill(255,240,0)
         this.layer.ellipse(20,16,10,10)
+        this.layer.fill(0,this.anim.lost)
+        this.layer.textSize(64)
+        this.layer.text('Defeat',this.layer.width/2,150)
         this.layer.fill(255,225,0)
         this.layer.textSize(16)
         this.layer.textAlign(LEFT,CENTER)
         this.layer.text(this.currency.money,30,18)
+        this.layer.fill(80)
+        this.layer.rect(740,this.objective.length*10+10,300,this.objective.length*20,10)
+        this.layer.fill(255)
+        this.layer.textSize(12)
+        for(e=0,le=this.objective.length;e<le;e++){
+            switch(this.objective[e][0]){
+                case 0:
+                    this.layer.text('Defeat Enemies ('+this.counter.enemies.dead+'/'+this.counter.enemies.total+')',640,e*20+20)
+                break
+                case 1:
+                    this.layer.text('Complete Mission in '+this.objective[e][1]+' Turns',640,e*20+20)
+                break
+            }
+            switch(this.objective[e][2]){
+                case 0:
+                    this.layer.text('Card',600,e*20+20)
+                break
+                case 1:
+                    this.layer.text('Card+',600,e*20+20)
+                break
+                case 2:
+                    this.layer.text('$'+this.objective[e][3],600,e*20+20)
+                break
+            }
+        }
         this.layer.textAlign(CENTER,CENTER)
-        this.layer.fill(0,this.anim.lost)
-        this.layer.textSize(64)
-        this.layer.text('Defeat',this.layer.width/2,150)
     }
     update(){
         for(e=0,le=this.particles.length;e<le;e++){

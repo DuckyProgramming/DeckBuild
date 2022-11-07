@@ -9,6 +9,9 @@ class group{
         this.trigger=false
     }
     initial(type){
+        /*for(e=0;e<20;e++){
+            this.add(floor(random(1,119)),0,this.battle.player)
+        }*/
         switch(type){
             case 1:
                 for(e=0;e<4;e++){
@@ -17,14 +20,8 @@ class group{
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
-                /*for(e=0;e<20;e++){
-                    this.add(floor(random(1,119)),0,this.battle.player)
-                }*/
                 this.add(3,0,this.battle.player)
                 this.add(4,0,this.battle.player)
-                this.add(5,0,this.battle.player)
-                this.add(6,0,this.battle.player)
-                this.add(7,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
