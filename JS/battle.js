@@ -398,6 +398,21 @@ class battle{
             }
         }
     }
+    setupDeck(){
+        this.deck.scroll=0
+        this.choice.cards=[]
+        this.choice.cards.push(new card(this.layer,-300,300,0,0,0))
+        this.choice.cards.push(new card(this.layer,1200,300,0,0,0))
+        for(g=0,lg=this.choice.cards.length;g<lg;g++){
+            this.choice.cards[g].size=1
+        }
+    }
+    displayDeck(){
+        this.deck.displayView()
+        for(e=0,le=this.choice.cards.length;e<le;e++){
+            this.choice.cards[e].display()
+        }
+    }
     update(){
         for(e=0,le=this.particles.length;e<le;e++){
             this.particles[e].update()
@@ -614,7 +629,7 @@ class battle{
                         case 2:
                             transition.scene='deck'
                             this.context=1
-                            this.deck.scroll=0
+                            this.setupDeck()
                         break
                     }
                 }

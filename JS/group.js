@@ -109,6 +109,17 @@ class group{
             this.cards[e].display(this.battle.deck.cards.length)
         }
     }
+    displayView(){
+        for(e=0,le=this.cards.length;e<le;e++){
+            this.cards[e].position.x=75+(e%6)*150
+            this.cards[e].position.y=100+floor(e/6)*200-this.scroll
+            this.cards[e].anim.select=0
+            this.cards[e].anim.afford=0
+            this.cards[e].size=1
+            this.cards[e].fade=1
+            this.cards[e].display(le)
+        }
+    }
     update(){
         for(e=0,le=this.cards.length;e<le;e++){
             if(this.cards[e].discard){

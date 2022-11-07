@@ -20,6 +20,11 @@ function draw(){
             graphics.main.background(80,75,70)
             current.displayRest()
         break
+        case 'deck':
+            graphics.main.background(100)
+            current.displayDeck()
+            current.updateDeck()
+        break
     }
     stage.scale=min(width/graphics.main.width,height/graphics.main.height)
     displayTransition(graphics.main,transition)
