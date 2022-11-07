@@ -39,6 +39,13 @@ class combatant{
 		this.intent=0
         this.fade=0
     }
+	resetUnique(){
+		this.combo=0
+		this.stance=0
+		this.ammo=[-1,-1,-1]
+		this.meter=0
+		this.armed=1
+	}
 	setupIntent(type){
 		if(type==-1){
 			switch(this.behavior){

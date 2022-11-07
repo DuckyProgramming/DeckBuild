@@ -37,6 +37,7 @@ class battle{
         this.counter={enemies:{dead:0,total:0},turn:1}
         this.anim.lost=0
         this.anim.end=0
+        this.combatants[0].resetUnique()
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
         }
@@ -235,7 +236,7 @@ class battle{
         this.layer.textAlign(CENTER,CENTER)
         if(this.anim.end>0){
             this.layer.textSize(18)
-            this.layer.fill(150,this.anim.end)
+            this.layer.fill(255,this.anim.end)
             this.layer.text('End',450,this.objective.length*60+140)
             for(e=0,le=this.objective.length;e<le;e++){
                 if(this.objective[e][0]==1&&this.counter.turn>this.objective[e][1]){
@@ -265,19 +266,28 @@ class battle{
             }
         }
     }
-    setupChoice(level,spec){
-        switch(this.spec){
+    setupChoice(level,rarity,spec){
+        this.choice.cards=[]
+        switch(spec){
             case 0:
-                this.choice.cards.push(new card(this.layer,150,300,listing.card[this.player][floor(random(0,listing.card[this.player].length))],level,this.player))
-                this.choice.cards.push(new card(this.layer,450,300,listing.card[this.player][floor(random(0,listing.card[this.player].length))],level,this.player))
-                this.choice.cards.push(new card(this.layer,750,300,listing.card[this.player][floor(random(0,listing.card[this.player].length))],level,this.player))
+                this.choice.cards.push(new card(this.layer,225,300,listing.card[this.player][rarity][floor(random(0,listing.card[this.player][rarity].length))],level,this.player))
+                this.choice.cards.push(new card(this.layer,450,300,listing.card[this.player][rarity][floor(random(0,listing.card[this.player][rarity].length))],level,this.player))
+                this.choice.cards.push(new card(this.layer,675,300,listing.card[this.player][rarity][floor(random(0,listing.card[this.player][rarity].length))],level,this.player))
             break
         }
-        for(e=0,le=this.choice.cards.length;e<le;e++){
-            this.choice.cards[e].size=1
+        for(g=0,lg=this.choice.cards.length;g<lg;g++){
+            this.choice.cards[g].size=1
         }
     }
     displayChoice(){
+        this.layer.noStroke()
+        this.layer.fill(80)
+        this.layer.rect(450,450,80,40,5)
+        this.layer.fill(0)
+        this.layer.textSize(60)
+        this.layer.text('Add a Card',450,150)
+        this.layer.textSize(20)
+        this.layer.text('Skip',450,450)
         for(e=0,le=this.choice.cards.length;e<le;e++){
             this.choice.cards[e].display()
         }
@@ -382,7 +392,7 @@ class battle{
     }
     onClick(){
         if(this.end){
-            if(pointInsideBox({position:inputs.rel.x},{position:{x:450,y:this.objective.length*60+140},width:150,height40})){
+            if(pointInsideBox({position:inputs.rel},{position:{x:450,y:this.objective.length*60+140},width:150,height:40})){
                 transition.trigger=true
                 transition.scene='map'
                 for(e=0,le=this.objective.length;e<le;e++){
@@ -390,11 +400,11 @@ class battle{
                         switch(this.objective[e][2]){
                             case 0:
                                 transition.scene='choice'
-                                this.setupChoice(0,0)
+                                this.setupChoice(0,0,0)
                             break
                             case 1:
                                 transition.scene='choice'
-                                this.setupChoice(1,0)
+                                this.setupChoice(1,0,0)
                             break
                             case 2:
                                 this.currency.money+=this.objective[e][3]
@@ -424,6 +434,21 @@ class battle{
                             this.turn=0
                         }
                     }
+                }
+            }
+        }
+    }
+    onClickChoice(){
+        if(!transition.trigger){
+            if(pointInsideBox({position:inputs.rel},{position:{x:450,y:450},width:80,height:40})){
+                transition.trigger=true
+                transition.scene='map'
+            }
+            for(e=0,le=this.choice.cards.length;e<le;e++){
+                if(pointInsideBox({position:inputs.rel},this.choice.cards[e])){
+                    transition.trigger=true
+                    transition.scene='map'
+                    this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level)
                 }
             }
         }

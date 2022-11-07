@@ -22,12 +22,6 @@ function displayTransition(layer,transition){
 		if(transition.anim>1.1){
 			transition.trigger = false
 			stage.scene=transition.scene
-			if(stage.scene=='map'){
-				generateMap()
-			}
-			if(stage.scene=='level'){
-				resetMap()
-			}
 		}
 	}
 	else if(transition.anim>0){
@@ -116,9 +110,18 @@ function copyCard(base){
 	return new card(base.layer,base.position.x,base.position.y,base.type,base.level,base.color,base.damage,base.alt,base.base.cost)
 }
 function generateListing(cards){
+	for(a=0,la=listing.card.length;a<la;a++){
+		listing.card[a].push([])
+		listing.card[a].push([])
+		listing.card[a].push([])
+	}
 	for(a=0,la=cards.length;a<la;a++){
 		if(cards[a].list>=0){
-			listing.card[cards[a].list].push(a)
+			if(cards[a].rarity<=0){
+				listing.card[cards[a].list][0].push(a)
+			}else{
+				listing.card[cards[a].list][cards[a].rarity].push(a)
+			}
 		}
 	}
 }

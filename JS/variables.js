@@ -85,7 +85,7 @@ types={
             {damage:10,alt:0,cost:1,attack:32,target:1,desc:'',spec:0,class:0},
             {damage:14,alt:0,cost:1,attack:32,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Nerve Strike',rarity:0,list:1,
+        },{name:'Nerve\nStrike',rarity:0,list:1,
         stats:[
             {damage:2,alt:0,cost:1,attack:34,target:1,desc:'',spec:0,class:0},
             {damage:4,alt:0,cost:1,attack:34,target:1,desc:'',spec:0,class:0},
@@ -205,7 +205,7 @@ types={
             {damage:15,alt:1,cost:5,attack:42,target:1,desc:'',spec:4,class:0},
             {damage:15,alt:1,cost:4,attack:42,target:1,desc:'',spec:4,class:0},
         ],
-        },{name:'Pressure\nPoint',rarity:0,list:1,
+        },{name:'Pressure\nPoint',rarity:1,list:1,
         stats:[
             {damage:15,alt:0,cost:4,attack:54,target:1,desc:'',spec:4,class:0},
             {damage:23,alt:0,cost:4,attack:54,target:1,desc:'',spec:4,class:0},

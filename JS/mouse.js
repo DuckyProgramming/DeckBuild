@@ -4,5 +4,8 @@ function mouseClicked(){
         case 'battle':
             current.onClick()
         break
+        case 'choice':
+            current.onClickChoice()
+        break
     }
 }
