@@ -368,10 +368,12 @@ class attack{
                 break
                 case 73:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.battle.combatants[0].armed=false
+                    this.battle.combatants[0].armed=0
                 break
                 case 74:
-                    this.battle.combatants[0].armed=true
+                    if(this.battle.combatants[0].armed==0){
+                        this.battle.combatants[0].armed=1
+                    }
                 break
                 case 75:
                     this.battle.combatants[0].status.main[10]+=this.damage
@@ -402,6 +404,75 @@ class attack{
                 break
                 case 81:
                     this.battle.combatants[this.target].setupIntent(0)
+                break
+                case 82:
+                    this.battle.combatants[0].boost.main[0]+=this.damage
+                    this.battle.combatants[0].boost.main[1]+=this.alt
+                    this.battle.combatants[0].armed=-1
+                break
+                case 83:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0){
+                            this.battle.combatants[g].take(this.damage,this.user)
+                        }
+                    }
+                    this.battle.combatants[0].armed=0
+                break
+                case 84:
+                    this.battle.combatants[0].boost.main[1]+=this.alt
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                break
+                case 85:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0){
+                            this.battle.combatants[g].status.main[11]+=this.damage
+                        }
+                    }
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 86:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[0].armed==0){
+                        this.battle.combatants[0].armed=1
+                    }
+                break
+                case 87:
+                    this.battle.combatants[0].block+=this.damage
+                    if(this.battle.combatants[0].armed==0){
+                        this.battle.combatants[0].armed=1
+                    }
+                break
+                case 88:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].armed=0
+                break
+                case 89:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                    this.battle.combatants[0].meter+=this.alt
+                    if(this.battle.combatants[0].meter<=10){
+                        for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                            this.battle.hand.cards[g].cost=min(0,this.battle.hand.cards[g].cost)
+                        }
+                    }
+                break
+                case 90:
+                    this.attacks.push([5,20,this.target,this.damage])
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 91:
+                    this.battle.combatants[this.target].take(this.damage+this.alt*this.combo,this.user)
+                    if(this.target>1){
+                        this.battle.combatants[this.target-1].take(this.damage+this.alt*this.combo,0)
+                    }
+                    if(this.target<this.battle.combatants.length-1){
+                        this.battle.combatants[this.target+1].take(this.damage+this.alt*this.combo,0)
+                    }
+                    this.battle.combatants[0].combo=0
+                    this.battle.combatants[0].meter+=this.alt
                 break
             }
         }else{
@@ -449,13 +520,16 @@ class attack{
                         this.battle.combatants[this.attacks[g][2]-1].take(this.attacks[g][3],0)
                     }
                 break
-                case 4:
+                case 4: case 5:
                     if(this.attacks[g][1]<10){
                         this.battle.combatants[this.attacks[g][2]].position.x-=8
                     }else{
                         this.battle.combatants[this.attacks[g][2]].position.x+=8
                     }
                     if(this.attacks[g][1]==10&&this.attacks[g][2]<this.battle.combatants.length-1){
+                        if(this.battle.combatants[this.attacks[g][2]+1].life>0&&this.attacks[g][0]==5){
+                            this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3],0)
+                        }
                         this.battle.combatants[this.attacks[g][2]+1].take(this.attacks[g][3],0)
                     }
                 break

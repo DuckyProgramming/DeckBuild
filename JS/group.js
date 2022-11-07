@@ -38,12 +38,12 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(2,0,this.battle.player)
                 }
-                this.add(95,0,this.battle.player)
-                this.add(96,0,this.battle.player)
-                this.add(97,0,this.battle.player)
-                this.add(98,0,this.battle.player)
-                this.add(99,0,this.battle.player)
-                this.add(100,0,this.battle.player)
+                this.add(106,0,this.battle.player)
+                this.add(107,0,this.battle.player)
+                this.add(108,0,this.battle.player)
+                this.add(109,0,this.battle.player)
+                this.add(110,0,this.battle.player)
+                this.add(111,0,this.battle.player)
             break
         }
     }
@@ -90,7 +90,7 @@ class group{
         for(e=0,le=this.cards.length;e<le;e++){
             if(this.cards[e].spec==5){
                 this.cards[e].damage+=this.cards[e].alt
-            }else if(this.cards[e].spec!=2&&this.cards[e].spec!=9){
+            }else if(this.cards[e].spec!=2&&this.cards[e].spec!=9&&this.cards[e].spec!=12){
                 this.cards[e].used=true
                 if(this.cards[e].attack==-4){
                     this.battle.combatants[0].status.main[7]++
@@ -167,7 +167,7 @@ class group{
         }else{
             this.selected=false
             for(e=0,le=this.cards.length;e<le;e++){
-                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.select&&this.cards[e].select&&(this.battle.mana.main>=this.cards[e].cost&&this.cards[e].spec!=4||this.battle.combatants[0].combo>=this.cards[e].cost&&this.cards[e].spec==4)&&!(this.cards[e].spec==11&&!this.battle.combatants[0].armed)){
+                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.select&&this.cards[e].select&&(this.battle.mana.main>=this.cards[e].cost&&this.cards[e].spec!=4||this.battle.combatants[0].combo>=this.cards[e].cost&&this.cards[e].spec==4)&&!((this.cards[e].spec==11||this.cards[e].spec==12)&&this.battle.combatants[0].armed!=1)){
                     this.trigger=true
                     this.cards[e].trigger=true
                     this.select=false

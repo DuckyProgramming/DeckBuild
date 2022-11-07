@@ -27,7 +27,7 @@ class combatant{
 		this.stance=0
 		this.ammo=[-1,-1,-1]
 		this.meter=0
-		this.armed=true
+		this.armed=1
 		this.anim=[0,0,0,0,0]
 		for(g=0;g<this.status.name.length;g++){
 			this.status.main.push(0)
@@ -157,7 +157,7 @@ class combatant{
 					}
 				break
 				case 4:
-					if(this.armed&&this.fade>0){
+					if(this.armed==1&&this.fade>0){
 						this.layer.image(graphics.minor[5],-25*this.fade,-60*this.fade,65*this.fade,65*this.fade)
 					}
 					this.layer.translate(0,-1.25)
@@ -629,12 +629,15 @@ class combatant{
 			}else if(this.status.main[6]>0){
 				this.status.main[6]--
 			}else{
-				this.calc.damage=damage/(2+max(0,this.boost.main[1]))*(2-min(0,this.boost.main[1]))
+				this.calc.damage=damage
 				if(this.battle.combatants[user].status.main[2]>0){
 					this.calc.damage*=2
 				}
 				if(this.status.main[12]>0&&this.calc.damage>1){
 					this.calc.damage=1
+				}
+				if(this.block>0){
+					this.calc.damage*=(2-min(0,this.boost.main[1]))/(2+max(0,this.boost.main[1]))
 				}
 				if(this.block>this.calc.damage&&extra!=1){
 					this.block-=this.calc.damage

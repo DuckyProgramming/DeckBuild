@@ -124,8 +124,18 @@ class card{
             case 79: this.desc+='If Balance\nis Positive,\nHeal Health\nEqual to Balance\nReset Balance'; break
             case 80: this.desc+='Gain '+this.damage+' Intangible\n'+nfp(this.alt)+' Balance'; break
             case 81: this.desc+='Reset Enemy\nIntent'; break
+            case 82: this.desc+='Gain '+this.damage+' Strength\nGain '+this.alt+' Dexterity\nDisarm Permanently'; break
+            case 83: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nDisarm'; break
+            case 84: this.desc+='Gain '+this.damage+' Dexterity\nDraw '+this.alt+' Cards'; break
+            case 85: this.desc+='Apply '+this.damage+' Bleed\nto All Enemies\n'+nfp(this.alt)+' Balance'; break
+            case 86: this.desc+='Deal '+this.damage+' Damage\nRearm'; break
+            case 87: this.desc+='Add '+this.damage+' Block\nRearm'; break
+            case 88: this.desc+='Add '+this.damage+' Block\nDisarm'; break
+            case 89: this.desc+='Draw '+this.damage+' Cards\n'+nfp(this.alt)+' Balance\nIf Balance Maintained\nAll Cards Cost 0'; break
+            case 90: this.desc+='If Unarmed\nPush Collision\nDealing '+this.damage+' Damage'; break
+            case 91: this.desc+='Deal '+this.damage+' Damage\nTo 3 Enemies\n'+nfp(this.alt)+' Balance'; break
         }
-        if(this.spec==2||this.spec==9){
+        if(this.spec==2||this.spec==9||this.spec==12){
             this.desc+='\nRetain'
         }
         if(this.spec==3||this.spec==8||this.spec==9){
@@ -175,7 +185,7 @@ class card{
                 this.layer.rect(0,-this.height/4+5,this.width,this.height/2+10,5)
                 this.layer.rect(0,this.height/4+5,this.width,this.height/2-10,5)
             }
-            if(this.spec==11){
+            if(this.spec==11||this.spec==12){
                 this.layer.fill(138,141,207,this.fade)
                 this.layer.stroke(111,114,178,this.fade)
                 this.layer.strokeWeight(2)
@@ -257,9 +267,9 @@ class card{
         }else if(!this.select&&this.anim.select>0){
             this.anim.select=round(this.anim.select*5-1)/5
         }
-        if((mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==11&&!armed))&&this.anim.afford<1){
+        if((mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==11||this.spec==12)&&armed!=1)&&this.anim.afford<1){
             this.anim.afford=round(this.anim.afford*5+1)/5
-        }else if(!(mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==11&&!armed))&&this.anim.afford>0){
+        }else if(!(mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==11||this.spec==12)&&armed!=1)&&this.anim.afford>0){
             this.anim.afford=round(this.anim.afford*5-1)/5
         }
         if(this.trigger&&!this.used){

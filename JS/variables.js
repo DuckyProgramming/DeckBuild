@@ -414,8 +414,8 @@ types={
         ],
         },{name:'Flash',rarity:2,
         stats:[
-            {damage:2,alt:2,cost:2,attack:64,target:0,desc:'',spec:0,class:2},
-            {damage:3,alt:3,cost:2,attack:64,target:0,desc:'',spec:0,class:2},
+            {damage:1,alt:1,cost:3,attack:64,target:0,desc:'',spec:3,class:2},
+            {damage:2,alt:2,cost:3,attack:64,target:0,desc:'',spec:3,class:2},
         ],
         },{name:'Danger',rarity:0,
         stats:[
@@ -460,16 +460,16 @@ types={
         },{name:'Throw',rarity:0,
         stats:[
             {damage:24,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
-            {damage:32,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
+            {damage:40,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
         ],
         },{name:'Collect',rarity:0,
         stats:[
-            {damage:0,alt:0,cost:1,attack:74,target:0,desc:'',spec:2,class:2},
+            {damage:0,alt:0,cost:0,attack:74,target:0,desc:'',spec:0,class:2},
             {damage:0,alt:0,cost:0,attack:74,target:0,desc:'',spec:2,class:2},
         ],
         },{name:'Parry',rarity:0,
         stats:[
-            {damage:1,alt:-3,cost:1,attack:75,target:0,desc:'',spec:11,class:1},
+            {damage:1,alt:-3,cost:1,attack:75,target:0,desc:'',spec:11,class:1},  
             {damage:2,alt:-3,cost:1,attack:75,target:0,desc:'',spec:11,class:1},
         ],
         },{name:'Slash',rarity:0,
@@ -501,6 +501,61 @@ types={
         stats:[
             {damage:0,alt:-3,cost:0,attack:81,target:1,desc:'',spec:3,class:1},
             {damage:0,alt:-3,cost:0,attack:81,target:1,desc:'',spec:0,class:1},
+        ],
+        },{name:'Power\nWithin',rarity:1,
+        stats:[
+            {damage:2,alt:2,cost:2,attack:82,target:0,desc:'',spec:3,class:1},
+            {damage:2,alt:2,cost:2,attack:82,target:0,desc:'',spec:3,class:1},
+        ],
+        },{name:'Guard',rarity:0,
+        stats:[
+            {damage:15,alt:1,cost:2,attack:66,target:0,desc:'',spec:12,class:1},
+            {damage:22,alt:1,cost:2,attack:66,target:0,desc:'',spec:12,class:1},
+        ],
+        },{name:'Slice',rarity:2,
+        stats:[
+            {damage:12,alt:0,cost:2,attack:83,target:0,desc:'',spec:11,class:0},
+            {damage:20,alt:0,cost:2,attack:83,target:0,desc:'',spec:11,class:0},
+        ],
+        },{name:'Footwork',rarity:0,
+        stats:[
+            {damage:1,alt:1,cost:1,attack:84,target:0,desc:'',spec:0,class:1},
+            {damage:2,alt:1,cost:1,attack:84,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Caltrops',rarity:1,
+        stats:[
+            {damage:4,alt:-3,cost:2,attack:85,target:0,desc:'',spec:0,class:2},
+            {damage:6,alt:-3,cost:2,attack:85,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Slide',rarity:0,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:86,target:1,desc:'',spec:0,class:0},
+            {damage:8,alt:0,cost:1,attack:86,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Swivel',rarity:0,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:87,target:0,desc:'',spec:0,class:1},
+            {damage:7,alt:0,cost:1,attack:87,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Diversion',rarity:1,
+        stats:[
+            {damage:21,alt:0,cost:1,attack:88,target:0,desc:'',spec:11,class:1},
+            {damage:35,alt:0,cost:1,attack:88,target:0,desc:'',spec:11,class:1},
+        ],
+        },{name:'Luminosity',rarity:2,
+        stats:[
+            {damage:4,alt:12,cost:2,attack:89,target:0,desc:'',spec:0,class:2},
+            {damage:6,alt:12,cost:2,attack:89,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Parasol',rarity:1,
+        stats:[
+            {damage:3,alt:1,cost:0,attack:90,target:1,desc:'',spec:2,class:0},
+            {damage:5,alt:1,cost:0,attack:90,target:1,desc:'',spec:2,class:0},
+        ],
+        },{name:'Sleeve\nSwipe',rarity:0,
+        stats:[
+            {damage:4,alt:-1,cost:1,attack:91,target:1,desc:'',spec:10,class:0},
+            {damage:4,alt:-1,cost:0,attack:91,target:1,desc:'',spec:10,class:0},
         ],
         },
     ],combatant:[

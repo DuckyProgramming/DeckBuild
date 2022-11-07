@@ -85,9 +85,6 @@ class battle{
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].block=0
             this.combatants[e].setupIntent(-1)
-            for(f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
-                this.combatants[e].boost.main[f]=0
-            }
             for(f=0,lf=this.combatants[e].status.main.length;f<lf;f++){
                 if(f==11&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
