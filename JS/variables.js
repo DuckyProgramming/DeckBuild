@@ -611,11 +611,11 @@ encounters=[
     {
         combatants:[0,0,0,0,0,0],
         reinforce:[],
-        threshold:2,
+        threshold:0,
         objective:[],
     },{
-        combatants:[5,5,0,0,0,0],
-        reinforce:[5],
+        combatants:[5,0,0,0,0,0],
+        reinforce:[],
         threshold:2,
         objective:[[0,10,0,0],[1,5,2,50]],
     },

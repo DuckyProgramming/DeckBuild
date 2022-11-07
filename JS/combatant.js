@@ -707,5 +707,9 @@ class combatant{
 		}else if(this.fade>0&&this.life<=0){
 			this.fade=round(this.fade*5-1)/5
 		}
-    }
+		if(this.life<=0&&this.type!=0){
+			this.type=0
+			this.battle.counter.enemies.dead++
+		}
+	}
 }

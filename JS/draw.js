@@ -6,6 +6,9 @@ function draw(){
             current.display()
             current.update()
         break
+        case 'choice':
+            current.displayChoice()
+        break
     }
     stage.scale=min(width/graphics.main.width,height/graphics.main.height)
     image(graphics.main,width/2-stage.scale*graphics.main.width/2,height/2-stage.scale*graphics.main.height/2,stage.scale*graphics.main.width,stage.scale*graphics.main.height)

@@ -11,8 +11,9 @@ class battle{
         this.particles=[]
         this.combatants=[]
         this.combatants.push(new combatant(this.layer,this,100,350,this.player,0,0))
+        this.choice={cards:[]}
         this.mana={main:3,max:3}
-        this.anim={turn:0,lost:0}
+        this.anim={turn:0,lost:0,end:0}
         this.deck.initial(this.player)
         this.initialReserve()
         this.reserve.shuffle()
@@ -24,14 +25,18 @@ class battle{
         this.currency={money:100}
         this.generation={combatants:[],reinforce:[],threshold:[]}
         this.objective=[]
-        this.counter={enemies:{dead:0,total:0,alive:0},turn:1}
+        this.counter={}
+        this.end=false
         this.drawInitial()
         for(e=0,le=this.drawAmount-this.hand.cards.length;e<le;e++){
             this.draw()
         }
     }
     create(){
+        this.end=false
         this.counter={enemies:{dead:0,total:0},turn:1}
+        this.anim.lost=0
+        this.anim.end=0
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
         }
@@ -193,36 +198,89 @@ class battle{
         this.layer.textSize(16)
         this.layer.textAlign(LEFT,CENTER)
         this.layer.text(this.currency.money,30,18)
-        this.layer.fill(80)
+        this.layer.fill(80,1-this.anim.end)
         this.layer.rect(740,this.objective.length*10+10,300,this.objective.length*20,10)
-        this.layer.textSize(12)
-        for(e=0,le=this.objective.length;e<le;e++){
-            if(this.objective[e][0]==1&&this.counter.turn>this.objective[e][1]){
-                this.layer.fill(150)
-            }else{
-                this.layer.fill(255)
-            }
-            switch(this.objective[e][0]){
-                case 0:
-                    this.layer.text('Defeat Enemies ('+this.counter.enemies.dead+'/'+this.counter.enemies.total+')',640,e*20+20)
-                break
-                case 1:
-                    this.layer.text('Complete Mission in '+this.objective[e][1]+' Turns ('+this.counter.turn+')',640,e*20+20)
-                break
-            }
-            switch(this.objective[e][2]){
-                case 0:
-                    this.layer.text('Card',600,e*20+20)
-                break
-                case 1:
-                    this.layer.text('Card+',600,e*20+20)
-                break
-                case 2:
-                    this.layer.text('$'+this.objective[e][3],600,e*20+20)
-                break
+        this.layer.fill(80,this.anim.end)
+        this.layer.rect(450,this.objective.length*30+100,450,this.objective.length*60+20,10)
+        this.layer.rect(450,this.objective.length*60+140,150,40,10)
+        if(this.anim.end<1){
+            this.layer.textSize(12)
+            for(e=0,le=this.objective.length;e<le;e++){
+                if(this.objective[e][0]==1&&this.counter.turn>this.objective[e][1]){
+                    this.layer.fill(150,1-this.anim.end)
+                }else{
+                    this.layer.fill(255,1-this.anim.end)
+                }
+                switch(this.objective[e][0]){
+                    case 0:
+                        this.layer.text('Defeat Enemies ('+this.counter.enemies.dead+'/'+this.counter.enemies.total+')',640,e*20+20)
+                    break
+                    case 1:
+                        this.layer.text('Complete Mission in '+this.objective[e][1]+' Turns ('+this.counter.turn+')',640,e*20+20)
+                    break
+                }
+                switch(this.objective[e][2]){
+                    case 0:
+                        this.layer.text('Card',600,e*20+20)
+                    break
+                    case 1:
+                        this.layer.text('Card+',600,e*20+20)
+                    break
+                    case 2:
+                        this.layer.text('$'+this.objective[e][3],600,e*20+20)
+                    break
+                }
             }
         }
         this.layer.textAlign(CENTER,CENTER)
+        if(this.anim.end>0){
+            this.layer.textSize(18)
+            this.layer.fill(150,this.anim.end)
+            this.layer.text('End',450,this.objective.length*60+140)
+            for(e=0,le=this.objective.length;e<le;e++){
+                if(this.objective[e][0]==1&&this.counter.turn>this.objective[e][1]){
+                    this.layer.fill(150,this.anim.end)
+                }else{
+                    this.layer.fill(255,this.anim.end)
+                }
+                switch(this.objective[e][0]){
+                    case 0:
+                        this.layer.text('Defeat Enemies ('+this.counter.enemies.dead+'/'+this.counter.enemies.total+')',450,e*60+120)
+                    break
+                    case 1:
+                        this.layer.text('Complete Mission in '+this.objective[e][1]+' Turns ('+this.counter.turn+')',450,e*60+120)
+                    break
+                }
+                switch(this.objective[e][2]){
+                    case 0:
+                        this.layer.text('New Card',450,e*60+150)
+                    break
+                    case 1:
+                        this.layer.text('New Upgraded Card',450,e*60+150)
+                    break
+                    case 2:
+                        this.layer.text('Gain $'+this.objective[e][3],450,e*60+150)
+                    break
+                }
+            }
+        }
+    }
+    setupChoice(level,spec){
+        switch(this.spec){
+            case 0:
+                this.choice.cards.push(new card(this.layer,150,300,listing.card[this.player][floor(random(0,listing.card[this.player].length))],level,this.player))
+                this.choice.cards.push(new card(this.layer,450,300,listing.card[this.player][floor(random(0,listing.card[this.player].length))],level,this.player))
+                this.choice.cards.push(new card(this.layer,750,300,listing.card[this.player][floor(random(0,listing.card[this.player].length))],level,this.player))
+            break
+        }
+        for(e=0,le=this.choice.cards.length;e<le;e++){
+            this.choice.cards[e].size=1
+        }
+    }
+    displayChoice(){
+        for(e=0,le=this.choice.cards.length;e<le;e++){
+            this.choice.cards[e].display()
+        }
     }
     update(){
         for(e=0,le=this.particles.length;e<le;e++){
@@ -249,7 +307,11 @@ class battle{
         this.drop.update()
         this.hand.updateHand()
         this.drop.updateDrop()
-        if(this.combatants[0].life<=0){
+        if(this.end){
+            if(this.anim.end<1){
+                this.anim.end=round(this.anim.end*5+1)/5
+            }
+        }else if(this.combatants[0].life<=0){
             if(this.turn==0){
                 this.turn=-1
                 this.hand.discard()
@@ -289,23 +351,21 @@ class battle{
                 }
             }
             if(this.turn==0){
-                this.counter.alive=0
+                this.counter.enemies.alive=0
                 for(e=1,le=this.combatants.length;e<le;e++){
-                    if(this.combatants[e].life<=0){
-                        this.combatants[e].type=0
-                    }else{
-                        this.counter.alive++
+                    if(this.combatants[e].life>0){
+                        this.counter.enemies.alive++
                     }
                 }
-                if(this.counter.alive<this.generation.threshold&&this.generation.reinforce.length>0){
+                if(this.counter.enemies.alive<this.generation.threshold&&this.generation.reinforce.length>0){
                     e=1
                     while(e<this.combatants.length){
-                        e++
                         if(this.combatants[e].type==0){
                             this.combatants[e]=new combatant(this.layer,this,200+e*100,350,this.generation.reinforce[0],1,e)
                             this.generation.reinforce.splice(0,1)
                             break
                         }
+                        e++
                     }
                 }
                 this.counter.turn++
@@ -321,16 +381,48 @@ class battle{
         }
     }
     onClick(){
-        if(this.turn==0&&this.combatants[0].life>0){
+        if(this.end){
+            if(pointInsideBox({position:inputs.rel.x},{position:{x:450,y:this.objective.length*60+140},width:150,height40})){
+                transition.trigger=true
+                transition.scene='map'
+                for(e=0,le=this.objective.length;e<le;e++){
+                    if(this.objective[e][0]==0||this.objective[e][0]==1&&this.counter.turn<=this.objective[e][1]){
+                        switch(this.objective[e][2]){
+                            case 0:
+                                transition.scene='choice'
+                                this.setupChoice(0,0)
+                            break
+                            case 1:
+                                transition.scene='choice'
+                                this.setupChoice(1,0)
+                            break
+                            case 2:
+                                this.currency.money+=this.objective[e][3]
+                            break
+                        }
+                    }
+                }
+            }
+        }else if(this.turn==0&&this.combatants[0].life>0){
             this.hand.onClickHand()
             if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:565},width:40,height:30})){
-                this.turn++
-                this.turnTimer=20
                 this.hand.discard()
-                while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
+                this.counter.enemies.alive=0
+                for(e=1,le=this.combatants.length;e<le;e++){
+                    if(this.combatants[e].life>0){
+                        this.counter.enemies.alive++
+                    }
+                }
+                if(this.counter.enemies.alive<=0&&this.generation.reinforce.length<=0){
+                    this.end=true
+                }else{
                     this.turn++
-                    if(this.turn>=this.combatants.length){
-                        this.turn=0
+                    this.turnTimer=20
+                    while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
+                        this.turn++
+                        if(this.turn>=this.combatants.length){
+                            this.turn=0
+                        }
                     }
                 }
             }
