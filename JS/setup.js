@@ -7,8 +7,9 @@ function setup(){
     current.create()
     
     transition.trigger=true
-    transition.scene='choice'
-    current.setupChoice(0,0,0)
+    transition.scene='map'
+    //current.setupChoice(0,0,0)
+    current.setupMap()
 }
 function windowResized(){
     resizeCanvas(windowWidth-50,windowHeight-50)

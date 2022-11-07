@@ -27,6 +27,7 @@ class battle{
         this.objective=[]
         this.counter={}
         this.end=false
+        this.map={main:[],complete:[],scroll:0}
         this.drawInitial()
         for(e=0,le=this.drawAmount-this.hand.cards.length;e<le;e++){
             this.draw()
@@ -290,6 +291,66 @@ class battle{
         this.layer.text('Skip',450,450)
         for(e=0,le=this.choice.cards.length;e<le;e++){
             this.choice.cards[e].display()
+        }
+    }
+    setupMap(){
+        this.map.main=[]
+        this.map.complete=[]
+        for(e=0;e<15;e++){
+            this.map.main.push([])
+            this.map.complete.push([])
+        }
+        for(e=0,le=this.map.main.length;e<le;e++){
+            for(f=0;f<min(5,8-abs(7-e));f++){
+                if(floor(random(0,5))<2){
+                    this.map.main[e].push(0)
+                }else if(floor(random(0,3))==0){
+                    this.map.main[e].push(1)
+                }else if(floor(random(0,2))==0){
+                    this.map.main[e].push(2)
+                }else{
+                    this.map.main[e].push(3)
+                }
+                this.map.complete[e].push(0)
+            }
+        }
+    }
+    displayMap(){
+        this.layer.stroke(150)
+        this.layer.strokeWeight(3)
+        for(e=0,le=this.map.main.length-1;e<le;e++){
+            for(f=0,lf=this.map.main[e].length;f<lf;f++){
+                for(g=0,lg=this.map.main[e+1].length;g<lg;g++){
+                    if((g==f||g==f+1)&&this.map.main[e].length==this.map.main[e+1].length-1||(g==f-1||g==f||g==f+1)&&this.map.main[e].length==this.map.main[e+1].length||(g==f-1||g==f)&&this.map.main[e].length==this.map.main[e+1].length+1){
+                        this.layer.line(530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll,530-this.map.main[e+1].length*80+g*160,400+e*100-this.map.scroll)
+                    }
+                }
+            }
+        }
+        this.layer.noStroke()
+        this.layer.textSize(20)
+        for(e=0,le=this.map.main.length;e<le;e++){
+            for(f=0,lf=this.map.main[e].length;f<lf;f++){
+                if(this.map.complete[e][f]){
+                    this.layer.fill(100,255,100)
+                }else{
+                    this.layer.fill(255)
+                }
+                switch(this.map.main[e][f]){
+                    case 0:
+                        this.layer.text('Battle',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
+                    break
+                    case 1:
+                        this.layer.text('Elite',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
+                    break
+                    case 2:
+                        this.layer.text('Rest',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
+                    break
+                    case 3:
+                        this.layer.text('Event',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
+                    break
+                }
+            }
         }
     }
     update(){
