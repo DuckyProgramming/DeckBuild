@@ -25,7 +25,9 @@ class battle{
         this.objective=[]
         this.counter={}
         this.end=false
-        this.map={main:[],complete:[],scroll:0,scrollGoal:100,position:[0,0]}
+        this.map={main:[],complete:[],scroll:0,scrollGoal:100,position:[0,0],zone:0}
+        this.restOptions=[0,1,2]
+        this.context=0
     }
     create(){
         this.end=false
@@ -51,6 +53,9 @@ class battle{
         this.counter.enemies.total+=this.generation.reinforce.length
         this.mana.max=this.mana.base
         this.mana.main=this.mana.max
+        this.reserve.cards=[]
+        this.hand.cards=[]
+        this.drop.cards=[]
         this.initialReserve()
         this.reserve.shuffle()
         this.drawInitial()
@@ -233,6 +238,9 @@ class battle{
                     case 2:
                         this.layer.text('$'+this.objective[e][3],600,e*20+20)
                     break
+                    case 3:
+                        this.layer.text(this.objective[e][3]+' HP',600,e*20+20)
+                    break
                 }
             }
         }
@@ -264,6 +272,9 @@ class battle{
                     break
                     case 2:
                         this.layer.text('Gain $'+this.objective[e][3],450,e*60+150)
+                    break
+                    case 3:
+                        this.layer.text('Heal '+this.objective[e][3]+' Health',450,e*60+150)
                     break
                 }
             }
@@ -364,6 +375,28 @@ class battle{
         this.layer.textAlign(LEFT,CENTER)
         this.layer.text(this.currency.money,30,18)
         this.layer.textAlign(CENTER,CENTER)
+    }
+    displayRest(){
+        this.layer.noStroke()
+        this.layer.fill(160)
+        for(e=0,le=this.restOptions.length;e<le;e++){
+            this.layer.rect(525+e*150-le*75,300,120,60,5)
+        }
+        this.layer.fill(0)
+        this.layer.textSize(20)
+        for(e=0,le=this.restOptions.length;e<le;e++){
+            switch(this.restOptions[e]){
+                case 0:
+                    this.layer.text('Skip',525+e*150-le*75,300)
+                break
+                case 1:
+                    this.layer.text('Rest',525+e*150-le*75,300)
+                break
+                case 2:
+                    this.layer.text('Train',525+e*150-le*75,300)
+                break
+            }
+        }
     }
     update(){
         for(e=0,le=this.particles.length;e<le;e++){
@@ -488,6 +521,9 @@ class battle{
                             case 2:
                                 this.currency.money+=this.objective[e][3]
                             break
+                            case 3:
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+this.objective[e][3])
+                            break
                         }
                     }
                 }
@@ -544,10 +580,42 @@ class battle{
                         switch(this.map.main[e][f]){
                             case 0:
                                 transition.scene='battle'
-                                setupEncounter(current,1)
+                                setupEncounter(current,zones[this.map.zone].encounters[floor(random(0,zones[this.map.zone].encounters.length))])
                                 this.create()
                             break
+                            case 1:
+                                transition.scene='battle'
+                                setupEncounter(current,zones[this.map.zone].elites[floor(random(0,zones[this.map.zone].elites.length))])
+                                this.create()
+                            break
+                            case 2:
+                                transition.scene='rest'
+                            break
                         }
+                    }
+                }
+            }
+        }
+    }
+    onClickRest(){
+        if(!transition.trigger){
+            for(e=0,le=this.restOptions.length;e<le;e++){
+                if(pointInsideBox({position:inputs.rel},{position:{x:525+e*150-le*75,y:300},width:120,height:60})){
+                    transition.trigger=true
+                    this.map.complete[this.map.position[0]][this.map.position[1]]=1
+                    switch(this.restOptions[e]){
+                        case 0:
+                            transition.scene='map'
+                        break
+                        case 1:
+                            this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+this.combatants[0].base.life/5)
+                            transition.scene='map'
+                        break
+                        case 2:
+                            transition.scene='deck'
+                            this.context=1
+                            this.deck.scroll=0
+                        break
                     }
                 }
             }

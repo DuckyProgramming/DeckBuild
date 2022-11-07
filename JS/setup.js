@@ -7,7 +7,7 @@ function setup(){
     current.create()
     
     transition.trigger=true
-    transition.scene='map'
+    transition.scene='rest'
     //current.setupChoice(0,0,0)
     current.setupMap()
 

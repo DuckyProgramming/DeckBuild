@@ -78,7 +78,7 @@ class card{
             case 31: this.desc+='Draw '+this.damage+' Cards\nExit Stance'; break
             case 32: this.desc+='Remove All\nBlock of Target\nDeal '+this.damage+' Damage'; break
             case 33: this.desc+='Fire 1st Charge\nHold that Charge'; break
-            case 34: this.desc+='Deal '+this.damage+' Damage\nApply 6 Weak'; break
+            case 34: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Weak'; break
             case 35: this.desc+='Gain '+this.damage+'\nCombo'; break
             case 36: this.desc+='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo\nEnd Combo'; break
             case 37: this.desc+='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo'; break

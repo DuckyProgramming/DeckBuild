@@ -10,5 +10,8 @@ function mouseClicked(){
         case 'map':
             current.onClickMap()
         break
+        case 'rest':
+            current.onClickRest()
+        break
     }
 }

@@ -87,8 +87,8 @@ types={
         ],
         },{name:'Nerve\nStrike',rarity:0,list:1,
         stats:[
-            {damage:2,alt:0,cost:1,attack:34,target:1,desc:'',spec:0,class:0},
-            {damage:4,alt:0,cost:1,attack:34,target:1,desc:'',spec:0,class:0},
+            {damage:2,alt:3,cost:1,attack:34,target:1,desc:'',spec:0,class:0},
+            {damage:4,alt:3,cost:1,attack:34,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Jolt',rarity:0,list:1,
         stats:[
@@ -122,8 +122,8 @@ types={
         ],
         },{name:'Combo\nStrike',rarity:0,list:1,
         stats:[
-            {damage:9,alt:0,cost:2,attack:1,target:1,desc:'',spec:4,class:0},
-            {damage:14,alt:0,cost:2,attack:1,target:1,desc:'',spec:4,class:0},
+            {damage:9,alt:0,cost:3,attack:1,target:1,desc:'',spec:4,class:0},
+            {damage:14,alt:0,cost:3,attack:1,target:1,desc:'',spec:4,class:0},
         ],
         },{name:'Virtuous\nCircle',rarity:1,list:1,
         stats:[
@@ -617,7 +617,18 @@ encounters=[
         combatants:[5,0,0,0,0,0],
         reinforce:[],
         threshold:2,
-        objective:[[0,10,0,0],[1,5,2,50]],
+        objective:[[0,10,0,0],[1,5,2,20]],
+    },{
+        combatants:[5,5,5,0,0,0],
+        reinforce:[5],
+        threshold:3,
+        objective:[[0,10,1,0],[1,5,3,10]],
+    },
+]
+zones=[
+    {
+        encounters:[1],
+        elites:[2],
     },
 ]
 stage={scale:0,scene:'battle'}

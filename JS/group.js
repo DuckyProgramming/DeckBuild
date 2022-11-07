@@ -4,6 +4,7 @@ class group{
         this.battle=battle
         this.storage={cards:[]}
         this.cards=[]
+        this.scroll=0
         this.select=false
         this.selcted=false
         this.trigger=false

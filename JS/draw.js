@@ -16,6 +16,10 @@ function draw(){
             current.displayMap()
             current.updateMap()
         break
+        case 'rest':
+            graphics.main.background(80,75,70)
+            current.displayRest()
+        break
     }
     stage.scale=min(width/graphics.main.width,height/graphics.main.height)
     displayTransition(graphics.main,transition)

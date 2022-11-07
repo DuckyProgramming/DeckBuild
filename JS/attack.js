@@ -186,7 +186,7 @@ class attack{
                 break
                 case 34:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.battle.combatants[this.target].boost.main[0]-=6
+                    this.battle.combatants[this.target].boost.main[0]-=this.alt
                 break
                 case 35:
                     this.battle.combatants[0].combo+=this.damage
