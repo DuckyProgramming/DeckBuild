@@ -7,5 +7,8 @@ function mouseClicked(){
         case 'choice':
             current.onClickChoice()
         break
+        case 'map':
+            current.onClickMap()
+        break
     }
 }

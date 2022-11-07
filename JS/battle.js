@@ -12,11 +12,9 @@ class battle{
         this.combatants=[]
         this.combatants.push(new combatant(this.layer,this,100,350,this.player,0,0))
         this.choice={cards:[]}
-        this.mana={main:3,max:3}
+        this.mana={main:3,max:3,base:3}
         this.anim={turn:0,lost:0,end:0}
         this.deck.initial(this.player)
-        this.initialReserve()
-        this.reserve.shuffle()
         this.turn=0
         this.turnTimer=0
         this.drawAmount=5
@@ -27,11 +25,7 @@ class battle{
         this.objective=[]
         this.counter={}
         this.end=false
-        this.map={main:[],complete:[],scroll:0}
-        this.drawInitial()
-        for(e=0,le=this.drawAmount-this.hand.cards.length;e<le;e++){
-            this.draw()
-        }
+        this.map={main:[],complete:[],scroll:0,scrollGoal:100,position:[0,0]}
     }
     create(){
         this.end=false
@@ -55,6 +49,14 @@ class battle{
             }
         }
         this.counter.enemies.total+=this.generation.reinforce.length
+        this.mana.max=this.mana.base
+        this.mana.main=this.mana.max
+        this.initialReserve()
+        this.reserve.shuffle()
+        this.drawInitial()
+        for(e=0,le=this.drawAmount-this.hand.cards.length;e<le;e++){
+            this.draw()
+        }
     }
     initialReserve(){
         for(e=0,le=this.deck.cards.length;e<le;e++){
@@ -125,7 +127,7 @@ class battle{
     }
     playCard(){
         for(g=0,lg=this.hand.cards.length;g<lg;g++){
-            if(this.hand.cards[g].type==11){
+            if(this.hand.cards[g].attack==-2){
                 this.combatants[0].take(1,0)
             }
         }
@@ -271,9 +273,10 @@ class battle{
         this.choice.cards=[]
         switch(spec){
             case 0:
-                this.choice.cards.push(new card(this.layer,225,300,listing.card[this.player][rarity][floor(random(0,listing.card[this.player][rarity].length))],level,this.player))
-                this.choice.cards.push(new card(this.layer,450,300,listing.card[this.player][rarity][floor(random(0,listing.card[this.player][rarity].length))],level,this.player))
-                this.choice.cards.push(new card(this.layer,675,300,listing.card[this.player][rarity][floor(random(0,listing.card[this.player][rarity].length))],level,this.player))
+                for(g=0;g<3;g++){
+                    h=listing.card[this.player][rarity][floor(random(0,listing.card[this.player][rarity].length))]
+                    this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
+                }
             break
         }
         for(g=0,lg=this.choice.cards.length;g<lg;g++){
@@ -302,7 +305,7 @@ class battle{
         }
         for(e=0,le=this.map.main.length;e<le;e++){
             for(f=0;f<min(5,8-abs(7-e));f++){
-                if(floor(random(0,5))<2){
+                if(floor(random(0,5))<2||e<2){
                     this.map.main[e].push(0)
                 }else if(floor(random(0,3))==0){
                     this.map.main[e].push(1)
@@ -331,7 +334,7 @@ class battle{
         this.layer.textSize(20)
         for(e=0,le=this.map.main.length;e<le;e++){
             for(f=0,lf=this.map.main[e].length;f<lf;f++){
-                if(this.map.complete[e][f]){
+                if(this.map.complete[e][f]==1){
                     this.layer.fill(100,255,100)
                 }else{
                     this.layer.fill(255)
@@ -352,6 +355,15 @@ class battle{
                 }
             }
         }
+        this.layer.fill(255,225,0)
+        this.layer.ellipse(20,16,16,16)
+        this.layer.fill(255,240,0)
+        this.layer.ellipse(20,16,10,10)
+        this.layer.fill(255,225,0)
+        this.layer.textSize(16)
+        this.layer.textAlign(LEFT,CENTER)
+        this.layer.text(this.currency.money,30,18)
+        this.layer.textAlign(CENTER,CENTER)
     }
     update(){
         for(e=0,le=this.particles.length;e<le;e++){
@@ -451,11 +463,17 @@ class battle{
             }
         }
     }
+    updateMap(){
+        if(this.map.scroll<this.map.scrollGoal){
+            this.map.scroll+=10
+        }
+    }
     onClick(){
         if(this.end){
             if(pointInsideBox({position:inputs.rel},{position:{x:450,y:this.objective.length*60+140},width:150,height:40})){
                 transition.trigger=true
                 transition.scene='map'
+                this.map.complete[this.map.position[0]][this.map.position[1]]=1
                 for(e=0,le=this.objective.length;e<le;e++){
                     if(this.objective[e][0]==0||this.objective[e][0]==1&&this.counter.turn<=this.objective[e][1]){
                         switch(this.objective[e][2]){
@@ -509,7 +527,28 @@ class battle{
                 if(pointInsideBox({position:inputs.rel},this.choice.cards[e])){
                     transition.trigger=true
                     transition.scene='map'
-                    this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level)
+                    this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                }
+            }
+        }
+    }
+    onClickMap(){
+        if(!transition.trigger){
+            for(e=0,le=this.map.main.length;e<le;e++){
+                for(f=0,lf=this.map.main[e].length;f<lf;f++){
+                    if(dist(inputs.rel.x,inputs.rel.y,530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)<50&&e==this.map.position[0]+1&&((f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e].length-1||(f==this.map.position[1]-1||f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e+1].length||(f==this.map.position[1]-1||f==this.map.position[1])&&this.map.main[this.map.position[0]].length==this.map.main[e].length+1)){
+                        this.map.position[0]=e
+                        this.map.position[1]=f
+                        this.map.scrollGoal+=100
+                        transition.trigger=true
+                        switch(this.map.main[e][f]){
+                            case 0:
+                                transition.scene='battle'
+                                setupEncounter(current,1)
+                                this.create()
+                            break
+                        }
+                    }
                 }
             }
         }

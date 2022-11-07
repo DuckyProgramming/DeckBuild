@@ -14,6 +14,7 @@ function draw(){
         case 'map':
             graphics.main.background(100)
             current.displayMap()
+            current.updateMap()
         break
     }
     stage.scale=min(width/graphics.main.width,height/graphics.main.height)

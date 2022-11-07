@@ -10,6 +10,8 @@ function setup(){
     transition.scene='map'
     //current.setupChoice(0,0,0)
     current.setupMap()
+
+    current.map.complete[0][0]=1
 }
 function windowResized(){
     resizeCanvas(windowWidth-50,windowHeight-50)
