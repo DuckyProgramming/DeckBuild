@@ -406,6 +406,9 @@ class battle{
         for(g=0,lg=this.choice.cards.length;g<lg;g++){
             this.choice.cards[g].size=1
         }
+        for(g=0,lg=this.deck.cards.length;g<lg;g++){
+            this.deck.cards[e].anim.select=0
+        }
     }
     displayDeck(){
         this.deck.displayView()
@@ -515,6 +518,9 @@ class battle{
         if(this.map.scroll<this.map.scrollGoal){
             this.map.scroll+=10
         }
+    }
+    updateDeck(){
+        this.deck.updateView()
     }
     onClick(){
         if(this.end){
@@ -635,5 +641,8 @@ class battle{
                 }
             }
         }
+    }
+    onClickDeck(){
+        this.deck=onClickView()
     }
 }
