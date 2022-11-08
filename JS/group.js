@@ -31,11 +31,11 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(2,0,this.battle.player)
                 }
-                this.add(67,0,this.battle.player)
-                this.add(68,0,this.battle.player)
-                this.add(69,0,this.battle.player)
-                this.add(70,0,this.battle.player)
-                this.add(71,0,this.battle.player)
+                this.add(77,0,this.battle.player)
+                this.add(78,0,this.battle.player)
+                this.add(79,0,this.battle.player)
+                this.add(80,0,this.battle.player)
+                this.add(81,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -103,8 +103,10 @@ class group{
             }
         }
         for(let e=0,le=this.cards.length;e<le;e++){
-            if(this.cards[e].spec==5){
+            if(this.cards[e].attack==52){
                 this.cards[e].damage+=this.cards[e].alt
+            }else if(this.cards[e].attack==114&&this.cards[e].cost>0){
+                this.cards[e].cost--
             }else if(this.cards[e].spec!=2&&this.cards[e].spec!=9&&this.cards[e].spec!=12){
                 this.cards[e].used=true
                 if(this.cards[e].attack==-4){
@@ -136,6 +138,11 @@ class group{
         for(e=0,le=this.cards.length;e<le;e++){
             if(this.cards[e].discard){
                 this.battle.discard.cards.push(copyCard(this.cards[e]))
+                this.cards.splice(e,1)
+                e--
+                le--
+            }else if(this.cards[e].draw){
+                this.battle.reserve.cards.push(copyCard(this.cards[e]))
                 this.cards.splice(e,1)
                 e--
                 le--
@@ -199,7 +206,7 @@ class group{
         }else{
             this.selected=false
             for(e=0,le=this.cards.length;e<le;e++){
-                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.select&&this.cards[e].select&&(this.battle.mana.main>=this.cards[e].cost&&this.cards[e].spec!=4||this.battle.combatants[0].combo>=this.cards[e].cost&&this.cards[e].spec==4)&&!((this.cards[e].spec==11||this.cards[e].spec==12)&&this.battle.combatants[0].armed!=1)){
+                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.select&&this.cards[e].select&&(this.battle.mana.main>=this.cards[e].cost&&this.cards[e].spec!=4||this.battle.combatants[0].combo>=this.cards[e].cost&&this.cards[e].spec==4)&&!((this.cards[e].spec==5||this.cards[e].spec==11)&&this.battle.combatants[0].armed!=1)){
                     this.trigger=true
                     this.cards[e].trigger=true
                     this.select=false
@@ -221,6 +228,7 @@ class group{
                     }
                     this.battle.attack.type=this.cards[e].attack
                     this.battle.attack.level=this.cards[e].level
+                    this.battle.attack.class=this.cards[e].class
                     if(this.cards[e].attack==63){
                         if(inputs.rel.y>this.cards[e].position.y+10){
                             this.battle.playCard()

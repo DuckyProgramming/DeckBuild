@@ -78,6 +78,9 @@ class battle{
         for(e=0,e<this.reserve.cards.length;e<le;e++){
             if(this.reserve.cards[e].spec==7||this.reserve.cards[e].spec==8||this.reserve.cards[e].spec==10){
                 this.hand.cards.push(copyCard(this.reserve.cards[e]))
+                this.hand.cards[this.hand.cards.length-1].position.x=1206
+                this.hand.cards[this.hand.cards.length-1].position.y=500
+                this.reserve.cards.splice(0,1)
                 this.reserve.cards.splice(e,1)
                 e--
                 le--
@@ -92,6 +95,8 @@ class battle{
                 break
             }
             this.hand.cards.push(copyCard(this.reserve.cards[0]))
+            this.hand.cards[this.hand.cards.length-1].position.x=1206
+            this.hand.cards[this.hand.cards.length-1].position.y=500
             this.reserve.cards.splice(0,1)
         }
         if(this.reserve.cards.length<=0){
@@ -135,7 +140,7 @@ class battle{
         }
         this.combatants[0].boost.main[0]+=this.remember[0]-this.remember[1]
         this.combatants[0].boost.main[1]+=this.remember[2]-this.remember[3]
-        if(this.combatants[0].status.main[14]>0){
+        for(e=0;e<this.combatants[0].status.main[14];e++){
             this.hand.add(findCard('Smite'),0,0)
         }
     }
@@ -201,9 +206,26 @@ class battle{
         this.layer.stroke(150,200,250,this.fade)
         this.layer.strokeWeight(6)
         this.layer.quad(-92+this.anim.turn*100,390,-68+this.anim.turn*100,358,-44+this.anim.turn*100,390,-68+this.anim.turn*100,422)
-        this.layer.fill(200,160,200,this.fade)
-        this.layer.stroke(160,120,160,this.fade)
+        switch(this.player){
+            case 1:
+                this.layer.fill(160,200,160)
+                this.layer.stroke(120,160,120)
+            break
+            case 2:
+                this.layer.fill(200,120,160)
+                this.layer.stroke(160,80,120)
+            break
+            case 3:
+                this.layer.fill(240,200,160)
+                this.layer.stroke(200,160,120)
+            break
+            case 4:
+                this.layer.fill(220,200,240)
+                this.layer.stroke(180,160,200)
+            break
+        }
         this.layer.strokeWeight(5)
+        this.layer.rect(-68+this.anim.turn*100,525,40,30,5)
         this.layer.rect(-68+this.anim.turn*100,565,40,30,5)
         this.layer.fill(0,this.fade)
         this.layer.noStroke()
@@ -211,6 +233,8 @@ class battle{
         this.layer.text(this.mana.gen,-68+this.anim.turn*100,370)
         this.layer.textSize(20)
         this.layer.text(this.mana.main+'/'+this.mana.max,-68+this.anim.turn*100,390)
+        this.layer.textSize(12)
+        this.layer.text('Discard',-68+this.anim.turn*100,525)
         this.layer.text('End',-68+this.anim.turn*100,565)
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].displayInfo()
@@ -441,7 +465,11 @@ class battle{
             }
         }else if(this.turn==0&&this.combatants[0].life>0){
             this.hand.onClickHand()
-            if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:565},width:40,height:30})){
+            if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:525},width:40,height:30})){
+                transition.trigger=true
+                transition.scene='deck'
+                this.context=3
+            }else if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:565},width:40,height:30})){
                 this.close()
             }
         }
@@ -664,7 +692,7 @@ class battle{
         if(this.context==1){
             this.deck.displayView()
             this.choice.cards[0].display()
-        }else if(this.context==2){
+        }else if(this.context==2||this.context==3){
             this.discard.displayView()
         }
         this.layer.noStroke()
@@ -691,6 +719,8 @@ class battle{
                 transition.scene='map'
             }else if(this.context==2){
                 this.close()
+                transition.scene='battle'
+            }else if(this.context==3){
                 transition.scene='battle'
             }
         }

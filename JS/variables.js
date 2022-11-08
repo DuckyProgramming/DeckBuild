@@ -252,8 +252,8 @@ types={
         ],
         },{name:'Spinning\nWhack',rarity:1,list:2,
         stats:[
-            {damage:12,alt:4,cost:2,attack:52,target:1,desc:'',spec:5,class:0},
-            {damage:20,alt:4,cost:2,attack:52,target:1,desc:'',spec:5,class:0},
+            {damage:12,alt:4,cost:2,attack:52,target:1,desc:'',spec:2,class:0},
+            {damage:20,alt:4,cost:2,attack:52,target:1,desc:'',spec:2,class:0},
         ],
         },{name:'Shiv',rarity:0,list:2,
         stats:[
@@ -359,6 +359,36 @@ types={
         stats:[
             {damage:4,alt:0,cost:1,attack:110,target:0,desc:'',spec:0,class:2},
             {damage:6,alt:0,cost:1,attack:110,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Conviction',rarity:1,list:2,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:111,target:0,desc:'',spec:0,class:2},
+            {damage:4,alt:0,cost:1,attack:111,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Rush',rarity:1,list:2,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:112,target:0,desc:'',spec:0,class:2},
+            {damage:2,alt:0,cost:1,attack:112,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Sanctity',rarity:1,list:2,
+        stats:[
+            {damage:6,alt:0,cost:1,attack:113,target:0,desc:'',spec:0,class:1},
+            {damage:9,alt:0,cost:1,attack:113,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Sands\nof Time',rarity:2,list:2,
+        stats:[
+            {damage:20,alt:0,cost:4,attack:114,target:1,desc:'',spec:2,class:0},
+            {damage:26,alt:0,cost:4,attack:114,target:1,desc:'',spec:2,class:0},
+        ],
+        },{name:'Tantrum',rarity:1,list:2,
+        stats:[
+            {damage:2,alt:4,cost:1,attack:115,target:1,desc:'',spec:12,class:0},
+            {damage:3,alt:4,cost:1,attack:115,target:1,desc:'',spec:12,class:0},
+        ],
+        },{name:'Blade\nBash',rarity:1,list:2,
+        stats:[
+            {damage:9,alt:0,cost:2,attack:116,target:1,descW:'',spec:0,class:0},
+            {damage:12,alt:0,cost:2,attack:116,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Charge',rarity:0,list:3,
         stats:[
@@ -502,8 +532,8 @@ types={
         ],
         },{name:'Guard',rarity:0,list:4,
         stats:[
-            {damage:15,alt:1,cost:2,attack:66,target:0,desc:'',spec:12,class:1},
-            {damage:22,alt:1,cost:2,attack:66,target:0,desc:'',spec:12,class:1},
+            {damage:15,alt:1,cost:2,attack:66,target:0,desc:'',spec:5,class:1},
+            {damage:22,alt:1,cost:2,attack:66,target:0,desc:'',spec:5,class:1},
         ],
         },{name:'Slice',rarity:2,list:4,
         stats:[

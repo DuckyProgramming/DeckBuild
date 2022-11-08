@@ -25,7 +25,6 @@ function draw(){
         break
         case 'deck':
             graphics.main.background(40,48,50)
-            displayMoon(graphics.main)
             current.displayDeck()
             current.updateDeck()
         break

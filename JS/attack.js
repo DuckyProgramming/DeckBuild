@@ -5,6 +5,7 @@ class attack{
         this.type=0
         this.level=0
         this.side=0
+        this.class=0
         this.mana=0
         this.combo=0
         this.color=0
@@ -22,7 +23,7 @@ class attack{
         this.side=side
         if(side==0){
             switch(type){
-                case 1: case 52: case 99:
+                case 1: case 52: case 99: case 114:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2:
@@ -565,7 +566,38 @@ class attack{
                 case 110:
                     this.battle.combatants[0].status.main[15]+=this.damage
                 break
+                case 111:
+                    this.battle.combatants[0].mantra+=this.damage
+                    this.battle.drop.addDrop(findCard('Insight'),0,0)
+                    this.battle.reserve.add(findCard('Insight'),0,0)
+                break
+                case 112:
+                    this.battle.combatants[0].status.main[16]+=this.damage
+                break
+                case 113:
+                    this.battle.combatants[0].block+=this.damage
+                    if(this.battle.combatants[0].lastPlay==1){
+                        this.battle.draw()
+                        this.battle.draw()
+                    }
+                break
+                case 115:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.stance==2){
+                        this.attacks.push([0,this.alt*10-10,this.target,this.damage])
+                    }else if(this.stance==3){
+                        this.attacks.push([0,this.alt*10-10,this.target,this.damage*3/2])
+                    }else{
+                        this.attacks.push([0,this.alt*10-10,this.target,this.damage/2])
+                    }
+                    this.battle.combatants[0].changeStance(2)
+                break
+                case 116:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].block+=max(0,this.damage-this.battle.combatants[this.target].block)
+                break
             }
+            this.battle.combatants[0].lastPlay=this.class
         }else{
             switch(type){
                 case 1:

@@ -22,6 +22,7 @@ class card{
         this.fade=1
         this.calcDirection=0
         this.remove=false
+        this.draw=false
         this.discard=false
         this.select=false
         this.trigger=false
@@ -146,7 +147,7 @@ class card{
             case 99: this.desc+='Deal '+this.damage+' Damage\nReturn on\nStance Change'; break
             case 100: this.desc+='Enter Wrath'; break
             case 101: this.desc+='Add '+this.damage+' Block\nWrath: Gain '+this.alt+'\nAdditional Block'; break
-            case 102: this.desc+='Gain'+this.damage+' Faith'; break
+            case 102: this.desc+='Gain'+this.damage+'\nFaith'; break
             case 103: this.desc+='Enter Calm'; break
             case 104: this.desc+='At the Start\nof Each Turn\nGain a Smite'; break
             case 105: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nEnd Turn'; break
@@ -155,12 +156,21 @@ class card{
             case 108: this.desc+='Calm: Draw\n'+this.damage+' Cards\nOtherwise,\nEnter Calm'; break
             case 109: this.desc+='Put a\nDiscarded Card\ninto Your Hand.\nEnter Calm\nEnd Turn'; break
             case 110: this.desc+='When You\nChange Stance,\nGain '+this.damage+' Block'; break
+            case 111: this.desc+='Gain '+this.damage+' Faith\nShuffle an Insight\ninto Draw Pile'; break
+            case 112: this.desc+='When you\nEnter Wrath,\nDraw '+this.damage+' Cards'; break
+            case 113: this.desc+='Add '+this.damage+' Block\nIf Last Card Played\nwas a Skill,\nDraw 2 Cards'; break
+            case 114: this.desc+='Deal '+this.damage+' Damage\nReduce Cost by 1\nwhen Retained'; break
+            case 115: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nEnter Wrath'; break
+            case 116: this.desc+='Deal '+this.damage+' Damage\nGain Block Equal\nto Unblocked\nDamage Dealt'; break
         }
-        if(this.spec==2||this.spec==9||this.spec==12){
+        if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
         }
         if(this.spec==3||this.spec==8||this.spec==9){
             this.desc+='\nExhaust'
+        }
+        if(this.spec==12){
+            this.desc+='\nReturn to Draw Pile'
         }
         if(this.desc[this.desc.length-1]=='\n'){
             this.desc=this.desc.substr(0,this.desc.length-1)
@@ -210,7 +220,7 @@ class card{
                 this.layer.rect(0,-this.height/4+5,this.width,this.height/2+10,5)
                 this.layer.rect(0,this.height/4+5,this.width,this.height/2-10,5)
             }
-            if(this.spec==11||this.spec==12){
+            if(this.spec==5||this.spec==11){
                 this.layer.fill(138,141,207,this.fade)
                 this.layer.stroke(111,114,178,this.fade)
                 this.layer.strokeWeight(2)
@@ -286,6 +296,8 @@ class card{
         if(this.size<=0&&this.used){
             if((this.spec==3||this.spec==8||this.spec==9||this.exhaust)&&this.trigger){
                 this.remove=true
+            }else if(this.spec==12){
+                this.draw=true
             }else{
                 this.discard=true
             }
@@ -295,9 +307,9 @@ class card{
         }else if(!this.select&&this.anim.select>0){
             this.anim.select=round(this.anim.select*5-1)/5
         }
-        if((mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==11||this.spec==12)&&armed!=1)&&this.anim.afford<1){
+        if((mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==5||this.spec==11)&&armed!=1)&&this.anim.afford<1){
             this.anim.afford=round(this.anim.afford*5+1)/5
-        }else if(!(mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==11||this.spec==12)&&armed!=1)&&this.anim.afford>0){
+        }else if(!(mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==5||this.spec==11)&&armed!=1)&&this.anim.afford>0){
             this.anim.afford=round(this.anim.afford*5-1)/5
         }
         if(this.trigger&&!this.used){
