@@ -20,7 +20,7 @@ types={
             {damage:14,alt:0,cost:2,attack:1,target:1,desc:'',spec:0,class:0},
             {damage:22,alt:0,cost:2,attack:1,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Triple',rarity:1,list:1,
+        },{name:'Triple',rarity:0,list:1,
         stats:[
             {damage:3,alt:3,cost:1,attack:3,target:1,desc:'',spec:0,class:0},
             {damage:4,alt:3,cost:1,attack:3,target:1,desc:'',spec:0,class:0},
@@ -62,8 +62,8 @@ types={
         ],
         },{name:'Hook\nStrike',rarity:1,list:1,
         stats:[
-            {damage:4,alt:2,cost:1,attack:11,target:1,desc:'',spec:0,class:0},
-            {damage:6,alt:2,cost:1,attack:11,target:1,desc:'',spec:0,class:0},
+            {damage:4,alt:1,cost:1,attack:11,target:1,desc:'',spec:0,class:0},
+            {damage:6,alt:1,cost:1,attack:11,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Multi\nStrike',rarity:0,list:1,
         stats:[
@@ -95,7 +95,7 @@ types={
             {damage:2,alt:0,cost:0,attack:35,target:0,desc:'',spec:0,class:0},
             {damage:4,alt:0,cost:0,attack:35,target:0,desc:'',spec:0,class:0},
         ],
-        },{name:'Combo\nFinish',rarity:1,list:1,
+        },{name:'Combo\nFinish',rarity:0,list:1,
         stats:[
             {damage:14,alt:2,cost:4,attack:36,target:1,desc:'',spec:4,class:0},
             {damage:22,alt:2,cost:4,attack:36,target:1,desc:'',spec:4,class:0},
@@ -130,7 +130,7 @@ types={
             {damage:7,alt:0,cost:5,attack:35,target:0,desc:'',spec:4,class:2},
             {damage:9,alt:0,cost:5,attack:35,target:0,desc:'',spec:4,class:2},
         ],
-        },{name:'Palm\nStrike',rarity:1,list:1,
+        },{name:'Palm\nStrike',rarity:0,list:1,
         stats:[
             {damage:8,alt:2,cost:4,attack:41,target:1,desc:'',spec:4,class:0},
             {damage:10,alt:3,cost:4,attack:41,target:1,desc:'',spec:4,class:0},
@@ -140,7 +140,7 @@ types={
             {damage:28,alt:0,cost:10,attack:1,target:1,desc:'',spec:4,class:0},
             {damage:44,alt:0,cost:10,attack:1,target:1,desc:'',spec:4,class:0},
         ], 
-        },{name:'Throw',rarity:1,list:1,
+        },{name:'Throw',rarity:0,list:1,
         stats:[
             {damage:2,alt:1,cost:1,attack:42,target:1,desc:'',spec:0,class:0},
             {damage:6,alt:1,cost:1,attack:42,target:1,desc:'',spec:0,class:0},
@@ -195,7 +195,7 @@ types={
             {damage:8,alt:2,cost:2,attack:50,target:1,desc:'',spec:0,class:0},
             {damage:12,alt:2,cost:2,attack:50,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Surprise\nCounter',rarity:0,list:1,
+        },{name:'Surprise\nCounter',rarity:1,list:1,
         stats:[
             {damage:2,alt:15,cost:4,attack:39,target:0,desc:'',spec:4,class:1},
             {damage:6,alt:22,cost:4,attack:39,target:0,desc:'',spec:4,class:1},
@@ -225,7 +225,7 @@ types={
             {damage:4,alt:0,cost:1,attack:94,target:0,desc:'',spec:0,class:1},
             {damage:7,alt:0,cost:1,attack:94,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Option\nPlay',rarity:1,list:1,
+        },{name:'Option\nPlay',rarity:0,list:1,
         stats:[
             {damage:5,alt:6,cost:1,attack:63,target:1,desc:'',spec:0,class:0},
             {damage:8,alt:9,cost:1,attack:63,target:1,desc:'',spec:0,class:0},
@@ -629,6 +629,7 @@ zones=[
     {
         encounters:[1],
         elites:[2],
+        events:[1],
     },
 ]
 stage={scale:0,scene:'battle'}

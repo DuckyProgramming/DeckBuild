@@ -28,6 +28,7 @@ class battle{
         this.map={main:[],complete:[],scroll:0,scrollGoal:100,position:[0,0],zone:0}
         this.restOptions=[1,2]
         this.context=0
+        this.event=0
     }
     create(){
         this.end=false
@@ -430,6 +431,15 @@ class battle{
         this.layer.text('Skip',850,570)
     }
     update(){
+        this.counter.enemies.alive=0
+        for(e=1,le=this.combatants.length;e<le;e++){
+            if(this.combatants[e].life>0){
+                this.counter.enemies.alive++
+            }
+        }
+        if(this.counter.enemies.alive<=0&&this.generation.reinforce.length<=0){
+            this.end=true
+        }
         for(e=0,le=this.particles.length;e<le;e++){
             this.particles[e].update()
             if(this.particles[e].remove){
@@ -573,22 +583,12 @@ class battle{
             this.hand.onClickHand()
             if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:565},width:40,height:30})){
                 this.hand.discard()
-                this.counter.enemies.alive=0
-                for(e=1,le=this.combatants.length;e<le;e++){
-                    if(this.combatants[e].life>0){
-                        this.counter.enemies.alive++
-                    }
-                }
-                if(this.counter.enemies.alive<=0&&this.generation.reinforce.length<=0){
-                    this.end=true
-                }else{
+                this.turn++
+                this.turnTimer=20
+                while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
                     this.turn++
-                    this.turnTimer=20
-                    while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
-                        this.turn++
-                        if(this.turn>=this.combatants.length){
-                            this.turn=0
-                        }
+                    if(this.turn>=this.combatants.length){
+                        this.turn=0
                     }
                 }
             }
@@ -631,6 +631,10 @@ class battle{
                             break
                             case 2:
                                 transition.scene='rest'
+                            break
+                            case 3:
+                                transition.scene='event'
+                                this.event=zones[this.map.zone][floor(random(0,zones[this.map.zone].length))]
                             break
                         }
                     }

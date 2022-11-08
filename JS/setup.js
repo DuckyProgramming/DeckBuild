@@ -7,11 +7,10 @@ function setup(){
     current.create()
     
     transition.trigger=true
-    transition.scene='rest'
-    //current.setupChoice(0,0,0)
+    transition.scene='event'
     current.setupMap()
-
     current.map.complete[0][0]=1
+    current.even=1
 }
 function windowResized(){
     resizeCanvas(windowWidth-50,windowHeight-50)

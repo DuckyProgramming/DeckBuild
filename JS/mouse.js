@@ -16,5 +16,8 @@ function mouseClicked(){
         case 'deck':
             current.onClickDeck()
         break
+        case 'event':
+            current.onClickEvent()
+        break
     }
 }

@@ -25,6 +25,9 @@ function draw(){
             current.displayDeck()
             current.updateDeck()
         break
+        case 'event':
+            current.displayEvent()
+        break
     }
     stage.scale=min(width/graphics.main.width,height/graphics.main.height)
     displayTransition(graphics.main,transition)
