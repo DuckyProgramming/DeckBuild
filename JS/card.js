@@ -145,6 +145,10 @@ class card{
             case 98: this.desc+='Add '+this.damage+' Block\nShuffle an Insight\ninto Draw Pile'; break
             case 99: this.desc+='Deal '+this.damage+' Damage\nReturn on\nStance Change'; break
             case 100: this.desc+='Enter Wrath'; break
+            case 101: this.desc+='Add '+this.damage+' Block\nWrath: Gain '+this.alt+'\nAdditional Block'; break
+            case 102: this.desc+='Gain'+this.damage+' Faith'; break
+            case 103: this.desc+='Enter Calm'; break
+            case 104: this.desc+='At the Start\nof Each Turn\nGain a Smite'; break
         }
         if(this.spec==2||this.spec==9||this.spec==12){
             this.desc+='\nRetain'

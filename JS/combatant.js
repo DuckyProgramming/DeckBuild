@@ -22,9 +22,14 @@ class combatant{
         this.collect={life:this.life}
 		this.calc={damage:0}
 		this.boost={main:[0,0],fade:[0,0],display:[],color:[[200,0,0],[0,150,255]],infoFade:[0,0],name:['Attack','Defense']}
-		this.status={main:[],fade:[],display:[],color:[[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120],[125,75,25],[25,125,175],[150,225,150],[100,200,200],[200,0,50],[100,50,150],[50,100,50]],infoFade:[],name:['Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Vulnerability','Confused','Reflect','Bleed','Intangible','Sink'],class:[1,1,1,1,1,0,1,0,0,0,1,0,1,1]}
+		this.status={main:[],fade:[],display:[],color:[
+			[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120],[125,75,25],[25,125,175],[150,225,150],
+			[100,200,200],[200,0,50],[100,50,150],[50,100,50],[20,60,120]],infoFade:[],name:[
+			'Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Vulnerability','Confused',
+			'Reflect','Bleed','Intangible','Sink','Smite'],class:[1,1,1,1,1,0,1,0,0,0,1,0,1,1]}
 		this.combo=0
 		this.stance=0
+		this.mantra=0
 		this.ammo=[-1,-1,-1]
 		this.meter=0
 		this.armed=1
@@ -126,6 +131,16 @@ class combatant{
 				break
 				case 2:
 					this.layer.noStroke()
+					this.layer.translate(0,-45)
+					if(this.mantra>0){
+						this.layer.fill(255,200,255,this.fade/2)
+						for(g=0;g<12;g++){
+							this.layer.rotate(30)
+							if(g<this.mantra){
+								this.layer.ellipse(0,-40,6,6)
+							}
+						}
+					}
 					if(this.stance>0){
 						switch(this.stance){
 							case 1:
@@ -138,13 +153,12 @@ class combatant{
 								this.layer.fill(255,200,255,this.fade/2)
 							break
 						}
-						this.layer.translate(0,-45)
 						for(g=0;g<12;g++){
 							this.layer.rotate(30)
 							this.layer.triangle(0,-8,-8,0,-50,-50)
 						}
-						this.layer.translate(0,45)
 					}
+					this.layer.translate(0,45)
 					this.layer.fill(84,46,55,this.fade)
 					this.layer.triangle(-15,-75,15,-75,-6,-25)
 					this.layer.stroke(207,90,101,this.fade*(1-this.anim[4]))
@@ -825,7 +839,12 @@ class combatant{
     update(){
 		this.boost.display=[]
 		this.status.display=[]
-		if(this.type==4){
+		if(this.type==2){
+			if(this.mantra>=10&&this.stance!=3){
+				this.changeStance(3)
+				this.mantra-=10
+			}
+		}else if(this.type==4){
 			if(this.meter<-10){
 				this.meter=0
 				this.take(10,0)

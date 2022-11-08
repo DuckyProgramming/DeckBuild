@@ -506,6 +506,21 @@ class attack{
                 case 100:
                     this.battle.combatants[0].changeStance(2)
                 break
+                case 101:
+                    this.battle.combatants[0].block+=this.damage
+                    if(this.battle.combatants[0].stance==2){
+                        this.battle.combatants[0].block+=this.alt
+                    }
+                break
+                case 102:
+                    this.battle.combatants[0].mantra+=this.damage
+                break
+                case 103:
+                    this.battle.combatants[0].changeStance(1)
+                break
+                case 104:
+                    this.battle.combatants[0].status.main[14]++
+                break
             }
         }else{
             switch(type){

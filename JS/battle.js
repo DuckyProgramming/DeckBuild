@@ -128,13 +128,16 @@ class battle{
                 if(f==11&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                     this.combatants[e].status.main[f]--
-                }else{
+                }else if(f!=14){
                     this.combatants[e].status.main[f]=0
                 }
             }
         }
         this.combatants[0].boost.main[0]+=this.remember[0]-this.remember[1]
         this.combatants[0].boost.main[1]+=this.remember[2]-this.remember[3]
+        if(this.combatants[0].status.main[14]>0){
+            this.hand.add(findCard('Smite'),0,0)
+        }
     }
     playCard(){
         for(g=0,lg=this.hand.cards.length;g<lg;g++){
@@ -428,6 +431,9 @@ class battle{
                 this.hand.discard()
                 this.turn++
                 this.turnTimer=20
+                if(this.battle.combatants[0].stance==3){
+                    this.battle.combatants[0].changeStance(0)
+                }
                 while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
                     this.turn++
                     if(this.turn>=this.combatants.length){

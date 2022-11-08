@@ -307,8 +307,28 @@ types={
         ],
         },{name:'Crescendo',rarity:0,list:2,
         stats:[
-            {damage:0,alt:0,cost:1,attack:100,target:0,desc:'',spec:9,class:0},
-            {damage:0,alt:0,cost:0,attack:100,target:0,desc:'',spec:9,class:0},
+            {damage:0,alt:0,cost:1,attack:100,target:0,desc:'',spec:9,class:2},
+            {damage:0,alt:0,cost:0,attack:100,target:0,desc:'',spec:9,class:2},
+        ],
+        },{name:'Deflect',rarity:0,list:2,
+        stats:[
+            {damage:3,alt:9,cost:0,attack:101,target:0,desc:'',spec:0,class:1},
+            {damage:4,alt:14,cost:0,attack:101,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Belief',rarity:0,list:2,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:102,target:0,desc:'',spec:0,class:2},
+            {damage:3,alt:0,cost:0,attack:102,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Tranquility',rarity:0,list:2,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:103,target:0,desc:'',spec:9,class:2},
+            {damage:0,alt:0,cost:0,attack:103,target:0,desc:'',spec:9,class:2},
+        ],
+        },{name:'Hymn',rarity:1,list:2,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:104,target:0,desc:'',spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:104,target:0,desc:'',spec:8,class:2},
         ],
         },{name:'Charge',rarity:0,list:3,
         stats:[
@@ -569,6 +589,16 @@ types={
         stats:[
             {damage:1,alt:0,cost:0,attack:96,target:0,desc:'',spec:9,class:2},
             {damage:2,alt:0,cost:0,attack:96,target:0,desc:'',spec:9,class:2},
+        ],
+        },{name:'Smite',rarity:-1,list:0,
+        stats:[
+            {damage:12,alt:0,cost:1,attack:1,target:1,desc:'',spec:9,class:0},
+            {damage:16,alt:0,cost:1,attack:1,target:1,desc:'',spec:9,class:0},
+        ],
+        },{name:'Safety',rarity:-1,list:0,
+        stats:[
+            {damage:12,alt:0,cost:1,attack:2,target:0,desc:'',spec:9,class:1},
+            {damage:16,alt:0,cost:1,attack:2,target:0,desc:'',spec:9,class:1},
         ],
         },{name:'Clumsy',rarity:-1,list:10,
         stats:[
