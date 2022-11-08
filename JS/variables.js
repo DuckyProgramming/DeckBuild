@@ -285,6 +285,31 @@ types={
             {damage:2,alt:0,cost:1,attack:31,target:0,desc:'',spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:31,target:0,desc:'',spec:0,class:2},
         ],
+        },{name:'Consecrate',rarity:0,list:2,
+        stats:[
+            {damage:3,alt:0,cost:0,attack:12,target:0,desc:'',spec:0,class:0},
+            {damage:5,alt:0,cost:0,attack:12,target:0,desc:'',spec:0,class:0},
+        ],
+        },{name:'Bowling\nBash',rarity:0,list:2,
+        stats:[
+            {damage:7,alt:0,cost:2,attack:97,target:1,desc:'',spec:0,class:0},
+            {damage:7,alt:0,cost:1,attack:97,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Evaluate',rarity:0,list:2,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:98,target:0,desc:'',spec:0,class:1},
+            {damage:7,alt:0,cost:1,attack:98,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Beatdown',rarity:1,list:2,
+        stats:[
+            {damage:4,alt:0,cost:0,attack:99,target:1,desc:'',spec:0,class:0},
+            {damage:6,alt:0,cost:0,attack:99,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Crescendo',rarity:0,list:2,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:100,target:0,desc:'',spec:9,class:0},
+            {damage:0,alt:0,cost:0,attack:100,target:0,desc:'',spec:9,class:0},
+        ],
         },{name:'Charge',rarity:0,list:3,
         stats:[
             {damage:1,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:2},
@@ -534,6 +559,16 @@ types={
         stats:[
             {damage:6,alt:0,cost:2,attack:62,target:1,desc:'',spec:10,class:0},
             {damage:9,alt:0,cost:1,attack:62,target:1,desc:'',spec:2,class:0},
+        ],
+        },{name:'Insight',rarity:-1,list:0,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:4,target:0,desc:'',spec:9,class:2},
+            {damage:3,alt:0,cost:0,attack:4,target:0,desc:'',spec:9,class:2},
+        ],
+        },{name:'Miracle',rarity:-1,list:0,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:96,target:0,desc:'',spec:9,class:2},
+            {damage:2,alt:0,cost:0,attack:96,target:0,desc:'',spec:9,class:2},
         ],
         },{name:'Clumsy',rarity:-1,list:10,
         stats:[

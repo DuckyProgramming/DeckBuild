@@ -33,7 +33,7 @@ class battle{
     }
     create(){
         this.end=false
-        this.counter={enemies:{dead:0,total:0},turn:1}
+        this.counter={enemies:{dead:0,total:0,alive:0},turn:1}
         this.anim.lost=0
         this.anim.end=0
         this.combatants[0].resetUnique()
@@ -178,7 +178,7 @@ class battle{
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].display(0)
         }
-        this.layer.fill(60)
+        this.layer.fill(80,85,90)
         this.layer.rect(450,475,910,250)
         this.layer.fill(200,225,250,this.fade)
         this.layer.stroke(150,200,250,this.fade)
@@ -453,7 +453,7 @@ class battle{
     }
     displayChoice(){
         this.layer.noStroke()
-        this.layer.fill(80)
+        this.layer.fill(160)
         this.layer.rect(450,450,80,40,5)
         this.layer.fill(0)
         this.layer.textSize(60)
@@ -590,7 +590,7 @@ class battle{
     displayRest(){
         this.combatants[0].display(1)
         this.layer.noStroke()
-        this.layer.fill(60)
+        this.layer.fill(this.layer.fill(80,85,90))
         this.layer.rect(450,475,910,250)
         this.combatants[0].displayInfo()
         this.layer.fill(160)
@@ -683,7 +683,7 @@ class battle{
     displayEvent(){
         this.combatants[0].display()
         this.layer.noStroke()
-        this.layer.fill(60)
+        this.layer.fill(this.layer.fill(80,85,90))
         this.layer.rect(450,475,910,250)
         this.layer.fill(160)
         for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){

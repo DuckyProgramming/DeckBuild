@@ -22,7 +22,7 @@ class attack{
         this.side=side
         if(side==0){
             switch(type){
-                case 1: case 52:
+                case 1: case 52: case 99:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2:
@@ -490,6 +490,20 @@ class attack{
                 break
                 case 95:
                     this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].changeStance(2)
+                break
+                case 96:
+                    this.battle.mana.main+=this.damage
+                break
+                case 97:
+                    this.battle.combatants[this.target].take(this.damage*this.battle.counter.enemies.alive,this.user)
+                break
+                case 98:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.drop.addDrop(findCard('Insight'),0,0)
+                    this.battle.reserve.add(findCard('Insight'),0,0)
+                break
+                case 100:
                     this.battle.combatants[0].changeStance(2)
                 break
             }

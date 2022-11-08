@@ -82,6 +82,13 @@ function displayIntent(layer,x,y,fade,size,damage,type){
 	layer.scale(1/size)
 	layer.translate(-x,-y)
 }
+function displayMoon(layer){
+	layer.noStroke()
+	layer.fill(200)
+	layer.arc(550,100,30,30,45,225)
+	layer.fill(40,48,50)
+	layer.ellipse(555,95,32,32)
+}
 function regTriangle(layer,x,y,radius,direction){
 	layer.triangle(x+sin(direction)*radius,y+cos(direction)*radius,x+sin(direction+120)*radius,y+cos(direction+120)*radius,x+sin(direction+240)*radius,y+cos(direction+240)*radius);
 }

@@ -140,6 +140,11 @@ class card{
             case 93: this.desc+='Deal '+this.damage+' Damage\nPush Collision\nfor '+this.alt+' Damage'; break
             case 94: this.desc+='Add '+this.damage+' Block\nGain 1 Strength\nwhen Attacked'; break
             case 95: this.desc+='Deal '+this.damage+' Damage\nEnter Wrath'; break
+            case 96: this.desc+='Gain'+this.damage+' Mana'; break
+            case 97: this.desc+='Deal '+this.damage+' Damage\nfor Every Enemy'; break
+            case 98: this.desc+='Add '+this.damage+' Block\nShuffle an Insight\ninto Draw Pile'; break
+            case 99: this.desc+='Deal '+this.damage+' Damage\nReturn on\nStance Change'; break
+            case 100: this.desc+='Enter Wrath'; break
         }
         if(this.spec==2||this.spec==9||this.spec==12){
             this.desc+='\nRetain'
@@ -160,6 +165,10 @@ class card{
             this.layer.noStroke()
             this.layer.rect(0,0,this.width+15,this.height+15,10)
             switch(this.color){
+                case 0:
+                    this.layer.fill(200,this.fade)
+                    this.layer.stroke(160,this.fade)
+                break
                 case 1:
                     this.layer.fill(160,200,160,this.fade)
                     this.layer.stroke(120,160,120,this.fade)
@@ -224,6 +233,9 @@ class card{
             this.layer.textSize(14)
             if(this.level==1){
                 switch(this.color){
+                    case 0:
+                        this.layer.fill(80,this.fade)
+                    break
                     case 1:
                         this.layer.fill(50,100,50,this.fade)
                     break

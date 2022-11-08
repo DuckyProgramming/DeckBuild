@@ -58,15 +58,25 @@ class combatant{
 		}
 	}
 	changeStance(stance){
-		switch(this.stance){
-			case 1:
-				this.battle.mana.main+=2
-			break
+		if(stance!=this.stance){
+			switch(this.stance){
+				case 1:
+					this.battle.mana.main+=2
+				break
+				case 3:
+					this.battle.mana.main+=3
+				break
+			}
 		}
-		switch(this.stance){
-			case 3:
-				this.battle.mana.main+=3
-			break
+		for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
+			if(this.battle.discard.cards[g].attack==99){
+				this.battle.hand.cards.push(copyCard(this.battle.discard.cards[g]))
+				this.battle.hand.cards[this.battle.hand.cards.length-1].position.x=1206
+				this.battle.hand.cards[this.battle.hand.cards.length-1].position.y=500
+				this.battle.discard.cards.splice(g,1)
+				g--
+				lg--
+			}
 		}
 		this.stance=stance
 	}
