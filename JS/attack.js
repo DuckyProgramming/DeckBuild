@@ -460,7 +460,9 @@ class attack{
                     }
                 break
                 case 90:
-                    this.attacks.push([5,20,this.target,this.damage])
+                    if(this.battle.combatants[0].armed!=1){ 
+                     this.attacks.push([5,20,this.target,this.damage])
+                    }
                     this.battle.combatants[0].meter+=this.alt
                 break
                 case 91:
@@ -485,6 +487,10 @@ class attack{
                 case 94:
                     this.battle.combatants[0].block+=this.damage
                     this.battle.combatants[0].status.main[13]++
+                break
+                case 95:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].changeStance(2)
                 break
             }
         }else{

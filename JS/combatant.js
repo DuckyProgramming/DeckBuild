@@ -63,9 +63,12 @@ class combatant{
 				this.battle.mana.main+=2
 			break
 		}
-		this.stance=stance
 		switch(this.stance){
+			case 3:
+				this.battle.mana.main+=3
+			break
 		}
+		this.stance=stance
 	}
     display(detail){
 		if(this.fade>0){
@@ -113,6 +116,25 @@ class combatant{
 				break
 				case 2:
 					this.layer.noStroke()
+					if(this.stance>0){
+						switch(this.stance){
+							case 1:
+								this.layer.fill(150,255,255,this.fade/2)
+							break
+							case 2:
+								this.layer.fill(255,75,75,this.fade/2)
+							break
+							case 3:
+								this.layer.fill(255,200,255,this.fade/2)
+							break
+						}
+						this.layer.translate(0,-45)
+						for(g=0;g<12;g++){
+							this.layer.rotate(30)
+							this.layer.triangle(0,-8,-8,0,-50,-50)
+						}
+						this.layer.translate(0,45)
+					}
 					this.layer.fill(84,46,55,this.fade)
 					this.layer.triangle(-15,-75,15,-75,-6,-25)
 					this.layer.stroke(207,90,101,this.fade*(1-this.anim[4]))
@@ -753,6 +775,12 @@ class combatant{
 				}
 				if(this.status.main[12]>0&&this.calc.damage>1){
 					this.calc.damage=1
+				}
+				if(this.battle.combatants[0].stance==2){
+					this.calc.damage*=2
+				}
+				if(this.battle.combatants[0].stance==3&&this.id>0){
+					this.calc.damage*=3
 				}
 				if(this.block>0){
 					this.calc.damage*=(2-min(0,this.boost.main[1]))/(2+max(0,this.boost.main[1]))

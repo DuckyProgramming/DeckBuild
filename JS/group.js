@@ -24,6 +24,16 @@ class group{
                 this.add(3,0,this.battle.player)
                 this.add(4,0,this.battle.player)
             break
+            case 2:
+                for(e=0;e<4;e++){
+                    this.add(1,0,this.battle.player)
+                }
+                for(e=0;e<4;e++){
+                    //this.add(2,0,this.battle.player)
+                }
+                this.add(46,0,this.battle.player)
+                this.add(47,0,this.battle.player)
+            break
             case 3:
                 for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)

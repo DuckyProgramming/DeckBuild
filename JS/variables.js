@@ -230,6 +230,16 @@ types={
             {damage:5,alt:6,cost:1,attack:63,target:1,desc:'',spec:0,class:0},
             {damage:8,alt:9,cost:1,attack:63,target:1,desc:'',spec:0,class:0},
         ],
+        },{name:'Vigilance',rarity:1,list:2,
+        stats:[
+            {damage:8,alt:0,cost:2,attack:27,target:0,desc:'',spec:0,class:1},
+            {damage:12,alt:0,cost:2,attack:27,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Eruption',rarity:1,list:2,
+        stats:[
+            {damage:9,alt:0,cost:2,attack:95,target:1,desc:'',spec:0,class:1},
+            {damage:9,alt:0,cost:1,attack:95,target:1,desc:'',spec:0,class:1},
+        ],
         },{name:'Cycle\nStrike',rarity:1,list:2,
         stats:[
             {damage:12,alt:0,cost:2,attack:24,target:1,desc:'',spec:0,class:0},
@@ -254,11 +264,6 @@ types={
         stats:[
             {damage:3,alt:0,cost:1,attack:26,target:0,desc:'',spec:0,class:2},
             {damage:4,alt:0,cost:1,attack:26,target:0,desc:'',spec:0,class:2},
-        ],
-        },{name:'Vigilance',rarity:1,list:2,
-        stats:[
-            {damage:8,alt:0,cost:2,attack:27,target:0,desc:'',spec:0,class:1},
-            {damage:12,alt:0,cost:2,attack:27,target:0,desc:'',spec:0,class:1},
         ],
         },{name:'Empty\nBody',rarity:0,list:2,
         stats:[

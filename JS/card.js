@@ -139,6 +139,7 @@ class card{
             case 92: this.desc+='Convert '+this.damage+'x Combo\nto Block\nEnd Combo'; break
             case 93: this.desc+='Deal '+this.damage+' Damage\nPush Collision\nfor '+this.alt+' Damage'; break
             case 94: this.desc+='Add '+this.damage+' Block\nGain 1 Strength\nwhen Attacked'; break
+            case 95: this.desc+='Deal '+this.damage+' Damage\nEnter Wrath'; break
         }
         if(this.spec==2||this.spec==9||this.spec==12){
             this.desc+='\nRetain'
@@ -164,8 +165,8 @@ class card{
                     this.layer.stroke(120,160,120,this.fade)
                 break
                 case 2:
-                    this.layer.fill(200,160,180,this.fade)
-                    this.layer.stroke(160,120,140,this.fade)
+                    this.layer.fill(200,120,160,this.fade)
+                    this.layer.stroke(160,80,120,this.fade)
                 break
                 case 3:
                     this.layer.fill(240,200,160,this.fade)
