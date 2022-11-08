@@ -15,7 +15,6 @@ function draw(){
         break
         case 'map':
             graphics.main.background(40,48,50)
-            displayMoon(graphics.main)
             current.displayMap()
             current.updateMap()
         break

@@ -105,7 +105,9 @@ class attack{
                 break
                 case 18:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.battle.allDiscard()
+                    for(g=0;g<this.alt;g++){
+                        this.battle.randomDiscard()
+                    }
                 break
                 case 19:
                     this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[this.battle.combatants[0].ammo.length-1].type)
@@ -520,6 +522,48 @@ class attack{
                 break
                 case 104:
                     this.battle.combatants[0].status.main[14]++
+                break
+                case 105:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0){
+                            this.battle.combatants[g].take(this.damage,this.user)
+                        }
+                    }
+                    this.battle.close()
+                break
+                case 106:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.drop.addDrop(findCard('Safety'),0,0)
+                    this.battle.reserve.add(findCard('Safety'),0,0)
+                break
+                case 107:
+                    if(this.battle.combatants[0].stance==2){
+                        for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                            if(this.battle.combatants[g].life>0){
+                                this.battle.combatants[g].boost.main[1]-=this.damage
+                            }
+                        }
+                    }else{
+                        this.battle.combatants[0].changeStance(2)
+                    }
+                break
+                case 108:
+                    if(this.battle.combatants[0].stance==1){
+                        for(g=0;g<this.damage;g++){
+                            this.battle.draw()
+                        }
+                    }else{
+                        this.battle.combatants[0].changeStance(1)
+                    }
+                break
+                case 109:
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.battle.context=2
+                    this.battle.combatants[0].changeStance(1)
+                break
+                case 110:
+                    this.battle.combatants[0].status.main[15]+=this.damage
                 break
             }
         }else{

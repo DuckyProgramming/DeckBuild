@@ -128,7 +128,7 @@ class battle{
                 if(f==11&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                     this.combatants[e].status.main[f]--
-                }else if(f!=14){
+                }else if(f!=14&&f!=15){
                     this.combatants[e].status.main[f]=0
                 }
             }
@@ -176,6 +176,20 @@ class battle{
         this.hand.allUpgrade()
         this.reserve.allUpgrade()
         this.discard.allUpgrade()
+    }
+    close(){
+        this.hand.discard()
+        this.turn++
+        this.turnTimer=20
+        if(this.combatants[0].stance==3){
+            this.combatants[0].changeStance(0)
+        }
+        while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
+            this.turn++
+            if(this.turn>=this.combatants.length){
+                this.turn=0
+            }
+        }
     }
     display(){
         for(e=0,le=this.combatants.length;e<le;e++){
@@ -428,18 +442,7 @@ class battle{
         }else if(this.turn==0&&this.combatants[0].life>0){
             this.hand.onClickHand()
             if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:565},width:40,height:30})){
-                this.hand.discard()
-                this.turn++
-                this.turnTimer=20
-                if(this.battle.combatants[0].stance==3){
-                    this.battle.combatants[0].changeStance(0)
-                }
-                while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
-                    this.turn++
-                    if(this.turn>=this.combatants.length){
-                        this.turn=0
-                    }
-                }
+                this.close()
             }
         }
     }
@@ -658,8 +661,12 @@ class battle{
         }
     }
     displayDeck(){
-        this.deck.displayView()
-        this.choice.cards[0].display()
+        if(this.context==1){
+            this.deck.displayView()
+            this.choice.cards[0].display()
+        }else if(this.context==2){
+            this.discard.displayView()
+        }
         this.layer.noStroke()
         this.layer.fill(80)
         this.layer.rect(850,570,80,40,5)
@@ -680,10 +687,17 @@ class battle{
     onClickDeck(){
         if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570},width:80,height:40})){
             transition.trigger=true
-            transition.scene='map'
+            if(this.context==1){
+                transition.scene='map'
+            }else if(this.context==2){
+                this.close()
+                transition.scene='battle'
+            }
         }
         if(this.context==1){
-            this.deck.onClickView()
+            this.deck.onClickView(this.context)
+        }else if(this.context==2){
+            this.discard.onClickView(this.context)
         }
     }
     displayEvent(){

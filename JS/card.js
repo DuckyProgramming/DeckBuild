@@ -62,7 +62,7 @@ class card{
             case 15: this.desc+='Hold '+this.damage+'\nExplosive Charge'; break
             case 16: this.desc+='Hold '+this.damage+'\nShield Charge'; break
             case 17: this.desc+='Fire All\nCharges'; break
-            case 18: this.desc+='Deal '+this.damage+' Damage\nDiscard Hand'; break
+            case 18: this.desc+='Deal '+this.damage+' Damage\nDiscard '+this.alt+' Cards'; break
             case 19: this.desc+='Lose 1\nAmmo Slot'; break
             case 20: this.desc+='Hold '+this.damage+'\nEnergy Charge'; break
             case 21: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable'; break                
@@ -149,6 +149,12 @@ class card{
             case 102: this.desc+='Gain'+this.damage+' Faith'; break
             case 103: this.desc+='Enter Calm'; break
             case 104: this.desc+='At the Start\nof Each Turn\nGain a Smite'; break
+            case 105: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nEnd Turn'; break
+            case 106: this.desc+='Add '+this.damage+' Block\nAdd a Safety\nto Your Hand'; break
+            case 107: this.desc+='Wrath: Apply\n'+this.damage+' Vulnerable\nto All Enemies\nOtherwise,\nEnter Wrath'; break
+            case 108: this.desc+='Calm: Draw\n'+this.damage+' Cards\nOtherwise,\nEnter Calm'; break
+            case 109: this.desc+='Put a\nDiscarded Card\ninto Your Hand.\nEnter Calm\nEnd Turn'; break
+            case 110: this.desc+='When You\nChange Stance,\nGain '+this.damage+' Block'; break
         }
         if(this.spec==2||this.spec==9||this.spec==12){
             this.desc+='\nRetain'

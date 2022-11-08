@@ -31,11 +31,11 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(2,0,this.battle.player)
                 }
-                this.add(62,0,this.battle.player)
-                this.add(63,0,this.battle.player)
-                this.add(64,0,this.battle.player)
-                this.add(65,0,this.battle.player)
-                this.add(66,0,this.battle.player)
+                this.add(67,0,this.battle.player)
+                this.add(68,0,this.battle.player)
+                this.add(69,0,this.battle.player)
+                this.add(70,0,this.battle.player)
+                this.add(71,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -93,16 +93,16 @@ class group{
         }
     }
     discard(){
-        for(e=0,le=this.cards.length;e<le;e++){
+        for(let e=0,le=this.cards.length;e<le;e++){
             if(this.cards[e].attack==-5){
-                for(g=0,lg=this.cards.length;g<lg;g++){
+                for(let g=0,lg=this.cards.length;g<lg;g++){
                     if(this.cards[g].attack>=0&&!this.cards[g].trigger){
                         this.battle.combatants[0].take(1,0)
                     }
                 }
             }
         }
-        for(e=0,le=this.cards.length;e<le;e++){
+        for(let e=0,le=this.cards.length;e<le;e++){
             if(this.cards[e].spec==5){
                 this.cards[e].damage+=this.cards[e].alt
             }else if(this.cards[e].spec!=2&&this.cards[e].spec!=9&&this.cards[e].spec!=12){
@@ -261,23 +261,35 @@ class group{
             }
         }
     }
-    onClickView(){
+    onClickView(context){
         this.selected=false
-        for(e=0,le=this.cards.length;e<le;e++){
+        for(let e=0,le=this.cards.length;e<le;e++){
             if(this.cards[e].select){
-                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.cards[e].level==0){
+                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.cards[e].level==0&&context==1){
                     this.cards[e]=new card(this.cards[e].layer,this.cards[e].x,this.cards[e].y,this.cards[e].type,this.cards[e].level+1,this.cards[e].color)
                     transition.trigger=true
                     transition.scene='map'
                 }
                 this.cards[e].select=false
             }
-            if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.cards[e].level==0){
+            if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&!(this.cards[e].level==1&&context==1)){
                 this.cards[e].select=true
                 this.select=true
                 this.selected=true
-                this.battle.choice.cards[0]=new card(this.layer,this.cards[e].position.x,this.cards[e].position.y,this.cards[e].type,1,this.cards[e].color)
-                this.battle.choice.cards[0].size=1
+                if(context==2){
+                    this.battle.hand.cards.push(copyCard(this.cards[e]))
+                    this.battle.hand.cards[this.battle.hand.cards.length-1].position.x=1206
+                    this.battle.hand.cards[this.battle.hand.cards.length-1].position.y=500
+                    this.cards.splice(e,1)
+                    e--
+                    le--
+                    transition.trigger=true
+                    transition.scene='battle'
+                    this.battle.close()
+                }else{
+                    this.battle.choice.cards[0]=new card(this.layer,this.cards[e].position.x,this.cards[e].position.y,this.cards[e].type,1,this.cards[e].color)
+                    this.battle.choice.cards[0].size=1
+                }
             }
         }
         if(!this.selected){

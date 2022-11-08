@@ -24,9 +24,9 @@ class combatant{
 		this.boost={main:[0,0],fade:[0,0],display:[],color:[[200,0,0],[0,150,255]],infoFade:[0,0],name:['Attack','Defense']}
 		this.status={main:[],fade:[],display:[],color:[
 			[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120],[125,75,25],[25,125,175],[150,225,150],
-			[100,200,200],[200,0,50],[100,50,150],[50,100,50],[20,60,120]],infoFade:[],name:[
+			[100,200,200],[200,0,50],[100,50,150],[50,100,50],[20,60,120],[170,240,255]],infoFade:[],name:[
 			'Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Vulnerability','Confused',
-			'Reflect','Bleed','Intangible','Sink','Smite'],class:[1,1,1,1,1,0,1,0,0,0,1,0,1,1]}
+			'Reflect','Bleed','Intangible','Sink','Hymn','Mental Fortress'],class:[1,1,1,1,1,0,1,0,0,0,1,0,1,1]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -73,6 +73,7 @@ class combatant{
 				break
 			}
 		}
+		this.block+=this.status.main[15]
 		for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
 			if(this.battle.discard.cards[g].attack==99){
 				this.battle.hand.cards.push(copyCard(this.battle.discard.cards[g]))

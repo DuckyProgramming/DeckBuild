@@ -72,8 +72,8 @@ types={
         ],
         },{name:'Head\nSmash',rarity:2,list:1,
         stats:[
-            {damage:30,alt:0,cost:3,attack:18,target:1,desc:'',spec:0,class:0},
-            {damage:48,alt:0,cost:3,attack:18,target:1,desc:'',spec:0,class:0},
+            {damage:30,alt:3,cost:3,attack:18,target:1,desc:'',spec:0,class:0},
+            {damage:48,alt:2,cost:3,attack:18,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Charge\nStrike',rarity:1,list:1,
         stats:[
@@ -329,6 +329,36 @@ types={
         stats:[
             {damage:0,alt:0,cost:1,attack:104,target:0,desc:'',spec:3,class:2},
             {damage:0,alt:0,cost:0,attack:104,target:0,desc:'',spec:8,class:2},
+        ],
+        },{name:'Conclude',rarity:1,list:2,
+        stats:[
+            {damage:9,alt:0,cost:1,attack:105,target:0,desc:'',spec:0,class:0},
+            {damage:12,alt:0,cost:1,attack:105,target:0,desc:'',spec:0,class:0},
+        ],
+        },{name:'Avoidance',rarity:1,list:2,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:106,target:0,desc:'',spec:0,class:1},
+            {damage:7,alt:0,cost:1,attack:106,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Indignation',rarity:1,list:2,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:107,target:0,desc:'',spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:107,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Regulate',rarity:1,list:2,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:108,target:0,desc:'',spec:0,class:2},
+            {damage:4,alt:0,cost:1,attack:108,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Meditate',rarity:1,list:2,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:109,target:0,desc:'',spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:109,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Mental\nFortress',rarity:1,list:2,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:110,target:0,desc:'',spec:0,class:2},
+            {damage:6,alt:0,cost:1,attack:110,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Charge',rarity:0,list:3,
         stats:[
