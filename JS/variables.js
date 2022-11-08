@@ -602,29 +602,54 @@ types={
         {class:0},
         {class:0},
         {class:1},
+    ],encounter:[
+        {
+            combatants:[0,0,0,0,0,0],
+            reinforce:[],
+            threshold:0,
+            objective:[],
+        },{
+            combatants:[5,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,
+            objective:[[0,10,0,0],[1,5,2,20]],
+        },{
+            combatants:[5,5,5,0,0,0],
+            reinforce:[5],
+            threshold:3,
+            objective:[[0,10,1,0],[1,5,3,10]],
+        },
+    ],event:[
+        {
+            name:'Dropped Book',
+            pages:[
+                {
+                    desc:"You come across what appears to be a book lying in the dirt.\n"+
+                    "Peering into it, you see numerous Konaian writings on the art of combat.\n\n"+
+                    "When you pick it up, you notice the its extreme length and the poor condition of its pages.\n"+
+                    "And there seems to be some sort of energy radiating from it...",
+                    option:['Read','Leave'],
+                    optionDesc:['Lose 4 Health',''],
+                    link:[1,2],
+                },{
+                    desc:"The book is extremely long and quite confusing, but manages to keep you interested.\n"+
+                    "After several hours, you finally reach the end. You've learned some, but you feel weakened.",
+                    option:['Exit'],
+                    optionDesc:['Gain 1 Card'],
+                    link:[-1],
+                },{
+                    desc:"You leave, knowing it isn't worth the risk.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },
     ],
 }
 listing={
     card:[[],[],[],[],[],[],[],[],[],[],[],[]],
 }
-encounters=[
-    {
-        combatants:[0,0,0,0,0,0],
-        reinforce:[],
-        threshold:0,
-        objective:[],
-    },{
-        combatants:[5,0,0,0,0,0],
-        reinforce:[],
-        threshold:2,
-        objective:[[0,10,0,0],[1,5,2,20]],
-    },{
-        combatants:[5,5,5,0,0,0],
-        reinforce:[5],
-        threshold:3,
-        objective:[[0,10,1,0],[1,5,3,10]],
-    },
-]
 zones=[
     {
         encounters:[1],

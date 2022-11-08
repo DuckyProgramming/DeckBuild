@@ -5,10 +5,10 @@ function setupLayer(layer){
 	layer.colorMode(RGB,255,255,255,1)
 }
 function setupEncounter(battle,type){
-	battle.generation.combatants=encounters[type].combatants
-	battle.generation.reinforce=encounters[type].reinforce
-	battle.generation.threshold=encounters[type].threshold
-	battle.objective=encounters[type].objective
+	battle.generation.combatants=types.encounter[type].combatants
+	battle.generation.reinforce=types.encounter[type].reinforce
+	battle.generation.threshold=types.encounter[type].threshold
+	battle.objective=types.encounter[type].objective
 }
 function displayTransition(layer,transition){
 	layer.noStroke()

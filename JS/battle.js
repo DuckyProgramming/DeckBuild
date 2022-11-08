@@ -29,6 +29,7 @@ class battle{
         this.restOptions=[1,2]
         this.context=0
         this.event=0
+        this.page=0
     }
     create(){
         this.end=false
@@ -287,149 +288,6 @@ class battle{
             }
         }
     }
-    setupChoice(level,rarity,spec){
-        this.choice.cards=[]
-        switch(spec){
-            case 0:
-                for(g=0;g<3;g++){
-                    h=listing.card[this.player][rarity][floor(random(0,listing.card[this.player][rarity].length))]
-                    this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
-                }
-            break
-        }
-        for(g=0,lg=this.choice.cards.length;g<lg;g++){
-            this.choice.cards[g].size=1
-        }
-    }
-    displayChoice(){
-        this.layer.noStroke()
-        this.layer.fill(80)
-        this.layer.rect(450,450,80,40,5)
-        this.layer.fill(0)
-        this.layer.textSize(60)
-        this.layer.text('Add a Card',450,150)
-        this.layer.textSize(20)
-        this.layer.text('Skip',450,450)
-        for(e=0,le=this.choice.cards.length;e<le;e++){
-            this.choice.cards[e].display()
-        }
-    }
-    setupMap(){
-        this.map.main=[]
-        this.map.complete=[]
-        for(e=0;e<15;e++){
-            this.map.main.push([])
-            this.map.complete.push([])
-        }
-        for(e=0,le=this.map.main.length;e<le;e++){
-            for(f=0;f<min(5,8-abs(7-e));f++){
-                if(floor(random(0,5))<2||e<2){
-                    this.map.main[e].push(0)
-                }else if(floor(random(0,3))==0){
-                    this.map.main[e].push(1)
-                }else if(floor(random(0,2))==0){
-                    this.map.main[e].push(2)
-                }else{
-                    this.map.main[e].push(3)
-                }
-                this.map.complete[e].push(0)
-            }
-        }
-    }
-    displayMap(){
-        this.layer.stroke(150)
-        this.layer.strokeWeight(3)
-        for(e=0,le=this.map.main.length-1;e<le;e++){
-            for(f=0,lf=this.map.main[e].length;f<lf;f++){
-                for(g=0,lg=this.map.main[e+1].length;g<lg;g++){
-                    if((g==f||g==f+1)&&this.map.main[e].length==this.map.main[e+1].length-1||(g==f-1||g==f||g==f+1)&&this.map.main[e].length==this.map.main[e+1].length||(g==f-1||g==f)&&this.map.main[e].length==this.map.main[e+1].length+1){
-                        this.layer.line(530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll,530-this.map.main[e+1].length*80+g*160,400+e*100-this.map.scroll)
-                    }
-                }
-            }
-        }
-        this.layer.noStroke()
-        this.layer.textSize(20)
-        for(e=0,le=this.map.main.length;e<le;e++){
-            for(f=0,lf=this.map.main[e].length;f<lf;f++){
-                if(this.map.complete[e][f]==1){
-                    this.layer.fill(100,255,100)
-                }else{
-                    this.layer.fill(255)
-                }
-                switch(this.map.main[e][f]){
-                    case 0:
-                        this.layer.text('Battle',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
-                    break
-                    case 1:
-                        this.layer.text('Elite',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
-                    break
-                    case 2:
-                        this.layer.text('Rest',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
-                    break
-                    case 3:
-                        this.layer.text('Event',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
-                    break
-                }
-            }
-        }
-        this.layer.fill(255,225,0)
-        this.layer.ellipse(20,16,16,16)
-        this.layer.fill(255,240,0)
-        this.layer.ellipse(20,16,10,10)
-        this.layer.fill(255,225,0)
-        this.layer.textSize(16)
-        this.layer.textAlign(LEFT,CENTER)
-        this.layer.text(this.currency.money,30,18)
-        this.layer.textAlign(CENTER,CENTER)
-    }
-    displayRest(){
-        this.combatants[0].display(1)
-        this.layer.noStroke()
-        this.layer.fill(60)
-        this.layer.rect(450,475,910,250)
-        this.combatants[0].displayInfo()
-        this.layer.fill(160)
-        for(e=0,le=this.restOptions.length;e<le;e++){
-            this.layer.rect(525+e*150-le*75,300,120,60,5)
-        }
-        this.layer.fill(0)
-        this.layer.textSize(60)
-        this.layer.text('Rest Site',450,150)
-        this.layer.textSize(20)
-        for(e=0,le=this.restOptions.length;e<le;e++){
-            switch(this.restOptions[e]){
-                case 0:
-                    this.layer.text('Skip',525+e*150-le*75,300)
-                break
-                case 1:
-                    this.layer.text('Heal',525+e*150-le*75,300)
-                break
-                case 2:
-                    this.layer.text('Train',525+e*150-le*75,300)
-                break
-            }
-        }
-    }
-    setupDeck(){
-        this.deck.scroll=0
-        this.deck.select=false
-        this.choice.cards=[]
-        this.choice.cards.push(new card(this.layer,-300,0,0,0,0))
-        for(g=0,lg=this.deck.cards.length;g<lg;g++){
-            this.deck.cards[e].anim.select=0
-        }
-    }
-    displayDeck(){        
-        this.deck.displayView()
-        this.choice.cards[0].display()
-        this.layer.noStroke()
-        this.layer.fill(80)
-        this.layer.rect(850,570,80,40,5)
-        this.layer.fill(0)
-        this.layer.textSize(20)
-        this.layer.text('Skip',850,570)
-    }
     update(){
         this.counter.enemies.alive=0
         for(e=1,le=this.combatants.length;e<le;e++){
@@ -537,21 +395,6 @@ class battle{
             }
         }
     }
-    updateMap(){
-        if(this.map.scroll<this.map.scrollGoal){
-            this.map.scroll+=10
-        }
-    }
-    updateDeck(){
-        if(inputs.keys[0][2]||inputs.keys[1][2]){
-            this.deck.scroll+=30
-        }
-        if(inputs.keys[0][3]||inputs.keys[1][3]){
-            this.deck.scroll-=30
-        }
-        this.deck.scroll=constrain(this.deck.scroll,0,floor(this.deck.cards.length/6)*200-600)
-        this.deck.updateView()
-    }
     onClick(){
         if(this.end){
             if(pointInsideBox({position:inputs.rel},{position:{x:450,y:this.objective.length*60+140},width:150,height:40})){
@@ -594,6 +437,33 @@ class battle{
             }
         }
     }
+    setupChoice(level,rarity,spec){
+        this.choice.cards=[]
+        switch(spec){
+            case 0:
+                for(g=0;g<3;g++){
+                    h=listing.card[this.player][rarity][floor(random(0,listing.card[this.player][rarity].length))]
+                    this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
+                }
+            break
+        }
+        for(g=0,lg=this.choice.cards.length;g<lg;g++){
+            this.choice.cards[g].size=1
+        }
+    }
+    displayChoice(){
+        this.layer.noStroke()
+        this.layer.fill(80)
+        this.layer.rect(450,450,80,40,5)
+        this.layer.fill(0)
+        this.layer.textSize(60)
+        this.layer.text('Add a Card',450,150)
+        this.layer.textSize(20)
+        this.layer.text('Skip',450,450)
+        for(e=0,le=this.choice.cards.length;e<le;e++){
+            this.choice.cards[e].display()
+        }
+    }
     onClickChoice(){
         if(!transition.trigger){
             if(pointInsideBox({position:inputs.rel},{position:{x:450,y:450},width:80,height:40})){
@@ -607,6 +477,80 @@ class battle{
                     this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
                 }
             }
+        }
+    }
+    setupMap(){
+        this.map.main=[]
+        this.map.complete=[]
+        for(e=0;e<15;e++){
+            this.map.main.push([])
+            this.map.complete.push([])
+        }
+        for(e=0,le=this.map.main.length;e<le;e++){
+            for(f=0;f<min(5,8-abs(7-e));f++){
+                if(floor(random(0,5))<2||e<2){
+                    this.map.main[e].push(0)
+                }else if(floor(random(0,3))==0){
+                    this.map.main[e].push(1)
+                }else if(floor(random(0,2))==0){
+                    this.map.main[e].push(2)
+                }else{
+                    this.map.main[e].push(3)
+                }
+                this.map.complete[e].push(0)
+            }
+        }
+    }
+    displayMap(){
+        this.layer.stroke(150)
+        this.layer.strokeWeight(3)
+        for(e=0,le=this.map.main.length-1;e<le;e++){
+            for(f=0,lf=this.map.main[e].length;f<lf;f++){
+                for(g=0,lg=this.map.main[e+1].length;g<lg;g++){
+                    if((g==f||g==f+1)&&this.map.main[e].length==this.map.main[e+1].length-1||(g==f-1||g==f||g==f+1)&&this.map.main[e].length==this.map.main[e+1].length||(g==f-1||g==f)&&this.map.main[e].length==this.map.main[e+1].length+1){
+                        this.layer.line(530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll,530-this.map.main[e+1].length*80+g*160,400+e*100-this.map.scroll)
+                    }
+                }
+            }
+        }
+        this.layer.noStroke()
+        this.layer.textSize(20)
+        for(e=0,le=this.map.main.length;e<le;e++){
+            for(f=0,lf=this.map.main[e].length;f<lf;f++){
+                if(this.map.complete[e][f]==1){
+                    this.layer.fill(100,255,100)
+                }else{
+                    this.layer.fill(255)
+                }
+                switch(this.map.main[e][f]){
+                    case 0:
+                        this.layer.text('Battle',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
+                    break
+                    case 1:
+                        this.layer.text('Elite',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
+                    break
+                    case 2:
+                        this.layer.text('Rest',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
+                    break
+                    case 3:
+                        this.layer.text('Event',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
+                    break
+                }
+            }
+        }
+        this.layer.fill(255,225,0)
+        this.layer.ellipse(20,16,16,16)
+        this.layer.fill(255,240,0)
+        this.layer.ellipse(20,16,10,10)
+        this.layer.fill(255,225,0)
+        this.layer.textSize(16)
+        this.layer.textAlign(LEFT,CENTER)
+        this.layer.text(this.currency.money,30,18)
+        this.layer.textAlign(CENTER,CENTER)
+    }
+    updateMap(){
+        if(this.map.scroll<this.map.scrollGoal){
+            this.map.scroll+=10
         }
     }
     onClickMap(){
@@ -635,12 +579,44 @@ class battle{
                             case 3:
                                 transition.scene='event'
                                 this.event=zones[this.map.zone][floor(random(0,zones[this.map.zone].length))]
+                                this.page=0
                             break
                         }
                     }
                 }
             }
         }
+    }
+    displayRest(){
+        this.combatants[0].display(1)
+        this.layer.noStroke()
+        this.layer.fill(60)
+        this.layer.rect(450,475,910,250)
+        this.combatants[0].displayInfo()
+        this.layer.fill(160)
+        for(e=0,le=this.restOptions.length;e<le;e++){
+            this.layer.rect(525+e*150-le*75,300,120,60,5)
+        }
+        this.layer.fill(0)
+        this.layer.textSize(60)
+        this.layer.text('Rest Site',450,150)
+        this.layer.textSize(20)
+        for(e=0,le=this.restOptions.length;e<le;e++){
+            switch(this.restOptions[e]){
+                case 0:
+                    this.layer.text('Skip',525+e*150-le*75,300)
+                break
+                case 1:
+                    this.layer.text('Heal',525+e*150-le*75,300)
+                break
+                case 2:
+                    this.layer.text('Train',525+e*150-le*75,300)
+                break
+            }
+        }
+    }
+    updateRest(){
+        this.combatants[0].update()
     }
     onClickRest(){
         if(!transition.trigger){
@@ -666,6 +642,35 @@ class battle{
             }
         }
     }
+    setupDeck(){
+        this.deck.scroll=0
+        this.deck.select=false
+        this.choice.cards=[]
+        this.choice.cards.push(new card(this.layer,-300,0,0,0,0))
+        for(g=0,lg=this.deck.cards.length;g<lg;g++){
+            this.deck.cards[e].anim.select=0
+        }
+    }
+    displayDeck(){
+        this.deck.displayView()
+        this.choice.cards[0].display()
+        this.layer.noStroke()
+        this.layer.fill(80)
+        this.layer.rect(850,570,80,40,5)
+        this.layer.fill(0)
+        this.layer.textSize(20)
+        this.layer.text('Skip',850,570)
+    }
+    updateDeck(){
+        if(inputs.keys[0][2]||inputs.keys[1][2]){
+            this.deck.scroll+=30
+        }
+        if(inputs.keys[0][3]||inputs.keys[1][3]){
+            this.deck.scroll-=30
+        }
+        this.deck.scroll=constrain(this.deck.scroll,0,floor(this.deck.cards.length/6)*200-600)
+        this.deck.updateView()
+    }
     onClickDeck(){
         if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570},width:80,height:40})){
             transition.trigger=true
@@ -673,6 +678,61 @@ class battle{
         }
         if(this.context==1){
             this.deck.onClickView()
+        }
+    }
+    displayEvent(){
+        this.combatants[0].display()
+        this.layer.noStroke()
+        this.layer.fill(60)
+        this.layer.rect(450,475,910,250)
+        this.layer.fill(160)
+        for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
+            this.layer.rect(450,350+e*60,200,50,5)
+        }
+        this.layer.fill(0)
+        this.layer.textSize(45)
+        this.layer.text(types.event[this.event].name,450,50)
+        this.layer.textSize(15)
+        this.layer.text(types.event[this.event].pages[this.page].desc,450,200)
+        for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
+            if(types.event[this.event].pages[this.page].optionDesc[e]==''){
+                this.layer.text(types.event[this.event].pages[this.page].option[e],450,350+e*60)
+            }else{
+                this.layer.text(types.event[this.event].pages[this.page].option[e],450,340+e*60)
+            }
+        }
+        this.layer.textSize(10)
+        for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
+            this.layer.text(types.event[this.event].pages[this.page].optionDesc[e],450,360+e*60)
+        }
+        this.combatants[0].displayInfo()
+    }
+    updateEvent(){
+        this.combatants[0].update()
+    }
+    onClickEvent(){
+        if(!transition.trigger){
+            for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
+                if(pointInsideBox({position:inputs.rel},{position:{x:450,y:350+e*60},width:200,height:50})){
+                    if(types.event[this.event].pages[this.page].link[e]==-1){
+                        transition.trigger=true
+                        transition.scene='map'
+                    }
+                    switch(this.event){
+                        case 0:
+                            if(this.page==0&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-4)
+                            }else if(this.page==1&&e==0){
+                                transition.scene='choice'
+                                this.setupChoice(1,1,0)
+                            }
+                        break
+                    }
+                    if(types.event[this.event].pages[this.page].link[e]!=-1){
+                        this.page=types.event[this.event].pages[this.page].link[e]
+                    }
+                }
+            }
         }
     }
 }

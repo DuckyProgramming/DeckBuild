@@ -19,6 +19,7 @@ function draw(){
         case 'rest':
             graphics.main.background(80,75,70)
             current.displayRest()
+            current.updateRest()
         break
         case 'deck':
             graphics.main.background(100)
@@ -26,7 +27,9 @@ function draw(){
             current.updateDeck()
         break
         case 'event':
+            graphics.main.background(100)
             current.displayEvent()
+            current.updateEvent()
         break
     }
     stage.scale=min(width/graphics.main.width,height/graphics.main.height)
