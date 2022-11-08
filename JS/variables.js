@@ -594,7 +594,7 @@ types={
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Agent',alt:'',life:80,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
-        {name:'Duelist',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
+        {name:'Duelist',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Creation',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Human',alt:'',life:20,height:75,behavior:0,attacks:[1,1,2],damage:[4,4,4],altAttack:[],class:0},
