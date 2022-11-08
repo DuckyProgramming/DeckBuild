@@ -13,5 +13,8 @@ function mouseClicked(){
         case 'rest':
             current.onClickRest()
         break
+        case 'deck':
+            current.onClickDeck()
+        break
     }
 }

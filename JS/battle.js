@@ -12,7 +12,7 @@ class battle{
         this.combatants=[]
         this.combatants.push(new combatant(this.layer,this,100,350,this.player,0,0))
         this.choice={cards:[]}
-        this.mana={main:3,max:3,base:3}
+        this.mana={main:3,gen:3,max:3,base:3}
         this.anim={turn:0,lost:0,end:0}
         this.deck.initial(this.player)
         this.turn=0
@@ -26,7 +26,7 @@ class battle{
         this.counter={}
         this.end=false
         this.map={main:[],complete:[],scroll:0,scrollGoal:100,position:[0,0],zone:0}
-        this.restOptions=[0,1,2]
+        this.restOptions=[1,2]
         this.context=0
     }
     create(){
@@ -49,6 +49,10 @@ class battle{
                     this.counter.enemies.total++
                 }
             }
+        }
+        for(e=0,le=this.deck.cards.length;e<le;e++){
+            this.deck.cards[e].position.x=1206
+            this.deck.cards[e].position.y=500
         }
         this.counter.enemies.total+=this.generation.reinforce.length
         this.mana.max=this.mana.base
@@ -109,7 +113,7 @@ class battle{
         this.deck.cards.splice(index,1)
     }
     endTurn(){
-        this.mana.main=this.mana.max
+        this.mana.main=min(this.mana.max,this.mana.main+this.mana.gen)
         this.mana.main+=this.combatants[0].status.main[1]
         this.remember=[0,0,0,0]
         this.remember[0]+=this.combatants[0].status.main[4]
@@ -170,7 +174,7 @@ class battle{
     }
     display(){
         for(e=0,le=this.combatants.length;e<le;e++){
-            this.combatants[e].display()
+            this.combatants[e].display(0)
         }
         this.layer.fill(60)
         this.layer.rect(450,475,910,250)
@@ -184,6 +188,8 @@ class battle{
         this.layer.rect(-68+this.anim.turn*100,565,40,30,5)
         this.layer.fill(0,this.fade)
         this.layer.noStroke()
+        this.layer.textSize(10)
+        this.layer.text(this.mana.gen,-68+this.anim.turn*100,370)
         this.layer.textSize(20)
         this.layer.text(this.mana.main+'/'+this.mana.max,-68+this.anim.turn*100,390)
         this.layer.text('End',-68+this.anim.turn*100,565)
@@ -377,12 +383,18 @@ class battle{
         this.layer.textAlign(CENTER,CENTER)
     }
     displayRest(){
+        this.combatants[0].display(1)
         this.layer.noStroke()
+        this.layer.fill(60)
+        this.layer.rect(450,475,910,250)
+        this.combatants[0].displayInfo()
         this.layer.fill(160)
         for(e=0,le=this.restOptions.length;e<le;e++){
             this.layer.rect(525+e*150-le*75,300,120,60,5)
         }
         this.layer.fill(0)
+        this.layer.textSize(60)
+        this.layer.text('Rest Site',450,150)
         this.layer.textSize(20)
         for(e=0,le=this.restOptions.length;e<le;e++){
             switch(this.restOptions[e]){
@@ -390,7 +402,7 @@ class battle{
                     this.layer.text('Skip',525+e*150-le*75,300)
                 break
                 case 1:
-                    this.layer.text('Rest',525+e*150-le*75,300)
+                    this.layer.text('Heal',525+e*150-le*75,300)
                 break
                 case 2:
                     this.layer.text('Train',525+e*150-le*75,300)
@@ -400,21 +412,22 @@ class battle{
     }
     setupDeck(){
         this.deck.scroll=0
+        this.deck.select=false
         this.choice.cards=[]
-        this.choice.cards.push(new card(this.layer,-300,300,0,0,0))
-        this.choice.cards.push(new card(this.layer,1200,300,0,0,0))
-        for(g=0,lg=this.choice.cards.length;g<lg;g++){
-            this.choice.cards[g].size=1
-        }
+        this.choice.cards.push(new card(this.layer,-300,0,0,0,0))
         for(g=0,lg=this.deck.cards.length;g<lg;g++){
             this.deck.cards[e].anim.select=0
         }
     }
-    displayDeck(){
+    displayDeck(){        
         this.deck.displayView()
-        for(e=0,le=this.choice.cards.length;e<le;e++){
-            this.choice.cards[e].display()
-        }
+        this.choice.cards[0].display()
+        this.layer.noStroke()
+        this.layer.fill(80)
+        this.layer.rect(850,570,80,40,5)
+        this.layer.fill(0)
+        this.layer.textSize(20)
+        this.layer.text('Skip',850,570)
     }
     update(){
         for(e=0,le=this.particles.length;e<le;e++){
@@ -520,6 +533,13 @@ class battle{
         }
     }
     updateDeck(){
+        if(inputs.keys[0][2]||inputs.keys[1][2]){
+            this.deck.scroll+=30
+        }
+        if(inputs.keys[0][3]||inputs.keys[1][3]){
+            this.deck.scroll-=30
+        }
+        this.deck.scroll=constrain(this.deck.scroll,0,floor(this.deck.cards.length/6)*200-600)
         this.deck.updateView()
     }
     onClick(){
@@ -533,11 +553,11 @@ class battle{
                         switch(this.objective[e][2]){
                             case 0:
                                 transition.scene='choice'
-                                this.setupChoice(0,0,0)
+                                this.setupChoice(0,floor(random(0,1.5)),0)
                             break
                             case 1:
                                 transition.scene='choice'
-                                this.setupChoice(1,0,0)
+                                this.setupChoice(1,floor(random(0,1.5)),0)
                             break
                             case 2:
                                 this.currency.money+=this.objective[e][3]
@@ -643,6 +663,12 @@ class battle{
         }
     }
     onClickDeck(){
-        this.deck=onClickView()
+        if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570},width:80,height:40})){
+            transition.trigger=true
+            transition.scene='map'
+        }
+        if(this.context==1){
+            this.deck.onClickView()
+        }
     }
 }

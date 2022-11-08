@@ -67,7 +67,7 @@ class combatant{
 		switch(this.stance){
 		}
 	}
-    display(){
+    display(detail){
 		if(this.fade>0){
 			this.layer.translate(this.position.x,this.position.y)
 			this.layer.rotate(this.direction)
@@ -97,17 +97,19 @@ class combatant{
 					this.layer.arc(0,-78,36,36,-180,0)
 					this.layer.fill(200,this.fade/2)
 					this.layer.rect(8,-75,20,6)
-					this.layer.noFill()
-					this.layer.stroke(240,240,40,this.fade)
-					this.layer.strokeWeight(4)
-					this.layer.strokeCap(SQUARE)
-					this.layer.arc(1,-119,20,20,-45,135)
-					this.layer.arc(-1,-121,20,20,135,315)
-					this.layer.strokeCap(ROUND)
-					this.layer.noStroke()
-					this.layer.fill(255,this.fade)
-					this.layer.textSize(16)
-					this.layer.text(this.combo,0,-118)
+					if(detail==0){
+						this.layer.noFill()
+						this.layer.stroke(240,240,40,this.fade)
+						this.layer.strokeWeight(4)
+						this.layer.strokeCap(SQUARE)
+						this.layer.arc(1,-119,20,20,-45,135)
+						this.layer.arc(-1,-121,20,20,135,315)
+						this.layer.strokeCap(ROUND)
+						this.layer.noStroke()
+						this.layer.fill(255,this.fade)
+						this.layer.textSize(16)
+						this.layer.text(this.combo,0,-118)
+					}
 				break
 				case 2:
 				break
@@ -137,30 +139,32 @@ class combatant{
 					this.layer.fill(70,60,50,this.fade)
 					this.layer.ellipse(-4,-51,3,3)
 					this.layer.ellipse(-4,-46,3,3)
-					this.layer.fill(255,this.fade/5)
-					switch(this.ammo.length){
-						case 3:
-							this.layer.ellipse(0,-120,20,20)
-							this.layer.ellipse(-25,-110,20,20)
-							this.layer.ellipse(25,-110,20,20)
-							displayAmmo(this.layer,25,-110,this.ammo[0],this.fade)
-							displayAmmo(this.layer,0,-120,this.ammo[1],this.fade)
-							displayAmmo(this.layer,-25,-110,this.ammo[2],this.fade)
-						break
-						case 2:
-							this.layer.ellipse(-15,-115,20,20)
-							this.layer.ellipse(15,-115,20,20)
-							displayAmmo(this.layer,15,-115,this.ammo[0],this.fade)
-							displayAmmo(this.layer,-15,-115,this.ammo[1],this.fade)
-						break
-						case 1:
-							this.layer.ellipse(0,-120,20,20)
-							displayAmmo(this.layer,0,-120,this.ammo[0],this.fade)
-						break
+					if(detail==0){
+						this.layer.fill(255,this.fade/5)
+						switch(this.ammo.length){
+							case 3:
+								this.layer.ellipse(0,-120,20,20)
+								this.layer.ellipse(-25,-110,20,20)
+								this.layer.ellipse(25,-110,20,20)
+								displayAmmo(this.layer,25,-110,this.ammo[0],this.fade)
+								displayAmmo(this.layer,0,-120,this.ammo[1],this.fade)
+								displayAmmo(this.layer,-25,-110,this.ammo[2],this.fade)
+							break
+							case 2:
+								this.layer.ellipse(-15,-115,20,20)
+								this.layer.ellipse(15,-115,20,20)
+								displayAmmo(this.layer,15,-115,this.ammo[0],this.fade)
+								displayAmmo(this.layer,-15,-115,this.ammo[1],this.fade)
+							break
+							case 1:
+								this.layer.ellipse(0,-120,20,20)
+								displayAmmo(this.layer,0,-120,this.ammo[0],this.fade)
+							break
+						}
 					}
 				break
 				case 4:
-					if(this.armed==1&&this.fade>0){
+					if((this.armed==1||detail==1)&&this.fade>0){
 						this.layer.image(graphics.minor[5],-25*this.fade,-60*this.fade,65*this.fade,65*this.fade)
 					}
 					this.layer.translate(0,-1.25)
@@ -449,16 +453,18 @@ class combatant{
 						this.layer.image(graphics.minor[3],-3-15*(1-this.anim[3])*this.fade,-44-15*(1-this.anim[3])*this.fade,30*(1-this.anim[3])*this.fade,30*(1-this.anim[3])*this.fade)
 					}
 					this.layer.translate(0,1.25)
-					if(this.fade>0){
-						this.layer.image(graphics.minor[4],-40*this.fade,-112-10*this.fade,80*this.fade,20*this.fade)
+					if(detail==0){
+						if(this.fade>0){
+							this.layer.image(graphics.minor[4],-40*this.fade,-112-10*this.fade,80*this.fade,20*this.fade)
+						}
+						this.layer.stroke(255,this.fade)
+						this.layer.strokeWeight(2)
+						this.layer.line(this.meter*3,-114,this.meter*3,-110)
+						this.layer.noStroke()
+						this.layer.fill(0,this.fade)
+						this.layer.textSize(8)
+						this.layer.text(this.meter,0,-101)
 					}
-					this.layer.stroke(255,this.fade)
-					this.layer.strokeWeight(2)
-					this.layer.line(this.meter*3,-114,this.meter*3,-110)
-					this.layer.noStroke()
-					this.layer.fill(0,this.fade)
-					this.layer.textSize(8)
-					this.layer.text(this.meter,0,-101)
 				break
 				case 5:
 					this.layer.stroke(80,this.fade)

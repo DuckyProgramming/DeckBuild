@@ -11,7 +11,7 @@ class group{
     }
     initial(type){
         /*for(e=0;e<20;e++){
-            this.add(floor(random(1,119)),0,this.battle.player)
+            this.add(floor(random(1,118)),0,this.battle.player)
         }*/
         switch(type){
             case 1:
@@ -156,6 +156,9 @@ class group{
         }
     }
     updateView(){
+        for(e=0,le=this.cards.length;e<le;e++){
+            this.cards[e].update(0,0,0)
+        }
     }
     onClickHand(){
         if(this.trigger){
@@ -246,5 +249,27 @@ class group{
         }
     }
     onClickView(){
+        this.selected=false
+        for(e=0,le=this.cards.length;e<le;e++){
+            if(this.cards[e].select){
+                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.cards[e].level==0){
+                    this.cards[e]=new card(this.cards[e].layer,this.cards[e].x,this.cards[e].y,this.cards[e].type,this.cards[e].level+1,this.cards[e].color)
+                    transition.trigger=true
+                    transition.scene='map'
+                }
+                this.cards[e].select=false
+            }
+            if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.cards[e].level==0){
+                this.cards[e].select=true
+                this.select=true
+                this.selected=true
+                this.battle.choice.cards[0]=new card(this.layer,this.cards[e].position.x,this.cards[e].position.y,this.cards[e].type,1,this.cards[e].color)
+                this.battle.choice.cards[0].size=1
+            }
+        }
+        if(!this.selected){
+            this.select=false
+            this.battle.choice.cards[0]=new card(this.layer,-300,0,0,0,0)
+        }
     }
 }
