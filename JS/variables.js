@@ -390,6 +390,26 @@ types={
             {damage:9,alt:0,cost:2,attack:116,target:1,descW:'',spec:0,class:0},
             {damage:12,alt:0,cost:2,attack:116,target:1,desc:'',spec:0,class:0},
         ],
+        },{name:'Wave of\nthe Hand',rarity:1,list:2,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:117,target:0,desc:'',spec:0,class:2},
+            {damage:2,alt:0,cost:1,attack:117,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Conviction',rarity:1,list:2,
+        stats:[
+            {damage:6,alt:0,cost:2,attack:102,target:0,desc:'',spec:0,class:2},
+            {damage:6,alt:0,cost:2,attack:102,target:0,desc:'',spec:2,class:2},
+        ],
+        },{name:'Flame\nRing',rarity:1,list:2,
+        stats:[
+            {damage:5,alt:0,cost:1,attack:118,target:0,desc:'',spec:0,class:2},
+            {damage:8,alt:0,cost:1,attack:118,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Finality',rarity:2,list:2,
+        stats:[
+            {damage:99,alt:0,cost:1,attack:119,target:0,desc:'',spec:0,class:2},
+            {damage:99,alt:0,cost:1,attack:119,target:0,desc:'',spec:2,class:2},
+        ],
         },{name:'Charge',rarity:0,list:3,
         stats:[
             {damage:1,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:2},

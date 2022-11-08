@@ -596,6 +596,16 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.combatants[0].block+=max(0,this.damage-this.battle.combatants[this.target].block)
                 break
+                case 117:
+                    this.battle.combatants[0].status.main[17]+=this.damage
+                break
+                case 118:
+                    this.battle.combatants[0].status.main[18]+=this.damage
+                break
+                case 119:
+                    this.battle.combatants[0].mantra+=this.damage
+                    this.battle.combatants[0].status.main[19]++
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

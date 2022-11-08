@@ -123,6 +123,9 @@ class battle{
         this.mana.main=min(this.mana.max,this.mana.main+this.mana.gen)
         this.mana.main+=this.combatants[0].status.main[1]
         this.remember=[0,0,0,0]
+        if(this.combatants[0].status.main[19]>0){
+            this.combatants[0].life=0
+        }
         this.remember[0]+=this.combatants[0].status.main[4]
         this.remember[1]+=this.combatants[0].status.main[7]
         this.remember[3]+=this.combatants[0].status.main[8]
@@ -133,7 +136,7 @@ class battle{
                 if(f==11&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                     this.combatants[e].status.main[f]--
-                }else if(f!=14&&f!=15){
+                }else if(f!=14&&f!=15&&f!=18){
                     this.combatants[e].status.main[f]=0
                 }
             }
@@ -188,6 +191,10 @@ class battle{
         this.turnTimer=20
         if(this.combatants[0].stance==3){
             this.combatants[0].changeStance(0)
+            if(this.combatants[0].mantra>=12){
+                this.combatants[0].changeStance(3)
+				this.combatants[0].mantra-=12
+            }
         }
         while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
             this.turn++

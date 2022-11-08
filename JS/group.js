@@ -212,6 +212,10 @@ class group{
                     this.select=false
                     if(this.cards[e].class==0){
                         this.battle.attack.damage=round(this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0])))
+                        if(this.battle.combatants[0].status.main[18]>0){
+                            this.battle.attack.damage+=this.battle.combatants[0].status.main[18]
+                            this.battle.combatants[0].status.main[18]=0
+                        }
                     }else{
                         this.battle.attack.damage=round(this.cards[e].damage)
                     }
