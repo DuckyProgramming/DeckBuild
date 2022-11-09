@@ -637,6 +637,29 @@ class combatant{
 					}
 				break
 				case 5:
+					this.layer.noStroke()
+					this.layer.fill(230,230,5,this.fade)
+					this.layer.ellipse(-10,-8,20,20)
+					this.layer.ellipse(10,-8,20,20)
+					this.layer.ellipse(-16,-30,20,20)
+					this.layer.fill(235,235,55,this.fade)
+					this.layer.ellipse(0,-28,24,40)
+					this.layer.fill(240,240,60,this.fade)
+					this.layer.ellipse(16,-30,20,20)
+					this.layer.fill(245,245,65,this.fade)
+					this.layer.ellipse(0,-60,40,40)
+					this.layer.fill(240,160,20,this.fade)
+					this.layer.ellipse(13.5,-52,24,16)
+					this.layer.stroke(0,this.fade)
+					this.layer.strokeWeight(1)
+					this.layer.arc(13.5,-52,22,2,-180,0)
+					this.layer.line(18-3,-56,18-3,-58)
+					this.layer.line(18+3,-56,18+3,-58)
+					this.layer.strokeWeight(3)
+					this.layer.point(9-6,-64)
+					this.layer.point(9+6,-64)
+				break
+				case 6:
 					this.layer.stroke(80,this.fade)
 					this.layer.strokeWeight(4)
 					this.layer.line(-4,-30,-8,0)
@@ -743,9 +766,9 @@ class combatant{
 			}
 		}
 		if(this.team==1){
-			displayIntent(this.layer,0,-this.height-30,this.fade,1,this.damage[this.intent],this.attacks[this.intent])
+			displayIntent(this.layer,0,-this.height-30,this.fade,1,this.damage[this.intent],this.altAttack[this.intent],this.attacks[this.intent])
 			if(this.battle.attack.type==81&&this.battle.hand.trigger){
-				displayIntent(this.layer,20,-this.height-50,this.fade,0.5,this.damage[0],this.attacks[0])
+				displayIntent(this.layer,20,-this.height-50,this.fade,0.5,this.damage[0],this.altAttack[0],this.attacks[0])
 			}
 		}
 		this.layer.translate(-this.base.position.x,-this.base.position.y)

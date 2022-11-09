@@ -692,6 +692,15 @@ class attack{
                     this.battle.drop.addDrop(findCard('Confusion'),0,5)
                     this.battle.reserve.add(findCard('Confusion'),0,5)
                 break
+                case 3:
+                    this.battle.combatants[0].take(this.damage,this.user)
+                    this.attacks.push([7,12+this.alt*10,this.user,this.damage,this.alt])
+                break
+                case 4:
+                    this.battle.drop.addDrop(findCard('Dazed'),0,5)
+                    this.battle.reserve.add(findCard('Dazed'),0,5)
+                    this.attacks.push([8,20,0,'Dazed'])
+                break
             }
         }
     }
@@ -741,6 +750,21 @@ class attack{
                             this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3],0)
                         }
                         this.battle.combatants[this.attacks[g][2]+1].take(this.attacks[g][3],0)
+                    }
+                break
+                case 7:
+                    if(this.attacks[g][1]>=6+this.attacks[g][4]*10){
+                        this.battle.combatants[this.attacks[g][2]].position.x-=10
+                    }else if(this.attacks[g][1]%10==0){
+                        this.battle.combatants[0].take(this.attacks[g][3],this.attacks[g][2])
+                    }else if(this.attacks[g][1]<6){
+                        this.battle.combatants[this.attacks[g][2]].position.x+=10
+                    }
+                break
+                case 8:
+                    if(this.attacks[g][1]==10){
+                        this.battle.drop.addDrop(findCard(this.attacks[g][3]),0,5)
+                        this.battle.reserve.add(findCard(this.attacks[g][3]),0,5)
                     }
                 break
             }

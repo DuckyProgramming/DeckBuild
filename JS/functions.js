@@ -56,7 +56,7 @@ function displayAmmo(layer,x,y,type,fade){
 	}
 	layer.translate(-x,-y)
 }
-function displayIntent(layer,x,y,fade,size,damage,type){
+function displayIntent(layer,x,y,fade,size,damage,alt,type){
 	layer.translate(x,y)
 	layer.scale(size)
 	switch(type){
@@ -64,9 +64,15 @@ function displayIntent(layer,x,y,fade,size,damage,type){
 			layer.fill(255,50,50,fade)
 			layer.triangle(-20,0,15,-6,15,6)
 		break
-		case 2:
+		case 2: case 4:
 			layer.fill(125,255,255,fade)
 			layer.ellipse(0,-3,24,24)
+		break
+		case 3:
+			layer.fill(255,50,50,fade)
+			layer.triangle(-12,-10,9,-13,9,-7)
+			layer.triangle(-16,0,12,-4,12,4)
+			layer.triangle(-12,10,9,7,9,13)
 		break
 	}
 	layer.fill(255,fade)
@@ -75,8 +81,12 @@ function displayIntent(layer,x,y,fade,size,damage,type){
 		case 1:
 			layer.text(damage,0,0)
 		break
-		case 2:
+		case 2: case 4:
 			layer.text('?',0,-2)
+		break
+		case 3:
+			layer.textSize(16)
+			layer.text(damage+'x'+alt,0,0)
 		break
 	}
 	layer.scale(1/size)

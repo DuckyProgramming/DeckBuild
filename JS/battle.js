@@ -220,6 +220,7 @@ class battle{
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].display(0)
         }
+        this.layer.noStroke()
         this.layer.fill(80,85,90)
         this.layer.rect(450,475,910,250)
         this.layer.fill(200,225,250,this.fade)
@@ -412,6 +413,7 @@ class battle{
             }else{
                 this.attack.user=this.turn
                 this.attack.damage=round(this.combatants[this.turn].damage[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0])))
+                this.attack.alt=this.combatants[this.turn].altAttack[this.combatants[this.turn].intent]
                 this.attack.alt=round(this.combatants[this.turn].alt[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0])))
                 this.attack.update(this.combatants[this.turn].attacks[this.combatants[this.turn].intent],0,1)
                 this.turnTimer=20
