@@ -101,7 +101,7 @@ class card{
             case 53: this.desc+='Reduce Cost of\nAll Cards in\nHand to '+this.damage; break
             case 54: this.desc+='Deal '+this.damage+' Damage\nIgnore Block'; break
             case 55: this.desc+='Shuffle Discard\nPile into Draw Pile\nDraw '+this.damage+' Cards'; break
-            case 56: this.desc+='Exhuast Your Hand'; break
+            case 56: this.desc+='Exhuast All Cards\nin Your Hand'; break
             case 57: this.desc+='Add '+this.damage+' Block\nDraw '+this.alt+' Cards'; break
             case 58: this.desc+='Temporarily\nUpgrade All Cards'; break
             case 59: this.desc+='Shuffle '+this.damage+'\nRandom Attacks\ninto Draw Pile.\nThey Cost 0'; break

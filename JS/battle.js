@@ -70,6 +70,9 @@ class battle{
         }
     }
     initialReserve(){
+        this.reserve.cards=[]
+        this.hand.cards=[]
+        this.discard.cards=[]
         for(e=0,le=this.deck.cards.length;e<le;e++){
             this.reserve.cards.push(copyCard(this.deck.cards[e]))
         }
@@ -107,7 +110,6 @@ class battle{
         while(this.discard.cards.length>0){
             if(this.discard.cards[0].spec!=6){
                 this.reserve.cards.push(copyCard(this.discard.cards[0]))
-                this.reserve.cards[this.reserve.cards.length-1].position.x=1206
             }
             this.discard.cards.splice(0,1)
         }
@@ -622,7 +624,7 @@ class battle{
                             break
                             case 3:
                                 transition.scene='event'
-                                this.event=zones[this.map.zone][floor(random(0,zones[this.map.zone].length))]
+                                this.event=zones[this.map.zone].events[floor(random(0,zones[this.map.zone].events.length))]
                                 this.page=0
                             break
                         }
@@ -634,7 +636,7 @@ class battle{
     displayRest(){
         this.combatants[0].display(1)
         this.layer.noStroke()
-        this.layer.fill(this.layer.fill(80,85,90))
+        this.layer.fill(80,85,90)
         this.layer.rect(450,475,910,250)
         this.combatants[0].displayInfo()
         this.layer.fill(160)
@@ -740,7 +742,7 @@ class battle{
     displayEvent(){
         this.combatants[0].display()
         this.layer.noStroke()
-        this.layer.fill(this.layer.fill(80,85,90))
+        this.layer.fill(80,85,90)
         this.layer.rect(450,475,910,250)
         this.layer.fill(160)
         for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
@@ -772,6 +774,7 @@ class battle{
             for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
                 if(pointInsideBox({position:inputs.rel},{position:{x:450,y:350+e*60},width:200,height:50})){
                     if(types.event[this.event].pages[this.page].link[e]==-1){
+                        this.map.complete[this.map.position[0]][this.map.position[1]]=1
                         transition.trigger=true
                         transition.scene='map'
                     }

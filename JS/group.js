@@ -26,16 +26,18 @@ class group{
             break
             case 2:
                 for(e=0;e<4;e++){
-                    //this.add(1,0,this.battle.player)
+                    this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
-                    //this.add(2,0,this.battle.player)
+                    this.add(2,0,this.battle.player)
                 }
-                this.add(77,0,this.battle.player)
+                this.add(findCard('Eruption'),0,this.battle.player)
+                this.add(findCard('Vigilance'),0,this.battle.player)
+                /*this.add(77,0,this.battle.player)
                 this.add(78,0,this.battle.player)
                 this.add(79,0,this.battle.player)
                 this.add(80,0,this.battle.player)
-                this.add(81,0,this.battle.player)
+                this.add(81,0,this.battle.player)*/
             break
             case 3:
                 for(e=0;e<4;e++){

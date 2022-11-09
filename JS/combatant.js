@@ -48,6 +48,7 @@ class combatant{
 		this.lastPlay=-1
     }
 	resetUnique(){
+		this.block=0
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -143,7 +144,7 @@ class combatant{
 				case 2:
 					this.layer.noStroke()
 					this.layer.translate(0,-45)
-					if(this.mantra>0){
+					if(this.mantra>0&&detail==0){
 						this.layer.fill(255,200,255,this.fade/2)
 						for(g=0;g<12;g++){
 							this.layer.rotate(30)
@@ -152,7 +153,7 @@ class combatant{
 							}
 						}
 					}
-					if(this.stance>0){
+					if(this.stance>0&&detail==0){
 						switch(this.stance){
 							case 1:
 								this.layer.fill(150,255,255,this.fade/2)

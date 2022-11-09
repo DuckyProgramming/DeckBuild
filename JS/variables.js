@@ -771,6 +771,16 @@ types={
         },
     ],event:[
         {
+            name:'',
+            pages:[
+                {
+                    desc:"",
+                    option:[],
+                    optionDesc:[],
+                    link:[],
+                }
+            ],
+        },{
             name:'Dropped Book',
             pages:[
                 {
