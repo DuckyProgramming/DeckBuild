@@ -131,6 +131,7 @@ class battle{
         this.remember[0]+=this.combatants[0].status.main[4]
         this.remember[1]+=this.combatants[0].status.main[7]
         this.remember[3]+=this.combatants[0].status.main[8]
+        this.combatants[0].mantra+=this.combatants[0].status.main[20]
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].block=0
             this.combatants[e].setupIntent(-1)
@@ -138,7 +139,7 @@ class battle{
                 if(f==11&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                     this.combatants[e].status.main[f]--
-                }else if(f!=14&&f!=15&&f!=18){
+                }else if(f!=14&&f!=15&&f!=18&&f!=20){
                     this.combatants[e].status.main[f]=0
                 }
             }

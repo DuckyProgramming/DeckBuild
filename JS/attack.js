@@ -606,6 +606,20 @@ class attack{
                     this.battle.combatants[0].mantra+=this.damage
                     this.battle.combatants[0].status.main[19]++
                 break
+                case 120:
+                    this.battle.combatants[this.target].take(this.damage+this.alt*this.battle.combatants[0].mantra,this.user)
+                break
+                case 122:
+                    this.battle.combatants[0].status.main[20]+=this.damage
+                break
+                case 123:
+                    for(g=0,lg=this.damage-this.battle.hand.cards.length+1;g<lg;g++){
+                        this.battle.draw()
+                    }
+                break
+                case 124:
+                    this.battle.combatants[0].block+=this.damage*this.battle.hand.cards.length
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

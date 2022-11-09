@@ -368,7 +368,7 @@ types={
         },{name:'Rush',rarity:1,list:2,
         stats:[
             {damage:2,alt:0,cost:1,attack:112,target:0,desc:'',spec:0,class:2},
-            {damage:2,alt:0,cost:1,attack:112,target:0,desc:'',spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:112,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Sanctity',rarity:1,list:2,
         stats:[
@@ -410,7 +410,37 @@ types={
             {damage:99,alt:0,cost:1,attack:119,target:0,desc:'',spec:0,class:2},
             {damage:99,alt:0,cost:1,attack:119,target:0,desc:'',spec:2,class:2},
         ],
-        },{name:'Charge',rarity:0,list:3,
+        },{name:'Brilliance',rarity:2,list:2,
+        stats:[
+            {damage:4,alt:2,cost:1,attack:120,target:1,desc:'',spec:0,class:0},
+            {damage:6,alt:3,cost:1,attack:120,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Deus Ex\nMachina',rarity:2,list:2,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:121,target:1,desc:'',spec:1,class:0},
+            {damage:3,alt:0,cost:0,attack:121,target:1,desc:'',spec:1,class:0},
+        ],
+        },{name:'Devotion',rarity:2,list:2,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:122,target:0,desc:'',spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:122,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Scrawl',rarity:2,list:2,
+        stats:[
+            {damage:10,alt:0,cost:1,attack:123,target:0,desc:'',spec:3,class:2},
+            {damage:10,alt:0,cost:0,attack:123,target:0,desc:'',spec:3,class:2},
+        ],
+        },{name:'Spirit\nShield',rarity:2,list:2,
+        stats:[
+            {damage:3,alt:0,cost:2,attack:124,target:0,desc:'',spec:0,class:1},
+            {damage:4,alt:0,cost:2,attack:124,target:0,desc:'',spec:0,class:1},
+        ],
+        },
+        
+        
+        
+        
+        {name:'Charge',rarity:0,list:3,
         stats:[
             {damage:1,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:2},

@@ -25,19 +25,19 @@ class group{
                 this.add(4,0,this.battle.player)
             break
             case 2:
-                for(e=0;e<4;e++){
+                /*for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
-                this.add(findCard('Vigilance'),0,this.battle.player)
-                /*this.add(77,0,this.battle.player)
-                this.add(78,0,this.battle.player)
-                this.add(79,0,this.battle.player)
-                this.add(80,0,this.battle.player)
-                this.add(81,0,this.battle.player)*/
+                this.add(findCard('Vigilance'),0,this.battle.player)*/
+                this.add(87,0,this.battle.player)
+                this.add(88,0,this.battle.player)
+                this.add(89,0,this.battle.player)
+                this.add(90,0,this.battle.player)
+                this.add(91,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -123,7 +123,7 @@ class group{
     }
     display(){ 
         for(e=0,le=this.cards.length;e<le;e++){
-            this.cards[e].display(this.battle.deck.cards.length)
+            this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length)
         }
     }
     displayView(){
@@ -165,6 +165,12 @@ class group{
             }
             if(this.cards[e].position.x>e*80+126&&(this.cards[e].position.x>this.cards[max(0,e-1)].position.x+80||e==0)){
                 this.cards[e].position.x-=20
+            }else if(this.cards[e].attack==121&&this.cards[e].position.x<=e*80+126&&!this.cards[e].used){
+                this.cards[e].used=true
+                this.cards[e].exhaust=true
+                for(f=0;f<this.cards[e].damage;f++){
+                    this.add(findCard('Miracle'),0,0)
+                }
             }
         }
     }
