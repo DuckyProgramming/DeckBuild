@@ -29,7 +29,7 @@ class attack{
                 case 2:
                     this.battle.combatants[0].block+=this.damage
                 break
-                case 3: case 51:
+                case 3: case 51: case 135:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.attacks.push([0,this.alt*10-10,this.target,this.damage])
                 break
@@ -147,7 +147,7 @@ class attack{
                 break
                 case 26:
                     for(g=0;g<this.damage;g++){
-                        this.battle.hand.add(findCard('Shiv'),0,this.color)
+                        this.battle.hand.add(findCard('Shiv'),0,0)
                     }
                 break
                 case 27:
@@ -619,6 +619,58 @@ class attack{
                 break
                 case 124:
                     this.battle.combatants[0].block+=this.damage*this.battle.hand.cards.length
+                break
+                case 125:
+                    this.battle.combatants[0].block+=this.damage
+                    for(g=0;g<this.alt;g++){
+                        this.battle.hand.add(findCard('Shiv'),0,0)
+                    }
+                break
+                case 126:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0){
+                            this.battle.combatants[g].take(this.damage,this.user)
+                            this.attacks.push([0,this.alt*10-10,g,this.damage])
+                        }
+                    }
+                break
+                case 127:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.draw()
+                    this.battle.randomDiscard()
+                break
+                case 128:
+                    this.hold.int=this.battle.hand.cards.length
+                    this.battle.allDiscard()
+                    for(g=0;g<this.hold.int;g++){
+                        this.battle.draw()
+                    }
+                break
+                case 129:
+                    this.battle.combatants[0].status.main[21]+=this.damage
+                break
+                case 130:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.attacks.push([0,this.alt*this.mana*10-10,this.target,this.damage])
+                break
+                case 131:
+                    this.battle.combatants[0].status.main[22]+=this.damage
+                break
+                case 132:
+                    this.hold.int=this.battle.hand.cards.length
+                    this.battle.allDiscard()
+                    for(g=0;g<this.hold.int;g++){
+                        this.battle.hand.add(findCard('Shiv'),this.damage,0)
+                    }
+                break
+                case 133:
+                    this.battle.mana.main+=this.damage
+                    for(g=0;g<this.alt;g++){
+                        this.battle.draw()
+                    }
+                break
+                case 134:
+                    this.battle.combatants[0].status.main[23]+=this.damage
                 break
             }
             this.battle.combatants[0].lastPlay=this.class

@@ -170,6 +170,17 @@ class card{
             case 122: this.desc+='Gain '+this.damage+' Faith\nat the Start\nof Your Turn'; break
             case 123: this.desc+='Draw to '+this.damage+'\nCards'; break
             case 124: this.desc+='Deal Damage\nEqual to Number of\nCards in Deck\n('+handSize+')'; break
+            case 125: this.desc+='Add '+this.damage+' Block\nAdd '+this.alt+' Shivs\nto Your Hand'; break
+            case 126: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\n'+this.alt+' Times'; break
+            case 127: this.desc+='Deal '+this.damage+' Damage\nDraw a Card\nDiscard a Card'; break
+            case 128: this.desc+='Discard Your Hand,\nthen Draw that\nMany Cards'; break
+            case 129: this.desc+='Add 1 Shiv\ninto Your Hand\nat the Start\nof Your Turn'; break
+            case 130: this.desc+='Deal '+this.damage+' Damage\nX Times'; break
+            case 131: this.desc+='When You\nPlay a Card,\nDeal '+this.damage+' Damage\nto All Enemies'; break
+            case 132: if(this.damage==0){this.desc+='Discard Your Hand,\nthen Add that\nMany Shivs'}else{this.desc+='Discard Your Hand,\nthen Add that\nMany Shivs+'}; break
+            case 133: this.desc+='Gain '+this.damage+' Mana\nDraw '+this.alt+' Cards'; break
+            case 134: this.desc+='When You\nPlay a Card,\nGain '+this.damage+' Block'; break
+            case 135: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nTemporarily Reduce\nDamage by '+this.alt; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

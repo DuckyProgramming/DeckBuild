@@ -78,12 +78,11 @@ class battle{
         }
     }
     drawInitial(){
-        for(e=0,e<this.reserve.cards.length;e<le;e++){
+        for(e=0,le=this.reserve.cards.length;e<le;e++){
             if(this.reserve.cards[e].spec==7||this.reserve.cards[e].spec==8||this.reserve.cards[e].spec==10){
                 this.hand.cards.push(copyCard(this.reserve.cards[e]))
                 this.hand.cards[this.hand.cards.length-1].position.x=1206
                 this.hand.cards[this.hand.cards.length-1].position.y=500
-                this.reserve.cards.splice(0,1)
                 this.reserve.cards.splice(e,1)
                 e--
                 le--
@@ -139,7 +138,7 @@ class battle{
                 if(f==11&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                     this.combatants[e].status.main[f]--
-                }else if(f!=14&&f!=15&&f!=18&&f!=20){
+                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23){
                     this.combatants[e].status.main[f]=0
                 }
             }
@@ -149,12 +148,23 @@ class battle{
         for(e=0;e<this.combatants[0].status.main[14];e++){
             this.hand.add(findCard('Smite'),0,0)
         }
+        for(e=0;e<this.combatants[0].status.main[21];e++){
+            this.hand.add(findCard('Shiv'),0,0)
+        }
     }
     playCard(){
         for(g=0,lg=this.hand.cards.length;g<lg;g++){
             if(this.hand.cards[g].attack==-2){
                 this.combatants[0].take(1,0)
             }
+        }
+        if(this.combatants[0].status.main[22]>0){
+            for(g=1,lg=this.combatants.length;g<lg;g++){
+                this.combatants[g].take(this.combatants[0].status.main[22],0)
+            }
+        }
+        if(this.combatants[0].status.main[23]>0){
+            this.combatants[0].block+=this.combatants[0].status.main[23]
         }
     }
     randomDiscard(){

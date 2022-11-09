@@ -33,11 +33,11 @@ class group{
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
                 this.add(findCard('Vigilance'),0,this.battle.player)*/
-                this.add(87,0,this.battle.player)
-                this.add(88,0,this.battle.player)
-                this.add(89,0,this.battle.player)
-                this.add(90,0,this.battle.player)
-                this.add(91,0,this.battle.player)
+                this.add(94,0,this.battle.player)
+                this.add(95,0,this.battle.player)
+                this.add(96,0,this.battle.player)
+                this.add(97,0,this.battle.player)
+                this.add(98,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -204,6 +204,9 @@ class group{
                             for(f=0,lf=this.cards.length;f<lf;f++){
                                 if(this.cards[f].trigger){
                                     this.cards[f].used=true
+                                    if(this.battle.attack.type==135){
+                                        this.cards[f].damage-=this.cards[f].alt
+                                    }
                                 }
                             }
                             this.trigger=false
