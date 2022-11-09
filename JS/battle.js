@@ -399,35 +399,8 @@ class battle{
         }else if(this.turn>0){
             if(this.turnTimer>0){
                 this.turnTimer--
-            }else if(this.combatants[this.turn].status.main[5]>0||this.combatants[this.turn].status.main[9]>0){
-                this.turn++
-                if(this.turn>=this.combatants.length){
-                    this.turn=0
-                }
-                while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
-                    this.turn++
-                    if(this.turn>=this.combatants.length){
-                        this.turn=0
-                    }
-                }
-            }else{
-                this.attack.user=this.turn
-                this.attack.damage=round(this.combatants[this.turn].damage[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0])))
-                this.attack.alt=this.combatants[this.turn].altAttack[this.combatants[this.turn].intent]
-                this.attack.update(this.combatants[this.turn].attacks[this.combatants[this.turn].intent],0,1)
-                this.turnTimer=20
-                this.turn++
-                if(this.turn>=this.combatants.length){
-                    this.turn=0
-                }
-                while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
-                    this.turn++
-                    if(this.turn>=this.combatants.length){
-                        this.turn=0
-                    }
-                }
-            }
-            if(this.turn==0){
+            }else if(this.turn>=this.combatants.length){
+                this.turn=0
                 this.counter.enemies.alive=0
                 for(e=1,le=this.combatants.length;e<le;e++){
                     if(this.combatants[e].life>0){
@@ -454,6 +427,27 @@ class battle{
                     this.hand.cards[e].position.y=500
                 }
                 this.endTurn()
+            }else if(this.combatants[this.turn].status.main[5]>0||this.combatants[this.turn].status.main[9]>0){
+                this.turn++
+                if(this.turn>=this.combatants.length){
+                    this.turn=0
+                }
+                while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
+                    this.turn++
+                    if(this.turn>=this.combatants.length){
+                        this.turn=0
+                    }
+                }
+            }else{
+                this.attack.user=this.turn
+                this.attack.damage=round(this.combatants[this.turn].damage[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0])))
+                this.attack.alt=this.combatants[this.turn].altAttack[this.combatants[this.turn].intent]
+                this.attack.update(this.combatants[this.turn].attacks[this.combatants[this.turn].intent],0,1)
+                this.turnTimer=20
+                this.turn++
+                while(this.turn>0&&this.turn<this.combatants.length&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
+                    this.turn++
+                }
             }
         }
     }
@@ -489,6 +483,7 @@ class battle{
             if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:525},width:40,height:30})){
                 transition.trigger=true
                 transition.scene='deck'
+                this.setupDeck(1)
                 this.context=3
             }else if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:565},width:40,height:30})){
                 this.close()
@@ -700,18 +695,20 @@ class battle{
                         case 2:
                             transition.scene='deck'
                             this.context=1
-                            this.setupDeck()
+                            this.setupDeck(0)
                         break
                     }
                 }
             }
         }
     }
-    setupDeck(){
+    setupDeck(context){
         this.deck.scroll=0
         this.deck.select=false
-        this.choice.cards=[]
-        this.choice.cards.push(new card(this.layer,-300,0,0,0,0))
+        if(context==0){
+            this.choice.cards=[]
+            this.choice.cards.push(new card(this.layer,-300,0,0,0,0))
+        }
         for(g=0,lg=this.deck.cards.length;g<lg;g++){
             this.deck.cards[e].anim.select=0
         }
@@ -811,6 +808,23 @@ class battle{
                                 this.currency.money+=100
                             }else if(this.page==2&&e==0){
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+40)
+                            }
+                        break
+                        case 3:
+                            if(this.page==0&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-10)
+                            }else if(this.page==1&&e==0){
+                                transition.scene='deck'
+                                this.setupDeck(0)
+                                this.context=1
+                            }
+                        break
+                        case 4:
+                            if(this.page==1&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-20)
+                                this.currency.money+=150
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=this.combatants[0].base.life
                             }
                         break
                     }

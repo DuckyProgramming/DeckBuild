@@ -909,32 +909,89 @@ types={
             pages:[
                 {
                     desc:"You receive a phone call from the Ground Sector Commander. He sounds happy.\n"+
-                    "We're here to discuss your recent performance. Very satisfying.\n\n"+
-                    "So, I'm going to ask you a question. I want an honest answer, okay?\n"+
-                    "Do you think you deserve a bonus?",
+                    '"We'+"'"+'re here to discuss your recent performance. Very satisfying."\n\n'+
+                    '"So, I'+"'"+'m going to ask you a question. I want an honest answer, okay?"\n'+
+                    '"Do you think you deserve a bonus?"',
                     option:['I Deserve Money','How about a break?','No'],
-                    optionDesc:['Gain Currency','Heal HP',''],
+                    optionDesc:['','',''],
                     link:[1,2,3],
                 },{
                     desc:"He thinks for a minute, and accepts your arguments.\n"+
-                    "The money is waiting for you at the base nearby.\n\n"+
+                    '"The money is waiting for you at the base nearby."\n\n'+
                     "You head to the base and find the money waiting.",
                     option:['Collect the Bonus'],
                     optionDesc:['Gain $100'],
                     link:[-1],
                 },{
-                    desc:"I guess with how long you've been down there, you've earned it.\n"+
-                    "You're relieved of duties for the next week."+
+                    desc:'"I guess with how long you'+"'"+'ve been down there, you'+"'"+'ve earned it."\n'+
+                    '"You'+"'"+'re relieved of duties for the next week."'+
                     "You enjoy your time off, preparing to go back in.",
                     option:['Recover'],
                     optionDesc:['Heal 40 HP'],
                     link:[-1],
                 },{
-                    desc:"I guess not. Keep working hard, I hope we have this talk again.\n"+
+                    desc:'"I guess not. Keep working hard, I hope we have this talk again.\n"'+
                     "He hangs up.",
                     option:['Exit'],
                     optionDesc:[''],
                     link:[-1],
+                },
+            ],
+        },{
+            name:'MSB Agent',
+            pages:[
+                {
+                    desc:"You receive indication that another Agent, working for the Management Security Bureau,\n"+
+                    "has taken a risky mission and is in over his head. He could probably use some help,\n"+
+                    "but you have to finish your current job. Then again, he's not far from where you are.\n\n"+
+                    "Head over and give him a hand?",
+                    option:['Help him out',"He'll do it on his own"],
+                    optionDesc:['Lose 10 HP',''],
+                    link:[1,2],
+                },{
+                    desc:"You get a little beat up, but you save the Agent from certain death.\n"+
+                    "As thanks, he offers you teach you some skills before you have to split up again.",
+                    option:['Exit'],
+                    optionDesc:['Upgrade a Card'],
+                    link:[-1],
+                },{
+                    desc:"He'll figure things out, you've got your own problems.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Unstable Building',
+            pages:[
+                {
+                    desc:"You enter a building, looking for a piece of intel. But as soon as you step inside,\n"+
+                    "the walls start shaking. You don't have much time, as the building will collapse any minute,\n"+
+                    "but there's still enough to grab something before you leave.",
+                    option:['Grab the Briefcase','Grab the Medical Kit'],
+                    optionDesc:['',''],
+                    link:[1,2,3],
+                },{
+                    desc:"The building collapses as you carry the heavy case out, but you get out without major injuries.\n"+
+                    "You get the intel to your bosses and collect a bonus for the information.",
+                    option:['Collect the Money'],
+                    optionDesc:['Gain $150, lose 20 Health'],
+                    link:[-1],
+                },{
+                    desc:"You manage to make it out, and the kit is exactly what it looks like.",
+                    option:['Use the Kit'],
+                    optionDesc:['Heal to Full'],
+                    link:[-1],
+                }
+            ],
+        },{
+            name:'',
+            pages:[
+                {
+                    desc:"",
+                    option:[],
+                    optionDesc:[],
+                    link:[],
                 },
             ],
         },
@@ -949,7 +1006,7 @@ zones=[
         elites:[2],
         events:[
             [],
-            [3],
+            [],
             [],
             [],
             [],
