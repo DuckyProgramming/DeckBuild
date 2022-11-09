@@ -904,6 +904,39 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'The Lieutenant',
+            pages:[
+                {
+                    desc:"You receive a phone call from the Ground Sector Commander. He sounds happy.\n"+
+                    "We're here to discuss your recent performance. Very satisfying.\n\n"+
+                    "So, I'm going to ask you a question. I want an honest answer, okay?\n"+
+                    "Do you think you deserve a bonus?",
+                    option:['I Deserve Money','How about a break?','No'],
+                    optionDesc:['Gain Currency','Heal HP',''],
+                    link:[1,2,3],
+                },{
+                    desc:"He thinks for a minute, and accepts your arguments.\n"+
+                    "The money is waiting for you at the base nearby.\n\n"+
+                    "You head to the base and find the money waiting.",
+                    option:['Collect the Bonus'],
+                    optionDesc:['Gain $100'],
+                    link:[-1],
+                },{
+                    desc:"I guess with how long you've been down there, you've earned it.\n"+
+                    "You're relieved of duties for the next week."+
+                    "You enjoy your time off, preparing to go back in.",
+                    option:['Recover'],
+                    optionDesc:['Heal 40 HP'],
+                    link:[-1],
+                },{
+                    desc:"I guess not. Keep working hard, I hope we have this talk again.\n"+
+                    "He hangs up.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
     ],
 }
@@ -914,7 +947,13 @@ zones=[
     {
         encounters:[1],
         elites:[2],
-        events:[1],
+        events:[
+            [],
+            [3],
+            [],
+            [],
+            [],
+        ],
     },
 ]
 stage={scale:0,scene:'battle'}

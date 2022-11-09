@@ -414,7 +414,6 @@ class battle{
                 this.attack.user=this.turn
                 this.attack.damage=round(this.combatants[this.turn].damage[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0])))
                 this.attack.alt=this.combatants[this.turn].altAttack[this.combatants[this.turn].intent]
-                this.attack.alt=round(this.combatants[this.turn].alt[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0])))
                 this.attack.update(this.combatants[this.turn].attacks[this.combatants[this.turn].intent],0,1)
                 this.turnTimer=20
                 this.turn++
@@ -637,7 +636,14 @@ class battle{
                             break
                             case 3:
                                 transition.scene='event'
-                                this.event=zones[this.map.zone].events[floor(random(0,zones[this.map.zone].events.length))]
+                                this.calc.list=[]
+                                for(g=0,lg=zones[this.map.zone].events[0].length;g<lg;g++){
+                                    this.calc.list.push(zones[this.map.zone].events[0][g])
+                                }
+                                for(g=0,lg=zones[this.map.zone].events[this.player].length;g<lg;g++){
+                                    this.calc.list.push(zones[this.map.zone].events[this.player][g])
+                                }
+                                this.event=this.calc.list[floor(random(0,this.calc.list.length))]
                                 this.page=0
                             break
                         }
@@ -761,7 +767,7 @@ class battle{
         for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
             this.layer.rect(450,350+e*60,200,50,5)
         }
-        this.layer.fill(0)
+        this.layer.fill(255)
         this.layer.textSize(45)
         this.layer.text(types.event[this.event].name,450,50)
         this.layer.textSize(15)
@@ -792,12 +798,19 @@ class battle{
                         transition.scene='map'
                     }
                     switch(this.event){
-                        case 0:
+                        case 1:
                             if(this.page==0&&e==0){
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-4)
                             }else if(this.page==1&&e==0){
                                 transition.scene='choice'
                                 this.setupChoice(1,1,0)
+                            }
+                        break
+                        case 2:
+                            if(this.page==1&&e==0){
+                                this.currency.money+=100
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+40)
                             }
                         break
                     }

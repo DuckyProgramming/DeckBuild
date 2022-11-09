@@ -694,7 +694,7 @@ class attack{
                 break
                 case 3:
                     this.battle.combatants[0].take(this.damage,this.user)
-                    this.attacks.push([7,12+this.alt*10,this.user,this.damage,this.alt])
+                    this.attacks.push([7,7+this.alt*5,this.user,this.damage,this.alt])
                 break
                 case 4:
                     this.battle.drop.addDrop(findCard('Dazed'),0,5)
@@ -753,12 +753,12 @@ class attack{
                     }
                 break
                 case 7:
-                    if(this.attacks[g][1]>=6+this.attacks[g][4]*10){
+                    if(this.attacks[g][1]>=1+this.attacks[g][4]*5){
                         this.battle.combatants[this.attacks[g][2]].position.x-=10
-                    }else if(this.attacks[g][1]%10==0){
-                        this.battle.combatants[0].take(this.attacks[g][3],this.attacks[g][2])
                     }else if(this.attacks[g][1]<6){
                         this.battle.combatants[this.attacks[g][2]].position.x+=10
+                    }else if(this.attacks[g][1]%5==0){
+                        this.battle.combatants[0].take(this.attacks[g][3],this.attacks[g][2])
                     }
                 break
                 case 8:
