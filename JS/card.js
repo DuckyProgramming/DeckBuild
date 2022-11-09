@@ -181,6 +181,8 @@ class card{
             case 133: this.desc+='Gain '+this.damage+' Mana\nDraw '+this.alt+' Cards'; break
             case 134: this.desc+='When You\nPlay a Card,\nGain '+this.damage+' Block'; break
             case 135: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nTemporarily Reduce\nDamage by '+this.alt; break
+            case 136: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed'; break
+            case 137: this.desc+='Deal '+this.damage+' Damage\n2 Times. Second Hit\nPush Collision\nfor '+this.alt+' Damage'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

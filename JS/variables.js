@@ -230,6 +230,11 @@ types={
             {damage:5,alt:6,cost:1,attack:63,target:1,desc:'',spec:0,class:0},
             {damage:8,alt:9,cost:1,attack:63,target:1,desc:'',spec:0,class:0},
         ],
+        },{name:'Punch-Kick\nCombo',rarity:0,list:1,
+        stats:[
+            {damage:10,alt:4,cost:1,attack:137,target:1,desc:'',spec:0,class:0},
+            {damage:15,alt:6,cost:1,attack:137,target:1,desc:'',spec:0,class:0},
+        ],
         },{name:'Vigilance',rarity:1,list:2,
         stats:[
             {damage:8,alt:0,cost:2,attack:27,target:0,desc:'',spec:0,class:1},
@@ -684,6 +689,11 @@ types={
         stats:[
             {damage:4,alt:-1,cost:1,attack:91,target:1,desc:'',spec:10,class:0},
             {damage:4,alt:-1,cost:0,attack:91,target:1,desc:'',spec:10,class:0},
+        ],
+        },{name:'Puncture',rarity:0,list:4,
+        stats:[
+            {damage:2,alt:3,cost:1,attack:136,target:1,desc:'',spec:0,class:0},
+            {damage:4,alt:5,cost:1,attack:136,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Heal Up',rarity:1,list:0,
         stats:[

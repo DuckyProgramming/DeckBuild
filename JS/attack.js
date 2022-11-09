@@ -672,6 +672,14 @@ class attack{
                 case 134:
                     this.battle.combatants[0].status.main[23]+=this.damage
                 break
+                case 136:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target].status.main[11]+=this.alt
+                break
+                case 137:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.attacks.push([6,10,this.target,this.damage])
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{
@@ -691,9 +699,12 @@ class attack{
         for(g=0,lg=this.attacks.length;g<lg;g++){
             this.attacks[g][1]--
             switch(this.attacks[g][0]){
-                case 0:
+                case 0: case 6:
                     if(this.attacks[g][1]%10==0){
                         this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3],0)
+                    }
+                    if(this.attacks[g][1]==0&&this.attacks[g][0]==6){
+                        this.attacks.push([5,20,this.attacks[g][2],this.attacks[g][3]*0.4])
                     }
                 break
                 case 1:
