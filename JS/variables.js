@@ -998,23 +998,31 @@ types={
                     "It'll just be a couple hours at the capital building, so how can anything go wrong?",
                     option:['Take the Job','Decide against it'],
                     optionDesc:['',''],
-                    link:[1,2,3],
+                    link:[1,3],
                 },{
-                    desc:"success",
-                    option:[],
-                    optionDesc:[],
+                    desc:"It's an uneventful day, and nothing of note happens during the speech.\n"+
+                    "The Governor gets out safely and you collect payment for your hard work.",
+                    option:['Easy money'],
+                    optionDesc:['Gain $50'],
                     link:[-1],
                 },{
-                    desc:"fail",
-                    option:[],
-                    optionDesc:[],
+                    desc:"As the Governor is finishing his speech, a shot appears from the center of the crowd.\n"+
+                    "Luckily, it misses him, only to hit you instead. The other guards managed to bring the Governor out alive,"+
+                    "and you escape under the cover of a fight. Your payment only just manages to patch you up.",
+                    option:['At least he escaped'],
+                    optionDesc:['Lose 15 Health'],
+                    link:[-1],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:[''],
                     link:[-1],
                 },{
                     desc:"You continue with your boring work as the day goes by. At the end, a message comes in from command.\n"+
                     "There was an assassination attempt on the Governor's life, but the assassin missed his target.\n"+
                     "You've stayed out of danger, for now.",
-                    option:[],
-                    optionDesc:[],
+                    option:['Dodged a bullet there'],
+                    optionDesc:[''],
                     link:[-1],
                 },
             ],
