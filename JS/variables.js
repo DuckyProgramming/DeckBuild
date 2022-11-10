@@ -810,6 +810,11 @@ types={
             {damage:0,alt:0,cost:0,attack:-8,target:0,desc:'',spec:1,class:0},
             {damage:0,alt:0,cost:0,attack:-8,target:0,desc:'',spec:1,class:0},
         ],
+        },{name:'Normality',rarity:-1,list:10,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-11,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-11,target:0,desc:'',spec:1,class:0},
+        ],
         },{name:'Confusion',rarity:-2,list:11,
         stats:[
             {damage:0,alt:0,cost:0,attack:-1,target:0,desc:'',spec:1,class:0},

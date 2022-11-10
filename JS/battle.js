@@ -33,7 +33,7 @@ class battle{
     }
     create(){
         this.end=false
-        this.counter={enemies:{dead:0,total:0,alive:0},turn:1}
+        this.counter={enemies:{dead:0,total:0,alive:0},turn:1,played:0}
         this.anim.lost=0
         this.anim.end=0
         this.combatants[0].resetUnique()
@@ -151,8 +151,17 @@ class battle{
         for(e=0;e<this.combatants[0].status.main[21];e++){
             this.hand.add(findCard('Shiv'),0,0)
         }
+        this.counter.played=0
     }
     playCard(){
+        this.counter.played++
+        if(this.counter.played>=3){
+            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                if(this.hand.cards[g].attack==-11){
+                    this.allDiscard()
+                }
+            }
+        }
         for(g=0,lg=this.hand.cards.length;g<lg;g++){
             if(this.hand.cards[g].attack==-2){
                 this.combatants[0].take(1,0)
