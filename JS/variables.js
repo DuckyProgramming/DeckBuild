@@ -990,6 +990,35 @@ types={
                 }
             ],
         },{
+            name:'Bodyguard Business',
+            pages:[
+                {
+                    desc:"You receive word that Governor Lirestont of the Tersosi system has arrived on-world to make a speech.\n"+
+                    "Your commander offers you to work as the Governor's bodyguard while pausing your mission.\n"+
+                    "It'll just be a couple hours at the capital building, so how can anything go wrong?",
+                    option:['Take the Job','Decide against it'],
+                    optionDesc:['',''],
+                    link:[1,2,3],
+                },{
+                    desc:"success",
+                    option:[],
+                    optionDesc:[],
+                    link:[-1],
+                },{
+                    desc:"fail",
+                    option:[],
+                    optionDesc:[],
+                    link:[-1],
+                },{
+                    desc:"You continue with your boring work as the day goes by. At the end, a message comes in from command.\n"+
+                    "There was an assassination attempt on the Governor's life, but the assassin missed his target.\n"+
+                    "You've stayed out of danger, for now.",
+                    option:[],
+                    optionDesc:[],
+                    link:[-1],
+                },
+            ],
+        },{
             name:'',
             pages:[
                 {
