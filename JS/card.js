@@ -184,6 +184,10 @@ class card{
             case 135: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nTemporarily Reduce\nDamage by '+this.alt; break
             case 136: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed'; break
             case 137: this.desc+='Deal '+this.damage+' Damage\n2 Times. Second Hit\nPush Collision\nfor '+this.alt+' Damage'; break
+            case 138: this.desc+='Deal '+this.damage+' Damage\nGain 2 Combo\nKnockdown'; break
+            case 139: this.desc+='Deal '+this.damage+' Damage\nIf not Played\nTake '+this.alt+' Damage'; break
+            case 140: this.desc+='Apply '+this.damage+' Vulnerable\nand '+this.alt+' Strength'; break
+            case 141: this.desc+='Deal '+this.damage+' Damage\nForce Target\nto Attack'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

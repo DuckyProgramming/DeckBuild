@@ -70,7 +70,7 @@ types={
             {damage:6,alt:0,cost:2,attack:12,target:0,desc:'',spec:0,class:0},
             {damage:9,alt:0,cost:2,attack:12,target:0,desc:'',spec:0,class:0},
         ],
-        },{name:'Head\nSmash',rarity:2,list:1,
+        },{name:'Head\nSmash',rarity:1,list:1,
         stats:[
             {damage:30,alt:3,cost:3,attack:18,target:1,desc:'',spec:0,class:0},
             {damage:48,alt:2,cost:3,attack:18,target:1,desc:'',spec:0,class:0},
@@ -115,7 +115,7 @@ types={
             {damage:4,alt:5,cost:1,attack:39,target:0,desc:'',spec:0,class:1},
             {damage:7,alt:6,cost:1,attack:39,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Combo\nCounter',rarity:1,list:1,
+        },{name:'Combo\nCounter',rarity:0,list:1,
         stats:[
             {damage:3,alt:2,cost:1,attack:40,target:0,desc:'',spec:0,class:1},
             {damage:5,alt:6,cost:1,attack:40,target:0,desc:'',spec:0,class:1},
@@ -175,7 +175,7 @@ types={
             {damage:24,alt:2,cost:4,attack:48,target:1,desc:'',spec:0,class:0},
             {damage:34,alt:3,cost:4,attack:48,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Jumping\nGround Punch',rarity:2,list:1,
+        },{name:'Jumping\nGround Punch',rarity:1,list:1,
         stats:[
             {damage:8,alt:28,cost:6,attack:43,target:1,desc:'',spec:4,class:0},
             {damage:12,alt:40,cost:6,attack:43,target:1,desc:'',spec:4,class:0},
@@ -215,7 +215,7 @@ types={
             {damage:4,alt:0,cost:1,attack:92,target:0,desc:'',spec:0,class:1},
             {damage:6,alt:0,cost:1,attack:92,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Shove',rarity:1,list:1,
+        },{name:'Shove',rarity:0,list:1,
         stats:[
             {damage:6,alt:12,cost:5,attack:93,target:1,desc:'',spec:4,class:0},
             {damage:6,alt:12,cost:4,attack:93,target:1,desc:'',spec:4,class:0},
@@ -234,6 +234,26 @@ types={
         stats:[
             {damage:10,alt:4,cost:1,attack:137,target:1,desc:'',spec:0,class:0},
             {damage:15,alt:6,cost:1,attack:137,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Suplex',rarity:1,list:1,
+        stats:[
+            {damage:10,alt:1,cost:2,attack:138,target:1,desc:'',spec:0,class:0},
+            {damage:18,alt:1,cost:2,attack:138,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Uncontrolled\nPower',rarity:-1,list:1,
+        stats:[
+            {damage:24,alt:8,cost:2,attack:139,target:1,desc:'',spec:0,class:0},
+            {damage:24,alt:8,cost:1,attack:139,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'This is\nPersonal',rarity:-1,list:1,
+        stats:[
+            {damage:8,alt:2,cost:2,attack:140,target:1,desc:'',spec:0,class:2},
+            {damage:14,alt:2,cost:2,attack:140,target:1,desc:'',spec:0,class:2},
+        ],
+        },{name:'Enraging\nBlow',rarity:-1,list:1,
+        stats:[
+            {damage:16,alt:0,cost:1,attack:141,target:1,desc:'',spec:0,class:0},
+            {damage:20,alt:0,cost:1,attack:141,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Vigilance',rarity:1,list:2,
         stats:[
@@ -956,7 +976,7 @@ types={
                 },{
                     desc:"You get a little beat up, but you save the Agent from certain death.\n"+
                     "As thanks, he offers you teach you some skills before you have to split up again.",
-                    option:['Exit'],
+                    option:['Learn from him'],
                     optionDesc:['Upgrade a Card'],
                     link:[-1],
                 },{
@@ -1007,23 +1027,66 @@ types={
                     link:[-1],
                 },{
                     desc:"As the Governor is finishing his speech, a shot appears from the center of the crowd.\n"+
-                    "Luckily, it misses him, only to hit you instead. The other guards managed to bring the Governor out alive,"+
+                    "Luckily, it misses him, only to hit you instead. The other guards managed to bring the Governor out alive,\n"+
                     "and you escape under the cover of a fight. Your payment only just manages to patch you up.",
                     option:['At least he escaped'],
                     optionDesc:['Lose 15 Health'],
                     link:[-1],
                 },{
-                    desc:"",
-                    option:[''],
+                    desc:"You continue with your boring work as the day goes by. At the end, a message comes in from command.\n"+
+                    "The speech was as uneventful as many expected. You return to your work, knowing that everything worked out.",
+                    option:['Exit'],
                     optionDesc:[''],
                     link:[-1],
                 },{
                     desc:"You continue with your boring work as the day goes by. At the end, a message comes in from command.\n"+
                     "There was an assassination attempt on the Governor's life, but the assassin missed his target.\n"+
                     "You've stayed out of danger, for now.",
-                    option:['Dodged a bullet there'],
+                    option:['Exit'],
                     optionDesc:[''],
                     link:[-1],
+                },
+            ],
+        },{
+            name:'Curious Soldier',
+            pages:[
+                {
+                    desc:"On break, you encounter a Management soldier hanging out in town. Recognizing your uniform, he pulls you over.\n"+
+                    '"Hey, you'+"'"+'re one of those Agents, right? How do they select agents? Come on, tell me!"\n\n'+
+                    "Obviously you aren't supposed to explain the secretive workings of the operation to him, but he sweetens the deal.\n"+
+                    '"If you tell me, I can teach you a special technique!"',
+                    option:['Tell him',"Classified, sorry"],
+                    optionDesc:['',''],
+                    link:[1,3],
+                },{
+                    desc:"You explain the intricate workings of the MPKF to a stunned audience. He's pleased with your explanation.\n"+
+                    "He demonstrates some of his tricks and asks if you want to learn one.",
+                    option:['Learn a technique'],
+                    optionDesc:['Gain 1 card'],
+                    link:[-1],
+                },{
+                    desc:"You tell him, but he runs off before you can collect any sort of payment.\n"+
+                    "It's not long before the secrets are leaked to the planetary rebel network.\n"+
+                    "Not exactly beneficial for you or your bosses.",
+                    option:['The consequences'],
+                    optionDesc:['Lose all currency'],
+                    link:[-1],
+                },{
+                    desc:"He's disappointed, but knows it can't be helped. There isn't much someone like him could do.\n"+
+                    '"Alright, see you around, I guess."',
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Bar Fight',
+            pages:[
+                {
+                    desc:"",
+                    option:[],
+                    optionDesc:[],
+                    link:[],
                 },
             ],
         },{

@@ -10,7 +10,7 @@ function setup(){
     transition.scene='event'
     current.setupMap()
     current.map.complete[0][0]=1
-    current.event=5
+    current.event=7
 }
 function windowResized(){
     resizeCanvas(windowWidth-50,windowHeight-50)

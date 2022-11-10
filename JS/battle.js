@@ -405,6 +405,18 @@ class battle{
             if(this.anim.lost<1){
                 this.anim.lost=round(this.anim.lost*5+1)/5
             }
+        }else if(this.turn>100){
+            if(this.turnTimer>0){
+                this.turnTimer--
+            }else if(this.turn>=this.combatants.length+100||this.combatants[this.turn-100].status.main[5]>0||this.combatants[this.turn-100].status.main[9]>0){
+                this.turn=0
+            }else{
+                this.attack.user=this.turn-100
+                this.attack.damage=round(this.combatants[this.turn-100].damage[this.combatants[this.turn-100].intent]*(2+max(0,this.combatants[this.turn-100].boost.main[0]))/(2-min(0,this.combatants[this.turn-100].boost.main[0])))
+                this.attack.alt=this.combatants[this.turn-100].altAttack[this.combatants[this.turn-100].intent]
+                this.attack.update(this.combatants[this.turn-100].attacks[this.combatants[this.turn-100].intent],0,1)
+                this.turn=200
+            }
         }else if(this.turn>0){
             if(this.turnTimer>0){
                 this.turnTimer--
@@ -507,6 +519,11 @@ class battle{
                     h=listing.card[this.player][rarity][floor(random(0,listing.card[this.player][rarity].length))]
                     this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
                 }
+            break
+            case 1:
+                this.choice.cards.push(new card(this.layer,225,300,findCard('Uncontrolled\nPower'),level,this.player))
+                this.choice.cards.push(new card(this.layer,450,300,findCard('This is\nPersonal'),level,this.player))
+                this.choice.cards.push(new card(this.layer,675,300,findCard('Enraging\nBlow'),level,this.player))
             break
         }
         for(g=0,lg=this.choice.cards.length;g<lg;g++){
@@ -734,7 +751,10 @@ class battle{
         this.layer.rect(850,570,80,40,5)
         this.layer.fill(0)
         this.layer.textSize(20)
-        this.layer.text('Skip',850,570)
+        if(this.context==3){
+        }else if(this.context==1||this.context==2){
+            this.layer.text('Skip',850,570)
+        }
     }
     updateDeck(){
         if(inputs.keys[0][2]||inputs.keys[1][2]){
@@ -803,6 +823,7 @@ class battle{
                         transition.trigger=true
                         transition.scene='map'
                     }
+                    this.remember[0]=0
                     switch(this.event){
                         case 1:
                             if(this.page==0&&e==0){
@@ -836,9 +857,28 @@ class battle{
                                 this.combatants[0].life=this.combatants[0].base.life
                             }
                         break
+                        case 5:
+                            if(this.page==0&&floor(random(0,3))==0){
+                                this.remember[0]=1
+                            }else if(this.page==1&&e==0){
+                                this.currency.money+=50
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-15)
+                            }
+                        break
+                        case 6:
+                            if(this.page==0&&e==0&&floor(random(0,4))==0){
+                                this.remember[0]=1
+                            }else if(this.page==1&&e==0){
+                                this.setupChoice(0,0,1)
+                                transition.scene='choice'
+                            }else if(this.page==2&&e==0){
+                                this.currency.money=0
+                            }
+                        break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){
-                        this.page=types.event[this.event].pages[this.page].link[e]
+                        this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]
                     }
                 }
             }

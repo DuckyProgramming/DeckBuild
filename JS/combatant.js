@@ -846,6 +846,8 @@ class combatant{
 				}
 				if(this.block>0){
 					this.calc.damage*=(2-min(0,this.boost.main[1]))/(2+max(0,this.boost.main[1]))
+				}else{
+					this.calc.damage*=(2-min(0,this.boost.main[1]))/2
 				}
 				if(this.block>this.calc.damage&&extra!=1){
 					this.block-=this.calc.damage

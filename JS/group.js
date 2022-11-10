@@ -19,7 +19,7 @@ class group{
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
-                    this.add(2,0,this.battle.player)
+                    //this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Big Strike'),0,this.battle.player)
                 this.add(findCard('Triple\nPunch'),0,this.battle.player)
@@ -102,6 +102,8 @@ class group{
                         this.battle.combatants[0].take(1,0)
                     }
                 }
+            }else if(this.cards[e].attack==139){
+                this.battle.combatants[0].take(this.cards[e].alt,0)
             }
         }
         for(let e=0,le=this.cards.length;e<le;e++){
