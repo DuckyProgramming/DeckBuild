@@ -546,21 +546,19 @@ class battle{
         this.layer.textSize(20)
         this.layer.text('Skip',450,450)
         for(e=0,le=this.choice.cards.length;e<le;e++){
-            this.choice.cards[e].display()
+            this.choice.cards[e].display(this.deck.cards.length,this.drawAmount)
         }
     }
     onClickChoice(){
-        if(!transition.trigger){
-            if(pointInsideBox({position:inputs.rel},{position:{x:450,y:450},width:80,height:40})){
+        if(pointInsideBox({position:inputs.rel},{position:{x:450,y:450},width:80,height:40})){
+            transition.trigger=true
+            transition.scene='map'
+        }
+        for(e=0,le=this.choice.cards.length;e<le;e++){
+            if(pointInsideBox({position:inputs.rel},this.choice.cards[e])){
                 transition.trigger=true
                 transition.scene='map'
-            }
-            for(e=0,le=this.choice.cards.length;e<le;e++){
-                if(pointInsideBox({position:inputs.rel},this.choice.cards[e])){
-                    transition.trigger=true
-                    transition.scene='map'
-                    this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
-                }
+                this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
             }
         }
     }
@@ -577,15 +575,17 @@ class battle{
                     this.map.main[e].push(0)
                 }else if(floor(random(0,3))==0){
                     this.map.main[e].push(1)
-                }else if(floor(random(0,2))==0){
+                }else if(floor(random(0,4))==0){
                     this.map.main[e].push(2)
-                }else{
+                }else if(floor(random(0,2))==0){
                     this.map.main[e].push(3)
+                }else{
+                    this.map.main[e].push(4)
                 }
                 this.map.complete[e].push(0)
             }
         }
-    }
+    } 
     displayMap(){
         this.layer.stroke(150)
         this.layer.strokeWeight(3)
@@ -598,7 +598,30 @@ class battle{
                 }
             }
         }
+        switch(this.player){
+            case 1:
+                this.layer.fill(160,200,160)
+                this.layer.stroke(120,160,120)
+            break
+            case 2:
+                this.layer.fill(200,120,160)
+                this.layer.stroke(160,80,120)
+            break
+            case 3:
+                this.layer.fill(240,200,160)
+                this.layer.stroke(200,160,120)
+            break
+            case 4:
+                this.layer.fill(220,200,240)
+                this.layer.stroke(180,160,200)
+            break
+        }
+        this.layer.strokeWeight(5)
+        this.layer.rect(32,565,40,30,5)
+        this.layer.fill(0,this.fade)
         this.layer.noStroke()
+        this.layer.textSize(12)
+        this.layer.text('Deck',32,565)
         this.layer.textSize(20)
         for(e=0,le=this.map.main.length;e<le;e++){
             for(f=0,lf=this.map.main[e].length;f<lf;f++){
@@ -620,6 +643,9 @@ class battle{
                     case 3:
                         this.layer.text('Event',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
                     break
+                    case 4:
+                        this.layer.text('Shop',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
+                    break
                 }
             }
         }
@@ -639,41 +665,44 @@ class battle{
         }
     }
     onClickMap(){
-        if(!transition.trigger){
-            for(e=0,le=this.map.main.length;e<le;e++){
-                for(f=0,lf=this.map.main[e].length;f<lf;f++){
-                    if(dist(inputs.rel.x,inputs.rel.y,530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)<50&&e==this.map.position[0]+1&&((f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e].length-1||(f==this.map.position[1]-1||f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e+1].length||(f==this.map.position[1]-1||f==this.map.position[1])&&this.map.main[this.map.position[0]].length==this.map.main[e].length+1)){
-                        this.map.position[0]=e
-                        this.map.position[1]=f
-                        this.map.scrollGoal+=100
-                        transition.trigger=true
-                        switch(this.map.main[e][f]){
-                            case 0:
-                                transition.scene='battle'
-                                setupEncounter(current,zones[this.map.zone].encounters[floor(random(0,zones[this.map.zone].encounters.length))])
-                                this.create()
-                            break
-                            case 1:
-                                transition.scene='battle'
-                                setupEncounter(current,zones[this.map.zone].elites[floor(random(0,zones[this.map.zone].elites.length))])
-                                this.create()
-                            break
-                            case 2:
-                                transition.scene='rest'
-                            break
-                            case 3:
-                                transition.scene='event'
-                                this.calc.list=[]
-                                for(g=0,lg=zones[this.map.zone].events[0].length;g<lg;g++){
-                                    this.calc.list.push(zones[this.map.zone].events[0][g])
-                                }
-                                for(g=0,lg=zones[this.map.zone].events[this.player].length;g<lg;g++){
-                                    this.calc.list.push(zones[this.map.zone].events[this.player][g])
-                                }
-                                this.event=this.calc.list[floor(random(0,this.calc.list.length))]
-                                this.page=0
-                            break
-                        }
+        if(pointInsideBox({position:inputs.rel},{position:{x:32,y:565},width:40,height:30})){
+            transition.trigger=true
+            transition.scene='deck'
+            this.context=5
+        }
+        for(e=0,le=this.map.main.length;e<le;e++){
+            for(f=0,lf=this.map.main[e].length;f<lf;f++){
+                if(dist(inputs.rel.x,inputs.rel.y,530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)<50&&e==this.map.position[0]+1&&((f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e].length-1||(f==this.map.position[1]-1||f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e+1].length||(f==this.map.position[1]-1||f==this.map.position[1])&&this.map.main[this.map.position[0]].length==this.map.main[e].length+1)){
+                    this.map.position[0]=e
+                    this.map.position[1]=f
+                    this.map.scrollGoal+=100
+                    transition.trigger=true
+                    switch(this.map.main[e][f]){
+                        case 0:
+                            transition.scene='battle'
+                            setupEncounter(current,zones[this.map.zone].encounters[floor(random(0,zones[this.map.zone].encounters.length))])
+                            this.create()
+                        break
+                        case 1:
+                            transition.scene='battle'
+                            setupEncounter(current,zones[this.map.zone].elites[floor(random(0,zones[this.map.zone].elites.length))])
+                            this.create()
+                        break
+                        case 2:
+                            transition.scene='rest'
+                        break
+                        case 3:
+                            transition.scene='event'
+                            this.calc.list=[]
+                            for(g=0,lg=zones[this.map.zone].events[0].length;g<lg;g++){
+                                this.calc.list.push(zones[this.map.zone].events[0][g])
+                            }
+                            for(g=0,lg=zones[this.map.zone].events[this.player].length;g<lg;g++){
+                                this.calc.list.push(zones[this.map.zone].events[this.player][g])
+                            }
+                            this.event=this.calc.list[floor(random(0,this.calc.list.length))]
+                            this.page=0
+                        break
                     }
                 }
             }
@@ -746,7 +775,7 @@ class battle{
         }
     }
     displayDeck(){
-        if(this.context==1){
+        if(this.context==1||this.context==4||this.context==5){
             this.deck.displayView()
             this.choice.cards[0].display()
         }else if(this.context==2||this.context==3){
@@ -757,9 +786,9 @@ class battle{
         this.layer.rect(850,570,80,40,5)
         this.layer.fill(0)
         this.layer.textSize(20)
-        if(this.context==3){
+        if(this.context==3||this.context==5){
             this.layer.text('Back',850,570)
-        }else if(this.context==1||this.context==2){
+        }else if(this.context==1||this.context==2||this.context==4){
             this.layer.text('Skip',850,570)
         }
     }
@@ -776,7 +805,7 @@ class battle{
     onClickDeck(){
         if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570},width:80,height:40})){
             transition.trigger=true
-            if(this.context==1){
+            if(this.context==1||this.context==4||this.context==5){
                 transition.scene='map'
             }else if(this.context==2){
                 this.close()
@@ -785,7 +814,7 @@ class battle{
                 transition.scene='battle'
             }
         }
-        if(this.context==1){
+        if(this.context==1||this.context==4){
             this.deck.onClickView(this.context)
         }else if(this.context==2){
             this.discard.onClickView(this.context)
@@ -837,7 +866,7 @@ class battle{
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-4)
                             }else if(this.page==1&&e==0){
                                 transition.scene='choice'
-                                this.setupChoice(1,1,0)
+                                this.setupChoice(0,1,0)
                             }
                         break
                         case 2:
@@ -904,6 +933,20 @@ class battle{
                                 this.deck.add(findCard('Doubt'),0,6)
                             }else if(this.page==3&&e==0){
                                 this.deck.add(findCard('Shame'),0,6)
+                            }
+                        break
+                        case 9:
+                            if(this.page==0&&e==0){
+                                transition.scene='deck'
+                                this.setupDeck(0)
+                                this.context=1
+                            }else if(this.page==0&&e==1){
+                                this.setupChoice(0,floor(random(1,2.5)),0)
+                                transition.scene='choice'
+                            }else if(this.page==0&&e==2){
+                                transition.scene='deck'
+                                this.setupDeck(0)
+                                this.context=4
                             }
                         break
                     }

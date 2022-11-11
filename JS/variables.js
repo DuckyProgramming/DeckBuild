@@ -925,7 +925,7 @@ types={
                     desc:"The book is extremely long and quite confusing, but manages to keep you interested.\n"+
                     "After several hours, you finally reach the end. You've learned some, but you feel weakened.",
                     option:['Exit'],
-                    optionDesc:['Gain 1 Card'],
+                    optionDesc:['Gain a Card'],
                     link:[-1],
                 },{
                     desc:"You leave, knowing it isn't worth the risk.",
@@ -1067,7 +1067,7 @@ types={
                     desc:"You explain the intricate workings of the MPKF to a stunned audience. He's pleased with your explanation.\n"+
                     "He demonstrates some of his tricks and asks if you want to learn one.",
                     option:['Learn a technique'],
-                    optionDesc:['Gain 1 card'],
+                    optionDesc:['Gain a card'],
                     link:[-1],
                 },{
                     desc:"You tell him, but he runs off before you can collect any sort of payment.\n"+
@@ -1151,6 +1151,22 @@ types={
                     option:['Accept your past'],
                     optionDesc:['Become Cursed - Shame'],
                     link:[-1],
+                },
+            ],
+        },{
+            name:'Mountain Dojo',id:9,
+            pages:[
+                {
+                    desc:"You've been here once before, in your youth. That time, you had a reason to go. Now, that's no longer true.\n"+
+                    "Despite this, you feel oddly at home. You haven't been able to train quietly for a long time, with the dangers outside.\n"+
+                    "You pass through several groups of people practicing. You don't recognize any. It's been too long since anybody knew you.\n\n"+
+                    '"Have we met?" You'+"'"+'re startled by a voice from behind. It appears to be the owner, but you don'+"'"+'recognize him immediately.\n'+
+                    '"You went here with your family only a couple years back, right? I remember your mother, though she hasn'+"'"+'t come with you."\n'+
+                    "You reply that you don't want to talk about that. "+'"Well, feel free to use the facility. I'+"'"+'m always generous to family friends."\n'+
+                    'There'+"'"+'s plenty to do inside, but you'+"'"+'ll have to leave pretty soon.',
+                    option:['Train a skill','Learn a skill','Forget a skill'],
+                    optionDesc:['Upgrade a card','Gain a card','Remove a card'],
+                    link:[-1,-1,-1],
                 },
             ],
         },{

@@ -294,6 +294,12 @@ class group{
                     this.cards[e]=new card(this.cards[e].layer,this.cards[e].x,this.cards[e].y,this.cards[e].type,this.cards[e].level+1,this.cards[e].color)
                     transition.trigger=true
                     transition.scene='map'
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&context==4){
+                    this.cards.splice(e,1)
+                    e--
+                    le--
+                    transition.trigger=true
+                    transition.scene='map'
                 }
                 this.cards[e].select=false
             }
@@ -311,7 +317,7 @@ class group{
                     transition.trigger=true
                     transition.scene='battle'
                     this.battle.close()
-                }else{
+                }else if(this.context==0){
                     this.battle.choice.cards[0]=new card(this.layer,this.cards[e].position.x,this.cards[e].position.y,this.cards[e].type,1,this.cards[e].color)
                     this.battle.choice.cards[0].size=1
                 }
