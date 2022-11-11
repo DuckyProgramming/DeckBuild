@@ -29,7 +29,7 @@ class card{
         this.used=false
         this.exhaust=false
     }
-    displayName(deckSize,handSize){
+    displayName(deckSize,handSize,discardSize){
         this.desc=''
         if(this.spec==1||this.spec==6||this.spec==7){
             this.desc+='Unplayable\n'
@@ -189,6 +189,12 @@ class card{
             case 139: this.desc+='Deal '+this.damage+' Damage\nIf not Played\nTake '+this.alt+' Damage'; break
             case 140: this.desc+='Apply '+this.damage+' Vulnerable\nand '+this.alt+' Strength'; break
             case 141: this.desc+='Deal '+this.damage+' Damage\nForce Target\nto Attack'; break
+            case 142: this.desc+='Deal '+this.damage+' Damage\nUp to 2x\nPush Collision\nfor '+this.alt+' Damage'; break
+            case 143: this.desc+='Deal Damage\nEqual to '+this.damage+' Times\nthe Number of\nCards in Discard\n('+discardSize+')'; break
+            case 144: this.desc+='Add '+this.damage+'\nDodge'; break
+            case 145: this.desc+='Add '+this.damage+' Dodge\nCounter '+this.alt+' Once'; break
+            case 146: this.desc+='Add '+this.damage+' Block\nGain 2 Combo\nYou Must Attack\nor Take '+this.alt+' Damage'; break
+            case 147: this.desc+='Attacks add '+this.damage+'\nBleed Current Turn'
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
@@ -203,8 +209,8 @@ class card{
             this.desc=this.desc.substr(0,this.desc.length-1)
         }
     }
-    display(deckSize,handSize){
-        this.displayName(deckSize,handSize)
+    display(deckSize,handSize,discardSize){
+        this.displayName(deckSize,handSize,discardSize)
         if(this.size>0){
             this.layer.translate(this.position.x,this.position.y)
             this.layer.scale(this.size)

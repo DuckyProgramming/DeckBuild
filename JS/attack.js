@@ -702,6 +702,28 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.turn=this.target+100
                 break
+                case 142:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.attacks.push([9,20,this.target,this.alt])
+                break
+                case 143:
+                    this.battle.combatants[this.target].take(this.damage*this.battle.discard.cards.length,this.user)
+                break
+                case 144:
+                    this.battle.combatants[0].status.main[6]++
+                break
+                case 145:
+                    this.battle.combatants[0].status.main[6]++
+                    this.battle.combatants[0].status.main[3]+=this.alt
+                break
+                case 146:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].combo+=2
+                    this.battle.combatants[0].status.main[24]+=this.alt
+                break
+                case 147:
+                    this.battle.combatants[0].status.main[25]+=this.damage
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{
@@ -761,15 +783,19 @@ class attack{
                         this.battle.combatants[this.attacks[g][2]-1].take(this.attacks[g][3],0)
                     }
                 break
-                case 4: case 5:
+                case 4: case 5: case 9:
                     if(this.attacks[g][1]<10){
                         this.battle.combatants[this.attacks[g][2]].position.x-=8
                     }else{
                         this.battle.combatants[this.attacks[g][2]].position.x+=8
                     }
                     if(this.attacks[g][1]==10&&this.attacks[g][2]<this.battle.combatants.length-1){
-                        if(this.battle.combatants[this.attacks[g][2]+1].life>0&&this.attacks[g][0]==5){
+                        if(this.battle.combatants[this.attacks[g][2]+1].life>0&&(this.attacks[g][0]==5||this.attacks[g][0]==9)){
                             this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3],0)
+                            this.battle.combatants[0].combo--
+                            if(this.attacks[g][0]==9){
+                                this.attacks.push([5,20,this.attacks[g][2]+1,this.attacks[g][3]])
+                            }
                         }
                         this.battle.combatants[this.attacks[g][2]+1].take(this.attacks[g][3],0)
                     }

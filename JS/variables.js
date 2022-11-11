@@ -255,6 +255,41 @@ types={
             {damage:16,alt:0,cost:1,attack:141,target:1,desc:'',spec:0,class:0},
             {damage:20,alt:0,cost:1,attack:141,target:1,desc:'',spec:0,class:0},
         ],
+        },{name:'Quick Kick',rarity:0,list:1,
+        stats:[
+            {damage:4,alt:4,cost:1,attack:93,target:1,desc:'',spec:0,class:0},
+            {damage:8,alt:4,cost:1,attack:93,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Front Kick',rarity:0,list:1,
+        stats:[
+            {damage:6,alt:4,cost:2,attack:142,target:1,desc:'',spec:0,class:0},
+            {damage:12,alt:4,cost:2,attack:142,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'One Last\nThing',rarity:1,list:1,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:143,target:1,desc:'',spec:0,class:0},
+            {damage:3,alt:0,cost:1,attack:143,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Dodge',rarity:0,list:1,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:144,target:0,desc:'',spec:0,class:1},
+            {damage:1,alt:0,cost:0,attack:144,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Dodge\nCounter',rarity:1,list:1,
+        stats:[
+            {damage:1,alt:10,cost:1,attack:145,target:0,desc:'',spec:0,class:1},
+            {damage:1,alt:12,cost:0,attack:145,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Dynamic',rarity:1,list:1,
+        stats:[
+            {damage:6,alt:8,cost:1,attack:146,target:0,desc:'',spec:0,class:1},
+            {damage:10,alt:8,cost:1,attack:146,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Hidden\nBlade',rarity:1,list:1,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:147,target:0,desc:'',spec:0,class:2},
+            {damage:5,alt:0,cost:1,attack:147,target:0,desc:'',spec:0,class:2},
+        ],
         },{name:'Vigilance',rarity:1,list:2,
         stats:[
             {damage:8,alt:0,cost:2,attack:27,target:0,desc:'',spec:0,class:1},

@@ -135,6 +135,9 @@ class battle{
             this.combatants[e].block=0
             this.combatants[e].setupIntent(-1)
             for(f=0,lf=this.combatants[e].status.main.length;f<lf;f++){
+                if(this.combatants[e].status.main[f]>0&&f==24){
+                    this.combatants[e].take(this.combatants[e].status.main[f],e)
+                }
                 if(f==11&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                     this.combatants[e].status.main[f]--
@@ -162,6 +165,7 @@ class battle{
                 }
             }
         }else if(this.attack.class==0){
+            this.combatants[0].status.main[24]=0
             for(g=0,lg=this.hand.cards.length;g<lg;g++){
                 if(this.hand.cards[g].attack==-12){
                     this.allDiscard()
@@ -546,7 +550,7 @@ class battle{
         this.layer.textSize(20)
         this.layer.text('Skip',450,450)
         for(e=0,le=this.choice.cards.length;e<le;e++){
-            this.choice.cards[e].display(this.deck.cards.length,this.drawAmount)
+            this.choice.cards[e].display(this.deck.cards.length,this.drawAmount,0)
         }
     }
     onClickChoice(){
@@ -777,7 +781,7 @@ class battle{
     displayDeck(){
         if(this.context==1||this.context==4||this.context==5){
             this.deck.displayView()
-            this.choice.cards[0].display()
+            this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0)
         }else if(this.context==2||this.context==3){
             this.discard.displayView()
         }
