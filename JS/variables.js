@@ -1205,6 +1205,41 @@ types={
                 },
             ],
         },{
+            name:'Getting Away',id:10,
+            pages:[
+                {
+                    desc:"Chasing a possible suspect, you round the corner only to see him grab a motorbike and speed off.\n"+
+                    "You only have a few seconds to act before he drives over the hill and gets away from law enforcement again.\n"+
+                    "The issue is, the nearby policing base asked you to call them whenever you have a target spotted.",
+                    option:['Chase him down,\nhow hard can it be?','Call the cops'],
+                    optionDesc:['',''],
+                    link:[1,3],
+                },{
+                    desc:"You catch up and bring him in. The cops are annoyed that you did it yourself, but hand over a bonus anyway.\n"+
+                    "And, as a bonus, you learned a new skill.",
+                    option:['Job well done'],
+                    optionDesc:['Gain $15\nGain 1 card'],
+                    link:[-1],
+                },{
+                    desc:"Picking up another motorbike, you catch up only to collide into a wall.\n"+
+                    "Guess you shouldn't trust random motorbikes on the side of buildings.",
+                    option:['Ouch'],
+                    optionDesc:['Lose 8 Health'],
+                    link:[-1],
+                },{
+                    desc:"He's long gone by the time they arrive. Another suspect lost.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"You are later informed of the following events. They caught up to the suspect in the town and arrested him.\n"+
+                    "You're handed a small amount of money for your assistance in bringing him in.",
+                    option:['Take the money'],
+                    optionDesc:['Gain $15'],
+                    link:[-1],
+                },
+            ],
+        },{
             name:'',id:0,
             pages:[
                 {

@@ -6,11 +6,11 @@ function setup(){
     setupEncounter(current,2)
     current.create()
     
-    //transition.trigger=true
-    //transition.scene='event'
+    transition.trigger=true
+    transition.scene='event'
     current.setupMap()
-    //current.map.complete[0][0]=1
-    //current.event=10
+    current.map.complete[0][0]=1
+    current.event=10
 }
 function windowResized(){
     resizeCanvas(windowWidth-50,windowHeight-50)

@@ -535,6 +535,10 @@ class battle{
                 this.choice.cards.push(new card(this.layer,450,300,findCard('This is\nPersonal'),level,this.player))
                 this.choice.cards.push(new card(this.layer,675,300,findCard('Enraging\nBlow'),level,this.player))
             break
+            case 2:
+                h=listing.card[this.player][rarity][floor(random(0,listing.card[this.player][rarity].length))]
+                this.choice.cards.push(new card(this.layer,450,300,h,level,types.card[h].list))
+            break
         }
         for(g=0,lg=this.choice.cards.length;g<lg;g++){
             this.choice.cards[g].size=1
@@ -779,11 +783,13 @@ class battle{
         }
     }
     displayDeck(){
-        if(this.context==1||this.context==4||this.context==5){
+        if(this.context==1||this.context==4){
             this.deck.displayView()
             this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0)
         }else if(this.context==2||this.context==3){
             this.discard.displayView()
+        }else if(this.context==5){
+            this.deck.displayView()
         }
         this.layer.noStroke()
         this.layer.fill(80)
@@ -951,6 +957,19 @@ class battle{
                                 transition.scene='deck'
                                 this.setupDeck(0)
                                 this.context=4
+                            }
+                        break
+                        case 10:
+                            if(this.page==0&&floor(random(0,3))==0){
+                                this.remember[0]=1
+                            }else if(this.page==1&&e==0){
+                                this.currency.money+=15
+                                this.setupChoice(0,0,2)
+                                transition.scene='choice'
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-8)
+                            }else if(this.page==3&&e==0){
+                                this.currency.money+=15
                             }
                         break
                     }
