@@ -23,6 +23,13 @@ class attack{
         this.side=side
         if(side==0){
             switch(type){
+                case -12:
+                    if(this.battle.combatants[0].meter<0){
+                        this.battle.combatants[0].meter=-100
+                    }else if(this.battle.combatants[0].meter>0){
+                        this.battle.combatants[0].meter=100
+                    }
+                break
                 case 1: case 52: case 99: case 114: case 139:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break

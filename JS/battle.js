@@ -161,6 +161,12 @@ class battle{
                     this.allDiscard()
                 }
             }
+        }else if(this.attack.class==0){
+            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                if(this.hand.cards[g].attack==-12){
+                    this.allDiscard()
+                }
+            }
         }
         for(g=0,lg=this.hand.cards.length;g<lg;g++){
             if(this.hand.cards[g].attack==-2){
@@ -752,6 +758,7 @@ class battle{
         this.layer.fill(0)
         this.layer.textSize(20)
         if(this.context==3){
+            this.layer.text('Back',850,570)
         }else if(this.context==1||this.context==2){
             this.layer.text('Skip',850,570)
         }
@@ -816,7 +823,7 @@ class battle{
     }
     onClickEvent(){
         if(!transition.trigger){
-            for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
+            for(let e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
                 if(pointInsideBox({position:inputs.rel},{position:{x:450,y:350+e*60},width:200,height:50})){
                     if(types.event[this.event].pages[this.page].link[e]==-1){
                         this.map.complete[this.map.position[0]][this.map.position[1]]=1
@@ -824,7 +831,7 @@ class battle{
                         transition.scene='map'
                     }
                     this.remember[0]=0
-                    switch(this.event){
+                    switch(types.event[this.event].id){
                         case 1:
                             if(this.page==0&&e==0){
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-4)
@@ -874,6 +881,29 @@ class battle{
                                 transition.scene='choice'
                             }else if(this.page==2&&e==0){
                                 this.currency.money=0
+                            }
+                        break
+                        case 7:
+                            if((this.page==0||this.page==1)&&e==0&&floor(random(0,2))==0){
+                                this.remember[0]=3-types.event[this.event].pages[this.page].link[e]
+                            }else if((this.page==0||this.page==1)&&e==1){
+                                setupEncounter(current,zones[0].special[0])
+                                this.create()
+                                transition.scene='battle'
+                            }else if(this.page==3&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-6)
+                                setupEncounter(current,zones[0].special[0])
+                                this.create()
+                                transition.scene='battle'
+                            }
+                        break
+                        case 8:
+                            if(this.page==1&&e==0){
+                                this.deck.add(findCard('Imbalance'),0,6)
+                            }else if(this.page==2&&e==0){
+                                this.deck.add(findCard('Doubt'),0,6)
+                            }else if(this.page==3&&e==0){
+                                this.deck.add(findCard('Shame'),0,6)
                             }
                         break
                     }

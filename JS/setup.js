@@ -1,7 +1,7 @@
 function setup(){
     createCanvas(windowWidth-50,windowHeight-50)
     setupGraphics()
-    current=new battle(graphics.main,1)
+    current=new battle(graphics.main,4)
     generateListing(types.card)
     setupEncounter(current,1)
     current.create()
@@ -10,7 +10,7 @@ function setup(){
     transition.scene='event'
     current.setupMap()
     current.map.complete[0][0]=1
-    current.event=7
+    current.event=8
 }
 function windowResized(){
     resizeCanvas(windowWidth-50,windowHeight-50)

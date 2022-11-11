@@ -55,12 +55,12 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(2,0,this.battle.player)
                 }
-                this.add(106,0,this.battle.player)
-                this.add(107,0,this.battle.player)
-                this.add(108,0,this.battle.player)
-                this.add(109,0,this.battle.player)
-                this.add(110,0,this.battle.player)
-                this.add(111,0,this.battle.player)
+                this.add(136,0,this.battle.player)
+                this.add(137,0,this.battle.player)
+                this.add(138,0,this.battle.player)
+                this.add(139,0,this.battle.player)
+                this.add(140,0,this.battle.player)
+                this.add(141,0,this.battle.player)
             break
         }
     }

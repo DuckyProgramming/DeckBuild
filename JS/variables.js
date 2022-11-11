@@ -835,6 +835,11 @@ types={
             {damage:0,alt:0,cost:0,attack:-11,target:0,desc:'',spec:1,class:0},
             {damage:0,alt:0,cost:0,attack:-11,target:0,desc:'',spec:1,class:0},
         ],
+        },{name:'Imbalance',rarity:-1,list:10,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-12,target:0,desc:'',spec:0,class:0},
+            {damage:0,alt:0,cost:0,attack:-12,target:0,desc:'',spec:0,class:0},
+        ],
         },{name:'Confusion',rarity:-2,list:11,
         stats:[
             {damage:0,alt:0,cost:0,attack:-1,target:0,desc:'',spec:1,class:0},
@@ -896,7 +901,7 @@ types={
         },
     ],event:[
         {
-            name:'',
+            name:'',id:0,
             pages:[
                 {
                     desc:"",
@@ -906,7 +911,7 @@ types={
                 }
             ],
         },{
-            name:'Dropped Book',
+            name:'Dropped Book',id:1,
             pages:[
                 {
                     desc:"You come across what appears to be a book lying in the dirt.\n"+
@@ -930,7 +935,7 @@ types={
                 },
             ],
         },{
-            name:'The Lieutenant',
+            name:'Bonus',id:2,
             pages:[
                 {
                     desc:"You receive a phone call from the Ground Sector Commander. He sounds happy.\n"+
@@ -963,7 +968,7 @@ types={
                 },
             ],
         },{
-            name:'MSB Agent',
+            name:'MSB Agent',id:3,
             pages:[
                 {
                     desc:"You receive indication that another Agent, working for the Management Security Bureau,\n"+
@@ -987,36 +992,36 @@ types={
                 },
             ],
         },{
-            name:'Unstable Building',
+            name:'Unstable Building',id:4,
             pages:[
                 {
                     desc:"You enter a building, looking for a piece of intel. But as soon as you step inside,\n"+
                     "the walls start shaking. You don't have much time, as the building will collapse any minute,\n"+
                     "but there's still enough to grab something before you leave.",
-                    option:['Grab the Briefcase','Grab the Medical Kit'],
+                    option:['Grab the briefcase','Grab the medical kit'],
                     optionDesc:['',''],
                     link:[1,2,3],
                 },{
                     desc:"The building collapses as you carry the heavy case out, but you get out without major injuries.\n"+
                     "You get the intel to your bosses and collect a bonus for the information.",
-                    option:['Collect the Money'],
+                    option:['Collect the money'],
                     optionDesc:['Gain $150, lose 20 Health'],
                     link:[-1],
                 },{
                     desc:"You manage to make it out, and the kit is exactly what it looks like.",
-                    option:['Use the Kit'],
+                    option:['Use the kit'],
                     optionDesc:['Heal to Full'],
                     link:[-1],
                 }
             ],
         },{
-            name:'Bodyguard Business',
+            name:'Bodyguard Business',id:5,
             pages:[
                 {
                     desc:"You receive word that Governor Lirestont of the Tersosi system has arrived on-world to make a speech.\n"+
                     "Your commander offers you to work as the Governor's bodyguard while pausing your mission.\n"+
                     "It'll just be a couple hours at the capital building, so how can anything go wrong?",
-                    option:['Take the Job','Decide against it'],
+                    option:['Take the job','Decide against it'],
                     optionDesc:['',''],
                     link:[1,3],
                 },{
@@ -1029,7 +1034,7 @@ types={
                     desc:"As the Governor is finishing his speech, a shot appears from the center of the crowd.\n"+
                     "Luckily, it misses him, only to hit you instead. The other guards managed to bring the Governor out alive,\n"+
                     "and you escape under the cover of a fight. Your payment only just manages to patch you up.",
-                    option:['At least he escaped'],
+                    option:['Deal with the injury'],
                     optionDesc:['Lose 15 Health'],
                     link:[-1],
                 },{
@@ -1048,7 +1053,7 @@ types={
                 },
             ],
         },{
-            name:'Curious Soldier',
+            name:'Curious Soldier',id:6,
             pages:[
                 {
                     desc:"On break, you encounter a Management soldier hanging out in town. Recognizing your uniform, he pulls you over.\n"+
@@ -1080,17 +1085,76 @@ types={
                 },
             ],
         },{
-            name:'Bar Fight',
+            name:'Bar Fight',id:7,
             pages:[
                 {
-                    desc:"",
-                    option:[],
-                    optionDesc:[],
-                    link:[],
+                    desc:"You arrive in a bar, hoping to enjoy the evening. But you are rudely awakened when a man touches your shoulder.\n"+
+                    "The people here might not know who you are. But they definitely know that you don't belong here.\n"+
+                    "His friends surround you, ready to get some information out of you. Things could quickly get ugly.",
+                    option:['Ask them what they want ','Punch him'],
+                    optionDesc:['','Start fight'],
+                    link:[1,-1],
+                },{
+                    desc:"He asks you where you're from, and why you're here.",
+                    option:['Tell the truth.','Punch him'],
+                    optionDesc:['','Start Fight'],
+                    link:[2,-1],
+                },{
+                    desc:"He looks at you with disapproval, but backs down, avoiding having to fight.\n"+
+                    "The gang returns to chatting in the back, while you enjoy some well-earned rest.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"He manages to get in a quick strike.",
+                    option:['Fight Back'],
+                    optionDesc:['Lose 6 HP, Start Fight'],
+                    link:[-1],
                 },
             ],
         },{
-            name:'',
+            name:'Visions of the Past',id:8,
+            pages:[
+                {
+                    desc:"As you walk, your head suddenly fills with thoughts of your past. Images flash by before you can remember much.\n"+
+                    "Visions of the scientists activating the inhibitor, the programmers reading out instructions, the supervisors watching you.\n"+
+                    "This is what the Management did, when you were their property, when you did what they wanted, back when you trusted Illyesc...\n\n"+
+                    "The visions continue to appear and overwhelm your mind. You have to get the situation in control somehow.\n"+
+                    "You only know one way to do so. Focus on one event to drown out the others.",
+                    option:['The scientists','The programmers','The supervisors'],
+                    optionDesc:['','',''],
+                    link:[1,2,3],
+                },{
+                    desc:"You remember it now, those chains. How they would inject you with that liquid, how they disabled your ability to move.\n"+
+                    "They did it because the Management told them to. The Director, the Supreme Executor, they were just there to control you.\n"+
+                    "How controlling they were. Your body still suffers trauma from withdraw, because they built reliance.\n\n"+
+                    "Screw the Management.\n\n"+
+                    "The visions recede. It's over.",
+                    option:['Accept your past'],
+                    optionDesc:['Become Cursed - Imbalance'],
+                    link:[-1],
+                },{
+                    desc:"You remember it now, those devices. The programmers treated you as nothing more than an experiment.\n"+
+                    "Project Godhood thought that your role as a creation destroyed your humanity. They couldn't have been more wrong in your eyes.\n"+
+                    "But they didn't care, because it made the Executives like them. You were tortured, all for somebody else's promotion.\n"+
+                    "Screw the Management.\n\n"+
+                    "The visions recede. It's over.",
+                    option:['Accept your past'],
+                    optionDesc:['Become Cursed - Doubt'],
+                    link:[-1],
+                },{
+                    desc:"You remember it now, those scanners. Watching you every moment of your life, everything you ever did. All on their screens.\n"+
+                    "It was done for a reason. They needed to keep an eye on their prize possession and keep tabs on its development.\n"+
+                    "But that doesn't excuse them for the oppression they carried out on you. Good thing you escaped them.\n\n"+
+                    "Screw the Management.\n\n"+
+                    "The visions recede. It's over.",
+                    option:['Accept your past'],
+                    optionDesc:['Become Cursed - Shame'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'',id:0,
             pages:[
                 {
                     desc:"",
@@ -1107,6 +1171,17 @@ listing={
 }
 zones=[
     {
+        encounters:[1],
+        elites:[2],
+        special:[1],
+        events:[
+            [],
+            [],
+            [],
+            [],
+            [],
+        ],
+    },{
         encounters:[1],
         elites:[2],
         events:[

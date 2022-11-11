@@ -47,6 +47,7 @@ class card{
             case -9: this.desc+='When Drawn,\nLose 1 Mana'; break
             case -10: this.desc+='At End of Turn,\nTake 2 Damage'; break
             case -11: this.desc+='Cannot Play more\nthan 3 Cards'; break
+            case -12: this.desc+='Cannot Play more\nthan 1 Attack\nWhen Played,\nBreak Balance'; break
             case 1: this.desc+='Deal '+this.damage+'\nDamage'; break
             case 2: this.desc+='Add '+this.damage+'\nBlock'; break
             case 3: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times'; break
