@@ -32,6 +32,7 @@ class battle{
         this.event=0
         this.page=0
         this.costs={card:[[0,0,0,0,0],[0,0]],sale:0,remove:0}
+        this.relic={list:[],owned:[],active:[]}
     }
     create(){
         this.end=false
@@ -80,6 +81,12 @@ class battle{
         }
         for(g=0,lg=zones[this.map.zone].events[this.player].length;g<lg;g++){
             this.eventList.push(zones[this.map.zone].events[this.player][g])
+        }
+        for(g=0,lg=types.relic.length;g<lg;g++){
+            if(g>=1){
+                this.relic.list.push(g)
+            }
+            this.relic.active.push(false)
         }
     }
     initialReserve(){

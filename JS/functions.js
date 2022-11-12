@@ -150,3 +150,27 @@ function findCard(name){
 	}
 	return -1
 }
+function displayRelicSymbol(layer,x,y,type,direction,size,flip){
+	layer.translate(x,y)
+	layer.rotate(direction)
+	layer.scale(size,size*flip)
+	switch(type){
+		case 1:
+		break
+	}
+	layer.scale(1/size,1/size/flip)
+	layer.rotate(-direction)
+	layer.translate(-x,-y)
+}
+function displaySymbol(layer,x,y,type,direction,size,flip){
+	layer.translate(x,y)
+	layer.rotate(direction)
+	layer.scale(size,size*flip)
+	switch(type){
+		case 1:
+		break
+	}
+	layer.scale(1/size,1/size/flip)
+	layer.rotate(-direction)
+	layer.translate(-x,-y)
+}

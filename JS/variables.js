@@ -934,6 +934,14 @@ types={
             threshold:3,
             objective:[[0,10,1,0],[1,5,3,10]],
         },
+    ],relic:[
+        {
+            name:'',id:0,
+            desc:'',
+        },{
+            name:'Tactical Readout',id:1,
+            desc:'Gain 1 Redraw at the Start of Combat',
+        },
     ],event:[
         {
             name:'',id:0,
