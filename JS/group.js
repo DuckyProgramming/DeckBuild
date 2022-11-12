@@ -300,10 +300,11 @@ class group{
                     le--
                     transition.trigger=true
                     transition.scene='map'
-                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&context==6){
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&context==6&&this.battle.currency.money>=this.battle.costs.remove){
                     this.cards.splice(e,1)
                     e--
                     le--
+                    this.battle.currency.money-=this.battle.costs.remove
                     this.battle.costs.remove+=20
                 }
                 this.cards[e].select=false
@@ -330,7 +331,9 @@ class group{
         }
         if(!this.selected){
             this.select=false
-            this.battle.choice.cards[0]=new card(this.layer,-300,0,0,0,0)
+            if(context!=6){
+                this.battle.choice.cards[0]=new card(this.layer,-300,0,0,0,0)
+            }
         }
     }
 }

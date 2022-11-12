@@ -31,7 +31,7 @@ class battle{
         this.eventList=[]
         this.event=0
         this.page=0
-        this.costs={remove:0}
+        this.costs={card:[[0,0,0,0,0],[0,0]],sale:0,remove:0}
     }
     create(){
         this.end=false
@@ -72,7 +72,9 @@ class battle{
         }
     }
     initialEvent(){
-        this.costs.remove=40
+        this.costs.card=[[0,0,0,0,0],[0,0]]
+        this.costs.sale=0
+        this.costs.remove=80
         for(g=0,lg=zones[this.map.zone].events[0].length;g<lg;g++){
             this.eventList.push(zones[this.map.zone].events[0][g])
         }
@@ -837,7 +839,7 @@ class battle{
         this.deck.updateView()
     }
     onClickDeck(){
-        if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570}, width:80,height:40})){
+        if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570},width:80,height:40})){
             transition.trigger=true
             if(this.context==1||this.context==4||this.context==5){
                 transition.scene='map'
@@ -1008,6 +1010,15 @@ class battle{
     }
     setupShop(spec){
         this.choice.cards=[]
+        this.costs.card[0][0]=round(random(40,60))
+        this.costs.card[0][1]=round(random(40,60))
+        this.costs.card[0][2]=round(random(60,80))
+        this.costs.card[0][3]=round(random(60,80))
+        this.costs.card[0][4]=round(random(120,160))
+        this.costs.card[1][0]=round(random(80,100))
+        this.costs.card[1][1]=round(random(160,200))
+        this.costs.sale=floor(random(0,5))
+        this.costs.card[0][this.costs.sale]=round(this.costs.card[0][this.costs.sale]/2)
         switch(spec){
             case 0:
                 this.calc.list=listing.card[this.player]
@@ -1030,7 +1041,9 @@ class battle{
     }
     displayShop(){
         for(e=0,le=this.choice.cards.length;e<le;e++){
-            this.choice.cards[e].display(this.deck.cards.length,this.drawAmount,0)
+            if(this.choice.cards[e]!=0){
+                this.choice.cards[e].display(this.deck.cards.length,this.drawAmount,0)
+            }
         }
         this.layer.fill(160,80,80)
         this.layer.stroke(200,100,100)
@@ -1050,13 +1063,58 @@ class battle{
         this.layer.text(this.currency.money,30,18)
         this.layer.textAlign(CENTER,CENTER)
         this.layer.text(this.costs.remove,825,400)
+        for(g=0;g<5;g++){
+            if(this.choice.cards[g]!=0){
+                this.layer.fill(255,225,0,this.choice.cards[g].size)
+                this.layer.text(this.costs.card[0][g],this.choice.cards[g].position.x,this.choice.cards[g].position.y+100)
+                if(this.costs.sale==g){
+                    this.layer.text('Sale',this.choice.cards[g].position.x,this.choice.cards[g].position.y-100)
+                }
+            }
+        }
+        for(g=0;g<2;g++){
+            if(this.choice.cards[g+5]!=0){
+                this.layer.fill(255,225,0,this.choice.cards[g+5].size)
+                this.layer.text(this.costs.card[1][g],this.choice.cards[g+5].position.x,this.choice.cards[g+5].position.y+100)
+            }
+        }
+        this.layer.noStroke()
+        this.layer.fill(160)
+        this.layer.rect(850,570,80,40,5)
+        this.layer.fill(0)
+        this.layer.textSize(20)
+        this.layer.text('Exit',850,570)
+    }
+    updateShop(){
+        for(e=0,le=this.choice.cards.length;e<le;e++){
+            if(this.choice.cards[e].used){
+                this.choice.cards[e].size-=0.1
+                if(this.choice.cards[e].size<=0){
+                    this.choice.cards[e]=0
+                }
+            }
+        }
     }
     onClickShop(){
+        if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570},width:80,height:40})){
+            transition.trigger=true
+            transition.scene='map'
+            this.map.complete[this.map.position[0]][this.map.position[1]]=1
+        }
         if(pointInsideBox({position:inputs.rel},{position:{x:825,y:300},width:120,height:160})){
             transition.trigger=true
             transition.scene='deck'
             this.setupDeck(6)
             this.context=6
+        }
+        for(e=0,le=this.choice.cards.length;e<le;e++){
+            if(this.choice.cards[e]!=0){
+                if(pointInsideBox({position:inputs.rel},this.choice.cards[e])&&this.currency.money>=this.costs.card[floor(e/5)][e%5]&&!this.choice.cards[e].used){
+                    this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                    this.currency.money-=this.costs.card[floor(e/5)][e%5]
+                    this.choice.cards[e].used=true
+                }
+            }
         }
     }
 }

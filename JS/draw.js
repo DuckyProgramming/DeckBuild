@@ -37,6 +37,7 @@ function draw(){
         case 'shop':
             graphics.main.background(80,85,90)
             current.displayShop()
+            current.updateShop()
         break
     }
     stage.scale=min(width/graphics.main.width,height/graphics.main.height)

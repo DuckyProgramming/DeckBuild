@@ -127,8 +127,8 @@ types={
         ],
         },{name:'Virtuous\nCircle',rarity:1,list:1,
         stats:[
-            {damage:7,alt:0,cost:5,attack:35,target:0,desc:'',spec:4,class:2},
             {damage:9,alt:0,cost:5,attack:35,target:0,desc:'',spec:4,class:2},
+            {damage:13,alt:0,cost:5,attack:35,target:0,desc:'',spec:4,class:2},
         ],
         },{name:'Palm\nStrike',rarity:0,list:1,
         stats:[
