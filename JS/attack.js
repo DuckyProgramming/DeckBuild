@@ -57,8 +57,8 @@ class attack{
                 break
                 case 8:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.battle.drop.addDrop(findCard('Bleed'),0,5)
-                    this.battle.reserve.add(findCard('Bleed'),0,5)
+                    this.battle.drop.addDrop(findCard('Bleed'),0,stage.playerNumber+1)
+                    this.battle.reserve.add(findCard('Bleed'),0,stage.playerNumber+1)
                 break
                 case 9:
                     this.battle.combatants[this.target].take(this.damage,this.user)
@@ -733,16 +733,16 @@ class attack{
                     this.attacks.push([1,12,this.user,this.damage])
                 break
                 case 2:
-                    this.battle.drop.addDrop(findCard('Confusion'),0,5)
-                    this.battle.reserve.add(findCard('Confusion'),0,5)
+                    this.battle.drop.addDrop(findCard('Confusion'),0,stage.playerNumber+1)
+                    this.battle.reserve.add(findCard('Confusion'),0,stage.playerNumber+1)
                 break
                 case 3:
                     this.battle.combatants[0].take(this.damage,this.user)
                     this.attacks.push([7,7+this.alt*5,this.user,this.damage,this.alt])
                 break
                 case 4:
-                    this.battle.drop.addDrop(findCard('Dazed'),0,5)
-                    this.battle.reserve.add(findCard('Dazed'),0,5)
+                    this.battle.drop.addDrop(findCard('Dazed'),0,stage.playerNumber+1)
+                    this.battle.reserve.add(findCard('Dazed'),0,stage.playerNumber+1)
                     this.attacks.push([8,20,0,'Dazed'])
                 break
             }

@@ -34,6 +34,10 @@ function draw(){
             current.displayEvent()
             current.updateEvent()
         break
+        case 'shop':
+            graphics.main.background(80,85,90)
+            current.displayShop()
+        break
     }
     stage.scale=min(width/graphics.main.width,height/graphics.main.height)
     displayTransition(graphics.main,transition)

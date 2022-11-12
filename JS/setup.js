@@ -5,12 +5,17 @@ function setup(){
     generateListing(types.card)
     setupEncounter(current,2)
     current.create()
+    current.initialEvent()
+    current.setupShop(0)
     
-    transition.trigger=true
-    transition.scene='event'
+    //transition.trigger=true
+    //transition.scene='event'
     current.setupMap()
-    current.map.complete[0][0]=1
-    current.event=10
+    //current.map.complete[0][0]=1
+    //current.event=10
+
+    transition.trigger=true
+    transition.scene='shop'
 }
 function windowResized(){
     resizeCanvas(windowWidth-50,windowHeight-50)

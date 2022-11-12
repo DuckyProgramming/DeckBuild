@@ -20,5 +20,8 @@ function mouseClicked(){
         case 'event':
             current.onClickEvent()
         break
+        case 'shop':
+            current.onClickShop()
+        break
     }
 }

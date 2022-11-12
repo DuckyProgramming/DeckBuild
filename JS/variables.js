@@ -1279,7 +1279,7 @@ zones=[
         ],
     },
 ]
-stage={scale:0,scene:'battle'}
+stage={scale:0,scene:'battle',playerNumber:4}
 graphics={main:0,minor:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}

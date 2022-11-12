@@ -28,8 +28,10 @@ class battle{
         this.map={main:[],complete:[],scroll:0,scrollGoal:100,position:[0,0],zone:0}
         this.restOptions=[1,2]
         this.context=0
+        this.eventList=[]
         this.event=0
         this.page=0
+        this.costs={remove:0}
     }
     create(){
         this.end=false
@@ -67,6 +69,15 @@ class battle{
         this.drawInitial()
         for(e=0,le=this.drawAmount-this.hand.cards.length;e<le;e++){
             this.draw()
+        }
+    }
+    initialEvent(){
+        this.costs.remove=40
+        for(g=0,lg=zones[this.map.zone].events[0].length;g<lg;g++){
+            this.eventList.push(zones[this.map.zone].events[0][g])
+        }
+        for(g=0,lg=zones[this.map.zone].events[this.player].length;g<lg;g++){
+            this.eventList.push(zones[this.map.zone].events[this.player][g])
         }
     }
     initialReserve(){
@@ -525,8 +536,9 @@ class battle{
         this.choice.cards=[]
         switch(spec){
             case 0:
+                this.calc.list=listing.card[this.player][rarity]
                 for(g=0;g<3;g++){
-                    h=listing.card[this.player][rarity][floor(random(0,listing.card[this.player][rarity].length))]
+                    h=this.calc.list[floor(random(0,this.calc.list.length))]
                     this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
                 }
             break
@@ -701,15 +713,14 @@ class battle{
                         break
                         case 3:
                             transition.scene='event'
-                            this.calc.list=[]
-                            for(g=0,lg=zones[this.map.zone].events[0].length;g<lg;g++){
-                                this.calc.list.push(zones[this.map.zone].events[0][g])
-                            }
-                            for(g=0,lg=zones[this.map.zone].events[this.player].length;g<lg;g++){
-                                this.calc.list.push(zones[this.map.zone].events[this.player][g])
-                            }
-                            this.event=this.calc.list[floor(random(0,this.calc.list.length))]
+                            e=this.eventList[floor(random(0,this.eventList.length))]
+                            this.event=this.eventList[e]
+                            this.eventList.splice(e,1)
                             this.page=0
+                        break
+                        case 4:
+                            transition.scene='shop'
+                            this.setupShop(0)
                         break
                     }
                 }
@@ -764,7 +775,7 @@ class battle{
                         case 2:
                             transition.scene='deck'
                             this.context=1
-                            this.setupDeck(0)
+                            this.setupDeck(1)
                         break
                     }
                 }
@@ -778,8 +789,8 @@ class battle{
             this.choice.cards=[]
             this.choice.cards.push(new card(this.layer,-300,0,0,0,0))
         }
-        for(g=0,lg=this.deck.cards.length;g<lg;g++){
-            this.deck.cards[e].anim.select=0
+        for(let g=0,lg=this.deck.cards.length;g<lg;g++){
+            this.deck.cards[g].anim.select=0
         }
     }
     displayDeck(){
@@ -788,7 +799,7 @@ class battle{
             this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0)
         }else if(this.context==2||this.context==3){
             this.discard.displayView()
-        }else if(this.context==5){
+        }else if(this.context==5||this.context==6){
             this.deck.displayView()
         }
         this.layer.noStroke()
@@ -796,10 +807,23 @@ class battle{
         this.layer.rect(850,570,80,40,5)
         this.layer.fill(0)
         this.layer.textSize(20)
-        if(this.context==3||this.context==5){
+        if(this.context==3||this.context==5||this.context==6){
             this.layer.text('Back',850,570)
         }else if(this.context==1||this.context==2||this.context==4){
             this.layer.text('Skip',850,570)
+        }
+        if(this.context==6){
+            this.layer.fill(255,225,0)
+            this.layer.ellipse(20,16,16,16)
+            this.layer.fill(255,240,0)
+            this.layer.ellipse(20,16,10,10)
+            this.layer.fill(255,225,0)
+            this.layer.textSize(16)
+            this.layer.textAlign(LEFT,CENTER)
+            this.layer.text(this.currency.money,30,18)
+            this.layer.textAlign(RIGHT,CENTER)
+            this.layer.text('Remove for '+this.costs.remove,890,18)
+            this.layer.textAlign(CENTER,CENTER)
         }
     }
     updateDeck(){
@@ -813,7 +837,7 @@ class battle{
         this.deck.updateView()
     }
     onClickDeck(){
-        if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570},width:80,height:40})){
+        if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570}, width:80,height:40})){
             transition.trigger=true
             if(this.context==1||this.context==4||this.context==5){
                 transition.scene='map'
@@ -822,9 +846,11 @@ class battle{
                 transition.scene='battle'
             }else if(this.context==3){
                 transition.scene='battle'
+            }else if(this.context==6){
+                transition.scene='shop'
             }
         }
-        if(this.context==1||this.context==4){
+        if(this.context==1||this.context==4||this.context==6){
             this.deck.onClickView(this.context)
         }else if(this.context==2){
             this.discard.onClickView(this.context)
@@ -891,7 +917,7 @@ class battle{
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-10)
                             }else if(this.page==1&&e==0){
                                 transition.scene='deck'
-                                this.setupDeck(0)
+                                this.setupDeck(1)
                                 this.context=1
                             }
                         break
@@ -938,24 +964,24 @@ class battle{
                         break
                         case 8:
                             if(this.page==1&&e==0){
-                                this.deck.add(findCard('Imbalance'),0,6)
+                                this.deck.add(findCard('Imbalance'),0,stage.playerNumber+2)
                             }else if(this.page==2&&e==0){
-                                this.deck.add(findCard('Doubt'),0,6)
+                                this.deck.add(findCard('Doubt'),0,stage.playerNumber+2)
                             }else if(this.page==3&&e==0){
-                                this.deck.add(findCard('Shame'),0,6)
+                                this.deck.add(findCard('Shame'),0,stage.playerNumber+2)
                             }
                         break
                         case 9:
                             if(this.page==0&&e==0){
                                 transition.scene='deck'
-                                this.setupDeck(0)
+                                this.setupDeck(1)
                                 this.context=1
                             }else if(this.page==0&&e==1){
                                 this.setupChoice(0,floor(random(1,2.5)),0)
                                 transition.scene='choice'
                             }else if(this.page==0&&e==2){
                                 transition.scene='deck'
-                                this.setupDeck(0)
+                                this.setupDeck(4)
                                 this.context=4
                             }
                         break
@@ -964,11 +990,11 @@ class battle{
                                 this.remember[0]=1
                             }else if(this.page==1&&e==0){
                                 this.currency.money+=15
-                                this.setupChoice(0,0,2)
+                                this.setupChoice(0,floor(random(1,2.5)),0)
                                 transition.scene='choice'
                             }else if(this.page==2&&e==0){
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-8)
-                            }else if(this.page==3&&e==0){
+                            }else if(this.page==4&&e==0){
                                 this.currency.money+=15
                             }
                         break
@@ -978,6 +1004,59 @@ class battle{
                     }
                 }
             }
+        }
+    }
+    setupShop(spec){
+        this.choice.cards=[]
+        switch(spec){
+            case 0:
+                this.calc.list=listing.card[this.player]
+                for(g=0;g<5;g++){
+                    h=floor(random(0,this.calc.list[floor(g/2)].length))
+                    this.choice.cards.push(new card(this.layer,75+g*150,200,this.calc.list[floor(g/2)][h],0,types.card[this.calc.list[floor(g/2)][h]].list))
+                    this.calc.list[floor(g/2)].splice(h,1)
+                }
+                this.calc.list=listing.card[0]
+                for(g=0;g<2;g++){
+                    h=floor(random(0,this.calc.list[g+1].length))
+                    this.choice.cards.push(new card(this.layer,75+g*150,400,this.calc.list[g+1][h],0,0))
+                    this.calc.list[g+1].splice(h,1)
+                }
+            break
+        }
+        for(g=0,lg=this.choice.cards.length;g<lg;g++){
+            this.choice.cards[g].size=1
+        }
+    }
+    displayShop(){
+        for(e=0,le=this.choice.cards.length;e<le;e++){
+            this.choice.cards[e].display(this.deck.cards.length,this.drawAmount,0)
+        }
+        this.layer.fill(160,80,80)
+        this.layer.stroke(200,100,100)
+        this.layer.strokeWeight(5)
+        this.layer.rect(825,300,120,160,5)
+        this.layer.noStroke()
+        this.layer.textSize(14)
+        this.layer.fill(0)
+        this.layer.text('Remove\nCard',825,300)
+        this.layer.fill(255,225,0)
+        this.layer.ellipse(20,16,16,16)
+        this.layer.fill(255,240,0)
+        this.layer.ellipse(20,16,10,10)
+        this.layer.fill(255,225,0)
+        this.layer.textSize(16)
+        this.layer.textAlign(LEFT,CENTER)
+        this.layer.text(this.currency.money,30,18)
+        this.layer.textAlign(CENTER,CENTER)
+        this.layer.text(this.costs.remove,825,400)
+    }
+    onClickShop(){
+        if(pointInsideBox({position:inputs.rel},{position:{x:825,y:300},width:120,height:160})){
+            transition.trigger=true
+            transition.scene='deck'
+            this.setupDeck(6)
+            this.context=6
         }
     }
 }

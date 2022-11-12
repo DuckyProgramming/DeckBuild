@@ -300,6 +300,11 @@ class group{
                     le--
                     transition.trigger=true
                     transition.scene='map'
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&context==6){
+                    this.cards.splice(e,1)
+                    e--
+                    le--
+                    this.battle.costs.remove+=20
                 }
                 this.cards[e].select=false
             }
