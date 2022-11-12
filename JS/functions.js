@@ -154,20 +154,15 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip){
 	layer.translate(x,y)
 	layer.rotate(direction)
 	layer.scale(size,size*flip)
+	layer.noStroke()
+	layer.fill(180)
+	layer.ellipse(0,0,40,40)
+	layer.fill(0)
+	layer.textSize(15)
 	switch(type){
 		case 1:
-		break
-	}
-	layer.scale(1/size,1/size/flip)
-	layer.rotate(-direction)
-	layer.translate(-x,-y)
-}
-function displaySymbol(layer,x,y,type,direction,size,flip){
-	layer.translate(x,y)
-	layer.rotate(direction)
-	layer.scale(size,size*flip)
-	switch(type){
-		case 1:
+			layer.text('1',10,0)
+			layer.image(graphics.symbol[0],-15,-10,20,20)
 		break
 	}
 	layer.scale(1/size,1/size/flip)

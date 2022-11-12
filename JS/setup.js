@@ -6,7 +6,7 @@ function setup(){
     setupEncounter(current,2)
     current.create()
     current.initialEvent()
-    current.setupShop(0)
+    current.getRelic(1)
     
     //transition.trigger=true
     //transition.scene='event'

@@ -32,7 +32,7 @@ class battle{
         this.event=0
         this.page=0
         this.costs={card:[[0,0,0,0,0],[0,0]],sale:0,remove:0}
-        this.relic={list:[],owned:[],active:[]}
+        this.relics={list:[],owned:[],active:[]}
     }
     create(){
         this.end=false
@@ -68,7 +68,7 @@ class battle{
         this.initialReserve()
         this.reserve.shuffle()
         this.drawInitial()
-        for(e=0,le=this.drawAmount-this.hand.cards.length;e<le;e++){
+        for(e=0,le=this.drawAmount;e<le;e++){
             this.draw()
         }
     }
@@ -84,9 +84,9 @@ class battle{
         }
         for(g=0,lg=types.relic.length;g<lg;g++){
             if(g>=1){
-                this.relic.list.push(g)
+                this.relics.list.push(g)
             }
-            this.relic.active.push(false)
+            this.relics.active.push(false)
         }
     }
     initialReserve(){
@@ -124,6 +124,10 @@ class battle{
         if(this.reserve.cards.length<=0){
             this.return()
         }
+    }
+    getRelic(type){
+        this.relics.owned.push(type)
+        this.relics.active[type]=true
     }
     return(){
         while(this.discard.cards.length>0){
@@ -255,6 +259,11 @@ class battle{
             }
         }
     }
+    displayRelics(){
+        for(e=0,le=this.relics.owned.length;e<le;e++){
+            displayRelicSymbol(this.layer,25+e*50,50,this.relics.owned[e],0,1,1)
+        }
+    }
     display(){
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].display(0)
@@ -312,6 +321,7 @@ class battle{
         this.layer.fill(0,this.anim.lost)
         this.layer.textSize(64)
         this.layer.text('Defeat',this.layer.width/2,150)
+        this.displayRelics()
         this.layer.fill(255,225,0)
         this.layer.textSize(16)
         this.layer.textAlign(LEFT,CENTER)
@@ -471,7 +481,7 @@ class battle{
                 }
                 this.counter.turn++
                 this.reserve.shuffle()
-                for(e=0,le=this.drawAmount-this.hand.cards.length;e<le;e++){
+                for(e=0,le=this.drawAmount;e<le;e++){
                     this.draw()
                 }
                 for(e=0,le=this.hand.cards.length;e<le;e++){

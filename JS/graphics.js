@@ -139,4 +139,19 @@ function setupGraphics(){
 	graphics.minor[5].rect(0,0,160,8,3)
 	graphics.minor[5].fill(149,134,184)
 	graphics.minor[5].rect(0,-2,160,4,3)
+	for(a=0;a<1;a++){
+		graphics.symbol.push(createGraphics(100,100))
+		setupLayer(graphics.symbol[a])
+		graphics.symbol[a].noStroke()
+		graphics.symbol[a].fill(0)
+		graphics.symbol[a].textSize(40)
+		graphics.symbol[a].translate(50,50)
+	}
+	graphics.symbol[0].arc(0,0,80,80,-45,90)
+	graphics.symbol[0].arc(0,0,80,80,135,270)
+	graphics.symbol[0].erase()
+	graphics.symbol[0].ellipse(0,0,60,60)
+	graphics.symbol[0].noErase()
+	graphics.symbol[0].triangle(0,-50,0,-20,25,-35)
+	graphics.symbol[0].triangle(0,50,0,20,-25,35)
 }
