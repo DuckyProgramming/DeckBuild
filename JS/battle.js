@@ -68,9 +68,7 @@ class battle{
         this.initialReserve()
         this.reserve.shuffle()
         this.drawInitial()
-        for(e=0,le=this.drawAmount;e<le;e++){
-            this.draw()
-        }
+        this.turnDraw()
     }
     initialEvent(){
         this.costs.card=[[0,0,0,0,0],[0,0]]
@@ -108,6 +106,17 @@ class battle{
                 le--
             }
         }
+        if(this.relics.active[1]){
+            this.hand.add(findCard('Redraw'),0,0)
+        }
+    }
+    turnDraw(){
+        for(e=0,le=this.drawAmount;e<le;e++){
+            this.draw()
+        }
+        if(this.relics.active[2]){
+            this.hand.add(findCard('Step'),0,0)
+        }
     }
     draw(){
         if(this.reserve.cards.length>0){
@@ -126,12 +135,12 @@ class battle{
         }
     }
     getRelic(type){
-        this.relics.owned.push(type)
-        this.relics.active[type]=true
+        this.relics.owned.push(types.relic[type].id)
+        this.relics.active[types.relic[type].id]=true
     }
     return(){
         while(this.discard.cards.length>0){
-            if(this.discard.cards[0].spec!=6){
+            if(this.discard.cards[0].spec!=6&&this.discard.cards[0].spec!=13){
                 this.reserve.cards.push(copyCard(this.discard.cards[0]))
             }
             this.discard.cards.splice(0,1)
@@ -200,6 +209,9 @@ class battle{
             if(this.hand.cards[g].attack==-2){
                 this.combatants[0].take(1,0)
             }
+            if(this.hand.cards[g].attack==149){
+                this.hand.cards[g].used=true
+            }
         }
         if(this.combatants[0].status.main[22]>0){
             for(g=1,lg=this.combatants.length;g<lg;g++){
@@ -262,6 +274,14 @@ class battle{
     displayRelics(){
         for(e=0,le=this.relics.owned.length;e<le;e++){
             displayRelicSymbol(this.layer,25+e*50,50,this.relics.owned[e],0,1,1)
+            if(dist(inputs.rel.x,inputs.rel.y,25+e*50,50)<20){
+                this.layer.noStroke()
+                this.layer.fill(180)
+                this.layer.rect(130,110,240,60,5)
+                this.layer.fill(0)
+                this.layer.textSize(12)
+                this.layer.text(types.relic[this.relics.owned[e]].desc,130,110)
+            }
         }
     }
     display(){
@@ -481,9 +501,7 @@ class battle{
                 }
                 this.counter.turn++
                 this.reserve.shuffle()
-                for(e=0,le=this.drawAmount;e<le;e++){
-                    this.draw()
-                }
+                this.turnDraw()
                 for(e=0,le=this.hand.cards.length;e<le;e++){
                     this.hand.cards[e].position.y=500
                 }

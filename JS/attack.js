@@ -724,6 +724,16 @@ class attack{
                 case 147:
                     this.battle.combatants[0].status.main[25]+=this.damage
                 break
+                case 148:
+                    this.battle.allDiscard()
+                    for(g=0;g<this.battle.drawAmount;g++){
+                        this.battle.draw()
+                    }
+                break
+                case 149:
+                    this.battle.combatants[0].status.main[6]++
+                    this.battle.allDiscard()
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

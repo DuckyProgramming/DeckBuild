@@ -4,9 +4,12 @@ function setup(){
     current=new battle(graphics.main,1)
     generateListing(types.card)
     setupEncounter(current,2)
+
+    current.getRelic(1)
+    current.getRelic(2)
+
     current.create()
     current.initialEvent()
-    current.getRelic(1)
     
     //transition.trigger=true
     //transition.scene='event'

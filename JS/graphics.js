@@ -139,7 +139,7 @@ function setupGraphics(){
 	graphics.minor[5].rect(0,0,160,8,3)
 	graphics.minor[5].fill(149,134,184)
 	graphics.minor[5].rect(0,-2,160,4,3)
-	for(a=0;a<1;a++){
+	for(a=0;a<4;a++){
 		graphics.symbol.push(createGraphics(100,100))
 		setupLayer(graphics.symbol[a])
 		graphics.symbol[a].noStroke()
@@ -154,4 +154,13 @@ function setupGraphics(){
 	graphics.symbol[0].noErase()
 	graphics.symbol[0].triangle(0,-50,0,-20,25,-35)
 	graphics.symbol[0].triangle(0,50,0,20,-25,35)
+	graphics.symbol[1].rect(-15,0,60,16)
+	graphics.symbol[1].triangle(15,-24,15,24,40,0)
+	graphics.symbol[2].triangle(-30,-20,30,-20,0,-35)
+	graphics.symbol[2].arc(0,-20,60,120,0,180)
+	for(a=0;a<6;a++){
+		graphics.symbol[3].arc(0,0,80,80,a*60+10,a*60+50)
+	}
+	graphics.symbol[3].erase()
+	graphics.symbol[3].ellipse(0,0,70,70)
 }

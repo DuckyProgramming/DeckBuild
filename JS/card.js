@@ -194,7 +194,9 @@ class card{
             case 144: this.desc+='Add '+this.damage+'\nDodge'; break
             case 145: this.desc+='Add '+this.damage+' Dodge\nCounter '+this.alt+' Once'; break
             case 146: this.desc+='Add '+this.damage+' Block\nGain 2 Combo\nYou Must Attack\nor Take '+this.alt+' Damage'; break
-            case 147: this.desc+='Attacks add '+this.damage+'\nBleed Current Turn'
+            case 147: this.desc+='Attacks add '+this.damage+'\nBleed Current Turn'; break
+            case 148: this.desc+='Redraw your hand\nExhaust\nEthereal'; break
+            case 149: this.desc+='Add '+this.damage+' Dodge\nExhausted when\nAnother Card Played\nDiscard Hand\nExhaust\nEthereal'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
@@ -327,7 +329,7 @@ class card{
             this.size=round(this.size*5-1)*0.2
         }
         if(this.size<=0&&this.used){
-            if((this.spec==3||this.spec==8||this.spec==9||this.exhaust)&&this.trigger){
+            if((this.spec==3||this.spec==8||this.spec==9||this.spec==13||this.exhaust)&&this.trigger){
                 this.remove=true
             }else if(this.spec==12){
                 this.draw=true

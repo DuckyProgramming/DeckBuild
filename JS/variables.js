@@ -240,21 +240,6 @@ types={
             {damage:10,alt:1,cost:2,attack:138,target:1,desc:'',spec:0,class:0},
             {damage:18,alt:1,cost:2,attack:138,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Uncontrolled\nPower',rarity:-1,list:1,
-        stats:[
-            {damage:24,alt:8,cost:2,attack:139,target:1,desc:'',spec:0,class:0},
-            {damage:24,alt:8,cost:1,attack:139,target:1,desc:'',spec:0,class:0},
-        ],
-        },{name:'This is\nPersonal',rarity:-1,list:1,
-        stats:[
-            {damage:8,alt:2,cost:2,attack:140,target:1,desc:'',spec:0,class:2},
-            {damage:14,alt:2,cost:2,attack:140,target:1,desc:'',spec:0,class:2},
-        ],
-        },{name:'Enraging\nBlow',rarity:-1,list:1,
-        stats:[
-            {damage:16,alt:0,cost:1,attack:141,target:1,desc:'',spec:0,class:0},
-            {damage:20,alt:0,cost:1,attack:141,target:1,desc:'',spec:0,class:0},
-        ],
         },{name:'Quick Kick',rarity:0,list:1,
         stats:[
             {damage:4,alt:4,cost:1,attack:93,target:1,desc:'',spec:0,class:0},
@@ -905,6 +890,31 @@ types={
             {damage:1,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
             {damage:1,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
         ],
+        },{name:'Uncontrolled\nPower',rarity:-3,list:1,
+        stats:[
+            {damage:24,alt:8,cost:2,attack:139,target:1,desc:'',spec:0,class:0},
+            {damage:24,alt:8,cost:1,attack:139,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'This is\nPersonal',rarity:-3,list:1,
+        stats:[
+            {damage:8,alt:2,cost:2,attack:140,target:1,desc:'',spec:0,class:2},
+            {damage:14,alt:2,cost:2,attack:140,target:1,desc:'',spec:0,class:2},
+        ],
+        },{name:'Enraging\nBlow',rarity:-3,list:1,
+        stats:[
+            {damage:16,alt:0,cost:1,attack:141,target:1,desc:'',spec:0,class:0},
+            {damage:20,alt:0,cost:1,attack:141,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Redraw',rarity:-3,list:0,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:148,target:0,desc:'',spec:13,class:2},
+            {damage:0,alt:0,cost:0,attack:148,target:0,desc:'',spec:13,class:2},
+        ],
+        },{name:'Step',rarity:-3,list:0,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:149,target:0,desc:'',spec:13,class:2},
+            {damage:1,alt:0,cost:0,attack:149,target:0,desc:'',spec:13,class:2},
+        ],
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
@@ -917,6 +927,8 @@ types={
         {class:0},
         {class:0},
         {class:1},
+        {class:1},
+        {class:0},
     ],encounter:[
         {
             combatants:[0,0,0,0,0,0],
@@ -940,7 +952,10 @@ types={
             desc:'',
         },{
             name:'First Turn Redraw',id:1,
-            desc:'Gain 1 Redraw at the Start of Combat',
+            desc:'Add 1 Redraw at\nthe Start of Combat',
+        },{
+            name:'Free Step',id:2,
+            desc:'Add 1 Step\nEvery Turn',
         },
     ],event:[
         {
@@ -952,7 +967,7 @@ types={
                     optionDesc:[],
                     link:[],
                 }
-            ],
+            ], 
         },{
             name:'Dropped Book',id:1,
             pages:[
