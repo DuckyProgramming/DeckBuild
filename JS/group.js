@@ -38,11 +38,11 @@ class group{
                 }
                 //this.add(findCard('Eruption'),0,this.battle.player)
                 //this.add(findCard('Vigilance'),0,this.battle.player)
-                this.add(118,0,this.battle.player)
-                this.add(119,0,this.battle.player)
-                this.add(120,0,this.battle.player)
                 this.add(121,0,this.battle.player)
                 this.add(122,0,this.battle.player)
+                this.add(123,0,this.battle.player)
+                this.add(124,0,this.battle.player)
+                this.add(125,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -133,14 +133,25 @@ class group{
             this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length,this.battle.discard.cards.length)
         }
     }
-    displayView(){
-        for(e=0,le=this.cards.length;e<le;e++){
-            this.cards[e].position.x=75+(e%6)*150
-            this.cards[e].position.y=100+floor(e/6)*200-this.scroll
-            this.cards[e].anim.afford=0
-            this.cards[e].size=1
-            this.cards[e].fade=1
-            this.cards[e].display(le)
+    displayView(level){
+        if(level>=0){
+            for(e=0,le=min(level,this.cards.length);e<le;e++){
+                this.cards[e].position.x=75+(e%6)*150
+                this.cards[e].position.y=100+floor(e/6)*200-this.scroll
+                this.cards[e].anim.afford=0
+                this.cards[e].size=1
+                this.cards[e].fade=1
+                this.cards[e].display(le)
+            }
+        }else{
+            for(e=0,le=this.cards.length;e<le;e++){
+                this.cards[e].position.x=75+(e%6)*150
+                this.cards[e].position.y=100+floor(e/6)*200-this.scroll
+                this.cards[e].anim.afford=0
+                this.cards[e].size=1
+                this.cards[e].fade=1
+                this.cards[e].display(le)
+            }
         }
     }
     update(){
@@ -291,7 +302,7 @@ class group{
             }
         }
     }
-    onClickView(context){
+    onClickView(context,context2){
         this.selected=false
         for(let e=0,le=this.cards.length;e<le;e++){
             if(this.cards[e].select){
@@ -314,11 +325,17 @@ class group{
                 }
                 this.cards[e].select=false
             }
-            if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&!(this.cards[e].level==1&&context==1)){
+            if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&!(this.cards[e].level==1&&context==1)&&!(e>=context2&&(context==7||context==8))){
                 this.cards[e].select=true
                 this.select=true
                 this.selected=true
-                if(context==2){
+                if(context==7||context==8){
+                    this.battle.discard.cards.push(copyCard(this.cards[e]))
+                    this.cards.splice(e,1)
+                    e--
+                    le--
+                    this.battle.context2--
+                }else if(context==2){
                     this.battle.hand.cards.push(copyCard(this.cards[e]))
                     this.battle.hand.cards[this.battle.hand.cards.length-1].position.x=1206
                     this.battle.hand.cards[this.battle.hand.cards.length-1].position.y=500

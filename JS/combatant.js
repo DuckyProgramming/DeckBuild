@@ -21,7 +21,7 @@ class combatant{
 		this.base={life:this.life,position:{x:this.position.x,y:this.position.y}}
         this.collect={life:this.life,block:0}
 		this.calc={damage:0}
-		this.boost={main:[0,0],fade:[0,0],display:[],color:[[200,0,0],[0,150,255]],infoFade:[0,0],name:['Attack','Defense']}
+		this.boost={main:[0,0,0],fade:[0,0,0],display:[],color:[[200,0,0],[0,150,255],[0,50,150]],infoFade:[0,0],name:['Attack','Defense','Block']}
 		this.status={main:[],fade:[],display:[],color:[
 			[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120],[125,75,25],[25,125,175],[150,225,150],
 			[100,200,200],[200,0,50],[100,50,150],[50,100,50],[20,60,120],[170,240,255],[235,65,15],[210,200,245],[210,90,0],[50,0,0],
@@ -845,9 +845,9 @@ class combatant{
 					this.calc.damage*=3
 				}
 				if(this.block>0){
-					this.calc.damage*=(2-min(0,this.boost.main[1]))/(2+max(0,this.boost.main[1]))
+					this.calc.damage*=(2-min(0,this.boost.main[2]))/(2+max(0,this.boost.main[2]))
 				}else{
-					this.calc.damage*=(2-min(0,this.boost.main[1]))/2
+					this.calc.damage*=(2-min(0,this.boost.main[1]))/(2+max(0,this.boost.main[1]))
 				}
 				if(this.battle.combatants[user].status.main[25]>0){
 					this.status.main[11]+=this.battle.combatants[user].status.main[25]

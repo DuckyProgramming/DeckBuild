@@ -315,6 +315,21 @@ types={
             {damage:1,alt:0,cost:1,attack:156,target:0,desc:'',spec:0,class:2},
             {damage:1,alt:0,cost:0,attack:156,target:0,desc:'',spec:0,class:2},
         ],
+        },{name:'Uncontrolled\nPower',rarity:2,list:1,
+        stats:[
+            {damage:18,alt:8,cost:2,attack:139,target:1,desc:'',spec:0,class:0},
+            {damage:24,alt:8,cost:2,attack:139,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'This is\nPersonal',rarity:2,list:1,
+        stats:[
+            {damage:6,alt:2,cost:2,attack:140,target:1,desc:'',spec:0,class:2},
+            {damage:10,alt:2,cost:2,attack:140,target:1,desc:'',spec:0,class:2},
+        ],
+        },{name:'Enraging\nBlow',rarity:2,list:1,
+        stats:[
+            {damage:16,alt:0,cost:1,attack:141,target:1,desc:'',spec:0,class:0},
+            {damage:20,alt:0,cost:1,attack:141,target:1,desc:'',spec:0,class:0},
+        ],
         },{name:'Vigilance',rarity:1,list:2,
         stats:[
             {damage:8,alt:0,cost:2,attack:27,target:0,desc:'',spec:0,class:1},
@@ -589,6 +604,31 @@ types={
         stats:[
             {damage:3,alt:4,cost:1,attack:158,target:0,desc:'',spec:0,class:2},
             {damage:4,alt:6,cost:1,attack:158,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Bow\nWhip',rarity:0,list:2,
+        stats:[
+            {damage:8,alt:1,cost:1,attack:159,target:1,desc:'',spec:0,class:0},
+            {damage:10,alt:2,cost:1,attack:159,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Crush\nJoints',rarity:0,list:2,
+        stats:[
+            {damage:8,alt:1,cost:1,attack:160,target:1,desc:'',spec:0,class:0},
+            {damage:10,alt:2,cost:1,attack:160,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Secure\nBlade',rarity:1,list:2,
+        stats:[
+            {damage:6,alt:0,cost:1,attack:161,target:1,desc:'',spec:0,class:0},
+            {damage:10,alt:0,cost:1,attack:161,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Look\nAhead',rarity:0,list:2,
+        stats:[
+            {damage:7,alt:3,cost:1,attack:162,target:0,desc:'',spec:0,class:2},
+            {damage:9,alt:5,cost:1,attack:162,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Planned\nManeuver',rarity:0,list:2,
+        stats:[
+            {damage:2,alt:1,cost:0,attack:163,target:0,desc:'',spec:0,class:2},
+            {damage:4,alt:1,cost:0,attack:163,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Charge',rarity:0,list:3,
         stats:[
@@ -939,21 +979,6 @@ types={
         stats:[
             {damage:1,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
             {damage:1,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
-        ],
-        },{name:'Uncontrolled\nPower',rarity:-3,list:1,
-        stats:[
-            {damage:24,alt:8,cost:2,attack:139,target:1,desc:'',spec:0,class:0},
-            {damage:24,alt:8,cost:1,attack:139,target:1,desc:'',spec:0,class:0},
-        ],
-        },{name:'This is\nPersonal',rarity:-3,list:1,
-        stats:[
-            {damage:8,alt:2,cost:2,attack:140,target:1,desc:'',spec:0,class:2},
-            {damage:14,alt:2,cost:2,attack:140,target:1,desc:'',spec:0,class:2},
-        ],
-        },{name:'Enraging\nBlow',rarity:-3,list:1,
-        stats:[
-            {damage:16,alt:0,cost:1,attack:141,target:1,desc:'',spec:0,class:0},
-            {damage:20,alt:0,cost:1,attack:141,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Redraw',rarity:-3,list:0,
         stats:[

@@ -28,6 +28,7 @@ class battle{
         this.map={main:[],complete:[],scroll:0,scrollGoal:100,position:[0,0],zone:0}
         this.restOptions=[1,2]
         this.context=0
+        this.context2=0
         this.eventList=[]
         this.event=0
         this.page=0
@@ -132,6 +133,7 @@ class battle{
         }
         if(this.reserve.cards.length<=0){
             this.return()
+            this.reserve.shuffle()
         }
     }
     getRelic(type){
@@ -500,7 +502,6 @@ class battle{
                     }
                 }
                 this.counter.turn++
-                this.reserve.shuffle()
                 this.turnDraw()
                 for(e=0,le=this.hand.cards.length;e<le;e++){
                     this.hand.cards[e].position.y=500
@@ -832,12 +833,14 @@ class battle{
     }
     displayDeck(){
         if(this.context==1||this.context==4){
-            this.deck.displayView()
+            this.deck.displayView(-1)
             this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0)
         }else if(this.context==2||this.context==3){
-            this.discard.displayView()
+            this.discard.displayView(-1)
         }else if(this.context==5||this.context==6){
-            this.deck.displayView()
+            this.deck.displayView(-1)
+        }else if(this.context==7||this.context==8){
+            this.reserve.displayView(this.context2)
         }
         this.layer.noStroke()
         this.layer.fill(80)
@@ -846,7 +849,7 @@ class battle{
         this.layer.textSize(20)
         if(this.context==3||this.context==5||this.context==6){
             this.layer.text('Back',850,570)
-        }else if(this.context==1||this.context==2||this.context==4){
+        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8){
             this.layer.text('Skip',850,570)
         }
         if(this.context==6){
@@ -871,7 +874,9 @@ class battle{
             this.deck.scroll-=30
         }
         this.deck.scroll=constrain(this.deck.scroll,0,floor(this.deck.cards.length/6)*200-600)
-        this.deck.updateView()
+        if(this.context==1||this.context==4||this.context==5||this.context==6){
+            this.deck.updateView()
+        }
     }
     onClickDeck(){
         if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570},width:80,height:40})){
@@ -881,16 +886,21 @@ class battle{
             }else if(this.context==2){
                 this.close()
                 transition.scene='battle'
-            }else if(this.context==3){
+            }else if(this.context==3||this.context==7){
                 transition.scene='battle'
             }else if(this.context==6){
                 transition.scene='shop'
+            }else if(this.context==8){
+                this.draw()
+                transition.scene='battle'
             }
         }
         if(this.context==1||this.context==4||this.context==6){
-            this.deck.onClickView(this.context)
+            this.deck.onClickView(this.context,this.context2)
         }else if(this.context==2){
-            this.discard.onClickView(this.context)
+            this.discard.onClickView(this.context,this.context2)
+        }else if(this.context==7||this.context==8){
+            this.reserve.onClickView(this.context,this.context2)
         }
     }
     displayEvent(){

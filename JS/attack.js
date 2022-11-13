@@ -417,7 +417,7 @@ class attack{
                 break
                 case 82:
                     this.battle.combatants[0].boost.main[0]+=this.damage
-                    this.battle.combatants[0].boost.main[1]+=this.alt
+                    this.battle.combatants[0].boost.main[2]+=this.alt
                     this.battle.combatants[0].armed=-1
                 break
                 case 83:
@@ -429,7 +429,7 @@ class attack{
                     this.battle.combatants[0].armed=0
                 break
                 case 84:
-                    this.battle.combatants[0].boost.main[1]+=this.alt
+                    this.battle.combatants[0].boost.main[2]+=this.alt
                     for(g=0;g<this.damage;g++){
                         this.battle.draw()
                     }
@@ -543,8 +543,7 @@ class attack{
                 break
                 case 106:
                     this.battle.combatants[0].block+=this.damage
-                    this.battle.drop.addDrop(findCard('Safety'),0,0)
-                    this.battle.reserve.add(findCard('Safety'),0,0)
+                    this.battle.hand.add(findCard('Safety'),0,0)
                 break
                 case 107:
                     if(this.battle.combatants[0].stance==2){
@@ -770,7 +769,7 @@ class attack{
                     }
                 break
                 case 157:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[this.target].take(this.damage,this.user)
                     if(this.battle.combatants[0].lastPlay==0){
                         this.battle.mana.main++
                     }
@@ -778,6 +777,35 @@ class attack{
                 case 158:
                     this.battle.combatants[0].mantra+=this.damage
                     this.battle.combatants[0].block+=this.alt
+                break
+                case 159:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[0].lastPlay==0){
+                        this.battle.combatants[this.target].boost.main[0]-=this.alt
+                    }
+                break
+                case 160:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[0].lastPlay==1){
+                        this.battle.combatants[this.target].boost.main[1]-=this.alt
+                    }
+                break
+                case 161:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.hand.add(findCard('Smite'),0,0)
+                break
+                case 162:
+                    this.battle.combatants[0].block+=this.damage
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.battle.context=7
+                    this.battle.context2=this.alt
+                break
+                case 163:
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.battle.context=8
+                    this.battle.context2=this.damage
                 break
             }
             this.battle.combatants[0].lastPlay=this.class
