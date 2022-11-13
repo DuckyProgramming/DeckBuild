@@ -32,6 +32,7 @@ class battle{
         this.eventList=[]
         this.event=0
         this.page=0
+        this.discarding=0
         this.costs={card:[[0,0,0,0,0],[0,0]],sale:0,remove:0}
         this.relics={list:[],owned:[],active:[]}
     }
@@ -40,6 +41,7 @@ class battle{
         this.counter={enemies:{dead:0,total:0,alive:0},turn:1,played:0}
         this.anim.lost=0
         this.anim.end=0
+        this.discarding=0
         this.combatants[0].resetUnique()
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
@@ -130,6 +132,8 @@ class battle{
             this.hand.cards[this.hand.cards.length-1].position.x=1206
             this.hand.cards[this.hand.cards.length-1].position.y=500
             this.reserve.cards.splice(0,1)
+        }else{
+            this.hand.add(findCard('Empty'),0,0)
         }
         if(this.reserve.cards.length<=0){
             this.return()
@@ -156,6 +160,7 @@ class battle{
         this.deck.cards.splice(index,1)
     }
     endTurn(){
+        this.discarding=0
         this.mana.main=min(this.mana.max,this.mana.main+this.mana.gen)
         this.mana.main+=this.combatants[0].status.main[1]
         this.remember=[0,0,0,0]

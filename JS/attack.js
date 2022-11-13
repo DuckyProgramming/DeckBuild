@@ -819,6 +819,10 @@ class attack{
                         this.battle.combatants[0].block+=this.alt
                     }
                 break
+                case 166:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.discarding++
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

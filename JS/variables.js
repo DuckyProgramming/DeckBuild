@@ -140,7 +140,7 @@ types={
             {damage:28,alt:0,cost:10,attack:1,target:1,desc:'',spec:4,class:0},
             {damage:44,alt:0,cost:10,attack:1,target:1,desc:'',spec:4,class:0},
         ], 
-        },{name:'Throw',rarity:0,list:1,
+        },{name:'Throw\nScythe',rarity:0,list:1,
         stats:[
             {damage:2,alt:1,cost:1,attack:42,target:1,desc:'',spec:0,class:0},
             {damage:6,alt:1,cost:1,attack:42,target:1,desc:'',spec:0,class:0},
@@ -638,7 +638,25 @@ types={
             {damage:2,alt:1,cost:0,attack:163,target:0,desc:'',spec:0,class:2},
             {damage:4,alt:1,cost:0,attack:163,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Charge',rarity:0,list:3,
+        },{name:'Survivor',rarity:0,list:2,
+        stats:[
+            {damage:8,alt:0,cost:1,attack:166,target:0,desc:'',spec:0,class:1},
+            {damage:12,alt:0,cost:1,attack:166,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Reflex',rarity:1,list:2,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:167,target:0,desc:'',spec:1,class:2},
+            {damage:3,alt:0,cost:0,attack:167,target:0,desc:'',spec:1,class:2},
+        ],
+        },{name:'Tactician',rarity:1,list:2,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:168,target:0,desc:'',spec:1,class:2},
+            {damage:1,alt:0,cost:0,attack:168,target:0,desc:'',spec:1,class:2},
+        ],
+        },
+        
+        
+        {name:'Charge',rarity:0,list:3,
         stats:[
             {damage:1,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:2},
@@ -728,7 +746,7 @@ types={
             {damage:4,alt:6,cost:1,attack:72,target:1,desc:'',spec:0,class:0},
             {damage:12,alt:6,cost:1,attack:72,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Throw',rarity:0,list:4,
+        },{name:'Throw\nDown',rarity:0,list:4,
         stats:[
             {damage:24,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
             {damage:40,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
@@ -842,6 +860,11 @@ types={
         stats:[
             {damage:3,alt:3,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
             {damage:6,alt:5,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Empty',rarity:-1,list:0,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:0},
+            {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:0},
         ],
         },{name:'Heal Up',rarity:1,list:0,
         stats:[

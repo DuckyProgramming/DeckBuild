@@ -56,7 +56,7 @@ class card{
             case 6: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+' All'; break
             case 7: this.desc+='Add '+this.damage+'X\nBlock'; break
             case 8: this.desc+='Deal '+this.damage+' Damage\nAdd a Bleed\nto Deck'; break
-            case 9: this.desc+='Deal '+this.damage+' Damage\nDiscard a Card'; break
+            case 9: this.desc+='Deal '+this.damage+' Damage\nDiscard 1\nRandom Card'; break
             case 10: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, gain\n1 Energy'; break
             case 11: this.desc+='Deal '+this.damage+' Damage\nGain 2 Mana\nNext Turn'; break
             case 12: this.desc+='Deal '+this.damage+' Damage\nto All Enemies'; break
@@ -174,7 +174,7 @@ class card{
             case 124: this.desc+='Deal Damage\nEqual to Number of\nCards in Deck\n('+handSize+')'; break
             case 125: this.desc+='Add '+this.damage+' Block\nAdd '+this.alt+' Shivs\nto Your Hand'; break
             case 126: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\n'+this.alt+' Times'; break
-            case 127: this.desc+='Deal '+this.damage+' Damage\nDraw a Card\nDiscard a Card'; break
+            case 127: this.desc+='Deal '+this.damage+' Damage\nDraw 1 Card\nDiscard 1\nRandom Card'; break
             case 128: this.desc+='Discard Your Hand,\nthen Draw that\nMany Cards'; break
             case 129: this.desc+='Add 1 Shiv\ninto Your Hand\nat the Start\nof Your Turn'; break
             case 130: this.desc+='Deal '+this.damage+' Damage\nX Times'; break
@@ -210,9 +210,12 @@ class card{
             case 160: this.desc+='Deal '+this.damage+' Damage\nIf Last Card Played\nwas a Skill,\nApply '+this.alt+' Vulnerable'; break
             case 161: this.desc+='Deal '+this.damage+' Damage\nAdd a Smite\nto Your Hand'; break
             case 162: this.desc+='Add '+this.damage+' Block\nScry '+this.alt; break
-            case 163: this.desc+='Scry '+this.damage+'\nDraw '+this.alt+' Card'
+            case 163: this.desc+='Scry '+this.damage+'\nDraw '+this.alt+' Card'; break
             case 164: this.desc+='Deal '+this.damage+' Damage\nAdd '+this.alt+' Bleed\nto Downed'; break
             case 165: if(this.alt==0){this.desc+='Gain '+this.damage+' Mana\nfor Every\nHit Taken'}else{this.desc+='Add '+this.alt+' Block\nGain '+this.damage+' Mana\nfor Every\nHit Taken'}; break
+            case 166: this.desc+='Add '+this.damage+' Block\nDiscard 1 Card'; break
+            case 167: this.desc+='When Discarded,\nDraw '+this.damage+' Cards'; break
+            case 168: this.desc+='When Discarded,\nGain '+this.damage+' Mana'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
@@ -334,6 +337,17 @@ class card{
             }
             this.layer.textSize(12)
             this.layer.text(this.desc,0,10)
+            this.layer.scale(1/this.size)
+            this.layer.translate(-this.position.x,-this.position.y)
+        }
+    }
+    displayDiscarding(discarding){
+        if(this.size>0){
+            this.layer.translate(this.position.x,this.position.y)
+            this.layer.scale(this.size)
+            this.layer.fill(255,0,0,this.fade*discarding)
+            this.layer.noStroke()
+            this.layer.rect(0,0,this.width+15,this.height+15,10)
             this.layer.scale(1/this.size)
             this.layer.translate(-this.position.x,-this.position.y)
         }

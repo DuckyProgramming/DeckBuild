@@ -8,6 +8,7 @@ class group{
         this.select=false
         this.selcted=false
         this.trigger=false
+        this.anim={discarding:0}
     }
     initial(type){
         /*for(e=0;e<20;e++){
@@ -129,7 +130,13 @@ class group{
         }
     }
     display(){ 
+        if(this.battle.discarding&&this.anim.discarding<1){
+            this.anim.discarding=round(this.anim.discarding*5+1)/5
+        }else if(!this.battle.discarding&&this.anim.discarding>0){
+            this.anim.discarding=round(this.anim.discarding*5-1)/5
+        }
         for(e=0,le=this.cards.length;e<le;e++){
+            this.cards[e].displayDiscarding(this.anim.discarding)
             this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length,this.battle.discard.cards.length)
         }
     }
@@ -157,6 +164,13 @@ class group{
     update(){
         for(e=0,le=this.cards.length;e<le;e++){
             if(this.cards[e].discard){
+                if(this.cards[e].attack==167){
+                    for(f=0;f<this.cards[e].damage;f++){
+                        this.battle.draw()
+                    }
+                }else if(this.cards[e].attack==168){
+                    this.battle.mana.main+=this.cards[e].damage
+                }
                 this.battle.discard.cards.push(copyCard(this.cards[e]))
                 this.cards.splice(e,1)
                 e--
@@ -284,7 +298,10 @@ class group{
                     this.cards[e].select=false
                     this.select=false
                 }
-                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7){
+                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.discarding>0){
+                    this.battle.discarding--
+                    this.cards[e].used=true
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7){
                     this.cards[e].select=true
                     this.select=true
                     this.selected=true
