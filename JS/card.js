@@ -204,7 +204,8 @@ class card{
             case 154: this.desc+='Add '+this.damage+' Block\nCounter Once With\nPush Collision\nfor '+this.alt+' Damage'; break
             case 155: this.desc+='Deal '+this.damage+' Damage\nDraw 1 Card\nIt Costs 0'; break
             case 156: this.desc+='Reduce Cost of\nHand by '+this.damage; break
-            
+            case 157: this.desc+='Deal '+this.damage+' Damage\nIf Last Card Played\nwas a Attack,\nGain 1 Energy'; break
+            case 158: this.desc+='Gain '+this.damage+' Faith\nAdd '+this.alt+' Block'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

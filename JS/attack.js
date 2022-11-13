@@ -769,6 +769,16 @@ class attack{
                         this.battle.hand.cards[g].cost=max(this.battle.hand.cards[g].cost-this.damage,0)
                     }
                 break
+                case 157:
+                    this.battle.combatants[0].block+=this.damage
+                    if(this.battle.combatants[0].lastPlay==0){
+                        this.battle.mana.main++
+                    }
+                break
+                case 158:
+                    this.battle.combatants[0].mantra+=this.damage
+                    this.battle.combatants[0].block+=this.alt
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

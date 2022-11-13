@@ -580,6 +580,16 @@ types={
             {damage:8,alt:2,cost:1,attack:135,target:1,desc:'',spec:0,class:0},
             {damage:12,alt:2,cost:1,attack:135,target:1,desc:'',spec:0,class:0},
         ],
+        },{name:'Follow\nUp',rarity:0,list:2,
+        stats:[
+            {damage:7,alt:0,cost:1,attack:157,target:1,desc:'',spec:0,class:0},
+            {damage:11,alt:0,cost:1,attack:157,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Credence',rarity:0,list:2,
+        stats:[
+            {damage:3,alt:4,cost:1,attack:158,target:0,desc:'',spec:0,class:2},
+            {damage:4,alt:6,cost:1,attack:158,target:0,desc:'',spec:0,class:2},
+        ],
         },{name:'Charge',rarity:0,list:3,
         stats:[
             {damage:1,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:2},
