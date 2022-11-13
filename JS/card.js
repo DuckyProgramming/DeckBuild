@@ -211,6 +211,7 @@ class card{
             case 161: this.desc+='Deal '+this.damage+' Damage\nAdd a Smite\nto Your Hand'; break
             case 162: this.desc+='Add '+this.damage+' Block\nScry '+this.alt; break
             case 163: this.desc+='Scry '+this.damage+'\nDraw '+this.alt+' Card'
+            case 164: this.desc+='Deal '+this.damage+' Damage\nAdd '+this.alt+' Bleed\nto Downed'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
