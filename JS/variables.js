@@ -295,11 +295,6 @@ types={
             {damage:0,alt:4,cost:0,attack:152,target:1,desc:'',spec:0,class:0},
             {damage:4,alt:4,cost:0,attack:152,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Counter\nStab',rarity:0,list:1,
-        stats:[
-            {damage:3,alt:3,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
-            {damage:6,alt:5,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
-        ],
         },{name:'Counter\nPush',rarity:1,list:1,
         stats:[
             {damage:3,alt:4,cost:1,attack:154,target:0,desc:'',spec:0,class:1},
@@ -334,6 +329,11 @@ types={
         stats:[
             {damage:4,alt:8,cost:1,attack:164,target:1,desc:'',spec:0,class:0},
             {damage:8,alt:12,cost:1,attack:164,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Absorb\nAttacks',rarity:0,list:5,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:165,target:0,desc:'',spec:0,class:1},
+            {damage:1,alt:4,cost:1,attack:165,target:0,desc:'',spec:0,class:1},
         ],
         },
         
@@ -833,10 +833,15 @@ types={
             {damage:2,alt:3,cost:1,attack:136,target:1,desc:'',spec:11,class:0},
             {damage:4,alt:5,cost:1,attack:136,target:1,desc:'',spec:11,class:0},
         ],
-        },{name:'Jumping Stab',rarity:0,list:4,
+        },{name:'Jumping\nStab',rarity:0,list:4,
         stats:[
             {damage:9,alt:4,cost:2,attack:136,target:1,desc:'',spec:11,class:0},
             {damage:12,alt:6,cost:2,attack:136,target:1,desc:'',spec:11,class:0},
+        ],
+        },{name:'Counter\nStab',rarity:0,list:1,
+        stats:[
+            {damage:3,alt:3,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
+            {damage:6,alt:5,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
         ],
         },{name:'Heal Up',rarity:1,list:0,
         stats:[

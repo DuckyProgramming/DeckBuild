@@ -813,6 +813,12 @@ class attack{
                     }
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
+                case 165:
+                    this.battle.combatants[0].status.main[29]+=this.damage
+                    if(this.alt>0){
+                        this.battle.combatants[0].block+=this.alt
+                    }
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{
