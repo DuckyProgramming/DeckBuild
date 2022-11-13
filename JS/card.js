@@ -140,7 +140,7 @@ class card{
             case 90: this.desc+='If Unarmed\nPush Collision\nfor '+this.damage+' Damage'; break
             case 91: this.desc+='Deal '+this.damage+' Damage\nTo 3 Enemies\n'+nfp(this.alt)+' Balance'; break
             case 92: this.desc+='Convert '+this.damage+'x Combo\nto Block\nEnd Combo'; break
-            case 93: this.desc+='Deal '+this.damage+' Damage\nPush Collision\nfor '+this.alt+' Damage'; break
+            case 93: if(this.damage==0){this.desc+='Push Collision\nfor '+this.alt+' Damage'}else{this.desc+='Deal '+this.damage+' Damage\nPush Collision\nfor '+this.alt+' Damage'}; break
             case 94: this.desc+='Add '+this.damage+' Block\nGain 1 Strength\nwhen Attacked'; break
             case 95: this.desc+='Deal '+this.damage+' Damage\nEnter Wrath'; break
             case 96: this.desc+='Gain '+this.damage+' Mana'; break
@@ -197,6 +197,11 @@ class card{
             case 147: this.desc+='Attacks add '+this.damage+'\nBleed Current Turn'; break
             case 148: this.desc+='Redraw your hand\nExhaust\nEthereal'; break
             case 149: this.desc+='Add '+this.damage+' Dodge\nExhausted when\nAnother Card Played\nDiscard Hand\nExhaust\nEthereal'; break
+            case 150: if(this.damage==0){this.desc+='Draw X Cards'}else{this.desc+='Draw X+'+this.damage+' Cards'}; break
+            case 151: this.desc+='Increase Collision\nDamage by '+this.damage; break
+            case 152: if(this.damage==0){this.desc+='Pull Collision\nfor '+this.alt+' Damage'}else{this.desc+='Deal '+this.damage+' Damage\nPull Collision\nfor '+this.alt+' Damage'}; break
+            case 153: this.desc+='Add '+this.damage+' Block\nCounter 4 Once\nWith '+this.alt+' Bleed'; break
+            
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

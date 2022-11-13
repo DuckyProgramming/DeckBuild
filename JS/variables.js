@@ -202,8 +202,8 @@ types={
         ],
         },{name:'Stagger',rarity:1,list:1,
         stats:[
+            {damage:15,alt:1,cost:6,attack:42,target:1,desc:'',spec:4,class:0},
             {damage:15,alt:1,cost:5,attack:42,target:1,desc:'',spec:4,class:0},
-            {damage:15,alt:1,cost:4,attack:42,target:1,desc:'',spec:4,class:0},
         ],
         },{name:'Pressure\nPoint',rarity:1,list:1,
         stats:[
@@ -215,7 +215,7 @@ types={
             {damage:4,alt:0,cost:1,attack:92,target:0,desc:'',spec:0,class:1},
             {damage:6,alt:0,cost:1,attack:92,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Shove',rarity:0,list:1,
+        },{name:'Shove',rarity:1,list:1,
         stats:[
             {damage:6,alt:12,cost:5,attack:93,target:1,desc:'',spec:4,class:0},
             {damage:6,alt:12,cost:4,attack:93,target:1,desc:'',spec:4,class:0},
@@ -250,7 +250,7 @@ types={
             {damage:6,alt:4,cost:2,attack:142,target:1,desc:'',spec:0,class:0},
             {damage:12,alt:4,cost:2,attack:142,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'One Last\nThing',rarity:1,list:1,
+        },{name:'One Last\nThing',rarity:0,list:1,
         stats:[
             {damage:2,alt:0,cost:1,attack:143,target:1,desc:'',spec:0,class:0},
             {damage:3,alt:0,cost:1,attack:143,target:1,desc:'',spec:0,class:0},
@@ -272,8 +272,33 @@ types={
         ],
         },{name:'Hidden\nBlade',rarity:1,list:1,
         stats:[
+            {damage:2,alt:0,cost:1,attack:147,target:0,desc:'',spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:147,target:0,desc:'',spec:0,class:2},
-            {damage:5,alt:0,cost:1,attack:147,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Back\nPocket',rarity:1,list:1,
+        stats:[
+            {damage:0,alt:0,cost:-1,attack:150,target:0,desc:'',spec:0,class:2},
+            {damage:2,alt:0,cost:-1,attack:150,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Broad\nShoulders',rarity:1,list:1,
+        stats:[
+            {damage:4,alt:0,cost:2,attack:151,target:0,desc:'',spec:3,class:2},
+            {damage:8,alt:0,cost:2,attack:151,target:0,desc:'',spec:3,class:2},
+        ],
+        },{name:'Push',rarity:0,list:1,
+        stats:[
+            {damage:0,alt:4,cost:0,attack:93,target:1,desc:'',spec:0,class:0},
+            {damage:4,alt:4,cost:0,attack:93,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Pull',rarity:0,list:1,
+        stats:[
+            {damage:0,alt:4,cost:0,attack:152,target:1,desc:'',spec:0,class:0},
+            {damage:4,alt:4,cost:0,attack:152,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Counter\nStab',rarity:0,list:1,
+        stats:[
+            {damage:3,alt:3,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
+            {damage:6,alt:5,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
         ],
         },{name:'Vigilance',rarity:1,list:2,
         stats:[
