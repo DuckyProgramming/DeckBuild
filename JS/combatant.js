@@ -25,13 +25,13 @@ class combatant{
 		this.status={main:[],fade:[],display:[],color:[
 			[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120],[125,75,25],[25,125,175],[150,225,150],
 			[100,200,200],[200,0,50],[100,50,150],[50,100,50],[20,60,120],[170,240,255],[235,65,15],[210,200,245],[210,90,0],[50,0,0],
-			[255,200,255],[125,160,160],[200,25,125],[190,190,60],[225,225,75],[255,50,100],[150,150,50],[255,125,25]],infoFade:[],name:[
+			[255,200,255],[125,160,160],[200,25,125],[190,190,60],[225,225,75],[255,50,100],[150,150,50],[255,125,25],[255,175,75]],infoFade:[],name:[
 			'Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Vulnerability','Confused',
 			'Reflect','Bleed','Intangible','Sink','Hymn','Mental Fortress','Rush','Wave of the Hand','Next Attack Damage','Die Next Turn',
-			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once'],class:[
+			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
-			1,1,1,1,0,1,1,1]}
+			1,1,1,1,0,1,1,1,1]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -877,6 +877,10 @@ class combatant{
 				if(this.status.main[27]>0){
 					this.battle.combatants[user].status.main[11]+=this.status.main[27]
 					this.status.main[27]=0
+				}
+				if(this.status.main[28]>0){
+					this.battle.attack.attacks.push([5,20,user,this.status.main[28]])
+					this.status.main[28]=0
 				}
 				this.battle.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))
 				this.battle.particles[this.battle.particles.length-1].text=round(this.calc.damage*10)/10

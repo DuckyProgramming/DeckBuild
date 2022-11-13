@@ -23,21 +23,28 @@ class group{
                 }
                 //this.add(findCard('Big Strike'),0,this.battle.player)
                 //this.add(findCard('Triple\nPunch'),0,this.battle.player)
-                this.add(55,0,this.battle.player)
-                this.add(56,0,this.battle.player)
-                this.add(57,0,this.battle.player)
                 this.add(58,0,this.battle.player)
                 this.add(59,0,this.battle.player)
+                this.add(60,0,this.battle.player)
+                this.add(61,0,this.battle.player)
+                this.add(62,0,this.battle.player)
             break
             case 2:
                 for(e=0;e<4;e++){
-                    this.add(1,0,this.battle.player)
+                    //this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
-                    this.add(2,0,this.battle.player)
+                    //this.add(2,0,this.battle.player)
                 }
-                this.add(findCard('Eruption'),0,this.battle.player)
-                this.add(findCard('Vigilance'),0,this.battle.player)
+                //this.add(findCard('Eruption'),0,this.battle.player)
+                //this.add(findCard('Vigilance'),0,this.battle.player)
+                this.add(116,0,this.battle.player)
+                this.add(117,0,this.battle.player)
+                this.add(118,0,this.battle.player)
+                this.add(119,0,this.battle.player)
+                this.add(120,0,this.battle.player)
+                //this.add(121,0,this.battle.player)
+                //this.add(122,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){

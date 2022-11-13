@@ -300,6 +300,21 @@ types={
             {damage:3,alt:3,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
             {damage:6,alt:5,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
         ],
+        },{name:'Counter\nPush',rarity:1,list:1,
+        stats:[
+            {damage:3,alt:4,cost:1,attack:154,target:0,desc:'',spec:0,class:1},
+            {damage:5,alt:4,cost:1,attack:154,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Rising\nUpper',rarity:2,list:1,
+        stats:[
+            {damage:10,alt:0,cost:2,attack:155,target:1,desc:'',spec:0,class:0},
+            {damage:16,alt:0,cost:2,attack:155,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Flow\nState',rarity:2,list:1,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:156,target:0,desc:'',spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:156,target:0,desc:'',spec:0,class:2},
+        ],
         },{name:'Vigilance',rarity:1,list:2,
         stats:[
             {damage:8,alt:0,cost:2,attack:27,target:0,desc:'',spec:0,class:1},

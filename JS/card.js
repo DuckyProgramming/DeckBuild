@@ -201,6 +201,9 @@ class card{
             case 151: this.desc+='Increase Collision\nDamage by '+this.damage; break
             case 152: if(this.damage==0){this.desc+='Pull Collision\nfor '+this.alt+' Damage'}else{this.desc+='Deal '+this.damage+' Damage\nPull Collision\nfor '+this.alt+' Damage'}; break
             case 153: this.desc+='Add '+this.damage+' Block\nCounter 4 Once\nWith '+this.alt+' Bleed'; break
+            case 154: this.desc+='Add '+this.damage+' Block\nCounter Once With\nPush Collision\nfor '+this.alt+' Damage'; break
+            case 155: this.desc+='Deal '+this.damage+' Damage\nDraw 1 Card\nIt Costs 0'; break
+            case 156: this.desc+='Reduce Cost of\nHand by '+this.damage; break
             
         }
         if(this.spec==2||this.spec==5||this.spec==9){
