@@ -653,6 +653,11 @@ types={
             {damage:1,alt:0,cost:0,attack:168,target:0,desc:'',spec:1,class:2},
             {damage:1,alt:0,cost:0,attack:168,target:0,desc:'',spec:1,class:2},
         ],
+        },{name:'Concentrate',rarity:1,list:2,
+        stats:[
+            {damage:3,alt:2,cost:0,attack:169,target:0,desc:'',spec:0,class:2},
+            {damage:3,alt:2,cost:0,attack:169,target:0,desc:'',spec:0,class:2},
+        ],
         },
         
         
@@ -1072,6 +1077,12 @@ types={
         },{
             name:'Free Step',id:2,
             desc:'Add 1 Step\nEvery Turn',
+        },{
+            name:'Quick Heal',id:3,
+            desc:'Heal 5 Health\nat the End of Combat',
+        },{
+            name:'First Turn Bonus Draw',id:4,
+            desc:'Draw 2 Extra Cards\nat the Start of Combat',
         },
     ],event:[
         {

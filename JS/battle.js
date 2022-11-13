@@ -112,6 +112,10 @@ class battle{
         if(this.relics.active[1]){
             this.hand.add(findCard('Redraw'),0,0)
         }
+        if(this.relics.active[4]){
+            this.draw()
+            this.draw()
+        }
     }
     turnDraw(){
         for(e=0,le=this.drawAmount;e<le;e++){
@@ -542,6 +546,9 @@ class battle{
                 transition.trigger=true
                 transition.scene='map'
                 this.map.complete[this.map.position[0]][this.map.position[1]]=1
+                if(this.relics.active[3]){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+5)
+                }
                 for(e=0,le=this.objective.length;e<le;e++){
                     if(this.objective[e][0]==0||this.objective[e][0]==1&&this.counter.turn<=this.objective[e][1]){
                         switch(this.objective[e][2]){

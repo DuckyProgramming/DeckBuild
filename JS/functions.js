@@ -161,12 +161,22 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip){
 	layer.textSize(15)
 	switch(type){
 		case 1:
-			layer.text('1',10,0)
+			layer.text('1',10,1)
 			layer.image(graphics.symbol[0],-15,-10,20,20)
 		break
 		case 2:
 			layer.image(graphics.symbol[1],-10,-20,20,20)
 			layer.image(graphics.symbol[3],-10,-5,20,20)
+		break
+		case 3:
+			layer.text('E',10,2)
+			layer.image(graphics.symbol[4],-15,-10,20,20)
+		break
+		case 4:
+			layer.text('1',10,1)
+			layer.textSize(10)
+			layer.text('2',-5,0)
+			layer.image(graphics.symbol[5],-15,-10,20,20)
 		break
 	}
 	layer.scale(1/size,1/size/flip)

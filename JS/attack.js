@@ -821,7 +821,11 @@ class attack{
                 break
                 case 166:
                     this.battle.combatants[0].block+=this.damage
-                    this.battle.discarding++
+                    this.battle.discarding+=this.alt
+                break
+                case 169:
+                    this.battle.discarding+=this.damage
+                    this.battle.mana.main+=this.alt
                 break
             }
             this.battle.combatants[0].lastPlay=this.class
