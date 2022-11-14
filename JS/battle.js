@@ -2,12 +2,12 @@ class battle{
     constructor(layer,player){
         this.layer=layer
         this.player=player
-        this.hand=new group(this.layer,this)
-        this.reserve=new group(this.layer,this)
-        this.deck=new group(this.layer,this)
-        this.discard=new group(this.layer,this)
-        this.drop=new group(this.layer,this)
-        this.attack=new attack(this.layer,this)
+        this.hand=new group(this.layer,this,0)
+        this.reserve=new group(this.layer,this,1)
+        this.deck=new group(this.layer,this,2)
+        this.discard=new group(this.layer,this,3)
+        this.drop=new group(this.layer,this,4)
+        this.attack=new attack(this.layer,this,5)
         this.particles=[]
         this.combatants=[]
         this.combatants.push(new combatant(this.layer,this,100,350,this.player,0,0))
@@ -35,13 +35,16 @@ class battle{
         this.discarding=0
         this.costs={card:[[0,0,0,0,0],[0,0]],sale:0,remove:0}
         this.relics={list:[],owned:[],active:[]}
+        this.random={rested:false,attacked:0,taken:0}
     }
     create(){
         this.end=false
-        this.counter={enemies:{dead:0,total:0,alive:0},turn:1,played:0}
+        this.counter={enemies:{dead:0,total:0,alive:0},turn:1,played:0,turn:0}
         this.anim.lost=0
         this.anim.end=0
         this.discarding=0
+        this.random.attacked=0
+        this.random.taken=0
         this.combatants[0].resetUnique()
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
@@ -112,6 +115,27 @@ class battle{
         if(this.relics.active[1]){
             this.hand.add(findCard('Redraw'),0,0)
         }
+        if(this.relics.active[5]){
+            this.hand.add(findCard('Miracle'),0,0)
+        }
+        if(this.relics.active[6]){
+            this.combatants[0].status.main[30]+=8
+        }
+        if(this.relics.active[7]){
+            this.combatants[0].block+=10
+        }
+        if(this.relics.active[8]&&this.random.rested){
+            this.mana.main+=2
+        }
+        if(this.relics.active[10]){
+            for(e=1,le=this.combatants.length;e<le;e++){
+                this.combatants[e].boost.main[1]--
+            }
+        }
+        if(this.relics.active[16]){
+            this.mana.main++
+        }
+        this.random.rested=false
         if(this.relics.active[4]){
             this.draw()
             this.draw()
@@ -145,8 +169,8 @@ class battle{
         }
     }
     getRelic(type){
-        this.relics.owned.push(types.relic[type].id)
-        this.relics.active[types.relic[type].id]=true
+        this.relics.owned.push(type)
+        this.relics.active[type]=true
     }
     return(){
         while(this.discard.cards.length>0){
@@ -164,6 +188,7 @@ class battle{
         this.deck.cards.splice(index,1)
     }
     endTurn(){
+        this.counter.turn++
         this.discarding=0
         this.mana.main=min(this.mana.max,this.mana.main+this.mana.gen)
         this.mana.main+=this.combatants[0].status.main[1]
@@ -185,7 +210,7 @@ class battle{
                 if(f==11&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                     this.combatants[e].status.main[f]--
-                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23){
+                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30){
                     this.combatants[e].status.main[f]=0
                 }
             }
@@ -198,7 +223,14 @@ class battle{
         for(e=0;e<this.combatants[0].status.main[21];e++){
             this.hand.add(findCard('Shiv'),0,0)
         }
+        if(this.relics.active[9]&&this.random.attacked<=0){
+            this.mana.main++
+        }
+        if(this.relics.active[15]&&this.counter.turn%3==2){
+            this.mana.main++
+        }
         this.counter.played=0
+        this.random.attacked=0
     }
     playCard(){
         this.counter.played++
@@ -209,6 +241,7 @@ class battle{
                 }
             }
         }else if(this.attack.class==0){
+            this.random.attacked++
             this.combatants[0].status.main[24]=0
             for(g=0,lg=this.hand.cards.length;g<lg;g++){
                 if(this.hand.cards[g].attack==-12){
@@ -391,6 +424,9 @@ class battle{
                     case 3:
                         this.layer.text(this.objective[e][3]+' HP',600,e*20+20)
                     break
+                    case 4:
+                        this.layer.text('Relic',600,e*20+20)
+                    break
                 }
             }
         }
@@ -425,6 +461,9 @@ class battle{
                     break
                     case 3:
                         this.layer.text('Heal '+this.objective[e][3]+' Health',450,e*60+150)
+                    break
+                    case 4:
+                        this.layer.text('New Relic',450,e*60+150)
                     break
                 }
             }
@@ -566,6 +605,11 @@ class battle{
                             case 3:
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+this.objective[e][3])
                             break
+                            case 4:
+                                f=floor(random(0,this.relics.list.length))
+                                this.getRelic(this.relics.list[f])
+                                this.relics.list.splice(f,1)
+                            break
                         }
                     }
                 }
@@ -584,6 +628,7 @@ class battle{
     }
     setupChoice(level,rarity,spec){
         this.choice.cards=[]
+        this.context=0
         switch(spec){
             case 0:
                 this.calc.list=listing.card[this.player][rarity]
@@ -631,6 +676,9 @@ class battle{
                 this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
             }
         }
+        if(transition.scene=='map'&&this.context==1){
+            transition.scene='rest'
+        }
     }
     setupMap(){
         this.map.main=[]
@@ -657,6 +705,7 @@ class battle{
         }
     } 
     displayMap(){
+        this.displayRelics()
         this.layer.stroke(150)
         this.layer.strokeWeight(3)
         for(e=0,le=this.map.main.length-1;e<le;e++){
@@ -759,7 +808,14 @@ class battle{
                             this.create()
                         break
                         case 2:
-                            transition.scene='rest'
+                            if(this.relics.active[14]){
+                                this.setupChoice(0,floor(random(0,1.5)),0)
+                                this.context=1
+                                transition.scene='choice'
+                            }else{
+                                transition.scene='rest'
+                            }
+                            this.random.rested=true
                         break
                         case 3:
                             transition.scene='event'

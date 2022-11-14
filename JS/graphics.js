@@ -139,7 +139,7 @@ function setupGraphics(){
 	graphics.minor[5].rect(0,0,160,8,3)
 	graphics.minor[5].fill(149,134,184)
 	graphics.minor[5].rect(0,-2,160,4,3)
-	for(a=0;a<6;a++){
+	for(a=0;a<14;a++){
 		graphics.symbol.push(createGraphics(100,100))
 		setupLayer(graphics.symbol[a])
 		graphics.symbol[a].noStroke()
@@ -156,8 +156,12 @@ function setupGraphics(){
 	graphics.symbol[0].triangle(0,50,0,20,-25,35)
 	graphics.symbol[1].rect(-15,0,60,16)
 	graphics.symbol[1].triangle(15,-24,15,24,40,0)
-	graphics.symbol[2].triangle(-30,-20,30,-20,0,-35)
-	graphics.symbol[2].arc(0,-20,60,120,0,180)
+	graphics.symbol[2].strokeWeight(5)
+	graphics.symbol[2].stroke(0)
+	graphics.symbol[2].noFill()
+	graphics.symbol[2].line(-40,-25,0,-45)
+	graphics.symbol[2].line(40,-25,0,-45)
+	graphics.symbol[2].arc(0,-25,80,140,0,180)
 	for(a=0;a<6;a++){
 		graphics.symbol[3].arc(0,0,80,80,a*60+10,a*60+50)
 	}
@@ -169,4 +173,44 @@ function setupGraphics(){
 	graphics.symbol[5].stroke(0)
 	graphics.symbol[5].noFill()
 	graphics.symbol[5].rect(0,0,60,80,2.5)
+	graphics.symbol[6].ellipse(0,0,40,40)
+	for(a=0;a<4;a++){
+		graphics.symbol[6].arc(25*cos(a*90),25*sin(a*90),50-(a%2)*25,25+(a%2)*25,a*90,a*90+180)
+	}
+	graphics.symbol[7].strokeWeight(5)
+	graphics.symbol[7].stroke(0)
+	graphics.symbol[7].noFill()
+	graphics.symbol[7].beginShape()
+	for(a=0;a<16;a++){
+		graphics.symbol[7].vertex(sin(a*22.5)*(30+(a%2)*20),cos(a*22.5)*(30+(a%2)*20))
+	}
+	graphics.symbol[7].endShape(CLOSE)
+	graphics.symbol[8].strokeWeight(6)
+	graphics.symbol[8].stroke(0)
+	graphics.symbol[8].noFill()
+    graphics.symbol[8].quad(-24,0,0,-32,24,0,0,32)
+	graphics.symbol[9].ellipse(0,10,40,40)
+	graphics.symbol[9].ellipse(-25,5,40,40)
+	graphics.symbol[9].ellipse(25,5,40,40)
+	graphics.symbol[9].ellipse(-15,-10,40,40)
+	graphics.symbol[9].ellipse(15,-10,40,40)
+	graphics.symbol[10].strokeWeight(5)
+	graphics.symbol[10].stroke(0)
+	graphics.symbol[10].noFill()
+	graphics.symbol[10].beginShape()
+	for(a=0;a<16;a++){
+		graphics.symbol[10].vertex(sin(a*22.5)*(30+(a%2)*20),cos(a*22.5)*(30+(a%2)*20))
+	}
+	graphics.symbol[10].endShape(CLOSE)
+	graphics.symbol[10].line(-20,-20,20,20)
+	graphics.symbol[11].rect(0,-15,16,60)
+	graphics.symbol[11].triangle(-24,15,24,15,0,40)
+	graphics.symbol[12].rect(15,0,60,16)
+	graphics.symbol[12].triangle(-15,-24,-15,24,-40,0)
+	graphics.symbol[13].strokeWeight(5)
+	graphics.symbol[13].stroke(0)
+	graphics.symbol[13].noFill()
+	graphics.symbol[13].arc(0,0,50,60,0,180)
+	graphics.symbol[13].line(-25,0,0,-40)
+	graphics.symbol[13].line(25,0,0,-40)
 }

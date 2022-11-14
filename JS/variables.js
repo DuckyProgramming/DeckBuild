@@ -1060,7 +1060,7 @@ types={
             combatants:[5,0,0,0,0,0],
             reinforce:[],
             threshold:2,
-            objective:[[0,10,0,0],[1,5,2,20]],
+            objective:[[0,10,0,0],[1,5,4,20]],
         },{
             combatants:[5,5,5,0,0,0],
             reinforce:[5],
@@ -1081,8 +1081,44 @@ types={
             name:'Quick Heal',id:3,
             desc:'Heal 5 Health\nat the End of Combat',
         },{
-            name:'First Turn Bonus Draw',id:4,
+            name:'First Turn Draw',id:4,
             desc:'Draw 2 Extra Cards\nat the Start of Combat',
+        },{
+            name:'First Turn Miracle',id:5,
+            desc:'Add 1 Miracle at\nthe Start of Combat',
+        },{
+            name:'First Attack Damage',id:6,
+            desc:'First Attack\nDeals +8 Damage',
+        },{
+            name:'First Turn Block',id:7,
+            desc:'Gain 10 Block\nat the Start of Combat',
+        },{
+            name:'Resting Energy',id:8,
+            desc:'Gain 2 Energy\nafter Resting',
+        },{
+            name:'No Attack Energy',id:9,
+            desc:'If You do not Attack\nGain 1 Energy Next Turn',
+        },{
+            name:'First Turn Weaken',id:10,
+            desc:'Apply 1 Weak to All\nEnemies the Start of Combat',
+        },{
+            name:'Counter\nAll',id:11,
+            desc:'Counter 3 All\nAt All Times',
+        },{
+            name:'First Damage Draw',id:12,
+            desc:'Draw 3 Extra Cards at First\nDamage Taken per Combat',
+        },{
+            name:'Add Card Currency',id:13,
+            desc:'Gain 10 Currency\nWhen Card Added',
+        },{
+            name:'Add Card Rest',id:14,
+            desc:'Add a Card\nafter Resting',
+        },{
+            name:'Third Turn Energy',id:15,
+            desc:'Gain 1 Energy\nevery 3 Turns',
+        },{
+            name:'First Turn Energy',id:16,
+            desc:'Gain 1 Energy at\nthe Start of Combat',
         },
     ],event:[
         {

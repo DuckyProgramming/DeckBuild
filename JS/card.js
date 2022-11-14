@@ -44,7 +44,7 @@ class card{
             case -5: this.desc+='Take 1 Damage\nper Card Not Played'; break
             case -7: this.desc+='At End of Turn,\nGain 1 Vulnerable'; break
             case -8: this.desc+='When Removed,\nLose 3 Max Health'; break
-            case -9: this.desc+='When Drawn,\nLose 1 Mana'; break
+            case -9: this.desc+='When Drawn,\nLose 1 Energy'; break
             case -10: this.desc+='At End of Turn,\nTake 2 Damage'; break
             case -11: this.desc+='Cannot Play more\nthan 3 Cards'; break
             case -12: this.desc+='Cannot Play more\nthan 1 Attack\nWhen Played,\nBreak Balance'; break
@@ -58,7 +58,7 @@ class card{
             case 8: this.desc+='Deal '+this.damage+' Damage\nAdd a Bleed\nto Deck'; break
             case 9: this.desc+='Deal '+this.damage+' Damage\nDiscard 1\nRandom Card'; break
             case 10: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, gain\n1 Energy'; break
-            case 11: this.desc+='Deal '+this.damage+' Damage\nGain 2 Mana\nNext Turn'; break
+            case 11: this.desc+='Deal '+this.damage+' Damage\nGain 2 Energy\nNext Turn'; break
             case 12: this.desc+='Deal '+this.damage+' Damage\nto All Enemies'; break
             case 13: this.desc+='Hold '+this.damage+'\nBasic Charge'; break
             case 14: this.desc+='Fire 1st Charge\n'+this.damage+' Times'; break
@@ -143,7 +143,7 @@ class card{
             case 93: if(this.damage==0){this.desc+='Push Collision\nfor '+this.alt+' Damage'}else{this.desc+='Deal '+this.damage+' Damage\nPush Collision\nfor '+this.alt+' Damage'}; break
             case 94: this.desc+='Add '+this.damage+' Block\nGain 1 Strength\nwhen Attacked'; break
             case 95: this.desc+='Deal '+this.damage+' Damage\nEnter Wrath'; break
-            case 96: this.desc+='Gain '+this.damage+' Mana'; break
+            case 96: this.desc+='Gain '+this.damage+' Energy'; break
             case 97: this.desc+='Deal '+this.damage+' Damage\nfor Every Enemy'; break
             case 98: this.desc+='Add '+this.damage+' Block\nShuffle an Insight\ninto Draw Pile'; break
             case 99: this.desc+='Deal '+this.damage+' Damage\nReturn on\nStance Change'; break
@@ -180,7 +180,7 @@ class card{
             case 130: this.desc+='Deal '+this.damage+' Damage\nX Times'; break
             case 131: this.desc+='When You\nPlay a Card,\nDeal '+this.damage+' Damage\nto All Enemies'; break
             case 132: if(this.damage==0){this.desc+='Discard Your Hand,\nthen Add that\nMany Shivs'}else{this.desc+='Discard Your Hand,\nthen Add that\nMany Shivs+'}; break
-            case 133: this.desc+='Gain '+this.damage+' Mana\nDraw '+this.alt+' Cards'; break
+            case 133: this.desc+='Gain '+this.damage+' Energy\nDraw '+this.alt+' Cards'; break
             case 134: this.desc+='When You\nPlay a Card,\nGain '+this.damage+' Block'; break
             case 135: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nTemporarily Reduce\nDamage by '+this.alt; break
             case 136: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed'; break
@@ -212,11 +212,11 @@ class card{
             case 162: this.desc+='Add '+this.damage+' Block\nScry '+this.alt; break
             case 163: this.desc+='Scry '+this.damage+'\nDraw '+this.alt+' Card'; break
             case 164: this.desc+='Deal '+this.damage+' Damage\nAdd '+this.alt+' Bleed\nto Downed'; break
-            case 165: if(this.alt==0){this.desc+='Gain '+this.damage+' Mana\nfor Every\nHit Taken'}else{this.desc+='Add '+this.alt+' Block\nGain '+this.damage+' Mana\nfor Every\nHit Taken'}; break
+            case 165: if(this.alt==0){this.desc+='Gain '+this.damage+' Energy\nfor Every\nHit Taken'}else{this.desc+='Add '+this.alt+' Block\nGain '+this.damage+' Energy\nfor Every\nHit Taken'}; break
             case 166: this.desc+='Add '+this.damage+' Block\nDiscard 1 Card'; break
             case 167: this.desc+='When Discarded,\nDraw '+this.damage+' Cards'; break
-            case 168: this.desc+='When Discarded,\nGain '+this.damage+' Mana'; break
-            case 169: this.desc+='Discard '+this.damage+' Cards\nGain '+this.alt+' Mana'; break
+            case 168: this.desc+='When Discarded,\nGain '+this.damage+' Energy'; break
+            case 169: this.desc+='Discard '+this.damage+' Cards\nGain '+this.alt+' Energy'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
@@ -353,7 +353,7 @@ class card{
             this.layer.translate(-this.position.x,-this.position.y)
         }
     }
-    update(mana,combo,armed){
+    update(Energy,combo,armed){
         if(this.size<1&&!this.used){
             this.size=round(this.size*5+1)*0.2
         }else if(this.size>0&&this.used){
@@ -373,9 +373,9 @@ class card{
         }else if(!this.select&&this.anim.select>0){
             this.anim.select=round(this.anim.select*5-1)/5
         }
-        if((mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==5||this.spec==11)&&armed!=1)&&this.anim.afford<1){
+        if((Energy.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==5||this.spec==11)&&armed!=1)&&this.anim.afford<1){
             this.anim.afford=round(this.anim.afford*5+1)/5
-        }else if(!(mana.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==5||this.spec==11)&&armed!=1)&&this.anim.afford>0){
+        }else if(!(Energy.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==5||this.spec==11)&&armed!=1)&&this.anim.afford>0){
             this.anim.afford=round(this.anim.afford*5-1)/5
         }
         if(this.trigger&&!this.used){

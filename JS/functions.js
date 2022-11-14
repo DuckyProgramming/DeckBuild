@@ -178,6 +178,76 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip){
 			layer.text('2',-5,0)
 			layer.image(graphics.symbol[5],-15,-10,20,20)
 		break
+		case 5:
+			layer.text('1',10,1)
+			layer.image(graphics.symbol[6],-15,-10,20,20)
+		break
+		case 6:
+			layer.text('1',10,1)
+			layer.textSize(10)
+			layer.text('8',-5,0)
+			layer.image(graphics.symbol[7],-15,-10,20,20)
+		break
+		case 7:
+			layer.text('1',10,1)
+			layer.textSize(10)
+			layer.text('10',-5,0)
+			layer.image(graphics.symbol[2],-15,-10,20,20)
+		break
+		case 8:
+			layer.textSize(10)
+			layer.text('2',0,-5)
+			layer.image(graphics.symbol[8],-15,-20,30,30)
+			layer.image(graphics.symbol[9],-8,5,16,16)
+		break
+		case 9:
+			layer.textSize(10)
+			layer.text('2',-10,1)
+			layer.image(graphics.symbol[8],-25,-15,30,30)
+			layer.image(graphics.symbol[10],0,-10,20,20)
+		break
+		case 10:
+			layer.text('1',10,1)
+			layer.image(graphics.symbol[2],-15,-10,20,20)
+			layer.image(graphics.symbol[11],-13,-8,16,16)
+		break
+		case 11:
+			layer.textSize(10)
+			layer.text('3',0,1)
+			layer.image(graphics.symbol[1],-10,-20,20,20)
+			layer.image(graphics.symbol[12],-10,0,20,20)
+		break
+		case 12:
+			layer.textSize(10)
+			layer.text('3',-5,0)
+			layer.image(graphics.symbol[5],-15,-10,20,20)
+			layer.image(graphics.symbol[13],0,-10,20,20)
+		break
+		case 13:
+			layer.text('$',10,1)
+			layer.textSize(10)
+			layer.text('+',-5,0)
+			layer.image(graphics.symbol[5],-15,-10,20,20)
+		break
+		case 14:
+			layer.textSize(10)
+			layer.text('+',0,-5)
+			layer.image(graphics.symbol[5],-10,-15,20,20)
+			layer.image(graphics.symbol[9],-8,5,16,16)
+		break
+		case 15:
+			layer.text('3',5,-5)
+			layer.textSize(10)
+			layer.text('1',-10,1)
+			layer.image(graphics.symbol[8],-25,-15,30,30)
+			layer.image(graphics.symbol[1],0,-5,18,18)
+		break
+		case 16:
+			layer.text('1',10,1)
+			layer.textSize(10)
+			layer.text('1',-5,1)
+			layer.image(graphics.symbol[8],-20,-15,30,30)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)

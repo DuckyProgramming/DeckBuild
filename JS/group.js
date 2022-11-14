@@ -1,7 +1,8 @@
 class group{
-    constructor(layer,battle){
+    constructor(layer,battle,id){
         this.layer=layer
         this.battle=battle
+        this.id=id
         this.storage={cards:[]}
         this.cards=[]
         this.scroll=0
@@ -72,6 +73,11 @@ class group{
     }
     add(type,level,color){
         this.cards.push(new card(this.layer,1206,500,type,level,color))
+        if(this.id==2&&stage.scene=='choice'){
+            if(this.battle.relics.active[13]){
+                this.battle.currency.money+=10
+            }
+        }
     }
     addDrop(type,level,color){
         this.cards.push(new card(this.layer,50,-200,type,level,color))
