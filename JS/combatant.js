@@ -867,6 +867,18 @@ class combatant{
 						this.calc.damage=5
 					}
 				}
+				if(this.id==0){
+					this.battle.random.taken++
+					this.battle.counter.taken+=this.calc.damage
+					if(this.battle.relics.active[11]){
+						this.battle.combatants[user].take(3,this.id)
+					}
+					if(this.battle.relics.active[12]&&this.battle.random.taken==1){
+						for(g=0;g<3;g++){
+							this.battle.draw()
+						}
+					}
+				}
 				this.battle.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))
 				this.battle.particles[this.battle.particles.length-1].text=round(this.calc.damage*10)/10
 				if(this.block>this.calc.damage&&extra!=1){
@@ -877,17 +889,6 @@ class combatant{
 					this.life-=this.calc.damage
 				}else{
 					this.life-=this.calc.damage
-				}
-				if(this.id==0){
-					this.battle.random.taken++
-					if(this.battle.relics.active[11]){
-						this.battle.combatants[user].take(3,this.id)
-					}
-					if(this.battle.relics.active[12]&&this.battle.random.taken==1){
-						for(g=0;g<3;g++){
-							this.battle.draw()
-						}
-					}
 				}
 				if(this.status.main[0]>0){
 					this.battle.combatants[user].take(this.status.main[0],this.id)

@@ -996,6 +996,11 @@ types={
             {damage:0,alt:0,cost:0,attack:-12,target:0,desc:'',spec:0,class:0},
             {damage:0,alt:0,cost:0,attack:-12,target:0,desc:'',spec:0,class:0},
         ],
+        },{name:'Pain',rarity:-1,list:10,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
+        ],
         },{name:'Confusion',rarity:-2,list:11,
         stats:[
             {damage:0,alt:0,cost:0,attack:-1,target:0,desc:'',spec:1,class:0},
@@ -1060,7 +1065,7 @@ types={
             combatants:[5,0,0,0,0,0],
             reinforce:[],
             threshold:2,
-            objective:[[0,10,0,0],[1,5,4,20]],
+            objective:[[0,10,0,0],[2,5,4,20]],
         },{
             combatants:[5,5,5,0,0,0],
             reinforce:[5],
@@ -1069,92 +1074,95 @@ types={
         },
     ],relic:[
         {
-            name:'',id:0,
+            name:'',id:0,rarity:-1,
             desc:'',
         },{
-            name:'First Turn Redraw',id:1,
+            name:'First Turn Redraw',id:1,rarity:1,
             desc:'Add 1 Redraw at\nthe Start of Combat',
         },{
-            name:'Free Step',id:2,
+            name:'Free Step',id:2,rarity:1,
             desc:'Add 1 Step\nEvery Turn',
         },{
-            name:'Quick Heal',id:3,
+            name:'Quick Heal',id:3,rarity:0,
             desc:'Heal 2 Health\nat the End of Combat',
         },{
-            name:'First Turn Draw',id:4,
+            name:'First Turn Draw',id:4,rarity:0,
             desc:'Draw 2 Extra Cards\nat the Start of Combat',
         },{
-            name:'First Turn Miracle',id:5,
+            name:'First Turn Miracle',id:5,rarity:0,
             desc:'Add 1 Miracle at\nthe Start of Combat',
         },{
-            name:'First Attack Damage',id:6,
+            name:'First Attack Damage',id:6,rarity:0,
             desc:'First Attack\nDeals +8 Damage',
         },{
-            name:'First Turn Block',id:7,
+            name:'First Turn Block',id:7,rarity:0,
             desc:'Gain 10 Block\nat the Start of Combat',
         },{
-            name:'Resting Energy',id:8,
+            name:'Resting Energy',id:8,rarity:0,
             desc:'Gain 2 Energy\nafter Resting',
         },{
-            name:'No Attack Energy',id:9,
+            name:'No Attack Energy',id:9,rarity:0,
             desc:'If You do not Attack\nGain 1 Energy Next Turn',
         },{
-            name:'First Turn Weaken',id:10,
+            name:'First Turn Weaken',id:10,rarity:0,
             desc:'Apply 1 Weak to All\nEnemies the Start of Combat',
         },{
-            name:'Counter\nAll',id:11,
+            name:'Counter\nAll',id:11,rarity:0,
             desc:'Counter 3 All\nAt All Times',
         },{
-            name:'First Damage Draw',id:12,
+            name:'First Damage Draw',id:12,rarity:0,
             desc:'Draw 3 Extra Cards at First\nDamage Taken per Combat',
         },{
-            name:'Add Card Currency',id:13,
+            name:'Add Card Currency',id:13,rarity:0,
             desc:'Gain 10 Currency\nWhen Card Added',
         },{
-            name:'Add Card Rest',id:14,
+            name:'Add Card Rest',id:14,rarity:0,
             desc:'Add a Card\nafter Resting',
         },{
-            name:'Third Turn Energy',id:15,
+            name:'Third Turn Energy',id:15,rarity:0,
             desc:'Gain 1 Energy\nevery 3rd Turn',
         },{
-            name:'First Turn Energy',id:16,
+            name:'First Turn Energy',id:16,rarity:0,
             desc:'Gain 1 Energy at\nthe Start of Combat',
         },{
-            name:'Unspent Currency',id:17,
+            name:'Unspent Currency',id:17,rarity:0,
             desc:'Gain 10 Currency per Room\nUntil You Enter a Shop',
         },{
-            name:'Shop Heal',id:18,
+            name:'Shop Heal',id:18,rarity:0,
             desc:'Heal 15 Health\nWhen Entering a Shop',
         },{
-            name:'Critical Hit',id:19,
+            name:'Critical Hit',id:19,rarity:0,
             desc:'Every 10th Attack\nDeals Double Damage',
         },{
-            name:'First Turn Dexterity',id:20,
+            name:'First Turn Dexterity',id:20,rarity:0,
             desc:'Gain 1 Dexterity at\nthe Start of Combat',
         },{
-            name:'Curse Negate',id:21,
+            name:'Curse Negate',id:21,rarity:0,
             desc:'Remove the Next\nCurse Obtained',
         },{
-            name:'Attack Spam',id:22,
+            name:'Attack Spam',id:22,rarity:0,
             desc:'Every 10 Attacks\nPlayed, Gain 1 Energy',
         },{
-            name:'Weak Elites',id:23,
+            name:'Weak Elites',id:23,rarity:0,
             desc:'Enemies in Elite Rooms\nLose 20% of their Health',
         },{
-            name:'Improved Heal',id:24,
+            name:'Improved Heal',id:24,rarity:0,
             desc:'Heal 15 More\nHealth When Resting',
         },{
-            name:'Cheap Removal',id:25,
+            name:'Cheap Removal',id:25,rarity:0,
             desc:'Removing Cards Always\nCosts 60 Currency',
         },{
-            name:'7 Max HP',id:26,
+            name:'7 Max HP',id:26,rarity:0,
             desc:'When Taken, Gain 7 Max HP',
         },{
-            name:'Small Attack Bonus',id:27,
+            name:'Small Attack Bonus',id:27,rarity:0,
             desc:'If you Deal Less than 5\nDamage, Increase it to 5',
         },{
-            name:'First Turn Strength',id:28,
+            name:'First Turn Strength',id:28,rarity:0,
             desc:'Gain 1 Strength at\nthe Start of Combat',
+        },{
+            name:'Random Upgrade',id:29,rarity:-1,
+            desc:'Each Turn, Upgrade a\nRandom Card in your Hand',
         },
     ],event:[
         {
@@ -1459,6 +1467,16 @@ types={
                     option:['Take the money'],
                     optionDesc:['Gain $15'],
                     link:[-1],
+                },
+            ],
+        },{
+            name:'',id:0,
+            pages:[
+                {
+                    desc:"",
+                    option:[],
+                    optionDesc:[],
+                    link:[],
                 },
             ],
         },{

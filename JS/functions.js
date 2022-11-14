@@ -126,6 +126,9 @@ function updateMouse(layer){
 function copyCard(base){
 	return new card(base.layer,base.position.x,base.position.y,base.type,base.level,base.color,base.damage,base.alt,base.base.cost)
 }
+function reformCard(base){
+	return new card(base.layer,base.position.x,base.position.y,base.type,base.level,base.color)
+}
 function generateListing(cards){
 	for(a=0,la=listing.card.length;a<la;a++){
 		for(b=0;b<4;b++){
@@ -145,6 +148,14 @@ function generateListing(cards){
 function findCard(name){
 	for(i=0,li=types.card.length;i<li;i++){
 		if(types.card[i].name==name){
+			return i
+		}
+	}
+	return -1
+}
+function findRelic(name){
+	for(i=0,li=types.relic.length;i<li;i++){
+		if(types.relic[i].name==name){
 			return i
 		}
 	}
@@ -315,6 +326,12 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.text('1',10,1)
 			layer.image(graphics.symbol[7],-15,-10,20,20)
 			layer.image(graphics.symbol[15],-13,-8,16,16)
+		break
+		case 29:
+			layer.textSize(10)
+			layer.text('+',0,6)
+			layer.image(graphics.symbol[1],-10,-20,20,20)
+			layer.image(graphics.symbol[5],-10,-5,20,20)
 		break
 	}
 	layer.scale(1/size,1/size/flip)

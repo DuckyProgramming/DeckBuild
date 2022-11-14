@@ -34,12 +34,12 @@ class battle{
         this.page=0
         this.discarding=0
         this.costs={card:[[0,0,0,0,0],[0,0]],sale:0,remove:0}
-        this.relics={list:[],owned:[],active:[]}
+        this.relics={list:[[],[],[]],owned:[],active:[]}
         this.random={rested:false,attacked:0,taken:0,attacks:0}
     }
     create(){
         this.end=false
-        this.counter={enemies:{dead:0,total:0,alive:0},turn:1,played:0,turn:0}
+        this.counter={enemies:{dead:0,total:0,alive:0},turn:1,played:0,turn:0,taken:0}
         this.anim.lost=0
         this.anim.end=0
         this.discarding=0
@@ -88,8 +88,8 @@ class battle{
             this.eventList.push(zones[this.map.zone].events[this.player][g])
         }
         for(g=0,lg=types.relic.length;g<lg;g++){
-            if(g>=1){
-                this.relics.list.push(g)
+            if(g>=1&&types.relic[g].rarity>=0){
+                this.relics.list[types.relic[g].rarity].push(g)
             }
             this.relics.active.push(false)
         }
@@ -154,6 +154,11 @@ class battle{
         }
         if(this.relics.active[2]){
             this.hand.add(findCard('Step'),0,0)
+        }
+        if(this.relics.active[29]){
+            e=floor(random(0,this.hand.cards.length))
+            this.hand.cards[e].level++
+            this.hand.cards[e]=reformCard(this.hand.cards[e])
         }
     }
     draw(){
@@ -426,7 +431,7 @@ class battle{
         if(this.anim.end<1){
             this.layer.textSize(12)
             for(e=0,le=this.objective.length;e<le;e++){
-                if(this.objective[e][0]==1&&this.counter.turn>this.objective[e][1]){
+                if(this.objective[e][0]==1&&this.counter.turn>this.objective[e][1]||this.objective[e][0]==2&&this.counter.taken>=this.objective[e][1]){
                     this.layer.fill(150,1-this.anim.end)
                 }else{
                     this.layer.fill(255,1-this.anim.end)
@@ -437,6 +442,9 @@ class battle{
                     break
                     case 1:
                         this.layer.text('Complete Mission in '+this.objective[e][1]+' Turns ('+this.counter.turn+')',640,e*20+20)
+                    break
+                    case 2:
+                        this.layer.text('Take Less Than '+this.objective[e][1]+' Damage ('+this.counter.taken+')',640,e*20+20)
                     break
                 }
                 switch(this.objective[e][2]){
@@ -464,7 +472,7 @@ class battle{
             this.layer.fill(255,this.anim.end)
             this.layer.text('End',450,this.objective.length*60+140)
             for(e=0,le=this.objective.length;e<le;e++){
-                if(this.objective[e][0]==1&&this.counter.turn>this.objective[e][1]){
+                if(this.objective[e][0]==1&&this.counter.turn>this.objective[e][1]||this.objective[e][0]==2&&this.counter.taken>=this.objective[e][1]){
                     this.layer.fill(150,this.anim.end)
                 }else{
                     this.layer.fill(255,this.anim.end)
@@ -475,6 +483,9 @@ class battle{
                     break
                     case 1:
                         this.layer.text('Complete Mission in '+this.objective[e][1]+' Turns ('+this.counter.turn+')',450,e*60+120)
+                    break
+                    case 2:
+                        this.layer.text('Take Less Than '+this.objective[e][1]+' Damage ('+this.counter.taken+')',450,e*60+120)
                     break
                 }
                 switch(this.objective[e][2]){
@@ -617,7 +628,7 @@ class battle{
                     this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+2)
                 }
                 for(e=0,le=this.objective.length;e<le;e++){
-                    if(this.objective[e][0]==0||this.objective[e][0]==1&&this.counter.turn<=this.objective[e][1]){
+                    if(this.objective[e][0]==0||this.objective[e][0]==1&&this.counter.turn<=this.objective[e][1]||this.objective[e][0]==2&&this.counter.taken<this.objective[e][1]){
                         switch(this.objective[e][2]){
                             case 0:
                                 transition.scene='choice'
@@ -634,9 +645,9 @@ class battle{
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+this.objective[e][3])
                             break
                             case 4:
-                                f=floor(random(0,this.relics.list.length))
-                                this.getRelic(this.relics.list[f])
-                                this.relics.list.splice(f,1)
+                                f=floor(random(0,this.relics.list[0].length))
+                                this.getRelic(this.relics.list[0][f])
+                                this.relics.list[0].splice(f,1)
                             break
                         }
                     }
