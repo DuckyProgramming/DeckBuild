@@ -848,6 +848,10 @@ class attack{
                     this.battle.reserve.add(findCard('Dazed'),0,stage.playerNumber+1)
                     this.attacks.push([8,20,0,'Dazed'])
                 break
+                case 5:
+                    this.battle.drop.addDrop(findCard('Burn'),0,stage.playerNumber+1)
+                    this.battle.reserve.add(findCard('Burn'),0,stage.playerNumber+1)
+                break
             }
         }
     }

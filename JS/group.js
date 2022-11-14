@@ -375,7 +375,7 @@ class group{
                     transition.trigger=true
                     transition.scene='battle'
                     this.battle.close()
-                }else if(this.context==0){
+                }else if(context==1){
                     this.battle.choice.cards[0]=new card(this.layer,this.cards[e].position.x,this.cards[e].position.y,this.cards[e].type,1,this.cards[e].color)
                     this.battle.choice.cards[0].size=1
                 }

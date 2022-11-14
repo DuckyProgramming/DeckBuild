@@ -1049,6 +1049,9 @@ types={
         {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Creation',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[4,2,3],altAttack:[0,3,0],class:0},
+        {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0},
+        {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0],class:0},
+        {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:0},
     ],attack:[
         {class:0},
         {class:0},
@@ -1065,12 +1068,22 @@ types={
             combatants:[5,0,0,0,0,0],
             reinforce:[],
             threshold:2,
-            objective:[[0,10,0,0],[2,5,4,20]],
+            objective:[[0,0,0,0],[2,5,4,20]],
         },{
             combatants:[5,5,5,0,0,0],
             reinforce:[5],
             threshold:3,
-            objective:[[0,10,1,0],[1,5,3,10]],
+            objective:[[0,0,1,0],[1,5,3,10]],
+        },{
+            combatants:[6,6,6,0,0,0],
+            reinforce:[6,6,6,6,6],
+            threshold:6,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[7,7,8,0,0,0],
+            reinforce:[],
+            threshold:4,
+            objective:[[0,0,0,0]],
         },
     ],relic:[
         {
@@ -1470,13 +1483,46 @@ types={
                 },
             ],
         },{
-            name:'',id:0,
+            name:'Abandoned Forge',id:11,
             pages:[
                 {
-                    desc:"",
-                    option:[],
-                    optionDesc:[],
-                    link:[],
+                    desc:"You come across an abandoned forge, complete with tools. Looks like nobody's used it for a long time.\n"+
+                    "Despite that, it appears to be in good condition. You might still be able to use it for its intended purpose.",
+                    option:['Use it','Take tools','Leave'],
+                    optionDesc:['','',''],
+                    link:[1,2,3],
+                },{
+                    desc:"You manage to figure out the methods of the forge and successfully work with it.",
+                    option:['Finish'],
+                    optionDesc:['Upgrade 1 Card'],
+                    link:[-1],
+                },{
+                    desc:"As you attempt to take the tongs from the still-hot furnace, pain jets through your arm.\n"+
+                    "You are able to lift them and take them with some difficulty, but your arm continues to hurt.",
+                    option:['Ouch'],
+                    optionDesc:['Gain Enhancement - Random Upgrade\nBecome Cursed - Pain'],
+                    link:[-1],
+                },{
+                    desc:"You decide not to do anything, and continue on your path.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Monkey Master',id:12,
+            pages:[
+                {
+                    desc:"You're walking through a clearing in the forest when you hear some rustling in the leaves.\n"+
+                    "Turning around, you're too slow to stop the monkeys from grabbing you as more and more appear.",
+                    option:['Fight the Monkeys','Throw something valuable'],
+                    optionDesc:['Start Fight',''],
+                    link:[-1,1],
+                },{
+                    desc:"The monkeys run after the object you threw.",
+                    option:['Exit'],
+                    optionDesc:['Lose an Enhancement'],
+                    link:[-1],
                 },
             ],
         },{
@@ -1499,7 +1545,7 @@ zones=[
     {
         encounters:[1],
         elites:[2],
-        special:[1],
+        special:[4,3],
         events:[
             [],
             [],
@@ -1510,6 +1556,7 @@ zones=[
     },{
         encounters:[1],
         elites:[2],
+        special:[],
         events:[
             [],
             [],

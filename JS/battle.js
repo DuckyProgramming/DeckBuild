@@ -157,7 +157,9 @@ class battle{
         }
         if(this.relics.active[29]){
             e=floor(random(0,this.hand.cards.length))
-            this.hand.cards[e].level++
+            if(this.hand.cards[e].level==0){
+                this.hand.cards[e].level++
+            }
             this.hand.cards[e]=reformCard(this.hand.cards[e])
         }
     }
@@ -947,7 +949,7 @@ class battle{
     setupDeck(context){
         this.deck.scroll=0
         this.deck.select=false
-        if(context==0){
+        if(context!=6){
             this.choice.cards=[]
             this.choice.cards.push(new card(this.layer,-300,0,0,0,0))
         }
@@ -1167,6 +1169,25 @@ class battle{
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-8)
                             }else if(this.page==4&&e==0){
                                 this.currency.money+=15
+                            }
+                        break
+                        case 11:
+                            if(this.page==1&&e==0){
+                                transition.scene='deck'
+                                this.setupDeck(1)
+                                this.context=1
+                            }else if(this.page==2&&e==0){
+                                this.deck.add(findCard('Pain'),0,stage.playerNumber+2)
+                                current.getRelic(29)
+                            }
+                        break
+                        case 12:
+                            if(this.page==0&&e==0){
+                                setupEncounter(current,zones[0].special[1])
+                                this.create()
+                                transition.scene='battle'
+                            }else if(this.page==1&&e==0){
+                                this.relics.active[this.relics.owned[floor(random(0,this.relics.owned.length))]]=false
                             }
                         break
                     }
