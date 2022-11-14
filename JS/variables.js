@@ -140,7 +140,7 @@ types={
             {damage:28,alt:0,cost:10,attack:1,target:1,desc:'',spec:4,class:0},
             {damage:44,alt:0,cost:10,attack:1,target:1,desc:'',spec:4,class:0},
         ], 
-        },{name:'Throw\nScythe',rarity:0,list:1,
+        },{name:'Throw\nDown',rarity:0,list:1,
         stats:[
             {damage:2,alt:1,cost:1,attack:42,target:1,desc:'',spec:0,class:0},
             {damage:6,alt:1,cost:1,attack:42,target:1,desc:'',spec:0,class:0},
@@ -751,7 +751,7 @@ types={
             {damage:4,alt:6,cost:1,attack:72,target:1,desc:'',spec:0,class:0},
             {damage:12,alt:6,cost:1,attack:72,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Throw\nDown',rarity:0,list:4,
+        },{name:'Throw\nScythe',rarity:0,list:4,
         stats:[
             {damage:24,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
             {damage:40,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
@@ -1127,7 +1127,7 @@ types={
             desc:'Heal 15 Health\nWhen Entering a Shop',
         },{
             name:'Critical Hit',id:19,
-            desc:'Every 10th Attack\nhas Double Damage',
+            desc:'Every 10th Attack\nDeals Double Damage',
         },{
             name:'First Turn Dexterity',id:20,
             desc:'Gain 1 Dexterity at\nthe Start of Combat',
@@ -1140,31 +1140,21 @@ types={
         },{
             name:'Weak Elites',id:23,
             desc:'Enemies in Elite Rooms\nLose 20% of their Health',
-        },
-
-        {
+        },{
             name:'Improved Heal',id:24,
             desc:'Heal 15 More\nHealth When Resting',
-        },
-
-        {
+        },{
             name:'Cheap Removal',id:25,
             desc:'Removing Cards Always\nCosts 60 Currency',
-        },
-
-        {
-            name:'Higher Max HP',id:26,
+        },{
+            name:'7 Max HP',id:26,
             desc:'When Taken, Gain 7 Max HP',
-        },
-
-        {
+        },{
             name:'Small Attack Bonus',id:27,
             desc:'If you Deal Less than 5\nDamage, Increase it to 5',
-        },
-
-        {
+        },{
             name:'First Turn Strength',id:28,
-            desc:'Gain 1 Strength at\mthe Start of Combat',
+            desc:'Gain 1 Strength at\nthe Start of Combat',
         },
     ],event:[
         {

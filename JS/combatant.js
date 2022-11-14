@@ -858,9 +858,14 @@ class combatant{
 				if(extra==1){
 					this.calc.damage+=this.battle.combatants[user].status.main[26]
 				}
-				if(this.id>0&&user==0&&this.battle.combatants[user].status.main[30]>0){
-					this.calc.damage+=this.battle.combatants[user].status.main[30]
-					this.battle.combatants[user].status.main[30]=0
+				if(this.id>0&&user==0){
+					if(this.battle.combatants[user].status.main[30]>0){
+						this.calc.damage+=this.battle.combatants[user].status.main[30]
+						this.battle.combatants[user].status.main[30]=0
+					}
+					if(this.battle.relics.active[27]&&this.calc.damage<5){
+						this.calc.damage=5
+					}
 				}
 				this.battle.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))
 				this.battle.particles[this.battle.particles.length-1].text=round(this.calc.damage*10)/10

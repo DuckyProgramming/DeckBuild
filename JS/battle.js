@@ -139,6 +139,9 @@ class battle{
         if(this.relics.active[20]){
             this.combatants[0].boost.main[2]++
         }
+        if(this.relics.active[28]){
+            this.combatants[0].boost.main[0]++
+        }
         this.random.rested=false
         if(this.relics.active[4]){
             this.draw()
@@ -175,6 +178,12 @@ class battle{
     getRelic(type){
         this.relics.owned.push(type)
         this.relics.active[type]=true
+        switch(type){
+            case 26:
+                this.combatants[0].base.life+=7
+                this.combatants[0].life+=7
+            break
+        }
     }
     return(){
         while(this.discard.cards.length>0){
@@ -1235,6 +1244,9 @@ class battle{
         this.layer.text('Exit',850,570)
     }
     updateShop(){
+        if(this.relics.active[25]){
+            this.costs.remove=60
+        }
         for(e=0,le=this.choice.cards.length;e<le;e++){
             if(this.choice.cards[e].used){
                 this.choice.cards[e].size-=0.1

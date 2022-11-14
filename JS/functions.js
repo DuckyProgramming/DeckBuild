@@ -290,7 +290,31 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[16],-10,-17,20,20)
 		break
 		case 24:
+			layer.textSize(10)
+			layer.text('15',0,3)
+			layer.image(graphics.symbol[4],-9,-20,18,18)
 			layer.image(graphics.symbol[9],-8,5,16,16)
+		break
+		case 25:
+			layer.textSize(10)
+			layer.text('$60',0,13)
+			layer.image(graphics.symbol[5],-9,-13,18,18)
+			layer.image(graphics.symbol[14],-12,-16,24,24)
+		break
+		case 26:
+			layer.image(graphics.symbol[17],-10,-15,20,20)
+			layer.textSize(10)
+			layer.text('+7',0,11)
+		break
+		case 27:
+			layer.textSize(10)
+			layer.text('<5',0,1)
+			layer.image(graphics.symbol[7],-15,-15,30,30)
+		break
+		case 28:
+			layer.text('1',10,1)
+			layer.image(graphics.symbol[7],-15,-10,20,20)
+			layer.image(graphics.symbol[15],-13,-8,16,16)
 		break
 	}
 	layer.scale(1/size,1/size/flip)
