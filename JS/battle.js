@@ -35,7 +35,7 @@ class battle{
         this.discarding=0
         this.costs={card:[[0,0,0,0,0],[0,0]],sale:0,remove:0}
         this.relics={list:[],owned:[],active:[]}
-        this.random={rested:false,attacked:0,taken:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0}
     }
     create(){
         this.end=false
@@ -45,6 +45,7 @@ class battle{
         this.discarding=0
         this.random.attacked=0
         this.random.taken=0
+        this.random.attacks=0
         this.combatants[0].resetUnique()
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
@@ -135,6 +136,9 @@ class battle{
         if(this.relics.active[16]){
             this.mana.main++
         }
+        if(this.relics.active[20]){
+            this.combatants[0].boost.main[2]++
+        }
         this.random.rested=false
         if(this.relics.active[4]){
             this.draw()
@@ -203,6 +207,14 @@ class battle{
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].block=0
             this.combatants[e].setupIntent(-1)
+            for(f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
+                if(this.combatants[e].boost.main[f]>0){
+                    this.combatants[e].boost.main[f]=max(0,this.combatants[e].boost.main[f]-1)
+                }
+                if(this.combatants[e].boost.main[f]<0){
+                    this.combatants[e].boost.main[f]=min(0,this.combatants[e].boost.main[f]+1)
+                }
+            }
             for(f=0,lf=this.combatants[e].status.main.length;f<lf;f++){
                 if(this.combatants[e].status.main[f]>0&&f==24){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
@@ -241,12 +253,19 @@ class battle{
                 }
             }
         }else if(this.attack.class==0){
-            this.random.attacked++
             this.combatants[0].status.main[24]=0
             for(g=0,lg=this.hand.cards.length;g<lg;g++){
                 if(this.hand.cards[g].attack==-12){
                     this.allDiscard()
                 }
+            }
+        }
+        if(this.attack.class==0){
+            this.random.attacked++
+            this.random.attacks++
+            this.combatants[0].status.main[24]=0
+            if(this.random.attacks%10==0&&this.relics.active[22]){
+                this.mana.main++
             }
         }
         for(g=0,lg=this.hand.cards.length;g<lg;g++){
@@ -806,6 +825,11 @@ class battle{
                             transition.scene='battle'
                             setupEncounter(current,zones[this.map.zone].elites[floor(random(0,zones[this.map.zone].elites.length))])
                             this.create()
+                            if(this.relics.active[23]){
+                                for(g=1,lg=this.combatants.length;g<lg;g++){
+                                    this.combatants[g].life*=0.8
+                                }
+                            }
                         break
                         case 2:
                             if(this.relics.active[14]){
@@ -886,6 +910,9 @@ class battle{
                         case 1:
                             this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+this.combatants[0].base.life/5)
                             transition.scene='map'
+                            if(this.relics.active[24]){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
+                            }
                         break
                         case 2:
                             transition.scene='deck'

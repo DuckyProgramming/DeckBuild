@@ -1125,29 +1125,19 @@ types={
         },{
             name:'Shop Heal',id:18,
             desc:'Heal 15 Health\nWhen Entering a Shop',
-        },
-
-        {
-            name:'Attack Spam',id:19,
-            desc:'Every 10 Attacks\nPlayed, Gain 1 Energy',
-        },
-
-        {
+        },{
+            name:'Critical Hit',id:19,
+            desc:'Every 10th Attack\nhas Double Damage',
+        },{
             name:'First Turn Dexterity',id:20,
             desc:'Gain 1 Dexterity at\nthe Start of Combat',
-        },
-
-        {
+        },{
             name:'Curse Negate',id:21,
             desc:'Remove the Next\nCurse Obtained',
-        },
-
-        {
-            name:'Critical Hit',id:22,
-            desc:'Every 10th Attack\nhas Double Damage',
-        },
-
-        {
+        },{
+            name:'Attack Spam',id:22,
+            desc:'Every 10 Attacks\nPlayed, Gain 1 Energy',
+        },{
             name:'Weak Elites',id:23,
             desc:'Enemies in Elite Rooms\nLose 20% of their Health',
         },

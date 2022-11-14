@@ -208,7 +208,7 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.textSize(10)
 			layer.text('2',-10,1)
 			layer.image(graphics.symbol[8],-25,-15,30,30)
-			layer.image(graphics.symbol[10],0,-10,20,20)
+			layer.image(graphics.symbol[10],-2,-10,20,20)
 		break
 		case 10:
 			layer.text('1',10,1)
@@ -260,6 +260,37 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		case 18:
 			layer.text('$',10,1)
 			layer.image(graphics.symbol[4],-15,-10,20,20)
+		break
+		case 19:
+			layer.text('10',10,1)
+			layer.textSize(10)
+			layer.text('x2',-8,1)
+			layer.image(graphics.symbol[7],-18,-10,20,20)
+		break
+		case 20:
+			layer.text('1',10,1)
+			layer.image(graphics.symbol[2],-15,-10,20,20)
+			layer.image(graphics.symbol[15],-13,-8,16,16)
+		break
+		case 21:
+			layer.text('C',0,1)
+			layer.image(graphics.symbol[5],-12,-12,24,24)
+			layer.image(graphics.symbol[14],-16,-16,32,32)
+		break
+		case 22:
+			layer.textSize(10)
+			layer.text('1',-10,1)
+			layer.text('10',8,1)
+			layer.image(graphics.symbol[7],-2,-10,20,20)
+			layer.image(graphics.symbol[8],-25,-15,30,30)
+		break
+		case 23:
+			layer.textSize(10)
+			layer.text('-20%',0,9)
+			layer.image(graphics.symbol[16],-10,-17,20,20)
+		break
+		case 24:
+			layer.image(graphics.symbol[9],-8,5,16,16)
 		break
 	}
 	layer.scale(1/size,1/size/flip)

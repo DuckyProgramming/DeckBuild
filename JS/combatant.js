@@ -712,7 +712,7 @@ class combatant{
 		this.layer.textSize(8)
 		this.layer.text(max(0,ceil(this.life*10)/10)+"/"+max(0,ceil(this.base.life)),0,21)
 		if(this.fades.block>0){
-			this.layer.text(this.block,-30,20)
+			this.layer.text(ceil(this.block*10)/10,-30,20)
 		}
 		this.layer.textSize(10)
 		this.layer.text(this.name,0,32)
@@ -862,6 +862,8 @@ class combatant{
 					this.calc.damage+=this.battle.combatants[user].status.main[30]
 					this.battle.combatants[user].status.main[30]=0
 				}
+				this.battle.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))
+				this.battle.particles[this.battle.particles.length-1].text=round(this.calc.damage*10)/10
 				if(this.block>this.calc.damage&&extra!=1){
 					this.block-=this.calc.damage
 				}else if(this.block>0&&extra!=1){
@@ -903,8 +905,6 @@ class combatant{
 				if(this.status.main[29]>0){
 					this.status.main[1]++
 				}
-				this.battle.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))
-				this.battle.particles[this.battle.particles.length-1].text=round(this.calc.damage*10)/10
 				if(this.id>0&&this.battle.combatants[0].type==1){
 					this.battle.combatants[0].combo++
 				}

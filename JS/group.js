@@ -72,7 +72,11 @@ class group{
         }
     }
     add(type,level,color){
-        this.cards.push(new card(this.layer,1206,500,type,level,color))
+        if(types.card[type].list==10&&this.battle.relics.active[21]){
+            this.battle.relics.active[21]=false
+        }else{
+            this.cards.push(new card(this.layer,1206,500,type,level,color))
+        }
         if(this.id==2&&stage.scene=='choice'){
             if(this.battle.relics.active[13]){
                 this.battle.currency.money+=10
@@ -264,6 +268,9 @@ class group{
                         if(this.battle.combatants[0].status.main[18]>0){
                             this.battle.attack.damage+=this.battle.combatants[0].status.main[18]
                             this.battle.combatants[0].status.main[18]=0
+                        }
+                        if(this.battle.relics.active[19]&&this.battle.random.attacks%10==0){
+                            this.battle.attack.damage*=2
                         }
                     }else{
                         this.battle.attack.damage=round(this.cards[e].damage)
