@@ -1190,6 +1190,16 @@ class battle{
                                 this.relics.active[this.relics.owned[floor(random(0,this.relics.owned.length))]]=false
                             }
                         break
+                        case 13:
+                            if(this.page==1&&e==0){
+                                this.relics.active[this.relics.owned[floor(random(0,this.relics.owned.length))]]=false
+                            }else if(this.page==2&&e==0){
+                                this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
+                                this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
+                            }else if(this.page==3&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-13)
+                            }
+                        break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){
                         this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]

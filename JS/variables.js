@@ -1526,6 +1526,34 @@ types={
                 },
             ],
         },{
+            name:'Cliffs',id:13,
+            pages:[
+                {
+                    desc:"When crossing a large chasm, you fail to watch your step, and the rock you're standing on collapses beneath your feet,\n"+
+                    "sending you falling into a gap. You can see the bottom from where you are, but it is a long drop.",
+                    option:['Grab on to the side','Try to land on a ledge','Hope for the best'],
+                    optionDesc:['','',''],
+                    link:[1,2,3],
+                },{
+                    desc:"With some difficulty, you successfully grab on to the side and use friction with the edge to slow your fall.\n"+
+                    "You seem to have dropped some items along the way, but they could be anywhere now.",
+                    option:['Get out of the hole'],
+                    optionDesc:['Lose an Enhancement'],
+                    link:[-1],
+                },{
+                    desc:"The only ledge you can see is just a little out of reach. You manage to move over, but the landing knocks you unconcious.\n"+
+                    "When you get up, your head is spinning, and you forget some of what you were doing beforehand.",
+                    option:['Get ouf the hole'],
+                    optionDesc:['Lose 2 Random Cards'],
+                    link:[-1],
+                },{
+                    desc:"You land with a crash. After a minute of lying in pain, you get back up and leave.",
+                    option:['Get ouf the hole'],
+                    optionDesc:['Take 13 Damage'],
+                    link:[-1],
+                },
+            ],
+        },{
             name:'',id:0,
             pages:[
                 {
