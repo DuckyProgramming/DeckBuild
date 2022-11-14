@@ -5,7 +5,7 @@ function setup(){
     generateListing(types.card)
     setupEncounter(current,1)
 
-    //current.getRelic(16)
+    current.getRelic(18)
 
     current.create()
     current.initialEvent()

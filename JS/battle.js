@@ -317,7 +317,7 @@ class battle{
     }
     displayRelics(){
         for(e=0,le=this.relics.owned.length;e<le;e++){
-            displayRelicSymbol(this.layer,25+e*50,50,this.relics.owned[e],0,1,1)
+            displayRelicSymbol(this.layer,25+e*50,50,this.relics.owned[e],0,1,1,this.relics.active[this.relics.owned[e]])
             if(dist(inputs.rel.x,inputs.rel.y,25+e*50,50)<20){
                 this.layer.noStroke()
                 this.layer.fill(180)
@@ -586,7 +586,7 @@ class battle{
                 transition.scene='map'
                 this.map.complete[this.map.position[0]][this.map.position[1]]=1
                 if(this.relics.active[3]){
-                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+5)
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+2)
                 }
                 for(e=0,le=this.objective.length;e<le;e++){
                     if(this.objective[e][0]==0||this.objective[e][0]==1&&this.counter.turn<=this.objective[e][1]){
@@ -827,7 +827,16 @@ class battle{
                         case 4:
                             transition.scene='shop'
                             this.setupShop(0)
+                            if(this.relics.active[17]){
+                                this.relics.active[17]=false
+                            }
+                            if(this.relics.active[18]){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
+                            }
                         break
+                    }
+                    if(this.relics.active[17]){
+                        this.currency.money+=10
                     }
                 }
             }

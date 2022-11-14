@@ -150,12 +150,16 @@ function findCard(name){
 	}
 	return -1
 }
-function displayRelicSymbol(layer,x,y,type,direction,size,flip){
+function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 	layer.translate(x,y)
 	layer.rotate(direction)
 	layer.scale(size,size*flip)
 	layer.noStroke()
-	layer.fill(180)
+	if(active){
+		layer.fill(180)
+	}else{
+		layer.fill(60)
+	}
 	layer.ellipse(0,0,40,40)
 	layer.fill(0)
 	layer.textSize(15)
@@ -247,6 +251,15 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip){
 			layer.textSize(10)
 			layer.text('1',-5,1)
 			layer.image(graphics.symbol[8],-20,-15,30,30)
+		break
+		case 17:
+			layer.text('$',-5,1)
+			layer.text('$',10,1)
+			layer.image(graphics.symbol[14],-15,-10,20,20)
+		break
+		case 18:
+			layer.text('$',10,1)
+			layer.image(graphics.symbol[4],-15,-10,20,20)
 		break
 	}
 	layer.scale(1/size,1/size/flip)

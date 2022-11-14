@@ -1079,7 +1079,7 @@ types={
             desc:'Add 1 Step\nEvery Turn',
         },{
             name:'Quick Heal',id:3,
-            desc:'Heal 5 Health\nat the End of Combat',
+            desc:'Heal 2 Health\nat the End of Combat',
         },{
             name:'First Turn Draw',id:4,
             desc:'Draw 2 Extra Cards\nat the Start of Combat',
@@ -1115,10 +1115,66 @@ types={
             desc:'Add a Card\nafter Resting',
         },{
             name:'Third Turn Energy',id:15,
-            desc:'Gain 1 Energy\nevery 3 Turns',
+            desc:'Gain 1 Energy\nevery 3rd Turn',
         },{
             name:'First Turn Energy',id:16,
             desc:'Gain 1 Energy at\nthe Start of Combat',
+        },{
+            name:'Unspent Currency',id:17,
+            desc:'Gain 10 Currency per Room\nUntil You Enter a Shop',
+        },{
+            name:'Shop Heal',id:18,
+            desc:'Heal 15 Health\nWhen Entering a Shop',
+        },
+
+        {
+            name:'Attack Spam',id:19,
+            desc:'Every 10 Attacks\nPlayed, Gain 1 Energy',
+        },
+
+        {
+            name:'First Turn Dexterity',id:20,
+            desc:'Gain 1 Dexterity at\nthe Start of Combat',
+        },
+
+        {
+            name:'Curse Negate',id:21,
+            desc:'Remove the Next\nCurse Obtained',
+        },
+
+        {
+            name:'Critical Hit',id:22,
+            desc:'Every 10th Attack\nhas Double Damage',
+        },
+
+        {
+            name:'Weak Elites',id:23,
+            desc:'Enemies in Elite Rooms\nLose 20% of their Health',
+        },
+
+        {
+            name:'Improved Heal',id:24,
+            desc:'Heal 15 More\nHealth When Resting',
+        },
+
+        {
+            name:'Cheap Removal',id:25,
+            desc:'Removing Cards Always\nCosts 60 Currency',
+        },
+
+        {
+            name:'Higher Max HP',id:26,
+            desc:'When Taken, Gain 7 Max HP',
+        },
+
+        {
+            name:'Small Attack Bonus',id:27,
+            desc:'If you Deal Less than 5\nDamage, Increase it to 5',
+        },
+
+        {
+            name:'First Turn Strength',id:28,
+            desc:'Gain 1 Strength at\mthe Start of Combat',
         },
     ],event:[
         {
