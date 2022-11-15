@@ -706,10 +706,13 @@ types={
             {damage:3,alt:0,cost:0,attack:22,target:1,desc:'',spec:0,class:0},
             {damage:5,alt:0,cost:0,attack:22,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Flash',rarity:2,list:4,
+        },
+        
+        
+        {name:'Flash',rarity:2,list:4,
         stats:[
-            {damage:1,alt:1,cost:3,attack:64,target:0,desc:'',spec:3,class:2},
             {damage:2,alt:2,cost:3,attack:64,target:0,desc:'',spec:3,class:2},
+            {damage:3,alt:3,cost:3,attack:64,target:0,desc:'',spec:3,class:2},
         ],
         },{name:'Danger',rarity:0,list:0,list:4,
         stats:[
@@ -1204,7 +1207,7 @@ types={
             desc:'Gain 1 Focus at\nthe Start of Combat',
         },{
             name:'Balance Control',id:37,rarity:0,list:4,
-            desc:'At the End of Turn,\nIf Balance is Positive, -1 Balance\nIf Balance is Negative, +1 Balance',
+            desc:'When Taken, Gain\n+2 Max Balance',
         },
 
         {

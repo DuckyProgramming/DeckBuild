@@ -373,6 +373,16 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[1],-10,-20,20,20)
 			layer.image(graphics.symbol[20],-10,-5,20,20)
 		break
+		case 36:
+			layer.text('1',10,1)
+			layer.image(graphics.symbol[21],-15,-10,20,20)
+			layer.image(graphics.symbol[15],-13,-8,16,16)
+		break
+		case 37:
+			layer.textSize(10)
+			layer.text('+2',0,13)
+			layer.image(graphics.symbol[23],-12,-16,24,24)
+		break
 		/*
 		0-Redraw
 		1-ArrowRight
@@ -394,6 +404,10 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		17-MaxHealth
 		18-Power
 		19-Combo
+		20-Faith
+		21-Focus
+		22-Balance
+		23-Max Balance
 		*/
 	}
 	layer.scale(1/size,1/size/flip)

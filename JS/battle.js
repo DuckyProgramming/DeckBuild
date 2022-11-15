@@ -142,6 +142,9 @@ class battle{
         if(this.relics.active[28]){
             this.combatants[0].boost.main[0]++
         }
+        if(this.relics.active[36]){
+            this.combatants[0].boost.main[3]++
+        }
         this.startTurn()
         this.random.rested=false
         if(this.relics.active[4]){
@@ -207,6 +210,9 @@ class battle{
                         this.deck.cards[this.calc.list[g]]=reformCard(this.deck.cards[this.calc.list[g]])
                     }
                 }
+            break
+            case 37:
+                this.combatants[0].base.meter+=2
             break
         }
     }
@@ -628,14 +634,11 @@ class battle{
                 this.endTurn()
             }else if(this.combatants[this.turn].status.main[5]>0||this.combatants[this.turn].status.main[9]>0){
                 this.turn++
-                if(this.turn>=this.combatants.length){
-                    this.turn=0
-                }
-                while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
+                while(this.turn>0&&this.turn<this.combatants.length&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
                     this.turn++
-                    if(this.turn>=this.combatants.length){
-                        this.turn=0
-                    }
+                }
+                if(this.turn>=this.combatants.length){
+                    this.turnTimer=30
                 }
             }else{
                 this.attack.user=this.turn

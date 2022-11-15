@@ -139,7 +139,7 @@ function setupGraphics(){
 	graphics.minor[5].rect(0,0,160,8,3)
 	graphics.minor[5].fill(149,134,184)
 	graphics.minor[5].rect(0,-2,160,4,3)
-	for(a=0;a<21;a++){
+	for(a=0;a<30;a++){
 		graphics.symbol.push(createGraphics(100,100))
 		setupLayer(graphics.symbol[a])
 		graphics.symbol[a].noStroke()
@@ -257,4 +257,36 @@ function setupGraphics(){
 	for(a=0;a<12;a++){
 		graphics.symbol[20].line(sin(a*30)*24,cos(a*30)*24,sin(a*30)*30,cos(a*30)*30)
 	}
+	graphics.symbol[21].strokeWeight(5)
+	graphics.symbol[21].stroke(0)
+	graphics.symbol[21].noFill()
+	graphics.symbol[21].ellipse(0,0,82,82)
+	for(a=0;a<4;a++){
+		graphics.symbol[21].line(sin(a*90+45)*60,cos(a*90+45)*60,sin(a*90+20)*40,cos(a*90+20)*40)
+		graphics.symbol[21].line(sin(a*90+45)*60,cos(a*90+45)*60,sin(a*90+70)*40,cos(a*90+70)*40)
+	}
+	for(a=0;a<2;a++){
+		for(b=0;b<5;b++){
+			graphics.symbol[22+a].rotate(72)
+			graphics.symbol[22+a].beginShape()
+			graphics.symbol[22+a].vertex(0,0)
+			graphics.symbol[22+a].bezierVertex(-14,-14,-14,-28,0,-42)
+			graphics.symbol[22+a].bezierVertex(14,-28,14,-14,0,0)
+			graphics.symbol[22+a].endShape()
+		}
+		graphics.symbol[22+a].erase()
+		for(b=0;b<5;b++){
+			graphics.symbol[22+a].rotate(72)
+			graphics.symbol[22+a].beginShape()
+			graphics.symbol[22+a].vertex(0,0)
+			graphics.symbol[22+a].bezierVertex(-7,-10,-7,-20,0,-30)
+			graphics.symbol[22+a].bezierVertex(7,-20,7,-10,0,0)
+			graphics.symbol[22+a].endShape()
+		}
+	}
+	graphics.symbol[23].noErase()
+	graphics.symbol[23].strokeWeight(5)
+	graphics.symbol[23].stroke(0)
+	graphics.symbol[23].noFill()
+	graphics.symbol[23].rect(0,0,90,90)
 }

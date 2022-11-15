@@ -387,6 +387,7 @@ class attack{
                 break
                 case 75:
                     this.battle.combatants[0].status.main[10]+=this.damage
+                    this.battle.combatants[0].meter+=this.alt
                 break
                 case 76:
                     this.battle.combatants[this.target].status.main[11]+=this.damage

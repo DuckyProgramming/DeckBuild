@@ -53,7 +53,9 @@ class group{
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
-                this.add(40,0,this.battle.player)
+                this.add(findCard('Charge'),0,this.battle.player)
+                this.add(findCard('Multicast'),0,this.battle.player)
+                //this.add(40,0,this.battle.player)
             break
             case 4:
                 for(e=0;e<4;e++){
@@ -62,12 +64,12 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(2,0,this.battle.player)
                 }
-                this.add(136,0,this.battle.player)
-                this.add(137,0,this.battle.player)
-                this.add(138,0,this.battle.player)
-                this.add(139,0,this.battle.player)
-                this.add(140,0,this.battle.player)
-                this.add(141,0,this.battle.player)
+                this.add(146,0,this.battle.player)
+                this.add(147,0,this.battle.player)
+                this.add(148,0,this.battle.player)
+                this.add(149,0,this.battle.player)
+                this.add(150,0,this.battle.player)
+                this.add(151,0,this.battle.player)
             break
         }
     }

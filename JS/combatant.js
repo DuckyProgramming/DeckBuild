@@ -18,10 +18,10 @@ class combatant{
 		this.damage=types.combatant[this.type].damage
 		this.altAttack=types.combatant[this.type].altAttack
 		this.class=types.combatant[this.type].class
-		this.base={life:this.life,position:{x:this.position.x,y:this.position.y}}
+		this.base={life:this.life,position:{x:this.position.x,y:this.position.y},meter:10}
         this.collect={life:this.life,block:0}
 		this.calc={damage:0}
-		this.boost={main:[0,0,0],fade:[0,0,0],display:[],color:[[200,0,0],[0,150,255],[0,50,150]],infoFade:[0,0],name:['Attack','Defense','Block']}
+		this.boost={main:[0,0,0,0],fade:[0,0,0,0],display:[],color:[[200,0,0],[0,150,255],[0,50,150],[100,255,100]],infoFade:[0,0],name:['Attack','Defense','Block','Focus']}
 		this.status={main:[],fade:[],display:[],color:[
 			[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120],[125,75,25],[25,125,175],[150,225,150],
 			[100,200,200],[200,0,50],[100,50,150],[50,100,50],[20,60,120],[170,240,255],[235,65,15],[210,200,245],[210,90,0],[50,0,0],
@@ -632,9 +632,9 @@ class combatant{
 						}
 						this.layer.stroke(255,this.fade)
 						this.layer.strokeWeight(2)
-						this.layer.line(this.meter*3,-114,this.meter*3,-110)
+						this.layer.line(this.meter*30/this.base.meter,-114,this.meter*30/this.base.meter,-110)
 						this.layer.noStroke()
-						this.layer.fill(0,this.fade)
+						this.layer.fill(255,this.fade)
 						this.layer.textSize(8)
 						this.layer.text(this.meter,0,-101)
 					}
@@ -850,7 +850,7 @@ class combatant{
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
 					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(8,0)
+						this.battle.combatants[h].take(8*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3])),0)
 						i=1
 					}
 				}
@@ -859,19 +859,19 @@ class combatant{
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
 					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(12,0)
+						this.battle.combatants[h].take(12*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3])),0)
 						if(this.battle.combatants[h+1].life>0){
-							this.battle.combatants[h+1].take(4,0)
+							this.battle.combatants[h+1].take(4*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3])),0)
 						}
 						if(this.battle.combatants[h-1].life>0&&h>1){
-							this.battle.combatants[h-1].take(4,0)
+							this.battle.combatants[h-1].take(4*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3])),0)
 						}
 						i=1
 					}
 				}
 			break
 			case 2:
-				this.block+=10
+				this.block+=10*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))
 			break
 			case 3:
 				this.battle.mana.main+=3
@@ -1002,10 +1002,10 @@ class combatant{
 				this.mantra-=12
 			}
 		}else if(this.type==4){
-			if(this.meter<-10){
+			if(this.meter<-this.base.meter){
 				this.meter=0
 				this.take(10,0)
-			}else if(this.meter>10){
+			}else if(this.meter>this.base.meter){
 				this.meter=0
 				this.battle.mana.main=0
 			}
