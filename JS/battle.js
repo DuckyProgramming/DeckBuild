@@ -335,12 +335,23 @@ class battle{
             if(this.random.attacks%3==0&&this.relics.active[47]){
                 this.combatants[0].boost.main[2]++
             }
+            if(this.random.attacks%3==0&&this.relics.active[52]){
+                this.combatants[0].block+=4
+            }
         }
         if(this.attack.class==1){
             this.random.skills++
             if(this.random.skills%3==0&&this.relics.active[48]){
                 for(g=1,lg=this.combatants.length;g<lg;g++){
                     this.combatants[g].take(5,0)
+                }
+            }
+        }
+        if(this.attack.class==2){
+            if(this.relics.active[51]&&this.hand.cards.length>0){
+                g=floor(random(0,this.hand.cards.length))
+                if(this.hand.cards[g].cost>0){
+                    this.hand.cards[g].cost--
                 }
             }
         }
@@ -796,7 +807,9 @@ class battle{
         }
         for(e=0,le=this.map.main.length;e<le;e++){
             for(f=0;f<min(5,8-abs(7-e));f++){
-                if(floor(random(0,5))<2||e<2){
+                if(e==this.map.main.length-1){
+                    this.map.main[e].push(5)
+                }else if(floor(random(0,5))<2||e<2){
                     this.map.main[e].push(0)
                 }else if(floor(random(0,3))==0){
                     this.map.main[e].push(1)
@@ -872,6 +885,9 @@ class battle{
                     case 4:
                         this.layer.text('Shop',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
                     break
+                    case 5:
+                        this.layer.text('Boss',530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)
+                    break
                 }
             }
         }
@@ -898,7 +914,7 @@ class battle{
         }
         for(e=0,le=this.map.main.length;e<le;e++){
             for(f=0,lf=this.map.main[e].length;f<lf;f++){
-                if(dist(inputs.rel.x,inputs.rel.y,530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)<50&&e==this.map.position[0]+1&&((f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e].length-1||(f==this.map.position[1]-1||f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e+1].length||(f==this.map.position[1]-1||f==this.map.position[1])&&this.map.main[this.map.position[0]].length==this.map.main[e].length+1)){
+                if(dist(inputs.rel.x,inputs.rel.y,530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)<50&&e==this.map.position[0]+1&&((f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e].length-1||(f==this.map.position[1]-1||f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e].length||(f==this.map.position[1]-1||f==this.map.position[1])&&this.map.main[this.map.position[0]].length==this.map.main[e].length+1)){
                     this.map.position[0]=e
                     this.map.position[1]=f
                     this.map.scrollGoal+=100
@@ -947,6 +963,14 @@ class battle{
                             }
                             if(this.relics.active[18]){
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
+                            }
+                        break
+                        case 5:
+                            transition.scene='battle'
+                            setupEncounter(current,zones[this.map.zone].bosses[floor(random(0,zones[this.map.zone].bosses.length))])
+                            this.create()
+                            if(this.relics.active[53]){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+25)
                             }
                         break
                     }

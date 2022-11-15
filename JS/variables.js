@@ -1267,7 +1267,7 @@ types={
             desc:'Every 3 Attacks\nPlayed, Gain 4 Block',
         },{
             name:'Boss Health',id:53,rarity:1,list:0,
-            desc:'At the Start of Boss Combats, Heal 25 Health',
+            desc:'At the Start of Boss\nCombats, Heal 25 Health',
         },{
             name:'10 Max HP',id:54,rarity:1,list:0,
             desc:'When Taken,\nGain 10 Max HP',
@@ -1279,7 +1279,7 @@ types={
             desc:'Every 3 Attacks\nPlayed, Gain 1 Strength',
         },{
             name:'Resting Max HP',id:57,rarity:1,list:0,
-            desc:'Can Gain +2 Max HP When Resting',
+            desc:'Can Gain +2 Max\nHP When Resting',
         },{
             name:'Shuffle Energy',id:58,rarity:1,list:0,
             desc:'When You Shuffle Your\nDeck, Gain 1 Energy',
@@ -1690,6 +1690,7 @@ zones=[
         encounters:[1],
         elites:[2],
         special:[4,3],
+        bosses:[2],
         events:[
             [],
             [],
@@ -1698,9 +1699,10 @@ zones=[
             [],
         ],
     },{
-        encounters:[1],
-        elites:[2],
+        encounters:[],
+        elites:[],
         special:[],
+        bosses:[],
         events:[
             [],
             [],

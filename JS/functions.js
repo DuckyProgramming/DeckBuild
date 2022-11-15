@@ -472,6 +472,26 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[7],-10,-15,20,20)
 			layer.image(graphics.symbol[1],-10,2,20,20)
 		break
+		case 51:
+			layer.textSize(10)
+			layer.text('-1',8,0)
+			layer.image(graphics.symbol[18],-20,-10,20,20)
+			layer.image(graphics.symbol[5],-4,-12,24,24)
+			layer.image(graphics.symbol[8],-7,-15,30,30)
+		break
+		case 52:
+			layer.textSize(10)
+			layer.text('3',9,1)
+			layer.text('4',-10,1)
+			layer.image(graphics.symbol[7],-1,-10,20,20)
+			layer.image(graphics.symbol[2],-20,-10,20,20)
+		break
+		case 53:
+			layer.textSize(10)
+			layer.text('25',6,9)
+			layer.image(graphics.symbol[26],-10,-17,20,20)
+			layer.image(graphics.symbol[4],-12,2,12,12)
+		break
 		/*
 		0-Redraw
 		1-ArrowRight
@@ -499,6 +519,7 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		23-Max Balance
 		24-Enemy
 		25-Dead
+		26-Boss
 		*/
 	}
 	layer.scale(1/size,1/size/flip)
