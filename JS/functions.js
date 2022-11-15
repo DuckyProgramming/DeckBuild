@@ -241,12 +241,12 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		case 13:
 			layer.text('$',10,1)
 			layer.textSize(10)
-			layer.text('+',-5,0)
+			layer.text('A',-5,0)
 			layer.image(graphics.symbol[5],-15,-10,20,20)
 		break
 		case 14:
 			layer.textSize(10)
-			layer.text('+',0,-5)
+			layer.text('A',0,-5)
 			layer.image(graphics.symbol[5],-10,-15,20,20)
 			layer.image(graphics.symbol[9],-8,5,16,16)
 		break
@@ -333,6 +333,68 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[1],-10,-20,20,20)
 			layer.image(graphics.symbol[5],-10,-5,20,20)
 		break
+		case 30:
+			layer.textSize(10)
+			layer.text('+',-10,0)
+			layer.text('2',8,0)
+			layer.image(graphics.symbol[5],-20,-10,20,20)
+			layer.image(graphics.symbol[7],-2,-10,20,20)
+		break
+		case 31:
+			layer.textSize(10)
+			layer.text('+',-10,0)
+			layer.text('2',8,0)
+			layer.image(graphics.symbol[5],-20,-10,20,20)
+			layer.image(graphics.symbol[2],-2,-10,20,20)
+		break
+		case 32:
+			layer.textSize(10)
+			layer.text('+',-10,0)
+			layer.text('2',8,0)
+			layer.image(graphics.symbol[5],-20,-10,20,20)
+			layer.image(graphics.symbol[18],-2,-10,20,20)
+		break
+		case 33:
+			layer.textSize(10)
+			layer.text('<50%',0,11)
+			layer.image(graphics.symbol[4],2,-12,16,16)
+			layer.image(graphics.symbol[7],-18,-14,20,20)
+			layer.image(graphics.symbol[15],-16,-12,16,16)
+		break
+		case 34:
+			layer.textSize(10)
+			layer.text('<1',0,15)
+			layer.image(graphics.symbol[19],-10,-14,20,20)
+			layer.image(graphics.symbol[14],-15,-19,30,30)
+		break
+		case 35:
+			layer.textSize(10)
+			layer.text('1',0,5)
+			layer.image(graphics.symbol[1],-10,-20,20,20)
+			layer.image(graphics.symbol[20],-10,-5,20,20)
+		break
+		/*
+		0-Redraw
+		1-ArrowRight
+		2-Defense
+		3-Dodge
+		4-Health
+		5-Card
+		6-Miracle
+		7-Damage
+		8-Energy
+		9-Rest
+		10-NoDamage
+		11-ArrowDown
+		12-ArrowLeft
+		13-Water
+		14-No
+		15-UpArrow
+		16-Elite
+		17-MaxHealth
+		18-Power
+		19-Combo
+		*/
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)

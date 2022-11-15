@@ -1,36 +1,36 @@
 types={
     card:[
-        {name:'',rarity:0,list:-1,
+        {name:'',rarity:0,list:0,list:-1,
         stats:[
             {damage:0,alt:0,cost:0,attack:0,target:0,desc:'',spec:0,class:0},
             {damage:0,alt:0,cost:0,attack:0,target:0,desc:'',spec:0,class:0},
         ],
-        },{name:'Strike',rarity:0,list:5,
+        },{name:'Strike',rarity:0,list:0,list:5,
         stats:[
             {damage:6,alt:0,cost:1,attack:1,target:1,desc:'',spec:0,class:0},
             {damage:9,alt:0,cost:1,attack:1,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Defend',rarity:0,list:5,
+        },{name:'Defend',rarity:0,list:0,list:5,
         stats:[
             {damage:5,alt:0,cost:1,attack:2,target:0,desc:'',spec:0,class:1},
             {damage:8,alt:0,cost:1,attack:2,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Big Strike',rarity:0,list:1,
+        },{name:'Big Strike',rarity:0,list:0,list:1,
         stats:[
             {damage:14,alt:0,cost:2,attack:1,target:1,desc:'',spec:0,class:0},
             {damage:22,alt:0,cost:2,attack:1,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Triple\nPunch',rarity:0,list:1,
+        },{name:'Triple\nPunch',rarity:0,list:0,list:1,
         stats:[
             {damage:3,alt:3,cost:1,attack:3,target:1,desc:'',spec:0,class:0},
             {damage:4,alt:3,cost:1,attack:3,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Think',rarity:0,list:1,
+        },{name:'Think',rarity:0,list:0,list:1,
         stats:[
             {damage:2,alt:0,cost:1,attack:4,target:0,desc:'',spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:4,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Weaken',rarity:0,list:1,
+        },{name:'Weaken',rarity:0,list:0,list:1,
         stats:[
             {damage:2,alt:0,cost:0,attack:5,target:1,desc:'',spec:0,class:2},
             {damage:3,alt:0,cost:0,attack:5,target:1,desc:'',spec:0,class:2},
@@ -40,7 +40,7 @@ types={
             {damage:2,alt:3,cost:1,attack:6,target:0,desc:'',spec:0,class:1},
             {damage:4,alt:6,cost:1,attack:6,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Dynamic\nShield',rarity:0,list:1,
+        },{name:'Dynamic\nShield',rarity:0,list:0,list:1,
         stats:[
             {damage:4,alt:0,cost:-1,attack:7,target:0,desc:'',spec:0,class:1},
             {damage:6,alt:0,cost:-1,attack:7,target:0,desc:'',spec:0,class:1},
@@ -50,12 +50,12 @@ types={
             {damage:12,alt:0,cost:0,attack:8,target:1,desc:'',spec:0,class:0},
             {damage:18,alt:0,cost:0,attack:8,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Exhausting\nStrike',rarity:0,list:1,
+        },{name:'Exhausting\nStrike',rarity:0,list:0,list:1,
         stats:[
             {damage:10,alt:0,cost:0,attack:9,target:1,desc:'',spec:0,class:0},
             {damage:14,alt:0,cost:0,attack:9,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Chain\nStrike',rarity:0,list:1,
+        },{name:'Chain\nStrike',rarity:0,list:0,list:1,
         stats:[
             {damage:5,alt:0,cost:1,attack:10,target:1,desc:'',spec:0,class:0},
             {damage:7,alt:0,cost:0,attack:10,target:1,desc:'',spec:0,class:0},
@@ -65,7 +65,7 @@ types={
             {damage:4,alt:1,cost:1,attack:11,target:1,desc:'',spec:0,class:0},
             {damage:6,alt:1,cost:1,attack:11,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Multi\nStrike',rarity:0,list:1,
+        },{name:'Multi\nStrike',rarity:0,list:0,list:1,
         stats:[
             {damage:6,alt:0,cost:2,attack:12,target:0,desc:'',spec:0,class:0},
             {damage:9,alt:0,cost:2,attack:12,target:0,desc:'',spec:0,class:0},
@@ -85,42 +85,42 @@ types={
             {damage:10,alt:0,cost:1,attack:32,target:1,desc:'',spec:0,class:0},
             {damage:14,alt:0,cost:1,attack:32,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Nerve\nStrike',rarity:0,list:1,
+        },{name:'Nerve\nStrike',rarity:0,list:0,list:1,
         stats:[
             {damage:2,alt:3,cost:1,attack:34,target:1,desc:'',spec:0,class:0},
             {damage:4,alt:3,cost:1,attack:34,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Jolt',rarity:0,list:1,
+        },{name:'Jolt',rarity:0,list:0,list:1,
         stats:[
             {damage:2,alt:0,cost:0,attack:35,target:0,desc:'',spec:0,class:0},
             {damage:4,alt:0,cost:0,attack:35,target:0,desc:'',spec:0,class:0},
         ],
-        },{name:'Combo\nFinish',rarity:0,list:1,
+        },{name:'Combo\nFinish',rarity:0,list:0,list:1,
         stats:[
             {damage:14,alt:2,cost:4,attack:36,target:1,desc:'',spec:4,class:0},
             {damage:22,alt:2,cost:4,attack:36,target:1,desc:'',spec:4,class:0},
         ],
-        },{name:'Hammer\nFist',rarity:0,list:1,
+        },{name:'Hammer\nFist',rarity:0,list:0,list:1,
         stats:[
             {damage:7,alt:1,cost:1,attack:37,target:1,desc:'',spec:0,class:0},
             {damage:10,alt:1,cost:1,attack:37,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Strengthen',rarity:0,list:1,
+        },{name:'Strengthen',rarity:0,list:0,list:1,
         stats:[
             {damage:1,alt:0,cost:1,attack:38,target:0,desc:'',spec:0,class:2},
             {damage:2,alt:0,cost:1,attack:38,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Counter',rarity:0,list:1,
+        },{name:'Counter',rarity:0,list:0,list:1,
         stats:[
             {damage:4,alt:5,cost:1,attack:39,target:0,desc:'',spec:0,class:1},
             {damage:7,alt:6,cost:1,attack:39,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Combo\nCounter',rarity:0,list:1,
+        },{name:'Combo\nCounter',rarity:0,list:0,list:1,
         stats:[
             {damage:3,alt:2,cost:1,attack:40,target:0,desc:'',spec:0,class:1},
             {damage:5,alt:6,cost:1,attack:40,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Combo\nStrike',rarity:0,list:1,
+        },{name:'Combo\nStrike',rarity:0,list:0,list:1,
         stats:[
             {damage:9,alt:0,cost:3,attack:1,target:1,desc:'',spec:4,class:0},
             {damage:14,alt:0,cost:3,attack:1,target:1,desc:'',spec:4,class:0},
@@ -130,7 +130,7 @@ types={
             {damage:9,alt:0,cost:5,attack:35,target:0,desc:'',spec:4,class:2},
             {damage:13,alt:0,cost:5,attack:35,target:0,desc:'',spec:4,class:2},
         ],
-        },{name:'Palm\nStrike',rarity:0,list:1,
+        },{name:'Palm\nStrike',rarity:0,list:0,list:1,
         stats:[
             {damage:8,alt:2,cost:4,attack:41,target:1,desc:'',spec:4,class:0},
             {damage:10,alt:3,cost:4,attack:41,target:1,desc:'',spec:4,class:0},
@@ -140,7 +140,7 @@ types={
             {damage:28,alt:0,cost:10,attack:1,target:1,desc:'',spec:4,class:0},
             {damage:44,alt:0,cost:10,attack:1,target:1,desc:'',spec:4,class:0},
         ], 
-        },{name:'Throw\nDown',rarity:0,list:1,
+        },{name:'Throw\nDown',rarity:0,list:0,list:1,
         stats:[
             {damage:2,alt:1,cost:1,attack:42,target:1,desc:'',spec:0,class:0},
             {damage:6,alt:1,cost:1,attack:42,target:1,desc:'',spec:0,class:0},
@@ -170,7 +170,7 @@ types={
             {damage:11,alt:6,cost:3,attack:47,target:1,desc:'',spec:4,class:0},
             {damage:18,alt:10,cost:3,attack:47,target:1,desc:'',spec:4,class:0},
         ],
-        },{name:'Brutal\nKick',rarity:0,list:1,
+        },{name:'Brutal\nKick',rarity:0,list:0,list:1,
         stats:[
             {damage:24,alt:2,cost:4,attack:48,target:1,desc:'',spec:0,class:0},
             {damage:34,alt:3,cost:4,attack:48,target:1,desc:'',spec:0,class:0},
@@ -225,7 +225,7 @@ types={
             {damage:4,alt:0,cost:1,attack:94,target:0,desc:'',spec:0,class:1},
             {damage:7,alt:0,cost:1,attack:94,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Option\nPlay',rarity:0,list:1,
+        },{name:'Option\nPlay',rarity:0,list:0,list:1,
         stats:[
             {damage:5,alt:6,cost:1,attack:63,target:1,desc:'',spec:0,class:0},
             {damage:8,alt:9,cost:1,attack:63,target:1,desc:'',spec:0,class:0},
@@ -240,22 +240,22 @@ types={
             {damage:10,alt:1,cost:2,attack:138,target:1,desc:'',spec:0,class:0},
             {damage:18,alt:1,cost:2,attack:138,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Quick Kick',rarity:0,list:1,
+        },{name:'Quick Kick',rarity:0,list:0,list:1,
         stats:[
             {damage:4,alt:4,cost:1,attack:93,target:1,desc:'',spec:0,class:0},
             {damage:8,alt:4,cost:1,attack:93,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Front Kick',rarity:0,list:1,
+        },{name:'Front Kick',rarity:0,list:0,list:1,
         stats:[
             {damage:6,alt:4,cost:2,attack:142,target:1,desc:'',spec:0,class:0},
             {damage:12,alt:4,cost:2,attack:142,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'One Last\nThing',rarity:0,list:1,
+        },{name:'One Last\nThing',rarity:0,list:0,list:1,
         stats:[
             {damage:2,alt:0,cost:1,attack:143,target:1,desc:'',spec:0,class:0},
             {damage:3,alt:0,cost:1,attack:143,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Dodge',rarity:0,list:1,
+        },{name:'Dodge',rarity:0,list:0,list:1,
         stats:[
             {damage:1,alt:0,cost:1,attack:144,target:0,desc:'',spec:0,class:1},
             {damage:1,alt:0,cost:0,attack:144,target:0,desc:'',spec:0,class:1},
@@ -285,12 +285,12 @@ types={
             {damage:4,alt:0,cost:2,attack:151,target:0,desc:'',spec:3,class:2},
             {damage:8,alt:0,cost:2,attack:151,target:0,desc:'',spec:3,class:2},
         ],
-        },{name:'Push',rarity:0,list:1,
+        },{name:'Push',rarity:0,list:0,list:1,
         stats:[
             {damage:0,alt:4,cost:0,attack:93,target:1,desc:'',spec:0,class:0},
             {damage:4,alt:4,cost:0,attack:93,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Pull',rarity:0,list:1,
+        },{name:'Pull',rarity:0,list:0,list:1,
         stats:[
             {damage:0,alt:4,cost:0,attack:152,target:1,desc:'',spec:0,class:0},
             {damage:4,alt:4,cost:0,attack:152,target:1,desc:'',spec:0,class:0},
@@ -330,7 +330,7 @@ types={
             {damage:4,alt:8,cost:1,attack:164,target:1,desc:'',spec:0,class:0},
             {damage:8,alt:12,cost:1,attack:164,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Absorb\nAttacks',rarity:0,list:5,
+        },{name:'Absorb\nAttacks',rarity:0,list:0,list:5,
         stats:[
             {damage:1,alt:0,cost:1,attack:165,target:0,desc:'',spec:0,class:1},
             {damage:1,alt:4,cost:1,attack:165,target:0,desc:'',spec:0,class:1},
@@ -353,7 +353,7 @@ types={
             {damage:12,alt:0,cost:2,attack:24,target:1,desc:'',spec:0,class:0},
             {damage:18,alt:0,cost:2,attack:24,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Sweep',rarity:0,list:2,
+        },{name:'Sweep',rarity:0,list:0,list:2,
         stats:[
             {damage:4,alt:2,cost:1,attack:51,target:1,desc:'',spec:2,class:0},
             {damage:6,alt:2,cost:1,attack:51,target:1,desc:'',spec:2,class:0},
@@ -368,7 +368,7 @@ types={
             {damage:3,alt:0,cost:1,attack:26,target:0,desc:'',spec:0,class:2},
             {damage:4,alt:0,cost:1,attack:26,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Empty\nBody',rarity:0,list:2,
+        },{name:'Empty\nBody',rarity:0,list:0,list:2,
         stats:[
             {damage:7,alt:0,cost:1,attack:28,target:0,desc:'',spec:0,class:1},
             {damage:10,alt:0,cost:1,attack:28,target:0,desc:'',spec:0,class:1},
@@ -378,7 +378,7 @@ types={
             {damage:8,alt:0,cost:1,attack:29,target:1,desc:'',spec:0,class:0},
             {damage:11,alt:0,cost:1,attack:29,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Empty\nBlade',rarity:0,list:2,
+        },{name:'Empty\nBlade',rarity:0,list:0,list:2,
         stats:[
             {damage:9,alt:0,cost:1,attack:30,target:1,desc:'',spec:0,class:0},
             {damage:14,alt:0,cost:1,attack:30,target:1,desc:'',spec:0,class:0},
@@ -388,17 +388,17 @@ types={
             {damage:2,alt:0,cost:1,attack:31,target:0,desc:'',spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:31,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Consecrate',rarity:0,list:2,
+        },{name:'Consecrate',rarity:0,list:0,list:2,
         stats:[
             {damage:3,alt:0,cost:0,attack:12,target:0,desc:'',spec:0,class:0},
             {damage:5,alt:0,cost:0,attack:12,target:0,desc:'',spec:0,class:0},
         ],
-        },{name:'Bowling\nBash',rarity:0,list:2,
+        },{name:'Bowling\nBash',rarity:0,list:0,list:2,
         stats:[
             {damage:7,alt:0,cost:2,attack:97,target:1,desc:'',spec:0,class:0},
             {damage:7,alt:0,cost:1,attack:97,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Evaluate',rarity:0,list:2,
+        },{name:'Evaluate',rarity:0,list:0,list:2,
         stats:[
             {damage:4,alt:0,cost:1,attack:98,target:0,desc:'',spec:0,class:1},
             {damage:7,alt:0,cost:1,attack:98,target:0,desc:'',spec:0,class:1},
@@ -408,22 +408,22 @@ types={
             {damage:4,alt:0,cost:0,attack:99,target:1,desc:'',spec:0,class:0},
             {damage:6,alt:0,cost:0,attack:99,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Crescendo',rarity:0,list:2,
+        },{name:'Crescendo',rarity:0,list:0,list:2,
         stats:[
             {damage:0,alt:0,cost:1,attack:100,target:0,desc:'',spec:9,class:2},
             {damage:0,alt:0,cost:0,attack:100,target:0,desc:'',spec:9,class:2},
         ],
-        },{name:'Deflect',rarity:0,list:2,
+        },{name:'Deflect',rarity:0,list:0,list:2,
         stats:[
             {damage:3,alt:9,cost:0,attack:101,target:0,desc:'',spec:0,class:1},
             {damage:4,alt:14,cost:0,attack:101,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Belief',rarity:0,list:2,
+        },{name:'Belief',rarity:0,list:0,list:2,
         stats:[
             {damage:2,alt:0,cost:0,attack:102,target:0,desc:'',spec:0,class:2},
             {damage:3,alt:0,cost:0,attack:102,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Tranquility',rarity:0,list:2,
+        },{name:'Tranquility',rarity:0,list:0,list:2,
         stats:[
             {damage:0,alt:0,cost:1,attack:103,target:0,desc:'',spec:9,class:2},
             {damage:0,alt:0,cost:0,attack:103,target:0,desc:'',spec:9,class:2},
@@ -538,17 +538,17 @@ types={
             {damage:3,alt:0,cost:2,attack:124,target:0,desc:'',spec:0,class:1},
             {damage:4,alt:0,cost:2,attack:124,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'In the\nFolds',rarity:0,list:2,
+        },{name:'In the\nFolds',rarity:0,list:0,list:2,
         stats:[
             {damage:6,alt:1,cost:1,attack:125,target:0,desc:'',spec:0,class:1},
             {damage:6,alt:2,cost:1,attack:125,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Dagger\nSpray',rarity:0,list:2,
+        },{name:'Dagger\nSpray',rarity:0,list:0,list:2,
         stats:[
             {damage:2,alt:2,cost:1,attack:126,target:0,desc:'',spec:0,class:0},
             {damage:4,alt:2,cost:1,attack:126,target:0,desc:'',spec:0,class:0},
         ],
-        },{name:'Dagger\nThrow',rarity:0,list:2,
+        },{name:'Dagger\nThrow',rarity:0,list:0,list:2,
         stats:[
             {damage:8,alt:2,cost:1,attack:127,target:1,desc:'',spec:0,class:0},
             {damage:12,alt:2,cost:1,attack:127,target:1,desc:'',spec:0,class:0},
@@ -603,22 +603,22 @@ types={
             {damage:8,alt:2,cost:1,attack:135,target:1,desc:'',spec:0,class:0},
             {damage:12,alt:2,cost:1,attack:135,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Follow\nUp',rarity:0,list:2,
+        },{name:'Follow\nUp',rarity:0,list:0,list:2,
         stats:[
             {damage:7,alt:0,cost:1,attack:157,target:1,desc:'',spec:0,class:0},
             {damage:11,alt:0,cost:1,attack:157,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Credence',rarity:0,list:2,
+        },{name:'Credence',rarity:0,list:0,list:2,
         stats:[
             {damage:3,alt:4,cost:1,attack:158,target:0,desc:'',spec:0,class:2},
             {damage:4,alt:6,cost:1,attack:158,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Bow\nWhip',rarity:0,list:2,
+        },{name:'Bow\nWhip',rarity:0,list:0,list:2,
         stats:[
             {damage:8,alt:1,cost:1,attack:159,target:1,desc:'',spec:0,class:0},
             {damage:10,alt:2,cost:1,attack:159,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Crush\nJoints',rarity:0,list:2,
+        },{name:'Crush\nJoints',rarity:0,list:0,list:2,
         stats:[
             {damage:8,alt:1,cost:1,attack:160,target:1,desc:'',spec:0,class:0},
             {damage:10,alt:2,cost:1,attack:160,target:1,desc:'',spec:0,class:0},
@@ -628,17 +628,17 @@ types={
             {damage:6,alt:0,cost:1,attack:161,target:1,desc:'',spec:0,class:0},
             {damage:10,alt:0,cost:1,attack:161,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Look\nAhead',rarity:0,list:2,
+        },{name:'Look\nAhead',rarity:0,list:0,list:2,
         stats:[
             {damage:7,alt:3,cost:1,attack:162,target:0,desc:'',spec:0,class:2},
             {damage:9,alt:5,cost:1,attack:162,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Planned\nManeuver',rarity:0,list:2,
+        },{name:'Planned\nManeuver',rarity:0,list:0,list:2,
         stats:[
             {damage:2,alt:1,cost:0,attack:163,target:0,desc:'',spec:0,class:2},
             {damage:4,alt:1,cost:0,attack:163,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Survivor',rarity:0,list:2,
+        },{name:'Survivor',rarity:0,list:0,list:2,
         stats:[
             {damage:8,alt:0,cost:1,attack:166,target:0,desc:'',spec:0,class:1},
             {damage:12,alt:0,cost:1,attack:166,target:0,desc:'',spec:0,class:1},
@@ -661,12 +661,12 @@ types={
         },
         
         
-        {name:'Charge',rarity:0,list:3,
+        {name:'Charge',rarity:0,list:0,list:3,
         stats:[
             {damage:1,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:13,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Multicast',rarity:0,list:3,
+        },{name:'Multicast',rarity:0,list:0,list:3,
         stats:[
             {damage:2,alt:0,cost:1,attack:14,target:0,desc:'',spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:14,target:0,desc:'',spec:0,class:2},
@@ -676,7 +676,7 @@ types={
             {damage:1,alt:0,cost:1,attack:15,target:0,desc:'',spec:0,class:2},
             {damage:1,alt:0,cost:0,attack:15,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Shielding',rarity:0,list:3,
+        },{name:'Shielding',rarity:0,list:0,list:3,
         stats:[
             {damage:1,alt:0,cost:0,attack:16,target:0,desc:'',spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:16,target:0,desc:'',spec:0,class:2},
@@ -696,12 +696,12 @@ types={
             {damage:1,alt:0,cost:2,attack:20,target:0,desc:'',spec:0,class:2},
             {damage:1,alt:0,cost:1,attack:20,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Beam\nPulse',rarity:0,list:3,
+        },{name:'Beam\nPulse',rarity:0,list:0,list:3,
         stats:[
             {damage:3,alt:1,cost:0,attack:21,target:1,desc:'',spec:0,class:0},
             {damage:4,alt:2,cost:0,attack:21,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Claw',rarity:0,list:3,
+        },{name:'Claw',rarity:0,list:0,list:3,
         stats:[
             {damage:3,alt:0,cost:0,attack:22,target:1,desc:'',spec:0,class:0},
             {damage:5,alt:0,cost:0,attack:22,target:1,desc:'',spec:0,class:0},
@@ -711,12 +711,12 @@ types={
             {damage:1,alt:1,cost:3,attack:64,target:0,desc:'',spec:3,class:2},
             {damage:2,alt:2,cost:3,attack:64,target:0,desc:'',spec:3,class:2},
         ],
-        },{name:'Danger',rarity:0,list:4,
+        },{name:'Danger',rarity:0,list:0,list:4,
         stats:[
             {damage:8,alt:-4,cost:1,attack:65,target:1,desc:'',spec:0,class:0},
             {damage:12,alt:-4,cost:1,attack:65,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Peace',rarity:0,list:4,
+        },{name:'Peace',rarity:0,list:0,list:4,
         stats:[
             {damage:7,alt:4,cost:1,attack:66,target:0,desc:'',spec:0,class:1},
             {damage:11,alt:4,cost:1,attack:66,target:0,desc:'',spec:0,class:1},
@@ -731,17 +731,17 @@ types={
             {damage:1,alt:0,cost:1,attack:68,target:0,desc:'',spec:0,class:1},
             {damage:1,alt:0,cost:0,attack:68,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Revert',rarity:0,list:4,
+        },{name:'Revert',rarity:0,list:0,list:4,
         stats:[
             {damage:0,alt:0,cost:0,attack:69,target:0,desc:'',spec:0,class:2},
             {damage:0,alt:0,cost:0,attack:69,target:0,desc:'',spec:2,class:2},
         ],
-        },{name:'Serenity',rarity:0,list:4,
+        },{name:'Serenity',rarity:0,list:0,list:4,
         stats:[
             {damage:2,alt:2,cost:0,attack:70,target:0,desc:'',spec:0,class:1},
             {damage:3,alt:2,cost:0,attack:70,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Windslash',rarity:0,list:4,
+        },{name:'Windslash',rarity:0,list:0,list:4,
         stats:[
             {damage:8,alt:-2,cost:2,attack:71,target:0,desc:'',spec:11,class:0},
             {damage:13,alt:-2,cost:2,attack:71,target:0,desc:'',spec:11,class:0},
@@ -751,22 +751,22 @@ types={
             {damage:4,alt:6,cost:1,attack:72,target:1,desc:'',spec:0,class:0},
             {damage:12,alt:6,cost:1,attack:72,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Throw\nScythe',rarity:0,list:4,
+        },{name:'Throw\nScythe',rarity:0,list:0,list:4,
         stats:[
             {damage:24,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
             {damage:40,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
         ],
-        },{name:'Collect',rarity:0,list:4,
+        },{name:'Collect',rarity:0,list:0,list:4,
         stats:[
             {damage:0,alt:0,cost:0,attack:74,target:0,desc:'',spec:0,class:2},
             {damage:0,alt:0,cost:0,attack:74,target:0,desc:'',spec:2,class:2},
         ],
-        },{name:'Parry',rarity:0,list:4,
+        },{name:'Parry',rarity:0,list:0,list:4,
         stats:[
             {damage:1,alt:-3,cost:1,attack:75,target:0,desc:'',spec:11,class:1},  
             {damage:2,alt:-3,cost:1,attack:75,target:0,desc:'',spec:11,class:1},
         ],
-        },{name:'Slash',rarity:0,list:4,
+        },{name:'Slash',rarity:0,list:0,list:4,
         stats:[
             {damage:5,alt:-6,cost:1,attack:76,target:1,desc:'',spec:11,class:0},
             {damage:7,alt:-6,cost:1,attack:76,target:1,desc:'',spec:11,class:0},
@@ -801,7 +801,7 @@ types={
             {damage:2,alt:2,cost:2,attack:82,target:0,desc:'',spec:3,class:1},
             {damage:2,alt:2,cost:2,attack:82,target:0,desc:'',spec:3,class:1},
         ],
-        },{name:'Guard',rarity:0,list:4,
+        },{name:'Guard',rarity:0,list:0,list:4,
         stats:[
             {damage:15,alt:1,cost:2,attack:66,target:0,desc:'',spec:5,class:1},
             {damage:22,alt:1,cost:2,attack:66,target:0,desc:'',spec:5,class:1},
@@ -811,7 +811,7 @@ types={
             {damage:12,alt:0,cost:2,attack:83,target:0,desc:'',spec:11,class:0},
             {damage:20,alt:0,cost:2,attack:83,target:0,desc:'',spec:11,class:0},
         ],
-        },{name:'Footwork',rarity:0,list:4,
+        },{name:'Footwork',rarity:0,list:0,list:4,
         stats:[
             {damage:1,alt:1,cost:1,attack:84,target:0,desc:'',spec:0,class:1},
             {damage:2,alt:1,cost:1,attack:84,target:0,desc:'',spec:0,class:1},
@@ -821,12 +821,12 @@ types={
             {damage:4,alt:-3,cost:2,attack:85,target:0,desc:'',spec:0,class:2},
             {damage:6,alt:-3,cost:2,attack:85,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Slide',rarity:0,list:4,
+        },{name:'Slide',rarity:0,list:0,list:4,
         stats:[
             {damage:4,alt:0,cost:1,attack:86,target:1,desc:'',spec:0,class:0},
             {damage:8,alt:0,cost:1,attack:86,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Swivel',rarity:0,list:4,
+        },{name:'Swivel',rarity:0,list:0,list:4,
         stats:[
             {damage:3,alt:0,cost:1,attack:87,target:0,desc:'',spec:0,class:1},
             {damage:7,alt:0,cost:1,attack:87,target:0,desc:'',spec:0,class:1},
@@ -846,27 +846,27 @@ types={
             {damage:3,alt:1,cost:0,attack:90,target:1,desc:'',spec:2,class:0},
             {damage:5,alt:1,cost:0,attack:90,target:1,desc:'',spec:2,class:0},
         ],
-        },{name:'Sleeve\nSwipe',rarity:0,list:4,
+        },{name:'Sleeve\nSwipe',rarity:0,list:0,list:4,
         stats:[
             {damage:4,alt:-1,cost:1,attack:91,target:1,desc:'',spec:10,class:0},
             {damage:4,alt:-1,cost:0,attack:91,target:1,desc:'',spec:10,class:0},
         ],
-        },{name:'Puncture',rarity:0,list:4,
+        },{name:'Puncture',rarity:0,list:0,list:4,
         stats:[
             {damage:2,alt:3,cost:1,attack:136,target:1,desc:'',spec:11,class:0},
             {damage:4,alt:5,cost:1,attack:136,target:1,desc:'',spec:11,class:0},
         ],
-        },{name:'Jumping\nStab',rarity:0,list:4,
+        },{name:'Jumping\nStab',rarity:0,list:0,list:4,
         stats:[
             {damage:9,alt:4,cost:2,attack:136,target:1,desc:'',spec:11,class:0},
             {damage:12,alt:6,cost:2,attack:136,target:1,desc:'',spec:11,class:0},
         ],
-        },{name:'Counter\nStab',rarity:0,list:1,
+        },{name:'Counter\nStab',rarity:0,list:0,list:1,
         stats:[
             {damage:3,alt:3,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
             {damage:6,alt:5,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Empty',rarity:-1,list:0,
+        },{name:'Empty',rarity:-1,list:12,
         stats:[
             {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:0},
             {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:0},
@@ -916,7 +916,7 @@ types={
             {damage:3,alt:0,cost:0,attack:4,target:0,desc:'',spec:0,class:2},
             {damage:4,alt:0,cost:0,attack:4,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Hand of\nGreed',rarity:0,list:0,
+        },{name:'Hand of\nGreed',rarity:0,list:0,list:0,
         stats:[
             {damage:20,alt:20,cost:2,attack:60,target:1,desc:'',spec:0,class:0},
             {damage:25,alt:25,cost:2,attack:60,target:1,desc:'',spec:0,class:0},
@@ -926,7 +926,7 @@ types={
             {damage:3,alt:0,cost:2,attack:61,target:0,desc:'',spec:3,class:2},
             {damage:5,alt:0,cost:2,attack:61,target:0,desc:'',spec:3,class:2},
         ],
-        },{name:'Mind Blast',rarity:0,list:0,
+        },{name:'Mind Blast',rarity:0,list:0,list:0,
         stats:[
             {damage:6,alt:0,cost:2,attack:62,target:1,desc:'',spec:10,class:0},
             {damage:9,alt:0,cost:1,attack:62,target:1,desc:'',spec:2,class:0},
@@ -996,10 +996,15 @@ types={
             {damage:0,alt:0,cost:0,attack:-12,target:0,desc:'',spec:0,class:0},
             {damage:0,alt:0,cost:0,attack:-12,target:0,desc:'',spec:0,class:0},
         ],
-        },{name:'Pain',rarity:-1,list:10,
+        },{name:'Decay',rarity:-1,list:10,
         stats:[
             {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
             {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
+        ],
+        },{name:'Pain',rarity:-1,list:10,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-2,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-2,target:0,desc:'',spec:1,class:0},
         ],
         },{name:'Confusion',rarity:-2,list:11,
         stats:[
@@ -1023,13 +1028,13 @@ types={
         ],
         },{name:'Void',rarity:-2,list:11,
         stats:[
-            {damage:1,alt:0,cost:0,attack:-9,target:0,desc:'',spec:1,class:0},
-            {damage:1,alt:0,cost:0,attack:-9,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-9,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-9,target:0,desc:'',spec:1,class:0},
         ],
         },{name:'Burn',rarity:-2,list:11,
         stats:[
-            {damage:1,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
-            {damage:1,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
         ],
         },{name:'Redraw',rarity:-3,list:0,
         stats:[
@@ -1087,95 +1092,124 @@ types={
         },
     ],relic:[
         {
-            name:'',id:0,rarity:-1,
+            name:'',id:0,rarity:-1,list:0,
             desc:'',
         },{
-            name:'First Turn Redraw',id:1,rarity:1,
+            name:'First Turn Redraw',id:1,rarity:1,list:0,
             desc:'Add 1 Redraw at\nthe Start of Combat',
         },{
-            name:'Free Step',id:2,rarity:1,
+            name:'Free Step',id:2,rarity:1,list:0,
             desc:'Add 1 Step\nEvery Turn',
         },{
-            name:'Quick Heal',id:3,rarity:0,
+            name:'Quick Heal',id:3,rarity:0,list:0,
             desc:'Heal 2 Health\nat the End of Combat',
         },{
-            name:'First Turn Draw',id:4,rarity:0,
+            name:'First Turn Draw',id:4,rarity:0,list:0,
             desc:'Draw 2 Extra Cards\nat the Start of Combat',
         },{
-            name:'First Turn Miracle',id:5,rarity:0,
+            name:'First Turn Miracle',id:5,rarity:0,list:0,
             desc:'Add 1 Miracle at\nthe Start of Combat',
         },{
-            name:'First Attack Damage',id:6,rarity:0,
+            name:'First Attack Damage',id:6,rarity:0,list:0,
             desc:'First Attack\nDeals +8 Damage',
         },{
-            name:'First Turn Block',id:7,rarity:0,
+            name:'First Turn Block',id:7,rarity:0,list:0,
             desc:'Gain 10 Block\nat the Start of Combat',
         },{
-            name:'Resting Energy',id:8,rarity:0,
+            name:'Resting Energy',id:8,rarity:0,list:0,
             desc:'Gain 2 Energy\nafter Resting',
         },{
-            name:'No Attack Energy',id:9,rarity:0,
+            name:'No Attack Energy',id:9,rarity:0,list:0,
             desc:'If You do not Attack\nGain 1 Energy Next Turn',
         },{
-            name:'First Turn Weaken',id:10,rarity:0,
+            name:'First Turn Weaken',id:10,rarity:0,list:0,
             desc:'Apply 1 Weak to All\nEnemies the Start of Combat',
         },{
-            name:'Counter\nAll',id:11,rarity:0,
+            name:'Counter\nAll',id:11,rarity:0,list:0,
             desc:'Counter 3 All\nAt All Times',
         },{
-            name:'First Damage Draw',id:12,rarity:0,
+            name:'First Damage Draw',id:12,rarity:0,list:0,
             desc:'Draw 3 Extra Cards at First\nDamage Taken per Combat',
         },{
-            name:'Add Card Currency',id:13,rarity:0,
+            name:'Add Card Currency',id:13,rarity:0,list:0,
             desc:'Gain 10 Currency\nWhen Card Added',
         },{
-            name:'Add Card Rest',id:14,rarity:0,
+            name:'Add Card Rest',id:14,rarity:0,list:0,
             desc:'Add a Card\nafter Resting',
         },{
-            name:'Third Turn Energy',id:15,rarity:0,
+            name:'Third Turn Energy',id:15,rarity:0,list:0,
             desc:'Gain 1 Energy\nevery 3rd Turn',
         },{
-            name:'First Turn Energy',id:16,rarity:0,
+            name:'First Turn Energy',id:16,rarity:0,list:0,
             desc:'Gain 1 Energy at\nthe Start of Combat',
         },{
-            name:'Unspent Currency',id:17,rarity:0,
+            name:'Unspent Currency',id:17,rarity:0,list:0,
             desc:'Gain 10 Currency per Room\nUntil You Enter a Shop',
         },{
-            name:'Shop Heal',id:18,rarity:0,
+            name:'Shop Heal',id:18,rarity:0,list:0,
             desc:'Heal 15 Health\nWhen Entering a Shop',
         },{
-            name:'Critical Hit',id:19,rarity:0,
+            name:'Critical Hit',id:19,rarity:0,list:0,
             desc:'Every 10th Attack\nDeals Double Damage',
         },{
-            name:'First Turn Dexterity',id:20,rarity:0,
+            name:'First Turn Dexterity',id:20,rarity:0,list:0,
             desc:'Gain 1 Dexterity at\nthe Start of Combat',
         },{
-            name:'Curse Negate',id:21,rarity:0,
+            name:'Curse Negate',id:21,rarity:0,list:0,
             desc:'Remove the Next\nCurse Obtained',
         },{
-            name:'Attack Spam',id:22,rarity:0,
+            name:'Attack Spam',id:22,rarity:0,list:0,
             desc:'Every 10 Attacks\nPlayed, Gain 1 Energy',
         },{
-            name:'Weak Elites',id:23,rarity:0,
+            name:'Weak Elites',id:23,rarity:0,list:0,
             desc:'Enemies in Elite Rooms\nLose 20% of their Health',
         },{
-            name:'Improved Heal',id:24,rarity:0,
+            name:'Improved Heal',id:24,rarity:0,list:0,
             desc:'Heal 15 More\nHealth When Resting',
         },{
-            name:'Cheap Removal',id:25,rarity:0,
+            name:'Cheap Removal',id:25,rarity:0,list:0,
             desc:'Removing Cards Always\nCosts 60 Currency',
         },{
-            name:'7 Max HP',id:26,rarity:0,
-            desc:'When Taken, Gain 7 Max HP',
+            name:'7 Max HP',id:26,rarity:0,list:0,
+            desc:'When Taken,\nGain 7 Max HP',
         },{
-            name:'Small Attack Bonus',id:27,rarity:0,
+            name:'Small Attack Bonus',id:27,rarity:0,list:0,
             desc:'If you Deal Less than 5\nDamage, Increase it to 5',
         },{
-            name:'First Turn Strength',id:28,rarity:0,
+            name:'First Turn Strength',id:28,rarity:0,list:0,
             desc:'Gain 1 Strength at\nthe Start of Combat',
         },{
-            name:'Random Upgrade',id:29,rarity:-1,
+            name:'Random Upgrade',id:29,rarity:-1,list:0,
             desc:'Each Turn, Upgrade a\nRandom Card in your Hand',
+        },{
+            name:'Upgrade 2 Attacks',id:30,rarity:0,list:0,
+            desc:'When Taken, Upgrade\n2 Random Attacks',
+        },{
+            name:'Upgrade 2 Skills',id:31,rarity:0,list:0,
+            desc:'When Taken, Upgrade\n2 Random Skills',
+        },{
+            name:'Upgrade 2 Powers',id:32,rarity:0,list:0,
+            desc:'When Taken, Upgrade\n2 Random Powers',
+        },{
+            name:'Low Health Strength',id:33,rarity:0,list:0,
+            desc:'Gain 1 Strength Every Turn\nWhen Health Below 50%',
+        },{
+            name:'Base Combo',id:34,rarity:0,list:1,
+            desc:'Cannot Have Less\nthan 1 Combo',
+        },{
+            name:'Faith Gain',id:35,rarity:0,list:2,
+            desc:'Gain 1 Faith\nEvery Turn',
+        },{
+            name:'First Turn Focus',id:36,rarity:0,list:3,
+            desc:'Gain 1 Focus at\nthe Start of Combat',
+        },{
+            name:'Balance Control',id:37,rarity:0,list:4,
+            desc:'At the End of Turn,\nIf Balance is Positive, -1 Balance\nIf Balance is Negative, +1 Balance',
+        },
+
+        {
+            name:'',id:33,rarity:0,list:0,
+            desc:'',
         },
     ],event:[
         {
@@ -1567,7 +1601,7 @@ types={
     ],
 }
 listing={
-    card:[[],[],[],[],[],[],[],[],[],[],[],[]],
+    card:[[],[],[],[],[],[],[],[],[],[],[],[],[]],
 }
 zones=[
     {

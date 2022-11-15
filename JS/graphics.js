@@ -139,7 +139,7 @@ function setupGraphics(){
 	graphics.minor[5].rect(0,0,160,8,3)
 	graphics.minor[5].fill(149,134,184)
 	graphics.minor[5].rect(0,-2,160,4,3)
-	for(a=0;a<18;a++){
+	for(a=0;a<21;a++){
 		graphics.symbol.push(createGraphics(100,100))
 		setupLayer(graphics.symbol[a])
 		graphics.symbol[a].noStroke()
@@ -235,4 +235,26 @@ function setupGraphics(){
 	graphics.symbol[17].stroke(0)
 	graphics.symbol[17].noFill()
 	graphics.symbol[17].rect(0,0,90,90)
+	graphics.symbol[18].strokeWeight(5)
+	graphics.symbol[18].stroke(0)
+	graphics.symbol[18].noFill()
+	graphics.symbol[18].ellipse(0,0,54,54)
+	for(a=0;a<12;a++){
+		graphics.symbol[18].line(sin(a*30)*36,cos(a*30)*36,sin(a*30)*48,cos(a*30)*48)
+	}
+	graphics.symbol[19].noFill()
+	graphics.symbol[19].stroke(0)
+	graphics.symbol[19].strokeWeight(16)
+	graphics.symbol[19].strokeCap(SQUARE)
+	graphics.symbol[19].arc(4,4,80,80,-45,135)
+	graphics.symbol[19].arc(-4,-4,80,80,135,315)
+	for(a=0;a<12;a++){
+		graphics.symbol[20].ellipse(sin(a*30)*40,cos(a*30)*40,12,12)
+	}
+	graphics.symbol[20].strokeWeight(5)
+	graphics.symbol[20].stroke(0)
+	graphics.symbol[20].noFill()
+	for(a=0;a<12;a++){
+		graphics.symbol[20].line(sin(a*30)*24,cos(a*30)*24,sin(a*30)*30,cos(a*30)*30)
+	}
 }

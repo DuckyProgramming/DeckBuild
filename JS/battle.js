@@ -88,7 +88,7 @@ class battle{
             this.eventList.push(zones[this.map.zone].events[this.player][g])
         }
         for(g=0,lg=types.relic.length;g<lg;g++){
-            if(g>=1&&types.relic[g].rarity>=0){
+            if(g>=1&&types.relic[g].rarity>=0&&(types.relic[g].list==0||types.relic[g].list==this.player)){
                 this.relics.list[types.relic[g].rarity].push(g)
             }
             this.relics.active.push(false)
@@ -142,6 +142,7 @@ class battle{
         if(this.relics.active[28]){
             this.combatants[0].boost.main[0]++
         }
+        this.startTurn()
         this.random.rested=false
         if(this.relics.active[4]){
             this.draw()
@@ -189,6 +190,23 @@ class battle{
             case 26:
                 this.combatants[0].base.life+=7
                 this.combatants[0].life+=7
+            break
+            case 30: case 31: case 32:
+                for(h=0;h<2;h++){
+                    this.calc.list=[]
+                    for(g=0,lg=this.deck.cards.length;g<lg;g++){
+                        if(this.deck.cards[g].class==type-30&&this.deck.cards[g].level==0){
+                            this.calc.list.push(g)
+                        }
+                    }
+                    if(this.calc.list.length>0){
+                        g=floor(random(0,this.calc.list.length))
+                        if(this.deck.cards[this.calc.list[g]].level==0){
+                            this.deck.cards[this.calc.list[g]].level++
+                        }
+                        this.deck.cards[this.calc.list[g]]=reformCard(this.deck.cards[this.calc.list[g]])
+                    }
+                }
             break
         }
     }
@@ -254,11 +272,20 @@ class battle{
         if(this.relics.active[9]&&this.random.attacked<=0){
             this.mana.main++
         }
-        if(this.relics.active[15]&&this.counter.turn%3==2){
-            this.mana.main++
-        }
+        this.startTurn()
         this.counter.played=0
         this.random.attacked=0
+    }
+    startTurn(){
+        if(this.relics.active[15]&&this.counter.turn%3==0){
+            this.mana.main++
+        }
+        if(this.relics.active[33]&&this.combatants[0].life<this.combatants[0].base.life/2){
+            this.combatants[0].boost.main[0]++
+        }
+        if(this.relics.active[35]){
+            this.combatants[0].mantra++
+        }
     }
     playCard(){
         this.counter.played++
@@ -511,6 +538,9 @@ class battle{
         }
     }
     update(){
+        if(this.relics.active[34]&&this.combatants[0].combo==0){
+            this.combatants[0].combo=1
+        }
         this.counter.enemies.alive=0
         for(e=1,le=this.combatants.length;e<le;e++){
             if(this.combatants[e].life>0){

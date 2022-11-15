@@ -6,6 +6,7 @@ class card{
         this.level=level
         this.color=color
         this.name=types.card[this.type].name
+        this.list=types.card[this.type].list
         this.damage=damage||types.card[this.type].stats[this.level].damage
         this.alt=alt||types.card[this.type].stats[this.level].alt
         this.cost=cost||types.card[this.type].stats[this.level].cost
@@ -338,6 +339,24 @@ class card{
             }
             this.layer.textSize(12)
             this.layer.text(this.desc,0,10)
+            this.layer.textSize(10)
+            if(this.list==10){
+                this.layer.text('Curse',0,this.height/2-10)
+            }else if(this.list==11){
+                this.layer.text('Status',0,this.height/2-10)
+            }else if(this.list!=12){
+                switch(this.class){
+                    case 0:
+                        this.layer.text('Attack',0,this.height/2-10)
+                    break
+                    case 1:
+                        this.layer.text('Defend',0,this.height/2-10)
+                    break
+                    case 2:
+                        this.layer.text('Power',0,this.height/2-10)
+                    break
+                }
+            }
             this.layer.scale(1/this.size)
             this.layer.translate(-this.position.x,-this.position.y)
         }
