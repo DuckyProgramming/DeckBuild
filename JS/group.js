@@ -9,6 +9,7 @@ class group{
         this.select=false
         this.selcted=false
         this.trigger=false
+        this.calc={level:0}
         this.anim={discarding:0}
     }
     initial(type){
@@ -74,10 +75,18 @@ class group{
         }
     }
     add(type,level,color){
+        this.calc.level=level
+        if(types.card[type].stats[level].class==0&&this.battle.relics.active[41]||types.card[type].stats[level].class==1&&this.battle.relics.active[42]||types.card[type].stats[level].class==2&&this.battle.relics.active[43]){
+            this.calc.level++
+        }
         if(types.card[type].list==10&&this.battle.relics.active[21]){
             this.battle.relics.active[21]=false
         }else{
-            this.cards.push(new card(this.layer,1206,500,type,level,color))
+            this.cards.push(new card(this.layer,1206,500,type,this.calc.level,color))
+        }
+        if(types.card[type].list==10&&this.battle.relics.active[39]){
+            this.battle.combatants[0].base.life+=6
+            this.battle.combatants[0].life+=6
         }
         if(this.id==2&&stage.scene=='choice'){
             if(this.battle.relics.active[13]){
@@ -308,6 +317,10 @@ class group{
                     }else{
                         this.battle.attack.targetType=this.cards[e].target
                     }
+                    if(this.cards[e].list==10&&this.battle.relics.active[38]){
+                        this.cards[e].exhaust=true
+                        this.battle.combatants[0].take(1,0)
+                    }
                 }
                 if(this.select&&this.cards[e].select){
                     this.cards[e].select=false
@@ -316,7 +329,7 @@ class group{
                 if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.discarding>0){
                     this.battle.discarding--
                     this.cards[e].used=true
-                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7){
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&(this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7||this.cards[e].list==10&&this.battle.relics.active[38])){
                     this.cards[e].select=true
                     this.select=true
                     this.selected=true

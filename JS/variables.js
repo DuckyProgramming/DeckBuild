@@ -864,17 +864,23 @@ types={
             {damage:9,alt:4,cost:2,attack:136,target:1,desc:'',spec:11,class:0},
             {damage:12,alt:6,cost:2,attack:136,target:1,desc:'',spec:11,class:0},
         ],
-        },{name:'Counter\nStab',rarity:0,list:0,list:1,
+        },{name:'Counter\nStab',rarity:0,list:0,list:4,
         stats:[
             {damage:3,alt:3,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
             {damage:6,alt:5,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Empty',rarity:-1,list:12,
+        },
+        
+        
+        {name:'Empty',rarity:-1,list:12,
         stats:[
             {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:0},
             {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:0},
         ],
-        },{name:'Heal Up',rarity:1,list:0,
+        },
+        
+        
+        {name:'Heal Up',rarity:1,list:0,
         stats:[
             {damage:4,alt:0,cost:1,attack:25,target:0,desc:'',spec:3,class:2},
             {damage:6,alt:0,cost:1,attack:25,target:0,desc:'',spec:3,class:2},
@@ -959,85 +965,91 @@ types={
             {damage:4,alt:0,cost:0,attack:1,target:1,desc:'',spec:3,class:0},
             {damage:6,alt:0,cost:0,attack:1,target:1,desc:'',spec:3,class:0},
         ],
-        },{name:'Clumsy',rarity:-1,list:10,
+        },
+        
+        
+        {name:'Clumsy',rarity:-1,list:10,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:0},
-            {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:0},
+            {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:-2},
+            {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:-2},
         ],
         },{name:'Doubt',rarity:-1,list:10,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-4,target:0,desc:'',spec:1,class:0},
-            {damage:0,alt:0,cost:0,attack:-4,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-4,target:0,desc:'',spec:1,class:-2},
+            {damage:0,alt:0,cost:0,attack:-4,target:0,desc:'',spec:1,class:-2},
         ],
         },{name:'Regret',rarity:-1,list:10,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-5,target:0,desc:'',spec:1,class:0},
-            {damage:0,alt:0,cost:0,attack:-5,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-5,target:0,desc:'',spec:1,class:-2},
+            {damage:0,alt:0,cost:0,attack:-5,target:0,desc:'',spec:1,class:-2},
         ],
         },{name:'Writhe',rarity:-1,list:10,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-6,target:0,desc:'',spec:7,class:0},
-            {damage:0,alt:0,cost:0,attack:-6,target:0,desc:'',spec:7,class:0},
+            {damage:0,alt:0,cost:0,attack:-6,target:0,desc:'',spec:7,class:-2},
+            {damage:0,alt:0,cost:0,attack:-6,target:0,desc:'',spec:7,class:-2},
         ],
         },{name:'Shame',rarity:-1,list:10,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-7,target:0,desc:'',spec:1,class:0},
-            {damage:0,alt:0,cost:0,attack:-7,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-7,target:0,desc:'',spec:1,class:-2},
+            {damage:0,alt:0,cost:0,attack:-7,target:0,desc:'',spec:1,class:-2},
         ],
         },{name:'Parasite',rarity:-1,list:10,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-8,target:0,desc:'',spec:1,class:0},
-            {damage:0,alt:0,cost:0,attack:-8,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-8,target:0,desc:'',spec:1,class:-2},
+            {damage:0,alt:0,cost:0,attack:-8,target:0,desc:'',spec:1,class:-2},
         ],
         },{name:'Normality',rarity:-1,list:10,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-11,target:0,desc:'',spec:1,class:0},
-            {damage:0,alt:0,cost:0,attack:-11,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-11,target:0,desc:'',spec:1,class:-2},
+            {damage:0,alt:0,cost:0,attack:-11,target:0,desc:'',spec:1,class:-2},
         ],
         },{name:'Imbalance',rarity:-1,list:10,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-12,target:0,desc:'',spec:0,class:0},
-            {damage:0,alt:0,cost:0,attack:-12,target:0,desc:'',spec:0,class:0},
+            {damage:0,alt:0,cost:0,attack:-12,target:0,desc:'',spec:0,class:-2},
+            {damage:0,alt:0,cost:0,attack:-12,target:0,desc:'',spec:0,class:-2},
         ],
         },{name:'Decay',rarity:-1,list:10,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
-            {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:-2},
+            {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:-2},
         ],
         },{name:'Pain',rarity:-1,list:10,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-2,target:0,desc:'',spec:1,class:0},
-            {damage:0,alt:0,cost:0,attack:-2,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-2,target:0,desc:'',spec:1,class:-2},
+            {damage:0,alt:0,cost:0,attack:-2,target:0,desc:'',spec:1,class:-2},
         ],
-        },{name:'Confusion',rarity:-2,list:11,
+        },
+        
+        
+        {name:'Confusion',rarity:-2,list:11,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-1,target:0,desc:'',spec:1,class:0},
-            {damage:0,alt:0,cost:0,attack:-1,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-1,target:0,desc:'',spec:1,class:-1},
+            {damage:0,alt:0,cost:0,attack:-1,target:0,desc:'',spec:1,class:-1},
         ],
         },{name:'Bleed',rarity:-2,list:11,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-2,target:0,desc:'',spec:1,class:0},
-            {damage:0,alt:0,cost:0,attack:-2,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-2,target:0,desc:'',spec:1,class:-1},
+            {damage:0,alt:0,cost:0,attack:-2,target:0,desc:'',spec:1,class:-1},
         ],
         },{name:'Dazed',rarity:-2,list:11,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:0},
-            {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:0},
+            {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:-1},
+            {damage:0,alt:0,cost:0,attack:-3,target:0,desc:'',spec:6,class:-1},
         ],
         },{name:'Stuck',rarity:-2,list:11,
         stats:[
-            {damage:0,alt:0,cost:1,attack:0,target:0,desc:'',spec:3,class:0},
-            {damage:0,alt:0,cost:1,attack:0,target:0,desc:'',spec:3,class:0},
+            {damage:0,alt:0,cost:1,attack:0,target:0,desc:'',spec:3,class:-1},
+            {damage:0,alt:0,cost:1,attack:0,target:0,desc:'',spec:3,class:-1},
         ],
         },{name:'Void',rarity:-2,list:11,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-9,target:0,desc:'',spec:1,class:0},
-            {damage:0,alt:0,cost:0,attack:-9,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-9,target:0,desc:'',spec:1,class:-1},
+            {damage:0,alt:0,cost:0,attack:-9,target:0,desc:'',spec:1,class:-1},
         ],
         },{name:'Burn',rarity:-2,list:11,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
-            {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:0},
+            {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:-1},
+            {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:-1},
         ],
         },{name:'Redraw',rarity:-3,list:0,
         stats:[
@@ -1161,7 +1173,7 @@ types={
             name:'Curse Negate',id:21,rarity:0,list:0,
             desc:'Remove the Next\nCurse Obtained',
         },{
-            name:'Attack Spam',id:22,rarity:0,list:0,
+            name:'10 Attack Energy',id:22,rarity:0,list:0,
             desc:'Every 10 Attacks\nPlayed, Gain 1 Energy',
         },{
             name:'Weak Elites',id:23,rarity:0,list:0,
@@ -1208,10 +1220,77 @@ types={
         },{
             name:'Balance Control',id:37,rarity:0,list:4,
             desc:'When Taken, Gain\n+2 Max Balance',
-        },
-
-        {
-            name:'',id:33,rarity:0,list:0,
+        },{
+            name:'Curse Play',id:38,rarity:1,list:0,
+            desc:'You Can Play and Exhaust\nCurses, Taking 1 Damage',
+        },{
+            name:'Curse Max Health',id:39,rarity:1,list:0,
+            desc:'When You Obtain a Curse,\nGain 6 Max HP',
+        },{
+            name:'Rest Deck Size Heal',id:40,rarity:1,list:0,
+            desc:'For Every Card in Your Deck, Heal\n0.5 Health When You Enter a Rest Site',
+        },{
+            name:'Upgrade Attacks',id:41,rarity:1,list:0,
+            desc:'Upgrade All\nAttacks Added',
+        },{
+            name:'Upgrade Skills',id:42,rarity:1,list:0,
+            desc:'Upgrade All\nSkills Added',
+        },{
+            name:'Upgrade Powers',id:43,rarity:1,list:0,
+            desc:'Upgrade All\nPowers Added',
+        },{
+            name:'Enemy Death Loot',id:44,rarity:1,list:0,
+            desc:'When an Enemy Dies, Gain\n1 Energy and Draw 1 Card',
+        },{
+            name:'2nd Turn Block',id:45,rarity:1,list:0,
+            desc:'Gain 14 Block at\nthe Start of Turn 2',
+        },{
+            name:'Card Spam',id:46,rarity:1,list:0,
+            desc:'Every 10 Cards\nPlayed, Draw 1 Card',
+        },{
+            name:'3 Attack Dexterity',id:47,rarity:1,list:0,
+            desc:'Every 3 Attacks\nPlayed, Gain 1 Dexterity',
+        },{
+            name:'3 Skill Damage All',id:48,rarity:1,list:0,
+            desc:'Every 3 Skills Played, Deal\n5 Damage to All Enemies',
+        },{
+            name:'Low Health Heal',id:49,rarity:1,list:0,
+            desc:'At the End of Combat, If Health\nBelow 50%, Heal 12 Health',
+        },{
+            name:'Turn Damage All',id:50,rarity:1,list:0,
+            desc:'At the Start of Your Turn,\nDeal 3 Damage to All Enemies',
+        },{
+            name:'Power Cost Decrease',id:51,rarity:1,list:0,
+            desc:'When You Play a Power, a Random\nCard in Your Hand Costs 1 Less',
+        },{
+            name:'3 Attack Block',id:52,rarity:1,list:0,
+            desc:'Every 3 Attacks\nPlayed, Gain 4 Block',
+        },{
+            name:'Boss Health',id:53,rarity:1,list:0,
+            desc:'At the Start of Boss Combats, Heal 25 Health',
+        },{
+            name:'10 Max HP',id:54,rarity:1,list:0,
+            desc:'When Taken,\nGain 10 Max HP',
+        },{
+            name:'More Card Choices',id:55,rarity:1,list:0,
+            desc:'Card Rewards Have\n1 More Choice',
+        },{
+            name:'3 Attack Strength',id:56,rarity:1,list:0,
+            desc:'Every 3 Attacks\nPlayed, Gain 1 Strength',
+        },{
+            name:'Resting Max HP',id:57,rarity:1,list:0,
+            desc:'Can Gain +2 Max HP When Resting',
+        },{
+            name:'Shuffle Energy',id:58,rarity:1,list:0,
+            desc:'When You Shuffle Your\nDeck, Gain 1 Energy',
+        },{
+            name:'Shop Card Supply',id:59,rarity:1,list:0,
+            desc:'The Shop\nRefills Cards',
+        },{
+            name:'Effective\nVulnerable',id:60,rarity:1,list:0,
+            desc:'Vulnerable Enemies Take 75%\nMore Damage Instead of 50%',
+        },{
+            name:'',id:0,rarity:1,list:0,
             desc:'',
         },
     ],event:[

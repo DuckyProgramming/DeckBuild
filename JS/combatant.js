@@ -1046,6 +1046,10 @@ class combatant{
 		if(this.life<=0&&this.type!=0){
 			this.type=0
 			this.battle.counter.enemies.dead++
+			if(this.battle.relics.active[44]){
+				this.battle.mana.main++
+				this.battle.draw()
+			}
 		}
 	}
 }

@@ -350,7 +350,7 @@ class card{
                         this.layer.text('Attack',0,this.height/2-10)
                     break
                     case 1:
-                        this.layer.text('Defend',0,this.height/2-10)
+                        this.layer.text('Skill',0,this.height/2-10)
                     break
                     case 2:
                         this.layer.text('Power',0,this.height/2-10)

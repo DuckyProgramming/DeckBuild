@@ -383,6 +383,95 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.text('+2',0,13)
 			layer.image(graphics.symbol[23],-12,-16,24,24)
 		break
+		case 38:
+			layer.text('C',0,-3)
+			layer.image(graphics.symbol[5],-12,-16,24,24)
+			layer.image(graphics.symbol[1],-10,2,20,20)
+		break
+		case 39:
+			layer.textSize(16)
+			layer.text('C',-8,0)
+			layer.textSize(10)
+			layer.text('+6',0,13)
+			layer.image(graphics.symbol[5],-18,-12,20,20)
+			layer.image(graphics.symbol[17],1,-9,14,14)
+		break
+		case 40:
+			layer.textSize(10)
+			layer.text('+0.5',0,13)
+			layer.image(graphics.symbol[5],-18,-8,16,16)
+			layer.image(graphics.symbol[9],-8,-20,16,16)
+			layer.image(graphics.symbol[4],2,-8,16,16)
+		break
+		case 41:
+			layer.textSize(10)
+			layer.text('+',-10,0)
+			layer.text('A',8,0)
+			layer.image(graphics.symbol[5],-20,-10,20,20)
+			layer.image(graphics.symbol[7],-2,-10,20,20)
+		break
+		case 42:
+			layer.textSize(10)
+			layer.text('+',-10,0)
+			layer.text('A',8,0)
+			layer.image(graphics.symbol[5],-20,-10,20,20)
+			layer.image(graphics.symbol[2],-2,-10,20,20)
+		break
+		case 43:
+			layer.textSize(10)
+			layer.text('+',-10,0)
+			layer.text('A',8,0)
+			layer.image(graphics.symbol[5],-20,-10,20,20)
+			layer.image(graphics.symbol[18],-2,-10,20,20)
+		break
+		case 44:
+			layer.textSize(10)
+			layer.text('1',-8,6)
+			layer.text('1',8,6)
+			layer.image(graphics.symbol[25],-10,-20,20,20)
+			layer.image(graphics.symbol[5],-16,-2,16,16)
+			layer.image(graphics.symbol[8],-4,-6,24,24)
+		break
+		case 45:
+			layer.text('2',10,1)
+			layer.textSize(10)
+			layer.text('14',-5,0)
+			layer.image(graphics.symbol[2],-15,-10,20,20)
+		break
+		case 46:
+			layer.textSize(10)
+			layer.text('10',-8,-2)
+			layer.text('1',8,-2)
+			layer.image(graphics.symbol[5],-2,-13,20,20)
+			layer.image(graphics.symbol[5],-18,-13,20,20)
+			layer.image(graphics.symbol[1],-10,2,20,20)
+		break
+		case 47:
+			layer.textSize(10)
+			layer.text('3',8,1)
+			layer.image(graphics.symbol[7],-2,-10,20,20)
+			layer.image(graphics.symbol[2],-20,-10,20,20)
+			layer.image(graphics.symbol[15],-18,-8,16,16)
+		break
+		case 48:
+			layer.textSize(10)
+			layer.text('3',9,1)
+			layer.text('5',-9,1)
+			layer.image(graphics.symbol[2],-1,-10,20,20)
+			layer.image(graphics.symbol[7],-19,-10,20,20)
+		break
+		case 49:
+			layer.textSize(10)
+			layer.text('<50%',0,11)
+			layer.text('+12',-8,-3)
+			layer.image(graphics.symbol[4],2,-12,16,16)
+		break
+		case 50:
+			layer.textSize(10)
+			layer.text('3',0,-4)
+			layer.image(graphics.symbol[7],-10,-15,20,20)
+			layer.image(graphics.symbol[1],-10,2,20,20)
+		break
 		/*
 		0-Redraw
 		1-ArrowRight
@@ -399,7 +488,7 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		12-ArrowLeft
 		13-Water
 		14-No
-		15-UpArrow
+		15-ArrowUp
 		16-Elite
 		17-MaxHealth
 		18-Power
@@ -408,6 +497,8 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		21-Focus
 		22-Balance
 		23-Max Balance
+		24-Enemy
+		25-Dead
 		*/
 	}
 	layer.scale(1/size,1/size/flip)
