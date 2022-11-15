@@ -58,7 +58,7 @@ class attack{
                 case 8:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.drop.addDrop(findCard('Bleed'),0,stage.playerNumber+1)
-                    this.battle.reserve.add(findCard('Bleed'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Bleed'),0,stage.playerNumber+1)
                 break
                 case 9:
                     this.battle.combatants[this.target].take(this.damage,this.user)
@@ -154,7 +154,7 @@ class attack{
                 break
                 case 26:
                     for(g=0;g<this.damage;g++){
-                        this.battle.hand.add(findCard('Shiv'),0,0)
+                        this.battle.hand.addShuffle(findCard('Shiv'),0,0)
                     }
                 break
                 case 27:
@@ -313,7 +313,7 @@ class attack{
                         }
                     }
                     for(g=0;g<this.damage;g++){
-                        this.battle.reserve.add(this.hold.list[floor(random(0,this.hold.list.length))],0,this.color)
+                        this.battle.reserve.addShuffle(this.hold.list[floor(random(0,this.hold.list.length))],0,this.color)
                         this.battle.reserve.cards[this.battle.reserve.cards.length-1].cost=0
                         this.battle.reserve.cards[this.battle.reserve.cards.length-1].base.cost=0
                     }
@@ -514,7 +514,7 @@ class attack{
                 case 98:
                     this.battle.combatants[0].block+=this.damage
                     this.battle.drop.addDrop(findCard('Insight'),0,0)
-                    this.battle.reserve.add(findCard('Insight'),0,0)
+                    this.battle.reserve.addShuffle(findCard('Insight'),0,0)
                 break
                 case 100:
                     this.battle.combatants[0].changeStance(2)
@@ -544,7 +544,7 @@ class attack{
                 break
                 case 106:
                     this.battle.combatants[0].block+=this.damage
-                    this.battle.hand.add(findCard('Safety'),0,0)
+                    this.battle.hand.addShuffle(findCard('Safety'),0,0)
                 break
                 case 107:
                     if(this.battle.combatants[0].stance==2){
@@ -578,7 +578,7 @@ class attack{
                 case 111:
                     this.battle.combatants[0].mantra+=this.damage
                     this.battle.drop.addDrop(findCard('Insight'),0,0)
-                    this.battle.reserve.add(findCard('Insight'),0,0)
+                    this.battle.reserve.addShuffle(findCard('Insight'),0,0)
                 break
                 case 112:
                     this.battle.combatants[0].status.main[16]+=this.damage
@@ -632,7 +632,7 @@ class attack{
                 case 125:
                     this.battle.combatants[0].block+=this.damage
                     for(g=0;g<this.alt;g++){
-                        this.battle.hand.add(findCard('Shiv'),0,0)
+                        this.battle.hand.addShuffle(findCard('Shiv'),0,0)
                     }
                 break
                 case 126:
@@ -669,7 +669,7 @@ class attack{
                     this.hold.int=this.battle.hand.cards.length
                     this.battle.allDiscard()
                     for(g=0;g<this.hold.int;g++){
-                        this.battle.hand.add(findCard('Shiv'),this.damage,0)
+                        this.battle.hand.addShuffle(findCard('Shiv'),this.damage,0)
                     }
                 break
                 case 133:
@@ -793,7 +793,7 @@ class attack{
                 break
                 case 161:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.battle.hand.add(findCard('Smite'),0,0)
+                    this.battle.hand.addShuffle(findCard('Smite'),0,0)
                 break
                 case 162:
                     this.battle.combatants[0].block+=this.damage
@@ -838,7 +838,7 @@ class attack{
                 break
                 case 2:
                     this.battle.drop.addDrop(findCard('Confusion'),0,stage.playerNumber+1)
-                    this.battle.reserve.add(findCard('Confusion'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Confusion'),0,stage.playerNumber+1)
                 break
                 case 3:
                     this.battle.combatants[0].take(this.damage,this.user)
@@ -846,12 +846,12 @@ class attack{
                 break
                 case 4:
                     this.battle.drop.addDrop(findCard('Dazed'),0,stage.playerNumber+1)
-                    this.battle.reserve.add(findCard('Dazed'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Dazed'),0,stage.playerNumber+1)
                     this.attacks.push([8,20,0,'Dazed'])
                 break
                 case 5:
                     this.battle.drop.addDrop(findCard('Burn'),0,stage.playerNumber+1)
-                    this.battle.reserve.add(findCard('Burn'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Burn'),0,stage.playerNumber+1)
                 break
             }
         }
@@ -897,7 +897,7 @@ class attack{
                     }else{
                         this.battle.combatants[this.attacks[g][2]].position.x+=8
                     }
-                    if(this.attacks[g][1]==10&&this.attacks[g][2]<this.battle.combatants.length-1&&this.combatants[this.attack[g][2]].life>0){
+                    if(this.attacks[g][1]==10&&this.attacks[g][2]<this.battle.combatants.length-1&&this.battle.combatants[this.attack[g][2]].life>0){
                         if(this.battle.combatants[this.attacks[g][2]+1].life>0&&(this.attacks[g][0]==5||this.attacks[g][0]==9)){
                             this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3],this.attacks[g][2],0)
                             this.battle.combatants[0].combo--
@@ -920,7 +920,7 @@ class attack{
                 case 8:
                     if(this.attacks[g][1]==10){
                         this.battle.drop.addDrop(findCard(this.attacks[g][3]),0,5)
-                        this.battle.reserve.add(findCard(this.attacks[g][3]),0,5)
+                        this.battle.reserve.addShuffle(findCard(this.attacks[g][3]),0,5)
                     }
                 break
                 case 10:
@@ -929,7 +929,7 @@ class attack{
                     }else{
                         this.battle.combatants[this.attacks[g][2]].position.x-=8
                     }
-                    if(this.attacks[g][1]==10&&this.attacks[g][2]>0&&this.combatants[this.attack[g][2]].life>0){
+                    if(this.attacks[g][1]==10&&this.attacks[g][2]>0&&this.battle.combatants[this.attack[g][2]].life>0){
                         if(this.battle.combatants[this.attacks[g][2]-1].life>0&&(this.attacks[g][0]==10)){
                             this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3],this.attacks[g][2],0)
                             this.battle.combatants[0].combo--

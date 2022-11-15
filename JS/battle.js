@@ -74,13 +74,13 @@ class battle{
             this.deck.cards[e].position.y=500
         }
         this.counter.enemies.total+=this.generation.reinforce.length
-        this.mana.max=this.mana.base
-        this.mana.main=this.mana.max
         this.reserve.cards=[]
         this.hand.cards=[]
         this.drop.cards=[]
         this.initialReserve()
         this.reserve.shuffle()
+        this.mana.max=this.mana.base
+        this.mana.main=this.mana.max
         this.drawInitial()
         this.turnDraw()
     }
@@ -225,6 +225,9 @@ class battle{
                 this.combatants[0].base.life+=10
                 this.combatants[0].life+=10
             break
+            case 57:
+                this.restOptions.push(3)
+            break
         }
     }
     return(){
@@ -341,6 +344,9 @@ class battle{
             }
             if(this.random.attacks%3==0&&this.relics.active[52]){
                 this.combatants[0].block+=4
+            }
+            if(this.random.attacks%3==0&&this.relics.active[56]){
+                this.combatants[0].boost.main[0]++
             }
         }
         if(this.attack.class==1){
@@ -728,8 +734,9 @@ class battle{
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+this.objective[e][3])
                             break
                             case 4:
-                                f=floor(random(0,this.relics.list[0].length))
-                                this.getRelic(this.relics.list[0][f])
+                                g=floor(random(0,1.5))
+                                f=floor(random(0,this.relics.list[g].length))
+                                this.getRelic(this.relics.list[g][f])
                                 this.relics.list[0].splice(f,1)
                             break
                         }
@@ -756,13 +763,19 @@ class battle{
                 this.calc.list=listing.card[this.player][rarity]
                 if(this.relics.active[55]){
                     for(g=0;g<4;g++){
-                        h=this.calc.list[floor(random(0,this.calc.list.length))]
-                        this.choice.cards.push(new card(this.layer,180+g*180,300,h,level,types.card[h].list))
+                        if(this.calc.list.length>0){
+                            h=this.calc.list[floor(random(0,this.calc.list.length))]
+                            this.choice.cards.push(new card(this.layer,180+g*180,300,h,level,types.card[h].list))
+                            this.calc.list.splice(h,1)
+                        }
                     }
                 }else{
                     for(g=0;g<3;g++){
-                        h=this.calc.list[floor(random(0,this.calc.list.length))]
-                        this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
+                        if(this.calc.list.length>0){
+                            h=this.calc.list[floor(random(0,this.calc.list.length))]
+                            this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
+                            this.calc.list.splice(h,1)
+                        }
                     }
                 }
             break
@@ -1017,6 +1030,9 @@ class battle{
                 case 2:
                     this.layer.text('Train',525+e*150-le*75,300)
                 break
+                case 3:
+                    this.layer.text('Gain Max\nHealth',525+e*150-le*75,300)
+                break
             }
         }
     }
@@ -1044,6 +1060,11 @@ class battle{
                             transition.scene='deck'
                             this.context=1
                             this.setupDeck(1)
+                        break
+                        case 3:
+                            this.combatants[0].base.life+=2
+                            this.combatants[0].life+=2
+                            transition.scene='map'
                         break
                     }
                 }
@@ -1327,15 +1348,19 @@ class battle{
             case 0:
                 this.calc.list=listing.card[this.player]
                 for(g=0;g<5;g++){
-                    h=floor(random(0,this.calc.list[floor(g/2)].length))
-                    this.choice.cards.push(new card(this.layer,75+g*150,200,this.calc.list[floor(g/2)][h],0,types.card[this.calc.list[floor(g/2)][h]].list))
-                    this.calc.list[floor(g/2)].splice(h,1)
+                    if(this.calc.list.length>0){
+                        h=floor(random(0,this.calc.list[floor(g/2)].length))
+                        this.choice.cards.push(new card(this.layer,75+g*150,200,this.calc.list[floor(g/2)][h],0,types.card[this.calc.list[floor(g/2)][h]].list))
+                        this.calc.list[floor(g/2)].splice(h,1)
+                    }
                 }
-                this.calc.list=listing.card[0]
+                this.calc.list2=listing.card[0]
                 for(g=0;g<2;g++){
-                    h=floor(random(0,this.calc.list[g+1].length))
-                    this.choice.cards.push(new card(this.layer,75+g*150,400,this.calc.list[g+1][h],0,0))
-                    this.calc.list[g+1].splice(h,1)
+                    if(this.calc.list.length>0){
+                        h=floor(random(0,this.calc.list2[g+1].length))
+                        this.choice.cards.push(new card(this.layer,75+g*150,400,this.calc.list2[g+1][h],0,0))
+                        this.calc.list2[g+1].splice(h,1)
+                    }
                 }
             break
         }
@@ -1397,8 +1422,39 @@ class battle{
             if(this.choice.cards[e].used){
                 this.choice.cards[e].size-=0.1
                 if(this.choice.cards[e].size<=0){
-                    this.choice.cards[e]=0
+                    if(this.relics.active[59]&&this.calc.list.length>0){
+                        if(e<5){
+                            h=floor(random(0,this.calc.list[floor(e/2)].length))
+                            this.choice.cards[e]=new card(this.layer,this.choice.cards[e].position.x,this.choice.cards[e].position.y,this.calc.list[floor(e/2)][h],0,types.card[this.calc.list[floor(e/2)][h]].list)
+                        }else{
+                            h=floor(random(0,this.calc.list2[e-4].length))
+                            this.choice.cards[e]=new card(this.layer,this.choice.cards[e].position.x,this.choice.cards[e].position.y,this.calc.list2[e-4][h],0,types.card[this.calc.list2[floor(e-4)][h]].list)
+                        }
+                        this.choice.cards[e].used=false
+                        if(e==0){
+                            this.costs.card[0][0]=round(random(40,60))
+                        }else if(e==1){
+                            this.costs.card[0][1]=round(random(40,60))
+                        }else if(e==2){
+                            this.costs.card[0][2]=round(random(60,80))
+                        }else if(e==3){
+                            this.costs.card[0][3]=round(random(60,80))
+                        }else if(e==4){
+                            this.costs.card[0][4]=round(random(120,160))
+                        }else if(e==5){
+                            this.costs.card[1][0]=round(random(80,100))
+                        }else if(e==6){
+                            this.costs.card[1][1]=round(random(160,200))
+                        }
+                        if(e==this.costs.sale){
+                            this.costs.card[0][e]=round(this.costs.card[0][e]/2)
+                        }
+                    }else{
+                        this.choice.cards[e]=0
+                    }
                 }
+            }else if(this.choice.cards[e].size<1){
+                this.choice.cards[e].size=round(this.choice.cards[e].size*10+1)/10
             }
         }
     }

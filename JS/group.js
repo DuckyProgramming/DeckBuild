@@ -9,7 +9,7 @@ class group{
         this.select=false
         this.selcted=false
         this.trigger=false
-        this.calc={level:0}
+        this.calc={level:0,cut:0}
         this.anim={discarding:0}
     }
     initial(type){
@@ -94,6 +94,20 @@ class group{
             }
         }
     }
+    addShuffle(type,level,color){
+        this.calc.cut=floor(random(0,this.cards.length))
+        for(e=this.calc.cut,le=this.cards.length;e<le;e++){
+            this.storage.cards.push(this.cards[e])
+            this.cards.splice(e,1)
+            e--
+            le--
+        }
+        this.add(type,level,color)
+        while(this.storage.cards.length>0){
+            this.cards.push(copyCard(this.storage.cards[0]))
+            this.storage.cards.splice(0,1)
+        }
+    }
     addDrop(type,level,color){
         this.cards.push(new card(this.layer,50,-200,type,level,color))
     }
@@ -110,6 +124,9 @@ class group{
         }
     }
     shuffle(){
+        if(this.battle.relics.active[58]){
+            this.battle.mana.main++
+        }
         this.storage.cards=[]
         while(this.cards.length>0){
             this.storage.cards.push(copyCard(this.cards[0]))

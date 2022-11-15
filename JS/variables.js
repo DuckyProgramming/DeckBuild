@@ -1088,7 +1088,7 @@ types={
             combatants:[5,0,0,0,0,0],
             reinforce:[],
             threshold:2,
-            objective:[[0,0,0,0],[2,5,4,20]],
+            objective:[[0,0,0,0],[2,5,4,0]],
         },{
             combatants:[5,5,5,0,0,0],
             reinforce:[5],
@@ -1659,14 +1659,24 @@ types={
                 },{
                     desc:"The only ledge you can see is just a little out of reach. You manage to move over, but the landing knocks you unconcious.\n"+
                     "When you get up, your head is spinning, and you forget some of what you were doing beforehand.",
-                    option:['Get ouf the hole'],
+                    option:['Get out of the hole'],
                     optionDesc:['Lose 2 Random Cards'],
                     link:[-1],
                 },{
                     desc:"You land with a crash. After a minute of lying in pain, you get back up and leave.",
-                    option:['Get ouf the hole'],
+                    option:['Get out of the hole'],
                     optionDesc:['Take 13 Damage'],
                     link:[-1],
+                },
+            ],
+        },{
+            name:'',id:14,
+            pages:[
+                {
+                    desc:"",
+                    option:[],
+                    optionDesc:[],
+                    link:[],
                 },
             ],
         },{

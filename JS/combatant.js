@@ -918,7 +918,11 @@ class combatant{
 				if(this.block>0){
 					this.calc.damage*=(2-min(0,this.boost.main[2]))/(2+max(0,this.boost.main[2]))
 				}else{
-					this.calc.damage*=(2-min(0,this.boost.main[1]))/(2+max(0,this.boost.main[1]))
+					if(this.battle.relics.active[60]){
+						this.calc.damage*=(2-min(0,this.boost.main[1]*1.5))/(2+max(0,this.boost.main[1]))
+					}else{
+						this.calc.damage*=(2-min(0,this.boost.main[1]))/(2+max(0,this.boost.main[1]))
+					}
 				}
 				if(this.battle.combatants[user].status.main[25]>0){
 					this.status.main[11]+=this.battle.combatants[user].status.main[25]
