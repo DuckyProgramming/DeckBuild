@@ -221,6 +221,10 @@ class battle{
             case 37:
                 this.combatants[0].base.meter+=2
             break
+            case 54:
+                this.combatants[0].base.life+=10
+                this.combatants[0].life+=10
+            break
         }
     }
     return(){
@@ -750,9 +754,16 @@ class battle{
         switch(spec){
             case 0:
                 this.calc.list=listing.card[this.player][rarity]
-                for(g=0;g<3;g++){
-                    h=this.calc.list[floor(random(0,this.calc.list.length))]
-                    this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
+                if(this.relics.active[55]){
+                    for(g=0;g<4;g++){
+                        h=this.calc.list[floor(random(0,this.calc.list.length))]
+                        this.choice.cards.push(new card(this.layer,180+g*180,300,h,level,types.card[h].list))
+                    }
+                }else{
+                    for(g=0;g<3;g++){
+                        h=this.calc.list[floor(random(0,this.calc.list.length))]
+                        this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
+                    }
                 }
             break
             case 1:
