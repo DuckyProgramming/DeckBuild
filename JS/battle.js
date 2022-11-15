@@ -32,8 +32,8 @@ class battle{
         this.event=0
         this.page=0
         this.discarding=0
-        this.costs={card:[[0,0,0,0,0],[0,0]],sale:0,remove:0}
-        this.relics={list:[[],[],[]],owned:[],active:[]}
+        this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
+        this.relics={list:[[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0}
         this.deck.initial(this.player)
     }
@@ -1342,6 +1342,10 @@ class battle{
         this.costs.card[0][4]=round(random(120,160))
         this.costs.card[1][0]=round(random(80,100))
         this.costs.card[1][1]=round(random(160,200))
+        this.costs.relic[0]=round(random(50,70))
+        this.costs.relic[1]=round(random(50,70))
+        this.costs.relic[2]=round(random(100,120))
+        this.costs.relic[3]=round(random(100,120))
         this.costs.sale=floor(random(0,5))
         this.costs.card[0][this.costs.sale]=round(this.costs.card[0][this.costs.sale]/2)
         switch(spec){
@@ -1356,10 +1360,20 @@ class battle{
                 }
                 this.calc.list2=listing.card[0]
                 for(g=0;g<2;g++){
-                    if(this.calc.list.length>0){
+                    if(this.calc.list2.length>0){
                         h=floor(random(0,this.calc.list2[g+1].length))
                         this.choice.cards.push(new card(this.layer,75+g*150,400,this.calc.list2[g+1][h],0,0))
                         this.calc.list2[g+1].splice(h,1)
+                    }
+                }
+                this.relics.shop=[]
+                this.calc.list3=this.relics.list
+                for(g=0;g<4;g++){
+                    if(this.calc.list3.length>0){
+                        h=floor(random(0,this.calc.list3[floor(g/2)].length))
+                        this.relics.shop.push(this.calc.list3[floor(g/2)][h])
+                        this.relics.size.push(1)
+                        this.calc.list3[floor(g/2)].splice(h,1)
                     }
                 }
             break
@@ -1407,12 +1421,29 @@ class battle{
                 this.layer.text(this.costs.card[1][g],this.choice.cards[g+5].position.x,this.choice.cards[g+5].position.y+100)
             }
         }
+        for(e=0,le=this.relics.shop.length;e<le;e++){
+            this.layer.fill(255,225,0,this.relics.size[e])
+            this.layer.text(this.costs.relic[e],375+(e%3)*150,390+floor(e/3)*100)
+        }
         this.layer.noStroke()
         this.layer.fill(160)
         this.layer.rect(850,570,80,40,5)
         this.layer.fill(0)
         this.layer.textSize(20)
         this.layer.text('Exit',850,570)
+        for(e=0,le=this.relics.shop.length;e<le;e++){
+            if(this.relics.size[e]>0){
+                displayRelicSymbol(this.layer,375+(e%3)*150,350+floor(e/3)*100,this.relics.shop[e],0,this.relics.size[e],1,true)
+            }
+            if(dist(inputs.rel.x,inputs.rel.y,375+(e%3)*150,350+floor(e/3)*100)<20){
+                this.layer.noStroke()
+                this.layer.fill(180)
+                this.layer.rect(450,550,240,60,5)
+                this.layer.fill(0)
+                this.layer.textSize(12)
+                this.layer.text(types.relic[this.relics.shop[e]].desc,450,550)
+            }
+        }
     }
     updateShop(){
         if(this.relics.active[25]){
@@ -1457,6 +1488,11 @@ class battle{
                 this.choice.cards[e].size=round(this.choice.cards[e].size*10+1)/10
             }
         }
+        for(e=0,le=this.relics.shop.length;e<le;e++){
+            if(this.relics.size[e]<1&&this.relics.size[e]>0){
+                this.relics.size[e]=round(this.relics.size[e]*10-1)/10
+            }
+        }
     }
     onClickShop(){
         if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570},width:80,height:40})){
@@ -1477,6 +1513,13 @@ class battle{
                     this.currency.money-=this.costs.card[floor(e/5)][e%5]
                     this.choice.cards[e].used=true
                 }
+            }
+        }
+        for(e=0,le=this.relics.shop.length;e<le;e++){
+            if(dist(inputs.rel.x,inputs.rel.y,375+(e%3)*150,350+floor(e/3)*100)<20&&this.relics.size[e]>=1&&this.currency.money>=this.costs.relic[e]){
+                this.getRelic(this.relics.shop[e])
+                this.currency.money-=this.costs.relic[e]
+                this.relics.size[e]=0.9
             }
         }
     }

@@ -1289,10 +1289,12 @@ types={
         },{
             name:'Effective\nVulnerable',id:60,rarity:1,list:0,
             desc:'Vulnerable Enemies Take 75%\nMore Damage Instead of 50%',
-        },{
+        },
+        
+        /*{
             name:'',id:0,rarity:1,list:0,
             desc:'',
-        },
+        },*/
     ],event:[
         {
             name:'',id:0,

@@ -9,7 +9,7 @@ function setup(){
 
     current.create()
     current.initialEvent()
-    
+
     //transition.trigger=true
     //transition.scene='event'
     current.setupMap()
