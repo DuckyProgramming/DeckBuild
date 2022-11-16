@@ -345,8 +345,8 @@ types={
         ],
         },{name:'Eruption',rarity:1,list:2,
         stats:[
-            {damage:9,alt:0,cost:2,attack:95,target:1,desc:'',spec:0,class:1},
-            {damage:9,alt:0,cost:1,attack:95,target:1,desc:'',spec:0,class:1},
+            {damage:9,alt:0,cost:2,attack:95,target:1,desc:'',spec:0,class:0},
+            {damage:9,alt:0,cost:1,attack:95,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Cycle\nStrike',rarity:1,list:2,
         stats:[
@@ -1189,13 +1189,13 @@ types={
             desc:'When Taken,\nGain 7 Max HP',
         },{
             name:'Small Attack Bonus',id:27,rarity:0,list:0,
-            desc:'If you Deal Less than 5\nDamage, Increase it to 5',
+            desc:'If You Deal Less than 5\nDamage, Increase it to 5',
         },{
             name:'First Turn Strength',id:28,rarity:0,list:0,
             desc:'Gain 1 Strength at\nthe Start of Combat',
         },{
             name:'Random Upgrade',id:29,rarity:-1,list:0,
-            desc:'Each Turn, Upgrade a\nRandom Card in your Hand',
+            desc:'Each Turn, Upgrade a\nRandom Card in Your Hand',
         },{
             name:'Upgrade 2 Attacks',id:30,rarity:0,list:0,
             desc:'When Taken, Upgrade\n2 Random Attacks',
@@ -1242,7 +1242,7 @@ types={
             name:'Enemy Death Loot',id:44,rarity:1,list:0,
             desc:'When an Enemy Dies, Gain\n1 Energy and Draw 1 Card',
         },{
-            name:'2nd Turn Block',id:45,rarity:1,list:0,
+            name:'Second Turn Block',id:45,rarity:1,list:0,
             desc:'Gain 14 Block at\nthe Start of Turn 2',
         },{
             name:'Card Spam',id:46,rarity:1,list:0,
@@ -1287,12 +1287,135 @@ types={
             name:'Shop Card Supply',id:59,rarity:1,list:0,
             desc:'The Shop\nRefills Cards',
         },{
-            name:'Effective\nVulnerable',id:60,rarity:1,list:0,
+            name:'Effective Vulnerable',id:60,rarity:1,list:0,
             desc:'Vulnerable Enemies Take 75%\nMore Damage Instead of 50%',
+        },{
+            name:'Damage Taken Block',id:61,rarity:1,list:0,
+            desc:'When Damage Taken,\nGain 3 Block Next Turn',
+        },{
+            name:'Effective Weak',id:62,rarity:1,list:0,
+            desc:'Weak Enemies Deal 50%\nLess Damage Instead of 25%',
+        },{
+            name:'Attack Temporary Dexterity',id:63,rarity:1,list:0,
+            desc:'Whenever You Play an Attack,\nGain 1 Temporary Dexterity',
+        },{
+            name:'Combo Cycle',id:64,rarity:1,list:1,
+            desc:'Whenever You Take\nDamage, Gain 1 Combo',
+        },{
+            name:'Starting Calm',id:65,rarity:1,list:2,
+            desc:'Start Each\nCombat in Calm',
+        },{
+            name:'Starting Charge',id:66,rarity:1,list:3,
+            desc:'At the Start of Combat,\nCharge 1 Basic Charge',
+        },{
+            name:'Imbalance Mitigation',id:67,rarity:1,list:4,
+            desc:'Reduce the Effect\nof Breaking Balance',
+        },{
+            name:'Power Heal',id:68,rarity:2,list:0,
+            desc:'Whenever You Play a\nPower, Heal 2 Health',
+        },{
+            name:'End Block Loss Limit',id:69,rarity:2,list:0,
+            desc:'At the End of Your Turn,\nLose 15 Block Instead of All',
+        },{
+            name:'Third Turn Block',id:70,rarity:2,list:0,
+            desc:'Gain 18 Block at\nthe Start of Turn 3',
+        },{
+            name:'Sitck',id:71,rarity:2,list:0,
+            desc:'When a Card is Exhausted, Add\na Random Card to Your Hand',
+        },{
+            name:'Curse Strength',id:72,rarity:2,list:0,
+            desc:'Gain 1 Strength for Every\nCurse at the Start of Combat',
+        },{
+            name:'First Turn Buffer',id:73,rarity:2,list:0,
+            desc:'Start Each Combat\nWith 1 Buffer',
+        },{
+            name:'First Turn Selective Redraw',id:74,rarity:2,list:0,
+            desc:'Add 1 Selective Redraw\nat the Start of Combat',
+        },{
+            name:'Weakness Immunity',id:75,rarity:2,list:0,
+            desc:'You Cannot\nBecome Weak',
+        },{
+            name:'Frailness Immunity',id:76,rarity:2,list:0,
+            desc:'You Cannot\nBecome Frail',
+        },{
+            name:'Vulnerability Immunity',id:77,rarity:2,list:0,
+            desc:'You Cannot\nBecome Vulnerable',
+        },{
+            name:'Resting Strength',id:78,rarity:2,list:0,
+            desc:'Can Gain 1 Strength\nWhen Resting',
+        },{
+            name:'Energy Save',id:79,rarity:2,list:0,
+            desc:'Energy Conserved\nBetween Turns',
+        },{
+            name:'Intangible Gain',id:80,rarity:2,list:0,
+            desc:'Every 5 Turns,\nGain 1 Intangible',
+        },{
+            name:'Revive',id:81,rarity:2,list:0,
+            desc:'Gain 50% HP Instead of\nDying, Only Usable Once',
+        },{
+            name:'14 Max HP',id:82,rarity:2,list:0,
+            desc:'When Taken,\nGain 14 Max HP',
+        },{
+            name:'Money Box',id:83,rarity:2,list:0,
+            desc:'When Taken,\nGain 300 Currency',
+        },{
+            name:'Resting Removal',id:84,rarity:2,list:0,
+            desc:'Can Remove Cards\nWhen Resting',
+        },{
+            name:'Low Play Return',id:85,rarity:2,list:0,
+            desc:'When You Play Less Than 3 Cards,\nDraw 3 Extra Cards Next Turn',
+        },{
+            name:'Choose 2 Cards',id:86,rarity:2,list:0,
+            desc:'Can Select 2\nCards After Combat',
+        },{
+            name:'Resting Relics',id:87,rarity:2,list:0,
+            desc:'Can Gain Relics\nWhen Resting',
+        },{
+            name:'Turn 7 Damage All',id:88,rarity:2,list:0,
+            desc:'On Turn 7, Deal 52\nDamage to All ENemies',
+        },{
+            name:'First Turn Armor',id:89,rarity:2,list:0,
+            desc:'Gain 2 Armor at\nthe Start of Combat',
+        },{
+            name:'Small Damage Control',id:90,rarity:2,list:0,
+            desc:'Whenever You Take 5 or\nLess Damage, Reduce it to 1',
+        },{
+            name:'Damage Reduction',id:91,rarity:2,list:0,
+            desc:'Whenever You Take\nDamage, Reduce it by 1',
+        },{
+            name:'Infinite Cards',id:92,rarity:2,list:0,
+            desc:'If You Have No Cards\nin Your Hand, Add 1 Card',
+        },{
+            name:'Exhaust Damage All',id:93,rarity:2,list:0,
+            desc:'Whenever You Exhaust a Card,\nDeal 3 Damage to All Enemies',
+        },{
+            name:'Heal Boost',id:94,rarity:2,list:0,
+            desc:'Heal Twice as Much in Combat',
+        },{
+            name:'Discard Damage',id:95,rarity:2,list:0,
+            desc:'Whenever You Discard a Card,\nDeal 3 Damage to a Random Enemy',
+        },{
+            name:'Discard Block',id:96,rarity:2,list:0,
+            desc:'Whenever You Discard\na Card, Gain 3 Block',
+        },{
+            name:'Unplayed Block',id:97,rarity:2,list:0,
+            desc:'At the End of Your Turn, Gain 1 Block per Unplayed Card',
+        },{
+            name:'Risky Combo',id:98,rarity:2,list:1,
+            desc:'Combo Never Decreases, Lose\nAll Combo when Damage Taken',
+        },{
+            name:'First Turn Shivs',id:99,rarity:2,list:2,
+            desc:'Add 2 Shiv at the\nStart of Combat',
+        },{
+            name:'Starting Explosion',id:100,rarity:2,list:3,
+            desc:'At the Start of Combat,\nCharge 1 Explosive Charge',
+        },{
+            name:'Rearm',id:101,rarity:2,list:4,
+            desc:'If Unarmed, Rearm at End of Turn',
         },
         
         /*{
-            name:'',id:0,rarity:1,list:0,
+            name:'',id:10,rarity:2,list:0,
             desc:'',
         },*/
     ],event:[

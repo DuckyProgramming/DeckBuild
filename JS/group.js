@@ -24,8 +24,8 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(2,0,this.battle.player)
                 }
-                this.add(findCard('Big Strike'),0,this.battle.player)
-                this.add(findCard('Triple\nPunch'),0,this.battle.player)
+                //this.add(findCard('Big Strike'),0,this.battle.player)
+                //this.add(findCard('Triple\nPunch'),0,this.battle.player)
                 this.add(67,0,this.battle.player)
                 this.add(68,0,this.battle.player)
                 this.add(69,0,this.battle.player)
@@ -292,7 +292,11 @@ class group{
                     this.cards[e].trigger=true
                     this.select=false
                     if(this.cards[e].class==0){
-                        this.battle.attack.damage=round(this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0])))
+                        if(this.battle.relics.active[61]){
+                            this.battle.attack.damage=round(this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0]*1.5)))
+                        }else{
+                            this.battle.attack.damage=round(this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0])))
+                        }
                         if(this.battle.combatants[0].status.main[18]>0){
                             this.battle.attack.damage+=this.battle.combatants[0].status.main[18]
                             this.battle.combatants[0].status.main[18]=0

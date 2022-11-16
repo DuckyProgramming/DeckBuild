@@ -18,7 +18,7 @@ class battle{
         this.turnTimer=0
         this.drawAmount=5
         this.calc={list:[]}
-        this.remember=[0,0,0,0]
+        this.remember=[0,0,0,0,0]
         this.currency={money:100}
         this.generation={combatants:[],reinforce:[],threshold:[]}
         this.objective=[]
@@ -152,6 +152,12 @@ class battle{
         if(this.relics.active[36]){
             this.combatants[0].boost.main[3]++
         }
+        if(this.relics.active[65]){
+            this.combatants[0].stance=1
+        }
+        if(this.relics.active[66]){
+            this.combatants[0].load(0)
+        }
         this.startTurn()
         this.random.rested=false
         if(this.relics.active[4]){
@@ -250,14 +256,16 @@ class battle{
         this.discarding=0
         this.mana.main=min(this.mana.max,this.mana.main+this.mana.gen)
         this.mana.main+=this.combatants[0].status.main[1]
-        this.remember=[0,0,0,0]
+        this.remember=[0,0,0,0,0]
         if(this.combatants[0].status.main[19]>0){
             this.combatants[0].life=0
         }
         this.remember[0]+=this.combatants[0].status.main[4]
         this.remember[1]+=this.combatants[0].status.main[7]
         this.remember[3]+=this.combatants[0].status.main[8]
+        this.remember[4]+=this.combatants[0].status.main[31]
         this.combatants[0].mantra+=this.combatants[0].status.main[20]
+        this.combatants[0].boost.main[2]+=this.combatants[0].status.main[32]
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].block=0
             this.combatants[e].setupIntent(-1)
@@ -276,13 +284,15 @@ class battle{
                 if(f==11&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                     this.combatants[e].status.main[f]--
-                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30){
+                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33){
                     this.combatants[e].status.main[f]=0
                 }
             }
         }
         this.combatants[0].boost.main[0]+=this.remember[0]-this.remember[1]
-        this.combatants[0].boost.main[1]+=this.remember[2]-this.remember[3]
+        this.combatants[0].boost.main[1]+=this.remember[2]
+        this.combatants[0].boost.main[2]-=this.remember[3]
+        this.combatants[0].block+=this.remember[4]
         for(e=0;e<this.combatants[0].status.main[14];e++){
             this.hand.add(findCard('Smite'),0,0)
         }
@@ -347,6 +357,10 @@ class battle{
             }
             if(this.random.attacks%3==0&&this.relics.active[56]){
                 this.combatants[0].boost.main[0]++
+            }
+            if(this.relics.active[63]){
+                this.combatants[0].boost.main[2]++
+                this.combatants[0].status.main[32]--
             }
         }
         if(this.attack.class==1){

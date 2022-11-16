@@ -483,8 +483,8 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.textSize(10)
 			layer.text('3',9,1)
 			layer.text('4',-10,1)
-			layer.image(graphics.symbol[7],-1,-10,20,20)
 			layer.image(graphics.symbol[2],-20,-10,20,20)
+			layer.image(graphics.symbol[7],-1,-10,20,20)
 		break
 		case 53:
 			layer.textSize(10)
@@ -534,6 +534,45 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[2],-10,-15,20,20)
 			layer.image(graphics.symbol[11],-8,-13,16,16)
 		break
+		case 61:
+			layer.textSize(10)
+			layer.text('3',-8,0)
+			layer.image(graphics.symbol[2],-18,-10,20,20)
+			layer.image(graphics.symbol[13],-2,-10,20,20)
+		break
+		case 62:
+			layer.textSize(10)
+			layer.text('50%',0,13)
+			layer.image(graphics.symbol[7],-10,-15,20,20)
+			layer.image(graphics.symbol[11],-8,-13,16,16)
+		break
+		case 63:
+			layer.image(graphics.symbol[27],-8,-20,16,16)
+			layer.image(graphics.symbol[2],-20,-7,20,20)
+			layer.image(graphics.symbol[7],-1,-7,20,20)
+			layer.image(graphics.symbol[15],-18,-5,16,16)
+		break
+		case 64:
+			layer.textSize(10)
+			layer.text('+',-6,0)
+			layer.image(graphics.symbol[19],-16,-10,20,20)
+			layer.image(graphics.symbol[13],2,-10,20,20)
+		break
+		case 65:
+			layer.text('1',10,1)
+			layer.textSize(10)
+			layer.text('C',-5,0)
+			layer.image(graphics.symbol[28],-15,-10,20,20)
+		break
+		case 66:
+			layer.text('1',10,1)
+			layer.image(graphics.symbol[29],-15,-10,20,20)
+		break
+		case 67:
+			layer.image(graphics.symbol[22],-18,-12,24,24)
+			layer.image(graphics.symbol[14],-18,-12,24,24)
+			layer.image(graphics.symbol[11],2,-10,20,20)
+		break
 		/*
 		0-Redraw
 		1-ArrowRight
@@ -548,7 +587,7 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		10-NoDamage
 		11-ArrowDown
 		12-ArrowLeft
-		13-Water
+		13-DamageTaken
 		14-No
 		15-ArrowUp
 		16-Elite
@@ -562,6 +601,9 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		24-Enemy
 		25-Dead
 		26-Boss
+		27-Time
+		28-Stance
+		29-BasicCharge
 		*/
 	}
 	layer.scale(1/size,1/size/flip)

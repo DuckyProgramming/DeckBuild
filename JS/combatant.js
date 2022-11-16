@@ -26,15 +26,15 @@ class combatant{
 			[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120],[125,75,25],[25,125,175],[150,225,150],
 			[100,200,200],[200,0,50],[100,50,150],[50,100,50],[20,60,120],[170,240,255],[235,65,15],[210,200,245],[210,90,0],[50,0,0],
 			[255,200,255],[125,160,160],[200,25,125],[190,190,60],[225,225,75],[255,50,100],[150,150,50],[255,125,25],[255,175,75],[200,125,250],
-			[240,100,50]],infoFade:[],name:[
-			'Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Vulnerability','Confused',
+			[240,100,50],[150,175,200],[0,100,255],[200,255,200]],infoFade:[],name:[
+			'Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Confused',
 			'Reflect','Bleed','Intangible','Sink','Hymn','Mental Fortress','Rush','Wave of the Hand','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Absorb Attacks',
-			'Single Attack Constant'],class:[
+			'Single Attack Constant','Next Turn Block','Next Turn Dexterity','Buffer'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
-			1]}
+			1,1,0,1]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -632,7 +632,7 @@ class combatant{
 						}
 						this.layer.stroke(255,this.fade)
 						this.layer.strokeWeight(2)
-						this.layer.line(this.meter*30/this.base.meter,-114,this.meter*30/this.base.meter,-110)
+						this.layer.line(constrain(this.meter*30/this.base.meter,-114,this.meter*30/this.base.meter,-30,30),-110)
 						this.layer.noStroke()
 						this.layer.fill(255,this.fade)
 						this.layer.textSize(8)
@@ -901,6 +901,8 @@ class combatant{
 				this.battle.combatants[user].take(damage,this.id)
 			}else if(this.status.main[6]>0){
 				this.status.main[6]--
+			}else if(this.status.main[33]>0){
+				this.status.main[33]--
 			}else{
 				this.calc.damage=damage
 				if(this.battle.combatants[user].status.main[2]>0){
@@ -949,6 +951,12 @@ class combatant{
 						for(g=0;g<3;g++){
 							this.battle.draw()
 						}
+					}
+					if(this.battle.relics.active[61]){
+						this.status.main[31]+=3
+					}
+					if(this.battle.relics.active[64]){
+						this.combo++
 					}
 				}
 				this.battle.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))
@@ -1008,10 +1016,18 @@ class combatant{
 		}else if(this.type==4){
 			if(this.meter<-this.base.meter){
 				this.meter=0
-				this.take(10,0)
+				if(this.battle.relics.active[67]){
+					this.take(5,0)
+				}else{
+					this.take(10,0)
+				}
 			}else if(this.meter>this.base.meter){
 				this.meter=0
-				this.battle.mana.main=0
+				if(this.battle.relics.active[67]){
+					this.battle.mana.main=max(0,this.battle.mana.main-1)
+				}else{
+					this.battle.mana.main=0
+				}
 			}
 		}
 		for(g=0,lg=this.boost.main.length;g<lg;g++){
