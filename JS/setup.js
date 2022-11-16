@@ -3,15 +3,15 @@ function setup(){
     setupGraphics()
     current=new battle(graphics.main,1)
     generateListing(types.card)
-    setupEncounter(current,5)
+    setupEncounter(current,2)
 
-    current.getRelic(87)
+    current.getRelic(93)
 
     current.create()
     current.initialEvent()
 
-    transition.trigger=true
-    transition.scene='rest'
+    //transition.trigger=true
+    //transition.scene='rest'
     current.setupMap()
     //current.map.complete[0][0]=1
     //current.event=14

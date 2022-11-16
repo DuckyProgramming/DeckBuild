@@ -151,11 +151,11 @@ class group{
             }
         }
         for(let e=0,le=this.cards.length;e<le;e++){
-            if(this.cards[e].attack==52){
+            if(this.cards[e].attack==52&&!this.cards[e].trigger){
                 this.cards[e].damage+=this.cards[e].alt
-            }else if(this.cards[e].attack==114&&this.cards[e].cost>0){
+            }else if(this.cards[e].attack==114&&this.cards[e].cost>0&&!this.cards[e].trigger){
                 this.cards[e].cost--
-            }else if(this.cards[e].spec!=2&&this.cards[e].spec!=9&&this.cards[e].spec!=12){
+            }else if(this.cards[e].spec!=2&&this.cards[e].spec!=9&&this.cards[e].spec!=12||this.cards[e].trigger){
                 this.cards[e].used=true
                 if(this.cards[e].attack==-4){
                     this.battle.combatants[0].status.main[7]++

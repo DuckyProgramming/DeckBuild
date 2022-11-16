@@ -331,8 +331,10 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		break
 		case 27:
 			layer.textSize(10)
-			layer.text('<5',0,1)
-			layer.image(graphics.symbol[7],-15,-15,30,30)
+			layer.text('<5',-9,1)
+			layer.text('5',9,1)
+			layer.image(graphics.symbol[7],-19,-10,20,20)
+			layer.image(graphics.symbol[7],-1,-10,20,20)
 		break
 		case 28:
 			layer.text('1',10,1)
@@ -695,6 +697,41 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[5],2,-10,20,20)
 			layer.image(graphics.symbol[5],-6,-6,12,12)
 		break
+		case 87:
+			layer.image(graphics.symbol[32],-10,-15,20,20)
+			layer.image(graphics.symbol[9],-8,6,16,16)
+		break
+		case 88:
+			layer.text('1',10,1)
+			layer.textSize(10)
+			layer.text('52',-5,0)
+			layer.image(graphics.symbol[7],-15,-10,20,20)
+		break
+		case 89:
+			layer.text('1',10,1)
+			layer.textSize(10)
+			layer.text('4',-5,0)
+			layer.image(graphics.symbol[33],-18,-10,20,20)
+		break
+		case 90:
+			layer.textSize(10)
+			layer.text('≤5',-9,1)
+			layer.text('1',9,1)
+			layer.image(graphics.symbol[7],-19,-10,20,20)
+			layer.image(graphics.symbol[7],-1,-10,20,20)
+		break
+		case 91:
+			layer.textSize(10)
+			layer.text('-1',0,0)
+			layer.image(graphics.symbol[7],-15,-15,30,30)
+		break
+		case 92:
+			layer.textSize(10)
+			layer.text('0',-8,0)
+			layer.text('1',8,0)
+			layer.image(graphics.symbol[5],-18,-10,20,20)
+			layer.image(graphics.symbol[5],-2,-10,20,20)
+		break
 		/*
 		0-Redraw
 		1-ArrowRight
@@ -728,6 +765,8 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		29-BasicCharge
 		30-Buffer
 		31-Intangible
+		32-Relic
+		33-Armor
 		*/
 	}
 	layer.scale(1/size,1/size/flip)

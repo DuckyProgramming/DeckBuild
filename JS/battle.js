@@ -172,6 +172,10 @@ class battle{
         if(this.relics.active[74]){
             this.hand.add(findCard('Selective\nRedraw'),0,0)
         }
+        if(this.relics.active[89]){
+            this.combatants[0].status.main[35]+=4
+            this.combatants[0].block+=4
+        }
         this.startTurn()
         this.random.rested=false
         if(this.relics.active[4]){
@@ -319,10 +323,13 @@ class battle{
                 if(this.combatants[e].status.main[f]>0&&f==24){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                 }
+                if(this.combatants[e].status.main[f]>0&&f==35){
+                    this.combatants[e].block+=this.combatants[e].status.main[f]
+                }
                 if(f==11&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                     this.combatants[e].status.main[f]--
-                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33){
+                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35){
                     this.combatants[e].status.main[f]=0
                 }
             }
@@ -340,11 +347,16 @@ class battle{
         if(this.relics.active[9]&&this.random.attacked<=0){
             this.mana.main++
         }
-        if(this.relics.active[45]&&this.counter.turn==2){
+        if(this.relics.active[45]&&this.counter.turn==1){
             this.combatants[0].block+=14
         }
-        if(this.relics.active[70]&&this.counter.turn==3){
+        if(this.relics.active[70]&&this.counter.turn==2){
             this.combatants[0].block+=18
+        }
+        if(this.relics.active[88]&&this.counter.turn==6){
+            for(e=1,le=this.combatants.length;e<le;e++){
+                this.combatants[e].take(52,0)
+            }
         }
         if(this.relics.active[85]&&this.counter.played<3){
             for(e=0;e<3;e++){
@@ -681,6 +693,9 @@ class battle{
         if(this.relics.active[77]&&this.combatants[0].boost.main[2]<0){
             this.combatants[0].boost.main[2]=0
         }
+        if(this.relics.active[92]&&this.hand.cards.length<=0){
+            this.draw()
+        }
         this.counter.enemies.alive=0
         for(e=1,le=this.combatants.length;e<le;e++){
             if(this.combatants[e].life>0){
@@ -760,7 +775,6 @@ class battle{
                         e++
                     }
                 }
-                this.counter.turn++
                 this.turnDraw()
                 for(e=0,le=this.hand.cards.length;e<le;e++){
                     this.hand.cards[e].position.y=500

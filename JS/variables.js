@@ -1076,7 +1076,7 @@ types={
         {name:'Duelist',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Creation',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
-        {name:'Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[4,2,3],altAttack:[0,3,0],class:0},
+        {name:'Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[6,2,3],altAttack:[0,3,0],class:0},
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0],class:0},
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:0},
@@ -1389,7 +1389,7 @@ types={
             desc:'On Turn 7, Deal 52\nDamage to All ENemies',
         },{
             name:'First Turn Armor',id:89,rarity:2,list:0,
-            desc:'Gain 2 Armor at\nthe Start of Combat',
+            desc:'Gain 4 Armor at\nthe Start of Combat',
         },{
             name:'Small Damage Control',id:90,rarity:2,list:0,
             desc:'Whenever You Take 5 or\nLess Damage, Reduce it to 1',
@@ -1398,7 +1398,7 @@ types={
             desc:'Whenever You Take\nDamage, Reduce it by 1',
         },{
             name:'Infinite Cards',id:92,rarity:2,list:0,
-            desc:'If You Have No Cards\nin Your Hand, Add 1 Card',
+            desc:'If You Have No Cards\nin Your Hand, Draw 1 Card',
         },{
             name:'Exhaust Damage All',id:93,rarity:2,list:0,
             desc:'Whenever You Exhaust a Card,\nDeal 3 Damage to All Enemies',
@@ -1413,7 +1413,7 @@ types={
             desc:'Whenever You Discard\na Card, Gain 3 Block',
         },{
             name:'Unplayed Block',id:97,rarity:2,list:0,
-            desc:'At the End of Your Turn, Gain 1 Block per Unplayed Card',
+            desc:'At the End of Your Turn,\nGain 1 Block per Unplayed Card',
         },{
             name:'Risky Combo',id:98,rarity:2,list:1,
             desc:'Combo Never Decreases, Lose\nAll Combo when Damage Taken',
