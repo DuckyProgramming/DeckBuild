@@ -9,7 +9,7 @@ class group{
         this.select=false
         this.selcted=false
         this.trigger=false
-        this.calc={level:0,cut:0}
+        this.calc={level:0,cut:0,list:[]}
         this.anim={discarding:0}
     }
     initial(type){
@@ -212,6 +212,20 @@ class group{
                         this.battle.mana.main+=this.cards[e].damage
                     }
                 }
+                if(!this.cards[e].trigger){
+                    if(this.battle.relics.active[95]){
+                        this.calc.list=[]
+                        for(f=1,lf=this.battle.combatants.length;f<lf;f++){
+                            if(this.battle.combatants[f].life>0){
+                                this.calc.list.push(f)
+                            }
+                        }
+                        this.battle.combatants[this.calc.list[floor(random(0,this.calc.list.length))]].take(3,0)
+                    }
+                    if(this.battle.relics.active[96]){
+                        this.battle.combatants[0].block+=3
+                    }
+                }
                 this.battle.discard.cards.push(copyCard(this.cards[e]))
                 this.cards.splice(e,1)
                 e--
@@ -227,6 +241,11 @@ class group{
                 le--
                 if(this.battle.relics.active[71]){
                     this.battle.randomAdd()
+                }
+                if(this.battle.relics.active[93]){
+                    for(f=1,lf=this.battle.combatants.length;f<lf;f++){
+                        this.battle.combatants[f].take(3,0)
+                    }
                 }
             }
         }

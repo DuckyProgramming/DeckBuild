@@ -268,6 +268,9 @@ class battle{
             case 87:
                 this.restOptions.push(6)
             break
+            case 94:
+                this.random.healEffectiveness++
+            break
         }
     }
     return(){

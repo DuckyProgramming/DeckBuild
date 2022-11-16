@@ -732,6 +732,32 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[5],-18,-10,20,20)
 			layer.image(graphics.symbol[5],-2,-10,20,20)
 		break
+		case 93:
+			layer.textSize(10)
+			layer.text('X',-10,0)
+			layer.text('3',8,0)
+			layer.image(graphics.symbol[5],-20,-10,20,20)
+			layer.image(graphics.symbol[7],-2,-10,20,20)
+		break
+		case 94:
+			layer.image(graphics.symbol[4],-10,-15,20,20)
+			layer.textSize(10)
+			layer.text('x2',0,11)
+		break
+		case 95:
+			layer.textSize(10)
+			layer.text('3',8,0)
+			layer.image(graphics.symbol[1],-15,-5,10,10)
+			layer.image(graphics.symbol[5],-20,-10,20,20)
+			layer.image(graphics.symbol[7],-2,-10,20,20)
+		break
+		case 96:
+			layer.textSize(10)
+			layer.text('3',8,0)
+			layer.image(graphics.symbol[1],-15,-5,10,10)
+			layer.image(graphics.symbol[5],-20,-10,20,20)
+			layer.image(graphics.symbol[2],-2,-10,20,20)
+		break
 		/*
 		0-Redraw
 		1-ArrowRight

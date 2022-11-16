@@ -1404,7 +1404,7 @@ types={
             desc:'Whenever You Exhaust a Card,\nDeal 3 Damage to All Enemies',
         },{
             name:'Heal Boost',id:94,rarity:2,list:0,
-            desc:'Heal Twice as Much in Combat',
+            desc:'Heal Twice as\nMuch in Combat',
         },{
             name:'Discard Damage',id:95,rarity:2,list:0,
             desc:'Whenever You Discard a Card,\nDeal 3 Damage to a Random Enemy',
@@ -1425,7 +1425,7 @@ types={
             desc:'At the Start of Combat,\nCharge 1 Explosive Charge',
         },{
             name:'Rearm',id:101,rarity:2,list:4,
-            desc:'If Unarmed, Rearm at End of Turn',
+            desc:'If Unarmed, Rearm\nat End of Turn',
         },
         
         /*{
