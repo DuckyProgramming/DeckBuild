@@ -5,13 +5,13 @@ function setup(){
     generateListing(types.card)
     setupEncounter(current,5)
 
-    current.getRelic(81)
+    current.getRelic(87)
 
     current.create()
     current.initialEvent()
 
-    //transition.trigger=true
-    //transition.scene='rest'
+    transition.trigger=true
+    transition.scene='rest'
     current.setupMap()
     //current.map.complete[0][0]=1
     //current.event=14

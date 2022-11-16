@@ -34,7 +34,7 @@ class battle{
         this.discarding=0
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[]],owned:[],active:[],shop:[],size:[]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0}
         this.deck.initial(this.player)
     }
     create(){
@@ -251,6 +251,19 @@ class battle{
             case 78:
                 this.restOptions.push(4)
             break
+            case 82:
+                this.combatants[0].base.life+=14
+                this.combatants[0].life+=14
+            break
+            case 83:
+                this.currency.money+=300
+            break
+            case 84:
+                this.restOptions.push(5)
+            break
+            case 87:
+                this.restOptions.push(6)
+            break
         }
     }
     return(){
@@ -332,6 +345,11 @@ class battle{
         }
         if(this.relics.active[70]&&this.counter.turn==3){
             this.combatants[0].block+=18
+        }
+        if(this.relics.active[85]&&this.counter.played<3){
+            for(e=0;e<3;e++){
+                this.draw()
+            }
         }
         this.startTurn()
         this.counter.played=0
@@ -799,7 +817,8 @@ class battle{
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+this.objective[e][3])
                             break
                             case 4:
-                                g=floor(random(0,1.5))
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
                                 f=floor(random(0,this.relics.list[g].length))
                                 this.getRelic(this.relics.list[g][f])
                                 this.relics.list[0].splice(f,1)
@@ -823,6 +842,7 @@ class battle{
     setupChoice(level,rarity,spec){
         this.choice.cards=[]
         this.context=0
+        this.random.picked=0
         switch(spec){
             case 0:
                 this.calc.list=listing.card[this.player][rarity]
@@ -871,16 +891,26 @@ class battle{
             this.choice.cards[e].display(this.deck.cards.length,this.drawAmount,0)
         }
     }
+    updateChoice(){
+        for(e=0,le=this.choice.cards.length;e<le;e++){
+            if(this.choice.cards[e].used&&this.choice.cards[e].size>0){
+                this.choice.cards[e].size=round(this.choice.cards[e].size*10-1)/10
+            }
+        }
+    }
     onClickChoice(){
         if(pointInsideBox({position:inputs.rel},{position:{x:450,y:450},width:80,height:40})){
             transition.trigger=true
             transition.scene='map'
         }
         for(e=0,le=this.choice.cards.length;e<le;e++){
-            if(pointInsideBox({position:inputs.rel},this.choice.cards[e])){
+            if(pointInsideBox({position:inputs.rel},this.choice.cards[e])&&this.choice.cards[e].size>=1){
+                this.random.picked++
+                if(this.random.picked==1&&!this.relics.active[86]||this.random.picked==2)
                 transition.trigger=true
                 transition.scene='map'
                 this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                this.choice.cards[e].used=true
             }
         }
         if(transition.scene=='map'&&this.context==1){
@@ -1101,6 +1131,12 @@ class battle{
                 case 4:
                     this.layer.text('Gain\nStrength',525+e*150-le*75,300)
                 break
+                case 5:
+                    this.layer.text('Remove',525+e*150-le*75,300)
+                break
+                case 6:
+                    this.layer.text('Gain\nRelic',525+e*150-le*75,300)
+                break
             }
         }
     }
@@ -1136,6 +1172,19 @@ class battle{
                         break
                         case 4:
                             this.random.strengthBase++
+                            transition.scene='map'
+                        break
+                        case 5:
+                            transition.scene='deck'
+                            this.setupDeck(4)
+                            this.context=4
+                        break
+                        case 6:
+                            this.calc.list=[0,0,0,1,1,2]
+                            g=this.calc.list[floor(random(0,this.calc.list.length))]
+                            f=floor(random(0,this.relics.list[g].length))
+                            this.getRelic(this.relics.list[g][f])
+                            this.relics.list[0].splice(f,1)
                             transition.scene='map'
                         break
                     }
@@ -1413,11 +1462,12 @@ class battle{
         this.costs.card[0][3]=round(random(60,80))
         this.costs.card[0][4]=round(random(120,160))
         this.costs.card[1][0]=round(random(80,100))
-        this.costs.card[1][1]=round(random(160,200))
+        this.costs.card[1][1]=round(random(160,180))
         this.costs.relic[0]=round(random(50,70))
         this.costs.relic[1]=round(random(50,70))
         this.costs.relic[2]=round(random(100,120))
         this.costs.relic[3]=round(random(100,120))
+        this.costs.relic[4]=round(random(180,200))
         this.costs.sale=floor(random(0,5))
         this.costs.card[0][this.costs.sale]=round(this.costs.card[0][this.costs.sale]/2)
         switch(spec){
@@ -1440,7 +1490,7 @@ class battle{
                 }
                 this.relics.shop=[]
                 this.calc.list3=this.relics.list
-                for(g=0;g<4;g++){
+                for(g=0;g<5;g++){
                     if(this.calc.list3.length>0){
                         h=floor(random(0,this.calc.list3[floor(g/2)].length))
                         this.relics.shop.push(this.calc.list3[floor(g/2)][h])

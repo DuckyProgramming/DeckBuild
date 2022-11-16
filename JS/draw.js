@@ -12,6 +12,7 @@ function draw(){
             graphics.main.background(40,48,50)
             displayMoon(graphics.main)
             current.displayChoice()
+            current.updateChoice()
         break
         case 'map':
             graphics.main.background(40,48,50)
