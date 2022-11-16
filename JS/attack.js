@@ -828,6 +828,10 @@ class attack{
                     this.battle.discarding+=this.damage
                     this.battle.mana.main+=this.alt
                 break
+                case 170:
+                    this.battle.discarding++
+                    this.battle.draw()
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{
@@ -852,6 +856,15 @@ class attack{
                 case 5:
                     this.battle.drop.addDrop(findCard('Burn'),0,stage.playerNumber+1)
                     this.battle.reserve.addShuffle(findCard('Burn'),0,stage.playerNumber+1)
+                break
+                case 6:
+                    this.battle.combatants[0].take(this.damage,this.user)
+                    this.attacks.push([1,12,this.user,this.damage])
+                    this.battle.drop.addDrop(findCard('Stuck'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Stuck'),0,stage.playerNumber+1)
+                break
+                case 7:
+                    this.battle.combatants[0].boost.main[0]-=this.damage
                 break
             }
         }

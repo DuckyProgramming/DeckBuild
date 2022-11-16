@@ -1051,7 +1051,10 @@ types={
             {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:-1},
             {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:-1},
         ],
-        },{name:'Redraw',rarity:-3,list:0,
+        },
+        
+        
+        {name:'Redraw',rarity:-3,list:0,
         stats:[
             {damage:0,alt:0,cost:0,attack:148,target:0,desc:'',spec:13,class:2},
             {damage:0,alt:0,cost:0,attack:148,target:0,desc:'',spec:13,class:2},
@@ -1060,6 +1063,11 @@ types={
         stats:[
             {damage:1,alt:0,cost:1,attack:149,target:0,desc:'',spec:13,class:2},
             {damage:1,alt:0,cost:0,attack:149,target:0,desc:'',spec:13,class:2},
+        ],
+        },{name:'Selective\nRedraw',rarity:-3,list:0,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:170,target:0,desc:'',spec:13,class:2},
+            {damage:0,alt:0,cost:0,attack:170,target:0,desc:'',spec:13,class:2},
         ],
         },
     ],combatant:[
@@ -1072,6 +1080,7 @@ types={
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0],class:0},
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:0},
+        {name:'Slime',alt:'',life:30,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,0,0],class:0},
     ],attack:[
         {class:0},
         {class:0},
@@ -1103,6 +1112,11 @@ types={
             combatants:[7,7,8,0,0,0],
             reinforce:[],
             threshold:4,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[9,9,0,0,0,0],
+            reinforce:[],
+            threshold:3,
             objective:[[0,0,0,0]],
         },
     ],relic:[
@@ -1335,11 +1349,11 @@ types={
             name:'Weakness Immunity',id:75,rarity:2,list:0,
             desc:'You Cannot\nBecome Weak',
         },{
-            name:'Frailness Immunity',id:76,rarity:2,list:0,
-            desc:'You Cannot\nBecome Frail',
-        },{
-            name:'Vulnerability Immunity',id:77,rarity:2,list:0,
+            name:'Vulnerability Immunity',id:76,rarity:2,list:0,
             desc:'You Cannot\nBecome Vulnerable',
+        },{
+            name:'Frailness Immunity',id:77,rarity:2,list:0,
+            desc:'You Cannot\nBecome Frail',
         },{
             name:'Resting Strength',id:78,rarity:2,list:0,
             desc:'Can Gain 1 Strength\nWhen Resting',

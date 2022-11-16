@@ -21,8 +21,8 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(1,0,this.battle.player)
                 }
-                for(e=0;e<40;e++){
-                    this.add(2,1,this.battle.player)
+                for(e=0;e<4;e++){
+                    //this.add(2,0,this.battle.player)
                 }
                 //this.add(findCard('Big Strike'),0,this.battle.player)
                 //this.add(findCard('Triple\nPunch'),0,this.battle.player)

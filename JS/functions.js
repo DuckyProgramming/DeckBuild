@@ -74,12 +74,22 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 			layer.triangle(-16,0,12,-4,12,4)
 			layer.triangle(-12,10,9,7,9,13)
 		break
+		case 6:
+			layer.fill(150,255,150,fade)
+			layer.ellipse(0,0,15,15)
+			layer.fill(255,50,50,fade)
+			layer.triangle(-20,0,15,-6,15,6)
+		break
+		case 7:
+			layer.fill(150,255,150,fade)
+			layer.triangle(-12,-8,12,-8,0,12)
+		break
 	}
 	layer.fill(255,fade)
 	layer.textSize(20)
 	switch(type){
-		case 1:
-			layer.text(damage,0,0)
+		case 1: case 6: case 7:
+			layer.text(damage,0,1)
 		break
 		case 2: case 4: case 5:
 			layer.text('?',0,-2)
@@ -600,6 +610,63 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[5],-18,-10,20,20)
 			layer.image(graphics.symbol[5],-2,-10,20,20)
 		break
+		case 72:
+			layer.text('1',0,13)
+			layer.textSize(16)
+			layer.text('C',9,0)
+			layer.image(graphics.symbol[5],-1,-12,20,20)
+			layer.image(graphics.symbol[7],-19,-12,20,20)
+			layer.image(graphics.symbol[15],-17,-10,16,16)
+		break
+		case 73:
+			layer.text('1',10,1)
+			layer.image(graphics.symbol[30],-15,-10,20,20)
+		break
+		case 74:
+			layer.text('1',10,1)
+			layer.textSize(10)
+			layer.text('1',-5,0)
+			layer.image(graphics.symbol[0],-15,-10,20,20)
+		break
+		case 75:
+			layer.image(graphics.symbol[14],-15,-15,30,30)
+			layer.image(graphics.symbol[7],-10,-10,20,20)
+			layer.image(graphics.symbol[11],-8,-8,16,16)
+		break
+		case 76:
+			layer.image(graphics.symbol[14],-15,-15,30,30)
+			layer.image(graphics.symbol[13],-14,-14,28,28)
+			layer.image(graphics.symbol[15],-8,-8,16,16)
+		break
+		case 77:
+			layer.image(graphics.symbol[14],-15,-15,30,30)
+			layer.image(graphics.symbol[2],-10,-10,20,20)
+			layer.image(graphics.symbol[11],-8,-8,16,16)
+		break
+		case 78:
+			layer.textSize(10)
+			layer.text('+1',0,-5)
+			layer.image(graphics.symbol[7],-10,-15,20,20)
+			layer.image(graphics.symbol[9],-8,6,16,16)
+		break
+		case 79:
+			layer.image(graphics.symbol[8],-25,-18,30,30)
+			layer.image(graphics.symbol[8],-5,-18,30,30)
+			layer.image(graphics.symbol[1],-8,2,16,16)
+		break
+		case 80:
+			layer.text('5',5,-5)
+			layer.textSize(10)
+			layer.text('1',-10,1)
+			layer.image(graphics.symbol[31],-20,-10,20,20)
+			layer.image(graphics.symbol[1],0,-5,18,18)
+		break
+		case 81:
+			layer.textSize(10)
+			layer.text('50%',0,11)
+			layer.image(graphics.symbol[14],-12,-18,24,24)
+			layer.image(graphics.symbol[25],-8,-14,16,16)
+		break
 		/*
 		0-Redraw
 		1-ArrowRight
@@ -624,13 +691,15 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		20-Faith
 		21-Focus
 		22-Balance
-		23-Max Balance
+		23-MaxBalance
 		24-Enemy
 		25-Dead
 		26-Boss
 		27-Time
 		28-Stance
 		29-BasicCharge
+		30-Buffer
+		31-Intangible
 		*/
 	}
 	layer.scale(1/size,1/size/flip)

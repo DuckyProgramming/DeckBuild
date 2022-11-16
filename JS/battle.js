@@ -34,7 +34,7 @@ class battle{
         this.discarding=0
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[]],owned:[],active:[],shop:[],size:[]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0}
         this.deck.initial(this.player)
     }
     create(){
@@ -73,6 +73,7 @@ class battle{
             this.deck.cards[e].position.x=1206
             this.deck.cards[e].position.y=500
         }
+        this.combatants[0].boost.main[0]+=this.random.strengthBase
         this.counter.enemies.total+=this.generation.reinforce.length
         this.reserve.cards=[]
         this.hand.cards=[]
@@ -158,6 +159,19 @@ class battle{
         if(this.relics.active[66]){
             this.combatants[0].load(0)
         }
+        if(this.relics.active[72]){
+            for(e=0,le=this.deck.cards.length;e<le;e++){
+                if(this.deck.cards[e].list==10){
+                    this.combatants[0].boost.main[0]++
+                }
+            }
+        }
+        if(this.relics.active[73]){
+            this.combatants[0].status.main[33]++
+        }
+        if(this.relics.active[74]){
+            this.hand.add(findCard('Selective\nRedraw'),0,0)
+        }
         this.startTurn()
         this.random.rested=false
         if(this.relics.active[4]){
@@ -234,6 +248,9 @@ class battle{
             case 57:
                 this.restOptions.push(3)
             break
+            case 78:
+                this.restOptions.push(4)
+            break
         }
     }
     return(){
@@ -254,7 +271,11 @@ class battle{
     endTurn(){
         this.counter.turn++
         this.discarding=0
-        this.mana.main=min(this.mana.max,this.mana.main+this.mana.gen)
+        if(this.relics.active[79]){
+            this.mana.main+=this.mana.gen
+        }else{
+            this.mana.main=min(this.mana.max,this.mana.main+this.mana.gen)
+        }
         this.mana.main+=this.combatants[0].status.main[1]
         this.remember=[0,0,0,0,0]
         if(this.combatants[0].status.main[19]>0){
@@ -330,6 +351,9 @@ class battle{
             for(g=1,lg=this.combatants.length;g<lg;g++){
                 this.combatants[g].take(3,0)
             }
+        }
+        if(this.relics.active[80]&&this.counter.turn%5==0){
+            this.combatants[0].status.main[34]++
         }
     }
     playCard(){
@@ -629,6 +653,15 @@ class battle{
     update(){
         if(this.relics.active[34]&&this.combatants[0].combo==0){
             this.combatants[0].combo=1
+        }
+        if(this.relics.active[75]&&this.combatants[0].boost.main[0]<0){
+            this.combatants[0].boost.main[0]=0
+        }
+        if(this.relics.active[76]&&this.combatants[0].boost.main[1]<0){
+            this.combatants[0].boost.main[1]=0
+        }
+        if(this.relics.active[77]&&this.combatants[0].boost.main[2]<0){
+            this.combatants[0].boost.main[2]=0
         }
         this.counter.enemies.alive=0
         for(e=1,le=this.combatants.length;e<le;e++){
@@ -1060,10 +1093,13 @@ class battle{
                     this.layer.text('Heal',525+e*150-le*75,300)
                 break
                 case 2:
-                    this.layer.text('Train',525+e*150-le*75,300)
+                    this.layer.text('Upgrade',525+e*150-le*75,300)
                 break
                 case 3:
                     this.layer.text('Gain Max\nHealth',525+e*150-le*75,300)
+                break
+                case 4:
+                    this.layer.text('Gain\nStrength',525+e*150-le*75,300)
                 break
             }
         }
@@ -1096,6 +1132,10 @@ class battle{
                         case 3:
                             this.combatants[0].base.life+=2
                             this.combatants[0].life+=2
+                            transition.scene='map'
+                        break
+                        case 4:
+                            this.random.strengthBase++
                             transition.scene='map'
                         break
                     }

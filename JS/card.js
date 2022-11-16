@@ -219,6 +219,7 @@ class card{
             case 167: this.desc+='When Discarded,\nDraw '+this.damage+' Cards'; break
             case 168: this.desc+='When Discarded,\nGain '+this.damage+' Energy'; break
             case 169: this.desc+='Discard '+this.damage+' Cards\nGain '+this.alt+' Energy'; break
+            case 170: this.desc+='Draw 1 Card\nDiscard 1 Card\nExhaust\nEthereal'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

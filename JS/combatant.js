@@ -26,15 +26,15 @@ class combatant{
 			[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120],[125,75,25],[25,125,175],[150,225,150],
 			[100,200,200],[200,0,50],[100,50,150],[50,100,50],[20,60,120],[170,240,255],[235,65,15],[210,200,245],[210,90,0],[50,0,0],
 			[255,200,255],[125,160,160],[200,25,125],[190,190,60],[225,225,75],[255,50,100],[150,150,50],[255,125,25],[255,175,75],[200,125,250],
-			[240,100,50],[150,175,200],[0,100,255],[200,255,200]],infoFade:[],name:[
+			[240,100,50],[150,175,200],[0,100,255],[200,255,200],[225,255,225]],infoFade:[],name:[
 			'Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Confused',
 			'Reflect','Bleed','Intangible','Sink','Hymn','Mental Fortress','Rush','Wave of the Hand','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Absorb Attacks',
-			'Single Attack Constant','Next Turn Block','Next Turn Dexterity','Buffer'],class:[
+			'Single Attack Constant','Next Turn Block','Next Turn Dexterity','Buffer','Intangible'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
-			1,1,0,1]}
+			1,1,0,1,1]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -731,6 +731,14 @@ class combatant{
 					this.layer.rect(8,-87,15,7,2)
 				break
 				case 9:
+					this.layer.noStroke()
+					this.layer.fill(150,250,50,this.fade)
+					this.layer.ellipse(0,-20,60,45)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(24,-30,6,6)
+					this.layer.ellipse(8,-30,6,6)
+				break
+				case 10:
 					this.layer.stroke(80,this.fade)
 					this.layer.strokeWeight(4)
 					this.layer.line(-4,-30,-8,0)
@@ -959,6 +967,9 @@ class combatant{
 						this.combo++
 					}
 				}
+				if(this.status.main[34]>0&&this.calc.damage>1){
+					this.calc.damage=1
+				}
 				this.battle.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))
 				this.battle.particles[this.battle.particles.length-1].text=round(this.calc.damage*10)/10
 				if(this.block>this.calc.damage&&extra!=1){
@@ -1064,11 +1075,16 @@ class combatant{
 			this.fade=round(this.fade*5-1)/5
 		}
 		if(this.life<=0&&this.type!=0){
-			this.type=0
-			this.battle.counter.enemies.dead++
-			if(this.battle.relics.active[44]){
-				this.battle.mana.main++
-				this.battle.draw()
+			if(this.id==0&&this.battle.relics.active[81]){
+				this.battle.relics.active[81]=false
+				this.life=this.base.life/2
+			}else{
+				this.type=0
+				this.battle.counter.enemies.dead++
+				if(this.battle.relics.active[44]){
+					this.battle.mana.main++
+					this.battle.draw()
+				}
 			}
 		}
 	}
