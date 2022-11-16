@@ -150,7 +150,7 @@ class attack{
                     this.battle.draw()
                 break
                 case 25:
-                    this.battle.combatants[0].life=min(this.battle.combatants[0].life+this.damage,this.battle.combatants[0].base.life)
+                    this.battle.combatants[0].life=min(this.battle.combatants[0].life+this.damage*this.battle.random.healEffectiveness,this.battle.combatants[0].base.life)
                 break
                 case 26:
                     for(g=0;g<this.damage;g++){
@@ -405,7 +405,7 @@ class attack{
                 break
                 case 79:
                     if(this.battle.combatants[0].meter>0){
-                        this.battle.combatants[0].life=min(this.battle.combatants[0].life+this.damage*this.battle.combatants[0].meter,this.battle.combatants[0].base.life)
+                        this.battle.combatants[0].life=min(this.battle.combatants[0].life+this.damage*this.battle.combatants[0].meter*this.battle.random.healEffectiveness,this.battle.combatants[0].base.life)
                     }
                     this.battle.combatants[0].meter=0
                 break

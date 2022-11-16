@@ -34,7 +34,7 @@ class battle{
         this.discarding=0
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[]],owned:[],active:[],shop:[],size:[]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1}
         this.deck.initial(this.player)
     }
     create(){
@@ -267,7 +267,11 @@ class battle{
         this.combatants[0].mantra+=this.combatants[0].status.main[20]
         this.combatants[0].boost.main[2]+=this.combatants[0].status.main[32]
         for(e=0,le=this.combatants.length;e<le;e++){
-            this.combatants[e].block=0
+            if(e==0&&this.relics.active[69]){
+                this.combatants[e].block=max(0,this.combatants[e].block-15)
+            }else{
+                this.combatants[e].block=0
+            }
             this.combatants[e].setupIntent(-1)
             for(f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
                 if(this.combatants[e].boost.main[f]>0){
@@ -304,6 +308,9 @@ class battle{
         }
         if(this.relics.active[45]&&this.counter.turn==2){
             this.combatants[0].block+=14
+        }
+        if(this.relics.active[70]&&this.counter.turn==3){
+            this.combatants[0].block+=18
         }
         this.startTurn()
         this.counter.played=0
@@ -378,6 +385,9 @@ class battle{
                     this.hand.cards[g].cost--
                 }
             }
+            if(this.relics.active[68]){
+                this.combatants[0].life=min(this.combatants[0].life+this.damage*this.random.healEffectiveness,this.combatants[0].base.life)
+            }
         }
         for(g=0,lg=this.hand.cards.length;g<lg;g++){
             if(this.hand.cards[g].attack==-2){
@@ -408,6 +418,14 @@ class battle{
         }
         if(this.calc.list.length>0){
             this.hand.cards[this.calc.list[floor(random(0,this.calc.list.length))]].used=true
+        }
+    }
+    randomAdd(){
+        this.calc.list=listing.card[this.player]
+        if(this.calc.list.length>0){
+            g=floor(random(0,this.calc.list.length))
+            h=floor(random(0,this.calc.list[g].length))
+            this.hand.add(this.calc.list[g][h],0,types.card[this.calc.list[g][h]].list)
         }
     }
     allDiscard(){

@@ -640,8 +640,8 @@ types={
         ],
         },{name:'Survivor',rarity:0,list:0,list:2,
         stats:[
-            {damage:8,alt:0,cost:1,attack:166,target:0,desc:'',spec:0,class:1},
-            {damage:12,alt:0,cost:1,attack:166,target:0,desc:'',spec:0,class:1},
+            {damage:8,alt:1,cost:1,attack:166,target:0,desc:'',spec:0,class:1},
+            {damage:12,alt:1,cost:1,attack:166,target:0,desc:'',spec:0,class:1},
         ],
         },{name:'Reflex',rarity:1,list:2,
         stats:[

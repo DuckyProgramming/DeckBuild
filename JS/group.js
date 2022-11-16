@@ -21,8 +21,8 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(1,0,this.battle.player)
                 }
-                for(e=0;e<4;e++){
-                    //this.add(2,0,this.battle.player)
+                for(e=0;e<40;e++){
+                    this.add(2,1,this.battle.player)
                 }
                 //this.add(findCard('Big Strike'),0,this.battle.player)
                 //this.add(findCard('Triple\nPunch'),0,this.battle.player)
@@ -202,12 +202,15 @@ class group{
     update(){
         for(e=0,le=this.cards.length;e<le;e++){
             if(this.cards[e].discard){
-                if(this.cards[e].attack==167){
-                    for(f=0;f<this.cards[e].damage;f++){
-                        this.battle.draw()
+                if(this.cards[e].selectDiscard){
+                    this.cards[e].selectDiscard=false
+                    if(this.cards[e].attack==167){
+                        for(f=0;f<this.cards[e].damage;f++){
+                            this.battle.draw()
+                        }
+                    }else if(this.cards[e].attack==168){
+                        this.battle.mana.main+=this.cards[e].damage
                     }
-                }else if(this.cards[e].attack==168){
-                    this.battle.mana.main+=this.cards[e].damage
                 }
                 this.battle.discard.cards.push(copyCard(this.cards[e]))
                 this.cards.splice(e,1)
@@ -222,6 +225,9 @@ class group{
                 this.cards.splice(e,1)
                 e--
                 le--
+                if(this.battle.relics.active[71]){
+                    this.battle.randomAdd()
+                }
             }
         }
     }
@@ -350,6 +356,7 @@ class group{
                 if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.discarding>0){
                     this.battle.discarding--
                     this.cards[e].used=true
+                    this.cards[e].selectDiscard=true
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&(this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7||this.cards[e].list==10&&this.battle.relics.active[38])){
                     this.cards[e].select=true
                     this.select=true

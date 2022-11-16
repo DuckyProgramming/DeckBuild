@@ -29,6 +29,7 @@ class card{
         this.trigger=false
         this.used=false
         this.exhaust=false
+        this.selectDiscard=false
     }
     displayName(deckSize,handSize,discardSize){
         this.desc=''

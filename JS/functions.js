@@ -185,7 +185,9 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		break
 		case 3:
 			layer.text('E',10,2)
-			layer.image(graphics.symbol[4],-15,-10,20,20)
+			layer.textSize(10)
+			layer.text('2',-5,10)
+			layer.image(graphics.symbol[4],-15,-15,20,20)
 		break
 		case 4:
 			layer.text('1',10,1)
@@ -572,6 +574,31 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[22],-18,-12,24,24)
 			layer.image(graphics.symbol[14],-18,-12,24,24)
 			layer.image(graphics.symbol[11],2,-10,20,20)
+		break
+		case 68:
+			layer.textSize(10)
+			layer.text('2',-8,10)
+			layer.image(graphics.symbol[4],-18,-15,20,20)
+			layer.image(graphics.symbol[18],-2,-10,20,20)
+		break
+		case 69:
+			layer.textSize(10)
+			layer.text('-15',0,5)
+			layer.image(graphics.symbol[2],-10,-20,20,20)
+			layer.image(graphics.symbol[1],-10,5,20,20)
+		break
+		case 70:
+			layer.text('3',10,1)
+			layer.textSize(10)
+			layer.text('18',-5,0)
+			layer.image(graphics.symbol[2],-15,-10,20,20)
+		break
+		case 71:
+			layer.textSize(10)
+			layer.text('X',-8,0)
+			layer.text('?',8,0)
+			layer.image(graphics.symbol[5],-18,-10,20,20)
+			layer.image(graphics.symbol[5],-2,-10,20,20)
 		break
 		/*
 		0-Redraw
