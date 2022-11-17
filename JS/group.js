@@ -18,19 +18,19 @@ class group{
         }*/
         switch(type){
             case 1:
-                /*for(e=0;e<4;e++){
+                for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Big Strike'),0,this.battle.player)
-                this.add(findCard('Triple\nPunch'),0,this.battle.player)*/
-                this.add(67,0,this.battle.player)
+                this.add(findCard('Triple\nPunch'),0,this.battle.player)
+                /*this.add(67,0,this.battle.player)
                 this.add(68,0,this.battle.player)
                 this.add(69,0,this.battle.player)
                 this.add(70,0,this.battle.player)
-                this.add(71,0,this.battle.player)
+                this.add(71,0,this.battle.player)*/
             break
             case 2:
                 for(e=0;e<4;e++){
@@ -357,6 +357,7 @@ class group{
                     }else{
                         this.battle.mana.main-=this.cards[e].cost
                     }
+                    this.battle.attack.user=0
                     this.battle.attack.type=this.cards[e].attack
                     this.battle.attack.level=this.cards[e].level
                     this.battle.attack.class=this.cards[e].class

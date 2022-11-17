@@ -330,7 +330,7 @@ types={
             {damage:4,alt:8,cost:1,attack:164,target:1,desc:'',spec:0,class:0},
             {damage:8,alt:12,cost:1,attack:164,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Absorb\nAttacks',rarity:0,list:0,list:5,
+        },{name:'Absorb\nAttacks',rarity:0,list:0,list:1,
         stats:[
             {damage:1,alt:0,cost:1,attack:165,target:0,desc:'',spec:0,class:1},
             {damage:1,alt:4,cost:1,attack:165,target:0,desc:'',spec:0,class:1},

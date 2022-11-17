@@ -197,6 +197,11 @@ class battle{
         if(this.relics.active[118]){
             this.combatants[0].combo+=4
         }
+        if(this.relics.active[131]){
+            for(e=1,le=this.combatants.length;e<le;e++){
+                this.combatants[e].boost.main[0]++
+            }
+        }
         this.startTurn()
         this.random.rested=false
         if(this.relics.active[4]){
@@ -316,7 +321,7 @@ class battle{
                     }
                 }
             break
-            case 123: case 127:
+            case 123: case 127: case 131:
                 this.mana.gen++
                 this.mana.main++
                 this.mana.max++
@@ -366,6 +371,15 @@ class battle{
                 this.mana.max++
                 this.mana.base++
                 this.restOptions.splice(this.restOptions.indexOf(2),1)
+            break
+            case 130:
+                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
+                    if(this.deck.cards[g].list==5){
+                        h=floor(random(0,3))
+                        this.deck.cards[g].type=listing.card[this.player][h][floor(random(0,listing.card[this.player][h].length))]
+                        this.deck.cards[g]=reformCard(this.deck.cards[g])
+                    }
+                }
             break
         }
     }
