@@ -876,6 +876,42 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.text('o',-5,0)
 			layer.image(graphics.symbol[5],-15,-10,20,20)
 		break
+		case 116:
+			layer.image(graphics.symbol[7],-19,-10,20,20)
+			layer.image(graphics.symbol[7],-1,-10,20,20)
+			layer.image(graphics.symbol[15],-17,-8,16,16)
+			layer.image(graphics.symbol[15],1,-8,16,16)
+		break
+		case 117:
+			layer.text('2',0,-3)
+			layer.textSize(10)
+			layer.image(graphics.symbol[37],-15,-20,30,30)
+			layer.image(graphics.symbol[1],-10,0,20,20)
+		break
+		case 118:
+			layer.text('1',10,1)
+			layer.textSize(10)
+			layer.text('4',-5,0)
+			layer.image(graphics.symbol[19],-15,-10,20,20)
+		break
+		case 119:
+			layer.textSize(10)
+			layer.text('3',9,-2)
+			layer.image(graphics.symbol[0],-22,-12,24,24)
+			layer.image(graphics.symbol[5],-17.5,-7.5,15,15)
+			layer.image(graphics.symbol[38],-2,-11,22,22)
+		break
+		case 120:
+			layer.image(graphics.symbol[29],-10,-15,20,20)
+			layer.image(graphics.symbol[1],-10,0,20,20)
+		break
+		case 121:
+			layer.textSize(10)
+			layer.text('10',10,0)
+			layer.image(graphics.symbol[22],-19,-10,20,20)
+			layer.image(graphics.symbol[14],-19,-10,20,20)
+			layer.image(graphics.symbol[7],0,-10,20,20)
+		break
 		/*
 		0-Redraw
 		1-ArrowRight
@@ -914,6 +950,8 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		34-Shiv
 		35-Armed
 		36-Control
+		37-Poison
+		38-Scry
 		*/
 	}
 	layer.scale(1/size,1/size/flip)

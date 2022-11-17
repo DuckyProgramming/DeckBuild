@@ -73,7 +73,7 @@ class card{
             case 21: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable'; break                
             case 22: this.desc+='Deal '+this.damage+' Damage\nAll Claws gain\n+2 Damage'; break
             case 23: this.desc+='Deal '+this.damage+'X\nDamage'; break
-            case 24: this.desc+='Deal '+this.damage+' Damage\nDraw 2 Cards'; break
+            case 24: this.desc+='Deal '+this.damage+' Damage\nDraw '+this.alt+' Cards'; break
             case 25: this.desc+='Heal '+this.damage+' Health'; break
             case 26: this.desc+='Draw '+this.damage+' Shivs'; break
             case 27: this.desc+='Add '+this.damage+' Block\nEnter Calm'; break
@@ -220,6 +220,7 @@ class card{
             case 168: this.desc+='When Discarded,\nGain '+this.damage+' Energy'; break
             case 169: this.desc+='Discard '+this.damage+' Cards\nGain '+this.alt+' Energy'; break
             case 170: this.desc+='Draw 1 Card\nDiscard 1 Card\nExhaust\nEthereal'; break
+            case 171: this.desc+='Gain '+this.damage+'\nArtifact'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

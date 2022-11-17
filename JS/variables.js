@@ -1,36 +1,36 @@
 types={
     card:[
-        {name:'',rarity:0,list:0,list:-1,
+        {name:'',rarity:0,list:-1,
         stats:[
             {damage:0,alt:0,cost:0,attack:0,target:0,desc:'',spec:0,class:0},
             {damage:0,alt:0,cost:0,attack:0,target:0,desc:'',spec:0,class:0},
         ],
-        },{name:'Strike',rarity:0,list:0,list:5,
+        },{name:'Strike',rarity:0,list:5,
         stats:[
             {damage:6,alt:0,cost:1,attack:1,target:1,desc:'',spec:0,class:0},
             {damage:9,alt:0,cost:1,attack:1,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Defend',rarity:0,list:0,list:5,
+        },{name:'Defend',rarity:0,list:5,
         stats:[
             {damage:5,alt:0,cost:1,attack:2,target:0,desc:'',spec:0,class:1},
             {damage:8,alt:0,cost:1,attack:2,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Big Strike',rarity:0,list:0,list:1,
+        },{name:'Big Strike',rarity:0,list:1,
         stats:[
             {damage:14,alt:0,cost:2,attack:1,target:1,desc:'',spec:0,class:0},
             {damage:22,alt:0,cost:2,attack:1,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Triple\nPunch',rarity:0,list:0,list:1,
+        },{name:'Triple\nPunch',rarity:0,list:1,
         stats:[
             {damage:3,alt:3,cost:1,attack:3,target:1,desc:'',spec:0,class:0},
             {damage:4,alt:3,cost:1,attack:3,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Think',rarity:0,list:0,list:1,
+        },{name:'Think',rarity:0,list:1,
         stats:[
             {damage:2,alt:0,cost:1,attack:4,target:0,desc:'',spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:4,target:0,desc:'',spec:0,class:2},
         ],
-        },{name:'Weaken',rarity:0,list:0,list:1,
+        },{name:'Weaken',rarity:0,list:1,
         stats:[
             {damage:2,alt:0,cost:0,attack:5,target:1,desc:'',spec:0,class:2},
             {damage:3,alt:0,cost:0,attack:5,target:1,desc:'',spec:0,class:2},
@@ -350,8 +350,8 @@ types={
         ],
         },{name:'Cycle\nStrike',rarity:1,list:2,
         stats:[
-            {damage:12,alt:0,cost:2,attack:24,target:1,desc:'',spec:0,class:0},
-            {damage:18,alt:0,cost:2,attack:24,target:1,desc:'',spec:0,class:0},
+            {damage:12,alt:2,cost:2,attack:24,target:1,desc:'',spec:0,class:0},
+            {damage:18,alt:2,cost:2,attack:24,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Sweep',rarity:0,list:0,list:2,
         stats:[
@@ -880,7 +880,17 @@ types={
         },
         
         
-        {name:'Heal Up',rarity:1,list:0,
+        {name:'Swift\nStrike',rarity:1,list:1,
+        stats:[
+            {damage:7,alt:0,cost:1,attack:1,target:0,desc:'',spec:0,class:0},
+            {damage:10,alt:0,cost:1,attack:1,target:0,desc:'',spec:0,class:0},
+        ],
+        },{name:'Instincts',rarity:1,list:1,
+        stats:[
+            {damage:6,alt:0,cost:0,attack:2,target:0,desc:'',spec:0,class:1},
+            {damage:9,alt:0,cost:0,attack:2,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Heal Up',rarity:1,list:0,
         stats:[
             {damage:4,alt:0,cost:1,attack:25,target:0,desc:'',spec:3,class:2},
             {damage:6,alt:0,cost:1,attack:25,target:0,desc:'',spec:3,class:2},
@@ -910,6 +920,16 @@ types={
             {damage:2,alt:1,cost:0,attack:57,target:0,desc:'',spec:0,class:1},
             {damage:4,alt:1,cost:0,attack:57,target:0,desc:'',spec:0,class:1},
         ],
+        },{name:'Flash\nStrike',rarity:1,list:0,
+        stats:[
+            {damage:3,alt:1,cost:0,attack:24,target:1,desc:'',spec:0,class:1},
+            {damage:6,alt:1,cost:0,attack:24,target:1,desc:'',spec:0,class:1},
+        ],
+        },{name:'Panacea',rarity:1,list:0,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:171,target:0,desc:'',spec:0,class:1},
+            {damage:2,alt:0,cost:0,attack:171,target:0,desc:'',spec:0,class:1},
+        ],
         },{name:'Apotheosis',rarity:2,list:0,
         stats:[
             {damage:0,alt:0,cost:2,attack:58,target:0,desc:'',spec:3,class:2},
@@ -935,7 +955,7 @@ types={
             {damage:3,alt:0,cost:2,attack:61,target:0,desc:'',spec:3,class:2},
             {damage:5,alt:0,cost:2,attack:61,target:0,desc:'',spec:3,class:2},
         ],
-        },{name:'Mind Blast',rarity:0,list:0,list:0,
+        },{name:'Mind Blast',rarity:2,list:0,list:0,
         stats:[
             {damage:6,alt:0,cost:2,attack:62,target:1,desc:'',spec:10,class:0},
             {damage:9,alt:0,cost:1,attack:62,target:1,desc:'',spec:2,class:0},
@@ -1491,7 +1511,7 @@ types={
             desc:'Trigger a Weak Evoke on Your Rightmost\nCharge at the Start of Your TUrn',
         },{
             name:'Balance Damage All',id:121,rarity:3,list:4,
-            desc:'When You Break Balance, Deal 10 Damage to All Enemies',
+            desc:'When You Break Balance,\nDeal 10 Damage to All Enemies',
         },{
             name:'Upgrade Half',id:122,rarity:4,list:0,
             desc:'When Taken, Upgrade\nHalf of Your Cards',

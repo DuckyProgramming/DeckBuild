@@ -146,8 +146,9 @@ class attack{
                 break
                 case 24:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.battle.draw()
-                    this.battle.draw()
+                    for(g=0;g<this.alt;g++){
+                        this.battle.draw()
+                    }
                 break
                 case 25:
                     this.battle.combatants[0].life=min(this.battle.combatants[0].life+this.damage*this.battle.random.healEffectiveness,this.battle.combatants[0].base.life)
@@ -831,6 +832,9 @@ class attack{
                 case 170:
                     this.battle.discarding++
                     this.battle.draw()
+                break
+                case 171:
+                    this.battle.combatants[0].status.main[36]+=this.damage
                 break
             }
             this.battle.combatants[0].lastPlay=this.class

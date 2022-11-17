@@ -130,6 +130,12 @@ class group{
         if(this.battle.relics.active[114]){
             this.battle.combatants[0].block+=6
         }
+        if(this.battle.relics.active[119]){
+            transition.trigger=true
+            transition.scene='deck'
+            this.battle.context=7
+            this.battle.context2=3
+        }
         this.storage.cards=[]
         while(this.cards.length>0){
             this.storage.cards.push(copyCard(this.cards[0]))
@@ -204,7 +210,7 @@ class group{
     }
     update(){
         for(e=0,le=this.cards.length;e<le;e++){
-            if(this.cards[e].discard||this.cards[e].remove&&this.relics.active[113]&&floor(random(0,2))==0){
+            if(this.cards[e].discard||this.cards[e].remove&&this.battle.relics.active[113]&&floor(random(0,2))==0){
                 if(this.cards[e].selectDiscard){
                     this.cards[e].selectDiscard=false
                     if(this.cards[e].attack==167){

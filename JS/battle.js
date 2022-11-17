@@ -194,6 +194,9 @@ class battle{
             f=floor(random(0,listing.card[0][e].length))
             this.hand.add(listing.card[0][e][f],0,types.card[listing.card[0][e][f]].list)
         }
+        if(this.relics.active[118]){
+            this.combatants[0].combo+=4
+        }
         this.startTurn()
         this.random.rested=false
         if(this.relics.active[4]){
@@ -365,7 +368,7 @@ class battle{
                 if(this.combatants[e].status.main[f]>0&&f==35){
                     this.combatants[e].block+=this.combatants[e].status.main[f]
                 }
-                if(f==11&&this.combatants[e].status.main[f]>0){
+                if((f==11||f==37)&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                     this.combatants[e].status.main[f]--
                 }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&f!=36){
@@ -426,6 +429,23 @@ class battle{
         }
         if(this.relics.active[80]&&this.counter.turn%5==0){
             this.combatants[0].status.main[34]++
+        }
+        if(this.relics.active[116]){
+            for(e=0,le=this.combatants.length;e<le;e++){
+                if(e==0&&this.counter.turn==0){
+                    this.combatants[e].boost.main[0]+=2
+                }else{
+                    this.combatants[e].boost.main[0]++
+                }
+            }
+        }
+        if(this.relics.active[117]){
+            for(e=1,le=this.combatants.length;e<le;e++){
+                this.combatants[e].status.main[37]+=2
+            }
+        }
+        if(this.relics.active[120]){
+            this.combatants[0].passiveEvoke(this.combatants[0].ammo[0])
         }
     }
     playCard(){
