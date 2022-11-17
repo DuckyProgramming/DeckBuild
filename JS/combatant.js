@@ -865,7 +865,7 @@ class combatant{
 				this.layer.text(round(this.status.main[this.status.display[g]]),-21+g*14,72)
 			}
 		}
-		if(this.team==1){
+		if(this.team==1&&!this.battle.relics.active[132]){
 			displayIntent(this.layer,0,-this.height-30,this.fade,1,this.damage[this.intent],this.altAttack[this.intent],this.attacks[this.intent])
 			if(this.battle.attack.type==81&&this.battle.hand.trigger){
 				displayIntent(this.layer,20,-this.height-50,this.fade,0.5,this.damage[0],this.altAttack[0],this.attacks[0])

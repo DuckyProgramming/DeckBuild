@@ -321,7 +321,7 @@ class battle{
                     }
                 }
             break
-            case 123: case 127: case 131:
+            case 123: case 127: case 131: case 132:
                 this.mana.gen++
                 this.mana.main++
                 this.mana.max++
@@ -659,7 +659,7 @@ class battle{
         }
         for(e=1,le=this.combatants.length;e<le;e++){
             this.combatants[e].block=0
-        }
+        } 
         while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
             this.turn++
             if(this.turn>=this.combatants.length){
