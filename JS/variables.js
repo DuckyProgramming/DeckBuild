@@ -40,7 +40,7 @@ types={
             {damage:2,alt:3,cost:1,attack:6,target:0,desc:'',spec:0,class:1},
             {damage:4,alt:6,cost:1,attack:6,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Dynamic\nShield',rarity:0,list:0,list:1,
+        },{name:'Hunker\nDown',rarity:0,list:0,list:1,
         stats:[
             {damage:4,alt:0,cost:-1,attack:7,target:0,desc:'',spec:0,class:1},
             {damage:6,alt:0,cost:-1,attack:7,target:0,desc:'',spec:0,class:1},
@@ -1078,9 +1078,10 @@ types={
         {name:'Creation',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[6,2,3],altAttack:[0,3,0],class:0},
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0},
-        {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0],class:0},
+        {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0},
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:0},
         {name:'Slime',alt:'',life:30,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,0,0],class:0},
+        {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0},
     ],attack:[
         {class:0},
         {class:0},
@@ -1115,6 +1116,11 @@ types={
             objective:[[0,0,0,0]],
         },{
             combatants:[9,9,0,0,0,0],
+            reinforce:[],
+            threshold:3,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[10,10,0,0,0,0],
             reinforce:[],
             threshold:3,
             objective:[[0,0,0,0]],
@@ -1293,7 +1299,7 @@ types={
             desc:'Every 3 Attacks\nPlayed, Gain 1 Strength',
         },{
             name:'Resting Max HP',id:57,rarity:1,list:0,
-            desc:'Can Gain +2 Max\nHP When Resting',
+            desc:'Can Gain +4 Max\nHP When Resting',
         },{
             name:'Shuffle Energy',id:58,rarity:1,list:0,
             desc:'When You Shuffle Your\nDeck, Gain 1 Energy',
@@ -1398,7 +1404,7 @@ types={
             desc:'Whenever You Take\nDamage, Reduce it by 1',
         },{
             name:'Infinite Cards',id:92,rarity:2,list:0,
-            desc:'If You Have No Cards\nin Your Hand, Draw 1 Card',
+            desc:'If You Have No Cards\nin Your Hand, Draw 1 Card', 
         },{
             name:'Exhaust Damage All',id:93,rarity:2,list:0,
             desc:'Whenever You Exhaust a Card,\nDeal 3 Damage to All Enemies',
@@ -1415,7 +1421,7 @@ types={
             name:'Unplayed Block',id:97,rarity:2,list:0,
             desc:'At the End of Your Turn,\nGain 1 Block per Unplayed Card',
         },{
-            name:'First Turn Shivs',id:98,rarity:2,list:2,
+            name:'First Turn Shivs',id:98,rarity:2,list:0,
             desc:'Add 2 Shiv at the\nStart of Combat',
         },{
             name:'Long Combo',id:99,rarity:2,list:1,
@@ -1443,7 +1449,7 @@ types={
             desc:"When You Break an Enemy's\nBlock, Apply 2 Vulnerable",
         },{
             name:'7 Max HP and Full Heal',id:107,rarity:3,list:0,
-            desc:'When Taken, Gain 7 Max HP and Heal to Full',
+            desc:'When Taken, Gain 7 Max\nHP and Heal to Full',
         },{
             name:'Play Statuses',id:108,rarity:3,list:0,
             desc:'Status Cards\nCan be Played',

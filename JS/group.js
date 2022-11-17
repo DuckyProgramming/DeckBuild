@@ -344,6 +344,7 @@ class group{
                         }
                     }else if(this.cards[e].cost==-1){
                         this.battle.mana.main=0
+                        this.battle.attack.mana+=2
                     }else{
                         this.battle.mana.main-=this.cards[e].cost
                     }
@@ -418,6 +419,10 @@ class group{
                     le--
                     this.battle.currency.money-=this.battle.costs.remove
                     this.battle.costs.remove+=20
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&context==9){
+                    this.cards.push(copyCard(this.cards[e]))
+                    transition.trigger=true
+                    transition.scene='shop'
                 }
                 this.cards[e].select=false
             }

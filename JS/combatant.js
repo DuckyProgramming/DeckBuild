@@ -26,15 +26,15 @@ class combatant{
 			[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120],[125,75,25],[25,125,175],[150,225,150],
 			[100,200,200],[200,0,50],[100,50,150],[50,100,50],[20,60,120],[170,240,255],[235,65,15],[210,200,245],[210,90,0],[50,0,0],
 			[255,200,255],[125,160,160],[200,25,125],[190,190,60],[225,225,75],[255,50,100],[150,150,50],[255,125,25],[255,175,75],[200,125,250],
-			[240,100,50],[150,175,200],[0,100,255],[200,255,200],[225,255,225],[140,160,180]],infoFade:[],name:[
+			[240,100,50],[150,175,200],[0,100,255],[200,255,200],[225,255,225],[140,160,180],[200,150,200]],infoFade:[],name:[
 			'Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Confused',
 			'Reflect','Bleed','Intangible','Sink','Hymn','Mental Fortress','Rush','Wave of the Hand','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Absorb Attacks',
-			'Single Attack Constant','Next Turn Block','Next Turn Dexterity','Buffer','Intangible','Armor'],class:[
+			'Single Attack Constant','Next Turn Block','Next Turn Dexterity','Buffer','Intangible','Armor','Control'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
-			1,1,0,1,1,1]}
+			1,1,0,1,1,1,1]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -739,6 +739,27 @@ class combatant{
 					this.layer.ellipse(8,-30,6,6)
 				break
 				case 10:
+					this.layer.stroke(200,160,80,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(200,160,80,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(150,75,75,this.fade)
+					this.layer.arc(0,-54,18,24,-180,0)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(200,100,100,this.fade)
+					this.layer.arc(0,-72,32,26,0,180)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,8,6)
+					this.layer.ellipse(12,-72,8,6)
+					this.layer.rect(3,-72,24,2)
+				break
+				case 11:
 					this.layer.stroke(80,this.fade)
 					this.layer.strokeWeight(4)
 					this.layer.line(-4,-30,-8,0)
@@ -992,6 +1013,9 @@ class combatant{
 					this.calc.damage-=this.block
 					this.block=0
 					this.life-=this.calc.damage
+					if(this.id>0&&this.battle.relics.active[106]){
+						this.boost.main[1]-=2
+					}
 				}else{
 					this.life-=this.calc.damage
 				}
@@ -1059,6 +1083,10 @@ class combatant{
 			}
 		}
 		for(g=0,lg=this.boost.main.length;g<lg;g++){
+			if(this.status.main[36]>0&&this.boost.main[g]<0){
+				this.boost.main[g]=0
+				this.status.main[36]--
+			}
 			if(this.boost.fade[g]!=0){
 				this.boost.display.push(g)
 			}
@@ -1070,6 +1098,10 @@ class combatant{
 			}
 		}
 		for(g=0,lg=this.status.main.length;g<lg;g++){
+			if(this.status.main[36]>0&&this.status.main[g]>0&&this.status.class[g]==0){
+				this.status.main[g]=0
+				this.status.main[36]--
+			}
 			if(this.status.fade[g]!=0){
 				this.status.display.push(g)
 			}

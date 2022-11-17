@@ -381,4 +381,13 @@ function setupGraphics(){
 	graphics.symbol[35].ellipse(0,0,60,90)
 	graphics.symbol[35].noErase()
 	graphics.symbol[35].rect(0,0,80,4,2)
+	graphics.symbol[36].ellipse(0,0,60,60)
+	graphics.symbol[36].rect(-30,0,15,15)
+	graphics.symbol[36].rect(30,0,15,15)
+	graphics.symbol[36].rect(0,-30,15,15)
+	graphics.symbol[36].rect(0,30,15,15)
+	graphics.symbol[36].erase()
+	graphics.symbol[36].ellipse(0,0,40,40)
+	graphics.symbol[36].noErase()
+	graphics.symbol[36].rect(0,0,15,15)
 }

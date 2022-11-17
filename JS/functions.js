@@ -84,11 +84,22 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 			layer.fill(150,255,150,fade)
 			layer.triangle(-12,-8,12,-8,0,12)
 		break
+		case 8:
+			layer.fill(150,175,200)
+			layer.triangle(-8,-5,8,-5,0,-9)
+			layer.arc(0,-5,16,28,0,180)
+		break
+		case 9:
+			layer.fill(200,0,0,fade)
+			layer.ellipse(0,0,15,15)
+			layer.fill(255,50,50,fade)
+			layer.triangle(-20,0,15,-6,15,6)
+		break
 	}
 	layer.fill(255,fade)
 	layer.textSize(20)
 	switch(type){
-		case 1: case 6: case 7:
+		case 1: case 6: case 7: case 8:
 			layer.text(damage,0,1)
 		break
 		case 2: case 4: case 5:
@@ -97,6 +108,10 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 		case 3:
 			layer.textSize(16)
 			layer.text(damage+'x'+alt,0,0)
+		break
+		case 9:
+			layer.textSize(16)
+			layer.text(damage+'|'+alt,0,1)
 		break
 	}
 	layer.scale(1/size)
@@ -788,6 +803,33 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		case 102:
 			layer.image(graphics.symbol[35],-20,-25,40,40)
 		break
+		case 103:
+			layer.textSize(10)
+			layer.text('X',-8,0)
+			layer.text('+2',8,0)
+			layer.image(graphics.symbol[5],-18,-10,20,20)
+		break
+		case 104:
+			layer.text('1',10,1)
+			layer.image(graphics.symbol[36],-20,-15,30,30)
+		break
+		case 105:
+			layer.textSize(10)
+			layer.text('x2',8,0)
+			layer.image(graphics.symbol[5],-18,-10,20,20)
+		break
+		case 106:
+			layer.image(graphics.symbol[2],-20,-10,20,20)
+			layer.image(graphics.symbol[2],0,-10,20,20)
+			layer.image(graphics.symbol[7],-17,-7,14,14)
+			layer.image(graphics.symbol[11],2,-8,16,16)
+		break
+		case 107:
+			layer.image(graphics.symbol[4],-18,-12,16,16)
+			layer.image(graphics.symbol[17],-2,-12,16,16)
+			layer.textSize(10)
+			layer.text('+7',0,11)
+		break
 		/*
 		0-Redraw
 		1-ArrowRight
@@ -825,6 +867,7 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		33-Armor
 		34-Shiv
 		35-Armed
+		36-Control
 		*/
 	}
 	layer.scale(1/size,1/size/flip)

@@ -866,6 +866,16 @@ class attack{
                 case 7:
                     this.battle.combatants[0].boost.main[0]-=this.damage
                 break
+                case 8:
+                    this.battle.combatants[this.user].block+=this.damage
+                break
+                case 9:
+                    this.battle.combatants[0].take(this.damage,this.user)
+                    if(this.battle.combatants[0].block<=0){
+                        this.battle.combatants[0].status.main[11]+=this.alt
+                    }
+                    this.attacks.push([1,12,this.user,this.damage])
+                break
             }
         }
     }

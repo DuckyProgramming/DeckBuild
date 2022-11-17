@@ -12,6 +12,7 @@ class battle{
         this.combatants=[]
         this.combatants.push(new combatant(this.layer,this,100,350,this.player,0,0))
         this.choice={cards:[]}
+        this.shop={cards:[]}
         this.mana={main:3,gen:3,max:3,base:3}
         this.anim={turn:0,lost:0,end:0}
         this.turn=0
@@ -33,7 +34,7 @@ class battle{
         this.page=0
         this.discarding=0
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
-        this.relics={list:[[],[],[]],owned:[],active:[],shop:[],size:[]}
+        this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0}
         this.deck.initial(this.player)
     }
@@ -86,9 +87,8 @@ class battle{
         this.turnDraw()
     }
     initialEvent(){
-        this.costs.card=[[0,0,0,0,0],[0,0]]
-        this.costs.sale=0
-        this.costs.remove=80
+        this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:80}
+        this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         for(g=0,lg=zones[this.map.zone].events[0].length;g<lg;g++){
             this.eventList.push(zones[this.map.zone].events[0][g])
         }
@@ -182,6 +182,9 @@ class battle{
         }
         if(this.relics.active[66]){
             this.combatants[0].load(0)
+        }
+        if(this.relics.active[104]){
+            this.combatants[0].status.main[36]++
         }
         this.startTurn()
         this.random.rested=false
@@ -278,6 +281,12 @@ class battle{
             case 94:
                 this.random.healEffectiveness++
             break
+            case 105:
+                transition.trigger=true
+                transition.scene='deck'
+                this.setupDeck(9)
+                this.context=9
+            break
         }
     }
     return(){
@@ -315,10 +324,12 @@ class battle{
         this.combatants[0].mantra+=this.combatants[0].status.main[20]
         this.combatants[0].boost.main[2]+=this.combatants[0].status.main[32]
         for(e=0,le=this.combatants.length;e<le;e++){
-            if(e==0&&this.relics.active[69]){
-                this.combatants[e].block=max(0,this.combatants[e].block-15)
-            }else{
-                this.combatants[e].block=0
+            if(e==0){
+                if(this.relics.active[69]){
+                    this.combatants[e].block=max(0,this.combatants[e].block-15)
+                }else{
+                    this.combatants[e].block=0
+                }
             }
             this.combatants[e].setupIntent(-1)
             for(f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
@@ -339,7 +350,7 @@ class battle{
                 if(f==11&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                     this.combatants[e].status.main[f]--
-                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35){
+                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&f!=36){
                     this.combatants[e].status.main[f]=0
                 }
             }
@@ -532,6 +543,9 @@ class battle{
                 this.combatants[0].changeStance(3)
 				this.combatants[0].mantra-=12
             }
+        }
+        for(e=1,le=this.combatants.length;e<le;e++){
+            this.combatants[e].block=0
         }
         while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
             this.turn++
@@ -1200,8 +1214,8 @@ class battle{
                             this.setupDeck(1)
                         break
                         case 3:
-                            this.combatants[0].base.life+=2
-                            this.combatants[0].life+=2
+                            this.combatants[0].base.life+=4
+                            this.combatants[0].life+=4
                             transition.scene='map'
                         break
                         case 4:
@@ -1243,7 +1257,7 @@ class battle{
             this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0)
         }else if(this.context==2||this.context==3){
             this.discard.displayView(-1)
-        }else if(this.context==5||this.context==6){
+        }else if(this.context==5||this.context==6||this.context==9){
             this.deck.displayView(-1)
         }else if(this.context==7||this.context==8){
             this.reserve.displayView(this.context2)
@@ -1255,7 +1269,7 @@ class battle{
         this.layer.textSize(20)
         if(this.context==3||this.context==5||this.context==6){
             this.layer.text('Back',850,570)
-        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8){
+        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9){
             this.layer.text('Skip',850,570)
         }
         if(this.context==6){
@@ -1280,7 +1294,7 @@ class battle{
             this.deck.scroll-=30
         }
         this.deck.scroll=constrain(this.deck.scroll,0,floor(this.deck.cards.length/6)*200-600)
-        if(this.context==1||this.context==4||this.context==5||this.context==6){
+        if(this.context==1||this.context==4||this.context==5||this.context==6||this.context==9){
             this.deck.updateView()
         }
     }
@@ -1294,14 +1308,14 @@ class battle{
                 transition.scene='battle'
             }else if(this.context==3||this.context==7){
                 transition.scene='battle'
-            }else if(this.context==6){
+            }else if(this.context==6||this.context==9){
                 transition.scene='shop'
             }else if(this.context==8){
                 this.draw()
                 transition.scene='battle'
             }
         }
-        if(this.context==1||this.context==4||this.context==6){
+        if(this.context==1||this.context==4||this.context==6||this.context==9){
             this.deck.onClickView(this.context,this.context2)
         }else if(this.context==2){
             this.discard.onClickView(this.context,this.context2)
@@ -1489,7 +1503,7 @@ class battle{
         }
     }
     setupShop(spec){
-        this.choice.cards=[]
+        this.shop.cards=[]
         this.costs.card[0][0]=round(random(40,60))
         this.costs.card[0][1]=round(random(40,60))
         this.costs.card[0][2]=round(random(60,80))
@@ -1502,6 +1516,7 @@ class battle{
         this.costs.relic[2]=round(random(100,120))
         this.costs.relic[3]=round(random(100,120))
         this.costs.relic[4]=round(random(180,200))
+        this.costs.relic[5]=round(random(90,110))
         this.costs.sale=floor(random(0,5))
         this.costs.card[0][this.costs.sale]=round(this.costs.card[0][this.costs.sale]/2)
         switch(spec){
@@ -1510,7 +1525,7 @@ class battle{
                 for(g=0;g<5;g++){
                     if(this.calc.list.length>0){
                         h=floor(random(0,this.calc.list[floor(g/2)].length))
-                        this.choice.cards.push(new card(this.layer,75+g*150,200,this.calc.list[floor(g/2)][h],0,types.card[this.calc.list[floor(g/2)][h]].list))
+                        this.shop.cards.push(new card(this.layer,75+g*150,200,this.calc.list[floor(g/2)][h],0,types.card[this.calc.list[floor(g/2)][h]].list))
                         this.calc.list[floor(g/2)].splice(h,1)
                     }
                 }
@@ -1518,30 +1533,30 @@ class battle{
                 for(g=0;g<2;g++){
                     if(this.calc.list2.length>0){
                         h=floor(random(0,this.calc.list2[g+1].length))
-                        this.choice.cards.push(new card(this.layer,75+g*150,400,this.calc.list2[g+1][h],0,0))
+                        this.shop.cards.push(new card(this.layer,75+g*150,400,this.calc.list2[g+1][h],0,0))
                         this.calc.list2[g+1].splice(h,1)
                     }
                 }
                 this.relics.shop=[]
                 this.calc.list3=this.relics.list
-                for(g=0;g<5;g++){
+                for(g=0;g<6;g++){
                     if(this.calc.list3.length>0){
-                        h=floor(random(0,this.calc.list3[floor(g/2)].length))
-                        this.relics.shop.push(this.calc.list3[floor(g/2)][h])
+                        h=floor(random(0,this.calc.list3[floor(g/2)+floor(g/5)].length))
+                        this.relics.shop.push(this.calc.list3[floor(g/2)+floor(g/5)][h])
                         this.relics.size.push(1)
-                        this.calc.list3[floor(g/2)].splice(h,1)
+                        this.calc.list3[floor(g/2)+floor(g/5)].splice(h,1)
                     }
                 }
             break
         }
-        for(g=0,lg=this.choice.cards.length;g<lg;g++){
-            this.choice.cards[g].size=1
+        for(g=0,lg=this.shop.cards.length;g<lg;g++){
+            this.shop.cards[g].size=1
         }
     }
     displayShop(){
-        for(e=0,le=this.choice.cards.length;e<le;e++){
-            if(this.choice.cards[e]!=0){
-                this.choice.cards[e].display(this.deck.cards.length,this.drawAmount,0)
+        for(e=0,le=this.shop.cards.length;e<le;e++){
+            if(this.shop.cards[e]!=0){
+                this.shop.cards[e].display(this.deck.cards.length,this.drawAmount,0)
             }
         }
         this.layer.fill(160,80,80)
@@ -1563,18 +1578,18 @@ class battle{
         this.layer.textAlign(CENTER,CENTER)
         this.layer.text(this.costs.remove,825,400)
         for(g=0;g<5;g++){
-            if(this.choice.cards[g]!=0){
-                this.layer.fill(255,225,0,this.choice.cards[g].size)
-                this.layer.text(this.costs.card[0][g],this.choice.cards[g].position.x,this.choice.cards[g].position.y+100)
+            if(this.shop.cards[g]!=0){
+                this.layer.fill(255,225,0,this.shop.cards[g].size)
+                this.layer.text(this.costs.card[0][g],this.shop.cards[g].position.x,this.shop.cards[g].position.y+100)
                 if(this.costs.sale==g){
-                    this.layer.text('Sale',this.choice.cards[g].position.x,this.choice.cards[g].position.y-100)
+                    this.layer.text('Sale',this.shop.cards[g].position.x,this.shop.cards[g].position.y-100)
                 }
             }
         }
         for(g=0;g<2;g++){
-            if(this.choice.cards[g+5]!=0){
-                this.layer.fill(255,225,0,this.choice.cards[g+5].size)
-                this.layer.text(this.costs.card[1][g],this.choice.cards[g+5].position.x,this.choice.cards[g+5].position.y+100)
+            if(this.shop.cards[g+5]!=0){
+                this.layer.fill(255,225,0,this.shop.cards[g+5].size)
+                this.layer.text(this.costs.card[1][g],this.shop.cards[g+5].position.x,this.shop.cards[g+5].position.y+100)
             }
         }
         for(e=0,le=this.relics.shop.length;e<le;e++){
@@ -1605,19 +1620,19 @@ class battle{
         if(this.relics.active[25]){
             this.costs.remove=60
         }
-        for(e=0,le=this.choice.cards.length;e<le;e++){
-            if(this.choice.cards[e].used){
-                this.choice.cards[e].size-=0.1
-                if(this.choice.cards[e].size<=0){
+        for(e=0,le=this.shop.cards.length;e<le;e++){
+            if(this.shop.cards[e].used){
+                this.shop.cards[e].size-=0.1
+                if(this.shop.cards[e].size<=0){
                     if(this.relics.active[59]&&this.calc.list.length>0){
                         if(e<5){
                             h=floor(random(0,this.calc.list[floor(e/2)].length))
-                            this.choice.cards[e]=new card(this.layer,this.choice.cards[e].position.x,this.choice.cards[e].position.y,this.calc.list[floor(e/2)][h],0,types.card[this.calc.list[floor(e/2)][h]].list)
+                            this.shop.cards[e]=new card(this.layer,this.shop.cards[e].position.x,this.shop.cards[e].position.y,this.calc.list[floor(e/2)][h],0,types.card[this.calc.list[floor(e/2)][h]].list)
                         }else{
                             h=floor(random(0,this.calc.list2[e-4].length))
-                            this.choice.cards[e]=new card(this.layer,this.choice.cards[e].position.x,this.choice.cards[e].position.y,this.calc.list2[e-4][h],0,types.card[this.calc.list2[floor(e-4)][h]].list)
+                            this.shop.cards[e]=new card(this.layer,this.shop.cards[e].position.x,this.shop.cards[e].position.y,this.calc.list2[e-4][h],0,types.card[this.calc.list2[floor(e-4)][h]].list)
                         }
-                        this.choice.cards[e].used=false
+                        this.shop.cards[e].used=false
                         if(e==0){
                             this.costs.card[0][0]=round(random(40,60))
                         }else if(e==1){
@@ -1637,11 +1652,11 @@ class battle{
                             this.costs.card[0][e]=round(this.costs.card[0][e]/2)
                         }
                     }else{
-                        this.choice.cards[e]=0
+                        this.shop.cards[e]=0
                     }
                 }
-            }else if(this.choice.cards[e].size<1){
-                this.choice.cards[e].size=round(this.choice.cards[e].size*10+1)/10
+            }else if(this.shop.cards[e].size<1){
+                this.shop.cards[e].size=round(this.shop.cards[e].size*10+1)/10
             }
         }
         for(e=0,le=this.relics.shop.length;e<le;e++){
@@ -1662,12 +1677,12 @@ class battle{
             this.setupDeck(6)
             this.context=6
         }
-        for(e=0,le=this.choice.cards.length;e<le;e++){
-            if(this.choice.cards[e]!=0){
-                if(pointInsideBox({position:inputs.rel},this.choice.cards[e])&&this.currency.money>=this.costs.card[floor(e/5)][e%5]&&!this.choice.cards[e].used){
-                    this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+        for(e=0,le=this.shop.cards.length;e<le;e++){
+            if(this.shop.cards[e]!=0){
+                if(pointInsideBox({position:inputs.rel},this.shop.cards[e])&&this.currency.money>=this.costs.card[floor(e/5)][e%5]&&!this.shop.cards[e].used){
+                    this.deck.add(this.shop.cards[e].type,this.shop.cards[e].level,this.shop.cards[e].color)
                     this.currency.money-=this.costs.card[floor(e/5)][e%5]
-                    this.choice.cards[e].used=true
+                    this.shop.cards[e].used=true
                 }
             }
         }
