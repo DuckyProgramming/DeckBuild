@@ -522,6 +522,9 @@ class battle{
         if(this.relics.active[120]){
             this.combatants[0].passiveEvoke(this.combatants[0].ammo[0])
         }
+        if(this.relics.active[134]&&(this.random.class==1||this.random.class==2)){
+            this.mana.main++
+        }
     }
     playCard(){
         this.counter.played++
