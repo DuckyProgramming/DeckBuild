@@ -18,19 +18,19 @@ class group{
         }*/
         switch(type){
             case 1:
-                for(e=0;e<4;e++){
+                /*for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Big Strike'),0,this.battle.player)
-                this.add(findCard('Triple\nPunch'),0,this.battle.player)
-                /*this.add(67,0,this.battle.player)
+                this.add(findCard('Triple\nPunch'),0,this.battle.player)*/
+                this.add(67,0,this.battle.player)
                 this.add(68,0,this.battle.player)
                 this.add(69,0,this.battle.player)
                 this.add(70,0,this.battle.player)
-                this.add(71,0,this.battle.player)*/
+                this.add(71,0,this.battle.player)
             break
             case 2:
                 for(e=0;e<4;e++){
@@ -417,17 +417,19 @@ class group{
                     transition.trigger=true
                     transition.scene='map'
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&context==4&&this.cards.length>0){
-                    this.cards.splice(e,1)
+                    this.battle.removeCard(e)
                     e--
                     le--
                     transition.trigger=true
                     transition.scene='map'
+                    break
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&context==6&&this.battle.currency.money>=this.battle.costs.remove&&this.cards.length>0){
-                    this.cards.splice(e,1)
+                    this.battle.removeCard(e)
                     e--
                     le--
                     this.battle.currency.money-=this.battle.costs.remove
                     this.battle.costs.remove+=20
+                    break
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&context==9){
                     this.cards.push(copyCard(this.cards[e]))
                     transition.trigger=true

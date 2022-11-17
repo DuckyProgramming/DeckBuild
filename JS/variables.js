@@ -1038,6 +1038,11 @@ types={
             {damage:0,alt:0,cost:0,attack:-2,target:0,desc:'',spec:1,class:-2},
             {damage:0,alt:0,cost:0,attack:-2,target:0,desc:'',spec:1,class:-2},
         ],
+        },{name:'Hoarding',rarity:-1,list:10,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-13,target:0,desc:'',spec:1,class:-2},
+            {damage:0,alt:0,cost:0,attack:-13,target:0,desc:'',spec:1,class:-2},
+        ],
         },
         
         
@@ -1526,13 +1531,13 @@ types={
             desc:'Gain 1 Base Energy,\nCannot Heal at Rest',
         },{
             name:'Energy / Curse',id:126,rarity:4,list:0,
-            desc:'Gain 1 Base Energy,\nGain 3 Curses',
+            desc:'Gain 1 Base Energy,\nGain 2 Curses',
         },{
             name:'Energy / No Currency',id:127,rarity:4,list:0,
-            desc:'Gain 1 Base Energy,\nCannot Gain Currency',
+            desc:'Gain 1 Base Energy,\nHave No Currency',
         },{
-            name:'Remove 2',id:128,rarity:4,list:0,
-            desc:'Remove 2 Cards\nfrom Your Deck',
+            name:'Remove Unupgraded',id:128,rarity:4,list:0,
+            desc:'Remove Half of All Unupgraded\nCards from Your Deck',
         },{
             name:'Energy / Upgrade',id:129,rarity:4,list:0,
             desc:'Gain 1 Base Energy,\nCannot Upgrade at Rest',

@@ -26,7 +26,7 @@ class battle{
         this.counter={}
         this.end=false
         this.map={main:[],complete:[],scroll:0,scrollGoal:100,position:[0,0],zone:0}
-        this.restOptions=[1,2]
+        this.restOptions=[0,1,2]
         this.context=0
         this.context2=0
         this.eventList=[]
@@ -316,11 +316,56 @@ class battle{
                     }
                 }
             break
-            case 123:
+            case 123: case 127:
                 this.mana.gen++
                 this.mana.main++
                 this.mana.max++
                 this.mana.base++
+            break
+            case 124:
+                this.deck.add(findCard('Hoarding'),0,stage.playerNumber+2)
+                for(g=0;g<3;g++){
+                    f=floor(random(0,this.relics.list[g].length))
+                    this.getRelic(this.relics.list[g][f])
+                    this.relics.list[g].splice(f,1)
+                }
+            break
+            case 125:
+                this.mana.gen++
+                this.mana.main++
+                this.mana.max++
+                this.mana.base++
+                this.restOptions.splice(this.restOptions.indexOf(1),1)
+            break
+            case 126:
+                this.mana.gen++
+                this.mana.main++
+                this.mana.max++
+                this.mana.base++
+                this.calc.list=listing.card[10]
+                for(g=0;g<2;g++){
+                    if(this.calc.list.length>0){
+                        h=floor(random(0,this.calc.list[3].length))
+                        this.deck.add(this.calc.list[3][h],0,stage.playerNumber+2)
+                        this.calc.list[3].splice(h,1)
+                    }
+                }
+            break
+            case 128:
+                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
+                    if(floor(random(0,2))==0&&this.deck.cards[g].level==0){
+                        this.deck.cards.splice(g,1)
+                        g--
+                        lg--
+                    }
+                }
+            break
+            case 129:
+                this.mana.gen++
+                this.mana.main++
+                this.mana.max++
+                this.mana.base++
+                this.restOptions.splice(this.restOptions.indexOf(2),1)
             break
         }
     }
@@ -337,7 +382,9 @@ class battle{
             this.combatants[0].base.life-=3
             this.combatants[0].life-=3
         }
-        this.deck.cards.splice(index,1)
+        if(this.deck.cards[index].attack!=-13){
+            this.deck.cards.splice(index,1)
+        }
     }
     endTurn(){
         this.counter.turn++
@@ -921,7 +968,7 @@ class battle{
                                 g=this.calc.list[floor(random(0,this.calc.list.length))]
                                 f=floor(random(0,this.relics.list[g].length))
                                 this.getRelic(this.relics.list[g][f])
-                                this.relics.list[0].splice(f,1)
+                                this.relics.list[g].splice(f,1)
                             break
                         }
                     }
@@ -1391,7 +1438,7 @@ class battle{
         if(inputs.keys[0][3]||inputs.keys[1][3]){
             this.deck.scroll-=30
         }
-        this.deck.scroll=constrain(this.deck.scroll,0,floor(this.deck.cards.length/6)*200-600)
+        this.deck.scroll=constrain(this.deck.scroll,0,floor(this.deck.cards.length/6)*200-400)
         if(this.context==1||this.context==4||this.context==5||this.context==6||this.context==9){
             this.deck.updateView()
         }
@@ -1800,6 +1847,11 @@ class battle{
                 this.currency.money-=this.costs.relic[e]
                 this.relics.size[e]=0.9
             }
+        }
+    }
+    updateFull(){
+        if(this.relics.active[127]){
+            this.currency.money=0
         }
     }
 }
