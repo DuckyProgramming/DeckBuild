@@ -127,6 +127,9 @@ class group{
         if(this.battle.relics.active[58]){
             this.battle.mana.main++
         }
+        if(this.battle.relics.active[114]){
+            this.battle.combatants[0].block+=6
+        }
         this.storage.cards=[]
         while(this.cards.length>0){
             this.storage.cards.push(copyCard(this.cards[0]))
@@ -201,7 +204,7 @@ class group{
     }
     update(){
         for(e=0,le=this.cards.length;e<le;e++){
-            if(this.cards[e].discard){
+            if(this.cards[e].discard||this.cards[e].remove&&this.relics.active[113]&&floor(random(0,2))==0){
                 if(this.cards[e].selectDiscard){
                     this.cards[e].selectDiscard=false
                     if(this.cards[e].attack==167){

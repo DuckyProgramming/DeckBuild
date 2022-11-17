@@ -88,7 +88,7 @@ class battle{
     }
     initialEvent(){
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:80}
-        this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
+        this.relics={list:[[],[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         for(g=0,lg=zones[this.map.zone].events[0].length;g<lg;g++){
             this.eventList.push(zones[this.map.zone].events[0][g])
         }
@@ -188,6 +188,11 @@ class battle{
         }
         if(this.relics.active[112]&&this.random.class==1){
             this.combatants[0].boost.main[0]+=3
+        }
+        if(this.relics.active[115]){
+            e=floor(random(0,2))
+            f=floor(random(0,listing.card[0][e].length))
+            this.hand.add(listing.card[0][e][f],0,types.card[listing.card[0][e][f]].list)
         }
         this.startTurn()
         this.random.rested=false

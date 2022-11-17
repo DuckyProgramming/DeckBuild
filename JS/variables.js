@@ -1340,7 +1340,7 @@ types={
             name:'Third Turn Block',id:70,rarity:2,list:0,
             desc:'Gain 18 Block at\nthe Start of Turn 3',
         },{
-            name:'Sitck',id:71,rarity:2,list:0,
+            name:'Exhaust Add Random',id:71,rarity:2,list:0,
             desc:'When a Card is Exhausted, Add\na Random Card to Your Hand',
         },{
             name:'Curse Strength',id:72,rarity:2,list:0,
