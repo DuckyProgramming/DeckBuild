@@ -308,6 +308,20 @@ class battle{
                 this.setupChoice(0,0,3)
                 this.context=-1
             break
+            case 122:
+                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
+                    if(floor(random(0,2))==0&&this.deck.cards[g].level==0){
+                        this.deck.cards[g].level++
+                        this.deck.cards[g]=reformCard(this.deck.cards[g])
+                    }
+                }
+            break
+            case 123:
+                this.mana.gen++
+                this.mana.main++
+                this.mana.max++
+                this.mana.base++
+            break
         }
     }
     return(){
@@ -936,20 +950,38 @@ class battle{
                 }else{
                     this.calc.list=listing.card[this.player][rarity]
                 }
-                if(this.relics.active[55]){
-                    for(g=0;g<4;g++){
+                if(this.relics.active[123]){
+                    if(this.relics.active[55]){
+                        for(g=0;g<2;g++){
+                            if(this.calc.list.length>0){
+                                h=this.calc.list[floor(random(0,this.calc.list.length))]
+                                this.choice.cards.push(new card(this.layer,300+g*300,300,h,level,types.card[h].list))
+                                this.calc.list.splice(h,1)
+                            }
+                        }
+                    }else{
                         if(this.calc.list.length>0){
                             h=this.calc.list[floor(random(0,this.calc.list.length))]
-                            this.choice.cards.push(new card(this.layer,180+g*180,300,h,level,types.card[h].list))
+                            this.choice.cards.push(new card(this.layer,450,300,h,level,types.card[h].list))
                             this.calc.list.splice(h,1)
                         }
                     }
                 }else{
-                    for(g=0;g<3;g++){
-                        if(this.calc.list.length>0){
-                            h=this.calc.list[floor(random(0,this.calc.list.length))]
-                            this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
-                            this.calc.list.splice(h,1)
+                    if(this.relics.active[55]){
+                        for(g=0;g<4;g++){
+                            if(this.calc.list.length>0){
+                                h=this.calc.list[floor(random(0,this.calc.list.length))]
+                                this.choice.cards.push(new card(this.layer,180+g*180,300,h,level,types.card[h].list))
+                                this.calc.list.splice(h,1)
+                            }
+                        }
+                    }else{
+                        for(g=0;g<3;g++){
+                            if(this.calc.list.length>0){
+                                h=this.calc.list[floor(random(0,this.calc.list.length))]
+                                this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
+                                this.calc.list.splice(h,1)
+                            }
                         }
                     }
                 }

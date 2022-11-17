@@ -912,6 +912,14 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[14],-19,-10,20,20)
 			layer.image(graphics.symbol[7],0,-10,20,20)
 		break
+		case 122:
+			layer.textSize(10)
+			layer.text('50%',0,11)
+			layer.text('+',0,-5)
+			layer.image(graphics.symbol[5],-10,-15,20,20)
+		break
+		case 123:
+		break
 		/*
 		0-Redraw
 		1-ArrowRight

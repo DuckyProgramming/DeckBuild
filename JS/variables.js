@@ -880,12 +880,12 @@ types={
         },
         
         
-        {name:'Swift\nStrike',rarity:1,list:1,
+        {name:'Swift\nStrike',rarity:1,list:0,
         stats:[
-            {damage:7,alt:0,cost:1,attack:1,target:0,desc:'',spec:0,class:0},
-            {damage:10,alt:0,cost:1,attack:1,target:0,desc:'',spec:0,class:0},
+            {damage:7,alt:0,cost:0,attack:1,target:0,desc:'',spec:0,class:0},
+            {damage:10,alt:0,cost:0,attack:1,target:0,desc:'',spec:0,class:0},
         ],
-        },{name:'Instincts',rarity:1,list:1,
+        },{name:'Instincts',rarity:1,list:0,
         stats:[
             {damage:6,alt:0,cost:0,attack:2,target:0,desc:'',spec:0,class:1},
             {damage:9,alt:0,cost:0,attack:2,target:0,desc:'',spec:0,class:1},
@@ -1967,8 +1967,8 @@ listing={
 }
 zones=[
     {
-        encounters:[1],
-        elites:[2],
+        encounters:[1,5],
+        elites:[2,6],
         special:[4,3],
         bosses:[2],
         events:[

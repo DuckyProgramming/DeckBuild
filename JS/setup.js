@@ -7,7 +7,7 @@ function setup(){
 
     current.initialEvent()
 
-    current.getRelic(122)
+    current.getRelic(123)
     current.create()
 
     //transition.trigger=true
