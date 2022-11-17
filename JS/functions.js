@@ -166,6 +166,7 @@ function generateListing(cards){
 				listing.card[cards[a].list][3].push(a)
 			}else{
 				listing.card[cards[a].list][cards[a].rarity].push(a)
+				listing.card[13][cards[a].rarity].push(a)
 			}
 		}
 	}
@@ -829,6 +830,32 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[17],-2,-12,16,16)
 			layer.textSize(10)
 			layer.text('+7',0,11)
+		break
+		case 108:
+			layer.text('S',0,-3)
+			layer.image(graphics.symbol[5],-12,-16,24,24)
+			layer.image(graphics.symbol[1],-10,2,20,20)
+		break
+		case 109:
+			layer.text('$/2',0,2)
+		break
+		case 110:
+			layer.image(graphics.symbol[5],-18,-2,12,12)
+			layer.image(graphics.symbol[5],-12,-14,12,12)
+			layer.image(graphics.symbol[5],-6,-2,12,12)
+			layer.image(graphics.symbol[5],0,-14,12,12)
+			layer.image(graphics.symbol[5],6,-2,12,12)
+		break
+		case 111:
+			layer.image(graphics.symbol[5],-18,-6,12,12)
+			layer.image(graphics.symbol[5],-6,-15,12,12)
+			layer.image(graphics.symbol[5],6,-6,12,12)
+			layer.image(graphics.symbol[5],-6,3,12,12)
+		break
+		case 112:
+			layer.image(graphics.symbol[16],-20,-10,20,20)
+			layer.image(graphics.symbol[7],-2,-10,20,20)
+			layer.image(graphics.symbol[15],0,-8,16,16)
 		break
 		/*
 		0-Redraw

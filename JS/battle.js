@@ -35,7 +35,7 @@ class battle{
         this.discarding=0
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0}
         this.deck.initial(this.player)
     }
     create(){
@@ -186,6 +186,9 @@ class battle{
         if(this.relics.active[104]){
             this.combatants[0].status.main[36]++
         }
+        if(this.relics.active[112]&&this.random.class==1){
+            this.combatants[0].boost.main[0]+=3
+        }
         this.startTurn()
         this.random.rested=false
         if(this.relics.active[4]){
@@ -286,6 +289,16 @@ class battle{
                 transition.scene='deck'
                 this.setupDeck(9)
                 this.context=9
+            break
+            case 107:
+                this.combatants[0].base.life+=7
+                this.combatants[0].life=this.combatants[0].base.life
+            break
+            case 110:
+                transition.trigger=true
+                transition.scene='choice'
+                this.setupChoice(0,0,3)
+                this.context=-1
             break
         }
     }
@@ -893,7 +906,11 @@ class battle{
         this.random.picked=0
         switch(spec){
             case 0:
-                this.calc.list=listing.card[this.player][rarity]
+                if(this.relics.active[111]){
+                    this.calc.list=listing.card[13][rarity]
+                }else{
+                    this.calc.list=listing.card[this.player][rarity]
+                }
                 if(this.relics.active[55]){
                     for(g=0;g<4;g++){
                         if(this.calc.list.length>0){
@@ -920,6 +937,22 @@ class battle{
             case 2:
                 h=listing.card[this.player][rarity][floor(random(0,listing.card[this.player][rarity].length))]
                 this.choice.cards.push(new card(this.layer,450,300,h,level,types.card[h].list))
+            break
+            case 3:
+                this.calc.list=listing.card[this.player][0]
+                for(g=0,lg=listing.card[this.player][1].length;g<lg;g++){
+                    this.calc.list.push(listing.card[this.player][1][g])
+                }
+                for(g=0,lg=listing.card[this.player][2].length;g<lg;g++){
+                    this.calc.list.push(listing.card[this.player][2][g])
+                }
+                for(g=0;g<5;g++){
+                    if(this.calc.list.length>0){
+                        h=this.calc.list[floor(random(0,this.calc.list.length))]
+                        this.choice.cards.push(new card(this.layer,150+g*150,300,h,level,types.card[h].list))
+                        this.calc.list.splice(h,1)
+                    }
+                }
             break
         }
         for(g=0,lg=this.choice.cards.length;g<lg;g++){
@@ -949,14 +982,19 @@ class battle{
     onClickChoice(){
         if(pointInsideBox({position:inputs.rel},{position:{x:450,y:450},width:80,height:40})){
             transition.trigger=true
-            transition.scene='map'
+            if(this.context==-1){
+                transition.scene='shop'
+            }else{
+                transition.scene='map'
+            }
         }
         for(e=0,le=this.choice.cards.length;e<le;e++){
             if(pointInsideBox({position:inputs.rel},this.choice.cards[e])&&this.choice.cards[e].size>=1){
                 this.random.picked++
-                if(this.random.picked==1&&!this.relics.active[86]||this.random.picked==2)
-                transition.trigger=true
-                transition.scene='map'
+                if((this.random.picked==1&&!this.relics.active[86]||this.random.picked==2)&&this.context!=-1){
+                    transition.trigger=true
+                    transition.scene='map'
+                }
                 this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
                 this.choice.cards[e].used=true
             }
@@ -1089,11 +1127,13 @@ class battle{
                     switch(this.map.main[e][f]){
                         case 0:
                             transition.scene='battle'
+                            this.random.class=0
                             setupEncounter(current,zones[this.map.zone].encounters[floor(random(0,zones[this.map.zone].encounters.length))])
                             this.create()
                         break
                         case 1:
                             transition.scene='battle'
+                            this.random.class=1
                             setupEncounter(current,zones[this.map.zone].elites[floor(random(0,zones[this.map.zone].elites.length))])
                             this.create()
                             if(this.relics.active[23]){
@@ -1134,6 +1174,7 @@ class battle{
                         break
                         case 5:
                             transition.scene='battle'
+                            this.random.class=2
                             setupEncounter(current,zones[this.map.zone].bosses[floor(random(0,zones[this.map.zone].bosses.length))])
                             this.create()
                             if(this.relics.active[53]){
@@ -1518,6 +1559,16 @@ class battle{
         this.costs.relic[4]=round(random(180,200))
         this.costs.relic[5]=round(random(90,110))
         this.costs.sale=floor(random(0,5))
+        if(this.relics.active[109]){
+            for(g=0,lg=this.costs.card.length;g<lg;g++){
+                for(h=0,lh=this.costs.card[g].length;h<lh;h++){
+                    this.costs.card[g][h]=round(this.costs.card[g][h]/2)
+                }
+            }
+            for(g=0,lg=this.costs.relic.length;g<lg;g++){
+                this.costs.relic[g]=round(this.costs.relic[g]/2)
+            }
+        }
         this.costs.card[0][this.costs.sale]=round(this.costs.card[0][this.costs.sale]/2)
         switch(spec){
             case 0:

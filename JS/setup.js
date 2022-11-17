@@ -3,11 +3,11 @@ function setup(){
     setupGraphics()
     current=new battle(graphics.main,1)
     generateListing(types.card)
-    setupEncounter(current,6)
+    setupEncounter(current,1)
 
     current.initialEvent()
 
-    current.getRelic(107)
+    current.getRelic(112)
 
     current.create()
 

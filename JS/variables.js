@@ -1451,7 +1451,7 @@ types={
             name:'7 Max HP and Full Heal',id:107,rarity:3,list:0,
             desc:'When Taken, Gain 7 Max\nHP and Heal to Full',
         },{
-            name:'Play Statuses',id:108,rarity:3,list:0,
+            name:'Status Play',id:108,rarity:3,list:0,
             desc:'Status Cards\nCan be Played',
         },{
             name:'Shop Discount',id:109,rarity:3,list:0,
@@ -1481,21 +1481,66 @@ types={
             name:'Poison All',id:117,rarity:3,list:0,
             desc:'At the Start of Your Turn,\nAll Enemies Gain 2 Poison',
         },{
-            name:'Starting Combo',id:118,rarity:3,list:0,
+            name:'Starting Combo',id:118,rarity:3,list:1,
             desc:'Gain 4 Combo at the\nStart of Combat',
         },{
-            name:'Shuffle Scry',id:119,rarity:3,list:0,
+            name:'Shuffle Scry',id:119,rarity:3,list:2,
             desc:'Whenever You Shuffle\nYour Deck, Scry 3',
         },{
-            name:'Charge Passive',id:120,rarity:3,list:0,
+            name:'Charge Passive',id:120,rarity:3,list:3,
             desc:'Trigger a Weak Evoke on Your Rightmost\nCharge at the Start of Your TUrn',
         },{
-            name:'Balance Damage All',id:121,rarity:3,list:0,
+            name:'Balance Damage All',id:121,rarity:3,list:4,
             desc:'When You Break Balance, Deal 10 Damage to All Enemies',
+        },{
+            name:'Upgrade Half',id:122,rarity:4,list:0,
+            desc:'When Taken, Upgrade\nHalf of Your Cards',
+        },{
+            name:'Energy / Less Cards',id:123,rarity:4,list:0,
+            desc:'Gain 1 Base Energy, Have 2\nLess Cards to Choose From',
+        },{
+            name:'Relic / Curse',id:124,rarity:4,list:0,
+            desc:'When Taken, Gain 3 Relics,\nand a Special Curse',
+        },{
+            name:'Energy / Heal',id:125,rarity:4,list:0,
+            desc:'Gain 1 Base Energy,\nCannot Heal at Rest',
+        },{
+            name:'Energy / Curse',id:126,rarity:4,list:0,
+            desc:'Gain 1 Base Energy,\nGain 3 Curses',
+        },{
+            name:'Energy / No Currency',id:127,rarity:4,list:0,
+            desc:'Gain 1 Base Energy,\nCannot Gain Currency',
+        },{
+            name:'Remove 2',id:128,rarity:4,list:0,
+            desc:'Remove 2 Cards\nfrom Your Deck',
+        },{
+            name:'Energy / Upgrade',id:129,rarity:4,list:0,
+            desc:'Gain 1 Base Energy,\nCannot Upgrade at Rest',
+        },{
+            name:'Transformation',id:130,rarity:4,list:0,
+            desc:'Transform All Strikes\nand Defends',
+        },{
+            name:'Energy / Strength',id:131,rarity:4,list:0,
+            desc:'Gain 1 Base Energy, Enemies\nStart With 1 Strength',
+        },{
+            name:'Energy / Intents',id:132,rarity:4,list:0,
+            desc:'Gain 1 Base Energy,\nCannot See Intents',
+        },{
+            name:'No Discard',id:133,rarity:4,list:0,
+            desc:'You Do Not Discard Your\nHand at the End of Your Turn',
+        },{
+            name:'Elite / Boss Energy',id:134,rarity:4,list:0,
+            desc:'Gain 1 Energy on\nElite and Boss Combats',
+        },{
+            name:'Standard Draw',id:135,rarity:4,list:0,
+            desc:'Draw 1 More\nCard per Turn',
+        },{
+            name:'Energy / Max Cards',id:136,rarity:4,list:0,
+            desc:'Gain 1 Base Energy, Cannot\nPlay More Than 6 Cards',
         },
         
         /*{
-            name:'',id:12,rarity:3,list:0,
+            name:'',id:13,rarity:4,list:0,
             desc:'',
         },*/
     ],event:[
@@ -1898,7 +1943,7 @@ types={
     ],
 }
 listing={
-    card:[[],[],[],[],[],[],[],[],[],[],[],[],[]],
+    card:[[],[],[],[],[],[],[],[],[],[],[],[],[],[]],
 }
 zones=[
     {
