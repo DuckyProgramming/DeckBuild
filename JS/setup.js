@@ -7,7 +7,7 @@ function setup(){
 
     current.initialEvent()
 
-    current.getRelic(134)
+    current.getRelic(135)
     
     current.create()
 

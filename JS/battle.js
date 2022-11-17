@@ -525,6 +525,9 @@ class battle{
         if(this.relics.active[134]&&(this.random.class==1||this.random.class==2)){
             this.mana.main++
         }
+        if(this.relics.active[135]){
+            this.draw()
+        }
     }
     playCard(){
         this.counter.played++
