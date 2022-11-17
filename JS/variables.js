@@ -1415,21 +1415,81 @@ types={
             name:'Unplayed Block',id:97,rarity:2,list:0,
             desc:'At the End of Your Turn,\nGain 1 Block per Unplayed Card',
         },{
-            name:'Risky Combo',id:98,rarity:2,list:1,
-            desc:'Combo Never Decreases, Lose\nAll Combo when Damage Taken',
-        },{
-            name:'First Turn Shivs',id:99,rarity:2,list:2,
+            name:'First Turn Shivs',id:98,rarity:2,list:2,
             desc:'Add 2 Shiv at the\nStart of Combat',
         },{
-            name:'Starting Explosion',id:100,rarity:2,list:3,
+            name:'Long Combo',id:99,rarity:2,list:1,
+            desc:'Combo Cards Only Remove 2 Combo',
+        },{
+            name:'Effective Stance',id:100,rarity:2,list:2,
+            desc:'Deal 3x Damage in Wrath\nand 4x Damage in Divinity',
+        },{
+            name:'Starting Explosive',id:101,rarity:2,list:3,
             desc:'At the Start of Combat,\nCharge 1 Explosive Charge',
         },{
-            name:'Rearm',id:101,rarity:2,list:4,
+            name:'Rearm',id:102,rarity:2,list:4,
             desc:'If Unarmed, Rearm\nat End of Turn',
+        },{
+            name:'X Cost Buff',id:103,rarity:3,list:0,
+            desc:'X Cost Cards\nGet +2 to X',
+        },{
+            name:'First Turn Control',id:104,rarity:3,list:0,
+            desc:'Gain 1 Control at\nthe Start of Combat',
+        },{
+            name:'Double Card',id:105,rarity:3,list:0,
+            desc:'When Taken,\nDuplicate a Card',
+        },{
+            name:'Block Break Vulnerable',id:106,rarity:3,list:0,
+            desc:"When You Break an Enemy's\nBlock, Apply 2 Vulnerable",
+        },{
+            name:'7 Max HP and Full Heal',id:107,rarity:3,list:0,
+            desc:'When Taken, Gain 7 Max HP and Heal to Full',
+        },{
+            name:'Play Statuses',id:108,rarity:3,list:0,
+            desc:'Status Cards\nCan be Played',
+        },{
+            name:'Shop Discount',id:109,rarity:3,list:0,
+            desc:'All Shop Prices\nare Reduced by 2x',
+        },{
+            name:'Add 5 Cards',id:110,rarity:3,list:0,
+            desc:'When Taken,\nAdd 5 Cards',
+        },{
+            name:'Color Mix',id:111,rarity:3,list:0,
+            desc:'After Combat, Cards of\nAny Color Can Drop',
+        },{
+            name:'Elite Strength',id:112,rarity:3,list:0,
+            desc:'Gain 3 Strength at the\nStart of Elite Combats',
+        },{
+            name:'Exhaust Chance',id:113,rarity:3,list:0,
+            desc:'Exhausting Cards Only\nExhaust Half of the Time',
+        },{
+            name:'Shuffle Block',id:114,rarity:3,list:0,
+            desc:'Whenever You Shuffle\nYour Deck, Gain 6 Block',
+        },{
+            name:'First Turn Colorless Card',id:115,rarity:3,list:0,
+            desc:'Add 1 Random Colorless Card\nat the Start of Combat',
+        },{
+            name:'Strength Burst',id:116,rarity:3,list:0,
+            desc:'At the Start of Your Turn, Gain 2 Strength,\nand All Enemies Gain 1 Strength',
+        },{
+            name:'Poison All',id:117,rarity:3,list:0,
+            desc:'At the Start of Your Turn,\nAll Enemies Gain 2 Poison',
+        },{
+            name:'Starting Combo',id:118,rarity:3,list:0,
+            desc:'Gain 4 Combo at the\nStart of Combat',
+        },{
+            name:'Shuffle Scry',id:119,rarity:3,list:0,
+            desc:'Whenever You Shuffle\nYour Deck, Scry 3',
+        },{
+            name:'Charge Passive',id:120,rarity:3,list:0,
+            desc:'Trigger a Weak Evoke on Your Rightmost\nCharge at the Start of Your TUrn',
+        },{
+            name:'Balance Damage All',id:121,rarity:3,list:0,
+            desc:'When You Break Balance, Deal 10 Damage to All Enemies',
         },
         
         /*{
-            name:'',id:10,rarity:2,list:0,
+            name:'',id:12,rarity:3,list:0,
             desc:'',
         },*/
     ],event:[

@@ -337,7 +337,11 @@ class group{
                     this.battle.attack.combo=this.battle.combatants[0].combo
                     this.battle.attack.color=this.cards[e].color
                     if(this.cards[e].spec==4){
-                        this.battle.combatants[0].combo-=this.cards[e].cost
+                        if(this.battle.relics.active[99]){
+                            this.battle.combatants[0].combo-=min(this.cards[e].cost,2)
+                        }else{
+                            this.battle.combatants[0].combo-=this.cards[e].cost
+                        }
                     }else if(this.cards[e].cost==-1){
                         this.battle.mana.main=0
                     }else{

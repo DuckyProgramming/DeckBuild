@@ -156,9 +156,6 @@ class battle{
         if(this.relics.active[65]){
             this.combatants[0].stance=1
         }
-        if(this.relics.active[66]){
-            this.combatants[0].load(0)
-        }
         if(this.relics.active[72]){
             for(e=0,le=this.deck.cards.length;e<le;e++){
                 if(this.deck.cards[e].list==10){
@@ -175,6 +172,16 @@ class battle{
         if(this.relics.active[89]){
             this.combatants[0].status.main[35]+=4
             this.combatants[0].block+=4
+        }
+        if(this.relics.active[98]){
+            this.hand.add(findCard('Shiv'),0,0)
+            this.hand.add(findCard('Shiv'),0,0)
+        }
+        if(this.relics.active[101]){
+            this.combatants[0].load(1)
+        }
+        if(this.relics.active[66]){
+            this.combatants[0].load(0)
         }
         this.startTurn()
         this.random.rested=false
@@ -366,6 +373,9 @@ class battle{
                 this.draw()
             }
         }
+        if(this.relics.active[102]&&!this.combatants[0].armed){
+            this.combatants[0].armed=true
+        }
         this.startTurn()
         this.counter.played=0
         this.random.attacked=0
@@ -506,6 +516,13 @@ class battle{
         this.discard.allUpgrade()
     }
     close(){
+        if(this.relics.active[97]){
+            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                if(!this.hand.cards[g].trigger){
+                    this.combatants[0].block++
+                }
+            }
+        }
         this.hand.discard()
         this.turn++
         this.turnTimer=20

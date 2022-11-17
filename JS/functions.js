@@ -758,6 +758,36 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[5],-20,-10,20,20)
 			layer.image(graphics.symbol[2],-2,-10,20,20)
 		break
+		case 97:
+			layer.textSize(10)
+			layer.text('1',7,-5)
+			layer.image(graphics.symbol[5],-20,-10,20,20)
+			layer.image(graphics.symbol[2],-3,-15,20,20)
+			layer.image(graphics.symbol[1],-2,0,18,18)
+		break
+		case 98:
+			layer.text('1',10,1)
+			layer.image(graphics.symbol[34],-20,-15,30,30)
+		break
+		case 99:
+			layer.textSize(10)
+			layer.text('2',0,0)
+			layer.image(graphics.symbol[5],-18,-18,36,36)
+			layer.image(graphics.symbol[19],-10,-10,20,20)
+		break
+		case 100:
+			layer.image(graphics.symbol[28],-14,-14,28,28)
+			layer.image(graphics.symbol[7],-10,-10,20,20)
+			layer.image(graphics.symbol[15],-8,-8,16,16)
+		break
+		case 101:
+			layer.text('1',10,1)
+			layer.image(graphics.symbol[7],-13,-8,16,16)
+			layer.image(graphics.symbol[29],-15,-10,20,20)
+		break
+		case 102:
+			layer.image(graphics.symbol[35],-20,-25,40,40)
+		break
 		/*
 		0-Redraw
 		1-ArrowRight
@@ -793,6 +823,8 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		31-Intangible
 		32-Relic
 		33-Armor
+		34-Shiv
+		35-Armed
 		*/
 	}
 	layer.scale(1/size,1/size/flip)

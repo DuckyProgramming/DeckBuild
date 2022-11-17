@@ -920,10 +920,18 @@ class combatant{
 					this.calc.damage=1
 				}
 				if(this.battle.combatants[0].stance==2){
-					this.calc.damage*=2
+					if(this.id>0&&this.battle.relics.active[100]){
+						this.calc.damage*=3
+					}else{
+						this.calc.damage*=2
+					}
 				}
 				if(this.battle.combatants[0].stance==3&&this.id>0){
-					this.calc.damage*=3
+					if(this.battle.relics.active[100]){
+						this.calc.damage*=4
+					}else{
+						this.calc.damage*=3
+					}
 				}
 				if(this.block>0){
 					this.calc.damage*=(2-min(0,this.boost.main[2]))/(2+max(0,this.boost.main[2]))
