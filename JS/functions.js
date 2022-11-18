@@ -85,7 +85,7 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 			layer.triangle(-12,-8,12,-8,0,12)
 		break
 		case 8:
-			layer.fill(150,175,200)
+			layer.fill(150,175,200,fade)
 			layer.triangle(-8,-5,8,-5,0,-9)
 			layer.arc(0,-5,16,28,0,180)
 		break
@@ -996,49 +996,89 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[16],-20,-6,12,12)
 			layer.image(graphics.symbol[26],8,-6,12,12)
 		break
-		/*
-		0-Redraw
-		1-ArrowRight
-		2-Defense
-		3-Dodge
-		4-Health
-		5-Card
-		6-Miracle
-		7-Damage
-		8-Energy
-		9-Rest
-		10-NoDamage
-		11-ArrowDown
-		12-ArrowLeft
-		13-DamageTaken
-		14-No
-		15-ArrowUp
-		16-Elite
-		17-MaxHealth
-		18-Power
-		19-Combo
-		20-Faith
-		21-Focus
-		22-Balance
-		23-MaxBalance
-		24-Enemy
-		25-Dead
-		26-Boss
-		27-Time
-		28-Stance
-		29-BasicCharge
-		30-Buffer
-		31-Intangible
-		32-Relic
-		33-Armor
-		34-Shiv
-		35-Armed
-		36-Control
-		37-Poison
-		38-Scry
-		*/
+		case 135:
+			layer.textSize(10)
+			layer.text('1',0,-5)
+			layer.image(graphics.symbol[1],-10,2,20,20)
+			layer.image(graphics.symbol[5],-10,-15,20,20)
+		break
+		case 136:
+			layer.textSize(10)
+			layer.text('6',-10,0)
+			layer.image(graphics.symbol[8],-8,-15,30,30)
+			layer.image(graphics.symbol[5],-18,-8,16,16)
+		break
+		case 137:
+			layer.text('E',10,2)
+			layer.textSize(10)
+			layer.text('6',-5,10)
+			layer.image(graphics.symbol[4],-15,-15,20,20)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)
 	layer.translate(-x,-y)
 }
+function displayPotionSymbol(layer,x,y,type,direction,size,flip){
+	layer.translate(x,y)
+	layer.rotate(direction)
+	layer.scale(size,size*flip)
+	layer.noStroke()
+	layer.fill(180)
+	layer.ellipse(0,0,30,30)
+	layer.fill(0)
+	layer.textSize(15)
+	switch(type){
+		case -1:
+			layer.ellipse(0,0,24,24)
+		break
+		case 1:
+			layer.image(graphics.symbol[5],-12,-12,24,24)
+			layer.image(graphics.symbol[7],-8,-8,16,16)
+		break
+	}
+	layer.scale(1/size,1/size/flip)
+	layer.rotate(-direction)
+	layer.translate(-x,-y)
+}
+/*
+0-Redraw
+1-ArrowRight
+2-Defense
+3-Dodge
+4-Health
+5-Card
+6-Miracle
+7-Damage
+8-Energy
+9-Rest
+10-NoDamage
+11-ArrowDown
+12-ArrowLeft
+13-DamageTaken
+14-No
+15-ArrowUp
+16-Elite
+17-MaxHealth
+18-Power
+19-Combo
+20-Faith
+21-Focus
+22-Balance
+23-MaxBalance
+24-Enemy
+25-Dead
+26-Boss
+27-Time
+28-Stance
+29-BasicCharge
+30-Buffer
+31-Intangible
+32-Relic
+33-Armor
+34-Shiv
+35-Armed
+36-Control
+37-Poison
+38-Scry
+*/

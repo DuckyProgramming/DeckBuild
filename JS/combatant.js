@@ -52,6 +52,7 @@ class combatant{
 		this.intent=0
         this.fade=0
 		this.lastPlay=-1
+		this.uniqueDisplay=[]
     }
 	resetUnique(){
 		this.block=0
@@ -62,6 +63,7 @@ class combatant{
 		this.meter=0
 		this.armed=1
 		this.lastPlay=-1
+		this.uniqueDisplay=[]
 	}
 	setupIntent(type){
 		if(type==-1){
@@ -108,46 +110,8 @@ class combatant{
 			this.layer.translate(this.position.x,this.position.y)
 			this.layer.rotate(this.direction)
 			this.layer.scale(this.size*this.flip,this.size)
-			switch(this.type){
-				case 1:
-					this.layer.stroke(25,30,30,this.fade)
-					this.layer.strokeWeight(4)
-					this.layer.line(-4,-30,-8,0)
-					this.layer.line(4,-30,8,0)
-					this.layer.stroke(30,35,35,this.fade)
-					this.layer.line(-6,-48,-15,-24)
-					this.layer.line(6,-48,15,-24)
-					this.layer.noStroke()
-					this.layer.fill(35,40,40,this.fade)
-					this.layer.ellipse(0,-47,18,42)
-					this.layer.fill(30,25,0,this.fade)
-					this.layer.rect(-7,-45,5,2)
-					this.layer.rect(0,-45,5,2)
-					this.layer.rect(7,-45,5,2)
-					this.layer.fill(240,220,180,this.fade)
-					this.layer.ellipse(0,-78,30,30)
-					this.layer.fill(0,this.fade)
-					this.layer.ellipse(4,-75,4,4)
-					this.layer.ellipse(12,-75,4,4)
-					this.layer.fill(30,35,35,this.fade)
-					this.layer.arc(0,-78,36,36,-180,0)
-					this.layer.fill(200,this.fade/2)
-					this.layer.rect(8,-75,20,6)
-					if(detail==0){
-						this.layer.noFill()
-						this.layer.stroke(240,240,40,this.fade)
-						this.layer.strokeWeight(4)
-						this.layer.strokeCap(SQUARE)
-						this.layer.arc(1,-119,20,20,-45,135)
-						this.layer.arc(-1,-121,20,20,135,315)
-						this.layer.strokeCap(ROUND)
-						this.layer.noStroke()
-						this.layer.fill(255,this.fade)
-						this.layer.textSize(16)
-						this.layer.text(this.combo,0,-118)
-					}
-				break
-				case 2:
+			if(this.team==0&&detail==0){
+				if(this.stance!=0||this.type==2){
 					this.layer.noStroke()
 					this.layer.translate(0,-45)
 					if(this.mantra>0&&detail==0){
@@ -177,6 +141,42 @@ class combatant{
 						}
 					}
 					this.layer.translate(0,45)
+				}
+				if(!this.armed&&this.type!=4){
+					this.layer.noFill()
+					this.layer.stroke(100,this.fade/2)
+					this.layer.strokeWeight(10)
+					this.layer.ellipse(0,-45,50,50)
+				}
+			}
+			switch(this.type){
+				case 1:
+					this.layer.stroke(25,30,30,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.stroke(30,35,35,this.fade)
+					this.layer.line(-6,-50,-15,-25)
+					this.layer.line(6,-50,15,-25)
+					this.layer.noStroke()
+					this.layer.fill(35,40,40,this.fade)
+					this.layer.ellipse(0,-48,18,44)
+					this.layer.fill(30,25,0,this.fade)
+					this.layer.rect(-7,-46,5,2)
+					this.layer.rect(0,-46,5,2)
+					this.layer.rect(7,-46,5,2)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-80,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-77,4,4)
+					this.layer.ellipse(12,-77,4,4)
+					this.layer.fill(30,35,35,this.fade)
+					this.layer.arc(0,-80,36,36,-180,0)
+					this.layer.fill(200,this.fade/2)
+					this.layer.rect(8,-77,20,6)
+				break
+				case 2:
+					this.layer.noStroke()
 					this.layer.fill(84,46,55,this.fade)
 					this.layer.triangle(-15,-75,15,-75,-6,-25)
 					this.layer.stroke(207,90,101,this.fade*(1-this.anim[4]))
@@ -312,29 +312,6 @@ class combatant{
 					this.layer.fill(70,60,50,this.fade)
 					this.layer.ellipse(-4,-51,3,3)
 					this.layer.ellipse(-4,-46,3,3)
-					if(detail==0){
-						this.layer.fill(255,this.fade/5)
-						switch(this.ammo.length){
-							case 3:
-								this.layer.ellipse(0,-120,20,20)
-								this.layer.ellipse(-25,-110,20,20)
-								this.layer.ellipse(25,-110,20,20)
-								displayAmmo(this.layer,25,-110,this.ammo[0],this.fade)
-								displayAmmo(this.layer,0,-120,this.ammo[1],this.fade)
-								displayAmmo(this.layer,-25,-110,this.ammo[2],this.fade)
-							break
-							case 2:
-								this.layer.ellipse(-15,-115,20,20)
-								this.layer.ellipse(15,-115,20,20)
-								displayAmmo(this.layer,15,-115,this.ammo[0],this.fade)
-								displayAmmo(this.layer,-15,-115,this.ammo[1],this.fade)
-							break
-							case 1:
-								this.layer.ellipse(0,-120,20,20)
-								displayAmmo(this.layer,0,-120,this.ammo[0],this.fade)
-							break
-						}
-					}
 				break
 				case 4:
 					if((this.armed==1||detail==1)&&this.fade>0){
@@ -626,18 +603,6 @@ class combatant{
 						this.layer.image(graphics.minor[3],-3-15*(1-this.anim[3])*this.fade,-44-15*(1-this.anim[3])*this.fade,30*(1-this.anim[3])*this.fade,30*(1-this.anim[3])*this.fade)
 					}
 					this.layer.translate(0,1.25)
-					if(detail==0){
-						if(this.fade>0){
-							this.layer.image(graphics.minor[4],-40*this.fade,-112-10*this.fade,80*this.fade,20*this.fade)
-						}
-						this.layer.stroke(255,this.fade)
-						this.layer.strokeWeight(2)
-						this.layer.line(constrain(this.meter*30/this.base.meter,-30,30),-114,constrain(this.meter*30/this.base.meter,-30,30),-110)
-						this.layer.noStroke()
-						this.layer.fill(255,this.fade)
-						this.layer.textSize(8)
-						this.layer.text(this.meter,0,-101)
-					}
 				break
 				case 5:
 					this.layer.noStroke()
@@ -775,6 +740,62 @@ class combatant{
 					this.layer.ellipse(4,-72,4,4)
 					this.layer.ellipse(12,-72,4,4)
 				break
+			}
+			if(this.team==0&&detail==0){
+				for(let e=0,le=this.uniqueDisplay.length;e<le;e++){
+					this.layer.translate(0,e*35-le*35+105-this.height)
+					switch(this.uniqueDisplay[e]){
+						case 0:
+							this.layer.noFill()
+							this.layer.stroke(240,240,40,this.fade)
+							this.layer.strokeWeight(4)
+							this.layer.strokeCap(SQUARE)
+							this.layer.arc(1,-114,20,20,-45,135)
+							this.layer.arc(-1,-116,20,20,135,315)
+							this.layer.strokeCap(ROUND)
+							this.layer.noStroke()
+							this.layer.fill(255,this.fade)
+							this.layer.textSize(16)
+							this.layer.text(this.combo,0,-113)
+						break
+						case 1:
+							this.layer.fill(255,this.fade/5)
+							switch(this.ammo.length){
+								case 3:
+									this.layer.ellipse(0,-118,20,20)
+									this.layer.ellipse(-25,-108,20,20)
+									this.layer.ellipse(25,-108,20,20)
+									displayAmmo(this.layer,25,-108,this.ammo[0],this.fade)
+									displayAmmo(this.layer,0,-118,this.ammo[1],this.fade)
+									displayAmmo(this.layer,-25,-108,this.ammo[2],this.fade)
+								break
+								case 2:
+									this.layer.ellipse(-15,-113,20,20)
+									this.layer.ellipse(15,-113,20,20)
+									displayAmmo(this.layer,15,-113,this.ammo[0],this.fade)
+									displayAmmo(this.layer,-15,-113,this.ammo[1],this.fade)
+								break
+								case 1:
+									this.layer.ellipse(0,-118,20,20)
+									displayAmmo(this.layer,0,-118,this.ammo[0],this.fade)
+								break
+							}
+						break
+						case 2:
+							if(this.fade>0){
+								this.layer.image(graphics.minor[4],-40*this.fade,-112-10*this.fade,80*this.fade,20*this.fade)
+							}
+							this.layer.stroke(255,this.fade)
+							this.layer.strokeWeight(2)
+							this.layer.line(constrain(this.meter*30/this.base.meter,-30,30),-114,constrain(this.meter*30/this.base.meter,-30,30),-110)
+							this.layer.noStroke()
+							this.layer.fill(255,this.fade)
+							this.layer.textSize(8)
+							this.layer.text(this.meter,0,-101)
+						break
+					}
+					this.layer.translate(0,le*35-e*35-105+this.height)
+				}
 			}
 			this.layer.scale(1/this.size/this.flip,1/this.size)
 			this.layer.rotate(-this.direction)
@@ -1086,6 +1107,7 @@ class combatant{
     update(){
 		this.boost.display=[]
 		this.status.display=[]
+		this.uniqueDisplay=[]
 		if(this.block>this.collect.block&&this.id==0){
 			this.collect.block=this.block
 			for(g=1,lg=this.battle.combatants.length;g<lg;g++){
@@ -1094,12 +1116,20 @@ class combatant{
 		}else if(this.block<this.collect.block&&this.id==0){
 			this.collect.block=this.block
 		}
-		if(this.type==2){
+		if(this.team==0){
+			if(this.combo!=0||this.type==1){
+				this.uniqueDisplay.push(0)
+			}
+			if(this.ammo[0]!=-1||this.type==3){
+				this.uniqueDisplay.push(1)
+			}
+			if(this.meter!=0||this.type==4){
+				this.uniqueDisplay.push(2)
+			}
 			if(this.mantra>=12&&this.stance!=3){
 				this.changeStance(3)
 				this.mantra-=12
 			}
-		}else if(this.type==4){
 			if(this.meter<-this.base.meter){
 				this.meter=0
 				if(this.battle.relics.active[67]){

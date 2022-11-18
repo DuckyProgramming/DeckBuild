@@ -164,8 +164,12 @@ class group{
                 this.cards[e].damage+=this.cards[e].alt
             }else if(this.cards[e].attack==114&&this.cards[e].cost>0&&!this.cards[e].trigger){
                 this.cards[e].cost--
-            }else if((this.cards[e].spec!=2&&this.cards[e].spec!=9&&this.cards[e].spec!=12||this.cards[e].trigger)&&!this.battle.relics.active[133]){
-                this.cards[e].used=true
+            }else if((this.cards[e].spec!=2&&this.cards[e].spec!=9&&this.cards[e].spec!=12||this.cards[e].trigger)){
+                if(this.battle.relics.active[133]){
+                    this.battle.random.drawing--
+                }else{
+                    this.cards[e].used=true
+                }
                 if(this.cards[e].attack==-4){
                     this.battle.combatants[0].status.main[7]++
                 }else if(this.cards[e].attack==-7){

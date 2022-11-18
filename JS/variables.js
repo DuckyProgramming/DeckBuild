@@ -1097,7 +1097,7 @@ types={
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
-        {name:'Agent',alt:'',life:80,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
+        {name:'Agent',alt:'',life:80,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Duelist',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
         {name:'Creation',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
@@ -1161,7 +1161,7 @@ types={
             name:'Free Step',id:2,rarity:1,list:0,
             desc:'Add 1 Step\nEvery Turn',
         },{
-            name:'Quick Heal',id:3,rarity:0,list:0,
+            name:'2 Quick Heal',id:3,rarity:0,list:0,
             desc:'Heal 2 Health\nat the End of Combat',
         },{
             name:'First Turn Draw',id:4,rarity:0,list:0,
@@ -1561,13 +1561,24 @@ types={
             desc:'Draw 1 More\nCard per Turn',
         },{
             name:'Energy / Max Cards',id:136,rarity:4,list:0,
-            desc:'Gain 1 Base Energy, Cannot\nPlay More Than 6 Cards',
+            desc:'Gain 1 Base Energy, Cannot\nPlay More Than 6 Cards per Turn',
+        },{
+            name:'2 Quick Heal',id:137,rarity:4,list:0,
+            desc:'Heal 6 Health\nat the End of Combat',
         },
         
         /*{
             name:'',id:13,rarity:4,list:0,
             desc:'',
         },*/
+    ],potion:[
+        {
+            name:'',effect:0,id:0,rarity:-1,list:0,
+            desc:'',
+        },{
+            name:'Attack',id:0,rarity:-1,list:0,
+            desc:'Add an Attack to Your\nHand. It Costs 0',
+        },
     ],event:[
         {
             name:'',id:0,

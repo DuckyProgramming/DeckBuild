@@ -35,7 +35,8 @@ class battle{
         this.discarding=0
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0}
+        this.potions={owned:[-1,-1,-1]}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0}
         this.deck.initial(this.player)
     }
     create(){
@@ -204,15 +205,17 @@ class battle{
         }
         this.startTurn()
         this.random.rested=false
+        this.random.drawing=this.drawAmount
         if(this.relics.active[4]){
             this.draw()
             this.draw()
         }
     }
     turnDraw(){
-        for(e=0,le=this.drawAmount;e<le;e++){
+        for(e=0,le=this.random.drawing;e<le;e++){
             this.draw()
         }
+        this.random.drawing=this.drawAmount
         if(this.relics.active[2]){
             this.hand.add(findCard('Step'),0,0)
         }
@@ -321,7 +324,7 @@ class battle{
                     }
                 }
             break
-            case 123: case 127: case 131: case 132:
+            case 123: case 127: case 131: case 132: case 136:
                 this.mana.gen++
                 this.mana.main++
                 this.mana.max++
@@ -381,6 +384,14 @@ class battle{
                     }
                 }
             break
+        }
+    }
+    getPotion(type){
+        for(let g=0,lg=this.potions.owned.length;g<lg;g++){
+            if(this.potions.owned[g]==-1){
+                this.potions.owned[g]=type
+                break
+            }
         }
     }
     return(){
@@ -532,7 +543,9 @@ class battle{
     playCard(){
         this.counter.played++
         this.random.played++
-        if(this.counter.played>=3){
+        if(this.counter.played>=6&&this.relics.active[136]){
+            this.allDiscard()
+        }else if(this.counter.played>=3){
             for(g=0,lg=this.hand.cards.length;g<lg;g++){
                 if(this.hand.cards[g].attack==-11){
                     this.allDiscard()
@@ -675,14 +688,46 @@ class battle{
     }
     displayRelics(){
         for(e=0,le=this.relics.owned.length;e<le;e++){
-            displayRelicSymbol(this.layer,25+e*50,50,this.relics.owned[e],0,1,1,this.relics.active[this.relics.owned[e]])
-            if(dist(inputs.rel.x,inputs.rel.y,25+e*50,50)<20){
+            displayRelicSymbol(this.layer,25+e*50,60,this.relics.owned[e],0,1,1,this.relics.active[this.relics.owned[e]])
+            if(dist(inputs.rel.x,inputs.rel.y,25+e*50,60)<20){
                 this.layer.noStroke()
                 this.layer.fill(180)
                 this.layer.rect(130,110,240,60,5)
                 this.layer.fill(0)
                 this.layer.textSize(12)
                 this.layer.text(types.relic[this.relics.owned[e]].desc,130,110)
+            }
+        }
+    }
+    displayPotions(){
+        for(e=0,le=this.potions.owned.length;e<le;e++){
+            displayPotionSymbol(this.layer,100+e*50,20,this.potions.owned[e],0,1,1)
+            if(dist(inputs.rel.x,inputs.rel.y,100+e*50,20)<20&&this.potions.owned[e]>=0){
+                this.layer.noStroke()
+                this.layer.fill(180)
+                this.layer.rect(130,110,240,60,5)
+                this.layer.fill(0)
+                this.layer.textSize(12)
+                this.layer.text(types.potion[this.potions.owned[e]].desc,130,110)
+            }
+        }
+    }
+    onClickPotions(){
+        for(e=0,le=this.potions.owned.length;e<le;e++){
+            if(dist(inputs.rel.x,inputs.rel.y,100+e*50,20)<20&&this.potions.owned[e]>=0){
+                switch(this.potions.owned[e]){
+                    case 1:
+                        this.calc.list=[]
+                        for(f=0,lf=types.card.length;f<lf;f++){
+                            if(types.card[f].list<=5&&types.card[f].stats[0].class==0){
+                                this.calc.list.push(f)
+                            }
+                        }
+                        f=floor(random(0,this.calc.list.length))
+                        this.hand.add(this.calc.list[f],0,types.card[this.calc.list[f]].list)
+                    break
+                }
+                this.potions.owned[e]=-1
             }
         }
     }
@@ -744,6 +789,7 @@ class battle{
         this.layer.textSize(64)
         this.layer.text('Defeat',this.layer.width/2,150)
         this.displayRelics()
+        this.displayPotions()
         this.layer.fill(255,225,0)
         this.layer.textSize(16)
         this.layer.textAlign(LEFT,CENTER)
@@ -966,6 +1012,9 @@ class battle{
                 if(this.relics.active[49]&&this.combatants[0].life<this.combatants[0].base.life/2){
                     this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+12)
                 }
+                if(this.relics.active[137]){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+6)
+                }
                 for(e=0,le=this.objective.length;e<le;e++){
                     if(this.objective[e][0]==0||this.objective[e][0]==1&&this.counter.turn<=this.objective[e][1]||this.objective[e][0]==2&&this.counter.taken<this.objective[e][1]){
                         switch(this.objective[e][2]){
@@ -995,6 +1044,7 @@ class battle{
                 }
             }
         }else if(this.turn==0&&this.combatants[0].life>0){
+            this.onClickPotions()
             this.hand.onClickHand()
             if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:525},width:40,height:30})){
                 transition.trigger=true
