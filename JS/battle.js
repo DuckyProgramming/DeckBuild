@@ -702,7 +702,7 @@ class battle{
     displayPotions(){
         for(e=0,le=this.potions.owned.length;e<le;e++){
             displayPotionSymbol(this.layer,100+e*50,20,this.potions.owned[e],0,1,1)
-            if(dist(inputs.rel.x,inputs.rel.y,100+e*50,20)<20&&this.potions.owned[e]>=0){
+            if(dist(inputs.rel.x,inputs.rel.y,100+e*50,20)<15&&this.potions.owned[e]>=0){
                 this.layer.noStroke()
                 this.layer.fill(180)
                 this.layer.rect(130,110,240,60,5)
@@ -714,7 +714,7 @@ class battle{
     }
     onClickPotions(){
         for(e=0,le=this.potions.owned.length;e<le;e++){
-            if(dist(inputs.rel.x,inputs.rel.y,100+e*50,20)<20&&this.potions.owned[e]>=0){
+            if(dist(inputs.rel.x,inputs.rel.y,100+e*50,20)<15&&this.potions.owned[e]>=0){
                 switch(this.potions.owned[e]){
                     case 1:
                         this.calc.list=[]
@@ -725,6 +725,24 @@ class battle{
                         }
                         f=floor(random(0,this.calc.list.length))
                         this.hand.add(this.calc.list[f],0,types.card[this.calc.list[f]].list)
+                    break
+                    case 2:
+                        for(f=0,lf=this.hand.cards.length;f<lf;f++){
+                            if(this.hand.cards[f].level==0){
+                                this.hand.cards[f].level++
+                                this.hand.cards[f]=reformCard(this.hand.cards[f])
+                            }
+                        }
+                    break
+                    case 3:
+                        this.combatants[0].block+=12
+                    break
+                    case 4:
+                        this.combatants[0].life=min(this.combatants[0].life+this.combatants[0].base.life*0.2*this.random.healEffectiveness,this.combatants[0].base.life)
+                    break
+                    case 5:
+                        this.hand.add(findCard('Miracle'),0,0)
+                        this.hand.add(findCard('Miracle'),0,0)
                     break
                 }
                 this.potions.owned[e]=-1

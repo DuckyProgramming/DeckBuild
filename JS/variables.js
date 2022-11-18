@@ -1563,7 +1563,7 @@ types={
             name:'Energy / Max Cards',id:136,rarity:4,list:0,
             desc:'Gain 1 Base Energy, Cannot\nPlay More Than 6 Cards per Turn',
         },{
-            name:'2 Quick Heal',id:137,rarity:4,list:0,
+            name:'6 Quick Heal',id:137,rarity:4,list:0,
             desc:'Heal 6 Health\nat the End of Combat',
         },
         
@@ -1576,8 +1576,20 @@ types={
             name:'',effect:0,id:0,rarity:-1,list:0,
             desc:'',
         },{
-            name:'Attack',id:0,rarity:-1,list:0,
+            name:'Attack',id:1,rarity:-1,list:0,
             desc:'Add an Attack to Your\nHand. It Costs 0',
+        },{
+            name:'Upgrade',id:2,rarity:-1,list:0,
+            desc:'Upgrade Cards Currently in Your\nHand for the Rest of Combat',
+        },{
+            name:'Block',id:3,rarity:-1,list:0,
+            desc:'Gain 12 Block',
+        },{
+            name:'Heal',id:4,rarity:-1,list:0,
+            desc:'Heal 20% of\nMax HP',
+        },{
+            name:'Miracle',id:5,rarity:-1,list:0,
+            desc:'Add 2 Miracles\nto Your Hand',
         },
     ],event:[
         {

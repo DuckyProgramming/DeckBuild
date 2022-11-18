@@ -155,7 +155,7 @@ class attack{
                 break
                 case 26:
                     for(g=0;g<this.damage;g++){
-                        this.battle.hand.addShuffle(findCard('Shiv'),0,0)
+                        this.battle.hand.add(findCard('Shiv'),0,0)
                     }
                 break
                 case 27:
