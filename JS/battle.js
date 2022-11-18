@@ -470,15 +470,15 @@ class battle{
                 }else if(f==38&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].life=min(this.combatants[e].life+this.combatants[e].status.main[f],this.combatants[e].base.life)
                     this.combatants[e].status.main[f]--
-                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&f!=36){
+                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&f!=36&&f!=39&&f!=40){
                     this.combatants[e].status.main[f]=0
                 }
             }
         }
-        this.combatants[0].boost.main[0]+=this.remember[0]-this.remember[1]
+        this.combatants[0].boost.main[0]+=this.remember[0]-this.remember[1]+this.combatants[0].status.main[39]
         this.combatants[0].boost.main[1]+=this.remember[2]
         this.combatants[0].boost.main[2]-=this.remember[3]
-        this.combatants[0].block+=this.remember[4]
+        this.combatants[0].block+=this.remember[4]+this.combatants[0].status.main[40]
         for(e=0;e<this.combatants[0].status.main[14];e++){
             this.hand.add(findCard('Smite'),0,0)
         }
@@ -728,7 +728,9 @@ class battle{
     onClickPotions(){
         for(e=0,le=this.potions.owned.length;e<le;e++){
             if(dist(inputs.rel.x,inputs.rel.y,100+e*50,20)<15&&this.potions.owned[e]>=0){
-                switch(this.potions.owned[e]){
+                this.remember=[this.potions.owned[e]]
+                this.potions.owned[e]=-1
+                switch(this.remember[0]){
                     case 1:
                         this.calc.list=[]
                         for(g=0,lg=types.card.length;g<lg;g++){
@@ -874,8 +876,24 @@ class battle{
                     case 27:
                         this.combatants[0].status.main[38]+=5
                     break
+                    case 28:
+                        this.combatants[0].status.main[39]+=2
+                    break
+                    case 29:
+                        this.calc.list=[0,0,0,1,1,2]
+                        for(let e=0,le=this.potions.owned.length;e<le;e++){
+                            g=this.calc.list[floor(random(0,this.calc.list.length))]
+                            f=floor(random(0,this.potions.list[g].length))
+                            this.getPotion(this.potions.list[g][f])
+                        }
+                    break
+                    case 30:
+                        this.combatants[0].life=min(this.combatants[0].life+this.combatants[0].base.life*0.5*this.random.healEffectiveness,this.combatants[0].base.life)
+                    break
+                    case 31:
+                        this.combatatns[0].base.life+=5
+                    break
                 }
-                this.potions.owned[e]=-1
             }
         }
     }

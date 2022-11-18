@@ -1695,6 +1695,30 @@ types={
         },{
             name:'Regen',id:27,rarity:1,list:0,
             desc:'Gain 5\nRegen',
+        },{
+            name:'Strength Gain',id:28,rarity:2,list:0,
+            desc:'Gain 2 Strength\nPer Turn',
+        },{
+            name:'Potion',id:29,rarity:2,list:0,
+            desc:'Fill All\nPotion Slots',
+        },{
+            name:'Revive',id:30,rarity:2,list:0,
+            desc:'When You Die,\nHeal to Half HP',
+        },{
+            name:'Max Healt',id:31,rarity:2,list:0,
+            desc:'Gain 5\nMax Health',
+        },{
+            name:'Intangible',id:32,rarity:2,list:0,
+            desc:'Gain 1\nIntangible',
+        },{
+            name:'Metallicize',id:33,rarity:2,list:0,
+            desc:'Gain 6\nMetallicize',
+        },{
+            name:'Escape',id:34,rarity:2,list:0,
+            desc:'Cancel a\nNon-Boss Combat',
+        },{
+            name:'Confusion',id:35,rarity:2,list:0,
+            desc:'Draw 5 Cards,\nBecome Confused',
         },
     ],event:[
         {

@@ -632,8 +632,8 @@ class attack{
                 break
                 case 125:
                     this.battle.combatants[0].block+=this.damage
-                    for(g=0;g<this.alt;g++){
-                        this.battle.hand.addShuffle(findCard('Shiv'),0,0)
+                    for(let g=0;g<this.alt;g++){
+                        this.battle.hand.add(findCard('Shiv'),0,0)
                     }
                 break
                 case 126:

@@ -26,6 +26,8 @@ class group{
                 }
                 this.add(findCard('Big Strike'),0,this.battle.player)
                 this.add(findCard('Triple\nPunch'),0,this.battle.player)
+
+                this.add(findCard('In the\nFolds'),0,this.battle.player)
                 /*this.add(67,0,this.battle.player)
                 this.add(68,0,this.battle.player)
                 this.add(69,0,this.battle.player)
@@ -96,11 +98,11 @@ class group{
     }
     addShuffle(type,level,color){
         this.calc.cut=floor(random(0,this.cards.length))
-        for(e=this.calc.cut,le=this.cards.length;e<le;e++){
-            this.storage.cards.push(this.cards[e])
-            this.cards.splice(e,1)
-            e--
-            le--
+        for(let g=this.calc.cut,lg=this.cards.length;g<lg;g++){
+            this.storage.cards.push(this.cards[g])
+            this.cards.splice(g,1)
+            g--
+            lg--
         }
         this.add(type,level,color)
         while(this.storage.cards.length>0){
