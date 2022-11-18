@@ -1197,7 +1197,15 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 		case 37:
 			layer.image(graphics.symbol[19],-12,-12,24,24)
 		break
-
+		case 38:
+			layer.image(graphics.symbol[7],-13,-12,14,14)
+			layer.image(graphics.symbol[7],-1,-12,14,14)
+			layer.image(graphics.symbol[7],-7,0,14,14)
+		break
+		case 39:
+			layer.text('-2',0,1)
+			layer.image(graphics.symbol[5],-12,-12,24,24)
+		break
 		case 40:
 			layer.text('C',0,1)
 			layer.image(graphics.symbol[28],-12,-12,24,24)
@@ -1218,6 +1226,17 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 		break
 		case 45:
 			layer.image(graphics.symbol[43],-12,-12,24,24)
+		break
+		case 46:
+			layer.image(graphics.symbol[22],-12,-16,24,24)
+			layer.image(graphics.symbol[12],-8,0,16,16)
+		break
+		case 47:
+			layer.image(graphics.symbol[22],-12,-16,24,24)
+			layer.image(graphics.symbol[1],-8,0,16,16)
+		break
+		case 48:
+			layer.image(graphics.symbol[35],-16,-18,32,32)
 		break
 	}
 	layer.scale(1/size,1/size/flip)

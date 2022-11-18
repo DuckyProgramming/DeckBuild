@@ -938,7 +938,24 @@ class battle{
                     case 37:
                         this.combatants[0].combo+=5
                     break
-
+                    case 38:
+                        this.mana.main++
+                        this.remember[0]=0
+                        for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                            if(this.hand.cards[g].class!=0){
+                                this.hand.cards[g].used=true
+                                this.remember[0]++
+                            }
+                        }
+                        for(g=0;g<this.remember[0];g++){
+                            this.draw()
+                        }
+                    break
+                    case 39:
+                        for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                            this.hand.cards[g].cost=max(this.hand.cards[g].cost-2,0)
+                        }
+                    break
                     case 40:
                         this.combatants[0].changeStance(1)
                     break
@@ -956,6 +973,17 @@ class battle{
                     break
                     case 45:
                         this.combatants[0].load(3,0)
+                    break
+                    case 46:
+                        this.combatants[0].meter=-this.combatants[0].base.meter
+                    break
+                    case 47:
+                        this.combatants[0].meter=this.combatants[0].base.meter
+                    break
+                    case 48:
+                        if(this.battle.combatants[0].armed!=1){
+                            this.battle.combatants[0].armed=1
+                        }
                     break
                 }
             }

@@ -8,7 +8,7 @@ function setup(){
     current.initialEvent()
 
     current.getRelic(142)
-    current.getPotion(38)
+    current.getPotion(1)
     
     current.create()
 

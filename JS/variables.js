@@ -1731,11 +1731,11 @@ types={
             name:'Combo',id:37,rarity:0,list:1,
             desc:'Gain 5\nCombo',
         },{
-            name:'',id:38,rarity:0,list:1,
-            desc:'',
+            name:'Flurry',id:38,rarity:0,list:1,
+            desc:'Gain 1 Energy, Discard All\nNon-Attack Cards and Redraw',
         },{
-            name:'',id:39,rarity:0,list:1,
-            desc:'',
+            name:'Flow',id:39,rarity:0,list:1,
+            desc:'All Cards in\nHand Cost 2 Less',
         },{
             name:'Calm',id:40,rarity:0,list:2,
             desc:'Enter\nCalm',
@@ -1755,14 +1755,14 @@ types={
             name:'Fusion',id:45,rarity:0,list:3,
             desc:'Charge 1\nEnergy',
         },{
-            name:'',id:46,rarity:0,list:4,
-            desc:'',
+            name:'Negative Balance',id:46,rarity:0,list:4,
+            desc:'Set Balance to Minimum',
         },{
-            name:'',id:47,rarity:0,list:4,
-            desc:'',
+            name:'Positive Balance',id:47,rarity:2,list:4,
+            desc:'Set Balance to Maximum',
         },{
-            name:'',id:48,rarity:0,list:4,
-            desc:'',
+            name:'Rearm',id:48,rarity:0,list:4,
+            desc:'Rearm',
         },
     ],event:[
         {
