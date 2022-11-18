@@ -836,6 +836,9 @@ class attack{
                 case 171:
                     this.battle.combatants[0].status.main[36]+=this.damage
                 break
+                case 172:
+                    this.battle.combatants[this.target].boost.main[1]-=this.damage
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

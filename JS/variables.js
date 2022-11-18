@@ -1498,7 +1498,7 @@ types={
             desc:'Whenever You Shuffle\nYour Deck, Gain 6 Block',
         },{
             name:'First Turn Colorless Card',id:115,rarity:3,list:0,
-            desc:'Add 1 Random Colorless Card\nat the Start of Combat',
+            desc:'Choose 1 Colorless Card\nat the Start of Combat',
         },{
             name:'Strength Burst',id:116,rarity:3,list:0,
             desc:'At the Start of Your Turn, Gain 2 Strength,\nand All Enemies Gain 1 Strength',
@@ -1573,7 +1573,7 @@ types={
         },*/
     ],potion:[
         {
-            name:'',effect:0,id:0,rarity:-1,list:0,
+            name:'',id:0,rarity:-1,list:0,
             desc:'',
         },{
             name:'Attack',id:1,rarity:-1,list:0,
@@ -1583,13 +1583,31 @@ types={
             desc:'Upgrade Cards Currently in Your\nHand for the Rest of Combat',
         },{
             name:'Block',id:3,rarity:-1,list:0,
-            desc:'Gain 12 Block',
+            desc:'Gain 12\nBlock',
         },{
             name:'Heal',id:4,rarity:-1,list:0,
             desc:'Heal 20% of\nMax HP',
         },{
             name:'Miracle',id:5,rarity:-1,list:0,
             desc:'Add 2 Miracles\nto Your Hand',
+        },{
+            name:'Colorless',id:6,rarity:-1,list:0,
+            desc:'Add 1 Random Colorless\nCard to Your Hand',
+        },{
+            name:'Dexterity',id:7,rarity:-1,list:0,
+            desc:'Gain 2\nDexterity',
+        },{
+            name:'Energy',id:8,rarity:-1,list:0,
+            desc:'Gain 2\nEnergy',
+        },{
+            name:'Explosion',id:9,rarity:-1,list:0,
+            desc:'Deal 10 Damage\nto All Enemies',
+        },{
+            name:'Vulnerable',id:10,rarity:-1,list:0,
+            desc:'Apply 3\nVulnerable',
+        },{
+            name:'Damage',id:1,rarity:-1,list:0,
+            desc:'Deal 20\nDamage',
         },
     ],event:[
         {

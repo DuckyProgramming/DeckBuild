@@ -191,9 +191,10 @@ class battle{
             this.combatants[0].boost.main[0]+=3
         }
         if(this.relics.active[115]){
-            e=floor(random(0,2))
-            f=floor(random(0,listing.card[0][e].length))
-            this.hand.add(listing.card[0][e][f],0,types.card[listing.card[0][e][f]].list)
+            transition.trigger=true
+            transition.scene='choice'
+            this.setupChoice(0,floor(random(1,3)),4)
+            this.context=-2
         }
         if(this.relics.active[118]){
             this.combatants[0].combo+=4
@@ -718,19 +719,19 @@ class battle{
                 switch(this.potions.owned[e]){
                     case 1:
                         this.calc.list=[]
-                        for(f=0,lf=types.card.length;f<lf;f++){
-                            if(types.card[f].list<=5&&types.card[f].stats[0].class==0){
-                                this.calc.list.push(f)
+                        for(g=0,lg=types.card.length;g<lg;g++){
+                            if(types.card[g].list<=5&&types.card[g].stats[0].class==0){
+                                this.calc.list.push(g)
                             }
                         }
-                        f=floor(random(0,this.calc.list.length))
-                        this.hand.add(this.calc.list[f],0,types.card[this.calc.list[f]].list)
+                        g=floor(random(0,this.calc.list.length))
+                        this.hand.add(this.calc.list[g],0,types.card[this.calc.list[g]].list)
                     break
                     case 2:
-                        for(f=0,lf=this.hand.cards.length;f<lf;f++){
-                            if(this.hand.cards[f].level==0){
-                                this.hand.cards[f].level++
-                                this.hand.cards[f]=reformCard(this.hand.cards[f])
+                        for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                            if(this.hand.cards[g].level==0){
+                                this.hand.cards[g].level++
+                                this.hand.cards[g]=reformCard(this.hand.cards[g])
                             }
                         }
                     break
@@ -743,6 +744,41 @@ class battle{
                     case 5:
                         this.hand.add(findCard('Miracle'),0,0)
                         this.hand.add(findCard('Miracle'),0,0)
+                    break
+                    case 6:
+                        transition.trigger=true
+                        transition.scene='choice'
+                        this.setupChoice(0,floor(random(1,3)),4)
+                        this.context=-2
+                    break
+                    case 7:
+                        this.combatants[0].boost.main[2]+=2
+                    break
+                    case 8:
+                        this.mana.main+=2
+                    break
+                    case 9:
+                        for(g=1,lg=this.combatants.length;g<lg;g++){
+                            if(this.combatants[g].life>0){
+                                this.combatants[g].take(10,0)
+                            }
+                        }
+                    break
+                    case 10:
+                        this.attack.damage=3
+                        this.attack.user=0
+                        this.attack.type=172
+                        this.attack.class=2
+                        this.attack.targetType=1
+                        this.hand.trigger=true
+                    break
+                    case 11:
+                        this.attack.damage=20
+                        this.attack.user=0
+                        this.attack.type=1
+                        this.attack.class=0
+                        this.attack.targetType=1
+                        this.hand.trigger=true
                     break
                 }
                 this.potions.owned[e]=-1
@@ -1146,6 +1182,16 @@ class battle{
                     }
                 }
             break
+            case 4:
+                this.calc.list=listing.card[0][rarity]
+                for(g=0;g<3;g++){
+                    if(this.calc.list.length>0){
+                        h=this.calc.list[floor(random(0,this.calc.list.length))]
+                        this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
+                        this.calc.list.splice(h,1)
+                    }
+                }
+            break
         }
         for(g=0,lg=this.choice.cards.length;g<lg;g++){
             this.choice.cards[g].size=1
@@ -1187,12 +1233,19 @@ class battle{
                     transition.trigger=true
                     transition.scene='map'
                 }
-                this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                if(this.context==-2){
+                    this.hand.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                }else{
+                    this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                }
                 this.choice.cards[e].used=true
             }
         }
         if(transition.scene=='map'&&this.context==1){
             transition.scene='rest'
+        }
+        if(transition.scene=='map'&&this.context==-2){
+            transition.scene='battle'
         }
     }
     setupMap(){

@@ -222,6 +222,7 @@ class card{
             case 169: this.desc+='Discard '+this.damage+' Cards\nGain '+this.alt+' Energy'; break
             case 170: this.desc+='Draw 1 Card\nDiscard 1 Card\nExhaust\nEthereal'; break
             case 171: this.desc+='Gain '+this.damage+'\nArtifact'; break
+            case 172: this.desc+='Apply '+this.damage+'\nVulnerable'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
