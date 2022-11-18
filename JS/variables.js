@@ -1583,10 +1583,31 @@ types={
         },{
             name:'Energy / Potions', id:143,rarity:4,list:0,
             desc:'Gain 1 Base Energy,\nCannot Use Potions',
+        },{
+            name:'Energy / Wound', id:144,rarity:4,list:0,
+            desc:'Gain 1 Base Energy, Start Combat\nWith 2 Wounds in Your Draw Pile',
+        },{
+            name:'Damage Draw', id:145,rarity:4,list:0,
+            desc:'Whenever You Take\nDamage, Draw 1 Card',
+        },{
+            name:'Draw / Confusion', id:146,rarity:4,list:0,
+            desc:'Draw 2 More Cards per Turn,\nStart Combat Confused',
+        },{
+            name:'Free Power', id:147,rarity:4,list:0,
+            desc:'Cards of Cost 0 Have +4 Effect',
+        },{
+            name:'Discard Energy', id:148,rarity:4,list:0,
+            desc:'The First Time Each Turn a\nCard is Discarded, Gain 1 Energy',
+        },{
+            name:'First Turn 3 Miracles', id:149,rarity:4,list:0,
+            desc:'Add 3 Miracles at\nthe Start of Combat',
+        },{
+            name:'Random', id:150,rarity:4,list:0,
+            desc:'Gain 1 Potion, 50 Gold, 5 Max Health, and Upgrade 1 Card',
         },
         
         /*{
-            name:'', id:13,rarity:4,list:0,
+            name:'', id:14,rarity:4,list:0,
             desc:'',
         },*/
     ],potion:[

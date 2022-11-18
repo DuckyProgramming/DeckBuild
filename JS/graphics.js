@@ -139,7 +139,7 @@ function setupGraphics(){
 	graphics.minor[5].rect(0,0,160,8,3)
 	graphics.minor[5].fill(149,134,184)
 	graphics.minor[5].rect(0,-2,160,4,3)
-	for(a=0;a<40;a++){
+	for(a=0;a<50;a++){
 		graphics.symbol.push(createGraphics(100,100))
 		setupLayer(graphics.symbol[a])
 		graphics.symbol[a].noStroke()
@@ -409,4 +409,11 @@ function setupGraphics(){
 	graphics.symbol[39].arc(20,-10,40,40,-180,0)
 	graphics.symbol[39].line(-40,-10,0,40)
 	graphics.symbol[39].line(40,-10,0,40)
+	graphics.symbol[40].strokeWeight(5)
+	graphics.symbol[40].stroke(0)
+	graphics.symbol[40].noFill()
+	graphics.symbol[40].ellipse(0,0,72,72)
+	graphics.symbol[40].line(-10,-36,-10,-48)
+	graphics.symbol[40].line(10,-36,10,-48)
+	graphics.symbol[40].line(-10,-48,10,-48)
 }

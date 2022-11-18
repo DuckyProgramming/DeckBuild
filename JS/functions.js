@@ -1014,6 +1014,10 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.text('6',-5,10)
 			layer.image(graphics.symbol[4],-15,-15,20,20)
 		break
+		case 138:
+			layer.image(graphics.symbol[40],-19,-10,20,20)
+			layer.image(graphics.symbol[40],-1,-10,20,20)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)
@@ -1176,4 +1180,5 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 37-Poison
 38-Scry
 39-Regen
+40-Potion
 */

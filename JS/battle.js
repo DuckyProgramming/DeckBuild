@@ -391,6 +391,9 @@ class battle{
                     }
                 }
             break
+            case 138:
+                this.potions.owned.push(-1,-1)
+            break
         }
     }
     getPotion(type){
