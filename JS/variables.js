@@ -15,7 +15,7 @@ types={
             {damage:5,alt:0,cost:1,attack:2,target:0,desc:'',spec:0,class:1},
             {damage:8,alt:0,cost:1,attack:2,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Big Strike',rarity:0,list:1,
+        },{name:'Big\nStrike',rarity:0,list:1,
         stats:[
             {damage:14,alt:0,cost:2,attack:1,target:1,desc:'',spec:0,class:0},
             {damage:22,alt:0,cost:2,attack:1,target:1,desc:'',spec:0,class:0},
@@ -1056,7 +1056,7 @@ types={
             {damage:0,alt:0,cost:0,attack:-1,target:0,desc:'',spec:1,class:-1},
             {damage:0,alt:0,cost:0,attack:-1,target:0,desc:'',spec:1,class:-1},
         ],
-        },{name:'Bleed',rarity:-2,list:11,
+        },{name:'Slow\nBleed',rarity:-2,list:11,
         stats:[
             {damage:0,alt:0,cost:0,attack:-2,target:0,desc:'',spec:1,class:-1},
             {damage:0,alt:0,cost:0,attack:-2,target:0,desc:'',spec:1,class:-1},
@@ -1080,6 +1080,11 @@ types={
         stats:[
             {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:-1},
             {damage:0,alt:0,cost:0,attack:-10,target:0,desc:'',spec:1,class:-1},
+        ],
+        },{name:'Wound',rarity:-2,list:11,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-14,target:0,desc:'',spec:1,class:-1},
+            {damage:0,alt:0,cost:0,attack:-14,target:0,desc:'',spec:1,class:-1},
         ],
         },
         
@@ -1590,7 +1595,7 @@ types={
             desc:'Gain 1 Base Energy,\nCannot Use Potions',
         },{
             name:'Energy / Wound', id:144,rarity:4,list:0,
-            desc:'Gain 1 Base Energy, Start Combat\nWith 2 Wounds in Your Draw Pile',
+            desc:'Gain 1 Base Energy,\nStart Combat With 1 Wound',
         },{
             name:'Damage Draw', id:145,rarity:4,list:0,
             desc:'Whenever You Take\nDamage, Draw 1 Card',
@@ -1608,7 +1613,7 @@ types={
             desc:'Add 3 Miracles at\nthe Start of Combat',
         },{
             name:'Random', id:150,rarity:4,list:0,
-            desc:'Gain 1 Potion, 50 Gold, 5 Max Health, and Upgrade 1 Card',
+            desc:'Gain 1 Potion, 50 Gold, 5 Max\nHealth, and Upgrade 1 Card',
         },
         
         /*{

@@ -24,7 +24,7 @@ class group{
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
-                this.add(findCard('Big Strike'),0,this.battle.player)
+                this.add(findCard('Big\nStrike'),0,this.battle.player)
                 this.add(findCard('Triple\nPunch'),0,this.battle.player)
                 /*this.add(67,0,this.battle.player)
                 this.add(68,0,this.battle.player)
@@ -176,6 +176,8 @@ class group{
                     this.battle.combatants[0].status.main[8]++
                 }else if(this.cards[e].attack==-10){
                     this.battle.combatants[0].take(2,0)
+                }else if(this.cards[e].attack==-14){
+                    this.battle.combatants[0].status.main[11]+=2
                 }
             }
         }
@@ -361,6 +363,9 @@ class group{
                     }else{
                         this.battle.mana.main-=this.cards[e].cost
                     }
+                    if(this.cards[e].cost==0&&this.battle.relics.active[147]){
+                        this.battle.attack.damage+=4
+                    }
                     this.battle.attack.user=0
                     this.battle.attack.type=this.cards[e].attack
                     this.battle.attack.level=this.cards[e].level
@@ -393,8 +398,12 @@ class group{
                 }
                 if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.discarding>0){
                     this.battle.discarding--
+                    this.battle.random.discards++
                     this.cards[e].used=true
                     this.cards[e].selectDiscard=true
+                    if(this.battle.random.discards==1&&this.battle.relics.active[148]){
+                        this.battle.mana.main++
+                    }
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&(this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7||this.cards[e].list==10&&this.battle.relics.active[38]||this.cards[e].list==11&&this.battle.relics.active[108])){
                     this.cards[e].select=true
                     this.select=true

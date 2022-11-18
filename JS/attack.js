@@ -57,8 +57,8 @@ class attack{
                 break
                 case 8:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.battle.drop.addDrop(findCard('Bleed'),0,stage.playerNumber+1)
-                    this.battle.reserve.addShuffle(findCard('Bleed'),0,stage.playerNumber+1)
+                    this.battle.drop.addDrop(findCard('Slow\nBleed'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Slow\nBleed'),0,stage.playerNumber+1)
                 break
                 case 9:
                     this.battle.combatants[this.target].take(this.damage,this.user)

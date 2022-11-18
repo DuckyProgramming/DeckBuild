@@ -51,6 +51,7 @@ class card{
             case -11: this.desc+='Cannot Play more\nthan 3 Cards'; break
             case -12: this.desc+='Cannot Play more\nthan 1 Attack\nWhen Played,\nBreak Balance'; break
             case -13: this.desc+='Unremovable'; break
+            case -14: this.desc+='At End of Turn,\nAdd 2 Bleed'; break
             case 1: this.desc+='Deal '+this.damage+'\nDamage'; break
             case 2: this.desc+='Add '+this.damage+'\nBlock'; break
             case 3: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times'; break
@@ -58,7 +59,7 @@ class card{
             case 5: this.desc+='Apply '+this.damage+'\nWeak'; break
             case 6: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+' All'; break
             case 7: this.desc+='Add '+this.damage+'X\nBlock'; break
-            case 8: this.desc+='Deal '+this.damage+' Damage\nAdd a Bleed\nto Deck'; break
+            case 8: this.desc+='Deal '+this.damage+' Damage\nAdd 1 Slow Bleed\nto Deck'; break
             case 9: this.desc+='Deal '+this.damage+' Damage\nDiscard 1\nRandom Card'; break
             case 10: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, gain\n1 Energy'; break
             case 11: this.desc+='Deal '+this.damage+' Damage\nGain 2 Energy\nNext Turn'; break

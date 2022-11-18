@@ -36,7 +36,7 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0}
         this.deck.initial(this.player)
     }
     create(){
@@ -86,6 +86,11 @@ class battle{
         this.mana.main=this.mana.max
         this.drawInitial()
         this.turnDraw()
+        if(this.relics.active[146]){
+            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                this.hand.cards[g].cost=floor(random(0,4))
+            }
+        }
     }
     initialEvent(){
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:80}
@@ -208,6 +213,14 @@ class battle{
         if(this.relics.active[131]){
             for(e=1,le=this.combatants.length;e<le;e++){
                 this.combatants[e].boost.main[0]++
+            }
+        }
+        if(this.relics.active[144]){
+            this.hand.add(findCard('Wound'),0,stage.playerNumber+1)
+        }
+        if(this.relics.active[149]){
+            for(e=0;e<3;e++){
+                this.hand.add(findCard('Miracle'),0,0)
             }
         }
         this.startTurn()
@@ -391,6 +404,9 @@ class battle{
                     }
                 }
             break
+            case 135:
+                this.drawAmount++
+            break
             case 138:
                 this.potions.owned.push(-1,-1)
             break
@@ -404,6 +420,9 @@ class battle{
             break
             case 142:
                 this.random.potionEffectiveness++
+            break
+            case 146:
+                this.drawAmount+=2
             break
         }
     }
@@ -526,6 +545,7 @@ class battle{
         this.startTurn()
         this.counter.played=0
         this.random.attacked=0
+        this.random.discarded=0
     }
     startTurn(){
         if(this.relics.active[15]&&this.counter.turn%3==0){
@@ -564,9 +584,6 @@ class battle{
         }
         if(this.relics.active[134]&&(this.random.class==1||this.random.class==2)){
             this.mana.main++
-        }
-        if(this.relics.active[135]){
-            this.draw()
         }
     }
     playCard(){
@@ -721,10 +738,10 @@ class battle{
             if(dist(inputs.rel.x,inputs.rel.y,25+e*50,60)<20){
                 this.layer.noStroke()
                 this.layer.fill(180)
-                this.layer.rect(130,110,240,60,5)
+                this.layer.rect(130,120,240,60,5)
                 this.layer.fill(0)
                 this.layer.textSize(12)
-                this.layer.text(types.relic[this.relics.owned[e]].desc,130,110)
+                this.layer.text(types.relic[this.relics.owned[e]].desc,130,120)
             }
         }
     }
@@ -734,10 +751,10 @@ class battle{
             if(dist(inputs.rel.x,inputs.rel.y,100+e*50,20)<15&&this.potions.owned[e]>=0){
                 this.layer.noStroke()
                 this.layer.fill(180)
-                this.layer.rect(130,110,240,60,5)
+                this.layer.rect(130,120,240,60,5)
                 this.layer.fill(0)
                 this.layer.textSize(12)
-                this.layer.text(types.potion[this.potions.owned[e]].desc,130,110)
+                this.layer.text(types.potion[this.potions.owned[e]].desc,130,120)
             }
         }
     }

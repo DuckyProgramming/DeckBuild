@@ -1095,6 +1095,9 @@ class combatant{
 					if(this.battle.relics.active[91]){
 						this.calc.damage=max(0,this.calc.damage-1)
 					}
+					if(this.battle.relics.active[145]){
+						this.battle.draw()
+					}
 				}
 				if(this.status.main[34]>0&&this.calc.damage>1){
 					this.calc.damage=1
