@@ -1705,7 +1705,7 @@ types={
             name:'Revive',id:30,rarity:2,list:0,
             desc:'When You Die,\nHeal to Half HP',
         },{
-            name:'Max Healt',id:31,rarity:2,list:0,
+            name:'Max Health',id:31,rarity:2,list:0,
             desc:'Gain 5\nMax Health',
         },{
             name:'Intangible',id:32,rarity:2,list:0,
@@ -1719,6 +1719,45 @@ types={
         },{
             name:'Confusion',id:35,rarity:2,list:0,
             desc:'Draw 5 Cards,\nBecome Confused',
+        },{
+            name:'Buffer',id:36,rarity:2,list:0,
+            desc:'Gain 2\nBuffer',
+        },{
+            name:'Combo',id:37,rarity:0,list:1,
+            desc:'Gain 5\nCombo',
+        },{
+            name:'',id:38,rarity:0,list:1,
+            desc:'',
+        },{
+            name:'',id:39,rarity:0,list:1,
+            desc:'',
+        },{
+            name:'Calm',id:40,rarity:0,list:2,
+            desc:'Enter\nCalm',
+        },{
+            name:'Wrath',id:41,rarity:0,list:2,
+            desc:'Enter\nWrath',
+        },{
+            name:'Divinity',id:42,rarity:2,list:2,
+            desc:'Enter\nDivinity',
+        },{
+            name:'Focus',id:43,rarity:0,list:3,
+            desc:'Gain 2\nFocus',
+        },{
+            name:'Darkness',id:44,rarity:1,list:3,
+            desc:'Charge 1\nDark',
+        },{
+            name:'',id:45,rarity:0,list:3,
+            desc:'',
+        },{
+            name:'',id:46,rarity:0,list:4,
+            desc:'',
+        },{
+            name:'',id:47,rarity:0,list:4,
+            desc:'',
+        },{
+            name:'',id:48,rarity:0,list:4,
+            desc:'',
         },
     ],event:[
         {

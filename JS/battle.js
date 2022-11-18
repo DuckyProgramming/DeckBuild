@@ -394,6 +394,14 @@ class battle{
             case 138:
                 this.potions.owned.push(-1,-1)
             break
+            case 141:
+                this.calc.list=[0,0,0,1,1,2]
+                for(let e=0,le=this.potions.owned.length;e<le;e++){
+                    g=this.calc.list[floor(random(0,this.calc.list.length))]
+                    f=floor(random(0,this.potions.list[g].length))
+                    this.getPotion(this.potions.list[g][f])
+                }
+            break
         }
     }
     getPotion(type){
@@ -731,6 +739,9 @@ class battle{
                 this.remember=[this.potions.owned[e]]
                 if(this.relics.active[139]){
                     this.combatants[0].life=min(this.combatants[0].life+5,this.combatants[0].base.life)
+                }else if(this.relics.active[140]){
+                    this.draw()
+                    this.draw()
                 }
                 this.potions.owned[e]=-1
                 switch(this.remember[0]){
@@ -915,6 +926,28 @@ class battle{
                         for(g=0,lg=this.hand.cards.length;g<lg;g++){
                             this.hand.cards[g].cost=floor(random(0,4))
                         }
+                    break
+                    case 36:
+                        this.combatants[0].status.main[33]+=2
+                    break
+                    case 37:
+                        this.combatants[0].combo+=5
+                    break
+
+                    case 40:
+                        this.combatants[0].changeStance(1)
+                    break
+                    case 41:
+                        this.combatants[0].changeStance(2)
+                    break
+                    case 42:
+                        this.combatants[0].changeStance(3)
+                    break
+                    case 43:
+                        this.combatants[0].boost.main[3]+=2
+                    break
+                    case 44:
+                        this.battle.combatants[0].load(4)
                     break
                 }
             }
