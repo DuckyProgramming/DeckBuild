@@ -402,4 +402,11 @@ function setupGraphics(){
 	graphics.symbol[38].ellipse(0,0,80,80)
 	graphics.symbol[38].ellipse(0,20,30,30)
 	graphics.symbol[38].ellipse(0,25,20,20)
+	graphics.symbol[39].strokeWeight(5)
+	graphics.symbol[39].stroke(0)
+	graphics.symbol[39].noFill()
+	graphics.symbol[39].arc(-20,-10,40,40,-180,0)
+	graphics.symbol[39].arc(20,-10,40,40,-180,0)
+	graphics.symbol[39].line(-40,-10,0,40)
+	graphics.symbol[39].line(40,-10,0,40)
 }

@@ -446,7 +446,17 @@ class group{
                 this.cards[e].select=true
                 this.select=true
                 this.selected=true
-                if(context==7||context==8){
+                if(context==10){
+                    this.battle.hand.cards.push(copyCard(this.cards[e]))
+                    this.battle.hand.cards[this.battle.hand.cards.length-1].position.x=1206
+                    this.battle.hand.cards[this.battle.hand.cards.length-1].position.y=500
+                    this.battle.hand.cards[this.battle.hand.cards.length-1].cost=0
+                    this.cards.splice(e,1)
+                    e--
+                    le--
+                    transition.trigger=true
+                    transition.scene='battle'
+                }else if(context==7||context==8){
                     this.battle.discard.cards.push(copyCard(this.cards[e]))
                     this.cards.splice(e,1)
                     e--

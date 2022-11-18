@@ -106,7 +106,7 @@ class card{
             case 53: this.desc+='Reduce Cost of\nAll Cards in\nHand to '+this.damage; break
             case 54: this.desc+='Deal '+this.damage+' Damage\nIgnore Block'; break
             case 55: this.desc+='Shuffle Discard\nPile into Draw Pile\nDraw '+this.damage+' Cards'; break
-            case 56: this.desc+='Exhuast All Cards\nin Your Hand'; break
+            case 56: this.desc+='Exhaust\nYour Hand'; break
             case 57: this.desc+='Add '+this.damage+' Block\nDraw '+this.alt+' Cards'; break
             case 58: this.desc+='Temporarily\nUpgrade All Cards'; break
             case 59: this.desc+='Shuffle '+this.damage+'\nRandom Attacks\ninto Draw Pile.\nThey Cost 0'; break
@@ -385,7 +385,7 @@ class card{
             this.size=round(this.size*5-1)*0.2
         }
         if(this.size<=0&&this.used){
-            if((this.spec==3||this.spec==8||this.spec==9||this.spec==13||this.exhaust)&&this.trigger){
+            if((this.spec==3||this.spec==8||this.spec==9||this.spec==13)&&this.trigger||this.exhaust){
                 this.remove=true
             }else if(this.spec==12){
                 this.draw=true

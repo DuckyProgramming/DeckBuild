@@ -1573,65 +1573,89 @@ types={
         },*/
     ],potion:[
         {
-            name:'',id:0,rarity:-1,list:0,
+            name:'',id:0,rarity:0,list:0,
             desc:'',
         },{
-            name:'Attack',id:1,rarity:-1,list:0,
+            name:'Attack',id:1,rarity:0,list:0,
             desc:'Add an Attack to Your\nHand. It Costs 0',
         },{
-            name:'Upgrade',id:2,rarity:-1,list:0,
+            name:'Upgrade',id:2,rarity:0,list:0,
             desc:'Upgrade Cards Currently in Your\nHand for the Rest of Combat',
         },{
-            name:'Block',id:3,rarity:-1,list:0,
+            name:'Block',id:3,rarity:0,list:0,
             desc:'Gain 12\nBlock',
         },{
-            name:'Heal',id:4,rarity:-1,list:0,
+            name:'Heal',id:4,rarity:0,list:0,
             desc:'Heal 20% of\nMax HP',
         },{
-            name:'Miracle',id:5,rarity:-1,list:0,
+            name:'Miracle',id:5,rarity:0,list:0,
             desc:'Add 2 Miracles\nto Your Hand',
         },{
-            name:'Colorless',id:6,rarity:-1,list:0,
+            name:'Colorless',id:6,rarity:0,list:0,
             desc:'Add 1 Random Colorless\nCard to Your Hand',
         },{
-            name:'Dexterity',id:7,rarity:-1,list:0,
+            name:'Dexterity',id:7,rarity:0,list:0,
             desc:'Gain 2\nDexterity',
         },{
-            name:'Energy',id:8,rarity:-1,list:0,
+            name:'Energy',id:8,rarity:0,list:0,
             desc:'Gain 2\nEnergy',
         },{
-            name:'Explosion',id:9,rarity:-1,list:0,
+            name:'Explosion',id:9,rarity:0,list:0,
             desc:'Deal 10 Damage\nto All Enemies',
         },{
-            name:'Vulnerable',id:10,rarity:-1,list:0,
+            name:'Vulnerable',id:10,rarity:0,list:0,
             desc:'Apply 3\nVulnerable',
         },{
-            name:'Damage',id:11,rarity:-1,list:0,
+            name:'Damage',id:11,rarity:0,list:0,
             desc:'Deal 20\nDamage',
         },{
-            name:'Temporary Strength',id:12,rarity:-1,list:0,
+            name:'Temporary Strength',id:12,rarity:0,list:0,
             desc:'Gain 5 Temporary\nStrength',
         },{
-            name:'Poison',id:13,rarity:-1,list:0,
+            name:'Poison',id:13,rarity:0,list:0,
             desc:'Apply 6\nPoison',
         },{
-            name:'Skill',id:14,rarity:-1,list:0,
+            name:'Skill',id:14,rarity:0,list:0,
             desc:'Add an Skill to Your\nHand. It Costs 0',
         },{
-            name:'Power',id:15,rarity:-1,list:0,
+            name:'Power',id:15,rarity:0,list:0,
             desc:'Add an Power to Your\nHand. It Costs 0',
         },{
-            name:'Temporary Dexterity',id:16,rarity:-1,list:0,
+            name:'Temporary Dexterity',id:16,rarity:0,list:0,
             desc:'Gain 5 Temporary\nDexterity',
         },{
-            name:'Strength',id:17,rarity:-1,list:0,
+            name:'Strength',id:17,rarity:0,list:0,
             desc:'Gain 2\nStrength',
         },{
-            name:'Draw',id:18,rarity:-1,list:0,
+            name:'Draw',id:18,rarity:0,list:0,
             desc:'Draw 3\nCards',
         },{
-            name:'Weak',id:19,rarity:-1,list:0,
+            name:'Weak',id:19,rarity:0,list:0,
             desc:'Apply 3\nWeak',
+        },{
+            name:'Control',id:20,rarity:1,list:0,
+            desc:'Gain 1\nControl',
+        },{
+            name:'Shiv',id:21,rarity:1,list:0,
+            desc:'Add 3 Shivs+\nto Your Hand',
+        },{
+            name:'Exhaust',id:22,rarity:1,list:0,
+            desc:'Exhaust\nYour Hand',
+        },{
+            name:'Armor',id:23,rarity:1,list:0,
+            desc:'Gain 4\nArmor',
+        },{
+            name:'Redraw',id:24,rarity:1,list:0,
+            desc:'Redraw\nYour Hand',
+        },{
+            name:'Counter',id:25,rarity:1,list:0,
+            desc:'Counter\n5 All',
+        },{
+            name:'Recall',id:26,rarity:1,list:0,
+            desc:'Recall 1 Card,\nit Costs 0',
+        },{
+            name:'Regen',id:27,rarity:1,list:0,
+            desc:'Gain 5\nRegen',
         },
     ],event:[
         {

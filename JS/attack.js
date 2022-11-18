@@ -729,9 +729,7 @@ class attack{
                 break
                 case 148:
                     this.battle.allDiscard()
-                    for(g=0;g<this.battle.drawAmount;g++){
-                        this.battle.draw()
-                    }
+                    this.battle.turnDraw()
                 break
                 case 149:
                     this.battle.combatants[0].status.main[6]++

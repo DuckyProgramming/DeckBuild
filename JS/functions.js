@@ -1027,7 +1027,7 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 	layer.fill(180)
 	layer.ellipse(0,0,30,30)
 	layer.fill(0)
-	layer.textSize(15)
+	layer.textSize(12)
 	switch(type){
 		case -1:
 			layer.ellipse(0,0,24,24)
@@ -1050,7 +1050,6 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 			layer.image(graphics.symbol[6],-12,-12,24,24)
 		break
 		case 6:
-			layer.textSize(12)
 			layer.text('o',0,0)
 			layer.image(graphics.symbol[5],-12,-12,24,24)
 		break
@@ -1104,6 +1103,33 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 			layer.image(graphics.symbol[7],-12,-12,24,24)
 			layer.image(graphics.symbol[11],-9,-9,18,18)
 		break
+		case 20:
+			layer.image(graphics.symbol[36],-12,-12,24,24)
+		break
+		case 21:
+			layer.image(graphics.symbol[34],-12,-12,24,24)
+		break
+		case 22:
+			layer.text('X',0,1)
+			layer.image(graphics.symbol[5],-12,-12,24,24)
+		break
+		case 23:
+			layer.image(graphics.symbol[33],-12,-12,24,24)
+		break
+		case 24:
+			layer.image(graphics.symbol[0],-12,-12,24,24)
+		break
+		case 25:
+			layer.image(graphics.symbol[1],-10,-15,20,20)
+			layer.image(graphics.symbol[12],-10,-5,20,20)
+		break
+		case 26:
+			layer.text('<',0,1)
+			layer.image(graphics.symbol[5],-12,-12,24,24)
+		break
+		case 27:
+			layer.image(graphics.symbol[39],-12,-12,24,24)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)
@@ -1149,4 +1175,5 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 36-Control
 37-Poison
 38-Scry
+39-Regen
 */
