@@ -457,6 +457,11 @@ class battle{
                 }
             }
             this.combatants[e].setupIntent(-1)
+            for(f=0,lf=this.combatants[e].ammo.length;f<lf;f++){
+                if(this.combatants[e].ammo[f]==4){
+                    this.combatants[e].ammoDetail[f]+=3
+                }
+            }
             for(f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
                 if(this.combatants[e].boost.main[f]>0){
                     this.combatants[e].boost.main[f]=max(0,this.combatants[e].boost.main[f]-1)
@@ -552,7 +557,7 @@ class battle{
             }
         }
         if(this.relics.active[120]){
-            this.combatants[0].passiveEvoke(this.combatants[0].ammo[0])
+            this.combatants[0].passiveEvoke(this.combatants[0].ammo[0],this.combatants[0].ammoDetail[0])
         }
         if(this.relics.active[134]&&(this.random.class==1||this.random.class==2)){
             this.mana.main++
@@ -947,7 +952,10 @@ class battle{
                         this.combatants[0].boost.main[3]+=2
                     break
                     case 44:
-                        this.battle.combatants[0].load(4)
+                        this.combatants[0].load(4,6)
+                    break
+                    case 45:
+                        this.combatants[0].load(3,0)
                     break
                 }
             }

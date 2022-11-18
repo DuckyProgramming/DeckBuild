@@ -82,32 +82,29 @@ class attack{
                     }
                 break
                 case 13:
-                    this.battle.combatants[0].load(0)
+                    this.battle.combatants[0].load(0,0)
                     if(this.level>=1){
-                        this.battle.combatants[0].load(0)
+                        this.battle.combatants[0].load(0,0)
                     }
                 break
                 case 14:
                     for(g=0;g<this.damage;g++){
-                        this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[0])
+                        this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[0],this.battle.combatants[0].ammoDetail[0])
                     }
-                    for(g=0,lg=this.battle.combatants[0].ammo.length-1;g<lg;g++){
-                        this.battle.combatants[0].ammo[g]=this.battle.combatants[0].ammo[g+1]
-                    }
-                    this.battle.combatants[0].ammo[this.battle.combatants[0].ammo.length-1]=-1
+                    this.battle.combatants[0].cycleCharge()
                 break
                 case 15:
-                    this.battle.combatants[0].load(1)
+                    this.battle.combatants[0].load(1,0)
                 break
                 case 16:
-                    this.battle.combatants[0].load(2)
+                    this.battle.combatants[0].load(2,0)
                     if(this.level>=1){
-                        this.battle.combatants[0].load(2)
+                        this.battle.combatants[0].load(2,0)
                     }
                 break
                 case 17:
                     for(g=0,lg=this.battle.combatants[0].ammo.length;g<lg;g++){
-                        this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[g])
+                        this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[g],this.battle.combatants[0].ammoDetail[g])
                         this.battle.combatants[0].ammo[g]=-1
                     }
                 break
@@ -118,11 +115,12 @@ class attack{
                     }
                 break
                 case 19:
-                    this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[this.battle.combatants[0].ammo.length-1].type)
+                    this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[this.battle.combatants[0].ammo.length-1].type,this.battle.combatants[0].ammoDetail[this.battle.combatants[0].ammoDetail.length-1].type)
                     this.battle.combatants[0].ammo.splice(this.battle.combatants[0].ammo.length-1,1)
+                    this.battle.combatants[0].ammoDetail.splice(this.battle.combatants[0].ammoDetail.length-1,1)
                 break
                 case 20:
-                    this.battle.combatants[0].load(3)
+                    this.battle.combatants[0].load(3,0)
                 break
                 case 21:
                     this.battle.combatants[this.target].take(this.damage,this.user)
@@ -188,12 +186,10 @@ class attack{
                 break
                 case 33:
                     this.hold.int=this.battle.combatants[0].ammo[0]
-                    this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[0])
-                    for(g=0,lg=this.battle.combatants[0].ammo.length-1;g<lg;g++){
-                        this.battle.combatants[0].ammo[g]=this.battle.combatants[0].ammo[g+1]
-                    }
-                    this.battle.combatants[0].ammo[this.battle.combatants[0].ammo.length-1]=-1
-                    this.battle.combatants[0].load(this.hold.int)
+                    this.hold.int2=this.battle.combatants[0].ammoDetail[0]
+                    this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[0],this.battle.combatants[0].ammoDetail[0])
+                    this.battle.combatants[0].cycleCharge()
+                    this.battle.combatants[0].load(this.hold.int,this.hold.int2)
                 break
                 case 34:
                     this.battle.combatants[this.target].take(this.damage,this.user)
@@ -839,6 +835,9 @@ class attack{
                 break
                 case 173:
                     this.battle.combatants[this.target].status.main[37]+=this.damage
+                break
+                case 174:
+                    this.battle.combatants[0].load(4,6)
                 break
             }
             this.battle.combatants[0].lastPlay=this.class

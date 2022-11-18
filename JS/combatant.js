@@ -42,6 +42,7 @@ class combatant{
 		this.stance=0
 		this.mantra=0
 		this.ammo=[-1,-1,-1]
+		this.ammoDetail=[0,0,0]
 		this.meter=0
 		this.armed=1
 		this.anim=[0,0,0,0,0]
@@ -63,6 +64,7 @@ class combatant{
 		this.stance=0
 		this.mantra=0
 		this.ammo=[-1,-1,-1]
+		this.ammoDetail=[0,0,0]
 		this.meter=0
 		this.armed=1
 		this.lastPlay=-1
@@ -768,19 +770,19 @@ class combatant{
 									this.layer.ellipse(0,-118,20,20)
 									this.layer.ellipse(-25,-108,20,20)
 									this.layer.ellipse(25,-108,20,20)
-									displayAmmo(this.layer,25,-108,this.ammo[0],this.fade)
-									displayAmmo(this.layer,0,-118,this.ammo[1],this.fade)
-									displayAmmo(this.layer,-25,-108,this.ammo[2],this.fade)
+									displayAmmo(this.layer,25,-108,this.ammo[0],this.ammoDetail[0],this.fade)
+									displayAmmo(this.layer,0,-118,this.ammo[1],this.ammoDetail[1],this.fade)
+									displayAmmo(this.layer,-25,-108,this.ammo[2],this.ammoDetail[2],this.fade)
 								break
 								case 2:
 									this.layer.ellipse(-15,-113,20,20)
 									this.layer.ellipse(15,-113,20,20)
-									displayAmmo(this.layer,15,-113,this.ammo[0],this.fade)
-									displayAmmo(this.layer,-15,-113,this.ammo[1],this.fade)
+									displayAmmo(this.layer,15,-113,this.ammo[0],this.ammoDetail[0],this.fade)
+									displayAmmo(this.layer,-15,-113,this.ammo[1],this.ammoDetail[1],this.fade)
 								break
 								case 1:
 									this.layer.ellipse(0,-118,20,20)
-									displayAmmo(this.layer,0,-118,this.ammo[0],this.fade)
+									displayAmmo(this.layer,0,-118,this.ammo[0],this.ammoDetail[0],this.fade)
 								break
 							}
 						break
@@ -897,7 +899,7 @@ class combatant{
 		}
 		this.layer.translate(-this.base.position.x,-this.base.position.y)
 	}
-	evoke(type){
+	evoke(type,detail){
 		switch(type){
 			case 0:
 				i=0
@@ -928,6 +930,15 @@ class combatant{
 			break
 			case 3:
 				this.battle.mana.main+=3
+			break
+			case 4:
+				i=0
+				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
+					if(i==0&&this.battle.combatants[h].life>0){
+						this.battle.combatants[h].take(detail*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3])),0)
+						i=1
+					}
+				}
 			break
 		}
 	}
@@ -963,14 +974,35 @@ class combatant{
 			case 3:
 				this.battle.mana.main++
 			break
+			case 4:
+				i=0
+				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
+					if(i==0&&this.battle.combatants[h].life>0){
+						this.battle.combatants[h].take(detail/2*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3])),0)
+						i=1
+					}
+				}
+			break
 		}
 	}
-	load(type){
+	cycleCharge(){
+		for(g=0,lg=this.ammo.length-1;g<lg;g++){
+			this.ammo[g]=this.ammo[g+1]
+		}
+		this.ammo[this.ammo.length-1]=-1
+		for(g=0,lg=this.ammoDetail.length-1;g<lg;g++){
+			this.ammoDetail[g]=this.ammoDetail[g+1]
+		}
+		this.ammoDetail[this.ammoDetail.length-1]=0
+	}
+	load(type,detail){
 		this.loaded=false
 		for(h=0,lh=this.ammo.length;h<lh;h++){
 			if(this.ammo[h]==-1&&!this.loaded){
 				this.ammo[h]=type
+				this.ammoDetail[h]=detail
 				this.loaded=true
+				break
 			}
 		}
 		if(!this.loaded){
@@ -979,6 +1011,10 @@ class combatant{
 				this.ammo[h]=this.ammo[h+1]
 			}
 			this.ammo[this.ammo.length-1]=type
+			for(h=0,lh=this.ammoDetail.length-1;h<lh;h++){
+				this.ammoDetail[h]=this.ammoDetail[h+1]
+			}
+			this.ammoDetail[this.ammoDetail.length-1]=detail
 		}
 	}
 	take(damage,user,extra){

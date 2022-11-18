@@ -706,6 +706,11 @@ types={
             {damage:3,alt:0,cost:0,attack:22,target:1,desc:'',spec:0,class:0},
             {damage:5,alt:0,cost:0,attack:22,target:1,desc:'',spec:0,class:0},
         ],
+        },{name:'Darkness',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:174,target:0,desc:'',spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:174,target:0,desc:'',spec:0,class:2},
+        ],
         },
         
         
@@ -1747,8 +1752,8 @@ types={
             name:'Darkness',id:44,rarity:1,list:3,
             desc:'Charge 1\nDark',
         },{
-            name:'',id:45,rarity:0,list:3,
-            desc:'',
+            name:'Fusion',id:45,rarity:0,list:3,
+            desc:'Charge 1\nEnergy',
         },{
             name:'',id:46,rarity:0,list:4,
             desc:'',

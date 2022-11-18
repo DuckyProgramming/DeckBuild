@@ -28,7 +28,7 @@ function displayTransition(layer,transition){
 		transition.anim=round(transition.anim*10-1)/10
 	}
 }
-function displayAmmo(layer,x,y,type,fade){
+function displayAmmo(layer,x,y,type,detail,fade){
 	layer.translate(x,y)
 	switch(type){
 		case 0:
@@ -55,9 +55,13 @@ function displayAmmo(layer,x,y,type,fade){
 		break
 		case 4:
 			layer.noFill()
-			layer.stroke(50,255,50,fade)
+			layer.stroke(50,0,50,fade)
 			layer.strokeWeight(3)
-			layer.triangle(-8,-4,-8,4,10,0)
+			layer.triangle(-4,-2,-4,2,4,0)
+			layer.fill(255,fade)
+			layer.noStroke()
+			layer.textSize(15)
+			layer.text(detail,0,1)
 		break
 	}
 	layer.translate(-x,-y)
@@ -1209,6 +1213,12 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 		case 43:
 			layer.image(graphics.symbol[21],-12,-12,24,24)
 		break
+		case 44:
+			layer.image(graphics.symbol[42],-12,-12,24,24)
+		break
+		case 45:
+			layer.image(graphics.symbol[43],-12,-12,24,24)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)
@@ -1257,4 +1267,6 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 39-Regen
 40-Potion
 41-Metallicize
+42-DarkCharge
+43-EnergyCharge
 */
