@@ -902,8 +902,8 @@ types={
         ],
         },{name:'Entrance',rarity:1,list:0,
         stats:[
-            {damage:8,alt:0,cost:0,attack:12,target:0,desc:'',spec:8,class:1},
-            {damage:12,alt:0,cost:0,attack:12,target:0,desc:'',spec:8,class:1},
+            {damage:8,alt:0,cost:0,attack:12,target:0,desc:'',spec:8,class:0},
+            {damage:12,alt:0,cost:0,attack:12,target:0,desc:'',spec:8,class:0},
         ],
         },{name:'Enlighten',rarity:1,list:0,
         stats:[
@@ -912,8 +912,8 @@ types={
         ],
         },{name:'Purity',rarity:1,list:0,
         stats:[
-            {damage:0,alt:0,cost:0,attack:56,target:0,desc:'',spec:3,class:0},
-            {damage:0,alt:0,cost:0,attack:56,target:0,desc:'',spec:9,class:0},
+            {damage:0,alt:0,cost:0,attack:56,target:0,desc:'',spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:56,target:0,desc:'',spec:9,class:2},
         ],
         },{name:'Finesse',rarity:1,list:0,
         stats:[
@@ -922,13 +922,13 @@ types={
         ],
         },{name:'Flash\nStrike',rarity:1,list:0,
         stats:[
-            {damage:3,alt:1,cost:0,attack:24,target:1,desc:'',spec:0,class:1},
-            {damage:6,alt:1,cost:0,attack:24,target:1,desc:'',spec:0,class:1},
+            {damage:3,alt:1,cost:0,attack:24,target:1,desc:'',spec:0,class:0},
+            {damage:6,alt:1,cost:0,attack:24,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Panacea',rarity:1,list:0,
         stats:[
-            {damage:1,alt:0,cost:0,attack:171,target:0,desc:'',spec:0,class:1},
-            {damage:2,alt:0,cost:0,attack:171,target:0,desc:'',spec:0,class:1},
+            {damage:1,alt:0,cost:0,attack:171,target:0,desc:'',spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:171,target:0,desc:'',spec:0,class:2},
         ],
         },{name:'Apotheosis',rarity:2,list:0,
         stats:[
@@ -1568,7 +1568,7 @@ types={
         },
         
         /*{
-            name:'',id:13,rarity:4,list:0,
+            name:'', id:13,rarity:4,list:0,
             desc:'',
         },*/
     ],potion:[
@@ -1606,8 +1606,32 @@ types={
             name:'Vulnerable',id:10,rarity:-1,list:0,
             desc:'Apply 3\nVulnerable',
         },{
-            name:'Damage',id:1,rarity:-1,list:0,
+            name:'Damage',id:11,rarity:-1,list:0,
             desc:'Deal 20\nDamage',
+        },{
+            name:'Temporary Strength',id:12,rarity:-1,list:0,
+            desc:'Gain 5 Temporary\nStrength',
+        },{
+            name:'Poison',id:13,rarity:-1,list:0,
+            desc:'Apply 6\nPoison',
+        },{
+            name:'Skill',id:14,rarity:-1,list:0,
+            desc:'Add an Skill to Your\nHand. It Costs 0',
+        },{
+            name:'Power',id:15,rarity:-1,list:0,
+            desc:'Add an Power to Your\nHand. It Costs 0',
+        },{
+            name:'Temporary Dexterity',id:16,rarity:-1,list:0,
+            desc:'Gain 5 Temporary\nDexterity',
+        },{
+            name:'Strength',id:17,rarity:-1,list:0,
+            desc:'Gain 2\nStrength',
+        },{
+            name:'Draw',id:18,rarity:-1,list:0,
+            desc:'Draw 3\nCards',
+        },{
+            name:'Weak',id:19,rarity:-1,list:0,
+            desc:'Apply 3\nWeak',
         },
     ],event:[
         {

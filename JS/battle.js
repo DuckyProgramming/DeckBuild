@@ -780,6 +780,58 @@ class battle{
                         this.attack.targetType=1
                         this.hand.trigger=true
                     break
+                    case 12:
+                        this.combatants[0].boost.main[0]+=5
+                        this.combatants[0].status.main[4]-=4
+                    break
+                    case 13:
+                        this.attack.damage=6
+                        this.attack.user=0
+                        this.attack.type=173
+                        this.attack.class=2
+                        this.attack.targetType=1
+                        this.hand.trigger=true
+                    break
+                    case 14:
+                        this.calc.list=[]
+                        for(g=0,lg=types.card.length;g<lg;g++){
+                            if(types.card[g].list<=5&&types.card[g].stats[0].class==1){
+                                this.calc.list.push(g)
+                            }
+                        }
+                        g=floor(random(0,this.calc.list.length))
+                        this.hand.add(this.calc.list[g],0,types.card[this.calc.list[g]].list)
+                    break
+                    case 15:
+                        this.calc.list=[]
+                        for(g=0,lg=types.card.length;g<lg;g++){
+                            if(types.card[g].list<=5&&types.card[g].stats[0].class==2){
+                                this.calc.list.push(g)
+                            }
+                        }
+                        g=floor(random(0,this.calc.list.length))
+                        this.hand.add(this.calc.list[g],0,types.card[this.calc.list[g]].list)
+                    break
+                    case 16:
+                        this.combatants[0].boost.main[2]+=5
+                        this.combatants[0].status.main[32]-=4
+                    break
+                    case 17:
+                        this.combatants[0].boost.main[0]+=2
+                    break
+                    case 18:
+                        for(g=0;g<3;g++){
+                            this.draw()
+                        }
+                    break
+                    case 19:
+                        this.attack.damage=3
+                        this.attack.user=0
+                        this.attack.type=5
+                        this.attack.class=2
+                        this.attack.targetType=1
+                        this.hand.trigger=true
+                    break
                 }
                 this.potions.owned[e]=-1
             }
@@ -869,7 +921,7 @@ class battle{
                         this.layer.text('Complete Mission in '+this.objective[e][1]+' Turns ('+this.counter.turn+')',640,e*20+20)
                     break
                     case 2:
-                        this.layer.text('Take Less Than '+this.objective[e][1]+' Damage ('+this.counter.taken+')',640,e*20+20)
+                        this.layer.text('Take Less Than '+this.objective[e][1]+' Damage ('+ceil(this.counter.taken)+')',640,e*20+20)
                     break
                 }
                 switch(this.objective[e][2]){
@@ -910,7 +962,7 @@ class battle{
                         this.layer.text('Complete Mission in '+this.objective[e][1]+' Turns ('+this.counter.turn+')',450,e*60+120)
                     break
                     case 2:
-                        this.layer.text('Take Less Than '+this.objective[e][1]+' Damage ('+this.counter.taken+')',450,e*60+120)
+                        this.layer.text('Take Less Than '+this.objective[e][1]+' Damage ('+ceil(this.counter.taken)+')',450,e*60+120)
                     break
                 }
                 switch(this.objective[e][2]){

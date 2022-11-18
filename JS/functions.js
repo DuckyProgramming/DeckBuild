@@ -1072,6 +1072,38 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 		case 11:
 			layer.image(graphics.symbol[7],-12,-12,24,24)
 		break
+		case 12:
+			layer.image(graphics.symbol[27],0,-7,14,14)
+			layer.image(graphics.symbol[7],-14,-8,16,16)
+			layer.image(graphics.symbol[15],-12,-6,12,12)
+		break
+		case 13:
+			layer.image(graphics.symbol[37],-12,-12,24,24)
+		break
+		case 14:
+			layer.image(graphics.symbol[5],-12,-12,24,24)
+			layer.image(graphics.symbol[2],-8,-8,16,16)
+		break
+		case 15:
+			layer.image(graphics.symbol[5],-12,-12,24,24)
+			layer.image(graphics.symbol[18],-8,-8,16,16)
+		break
+		case 16:
+			layer.image(graphics.symbol[27],0,-7,14,14)
+			layer.image(graphics.symbol[2],-14,-8,16,16)
+			layer.image(graphics.symbol[15],-12,-6,12,12)
+		break
+		case 17:
+			layer.image(graphics.symbol[7],-12,-12,24,24)
+			layer.image(graphics.symbol[15],-9,-9,18,18)
+		break
+		case 18:
+			layer.image(graphics.symbol[5],-12,-12,24,24)
+		break
+		case 19:
+			layer.image(graphics.symbol[7],-12,-12,24,24)
+			layer.image(graphics.symbol[11],-9,-9,18,18)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)
