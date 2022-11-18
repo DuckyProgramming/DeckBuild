@@ -1636,7 +1636,7 @@ types={
             desc:'Add 2 Miracles\nto Your Hand',
         },{
             name:'Colorless',id:6,rarity:0,list:0,
-            desc:'Add 1 Random Colorless\nCard to Your Hand',
+            desc:'Add 1 Colorless\nCard to Your Hand',
         },{
             name:'Dexterity',id:7,rarity:0,list:0,
             desc:'Gain 2\nDexterity',

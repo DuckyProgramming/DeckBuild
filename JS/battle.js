@@ -36,7 +36,7 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1}
         this.deck.initial(this.player)
     }
     create(){
@@ -402,6 +402,9 @@ class battle{
                     this.getPotion(this.potions.list[g][f])
                 }
             break
+            case 142:
+                this.random.potionEffectiveness++
+            break
         }
     }
     getPotion(type){
@@ -757,8 +760,11 @@ class battle{
                                 this.calc.list.push(g)
                             }
                         }
-                        g=floor(random(0,this.calc.list.length))
-                        this.hand.add(this.calc.list[g],0,types.card[this.calc.list[g]].list)
+                        for(h=0;h<this.random.potionEffectiveness;h++){
+                            g=floor(random(0,this.calc.list.length))
+                            this.hand.add(this.calc.list[g],0,types.card[this.calc.list[g]].list)
+                            this.hand.cards[this.hand.cards.length-1].cost=0
+                        }
                     break
                     case 2:
                         for(g=0,lg=this.hand.cards.length;g<lg;g++){
@@ -769,20 +775,25 @@ class battle{
                         }
                     break
                     case 3:
-                        this.combatants[0].block+=12
+                        this.combatants[0].block+=12*this.random.potionEffectiveness
                     break
                     case 4:
-                        this.combatants[0].life=min(this.combatants[0].life+this.combatants[0].base.life*0.2,this.combatants[0].base.life)
+                        this.combatants[0].life=min(this.combatants[0].life+this.combatants[0].base.life*0.2*this.random.potionEffectiveness,this.combatants[0].base.life)
                     break
                     case 5:
-                        this.hand.add(findCard('Miracle'),0,0)
-                        this.hand.add(findCard('Miracle'),0,0)
+                        for(g=0;g<2*this.random.potionEffectiveness;g++){
+                            this.hand.add(findCard('Miracle'),0,0)
+                        }
                     break
                     case 6:
                         transition.trigger=true
                         transition.scene='choice'
                         this.setupChoice(0,floor(random(1,3)),4)
-                        this.context=-2
+                        if(this.random.potionEffectiveness>1){
+                            this.context=-3
+                        }else{
+                            this.context=-2
+                        }
                     break
                     case 7:
                         this.combatants[0].boost.main[2]+=2
@@ -1449,7 +1460,10 @@ class battle{
                     transition.trigger=true
                     transition.scene='map'
                 }
-                if(this.context==-2){
+                if(this.context==-3){
+                    this.hand.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                    this.hand.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                }else if(this.context==-2){
                     this.hand.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
                 }else{
                     this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
@@ -1460,7 +1474,7 @@ class battle{
         if(transition.scene=='map'&&this.context==1){
             transition.scene='rest'
         }
-        if(transition.scene=='map'&&this.context==-2){
+        if(transition.scene=='map'&&(this.context==-2||this.context==-3)){
             transition.scene='battle'
         }
     }

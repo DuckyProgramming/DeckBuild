@@ -1047,6 +1047,11 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[40],0,-14,12,12)
 			layer.image(graphics.symbol[40],6,-2,12,12)
 		break
+		case 142:
+			layer.textSize(10)
+			layer.text('x2',0,0)
+			layer.image(graphics.symbol[40],-16,-16,32,32)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)
