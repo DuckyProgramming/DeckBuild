@@ -35,7 +35,7 @@ class battle{
         this.discarding=0
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
-        this.potions={owned:[-1,-1,-1]}
+        this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
         this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0}
         this.deck.initial(this.player)
     }
@@ -90,6 +90,7 @@ class battle{
     initialEvent(){
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:80}
         this.relics={list:[[],[],[],[],[]],owned:[],active:[],shop:[],size:[]}
+        this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
         for(g=0,lg=zones[this.map.zone].events[0].length;g<lg;g++){
             this.eventList.push(zones[this.map.zone].events[0][g])
         }
@@ -101,6 +102,11 @@ class battle{
                 this.relics.list[types.relic[g].rarity].push(g)
             }
             this.relics.active.push(false)
+        }
+        for(g=0,lg=types.potion.length;g<lg;g++){
+            if(g>=1&&types.potion[g].rarity>=0&&(types.potion[g].list==0||types.potion[g].list==this.player)){
+                this.potions.list[types.potion[g].rarity].push(g)
+            }
         }
     }
     initialReserve(){
@@ -973,6 +979,9 @@ class battle{
                     case 4:
                         this.layer.text('Relic',600,e*20+20)
                     break
+                    case 5:
+                        this.layer.text('Potion',600,e*20+20)
+                    break
                 }
             }
         }
@@ -1013,6 +1022,9 @@ class battle{
                     break
                     case 4:
                         this.layer.text('New Relic',450,e*60+150)
+                    break
+                    case 5:
+                        this.layer.text('New Potion',450,e*60+150)
                     break
                 }
             }
@@ -1177,6 +1189,12 @@ class battle{
                                 f=floor(random(0,this.relics.list[g].length))
                                 this.getRelic(this.relics.list[g][f])
                                 this.relics.list[g].splice(f,1)
+                            break
+                            case 5:
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.potions.list[g].length))
+                                this.getPotion(this.potions.list[g][f])
                             break
                         }
                     }

@@ -1123,7 +1123,7 @@ types={
             combatants:[5,0,0,0,0,0],
             reinforce:[],
             threshold:2,
-            objective:[[0,0,0,0],[2,5,4,0]],
+            objective:[[0,0,0,0],[2,5,5,0]],
         },{
             combatants:[5,5,5,0,0,0],
             reinforce:[5],
@@ -1565,6 +1565,24 @@ types={
         },{
             name:'6 Quick Heal',id:137,rarity:4,list:0,
             desc:'Heal 6 Health\nat the End of Combat',
+        },{
+            name:'Potion Storage', id:138,rarity:0,list:0,
+            desc:'You Can Hold 2\nExtra Potions',
+        },{
+            name:'Potion Heal', id:139,rarity:0,list:0,
+            desc:'Whenever You Use a\nPotion, Heal 5 Health',
+        },{
+            name:'Potion Draw', id:140,rarity:1,list:0,
+            desc:'Whenever You Use a\nPotion, Draw 2 Cards',
+        },{
+            name:'Potion Supply', id:141,rarity:3,list:0,
+            desc:'When Taken, Fill\nAll Potion Slots',
+        },{
+            name:'Potion Effectiveness', id:142,rarity:4,list:0,
+            desc:'Potions are Twice as Effective',
+        },{
+            name:'Energy / Potions', id:143,rarity:4,list:0,
+            desc:'Gain 1 Base Energy,\nCannot Use Potions',
         },
         
         /*{
