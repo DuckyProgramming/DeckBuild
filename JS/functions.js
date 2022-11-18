@@ -1018,6 +1018,12 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[40],-19,-10,20,20)
 			layer.image(graphics.symbol[40],-1,-10,20,20)
 		break
+		case 139:
+			layer.image(graphics.symbol[4],-19,-14,20,20)
+			layer.image(graphics.symbol[40],-1,-14,20,20)
+			layer.textSize(10)
+			layer.text('5',0,10)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)
@@ -1149,6 +1155,19 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 		case 31:
 			layer.image(graphics.symbol[17],-10,-10,20,20)
 		break
+		case 32:
+			layer.image(graphics.symbol[31],-10,-10,20,20)
+		break
+		case 33:
+			layer.image(graphics.symbol[41],-10,-10,20,20)
+		break
+		case 34:
+			layer.image(graphics.symbol[1],-10,-10,20,20)
+		break
+		case 35:
+			layer.text('?',0,1)
+			layer.image(graphics.symbol[5],-12,-12,24,24)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)
@@ -1196,4 +1215,5 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 38-Scry
 39-Regen
 40-Potion
+41-Metallicize
 */

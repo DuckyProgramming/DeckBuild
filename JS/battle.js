@@ -729,6 +729,9 @@ class battle{
         for(e=0,le=this.potions.owned.length;e<le;e++){
             if(dist(inputs.rel.x,inputs.rel.y,100+e*50,20)<15&&this.potions.owned[e]>=0){
                 this.remember=[this.potions.owned[e]]
+                if(this.relics.active[139]){
+                    this.combatants[0].life=min(this.combatants[0].life+5,this.combatants[0].base.life)
+                }
                 this.potions.owned[e]=-1
                 switch(this.remember[0]){
                     case 1:
@@ -753,7 +756,7 @@ class battle{
                         this.combatants[0].block+=12
                     break
                     case 4:
-                        this.combatants[0].life=min(this.combatants[0].life+this.combatants[0].base.life*0.2*this.random.healEffectiveness,this.combatants[0].base.life)
+                        this.combatants[0].life=min(this.combatants[0].life+this.combatants[0].base.life*0.2,this.combatants[0].base.life)
                     break
                     case 5:
                         this.hand.add(findCard('Miracle'),0,0)
@@ -888,10 +891,30 @@ class battle{
                         }
                     break
                     case 30:
-                        this.combatants[0].life=min(this.combatants[0].life+this.combatants[0].base.life*0.5*this.random.healEffectiveness,this.combatants[0].base.life)
+                        this.combatants[0].life=min(this.combatants[0].life+this.combatants[0].base.life*0.5,this.combatants[0].base.life)
                     break
                     case 31:
-                        this.combatatns[0].base.life+=5
+                        this.combatants[0].base.life+=5
+                        this.combatants[0].life+=5
+                    break
+                    case 32:
+                        this.combatants[0].status.main[34]++
+                    break
+                    case 33:
+                        this.combatants[0].status.main[40]+=6
+                    break
+                    case 34:
+                        transition.trigger=true
+                        transition.scene='map'
+                        this.map.complete[this.map.position[0]][this.map.position[1]]=1
+                    break
+                    case 35:
+                        for(g=0;g<5;g++){
+                            this.draw()
+                        }
+                        for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                            this.hand.cards[g].cost=floor(random(0,4))
+                        }
                     break
                 }
             }

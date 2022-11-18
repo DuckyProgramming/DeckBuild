@@ -26,8 +26,6 @@ class group{
                 }
                 this.add(findCard('Big Strike'),0,this.battle.player)
                 this.add(findCard('Triple\nPunch'),0,this.battle.player)
-
-                this.add(findCard('In the\nFolds'),0,this.battle.player)
                 /*this.add(67,0,this.battle.player)
                 this.add(68,0,this.battle.player)
                 this.add(69,0,this.battle.player)

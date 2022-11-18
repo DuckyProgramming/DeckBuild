@@ -416,4 +416,11 @@ function setupGraphics(){
 	graphics.symbol[40].line(-10,-36,-10,-48)
 	graphics.symbol[40].line(10,-36,10,-48)
 	graphics.symbol[40].line(-10,-48,10,-48)
+	graphics.symbol[41].strokeWeight(5)
+	graphics.symbol[41].stroke(0)
+	graphics.symbol[41].noFill()
+	graphics.symbol[41].quad(0,0,-24,-24,-48,0,-24,24)
+	graphics.symbol[41].quad(0,0,-24,-24,0,-48,24,-24)
+	graphics.symbol[41].quad(0,0,24,24,48,0,24,-24)
+	graphics.symbol[41].quad(0,0,24,24,0,48,-24,24)
 }

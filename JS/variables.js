@@ -1715,7 +1715,7 @@ types={
             desc:'Gain 6\nMetallicize',
         },{
             name:'Escape',id:34,rarity:2,list:0,
-            desc:'Cancel a\nNon-Boss Combat',
+            desc:'End a\nNon-Boss Combat',
         },{
             name:'Confusion',id:35,rarity:2,list:0,
             desc:'Draw 5 Cards,\nBecome Confused',
