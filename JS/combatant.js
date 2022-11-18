@@ -26,7 +26,7 @@ class combatant{
 			[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120],[125,75,25],[25,125,175],[150,225,150],
 			[100,200,200],[200,0,50],[100,50,150],[50,100,50],[20,60,120],[170,240,255],[235,65,15],[210,200,245],[210,90,0],[50,0,0],
 			[255,200,255],[125,160,160],[200,25,125],[190,190,60],[225,225,75],[255,50,100],[150,150,50],[255,125,25],[255,175,75],[200,125,250],
-			[240,100,50],[150,175,200],[0,100,255],[200,255,200],[225,255,225],[140,160,180],[200,150,200],[100,200,50],[255,200,180],[40,80,180],
+			[240,100,50],[150,175,200],[0,100,255],[200,255,255],[225,255,225],[140,160,180],[200,150,200],[100,200,50],[255,200,180],[40,80,180],
 			[170,190,210]],infoFade:[],name:[
 			'Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Confused',
 			'Reflect','Bleed','Intangible','Sink','Hymn','Mental Fortress','Rush','Wave of the Hand','Next Attack Damage','Die Next Turn',
@@ -1006,7 +1006,7 @@ class combatant{
 			}
 		}
 		if(!this.loaded){
-			this.evoke(this.ammo[0])
+			this.evoke(this.ammo[0],this.ammoDetail[0])
 			for(h=0,lh=this.ammo.length-1;h<lh;h++){
 				this.ammo[h]=this.ammo[h+1]
 			}
@@ -1241,10 +1241,10 @@ class combatant{
 				this.battle.relics.active[81]=false
 				this.life=this.base.life/2
 			}else if(this.id==0){
-				for(g=0,lg=this.potions.owned.length;g<lg;g++){
-					if(this.potions.owned[g]==30){
-						this.life=this.base.life/2
-						this.potions.owned[g]==-1
+				for(g=0,lg=this.battle.potions.owned.length;g<lg;g++){
+					if(this.battle.potions.owned[g]==30){
+						this.life=this.base.life/2*this.battle.random.potionEffectiveness
+						this.battle.potions.owned[g]=-1
 					}
 				}
 				if(this.life<=0){

@@ -331,7 +331,7 @@ class battle{
                     }
                 }
             break
-            case 123: case 127: case 131: case 132: case 136:
+            case 123: case 127: case 131: case 132: case 136: case 143:
                 this.mana.gen++
                 this.mana.main++
                 this.mana.max++
@@ -742,260 +742,279 @@ class battle{
         }
     }
     onClickPotions(){
-        for(e=0,le=this.potions.owned.length;e<le;e++){
-            if(dist(inputs.rel.x,inputs.rel.y,100+e*50,20)<15&&this.potions.owned[e]>=0){
-                this.remember=[this.potions.owned[e]]
-                if(this.relics.active[139]){
-                    this.combatants[0].life=min(this.combatants[0].life+5,this.combatants[0].base.life)
-                }else if(this.relics.active[140]){
-                    this.draw()
-                    this.draw()
-                }
-                this.potions.owned[e]=-1
-                switch(this.remember[0]){
-                    case 1:
-                        this.calc.list=[]
-                        for(g=0,lg=types.card.length;g<lg;g++){
-                            if(types.card[g].list<=5&&types.card[g].stats[0].class==0){
-                                this.calc.list.push(g)
+        if(!this.relics.active[143]){
+            for(e=0,le=this.potions.owned.length;e<le;e++){
+                if(dist(inputs.rel.x,inputs.rel.y,100+e*50,20)<15&&this.potions.owned[e]>=0){
+                    this.remember=[this.potions.owned[e]]
+                    if(this.relics.active[139]){
+                        this.combatants[0].life=min(this.combatants[0].life+5,this.combatants[0].base.life)
+                    }else if(this.relics.active[140]){
+                        this.draw()
+                        this.draw()
+                    }
+                    this.potions.owned[e]=-1
+                    switch(this.remember[0]){
+                        case 1:
+                            this.calc.list=[]
+                            for(g=0,lg=types.card.length;g<lg;g++){
+                                if(types.card[g].list<=5&&types.card[g].stats[0].class==0){
+                                    this.calc.list.push(g)
+                                }
                             }
-                        }
-                        for(h=0;h<this.random.potionEffectiveness;h++){
-                            g=floor(random(0,this.calc.list.length))
-                            this.hand.add(this.calc.list[g],0,types.card[this.calc.list[g]].list)
-                            this.hand.cards[this.hand.cards.length-1].cost=0
-                        }
-                    break
-                    case 2:
-                        for(g=0,lg=this.hand.cards.length;g<lg;g++){
-                            if(this.hand.cards[g].level==0){
-                                this.hand.cards[g].level++
-                                this.hand.cards[g]=reformCard(this.hand.cards[g])
+                            for(h=0;h<this.random.potionEffectiveness;h++){
+                                g=floor(random(0,this.calc.list.length))
+                                this.hand.add(this.calc.list[g],0,types.card[this.calc.list[g]].list)
+                                this.hand.cards[this.hand.cards.length-1].cost=0
                             }
-                        }
-                    break
-                    case 3:
-                        this.combatants[0].block+=12*this.random.potionEffectiveness
-                    break
-                    case 4:
-                        this.combatants[0].life=min(this.combatants[0].life+this.combatants[0].base.life*0.2*this.random.potionEffectiveness,this.combatants[0].base.life)
-                    break
-                    case 5:
-                        for(g=0;g<2*this.random.potionEffectiveness;g++){
-                            this.hand.add(findCard('Miracle'),0,0)
-                        }
-                    break
-                    case 6:
-                        transition.trigger=true
-                        transition.scene='choice'
-                        this.setupChoice(0,floor(random(1,3)),4)
-                        if(this.random.potionEffectiveness>1){
-                            this.context=-3
-                        }else{
-                            this.context=-2
-                        }
-                    break
-                    case 7:
-                        this.combatants[0].boost.main[2]+=2
-                    break
-                    case 8:
-                        this.mana.main+=2
-                    break
-                    case 9:
-                        for(g=1,lg=this.combatants.length;g<lg;g++){
-                            if(this.combatants[g].life>0){
-                                this.combatants[g].take(10,0)
+                        break
+                        case 2:
+                            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                                if(this.hand.cards[g].level==0){
+                                    this.hand.cards[g].level++
+                                    this.hand.cards[g]=reformCard(this.hand.cards[g])
+                                }
                             }
-                        }
-                    break
-                    case 10:
-                        this.attack.damage=3
-                        this.attack.user=0
-                        this.attack.type=172
-                        this.attack.class=2
-                        this.attack.targetType=1
-                        this.hand.trigger=true
-                    break
-                    case 11:
-                        this.attack.damage=20
-                        this.attack.user=0
-                        this.attack.type=1
-                        this.attack.class=0
-                        this.attack.targetType=1
-                        this.hand.trigger=true
-                    break
-                    case 12:
-                        this.combatants[0].boost.main[0]+=5
-                        this.combatants[0].status.main[4]-=4
-                    break
-                    case 13:
-                        this.attack.damage=6
-                        this.attack.user=0
-                        this.attack.type=173
-                        this.attack.class=2
-                        this.attack.targetType=1
-                        this.hand.trigger=true
-                    break
-                    case 14:
-                        this.calc.list=[]
-                        for(g=0,lg=types.card.length;g<lg;g++){
-                            if(types.card[g].list<=5&&types.card[g].stats[0].class==1){
-                                this.calc.list.push(g)
+                        break
+                        case 3:
+                            this.combatants[0].block+=12*this.random.potionEffectiveness
+                        break
+                        case 4:
+                            this.combatants[0].life=min(this.combatants[0].life+this.combatants[0].base.life*0.2*this.random.potionEffectiveness,this.combatants[0].base.life)
+                        break
+                        case 5:
+                            for(g=0;g<2*this.random.potionEffectiveness;g++){
+                                this.hand.add(findCard('Miracle'),0,0)
                             }
-                        }
-                        g=floor(random(0,this.calc.list.length))
-                        this.hand.add(this.calc.list[g],0,types.card[this.calc.list[g]].list)
-                    break
-                    case 15:
-                        this.calc.list=[]
-                        for(g=0,lg=types.card.length;g<lg;g++){
-                            if(types.card[g].list<=5&&types.card[g].stats[0].class==2){
-                                this.calc.list.push(g)
+                        break
+                        case 6:
+                            transition.trigger=true
+                            transition.scene='choice'
+                            this.setupChoice(0,floor(random(1,3)),4)
+                            if(this.random.potionEffectiveness>1){
+                                this.context=-3
+                            }else{
+                                this.context=-2
                             }
-                        }
-                        g=floor(random(0,this.calc.list.length))
-                        this.hand.add(this.calc.list[g],0,types.card[this.calc.list[g]].list)
-                    break
-                    case 16:
-                        this.combatants[0].boost.main[2]+=5
-                        this.combatants[0].status.main[32]-=4
-                    break
-                    case 17:
-                        this.combatants[0].boost.main[0]+=2
-                    break
-                    case 18:
-                        for(g=0;g<3;g++){
-                            this.draw()
-                        }
-                    break
-                    case 19:
-                        this.attack.damage=3
-                        this.attack.user=0
-                        this.attack.type=5
-                        this.attack.class=2
-                        this.attack.targetType=1
-                        this.hand.trigger=true
-                    break
-                    case 20:
-                        this.combatants[0].status.main[36]++
-                    break
-                    case 21:
-                        for(g=0;g<3;g++){
-                            this.hand.add(findCard('Shiv'),1,0)
-                        }
-                    break
-                    case 22:
-                        this.allExhaust()
-                    break
-                    case 23:
-                        this.combatants[0].status.main[35]+=4
-                    break
-                    case 24:
-                        this.allDiscard()
-                        this.turnDraw()
-                    break
-                    case 25:
-                        this.combatants[0].status.main[0]+=5
-                    break
-                    case 26:
-                        transition.trigger=true
-                        transition.scene='deck'
-                        this.setupDeck(10)
-                        this.context=10
-                    break
-                    case 27:
-                        this.combatants[0].status.main[38]+=5
-                    break
-                    case 28:
-                        this.combatants[0].status.main[39]+=2
-                    break
-                    case 29:
-                        this.calc.list=[0,0,0,1,1,2]
-                        for(let e=0,le=this.potions.owned.length;e<le;e++){
-                            g=this.calc.list[floor(random(0,this.calc.list.length))]
-                            f=floor(random(0,this.potions.list[g].length))
-                            this.getPotion(this.potions.list[g][f])
-                        }
-                    break
-                    case 30:
-                        this.combatants[0].life=min(this.combatants[0].life+this.combatants[0].base.life*0.5,this.combatants[0].base.life)
-                    break
-                    case 31:
-                        this.combatants[0].base.life+=5
-                        this.combatants[0].life+=5
-                    break
-                    case 32:
-                        this.combatants[0].status.main[34]++
-                    break
-                    case 33:
-                        this.combatants[0].status.main[40]+=6
-                    break
-                    case 34:
-                        transition.trigger=true
-                        transition.scene='map'
-                        this.map.complete[this.map.position[0]][this.map.position[1]]=1
-                    break
-                    case 35:
-                        for(g=0;g<5;g++){
-                            this.draw()
-                        }
-                        for(g=0,lg=this.hand.cards.length;g<lg;g++){
-                            this.hand.cards[g].cost=floor(random(0,4))
-                        }
-                    break
-                    case 36:
-                        this.combatants[0].status.main[33]+=2
-                    break
-                    case 37:
-                        this.combatants[0].combo+=5
-                    break
-                    case 38:
-                        this.mana.main++
-                        this.remember[0]=0
-                        for(g=0,lg=this.hand.cards.length;g<lg;g++){
-                            if(this.hand.cards[g].class!=0){
-                                this.hand.cards[g].used=true
-                                this.remember[0]++
+                        break
+                        case 7:
+                            this.combatants[0].boost.main[2]+=2*this.random.potionEffectiveness
+                        break
+                        case 8:
+                            this.mana.main+=2*this.random.potionEffectiveness
+                        break
+                        case 9:
+                            for(g=1,lg=this.combatants.length;g<lg;g++){
+                                if(this.combatants[g].life>0){
+                                    this.combatants[g].take(10*this.random.potionEffectiveness,0)
+                                }
                             }
-                        }
-                        for(g=0;g<this.remember[0];g++){
-                            this.draw()
-                        }
-                    break
-                    case 39:
-                        for(g=0,lg=this.hand.cards.length;g<lg;g++){
-                            this.hand.cards[g].cost=max(this.hand.cards[g].cost-2,0)
-                        }
-                    break
-                    case 40:
-                        this.combatants[0].changeStance(1)
-                    break
-                    case 41:
-                        this.combatants[0].changeStance(2)
-                    break
-                    case 42:
-                        this.combatants[0].changeStance(3)
-                    break
-                    case 43:
-                        this.combatants[0].boost.main[3]+=2
-                    break
-                    case 44:
-                        this.combatants[0].load(4,6)
-                    break
-                    case 45:
-                        this.combatants[0].load(3,0)
-                    break
-                    case 46:
-                        this.combatants[0].meter=-this.combatants[0].base.meter
-                    break
-                    case 47:
-                        this.combatants[0].meter=this.combatants[0].base.meter
-                    break
-                    case 48:
-                        if(this.battle.combatants[0].armed!=1){
-                            this.battle.combatants[0].armed=1
-                        }
-                    break
+                        break
+                        case 10:
+                            this.attack.damage=3*this.random.potionEffectiveness
+                            this.attack.user=0
+                            this.attack.type=172
+                            this.attack.class=2
+                            this.attack.targetType=1
+                            this.hand.trigger=true
+                        break
+                        case 11:
+                            this.attack.damage=20*this.random.potionEffectiveness
+                            this.attack.user=0
+                            this.attack.type=1
+                            this.attack.class=0
+                            this.attack.targetType=1
+                            this.hand.trigger=true
+                        break
+                        case 12:
+                            this.combatants[0].boost.main[0]+=5*this.random.potionEffectiveness
+                            this.combatants[0].status.main[4]-=5*this.random.potionEffectiveness-1
+                        break
+                        case 13:
+                            this.attack.damage=6*this.random.potionEffectiveness
+                            this.attack.user=0
+                            this.attack.type=173
+                            this.attack.class=2
+                            this.attack.targetType=1
+                            this.hand.trigger=true
+                        break
+                        case 14:
+                            for(h=0;h<this.random.potionEffectiveness;h++){
+                                this.calc.list=[]
+                                for(g=0,lg=types.card.length;g<lg;g++){
+                                    if(types.card[g].list<=5&&types.card[g].stats[0].class==1){
+                                        this.calc.list.push(g)
+                                    }
+                                }
+                                g=floor(random(0,this.calc.list.length))
+                                this.hand.add(this.calc.list[g],0,types.card[this.calc.list[g]].list)
+                                this.hand.cards[this.hand.cards.length-1].cost=0
+                            }
+                        break
+                        case 15:
+                            for(h=0;h<this.random.potionEffectiveness;h++){
+                                this.calc.list=[]
+                                for(g=0,lg=types.card.length;g<lg;g++){
+                                    if(types.card[g].list<=5&&types.card[g].stats[0].class==2){
+                                        this.calc.list.push(g)
+                                    }
+                                }
+                                g=floor(random(0,this.calc.list.length))
+                                this.hand.add(this.calc.list[g],0,types.card[this.calc.list[g]].list)
+                                this.hand.cards[this.hand.cards.length-1].cost=0
+                            }
+                        break
+                        case 16:
+                            this.combatants[0].boost.main[2]+=5*this.random.potionEffectiveness
+                            this.combatants[0].status.main[32]-=5*this.random.potionEffectiveness-1
+                        break
+                        case 17:
+                            this.combatants[0].boost.main[0]+=2*this.random.potionEffectiveness
+                        break
+                        case 18:
+                            for(g=0;g<3*this.random.potionEffectiveness;g++){
+                                this.draw()
+                            }
+                        break
+                        case 19:
+                            this.attack.damage=3*this.random.potionEffectiveness
+                            this.attack.user=0
+                            this.attack.type=5
+                            this.attack.class=2
+                            this.attack.targetType=1
+                            this.hand.trigger=true
+                        break
+                        case 20:
+                            this.combatants[0].status.main[36]+=this.random.potionEffectiveness
+                        break
+                        case 21:
+                            for(g=0;g<3*this.random.potionEffectiveness;g++){
+                                this.hand.add(findCard('Shiv'),1,0)
+                            }
+                        break
+                        case 22:
+                            this.allExhaust()
+                        break
+                        case 23:
+                            this.combatants[0].status.main[35]+=4*this.random.potionEffectiveness
+                        break
+                        case 24:
+                            this.allDiscard()
+                            this.turnDraw()
+                        break
+                        case 25:
+                            this.combatants[0].status.main[0]+=5*this.random.potionEffectiveness
+                        break
+                        case 26:
+                            transition.trigger=true
+                            transition.scene='deck'
+                            if(this.random.potionEffectiveness>1){
+                                this.setupDeck(11)
+                                this.context=11
+                            }else{
+                                this.setupDeck(10)
+                                this.context=10
+                            }
+                        break
+                        case 27:
+                            this.combatants[0].status.main[38]+=5*this.random.potionEffectiveness
+                        break
+                        case 28:
+                            this.combatants[0].status.main[39]+=2*this.random.potionEffectiveness
+                        break
+                        case 29:
+                            this.calc.list=[0,0,0,1,1,2]
+                            for(let e=0,le=this.potions.owned.length;e<le;e++){
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.potions.list[g].length))
+                                this.getPotion(this.potions.list[g][f])
+                            }
+                        break
+                        case 30:
+                            this.combatants[0].life=min(this.combatants[0].life+this.combatants[0].base.life*0.5*this.random.potionEffectiveness,this.combatants[0].base.life)
+                        break
+                        case 31:
+                            this.combatants[0].base.life+=5*this.random.potionEffectiveness
+                            this.combatants[0].life+=5*this.random.potionEffectiveness
+                        break
+                        case 32:
+                            this.combatants[0].status.main[34]+=this.random.potionEffectiveness
+                        break
+                        case 33:
+                            this.combatants[0].status.main[40]+=6*this.random.potionEffectiveness
+                        break
+                        case 34:
+                            transition.trigger=true
+                            transition.scene='map'
+                            this.map.complete[this.map.position[0]][this.map.position[1]]=1
+                        break
+                        case 35:
+                            for(g=0;g<5*this.random.potionEffectiveness;g++){
+                                this.draw()
+                            }
+                            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                                this.hand.cards[g].cost=floor(random(0,4))
+                            }
+                        break
+                        case 36:
+                            this.combatants[0].status.main[33]+=2*this.random.potionEffectiveness
+                        break
+                        case 37:
+                            this.combatants[0].combo+=5*this.random.potionEffectiveness
+                        break
+                        case 38:
+                            this.mana.main+=this.random.potionEffectiveness
+                            this.remember[0]=0
+                            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                                if(this.hand.cards[g].class!=0){
+                                    this.hand.cards[g].used=true
+                                    this.remember[0]++
+                                }
+                            }
+                            for(g=0;g<this.remember[0];g++){
+                                this.draw()
+                            }
+                        break
+                        case 39:
+                            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                                this.hand.cards[g].cost=max(this.hand.cards[g].cost-2*this.random.potionEffectiveness,0)
+                            }
+                        break
+                        case 40:
+                            this.combatants[0].changeStance(1)
+                        break
+                        case 41:
+                            this.combatants[0].changeStance(2)
+                        break
+                        case 42:
+                            this.combatants[0].changeStance(3)
+                        break
+                        case 43:
+                            this.combatants[0].boost.main[3]+=2*this.random.potionEffectiveness
+                        break
+                        case 44:
+                            this.combatants[0].load(4,6)
+                            if(this.random.potionEffectiveness>1){
+                                this.combatants[0].load(4,6)
+                            }
+                        break
+                        case 45:
+                            this.combatants[0].load(3,0)
+                            if(this.random.potionEffectiveness>1){
+                                this.combatants[0].load(3,0)
+                            }
+                        break
+                        case 46:
+                            this.combatants[0].meter=-this.combatants[0].base.meter
+                        break
+                        case 47:
+                            this.combatants[0].meter=this.combatants[0].base.meter
+                        break
+                        case 48:
+                            if(this.battle.combatants[0].armed!=1){
+                                this.battle.combatants[0].armed=1
+                            }
+                        break
+                    }
                 }
             }
         }
@@ -1771,7 +1790,7 @@ class battle{
         if(this.context==1||this.context==4){
             this.deck.displayView(-1)
             this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0)
-        }else if(this.context==2||this.context==3||this.context==10){
+        }else if(this.context==2||this.context==3||this.context==10||this.context==11){
             this.discard.displayView(-1)
         }else if(this.context==5||this.context==6||this.context==9){
             this.deck.displayView(-1)
@@ -1785,7 +1804,7 @@ class battle{
         this.layer.textSize(20)
         if(this.context==3||this.context==5||this.context==6){
             this.layer.text('Back',850,570)
-        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10){
+        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11){
             this.layer.text('Skip',850,570)
         }
         if(this.context==6){
@@ -1822,7 +1841,7 @@ class battle{
             }else if(this.context==2){
                 this.close()
                 transition.scene='battle'
-            }else if(this.context==3||this.context==7||this.context==10){
+            }else if(this.context==3||this.context==7||this.context==10||this.context==11){
                 transition.scene='battle'
             }else if(this.context==6||this.context==9){
                 transition.scene='shop'
@@ -1833,7 +1852,7 @@ class battle{
         }
         if(this.context==1||this.context==4||this.context==6||this.context==9){
             this.deck.onClickView(this.context,this.context2)
-        }else if(this.context==2||this.context==10){
+        }else if(this.context==2||this.context==10||this.context==11){
             this.discard.onClickView(this.context,this.context2)
         }else if(this.context==7||this.context==8){
             this.reserve.onClickView(this.context,this.context2)
