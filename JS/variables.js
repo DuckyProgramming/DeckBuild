@@ -1576,48 +1576,60 @@ types={
             name:'6 Quick Heal',id:137,rarity:4,list:0,
             desc:'Heal 6 Health\nat the End of Combat',
         },{
-            name:'Potion Storage', id:138,rarity:0,list:0,
+            name:'Potion Storage',id:138,rarity:0,list:0,
             desc:'You Can Hold 2\nExtra Potions',
         },{
-            name:'Potion Heal', id:139,rarity:0,list:0,
+            name:'Potion Heal',id:139,rarity:0,list:0,
             desc:'Whenever You Use a\nPotion, Heal 5 Health',
         },{
-            name:'Potion Draw', id:140,rarity:1,list:0,
+            name:'Potion Draw',id:140,rarity:1,list:0,
             desc:'Whenever You Use a\nPotion, Draw 2 Cards',
         },{
-            name:'Potion Supply', id:141,rarity:3,list:0,
+            name:'Potion Supply',id:141,rarity:3,list:0,
             desc:'When Taken, Fill\nAll Potion Slots',
         },{
-            name:'Potion Effectiveness', id:142,rarity:4,list:0,
+            name:'Potion Effectiveness',id:142,rarity:4,list:0,
             desc:'Potions are Twice as Effective',
         },{
-            name:'Energy / Potions', id:143,rarity:4,list:0,
+            name:'Energy / Potions',id:143,rarity:4,list:0,
             desc:'Gain 1 Base Energy,\nCannot Use Potions',
         },{
-            name:'Energy / Wound', id:144,rarity:4,list:0,
+            name:'Energy / Wound',id:144,rarity:4,list:0,
             desc:'Gain 1 Base Energy,\nStart Combat With 1 Wound',
         },{
-            name:'Damage Draw', id:145,rarity:4,list:0,
+            name:'Damage Draw',id:145,rarity:4,list:0,
             desc:'Whenever You Take\nDamage, Draw 1 Card',
         },{
-            name:'Draw / Confusion', id:146,rarity:4,list:0,
+            name:'Draw / Confusion',id:146,rarity:4,list:0,
             desc:'Draw 2 More Cards per Turn,\nStart Combat Confused',
         },{
-            name:'Free Power', id:147,rarity:4,list:0,
+            name:'Free Power',id:147,rarity:4,list:0,
             desc:'Cards of Cost 0 Have +4 Effect',
         },{
-            name:'Discard Energy', id:148,rarity:4,list:0,
+            name:'Discard Energy',id:148,rarity:4,list:0,
             desc:'The First Time Each Turn a\nCard is Discarded, Gain 1 Energy',
         },{
-            name:'First Turn 3 Miracles', id:149,rarity:4,list:0,
+            name:'First Turn 3 Miracles',id:149,rarity:4,list:0,
             desc:'Add 3 Miracles at\nthe Start of Combat',
         },{
-            name:'Random', id:150,rarity:4,list:0,
-            desc:'Gain 1 Potion, 50 Gold, 5 Max\nHealth, and Upgrade 1 Card',
+            name:'Random',id:150,rarity:4,list:0,
+            desc:'Gain 1 Potion, 50 Currency, 5 Max Health,\nChoose 1 Card, Upgrade 1 Random Card',
+        },{
+            name:'',id:151,rarity:4,list:1,
+            desc:'',
+        },{
+            name:'',id:152,rarity:4,list:2,
+            desc:'',
+        },{
+            name:'',id:153,rarity:4,list:3,
+            desc:'',
+        },{
+            name:'',id:154,rarity:4,list:4,
+            desc:'',
         },
         
         /*{
-            name:'', id:14,rarity:4,list:0,
+            name:'', d:15,rarity:4,list:0,
             desc:'',
         },*/
     ],potion:[

@@ -424,6 +424,27 @@ class battle{
             case 146:
                 this.drawAmount+=2
             break
+            case 150:
+                this.currency.money+=50
+                this.combatants[0].base.life+=5
+                this.combatants[0].life+=5
+                this.calc.list=[0,0,0,1,1,2]
+                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                f=floor(random(0,this.potions.list[g].length))
+                this.getPotion(this.potions.list[g][f])
+                for(g=0;g<999;g++){
+                    h=floor(random(0,this.deck.cards.length))
+                    if(this.deck.cards[h].level==0){
+                        this.deck.cards[h].level++
+                        this.deck.cards[h]=reformCard(this.deck.cards[h])
+                        break
+                    }
+                }
+                transition.trigger++
+                transition.scene='choice'
+                this.setupChoice(this.player,2,0)
+                this.context=-4
+            break
         }
     }
     getPotion(type){
@@ -1388,15 +1409,15 @@ class battle{
                     if(this.relics.active[55]){
                         for(g=0;g<2;g++){
                             if(this.calc.list.length>0){
-                                h=this.calc.list[floor(random(0,this.calc.list.length))]
-                                this.choice.cards.push(new card(this.layer,300+g*300,300,h,level,types.card[h].list))
+                                h=floor(random(0,this.calc.list.length))
+                                this.choice.cards.push(new card(this.layer,300+g*300,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
                                 this.calc.list.splice(h,1)
                             }
                         }
                     }else{
                         if(this.calc.list.length>0){
-                            h=this.calc.list[floor(random(0,this.calc.list.length))]
-                            this.choice.cards.push(new card(this.layer,450,300,h,level,types.card[h].list))
+                            h=floor(random(0,this.calc.list.length))
+                            this.choice.cards.push(new card(this.layer,450,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
                             this.calc.list.splice(h,1)
                         }
                     }
@@ -1404,16 +1425,16 @@ class battle{
                     if(this.relics.active[55]){
                         for(g=0;g<4;g++){
                             if(this.calc.list.length>0){
-                                h=this.calc.list[floor(random(0,this.calc.list.length))]
-                                this.choice.cards.push(new card(this.layer,180+g*180,300,h,level,types.card[h].list))
+                                h=floor(random(0,this.calc.list.length))
+                                this.choice.cards.push(new card(this.layer,180+g*180,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
                                 this.calc.list.splice(h,1)
                             }
                         }
                     }else{
                         for(g=0;g<3;g++){
                             if(this.calc.list.length>0){
-                                h=this.calc.list[floor(random(0,this.calc.list.length))]
-                                this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
+                                h=floor(random(0,this.calc.list.length))
+                                this.choice.cards.push(new card(this.layer,225+g*225,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
                                 this.calc.list.splice(h,1)
                             }
                         }
@@ -1510,7 +1531,7 @@ class battle{
         if(transition.scene=='map'&&this.context==1){
             transition.scene='rest'
         }
-        if(transition.scene=='map'&&(this.context==-2||this.context==-3)){
+        if(transition.scene=='map'&&(this.context==-2||this.context==-3||this.context==-4)){
             transition.scene='battle'
         }
     }
