@@ -40,10 +40,10 @@ class card{
             this.desc+='Innate\n'
         }
         switch(this.attack){
-            case -2: this.desc+='Take 1 Damage\nper Card Played'; break
+            case -2: this.desc+='Take 1 Damage\nPer Card Played'; break
             case -3: this.desc+='Ethereal'; break
             case -4: this.desc+='At End of Turn,\nGain 1 Weak'; break
-            case -5: this.desc+='Take 1 Damage\nper Card Not Played'; break
+            case -5: this.desc+='Take 1 Damage\nPer Card Not Played'; break
             case -7: this.desc+='At End of Turn,\nGain 1 Vulnerable'; break
             case -8: this.desc+='When Removed,\nLose 3 Max Health'; break
             case -9: this.desc+='When Drawn,\nLose 1 Energy'; break
@@ -123,7 +123,7 @@ class card{
             case 69: this.desc+='Reset Balance'; break
             case 70: this.desc+='Draw '+this.damage+' Cards\n'+nfp(this.alt)+' Balance'; break
             case 71: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\n'+nfp(this.alt)+' Balance\nPer Enemy'; break
-            case 72: this.desc+='Deal '+this.damage+' Damage\nApply 1 Stunned\n'+nfp(this.alt)+' Balance'; break
+            case 72: this.desc+='Deal '+this.damage+' Damage\nApply 1 Stun\n'+nfp(this.alt)+' Balance'; break
             case 73: this.desc+='Deal '+this.damage+' Damage\nDisarm'; break
             case 74: this.desc+='Rearm'; break
             case 75: this.desc+='Reflect Next\n'+this.damage+' Attacks\n'+nfp(this.alt)+' Balance'; break
@@ -183,11 +183,11 @@ class card{
             case 129: this.desc+='Add 1 Shiv\ninto Your Hand\nat the Start\nof Your Turn'; break
             case 130: this.desc+='Deal '+this.damage+' Damage\nX Times'; break
             case 131: this.desc+='When You\nPlay a Card,\nDeal '+this.damage+' Damage\nto All Enemies'; break
-            case 132: if(this.damage==0){this.desc+='Discard Your Hand,\nthen Add that\nMany Shivs'}else{this.desc+='Discard Your Hand,\nthen Add that\nMany Shivs+'}; break
+            case 132: if(this.damage==0){this.desc+='Discard Your Hand\nAdd that\nMany Shivs'}else{this.desc+='Discard Your Hand,\nthen Add that\nMany Shivs+'}; break
             case 133: this.desc+='Gain '+this.damage+' Energy\nDraw '+this.alt+' Cards'; break
             case 134: this.desc+='When You\nPlay a Card,\nGain '+this.damage+' Block'; break
             case 135: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nTemporarily Reduce\nDamage by '+this.alt; break
-            case 136: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed'; break
+            case 136: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed,\nIgnoring Block\n'+nfp(-5)+' Balance'; break
             case 137: this.desc+='Deal '+this.damage+' Damage\n2 Times. Second Hit\nPush Collision\nfor '+this.alt+' Damage'; break
             case 138: this.desc+='Deal '+this.damage+' Damage\nGain 2 Combo\nKnockdown'; break
             case 139: this.desc+='Deal '+this.damage+' Damage\nIf not Played\nTake '+this.alt+' Damage'; break
@@ -229,6 +229,17 @@ class card{
             case 175: this.desc+='Deal '+this.damage+' Damage\nfor Every Combo'; break
             case 176: this.desc+='Add '+this.damage+' Dodge\nGain '+this.alt+' Strength'; break
             case 177: this.desc+='Deal '+this.damage+' Damage\nDeal Double Damage\nto Heavy Enemies'; break
+            case 178: this.desc+='Add '+this.damage+' Block\nTake '+this.alt+' Damage'; break
+            case 179: this.desc+='Next Attack\nadds '+this.damage+' Bleed'; break
+            case 180: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed\n'+nfp(-6)+' Balance'; break
+            case 181: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed\n'+nfp(-7)+' Balance'; break
+            case 182: this.desc+='Deal '+this.damage+' Damage\nConvert Bleed of\nTarget to Health'; break
+            case 183: this.desc+='Add '+this.damage+' to Self\nGain '+this.alt+' Strength\n'+nfp(-3)+' Balance'; break
+            case 184: this.desc+='Double all Bleed\n'+nfp(this.damage)+' Balance'; break
+            case 185: this.desc+='Target Gains\n'+this.damage+' Weak\nPer Turn\n'+nfp(this.alt)+' Balance'; break
+            case 186: this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Weak'; break
+            case 187: this.desc+='Gain '+this.damage+' Block\nCounter With 1 Stun\n'+nfp(this.alt)+' Balance'; break
+            case 188: this.desc+='Draw '+this.damage+' More\nCard Per Turn\n'+nfp(this.alt)+' Balance'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

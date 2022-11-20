@@ -36,7 +36,7 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0]}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0}
         this.deck.initial(this.player)
     }
     create(){
@@ -78,6 +78,7 @@ class battle{
         }
         this.combatants[0].boost.main[0]+=this.random.strengthBase
         this.counter.enemies.total+=this.generation.reinforce.length
+        this.random.tempDrawAmount=0
         this.reserve.cards=[]
         this.hand.cards=[]
         this.drop.cards=[]
@@ -226,7 +227,7 @@ class battle{
         }
         this.startTurn()
         this.random.rested=false
-        this.random.drawing=this.drawAmount
+        this.random.drawing=this.drawAmount+this.random.tempDrawAmount
         if(this.relics.active[4]){
             this.draw()
             this.draw()
@@ -236,7 +237,7 @@ class battle{
         for(e=0,le=this.random.drawing;e<le;e++){
             this.draw()
         }
-        this.random.drawing=this.drawAmount
+        this.random.drawing=this.drawAmount+this.random.tempDrawAmount
         if(this.relics.active[2]){
             this.hand.add(findCard('Step'),0,0)
         }
@@ -515,11 +516,14 @@ class battle{
                 }
             }
             for(f=0,lf=this.combatants[e].status.main.length;f<lf;f++){
-                if(this.combatants[e].status.main[f]>0&&f==24){
-                    this.combatants[e].take(this.combatants[e].status.main[f],e)
-                }
-                if(this.combatants[e].status.main[f]>0&&f==35){
-                    this.combatants[e].block+=this.combatants[e].status.main[f]
+                if(this.combatants[e].status.main[f]>0){
+                    if(f==24){
+                        this.combatants[e].take(this.combatants[e].status.main[f],e)
+                    }else if(f==35){
+                        this.combatants[e].block+=this.combatants[e].status.main[f]
+                    }else if(f==42){
+                        this.combatants[e].boost.main[0]+=this.combatants[e].status.main[f]
+                    }
                 }
                 if((f==11||f==37)&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
@@ -527,7 +531,10 @@ class battle{
                 }else if(f==38&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].life=min(this.combatants[e].life+this.combatants[e].status.main[f],this.combatants[e].base.life)
                     this.combatants[e].status.main[f]--
-                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&f!=36&&f!=39&&f!=40){
+                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&f!=36&&f!=39&&f!=40&&f!=41&&f!=42){
+                    if(f==44){
+                        this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
+                    }
                     this.combatants[e].status.main[f]=0
                 }
             }

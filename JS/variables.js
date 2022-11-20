@@ -333,20 +333,25 @@ types={
             {damage:1,alt:0,cost:1,attack:165,target:0,desc:'',spec:0,class:1},
             {damage:1,alt:4,cost:1,attack:165,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Obliterate',rarity:0,list:1,
+        },{name:'Obliterate',rarity:2,list:1,
         stats:[
             {damage:5,alt:0,cost:5,attack:175,target:1,desc:'',spec:0,class:0},
             {damage:8,alt:0,cost:5,attack:175,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Dynamic',rarity:0,list:1,
+        },{name:'Dynamic',rarity:1,list:1,
         stats:[
             {damage:1,alt:1,cost:2,attack:176,target:0,desc:'',spec:0,class:1},
             {damage:1,alt:2,cost:2,attack:176,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Twist Kick',rarity:0,list:5,
+        },{name:'Twist Kick',rarity:0,list:1,
         stats:[
             {damage:12,alt:0,cost:2,attack:177,target:1,desc:'',spec:0,class:0},
             {damage:16,alt:0,cost:2,attack:177,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Iron Body',rarity:1,list:1,
+        stats:[
+            {damage:22,alt:4,cost:1,attack:178,target:0,desc:'',spec:0,class:1},
+            {damage:40,alt:6,cost:1,attack:178,target:0,desc:'',spec:0,class:1},
         ],
         },
         
@@ -787,10 +792,10 @@ types={
             {damage:1,alt:-3,cost:1,attack:75,target:0,desc:'',spec:11,class:1},  
             {damage:2,alt:-3,cost:1,attack:75,target:0,desc:'',spec:11,class:1},
         ],
-        },{name:'Slash',rarity:0,list:4,
+        },{name:'Scratch',rarity:0,list:4,
         stats:[
-            {damage:5,alt:-6,cost:1,attack:76,target:1,desc:'',spec:11,class:0},
-            {damage:7,alt:-6,cost:1,attack:76,target:1,desc:'',spec:11,class:0},
+            {damage:5,alt:-7,cost:1,attack:76,target:1,desc:'',spec:11,class:0},
+            {damage:7,alt:-7,cost:1,attack:76,target:1,desc:'',spec:11,class:0},
         ],
         },{name:'Decisive\nStab',rarity:2,list:4,
         stats:[
@@ -874,25 +879,71 @@ types={
         ],
         },{name:'Puncture',rarity:0,list:4,
         stats:[
-            {damage:2,alt:3,cost:1,attack:136,target:1,desc:'',spec:11,class:0},
-            {damage:4,alt:5,cost:1,attack:136,target:1,desc:'',spec:11,class:0},
+            {damage:2,alt:2,cost:1,attack:136,target:1,desc:'',spec:11,class:0},
+            {damage:4,alt:4,cost:1,attack:136,target:1,desc:'',spec:11,class:0},
         ],
         },{name:'Jumping\nStab',rarity:0,list:4,
         stats:[
-            {damage:9,alt:4,cost:2,attack:136,target:1,desc:'',spec:11,class:0},
-            {damage:12,alt:6,cost:2,attack:136,target:1,desc:'',spec:11,class:0},
+            {damage:9,alt:4,cost:2,attack:181,target:1,desc:'',spec:11,class:0},
+            {damage:12,alt:6,cost:2,attack:181,target:1,desc:'',spec:11,class:0},
         ],
         },{name:'Counter\nStab',rarity:0,list:4,
         stats:[
-            {damage:3,alt:3,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
-            {damage:6,alt:5,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
+            {damage:3,alt:3,cost:1,attack:153,target:0,desc:'',spec:11,class:1},
+            {damage:6,alt:5,cost:1,attack:153,target:0,desc:'',spec:11,class:1},
         ],
-        },{name:'Hidden\nBlade',rarity:1,list:4,
+        },{name:'Extra\nCuts',rarity:1,list:4,
         stats:[
             {damage:2,alt:0,cost:1,attack:147,target:0,desc:'',spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:147,target:0,desc:'',spec:0,class:2},
         ],
+        },{name:'Hidden\nBlade',rarity:1,list:4,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:179,target:0,desc:'',spec:0,class:2},
+            {damage:6,alt:0,cost:1,attack:179,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Slash',rarity:0,list:4,
+        stats:[
+            {damage:4,alt:2,cost:1,attack:180,target:1,desc:'',spec:11,class:0},
+            {damage:6,alt:4,cost:1,attack:180,target:1,desc:'',spec:11,class:0},
+        ],
+        },{name:'Syphon',rarity:0,list:4,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:182,target:1,desc:'',spec:0,class:0},
+            {damage:7,alt:0,cost:1,attack:182,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Blood\nPower',rarity:0,list:4,
+        stats:[
+            {damage:3,alt:3,cost:1,attack:183,target:0,desc:'',spec:3,class:2},
+            {damage:3,alt:5,cost:1,attack:183,target:0,desc:'',spec:3,class:2},
+        ],
+        },{name:'Blood\nMagic',rarity:1,list:4,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:184,target:0,desc:'',spec:3,class:2},
+            {damage:3,alt:0,cost:0,attack:184,target:0,desc:'',spec:3,class:2},
+        ],
+        },{name:'Trample',rarity:0,list:4,
+        stats:[
+            {damage:2,alt:2,cost:0,attack:185,target:1,desc:'',spec:0,class:2},
+            {damage:3,alt:2,cost:0,attack:185,target:1,desc:'',spec:0,class:2},
+        ],
+        },{name:'Disjoint',rarity:0,list:4,
+        stats:[
+            {damage:11,alt:1,cost:1,attack:186,target:1,desc:'',spec:0,class:0},
+            {damage:15,alt:1,cost:1,attack:186,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Petal\nShield',rarity:1,list:4,
+        stats:[
+            {damage:8,alt:6,cost:2,attack:187,target:0,desc:'',spec:0,class:1},
+            {damage:15,alt:6,cost:2,attack:187,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Petal\nDance',rarity:1,list:4,
+        stats:[
+            {damage:1,alt:6,cost:2,attack:188,target:0,desc:'',spec:3,class:2},
+            {damage:2,alt:6,cost:1,attack:188,target:0,desc:'',spec:3,class:2},
+        ],
         },
+        //stun cards!
         
         
         {name:'Empty',rarity:-1,list:12,
@@ -905,8 +956,8 @@ types={
         
         {name:'Swift\nStrike',rarity:1,list:0,
         stats:[
-            {damage:7,alt:0,cost:0,attack:1,target:0,desc:'',spec:0,class:0},
-            {damage:10,alt:0,cost:0,attack:1,target:0,desc:'',spec:0,class:0},
+            {damage:7,alt:0,cost:0,attack:1,target:1,desc:'',spec:0,class:0},
+            {damage:10,alt:0,cost:0,attack:1,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Instincts',rarity:1,list:0,
         stats:[

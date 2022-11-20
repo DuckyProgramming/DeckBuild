@@ -19,18 +19,18 @@ class group{
         switch(type){
             case 1:
                 /*for(e=0;e<4;e++){
-                    this.add(1,0,this.battle.player)
+                    this.add(1,0,this.battle.player) 
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Big\nStrike'),0,this.battle.player)
                 this.add(findCard('Triple\nPunch'),0,this.battle.player)*/
-                this.add(66,0,this.battle.player)
-                this.add(67,0,this.battle.player)
-                this.add(68,0,this.battle.player)
                 this.add(69,0,this.battle.player)
                 this.add(70,0,this.battle.player)
+                this.add(71,0,this.battle.player)
+                this.add(72,0,this.battle.player)
+                this.add(73,0,this.battle.player)
             break
             case 2:
                 for(e=0;e<4;e++){
@@ -65,12 +65,11 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(2,0,this.battle.player)
                 }
-                this.add(146,0,this.battle.player)
-                this.add(147,0,this.battle.player)
-                this.add(148,0,this.battle.player)
-                this.add(149,0,this.battle.player)
-                this.add(150,0,this.battle.player)
-                this.add(151,0,this.battle.player)
+                this.add(181,0,this.battle.player)
+                this.add(182,0,this.battle.player)
+                this.add(183,0,this.battle.player)
+                this.add(184,0,this.battle.player)
+                this.add(185,0,this.battle.player)
             break
         }
     }
