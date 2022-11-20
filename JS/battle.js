@@ -36,7 +36,7 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0]}
         this.deck.initial(this.player)
     }
     create(){
@@ -49,6 +49,7 @@ class battle{
         this.random.taken=0
         this.random.attacks=0
         this.random.played=0
+        this.random.playClass=[0,0,0]
         this.combatants[0].resetUnique()
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
@@ -610,6 +611,10 @@ class battle{
     playCard(){
         this.counter.played++
         this.random.played++
+        this.random.playClass[this.attack.class]++
+        if(this.relics.active[151]&&this.random.playClass[0]>0&&this.random.playClass[1]>0&&this.random.playClass[2]>0){
+            this.combatants[0].clearDebuff()
+        }
         if(this.counter.played>=6&&this.relics.active[136]){
             this.allDiscard()
         }else if(this.counter.played>=3){

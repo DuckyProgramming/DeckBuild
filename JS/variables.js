@@ -270,11 +270,6 @@ types={
             {damage:6,alt:8,cost:1,attack:146,target:0,desc:'',spec:0,class:1},
             {damage:10,alt:8,cost:1,attack:146,target:0,desc:'',spec:0,class:1},
         ],
-        },{name:'Hidden\nBlade',rarity:1,list:1,
-        stats:[
-            {damage:2,alt:0,cost:1,attack:147,target:0,desc:'',spec:0,class:2},
-            {damage:3,alt:0,cost:1,attack:147,target:0,desc:'',spec:0,class:2},
-        ],
         },{name:'Back\nPocket',rarity:1,list:1,
         stats:[
             {damage:0,alt:0,cost:-1,attack:150,target:0,desc:'',spec:0,class:2},
@@ -873,6 +868,11 @@ types={
         stats:[
             {damage:3,alt:3,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
             {damage:6,alt:5,cost:1,attack:153,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Hidden\nBlade',rarity:1,list:4,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:147,target:0,desc:'',spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:147,target:0,desc:'',spec:0,class:2},
         ],
         },
         
@@ -1523,7 +1523,7 @@ types={
             desc:'Whenever You Shuffle\nYour Deck, Scry 3',
         },{
             name:'Charge Passive',id:120,rarity:3,list:3,
-            desc:'Trigger a Weak Evoke on Your Rightmost\nCharge at the Start of Your TUrn',
+            desc:'Trigger a Weak Evoke on Your Rightmost\nCharge at the Start of Your Turn',
         },{
             name:'Balance Damage All',id:121,rarity:3,list:4,
             desc:'When You Break Balance,\nDeal 10 Damage to All Enemies',
@@ -1615,19 +1615,22 @@ types={
             name:'Random',id:150,rarity:4,list:0,
             desc:'Gain 1 Potion, 50 Currency, 5 Max Health,\nChoose 1 Card, Upgrade 1 Random Card',
         },{
-            name:'',id:151,rarity:4,list:1,
-            desc:'',
+            name:'Triple Play Buff',id:151,rarity:3,list:0,
+            desc:'When You Play an Attack, a Skill,\nand a Power, remove Debuffs',
         },{
-            name:'',id:152,rarity:4,list:2,
-            desc:'',
+            name:'Combo Loot',id:152,rarity:4,list:1,
+            desc:'Double Combo When\nan Enemy Dies',
         },{
-            name:'',id:153,rarity:4,list:3,
-            desc:'',
+            name:'Calm Energy',id:153,rarity:4,list:2,
+            desc:'Gain 1 More Energy\nWhen Exiting Calm',
         },{
-            name:'',id:154,rarity:4,list:4,
-            desc:'',
+            name:'Damage Evoke',id:154,rarity:4,list:3,
+            desc:'Trigger a Weak Evoke on Your\nRightmost Charge When You Take a hit',
+        },{
+            name:'Balance Cycle',id:155,rarity:4,list:4,
+            desc:'When Balance Broken, Trigger the Opposite\nAffect on the Other End of Spectrum',
         },
-        
+
         /*{
             name:'', d:15,rarity:4,list:0,
             desc:'',

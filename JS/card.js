@@ -62,7 +62,7 @@ class card{
             case 8: this.desc+='Deal '+this.damage+' Damage\nAdd 1 Slow Bleed\nto Deck'; break
             case 9: this.desc+='Deal '+this.damage+' Damage\nDiscard 1\nRandom Card'; break
             case 10: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, gain\n1 Energy'; break
-            case 11: this.desc+='Deal '+this.damage+' Damage\nGain 2 Energy\nNext Turn'; break
+            case 11: this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Energy\nNext Turn'; break
             case 12: this.desc+='Deal '+this.damage+' Damage\nto All Enemies'; break
             case 13: this.desc+='Hold '+this.damage+'\nBasic Charge'; break
             case 14: this.desc+='Fire 1st Charge\n'+this.damage+' Times'; break

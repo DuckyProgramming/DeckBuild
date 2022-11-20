@@ -83,13 +83,14 @@ class combatant{
 	}
 	changeStance(stance){
 		if(stance!=this.stance){
-			switch(this.stance){
-				case 1:
-					this.battle.mana.main+=2
-				break
-				case 3:
-					this.battle.mana.main+=3
-				break
+			if(this.stance==1){
+				this.battle.mana.main+=2
+				if(this.battle.relics.active[153]){
+					this.battle.mana.main++
+				}
+			}
+			if(stance==3){
+				this.battle.mana.main+=3
 			}
 			this.block+=this.status.main[15]
 			for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
@@ -995,6 +996,18 @@ class combatant{
 		}
 		this.ammoDetail[this.ammoDetail.length-1]=0
 	}
+	clearDebuff(){
+		for(g=0,lg=this.boost.main.length;g<lg;g++){
+			if(this.boost.main[g]<0){
+				this.boost.main[g]=0
+			}
+		}
+		for(g=0,lg=this.status.main.length;g<lg;g++){
+			if(this.status.main[g]>0&&this.status.class[g]==0){
+				this.status.main[g]=0
+			}
+		}
+	}
 	load(type,detail){
 		this.loaded=false
 		for(h=0,lh=this.ammo.length;h<lh;h++){
@@ -1098,6 +1111,9 @@ class combatant{
 					if(this.battle.relics.active[145]){
 						this.battle.draw()
 					}
+					if(this.type==3&&this.battle.relics.active[154]){
+						this.passiveEvoke(this.ammo[0],this.ammoDetail[0])
+					}
 				}
 				if(this.status.main[34]>0&&this.calc.damage>1){
 					this.calc.damage=1
@@ -1179,6 +1195,9 @@ class combatant{
 				}else{
 					this.take(10,0)
 				}
+				if(this.battle.relics.active[155]){
+					this.battle.mana.main=max(this.battle.mana.main+1,this.battle.mana.main*2)
+				}
 				if(this.battle.relics.active[121]){
 					for(g=1,lg=this.battle.combatants.length;g<lg;g++){
 						this.battle.combatants[g].take(10,0)
@@ -1190,6 +1209,9 @@ class combatant{
 					this.battle.mana.main=max(0,this.battle.mana.main-1)
 				}else{
 					this.battle.mana.main=0
+				}
+				if(this.battle.relics.active[155]){
+					this.life=min(this.life+10,this.base.life)
 				}
 				if(this.battle.relics.active[121]){
 					for(g=1,lg=this.battle.combatants.length;g<lg;g++){
@@ -1252,11 +1274,6 @@ class combatant{
 				}
 				if(this.life<=0){
 					this.type=0
-					this.battle.counter.enemies.dead++
-					if(this.battle.relics.active[44]){
-						this.battle.mana.main++
-						this.battle.draw()
-					}
 				}
 			}else{
 				this.type=0
@@ -1264,6 +1281,9 @@ class combatant{
 				if(this.battle.relics.active[44]){
 					this.battle.mana.main++
 					this.battle.draw()
+				}
+				if(this.battle.relics.active[152]){
+					this.battle.combatants[0].combo*=2
 				}
 			}
 		}
