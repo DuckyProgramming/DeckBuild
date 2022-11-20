@@ -86,6 +86,7 @@ class battle{
         this.reserve.shuffle()
         this.mana.max=this.mana.base
         this.mana.main=this.mana.max
+        this.random.drawing=this.drawAmount+this.random.tempDrawAmount
         this.drawInitial()
         this.turnDraw()
         if(this.relics.active[146]){
@@ -239,7 +240,7 @@ class battle{
         }
         this.random.drawing=this.drawAmount+this.random.tempDrawAmount
         if(this.relics.active[2]){
-            this.hand.add(findCard('Step'),0,0)
+            this.hand.add(findCard('Avoid'),0,0)
         }
         if(this.relics.active[29]){
             e=floor(random(0,this.hand.cards.length))
@@ -531,6 +532,8 @@ class battle{
                 }else if(f==38&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].life=min(this.combatants[e].life+this.combatants[e].status.main[f],this.combatants[e].base.life)
                     this.combatants[e].status.main[f]--
+                }else if(f==9&&this.combatants[e].status.main[f]>0){
+                    this.combatants[e].status.main[f]--
                 }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&f!=36&&f!=39&&f!=40&&f!=41&&f!=42){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
@@ -658,12 +661,22 @@ class battle{
                 this.combatants[0].boost.main[2]++
                 this.combatants[0].status.main[32]--
             }
+            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                if((this.hand.cards[g].attack==193||this.hand.cards[g].attack==195||this.hand.cards[g].attack==196)&&this.hand.cards[g].cost>0){
+                    this.hand.cards[g].cost--
+                }
+            }
         }
         if(this.attack.class==1){
             this.random.skills++
             if(this.random.skills%3==0&&this.relics.active[48]){
                 for(g=1,lg=this.combatants.length;g<lg;g++){
                     this.combatants[g].take(5,0)
+                }
+            }
+            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                if(this.hand.cards[g].attack==194&&this.hand.cards[g].cost>0){
+                    this.hand.cards[g].cost--
                 }
             }
         }

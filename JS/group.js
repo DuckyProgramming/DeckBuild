@@ -65,11 +65,11 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(2,0,this.battle.player)
                 }
-                this.add(181,0,this.battle.player)
-                this.add(182,0,this.battle.player)
-                this.add(183,0,this.battle.player)
-                this.add(184,0,this.battle.player)
-                this.add(185,0,this.battle.player)
+                this.add(196,0,this.battle.player)
+                this.add(197,0,this.battle.player)
+                this.add(198,0,this.battle.player)
+                this.add(199,0,this.battle.player)
+                this.add(200,0,this.battle.player)
             break
         }
     }

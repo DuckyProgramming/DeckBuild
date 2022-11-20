@@ -240,6 +240,17 @@ class card{
             case 186: this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Weak'; break
             case 187: this.desc+='Gain '+this.damage+' Block\nCounter With 1 Stun\n'+nfp(this.alt)+' Balance'; break
             case 188: this.desc+='Draw '+this.damage+' More\nCard Per Turn\n'+nfp(this.alt)+' Balance'; break
+            case 189: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed\nDisarm'; break
+            case 190: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Bonus\nDamage to Stunned\n'+nfp(-2)+' Balance'; break
+            case 191: this.desc+='Deal '+this.damage+' to Stunned\nEnd Stun\n'+nfp(this.alt)+' Balance'; break
+            case 192: this.desc+='Apply '+this.damage+' Bleed,\nIgnoring Block\nDisarm'; break
+            case 193: this.desc+='Costs 1 Less\nWhen Attack Played\nDeal '+this.damage+' Damage\n'+nfp(this.alt)+' Balance'; break
+            case 194: this.desc+='Costs 1 Less\nWhen Skill Played\nDeal '+this.damage+' Damage\nApply 1 Stun\n'+nfp(this.alt)+' Balance'; break
+            case 195: this.desc+='Costs 1 Less\nWhen Attack Played\nDeal '+this.damage+' Damage\n'+nfp(this.alt)+' Balance'; break
+            case 196: this.desc+='Costs 1 Less\nWhen Attack Played\nAdd '+this.damage+' Block\n'+nfp(this.alt)+' Balance'; break
+            case 197: this.desc+='Apply '+this.damage+' Stun\nto All Enemies'; break
+            case 198: this.desc+='Deal '+this.damage+' Damage\nApply 1 Stun\nGain 2 Weak\n'+nfp(this.alt)+' Balance'; break
+            case 199: this.desc+='If Unarmed\nDeal '+this.damage+' Damage\nApply 1 Stun\nApply 1 Vulnerable\n'+nfp(this.alt)+' Balance'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

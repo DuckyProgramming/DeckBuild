@@ -732,7 +732,7 @@ types={
         },
         
         
-        {name:'Flash',rarity:2,list:4,
+        {name:'Debilitate',rarity:2,list:4,
         stats:[
             {damage:2,alt:2,cost:3,attack:64,target:0,desc:'',spec:3,class:2},
             {damage:3,alt:3,cost:3,attack:64,target:0,desc:'',spec:3,class:2},
@@ -772,15 +772,15 @@ types={
             {damage:8,alt:-2,cost:2,attack:71,target:0,desc:'',spec:11,class:0},
             {damage:13,alt:-2,cost:2,attack:71,target:0,desc:'',spec:11,class:0},
         ],
-        },{name:'Petal\nCloud',rarity:1,list:4,
+        },{name:'Petal\nCloud',rarity:0,list:4,
         stats:[
-            {damage:4,alt:6,cost:1,attack:72,target:1,desc:'',spec:0,class:0},
-            {damage:12,alt:6,cost:1,attack:72,target:1,desc:'',spec:0,class:0},
+            {damage:3,alt:6,cost:1,attack:72,target:1,desc:'',spec:0,class:0},
+            {damage:8,alt:6,cost:1,attack:72,target:1,desc:'',spec:0,class:0},
         ],
         },{name:'Throw\nScythe',rarity:0,list:4,
         stats:[
-            {damage:24,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
-            {damage:40,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
+            {damage:18,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
+            {damage:30,alt:0,cost:1,attack:73,target:1,desc:'',spec:11,class:0},
         ],
         },{name:'Collect',rarity:0,list:4,
         stats:[
@@ -932,7 +932,7 @@ types={
             {damage:11,alt:1,cost:1,attack:186,target:1,desc:'',spec:0,class:0},
             {damage:15,alt:1,cost:1,attack:186,target:1,desc:'',spec:0,class:0},
         ],
-        },{name:'Petal\nShield',rarity:1,list:4,
+        },{name:'Petal\nShield',rarity:0,list:4,
         stats:[
             {damage:8,alt:6,cost:2,attack:187,target:0,desc:'',spec:0,class:1},
             {damage:15,alt:6,cost:2,attack:187,target:0,desc:'',spec:0,class:1},
@@ -942,8 +942,72 @@ types={
             {damage:1,alt:6,cost:2,attack:188,target:0,desc:'',spec:3,class:2},
             {damage:2,alt:6,cost:1,attack:188,target:0,desc:'',spec:3,class:2},
         ],
+        },{name:'Plunge',rarity:1,list:4,
+        stats:[
+            {damage:30,alt:8,cost:4,attack:189,target:1,desc:'',spec:11,class:0},
+            {damage:44,alt:12,cost:4,attack:189,target:1,desc:'',spec:11,class:0},
+        ],
+        },{name:'Cleanup',rarity:1,list:1,
+        stats:[
+            {damage:2,alt:14,cost:1,attack:190,target:1,desc:'',spec:11,class:0},
+            {damage:3,alt:26,cost:1,attack:190,target:1,desc:'',spec:11,class:0},
+        ],
+        },{name:'Impact',rarity:1,list:1,
+        stats:[
+            {damage:34,alt:-4,cost:2,attack:191,target:1,desc:'',spec:11,class:0},
+            {damage:56,alt:-4,cost:2,attack:191,target:1,desc:'',spec:11,class:0},
+        ],
+        },{name:'Penetrate',rarity:0,list:4,
+        stats:[
+            {damage:9,alt:0,cost:1,attack:192,target:1,desc:'',spec:11,class:0},
+            {damage:12,alt:0,cost:1,attack:192,target:1,desc:'',spec:11,class:0},
+        ],
+        },{name:'Final Cut',rarity:2,list:4,
+        stats:[
+            {damage:50,alt:-10,cost:10,attack:193,target:1,desc:'',spec:11,class:0},
+            {damage:80,alt:-10,cost:10,attack:193,target:1,desc:'',spec:11,class:0},
+        ],
+        },{name:'Rapid\nElbow',rarity:0,list:4,
+        stats:[
+            {damage:3,alt:-1,cost:2,attack:194,target:1,desc:'',spec:2,class:0},
+            {damage:5,alt:-1,cost:2,attack:194,target:1,desc:'',spec:2,class:0},
+        ],
+        },{name:'Agitation',rarity:0,list:4,
+        stats:[
+            {damage:9,alt:-2,cost:3,attack:195,target:1,desc:'',spec:0,class:0},
+            {damage:13,alt:-2,cost:3,attack:195,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Self\nControl',rarity:0,list:4,
+        stats:[
+            {damage:10,alt:2,cost:3,attack:196,target:0,desc:'',spec:0,class:1},
+            {damage:16,alt:2,cost:3,attack:196,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Flash',rarity:2,list:4,
+        stats:[
+            {damage:1,alt:0,cost:3,attack:197,target:0,desc:'',spec:8,class:2},
+            {damage:1,alt:0,cost:3,attack:197,target:0,desc:'',spec:8,class:2},
+        ],
+        },{name:'Jumping\nStun',rarity:1,list:4,
+        stats:[
+            {damage:20,alt:-5,cost:2,attack:198,target:1,desc:'',spec:0,class:0},
+            {damage:32,alt:-5,cost:2,attack:198,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Petal\nSpread',rarity:0,list:4,
+        stats:[
+            {damage:1,alt:4,cost:0,attack:72,target:1,desc:'',spec:0,class:0},
+            {damage:3,alt:4,cost:0,attack:72,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Throat\nSmack',rarity:0,list:4,
+        stats:[
+            {damage:4,alt:-2,cost:1,attack:199,target:1,desc:'',spec:0,class:0},
+            {damage:10,alt:-2,cost:1,attack:199,target:1,desc:'',spec:0,class:0},
+        ],
         },
         //stun cards!
+        //defense-dodge?,reflect?
+        //balance mixing
+        //armament cycling
+        //unarmed only perhaps
         
         
         {name:'Empty',rarity:-1,list:12,
@@ -1163,7 +1227,7 @@ types={
             {damage:0,alt:0,cost:0,attack:148,target:0,desc:'',spec:13,class:2},
             {damage:0,alt:0,cost:0,attack:148,target:0,desc:'',spec:13,class:2},
         ],
-        },{name:'Step',rarity:-3,list:0,
+        },{name:'Avoid',rarity:-3,list:0,
         stats:[
             {damage:1,alt:0,cost:1,attack:149,target:0,desc:'',spec:13,class:2},
             {damage:1,alt:0,cost:0,attack:149,target:0,desc:'',spec:13,class:2},
@@ -1237,8 +1301,8 @@ types={
             name:'First Turn Redraw',id:1,rarity:1,list:0,
             desc:'Add 1 Redraw at\nthe Start of Combat',
         },{
-            name:'Free Step',id:2,rarity:1,list:0,
-            desc:'Add 1 Step\nEvery Turn',
+            name:'Free Avoid',id:2,rarity:1,list:0,
+            desc:'Add 1 Avoid\nEvery Turn',
         },{
             name:'2 Quick Heal',id:3,rarity:0,list:0,
             desc:'Heal 2 Health\nat the End of Combat',
