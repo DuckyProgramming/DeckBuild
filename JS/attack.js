@@ -709,10 +709,10 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage*this.battle.discard.cards.length,this.user)
                 break
                 case 144:
-                    this.battle.combatants[0].status.main[6]++
+                    this.battle.combatants[0].status.main[6]+=this.damage
                 break
                 case 145:
-                    this.battle.combatants[0].status.main[6]++
+                    this.battle.combatants[0].status.main[6]+=this.damage
                     this.battle.combatants[0].status.main[3]+=this.alt
                 break
                 case 146:
@@ -838,6 +838,20 @@ class attack{
                 break
                 case 174:
                     this.battle.combatants[0].load(4,6)
+                break
+                case 175:
+                    this.battle.combatants[this.target].take(this.damage*this.combo,this.user)
+                break
+                case 176:
+                    this.battle.combatants[0].status.main[6]+=this.damage
+                    this.battle.combatants[0].boost.main[0]+=this.alt
+                break
+                case 177:
+                    if(this.battle.combatants[this.target].class!=0){
+                        this.battle.combatants[this.target].take(this.damage*2,this.user)
+                    }else{
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
                 break
             }
             this.battle.combatants[0].lastPlay=this.class

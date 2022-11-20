@@ -226,6 +226,9 @@ class card{
             case 172: this.desc+='Apply '+this.damage+'\nVulnerable'; break
             case 173: this.desc+='Apply '+this.damage+'\nPoison'; break
             case 174: this.desc+='Hold '+this.damage+'\nDark Charge'; break
+            case 175: this.desc+='Deal '+this.damage+' Damage\nfor Every Combo'; break
+            case 176: this.desc+='Add '+this.damage+' Dodge\nGain '+this.alt+' Strength'; break
+            case 177: this.desc+='Deal '+this.damage+' Damage\nDeal Double Damage\nto Heavy Enemies'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
