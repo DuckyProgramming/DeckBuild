@@ -958,6 +958,11 @@ class attack{
                     }
                     this.battle.combatants[0].meter+=this.alt
                 break
+                case 200:
+                    this.battle.combatants[0].status.main[10]+=this.damage
+                    this.battle.combatants[0].status.main[3]+=7+this.level*3
+                    this.battle.combatants[0].meter+=this.alt
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

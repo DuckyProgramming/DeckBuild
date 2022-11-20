@@ -1002,8 +1002,12 @@ types={
             {damage:4,alt:-2,cost:1,attack:199,target:1,desc:'',spec:0,class:0},
             {damage:10,alt:-2,cost:1,attack:199,target:1,desc:'',spec:0,class:0},
         ],
+        },{name:'Parry\nCounter',rarity:0,list:4,
+        stats:[
+            {damage:1,alt:-3,cost:2,attack:200,target:0,desc:'',spec:11,class:1},  
+            {damage:2,alt:-3,cost:2,attack:200,target:0,desc:'',spec:11,class:1},
+        ],
         },
-        //stun cards!
         //defense-dodge?,reflect?
         //balance mixing
         //armament cycling

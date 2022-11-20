@@ -251,6 +251,7 @@ class card{
             case 197: this.desc+='Apply '+this.damage+' Stun\nto All Enemies'; break
             case 198: this.desc+='Deal '+this.damage+' Damage\nApply 1 Stun\nGain 2 Weak\n'+nfp(this.alt)+' Balance'; break
             case 199: this.desc+='If Unarmed\nDeal '+this.damage+' Damage\nApply 1 Stun\nApply 1 Vulnerable\n'+nfp(this.alt)+' Balance'; break
+            case 200: this.desc+='Reflect Next\n'+this.damage+' Attacks\nCounter '+(7+this.level*3)+'Once\n'+nfp(this.alt)+' Balance'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

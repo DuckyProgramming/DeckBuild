@@ -1035,6 +1035,10 @@ class combatant{
 			if(this.status.main[10]>0){
 				this.status.main[10]--
 				this.battle.combatants[user].take(damage,this.id)
+				if(this.status.main[3]>0){
+					this.battle.combatants[user].take(this.status.main[3],this.id)
+					this.status.main[3]=0
+				}
 			}else if(this.status.main[6]>0){
 				this.status.main[6]--
 			}else if(this.status.main[33]>0){
