@@ -535,7 +535,7 @@ class battle{
                     }else if(f==35){
                         this.combatants[e].block+=this.combatants[e].status.main[f]
                     }else if(f==42){
-                        this.combatants[e].boost.main[0]+=this.combatants[e].status.main[f]
+                        this.combatants[e].boost.main[0]-=this.combatants[e].status.main[f]
                     }else if(f==49&&this.combatants[e].armed==0){
                         this.combatants[e].armed=1
                     }else if(f==50&&this.combatants[e].armed==1){
@@ -633,6 +633,7 @@ class battle{
         if(this.relics.active[134]&&(this.random.class==1||this.random.class==2)){
             this.mana.main++
         }
+        this.combatants[0].autoEvoke()
     }
     resetTurn(){
         this.counter.enemies.alive=0

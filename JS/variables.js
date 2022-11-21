@@ -729,6 +729,16 @@ types={
             {damage:1,alt:0,cost:1,attack:174,target:0,desc:'',spec:0,class:2},
             {damage:1,alt:0,cost:0,attack:174,target:0,desc:'',spec:0,class:2},
         ],
+        },{name:'Zap',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:220,target:0,desc:'',spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:220,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Open Fire',rarity:0,list:3,
+        stats:[
+            {damage:5,alt:0,cost:1,attack:221,target:0,desc:'',spec:0,class:0},
+            {damage:8,alt:0,cost:1,attack:221,target:0,desc:'',spec:0,class:0},
+        ],
         },
         
         
@@ -1105,6 +1115,7 @@ types={
         },
         //armament cycling
         //unarmed only perhaps
+        //spartan kick
         
         
         {name:'Empty',rarity:-1,list:12,
@@ -2458,7 +2469,7 @@ zones=[
         ],
     },
 ]
-stage={scale:0,scene:'battle',playerNumber:4}
+stage={scale:0,quality:1,scene:'battle',playerNumber:4}
 graphics={main:0,minor:[],symbol:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}

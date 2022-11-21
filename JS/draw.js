@@ -1,6 +1,8 @@
 function draw(){
     clear()
     background(125)
+    graphics.main.push()
+    graphics.main.scale(stage.quality)
     switch(stage.scene){
         case 'battle':
             graphics.main.background(40,48,50)
@@ -41,6 +43,7 @@ function draw(){
             current.updateShop()
         break
     }
+    graphics.main.pop()
     current.updateFull()
     stage.scale=min(width/graphics.main.width,height/graphics.main.height)
     displayTransition(graphics.main,transition)

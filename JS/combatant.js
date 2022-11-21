@@ -970,6 +970,15 @@ class combatant{
 					}
 				}
 			break
+			case 5:
+				i=0
+				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
+					if(i==0&&this.battle.combatants[h].life>0){
+						this.battle.combatants[h].take(6*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3])),0)
+						i=1
+					}
+				}
+			break
 		}
 	}
 	passiveEvoke(type){
@@ -1013,6 +1022,30 @@ class combatant{
 					}
 				}
 			break
+			case 5:
+				i=0
+				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
+					if(i==0&&this.battle.combatants[h].life>0){
+						this.battle.combatants[h].take(2*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3])),0)
+						i=1
+					}
+				}
+			break
+		}
+	}
+	autoEvoke(){
+		for(g=0;g<this.ammo.length;g++){
+			switch(this.ammo[g]){
+				case 5:
+					i=0
+					for(h=1,lh=this.battle.combatants.length;h<lh;h++){
+						if(i==0&&this.battle.combatants[h].life>0){
+							this.battle.combatants[h].take(3*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3])),0)
+							i=1
+						}
+					}
+				break
+			}
 		}
 	}
 	cycleCharge(){

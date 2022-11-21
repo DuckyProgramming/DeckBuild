@@ -1,9 +1,9 @@
 function setup(){
     createCanvas(windowWidth-50,windowHeight-50)
     setupGraphics()
-    current=new battle(graphics.main,4)
+    current=new battle(graphics.main,3)
     generateListing(types.card)
-    setupEncounter(current,2)
+    setupEncounter(current,1)
 
     current.initialEvent()
 

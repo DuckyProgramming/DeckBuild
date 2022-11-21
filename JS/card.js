@@ -254,7 +254,7 @@ class card{
             case 197: this.desc+='Apply '+this.damage+' Stun\nto All Enemies'; break
             case 198: this.desc+='Deal '+this.damage+' Damage\nApply 1 Stun\nGain 2 Weak\n'+nfp(this.alt)+' Balance'; break
             case 199: this.desc+='If Unarmed\nDeal '+this.damage+' Damage\nApply 1 Stun\nApply 1 Vulnerable\n'+nfp(this.alt)+' Balance'; break
-            case 200: this.desc+='Reflect Next\n'+this.damage+' Attacks\nCounter '+(7+this.level*3)+'Once\n'+nfp(this.alt)+' Balance'; break
+            case 200: this.desc+='Reflect Next\n'+this.damage+' Attacks\nCounter '+(7+this.level*3)+' Once\n'+nfp(this.alt)+' Balance'; break
             case 201: this.desc+='Add '+this.damage+' Dodge\n'+nfp(this.alt)+' Balance'; break
             case 202: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+'\nAll 3 Times\n'+nfp(6)+' Balance'; break
             case 203: this.desc+='Reflect Next\n'+this.damage+' Attacks\nDisarm'; break
@@ -274,6 +274,7 @@ class card{
             case 217: this.desc+='Deal '+this.damage+' Damage\nDisarm\nRearm Next Turn'; break
             case 218: this.desc+='Add '+this.damage+' Block\nPer Turn if Armed\n'+nfp(this.alt)+' Balance'; break
             case 219: this.desc+='When You Take\nUnblocked Damage\nGain 1 Energy\nand 1 Strength'; break
+            case 220: this.desc+='Hold '+this.damage+'\nLightning Charge'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
