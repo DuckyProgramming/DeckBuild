@@ -33,7 +33,7 @@ class attack{
                 case 1: case 52: case 99: case 114: case 139:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
-                case 2:
+                case 2: case 231:
                     this.battle.combatants[0].block+=this.damage
                 break
                 case 3: case 51: case 135:
@@ -1111,6 +1111,9 @@ class attack{
                 case 229:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.combatants[0].status.main[52]+=this.alt
+                break
+                case 230:
+                    this.battle.combatants[0].block+=this.damage+this.battle.discard.cards.length
                 break
             }
             this.battle.combatants[0].lastPlay=this.class

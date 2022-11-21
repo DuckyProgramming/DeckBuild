@@ -284,6 +284,8 @@ class card{
             case 227: this.desc+='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nApply 1 Weak'; break
             case 228: this.desc+='Add '+this.damage+' Block\nPut a\nDiscarded Card\ninto Your Hand'; break
             case 229: this.desc+='Deal '+this.damage+' Damage\nNext Card\nPlayed Returns\nto Draw Pile'; break
+            case 230: if(this.damage==0){this.desc+='Gain Block Equal\nto the Number of\nCards in Discard\n('+discardSize+')'}else{this.desc+='Gain Block Equal\nto the Number of\nCards in Discard+'+this.damage+'\n('+(discardSize+this.damage)+')'}; break
+            case 231: this.desc+='Add '+this.damage+' Block\nDecrease This\nCard'+"'"+'s Block by '+this.alt; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

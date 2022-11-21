@@ -779,6 +779,16 @@ types={
             {damage:9,alt:1,cost:1,attack:229,target:1,spec:0,class:0},
             {damage:12,alt:1,cost:1,attack:229,target:1,spec:0,class:0},
         ],
+        },{name:'Stack',rarity:0,list:3,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:230,target:0,spec:0,class:1},
+            {damage:3,alt:0,cost:1,attack:230,target:0,spec:0,class:1},
+        ],
+        },{name:'Auto-\nShield',rarity:0,list:3,
+        stats:[
+            {damage:6,alt:2,cost:0,attack:231,target:0,spec:0,class:1},
+            {damage:8,alt:2,cost:0,attack:231,target:0,spec:0,class:1},
+        ],
         },
         
         
