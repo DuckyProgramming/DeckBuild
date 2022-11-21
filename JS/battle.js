@@ -555,7 +555,7 @@ class battle{
                 }else if(
                     f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&
                     f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=51&&f!=52&&f!=53&&
-                    f!=54&&f!=55){
+                    f!=54&&f!=55&&f!=56&&f!=57){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }
@@ -745,6 +745,9 @@ class battle{
             }
             for(g=0;g<this.combatants[0].status.main[53];g++){
                 this.draw()
+            }
+            for(g=0;g<this.combatants[0].status.main[57];g++){
+                this.combatants[0].load(0,0)
             }
         }
         for(g=0,lg=this.hand.cards.length;g<lg;g++){

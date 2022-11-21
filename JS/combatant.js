@@ -28,19 +28,19 @@ class combatant{
 			[255,200,255],[125,160,160],[200,25,125],[190,190,60],[225,225,75],[255,50,100],[150,150,50],[255,125,25],[255,175,75],[200,125,250],
 			[240,100,50],[150,175,200],[0,100,255],[200,255,255],[225,255,225],[140,160,180],[200,150,200],[100,200,50],[255,200,180],[40,80,180],
 			[170,190,210],[255,75,150],[50,125,205],[175,225,175],[150,225,150],[255,105,0],[125,50,125],[140,160,180],[80,40,80],[138,141,207],
-			[139,150,193],[40,95,160],[255,245,15],[195,225,255],[145,155,65],[245,195,65]],infoFade:[],name:[
+			[139,150,193],[40,95,160],[255,245,15],[195,225,255],[145,155,65],[245,195,65],[240,255,255],[220,240,220]],infoFade:[],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
 			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Mental Fortress','Rush','Every Block Weak All','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Absorb Attacks',
 			'Single Attack Constant','Next Turn Block','Next Turn Dexterity','Buffer','Intangible','Armor','Control','Poison','Regeneration','Strength Per Turn',
 			'Metallicize','Add Bleed Once','Weak Per Turn','Counter Stun','stun','Counter All 3 Times','Exhaust Draw','Block Store','Death Heal','Rearm Next Turn',
-			'Armed Block Per Turn','Energy And Strength Per Hit','Return Played to Draw','Power Draw','Random Common','Passive Orb'],class:[
+			'Armed Block Per Turn','Energy And Strength Per Hit','Return Played to Draw','Power Draw','Random Common','Passive Orb','Discharge','Power Basic Charge'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
 			1,1,1,1,1,1,1,0,1,1,
 			1,1,0,1,0,1,1,1,1,1,
-			1,1,1,1,1,1]}
+			1,1,1,1,1,1,1,1]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -849,14 +849,10 @@ class combatant{
 			for(g=0,lg=this.boost.display.length;g<lg;g++){
 				this.layer.fill(this.boost.color[this.boost.display[g]][0],this.boost.color[this.boost.display[g]][1],this.boost.color[this.boost.display[g]][2],this.boost.fade[this.boost.display[g]]*this.fade)
 				this.layer.ellipse(-21+g*14,50,12,12)
-				this.layer.fill(150,this.fade*this.boost.fade[this.boost.display[g]]*this.boost.infoFade[g])
-				this.layer.rect(0,80,45,15,3)
 			}
 			for(g=0,lg=this.status.display.length;g<lg;g++){
 				this.layer.fill(this.status.color[this.status.display[g]][0],this.status.color[this.status.display[g]][1],this.status.color[this.status.display[g]][2],this.status.fade[this.status.display[g]]*this.fade)
 				this.layer.ellipse(-21+g*14,64,12,12)
-				this.layer.fill(150,this.fade*this.status.fade[this.status.display[g]]*this.status.infoFade[g])
-				this.layer.rect(0,80,45,15,3)
 			}
 			for(g=0,lg=this.boost.display.length;g<lg;g++){
 				this.layer.fill(0,this.boost.fade[this.boost.display[g]]*this.fade)
@@ -875,14 +871,10 @@ class combatant{
 			for(g=0,lg=this.boost.display.length;g<lg;g++){
 				this.layer.fill(this.boost.color[this.boost.display[g]][0],this.boost.color[this.boost.display[g]][1],this.boost.color[this.boost.display[g]][2],this.boost.fade[this.boost.display[g]]*this.fade)
 				this.layer.ellipse(-21+g*14,58,12,12)
-				this.layer.fill(150,this.fade*this.boost.fade[this.boost.display[g]]*this.boost.infoFade[g])
-				this.layer.rect(0,80,45,15,3)
 			}
 			for(g=0,lg=this.status.display.length;g<lg;g++){
 				this.layer.fill(this.status.color[this.status.display[g]][0],this.status.color[this.status.display[g]][1],this.status.color[this.status.display[g]][2],this.status.fade[this.status.display[g]]*this.fade)
 				this.layer.ellipse(-21+g*14,72,12,12)
-				this.layer.fill(150,this.fade*this.status.fade[this.status.display[g]]*this.status.infoFade[g])
-				this.layer.rect(0,80,45,15,3)
 			}
 			for(g=0,lg=this.boost.display.length;g<lg;g++){
 				this.layer.fill(0,this.boost.fade[this.boost.display[g]]*this.fade)
@@ -1237,6 +1229,9 @@ class combatant{
 				if(this.status.main[35]>0&&this.blocked!=0){
 					this.boost.main[0]++
 					this.status.main[1]++
+				}
+				if(this.status.main[56]>0){
+					this.load(5,0)
 				}
 				if(user>=0&&this.status.main[45]>0){
 					this.battle.combatants[user].take(this.status.main[45],this.id)

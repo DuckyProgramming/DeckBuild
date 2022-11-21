@@ -65,7 +65,7 @@ class card{
             case 7: this.desc+='Add '+this.damage+'X\nBlock'; break
             case 8: this.desc+='Deal '+this.damage+' Damage\nAdd 1 Slow Bleed\nto Deck'; break
             case 9: this.desc+='Deal '+this.damage+' Damage\nDiscard 1\nRandom Card'; break
-            case 10: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, gain\n1 Energy'; break
+            case 10: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, gain\n'+this.alt+' Energy'; break
             case 11: this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Energy\nNext Turn'; break
             case 12: this.desc+='Deal '+this.damage+' Damage\nto All Enemies'; break
             case 13: this.desc+='Hold '+this.damage+'\nBasic Charge'; break
@@ -300,6 +300,13 @@ class card{
             case 242: this.desc+='When You\nPlay a Power,\nDraw '+this.damage+' Cards'; break
             case 243: this.desc+='At the Start of\nYour Turn, Add\na Random Common\nCard to Your Hand'; break
             case 244: this.desc+='At the Start of\nYour Turn, Trigger\na Weak Evoke on\nRightmost Charge'; break
+            case 245: this.desc+='Draw '+this.damage+' Cards\nAdd a Burn\nto Draw Pile'; break
+            case 246: this.desc+='Lose '+this.damage+' Focus\nGain '+this.damage+' Strength\nGain '+this.damage+' Dexterity'; break
+            case 247: this.desc+='Deal '+this.damage+' Damage\nto a Random Enemy\n'+this.alt+' Times'; break
+            case 248: this.desc+='When You\nTake Damage,\nHold '+this.damage+'\nLightning Charge'; break
+            case 249: this.desc+='When You\nPlay a Power,\nHold '+this.damage+'\nBasic Charge'; break
+            case 250: this.desc+='Charge X\nBasic Charges'; break
+            case 251: this.desc+='Add a Random\nPower to\nYour Hand\nIt costs 0'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

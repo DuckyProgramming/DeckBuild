@@ -56,11 +56,11 @@ class group{
                 }
                 this.add(findCard('Charge'),0,this.battle.player)
                 this.add(findCard('Multicast'),0,this.battle.player)*/
-                this.add(165,0,this.battle.player)
-                this.add(166,0,this.battle.player)
-                this.add(167,0,this.battle.player)
-                this.add(168,0,this.battle.player)
-                this.add(169,0,this.battle.player)
+                this.add(173,0,this.battle.player)
+                this.add(174,0,this.battle.player)
+                this.add(175,0,this.battle.player)
+                this.add(176,0,this.battle.player)
+                this.add(177,0,this.battle.player)
             break
             case 4:
                 for(e=0;e<4;e++){
@@ -377,7 +377,9 @@ class group{
                         }
                     }else if(this.cards[e].cost==-1){
                         this.battle.mana.main=0
-                        this.battle.attack.mana+=2
+                        if(this.battle.relics.active[103]){
+                            this.battle.attack.mana+=2
+                        }
                     }else{
                         this.battle.mana.main-=this.cards[e].cost
                     }

@@ -60,8 +60,8 @@ types={
         ],
         },{name:'Chain\nStrike',rarity:0,list:1,
         stats:[
-            {damage:5,alt:0,cost:1,attack:10,target:1,spec:0,class:0},
-            {damage:7,alt:0,cost:0,attack:10,target:1,spec:0,class:0},
+            {damage:5,alt:1,cost:1,attack:10,target:1,spec:0,class:0},
+            {damage:7,alt:1,cost:0,attack:10,target:1,spec:0,class:0},
         ],
         },{name:'Hook\nStrike',rarity:1,list:1,
         stats:[
@@ -354,6 +354,7 @@ types={
             {damage:40,alt:6,cost:1,attack:178,target:0,spec:0,class:1},
         ],
         },
+        //3 more
         
         
         {name:'Vigilance',rarity:1,list:2,
@@ -677,6 +678,7 @@ types={
             {damage:3,alt:2,cost:0,attack:169,target:0,spec:0,class:2},
         ],
         },
+        //8 more
         
         
         {name:'Charge',rarity:0,list:3,
@@ -859,7 +861,48 @@ types={
             {damage:1,alt:0,cost:1,attack:244,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:0,attack:244,target:0,spec:3,class:2},
         ],
+        },{name:'Overclock',rarity:1,list:3,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:245,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:0,attack:245,target:0,spec:0,class:2},
+        ],
+        },{name:'Reprogram',rarity:1,list:3,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:246,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:246,target:0,spec:0,class:2},
+        ],
+        },{name:'Rip And\nTear',rarity:1,list:3,
+        stats:[
+            {damage:7,alt:2,cost:1,attack:247,target:0,spec:0,class:0},
+            {damage:9,alt:2,cost:1,attack:247,target:0,spec:0,class:0},
+        ],
+        },{name:'Discharge',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:248,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:2,attack:248,target:0,spec:8,class:2},
+        ],
+        },{name:'Storm',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:249,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:1,attack:249,target:0,spec:8,class:2},
+        ],
+        },{name:'Sunder',rarity:1,list:3,
+        stats:[
+            {damage:24,alt:3,cost:3,attack:10,target:1,spec:0,class:0},
+            {damage:32,alt:3,cost:3,attack:10,target:1,spec:0,class:0},
+        ],
+        },{name:'Charge\nSource',rarity:1,list:3,
+        stats:[
+            {damage:0,alt:0,cost:-1,attack:250,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:-1,attack:250,target:0,spec:0,class:2},
+        ],
+        },{name:'White\nNoise',rarity:1,list:3,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:251,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:251,target:0,spec:0,class:2},
+        ],
         },
+        //4 more, stop at 48
         
         
         {name:'Debilitate',rarity:2,list:4,
