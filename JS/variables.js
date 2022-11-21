@@ -749,15 +749,35 @@ types={
             {damage:4,alt:1,cost:1,attack:223,target:0,spec:0,class:1},
             {damage:6,alt:1,cost:1,attack:223,target:0,spec:0,class:1},
         ],
-        },{name:'Shield Pulse',rarity:0,list:3,
+        },{name:'Shield\nPulse',rarity:0,list:3,
         stats:[
             {damage:5,alt:1,cost:1,attack:224,target:1,spec:0,class:0},
             {damage:8,alt:1,cost:1,attack:224,target:1,spec:0,class:0},
         ],
         },{name:'Compile',rarity:0,list:3,
         stats:[
-            {damage:11,alt:0,cost:2,attack:225,target:1,spec:0,class:0},
-            {damage:16,alt:0,cost:2,attack:225,target:1,spec:0,class:0},
+            {damage:11,alt:1,cost:2,attack:225,target:1,spec:0,class:0},
+            {damage:16,alt:1,cost:2,attack:225,target:1,spec:0,class:0},
+        ],
+        },{name:'Reform',rarity:0,list:3,
+        stats:[
+            {damage:1,alt:1,cost:1,attack:226,target:0,spec:0,class:2},
+            {damage:2,alt:1,cost:1,attack:226,target:0,spec:0,class:2},
+        ],
+        },{name:'Blind',rarity:0,list:3,
+        stats:[
+            {damage:3,alt:1,cost:0,attack:227,target:1,spec:0,class:0},
+            {damage:4,alt:1,cost:0,attack:227,target:1,spec:0,class:0},
+        ],
+        },{name:'Vision',rarity:0,list:3,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:228,target:0,spec:0,class:1},
+            {damage:5,alt:0,cost:1,attack:228,target:0,spec:0,class:1},
+        ],
+        },{name:'Rebound',rarity:0,list:3,
+        stats:[
+            {damage:9,alt:1,cost:1,attack:229,target:1,spec:0,class:0},
+            {damage:12,alt:1,cost:1,attack:229,target:1,spec:0,class:0},
         ],
         },
         
@@ -1395,6 +1415,11 @@ types={
         {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0},
     ],attack:[
         {class:0},
+        {class:0},
+        {class:1},
+        {class:0},
+        {class:1},
+        {class:1},
         {class:0},
         {class:1},
         {class:1},

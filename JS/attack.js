@@ -1082,6 +1082,36 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.combatants[0].load(2,0)
                 break
+                case 225:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    for(g=0,lg=this.battle.combatants[0].ammo.length;g<lg;g++){
+                        if(this.battle.combatants[0].ammo[g]>=0){
+                            this.battle.draw()
+                        }
+                    }
+                break
+                case 226:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                    this.battle.combatants[0].load(2,0)
+                break
+                case 227:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(types.attack[this.battle.combatants[this.target].attacks[this.battle.combatants[this.target].intent]].class==0){
+                        this.battle.combatants[this.target].boost.main[0]--
+                    }
+                break
+                case 228:
+                    this.battle.combatants[0].block+=this.damage
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.battle.context=12
+                break
+                case 229:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].status.main[52]+=this.alt
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

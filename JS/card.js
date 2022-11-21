@@ -83,7 +83,7 @@ class card{
             case 26: this.desc+='Draw '+this.damage+' Shivs'; break
             case 27: this.desc+='Add '+this.damage+' Block\nEnter Calm'; break
             case 28: this.desc+='Add '+this.damage+' Block\nExit Stance'; break
-            case 29: this.desc+='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nEnter Calm.'; break
+            case 29: this.desc+='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nEnter Calm'; break
             case 30: this.desc+='Deal '+this.damage+' Damage\nExit Stance'; break
             case 31: this.desc+='Draw '+this.damage+' Cards\nExit Stance'; break
             case 32: this.desc+='Remove All\nBlock of Target\nDeal '+this.damage+' Damage'; break
@@ -113,9 +113,9 @@ class card{
             case 56: this.desc+='Exhaust\nYour Hand'; break
             case 57: this.desc+='Add '+this.damage+' Block\nDraw '+this.alt+' Cards'; break
             case 58: this.desc+='Temporarily\nUpgrade All Cards'; break
-            case 59: this.desc+='Shuffle '+this.damage+'\nRandom Attacks\ninto Draw Pile.\nThey Cost 0'; break
+            case 59: this.desc+='Shuffle '+this.damage+'\nRandom Attacks\ninto Draw Pile\nThey Cost 0'; break
             case 60: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, gain\n'+this.alt+' Gold'; break
-            case 61: this.desc+='Shuffle '+this.damage+'\nRandom Skills\ninto Draw Pile.\nThey Cost 0'; break
+            case 61: this.desc+='Shuffle '+this.damage+'\nRandom Skills\ninto Draw Pile\nThey Cost 0'; break
             case 62: this.desc+='Deal Damage\nEqual to Number of\nCards in Deck\n('+deckSize+')'; break
             case 63: this.desc+='Deal '+this.damage+'\nDamage\nor\nAdd '+this.damage+'\nBlock'; break
             case 64: this.desc+='Apply '+this.damage+' Weak\nand '+this.damage+' Vulnerable\nto All Enemies'; break
@@ -163,7 +163,7 @@ class card{
             case 106: this.desc+='Add '+this.damage+' Block\nAdd a Safety\nto Your Hand'; break
             case 107: this.desc+='Wrath: Apply\n'+this.damage+' Vulnerable\nto All Enemies\nOtherwise,\nEnter Wrath'; break
             case 108: this.desc+='Calm: Draw\n'+this.damage+' Cards\nOtherwise,\nEnter Calm'; break
-            case 109: this.desc+='Put a\nDiscarded Card\ninto Your Hand.\nEnter Calm\nEnd Turn'; break
+            case 109: this.desc+='Put a\nDiscarded Card\ninto Your Hand\nEnter Calm\nEnd Turn'; break
             case 110: this.desc+='When You\nChange Stance,\nGain '+this.damage+' Block'; break
             case 111: this.desc+='Gain '+this.damage+' Faith\nShuffle an Insight\ninto Draw Pile'; break
             case 112: this.desc+='When You\nEnter Wrath,\nDraw '+this.damage+' Cards'; break
@@ -191,7 +191,7 @@ class card{
             case 134: this.desc+='When You\nPlay a Card,\nGain '+this.damage+' Block'; break
             case 135: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nTemporarily Reduce\nDamage by '+this.alt; break
             case 136: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed,\nIgnoring Block\n'+nfp(-5)+' Balance'; break
-            case 137: this.desc+='Deal '+this.damage+' Damage\n2 Times. Second Hit\nPush Collision\nfor '+this.alt+' Damage'; break
+            case 137: this.desc+='Deal '+this.damage+' Damage\n2 Times\nSecond Hit\nPush Collision\nfor '+this.alt+' Damage'; break
             case 138: this.desc+='Deal '+this.damage+' Damage\nGain 2 Combo\nKnockdown'; break
             case 139: this.desc+='Deal '+this.damage+' Damage\nIf not Played\nTake '+this.alt+' Damage'; break
             case 140: this.desc+='Apply '+this.damage+' Vulnerable\nand '+this.alt+' Strength'; break
@@ -279,6 +279,11 @@ class card{
             case 222: this.desc+='Deal '+this.damage+' Damage\nPer Charge'; break
             case 223: this.desc+='Add '+this.damage+' Block\nGain 1 Energy\nNext Turn'; break
             case 224: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nShield Charge'; break
+            case 225: this.desc+='Deal '+this.damage+' Damage\nDraw '+this.alt+' Cards\nPer Charge'; break
+            case 226: this.desc+='Draw '+this.damage+' Cards\nHold '+this.alt+'\nShield Charge'; break
+            case 227: this.desc+='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nApply 1 Weak'; break
+            case 228: this.desc+='Add '+this.damage+' Block\nPut a\nDiscarded Card\ninto Your Hand'; break
+            case 229: this.desc+='Deal '+this.damage+' Damage\nNext Card\nPlayed Returns\nto Draw Pile'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

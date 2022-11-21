@@ -550,7 +550,9 @@ class battle{
                     this.combatants[e].status.main[f]--
                 }else if((f==9||f==47)&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].status.main[f]--
-                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=51){
+                }else if(
+                    f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&
+                    f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=51&&f!=52){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }
@@ -1876,7 +1878,7 @@ class battle{
         if(this.context==1||this.context==4){
             this.deck.displayView(-1)
             this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0)
-        }else if(this.context==2||this.context==3||this.context==10||this.context==11){
+        }else if(this.context==2||this.context==3||this.context==10||this.context==11||this.context==12){
             this.discard.displayView(-1)
         }else if(this.context==5||this.context==6||this.context==9){
             this.deck.displayView(-1)
@@ -1890,7 +1892,7 @@ class battle{
         this.layer.textSize(20)
         if(this.context==3||this.context==5||this.context==6){
             this.layer.text('Back',850,570)
-        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11){
+        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11||this.context==12){
             this.layer.text('Skip',850,570)
         }
         if(this.context==6){
@@ -1927,7 +1929,7 @@ class battle{
             }else if(this.context==2){
                 this.close()
                 transition.scene='battle'
-            }else if(this.context==3||this.context==7||this.context==10||this.context==11){
+            }else if(this.context==3||this.context==7||this.context==10||this.context==11||this.context==12){
                 transition.scene='battle'
             }else if(this.context==6||this.context==9){
                 transition.scene='shop'
@@ -1938,7 +1940,7 @@ class battle{
         }
         if(this.context==1||this.context==4||this.context==6||this.context==9){
             this.deck.onClickView(this.context,this.context2)
-        }else if(this.context==2||this.context==10||this.context==11){
+        }else if(this.context==2||this.context==10||this.context==11||this.context==12){
             this.discard.onClickView(this.context,this.context2)
         }else if(this.context==7||this.context==8){
             this.reserve.onClickView(this.context,this.context2)

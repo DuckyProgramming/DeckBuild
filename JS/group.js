@@ -56,11 +56,11 @@ class group{
                 }
                 this.add(findCard('Charge'),0,this.battle.player)
                 this.add(findCard('Multicast'),0,this.battle.player)*/
-                this.add(144,0,this.battle.player)
-                this.add(145,0,this.battle.player)
-                this.add(146,0,this.battle.player)
-                this.add(147,0,this.battle.player)
-                this.add(148,0,this.battle.player)
+                this.add(149,0,this.battle.player)
+                this.add(150,0,this.battle.player)
+                this.add(151,0,this.battle.player)
+                this.add(152,0,this.battle.player)
+                this.add(153,0,this.battle.player)
             break
             case 4:
                 for(e=0;e<4;e++){
@@ -221,7 +221,15 @@ class group{
     }
     update(){
         for(e=0,le=this.cards.length;e<le;e++){
-            if(this.cards[e].discard||this.cards[e].remove&&this.battle.relics.active[113]&&floor(random(0,2))==0){
+            if(this.cards[e].draw||this.battle.combatants[0].status.main[52]>0&&this.cards[e].attack!=229&&(this.cards[e].discard||this.cards[e].remove)){
+                this.battle.reserve.cards.push(copyCard(this.cards[e]))
+                this.cards.splice(e,1)
+                e--
+                le--
+                if(this.battle.combatants[0].status.main[52]>0){
+                    this.battle.combatants[0].status.main[52]--
+                }
+            }else if(this.cards[e].discard||this.cards[e].remove&&this.battle.relics.active[113]&&floor(random(0,2))==0){
                 if(this.cards[e].selectDiscard){
                     this.cards[e].selectDiscard=false
                     if(this.cards[e].attack==167){
@@ -247,11 +255,6 @@ class group{
                     }
                 }
                 this.battle.discard.cards.push(copyCard(this.cards[e]))
-                this.cards.splice(e,1)
-                e--
-                le--
-            }else if(this.cards[e].draw){
-                this.battle.reserve.cards.push(copyCard(this.cards[e]))
                 this.cards.splice(e,1)
                 e--
                 le--
@@ -465,7 +468,16 @@ class group{
                 this.cards[e].select=true
                 this.select=true
                 this.selected=true
-                if(context==11){
+                if(context==12){
+                    this.battle.hand.cards.push(copyCard(this.cards[e]))
+                    this.battle.hand.cards[this.battle.hand.cards.length-1].position.x=1206
+                    this.battle.hand.cards[this.battle.hand.cards.length-1].position.y=500
+                    this.cards.splice(e,1)
+                    e--
+                    le--
+                    transition.trigger=true
+                    transition.scene='battle'
+                }else if(context==11){
                     this.battle.hand.cards.push(copyCard(this.cards[e]))
                     this.battle.hand.cards[this.battle.hand.cards.length-1].position.x=1206
                     this.battle.hand.cards[this.battle.hand.cards.length-1].position.y=500
