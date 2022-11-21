@@ -1017,6 +1017,49 @@ class attack{
                     }
                     this.battle.combatants[0].armed=0
                 break
+                case 212:
+                    this.battle.combatants[0].meter*=2
+                break
+                case 213:
+                    this.battle.combatants[0].base.meter+=5
+                break
+                case 214:
+                    this.battle.combatants[0].take(4,-1)
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].status.main[47]++
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 215:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0){
+                            this.hold.int=this.battle.combatants[g].life
+                            this.battle.combatants[g].take(this.damage,this.user)
+                            this.battle.combatants[0].meter+=this.alt
+                            this.battle.combatants[0].life=min(this.battle.combatants[0].life+(this.hold.int-this.battle.combatants[g].life)*this.battle.random.healEffectiveness,this.battle.combatants[0].base.life)
+                        }
+                    }
+                break
+                case 216:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                    if(this.battle.combatants[0].armed==0){
+                        this.battle.combatants[0].armed=1
+                    }
+                break
+                case 217:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].armed=0
+                    this.battle.combatants[0].status.main[49]++
+                break
+                case 218:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].status.main[50]+=this.damage
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 219:
+                    this.battle.combatants[0].status.main[51]+=this.damage
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

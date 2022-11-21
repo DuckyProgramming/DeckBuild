@@ -173,7 +173,7 @@ types={
             {damage:11,alt:6,cost:3,attack:47,target:1,desc:'',spec:4,class:0},
             {damage:18,alt:10,cost:3,attack:47,target:1,desc:'',spec:4,class:0},
         ],
-        },{name:'Brutal\nKick',rarity:0,list:1,
+        },{name:'Brutal\nPunch',rarity:0,list:1,
         stats:[
             {damage:24,alt:2,cost:4,attack:48,target:1,desc:'',spec:0,class:0},
             {damage:34,alt:3,cost:4,attack:48,target:1,desc:'',spec:0,class:0},
@@ -1022,7 +1022,7 @@ types={
             {damage:3,alt:0,cost:1,attack:203,target:0,desc:'',spec:11,class:1},
             {damage:4,alt:0,cost:1,attack:203,target:0,desc:'',spec:11,class:1},
         ],
-        },{name:'Overexert',rarity:0,list:4,
+        },{name:'Overexert',rarity:1,list:4,
         stats:[
             {damage:12,alt:-7,cost:1,attack:204,target:1,desc:'',spec:0,class:0},
             {damage:17,alt:-7,cost:1,attack:204,target:1,desc:'',spec:0,class:0},
@@ -1059,11 +1059,50 @@ types={
         ],
         },{name:'Paroxysm',rarity:2,list:4,
         stats:[
-            {damage:25,alt:-4,cost:2,attack:211,target:0,desc:'',spec:11,class:0},
-            {damage:40,alt:-4,cost:2,attack:211,target:0,desc:'',spec:11,class:0},
+            {damage:25,alt:-4,cost:5,attack:211,target:0,desc:'',spec:11,class:0},
+            {damage:40,alt:-4,cost:5,attack:211,target:0,desc:'',spec:11,class:0},
+        ],
+        },{name:'Inconstant',rarity:1,list:4,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:212,target:0,desc:'',spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:212,target:0,desc:'',spec:2,class:2},
+        ],
+        },{name:'Retention',rarity:1,list:4,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:213,target:0,desc:'',spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:213,target:0,desc:'',spec:3,class:2},
+        ],
+        },{name:'Hold\nThrough',rarity:2,list:4,
+        stats:[
+            {damage:30,alt:10,cost:2,attack:214,target:0,desc:'',spec:3,class:1},
+            {damage:40,alt:10,cost:2,attack:214,target:0,desc:'',spec:3,class:1},
+        ],
+        },{name:'Reap',rarity:2,list:4,
+        stats:[
+            {damage:4,alt:-3,cost:2,attack:215,target:0,desc:'',spec:14,class:0},
+            {damage:5,alt:-3,cost:2,attack:215,target:0,desc:'',spec:14,class:0},
+        ],
+        },{name:'Restrategize',rarity:1,list:4,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:216,target:0,desc:'',spec:0,class:2},
+            {damage:2,alt:0,cost:1,attack:216,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Boomerang',rarity:1,list:4,
+        stats:[
+            {damage:12,alt:0,cost:1,attack:217,target:1,desc:'',spec:11,class:0},
+            {damage:20,alt:0,cost:1,attack:217,target:1,desc:'',spec:11,class:0},
+        ],
+        },{name:'Sustain',rarity:1,list:4,
+        stats:[
+            {damage:4,alt:3,cost:2,attack:218,target:0,desc:'',spec:3,class:1},
+            {damage:6,alt:3,cost:2,attack:218,target:0,desc:'',spec:3,class:1},
+        ],
+        },{name:'Resist',rarity:2,list:4,
+        stats:[
+            {damage:1,alt:0,cost:3,attack:219,target:0,desc:'',spec:3,class:2},
+            {damage:1,alt:0,cost:2,attack:219,target:0,desc:'',spec:3,class:2},
         ],
         },
-        //balance mixing
         //armament cycling
         //unarmed only perhaps
         

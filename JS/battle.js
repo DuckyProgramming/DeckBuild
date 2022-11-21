@@ -307,7 +307,7 @@ class battle{
                 }
             break
             case 37:
-                this.combatants[0].base.meter+=2
+                this.combatants[0].base.meterControl+=2
             break
             case 54:
                 this.combatants[0].base.life+=10
@@ -536,6 +536,10 @@ class battle{
                         this.combatants[e].block+=this.combatants[e].status.main[f]
                     }else if(f==42){
                         this.combatants[e].boost.main[0]+=this.combatants[e].status.main[f]
+                    }else if(f==49&&this.combatants[e].armed==0){
+                        this.combatants[e].armed=1
+                    }else if(f==50&&this.combatants[e].armed==1){
+                        this.combatants[e].block+=this.combatants[e].status.main[50]
                     }
                 }
                 if((f==11||f==37)&&this.combatants[e].status.main[f]>0){
@@ -546,7 +550,7 @@ class battle{
                     this.combatants[e].status.main[f]--
                 }else if((f==9||f==47)&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].status.main[f]--
-                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48){
+                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=51){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }

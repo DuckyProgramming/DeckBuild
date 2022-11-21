@@ -266,11 +266,19 @@ class card{
             case 209: this.desc+='Deal '+this.damage+' Damage\nAdd a Dizzy\nto Your Deck\n'+nfp(this.alt)+' Balance'; break
             case 210: this.desc+='Deal '+this.damage+'\nfor Each Card\nExhaust Your Hand\n'+nfp(this.alt)+' Balance'; break
             case 211: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nAdd a Struggle\nto Your Deck\n'+nfp(this.alt)+' Balance\nPer Enemy'; break
+            case 212: this.desc+='Change Balance\nto Double'; break
+            case 213: this.desc+='Increase Balance\nLimit by 5'; break
+            case 214: this.desc+='Take 4 Damage\nAdd '+this.damage+' Block\nSave Block\nfor 1 Turn\n'+nfp(this.alt)+' Balance'; break
+            case 215: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nHeal Equal to\nDamage Dealt\n'+nfp(this.alt)+' Balance Per Enemy'; break
+            case 216: this.desc+='Draw '+this.damage+' Cards\nRearm'; break
+            case 217: this.desc+='Deal '+this.damage+' Damage\nDisarm\nRearm Next Turn'; break
+            case 218: this.desc+='Add '+this.damage+' Block\nPer Turn if Armed\n'+nfp(this.alt)+' Balance'; break
+            case 219: this.desc+='When You Take\nUnblocked Damage\nGain 1 Energy\nand 1 Strength'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
         }
-        if(this.spec==3||this.spec==8||this.spec==9){
+        if(this.spec==3||this.spec==8||this.spec==9||this.spec==14){
             this.desc+='\nExhaust'
         }
         if(this.spec==12){
@@ -324,7 +332,7 @@ class card{
                 this.layer.rect(0,-this.height/4+5,this.width,this.height/2+10,5)
                 this.layer.rect(0,this.height/4+5,this.width,this.height/2-10,5)
             }
-            if(this.spec==5||this.spec==11){
+            if(this.spec==5||this.spec==11||this.spec==14){
                 this.layer.fill(138,141,207,this.fade)
                 this.layer.stroke(111,114,178,this.fade)
                 this.layer.strokeWeight(2)
@@ -427,7 +435,7 @@ class card{
             this.size=round(this.size*5-1)*0.2
         }
         if(this.size<=0&&this.used){
-            if((this.spec==3||this.spec==8||this.spec==9||this.spec==13)&&this.trigger||this.exhaust){
+            if((this.spec==3||this.spec==8||this.spec==9||this.spec==13||this.spec==14)&&this.trigger||this.exhaust){
                 this.remove=true
             }else if(this.spec==12){
                 this.draw=true
@@ -440,9 +448,9 @@ class card{
         }else if(!this.select&&this.anim.select>0){
             this.anim.select=round(this.anim.select*5-1)/5
         }
-        if((Energy.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==5||this.spec==11)&&armed!=1)&&this.anim.afford<1){
+        if((Energy.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==5||this.spec==11||this.spec==13)&&armed!=1)&&this.anim.afford<1){
             this.anim.afford=round(this.anim.afford*5+1)/5
-        }else if(!(Energy.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==5||this.spec==11)&&armed!=1)&&this.anim.afford>0){
+        }else if(!(Energy.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==5||this.spec==11||this.spec==13)&&armed!=1)&&this.anim.afford>0){
             this.anim.afford=round(this.anim.afford*5-1)/5
         }
         if(this.trigger&&!this.used){

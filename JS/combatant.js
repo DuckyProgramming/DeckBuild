@@ -18,7 +18,7 @@ class combatant{
 		this.damage=types.combatant[this.type].damage
 		this.altAttack=types.combatant[this.type].altAttack
 		this.class=types.combatant[this.type].class
-		this.base={life:this.life,position:{x:this.position.x,y:this.position.y},meter:10}
+		this.base={life:this.life,position:{x:this.position.x,y:this.position.y},meter:10,meterControl:10}
         this.collect={life:this.life,block:0}
 		this.calc={damage:0}
 		this.boost={main:[0,0,0,0],fade:[0,0,0,0],display:[],color:[[200,0,0],[0,150,255],[0,50,150],[100,255,100]],infoFade:[0,0],name:['Attack','Defense','Block','Focus']}
@@ -27,17 +27,20 @@ class combatant{
 			[100,200,200],[200,0,50],[100,50,150],[50,100,50],[20,60,120],[170,240,255],[235,65,15],[210,200,245],[210,90,0],[50,0,0],
 			[255,200,255],[125,160,160],[200,25,125],[190,190,60],[225,225,75],[255,50,100],[150,150,50],[255,125,25],[255,175,75],[200,125,250],
 			[240,100,50],[150,175,200],[0,100,255],[200,255,255],[225,255,225],[140,160,180],[200,150,200],[100,200,50],[255,200,180],[40,80,180],
-			[170,190,210],[255,75,150],[50,125,205],[175,225,175],[150,225,150],[255,105,0],[125,50,125],[140,160,180],[80,40,80]],infoFade:[],name:[
-			'Counter All','Next Turn Mana','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
-			'Reflect','Bleed','Intangible','Sink','Hymn','Mental Fortress','Rush','Wave of the Hand','Next Attack Damage','Die Next Turn',
+			[170,190,210],[255,75,150],[50,125,205],[175,225,175],[150,225,150],[255,105,0],[125,50,125],[140,160,180],[80,40,80],[138,141,207],
+			[139,150,193],[40,95,160]],infoFade:[],name:[
+			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
+			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Mental Fortress','Rush','Wave of the Hand','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Absorb Attacks',
 			'Single Attack Constant','Next Turn Block','Next Turn Dexterity','Buffer','Intangible','Armor','Control','Poison','Regeneration','Strength Per Turn',
-			'Metallicize','Add Bleed Once','Weak Per Turn','Counter Stun','stun','Counter All 3 Times','Exhaust Draw','Block Store','Death Heal'],class:[
+			'Metallicize','Add Bleed Once','Weak Per Turn','Counter Stun','stun','Counter All 3 Times','Exhaust Draw','Block Store','Death Heal','Rearm Next Turn',
+			'Armed Block Per Turn','Energy And Strength Per Hit'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
 			1,1,1,1,1,1,1,0,1,1,
-			1,1,0,1,0,1,1,1,1]}
+			1,1,0,1,0,1,1,1,1,1,
+			1,1]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -54,6 +57,7 @@ class combatant{
 		this.block=0
 		this.fades={block:0,info:0}
 		this.intent=0
+		this.blocked=0
         this.fade=0
 		this.lastPlay=-1
 		this.uniqueDisplay=[]
@@ -66,6 +70,7 @@ class combatant{
 		this.ammo=[-1,-1,-1]
 		this.ammoDetail=[0,0,0]
 		this.meter=0
+		this.base.meter=this.base.meterControl
 		this.armed=1
 		this.lastPlay=-1
 		this.uniqueDisplay=[]
@@ -1056,7 +1061,7 @@ class combatant{
 	}
 	take(damage,user,extra){
 		if(this.life>0){
-			if(this.status.main[10]>0){
+			if(user>=0&&this.status.main[10]>0){
 				this.status.main[10]--
 				this.battle.combatants[user].take(damage,this.id)
 				if(this.status.main[3]>0){
@@ -1069,7 +1074,7 @@ class combatant{
 				this.status.main[33]--
 			}else{
 				this.calc.damage=damage
-				if(this.battle.combatants[user].status.main[2]>0){
+				if(user>=0&&this.battle.combatants[user].status.main[2]>0){
 					this.calc.damage*=2
 				}
 				if(this.status.main[12]>0&&this.calc.damage>1){
@@ -1098,10 +1103,10 @@ class combatant{
 						this.calc.damage*=(2-min(0,this.boost.main[1]))/(2+max(0,this.boost.main[1]))
 					}
 				}
-				if(this.battle.combatants[user].status.main[25]>0){
+				if(user>=0&&this.battle.combatants[user].status.main[25]>0){
 					this.status.main[11]+=this.battle.combatants[user].status.main[25]
 				}
-				if(this.battle.combatants[user].status.main[41]>0){
+				if(user>=0&&this.battle.combatants[user].status.main[41]>0){
 					this.status.main[11]+=this.battle.combatants[user].status.main[41]
 					this.battle.combatants[user].status.main[41]=0
 				}
@@ -1154,6 +1159,7 @@ class combatant{
 				this.battle.particles[this.battle.particles.length-1].text=round(this.calc.damage*10)/10
 				if(this.block>this.calc.damage&&extra!=1){
 					this.block-=this.calc.damage
+					this.blocked=0
 				}else if(this.block>0&&extra!=1){
 					this.calc.damage-=this.block
 					this.block=0
@@ -1161,13 +1167,15 @@ class combatant{
 					if(this.id>0&&this.battle.relics.active[106]){
 						this.boost.main[1]-=2
 					}
+					this.blocked=1
 				}else{
 					this.life-=this.calc.damage
+					this.blocked=2
 				}
-				if(this.status.main[0]>0){
+				if(user>=0&&this.status.main[0]>0){
 					this.battle.combatants[user].take(this.status.main[0],this.id)
 				}
-				if(this.status.main[3]>0){
+				if(user>=0&&this.status.main[3]>0){
 					this.battle.combatants[user].take(this.status.main[3],this.id)
 					this.status.main[3]=0
 				}
@@ -1175,16 +1183,16 @@ class combatant{
 					this.status.main[4]++
 				}
 				if(this.status.main[27]>0){
-					if(this.battle.combatants[user].block<=0){
+					if(user>=0&&this.battle.combatants[user].block<=0){
 						this.battle.combatants[user].status.main[11]+=this.status.main[27]
 					}
 					this.status.main[27]=0
 				}
-				if(this.status.main[28]>0){
+				if(user>=0&&this.status.main[28]>0){
 					this.battle.attack.attacks.push([5,20,user,this.status.main[28]])
 					this.status.main[28]=0
 				}
-				if(this.status.main[43]>0){
+				if(user>=0&&this.status.main[43]>0){
 					this.battle.combatants[user].status.main[44]+=this.status.main[43]
 				}
 				if(this.status.main[29]>0){
@@ -1193,7 +1201,11 @@ class combatant{
 				if(this.status.main[35]>0){
 					this.status.main[35]--
 				}
-				if(this.status.main[45]>0){
+				if(this.status.main[35]>0&&this.blocked!=0){
+					this.boost.main[0]++
+					this.status.main[1]++
+				}
+				if(user>=0&&this.status.main[45]>0){
 					this.battle.combatants[user].take(this.status.main[45],this.id)
                     this.battle.attack.attacks.push([0,20,user,this.status.main[45]])
 				}
