@@ -704,7 +704,7 @@ types={
             {damage:0,alt:0,cost:2,attack:17,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:1,attack:17,target:0,spec:0,class:2},
         ],
-        },{name:'Streamline',rarity:1,list:3,
+        },{name:'Compact',rarity:1,list:3,
         stats:[
             {damage:1,alt:0,cost:1,attack:19,target:0,spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:19,target:0,spec:0,class:2},
@@ -788,6 +788,56 @@ types={
         stats:[
             {damage:6,alt:2,cost:0,attack:231,target:0,spec:0,class:1},
             {damage:8,alt:2,cost:0,attack:231,target:0,spec:0,class:1},
+        ],
+        },{name:'Streamline',rarity:0,list:3,
+        stats:[
+            {damage:15,alt:1,cost:3,attack:232,target:1,spec:0,class:0},
+            {damage:20,alt:1,cost:3,attack:232,target:1,spec:0,class:0},
+        ],
+        },{name:'Arc\nBeam',rarity:0,list:3,
+        stats:[
+            {damage:4,alt:1,cost:1,attack:233,target:0,spec:0,class:0},
+            {damage:6,alt:1,cost:1,attack:233,target:0,spec:0,class:0},
+        ],
+        },{name:'Power\nReserves',rarity:0,list:3,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:234,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:0,attack:234,target:0,spec:0,class:2},
+        ],
+        },{name:'Aggregate',rarity:1,list:3,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:235,target:0,spec:3,class:2},
+            {damage:3,alt:0,cost:1,attack:235,target:0,spec:3,class:2},
+        ],
+        },{name:'Secondary\nShield',rarity:1,list:3,
+        stats:[
+            {damage:8,alt:0,cost:1,attack:236,target:0,spec:0,class:1},
+            {damage:12,alt:0,cost:1,attack:236,target:0,spec:0,class:1},
+        ],
+        },{name:'Initial\nActivation',rarity:1,list:3,
+        stats:[
+            {damage:10,alt:0,cost:0,attack:2,target:0,spec:8,class:1},
+            {damage:13,alt:0,cost:0,attack:2,target:0,spec:8,class:1},
+        ],
+        },{name:'Converge',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:237,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:237,target:0,spec:0,class:2},
+        ],
+        },{name:'Doom',rarity:1,list:3,
+        stats:[
+            {damage:5,alt:1,cost:1,attack:238,target:0,spec:0,class:0},
+            {damage:7,alt:1,cost:1,attack:238,target:0,spec:0,class:0},
+        ],
+        },{name:'Dualize',rarity:1,list:3,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:239,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:239,target:0,spec:0,class:2},
+        ],
+        },{name:'Equilibrium',rarity:1,list:3,
+        stats:[
+            {damage:13,alt:0,cost:2,attack:240,target:0,spec:0,class:1},
+            {damage:16,alt:0,cost:2,attack:240,target:0,spec:0,class:1},
         ],
         },
         

@@ -22,6 +22,7 @@ class card{
         this.size=0
         this.fade=1
         this.calcDirection=0
+        this.retain=false
         this.remove=false
         this.draw=false
         this.discard=false
@@ -193,7 +194,7 @@ class card{
             case 136: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed,\nIgnoring Block\n'+nfp(-5)+' Balance'; break
             case 137: this.desc+='Deal '+this.damage+' Damage\n2 Times\nSecond Hit\nPush Collision\nfor '+this.alt+' Damage'; break
             case 138: this.desc+='Deal '+this.damage+' Damage\nGain 2 Combo\nKnockdown'; break
-            case 139: this.desc+='Deal '+this.damage+' Damage\nIf not Played\nTake '+this.alt+' Damage'; break
+            case 139: this.desc+='Deal '+this.damage+' Damage\nIf Not Played\nTake '+this.alt+' Damage'; break
             case 140: this.desc+='Apply '+this.damage+' Vulnerable\nand '+this.alt+' Strength'; break
             case 141: this.desc+='Deal '+this.damage+' Damage\nForce Target\nto Attack'; break
             case 142: this.desc+='Deal '+this.damage+' Damage\nUp to 2x\nPush Collision\nfor '+this.alt+' Damage'; break
@@ -258,14 +259,14 @@ class card{
             case 201: this.desc+='Add '+this.damage+' Dodge\n'+nfp(this.alt)+' Balance'; break
             case 202: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+'\nAll 3 Times\n'+nfp(6)+' Balance'; break
             case 203: this.desc+='Reflect Next\n'+this.damage+' Attacks\nDisarm'; break
-            case 204: this.desc+='Deal '+this.damage+' Damage\nAdd a Winded\nto Your Deck\n'+nfp(this.alt)+' Balance'; break
+            case 204: this.desc+='Deal '+this.damage+' Damage\nAdd a Winded\nto Draw Pile\n'+nfp(this.alt)+' Balance'; break
             case 205: this.desc+='When a Card\nis Exhausted,\nDraw '+this.damage+' Cards\n'+nfp(this.alt)+' Balance'; break
             case 206: this.desc+='Add '+this.damage+' Block\nSave Block\nfor 1 Turn\n'+nfp(this.alt)+' Balance'; break
             case 207: this.desc+='When an\nEnemy Dies,\nHeal '+this.damage+' Health\n'+nfp(this.alt)+' Balance'; break
             case 208: this.desc+='Change Balance\nto Opposite'; break
-            case 209: this.desc+='Deal '+this.damage+' Damage\nAdd a Dizzy\nto Your Deck\n'+nfp(this.alt)+' Balance'; break
+            case 209: this.desc+='Deal '+this.damage+' Damage\nAdd a Dizzy\nto Draw Pile\n'+nfp(this.alt)+' Balance'; break
             case 210: this.desc+='Deal '+this.damage+'\nfor Each Card\nExhaust Your Hand\n'+nfp(this.alt)+' Balance'; break
-            case 211: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nAdd a Struggle\nto Your Deck\n'+nfp(this.alt)+' Balance\nPer Enemy'; break
+            case 211: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nAdd a Struggle\nto Draw Pile\n'+nfp(this.alt)+' Balance\nPer Enemy'; break
             case 212: this.desc+='Change Balance\nto Double'; break
             case 213: this.desc+='Increase Balance\nLimit by 5'; break
             case 214: this.desc+='Take 4 Damage\nAdd '+this.damage+' Block\nSave Block\nfor 1 Turn\n'+nfp(this.alt)+' Balance'; break
@@ -285,7 +286,16 @@ class card{
             case 228: this.desc+='Add '+this.damage+' Block\nPut a\nDiscarded Card\ninto Your Hand'; break
             case 229: this.desc+='Deal '+this.damage+' Damage\nNext Card\nPlayed Returns\nto Draw Pile'; break
             case 230: if(this.damage==0){this.desc+='Gain Block Equal\nto the Number of\nCards in Discard\n('+discardSize+')'}else{this.desc+='Gain Block Equal\nto the Number of\nCards in Discard+'+this.damage+'\n('+(discardSize+this.damage)+')'}; break
-            case 231: this.desc+='Add '+this.damage+' Block\nDecrease This\nCard'+"'"+'s Block by '+this.alt; break
+            case 231: this.desc+='Add '+this.damage+' Block\nTemporarily Reduce\nBlock by '+this.alt; break
+            case 232: this.desc+='Deal '+this.damage+' Damage\nTemporarily Reduce\nCost by '+this.alt; break
+            case 233: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nDraw '+this.alt+' Cards'; break
+            case 234: this.desc+='Gain '+this.damage+' Energy\nAdd a Void\nto Draw Pile'; break
+            case 235: this.desc+='Gain Energy for\nEvery '+this.damage+' Cards\nin Draw Pile'; break
+            case 236: this.desc+='Add '+this.damage+' Block\nIf You Have\nNo Block'; break
+            case 237: this.desc+='Gain '+this.damage+'\nFocus'; break
+            case 238: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nHold '+this.alt+'\nDark Charge'; break
+            case 239: this.desc+='Double\nYour Energy'; break
+            case 240: this.desc+='Add '+this.damage+' Block\nRetain Your Hand'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

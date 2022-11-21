@@ -30,7 +30,7 @@ class attack{
                         this.battle.combatants[0].meter=100
                     }
                 break
-                case 1: case 52: case 99: case 114: case 139:
+                case 1: case 52: case 99: case 114: case 139: case 232:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2: case 231:
@@ -1016,6 +1016,7 @@ class attack{
                         }
                     }
                     this.battle.combatants[0].armed=0
+                    this.battle.reserve.addShuffle(findCard('Struggle'),0,0)
                 break
                 case 212:
                     this.battle.combatants[0].meter*=2
@@ -1114,6 +1115,48 @@ class attack{
                 break
                 case 230:
                     this.battle.combatants[0].block+=this.damage+this.battle.discard.cards.length
+                break
+                case 233:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0){
+                            this.battle.combatants[g].take(this.damage,this.user)
+                        }
+                    }
+                    for(g=0;g<this.alt;g++){
+                        this.battle.draw()
+                    }
+                break
+                case 234:
+                    this.battle.mana.main+=this.damage
+                    this.battle.reserve.addShuffle(findCard('Void'),0,0)
+                break
+                case 235:
+                    this.battle.mana.main+=floor(this.battle.reserve.cards.length/this.damage)
+                break
+                case 236:
+                    if(this.battle.combatants[0].block<=0){
+                        this.battle.combatants[0].block+=this.damage
+                    }
+                break
+                case 237:
+                    this.battle.combatants[0].boost.main[3]+=this.damage
+                break
+                case 238:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0){
+                            this.battle.combatants[g].take(this.damage,this.user)
+                        }
+                    }
+                    this.battle.combatants[0].load(4,6)
+                break
+                case 239:
+                    this.battle.mana.main*=2
+                break
+                case 240:
+                    this.battle.combatants[0].block+=this.damage
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        this.battle.hand.cards[g].retain=true
+                    }
                 break
             }
             this.battle.combatants[0].lastPlay=this.class

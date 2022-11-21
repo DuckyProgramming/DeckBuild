@@ -521,11 +521,13 @@ class battle{
                 }
             }
             for(f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
-                if(this.combatants[e].boost.main[f]>0){
-                    this.combatants[e].boost.main[f]=max(0,this.combatants[e].boost.main[f]-1)
-                }
-                if(this.combatants[e].boost.main[f]<0){
-                    this.combatants[e].boost.main[f]=min(0,this.combatants[e].boost.main[f]+1)
+                if(f!=3){
+                    if(this.combatants[e].boost.main[f]>0){
+                        this.combatants[e].boost.main[f]=max(0,this.combatants[e].boost.main[f]-1)
+                    }
+                    if(this.combatants[e].boost.main[f]<0){
+                        this.combatants[e].boost.main[f]=min(0,this.combatants[e].boost.main[f]+1)
+                    }
                 }
             }
             for(f=0,lf=this.combatants[e].status.main.length;f<lf;f++){

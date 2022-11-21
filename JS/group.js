@@ -56,11 +56,11 @@ class group{
                 }
                 this.add(findCard('Charge'),0,this.battle.player)
                 this.add(findCard('Multicast'),0,this.battle.player)*/
-                this.add(154,0,this.battle.player)
-                this.add(155,0,this.battle.player)
-                this.add(156,0,this.battle.player)
-                this.add(157,0,this.battle.player)
-                this.add(158,0,this.battle.player)
+                this.add(161,0,this.battle.player)
+                this.add(162,0,this.battle.player)
+                this.add(163,0,this.battle.player)
+                this.add(164,0,this.battle.player)
+                this.add(165,0,this.battle.player)
             break
             case 4:
                 for(e=0;e<4;e++){
@@ -169,7 +169,7 @@ class group{
                 this.cards[e].damage+=this.cards[e].alt
             }else if(this.cards[e].attack==114&&this.cards[e].cost>0&&!this.cards[e].trigger){
                 this.cards[e].cost--
-            }else if((this.cards[e].spec!=2&&this.cards[e].spec!=9&&this.cards[e].spec!=12||this.cards[e].trigger)){
+            }else if((this.cards[e].spec!=2&&this.cards[e].spec!=9&&this.cards[e].spec!=12&&!this.cards[e].retain||this.cards[e].trigger)){
                 if(this.battle.relics.active[133]){
                     this.battle.random.drawing--
                 }else{
@@ -184,6 +184,8 @@ class group{
                 }else if(this.cards[e].attack==-14){
                     this.battle.combatants[0].status.main[11]+=2
                 }
+            }else if(this.cards[e].retain){
+                this.cards[e].retain=false
             }
         }
     }
@@ -329,6 +331,9 @@ class group{
                                     this.cards[f].used=true
                                     if(this.battle.attack.type==135){
                                         this.cards[f].damage-=this.cards[f].alt
+                                    }else if(this.battle.attack.type==232&&this.cards[f].cost>0){
+                                        this.cards[f].cost-=this.cards[f].alt
+                                        this.cards[f].base.cost-=this.cards[f].alt
                                     }
                                 }
                             }
