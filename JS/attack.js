@@ -1063,6 +1063,25 @@ class attack{
                 case 220:
                     this.battle.combatants[0].load(5,0)
                 break
+                case 221:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].load(0,0)
+                break
+                case 222:
+                    for(g=0,lg=this.battle.combatants[0].ammo.length;g<lg;g++){
+                        if(this.battle.combatants[0].ammo[g]>=0){
+                            this.battle.combatants[this.target].take(this.damage,this.user)
+                        }
+                    }
+                break
+                case 223:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].status.main[1]+=this.alt
+                break
+                case 224:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].load(2,0)
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

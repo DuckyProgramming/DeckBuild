@@ -12,9 +12,9 @@ class card{
         this.cost=cost||types.card[this.type].stats[this.level].cost
         this.attack=types.card[this.type].stats[this.level].attack
         this.target=types.card[this.type].stats[this.level].target
-        this.desc=types.card[this.type].stats[this.level].desc
         this.spec=types.card[this.type].stats[this.level].spec
         this.class=types.card[this.type].stats[this.level].class
+        this.desc=''
         this.base={cost:this.cost}
         this.anim={select:0,afford:0}
         this.width=120
@@ -275,6 +275,10 @@ class card{
             case 218: this.desc+='Add '+this.damage+' Block\nPer Turn if Armed\n'+nfp(this.alt)+' Balance'; break
             case 219: this.desc+='When You Take\nUnblocked Damage\nGain 1 Energy\nand 1 Strength'; break
             case 220: this.desc+='Hold '+this.damage+'\nLightning Charge'; break
+            case 221: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nBasic Charge'; break
+            case 222: this.desc+='Deal '+this.damage+' Damage\nPer Charge'; break
+            case 223: this.desc+='Add '+this.damage+' Block\nGain 1 Energy\nNext Turn'; break
+            case 224: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nShield Charge'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
