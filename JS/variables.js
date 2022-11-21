@@ -839,6 +839,26 @@ types={
             {damage:13,alt:0,cost:2,attack:240,target:0,spec:0,class:1},
             {damage:16,alt:0,cost:2,attack:240,target:0,spec:0,class:1},
         ],
+        },{name:'Mecha-\nShield',rarity:1,list:3,
+        stats:[
+            {damage:4,alt:2,cost:1,attack:241,target:0,spec:0,class:1},
+            {damage:6,alt:2,cost:1,attack:241,target:0,spec:0,class:1},
+        ],
+        },{name:'Power\nBanks',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:242,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:1,attack:242,target:0,spec:0,class:2},
+        ],
+        },{name:'Possibilities',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:243,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:243,target:0,spec:7,class:2},
+        ],
+        },{name:'Loop',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:244,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:0,attack:244,target:0,spec:3,class:2},
+        ],
         },
         
         

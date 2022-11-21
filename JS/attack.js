@@ -1158,6 +1158,15 @@ class attack{
                         this.battle.hand.cards[g].retain=true
                     }
                 break
+                case 242:
+                    this.battle.combatants[0].status.main[53]+=this.damage
+                break
+                case 243:
+                    this.battle.combatants[0].status.main[54]+=this.damage
+                break
+                case 244:
+                    this.battle.combatants[0].status.main[55]+=this.damage
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

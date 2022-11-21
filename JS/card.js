@@ -274,7 +274,7 @@ class card{
             case 216: this.desc+='Draw '+this.damage+' Cards\nRearm'; break
             case 217: this.desc+='Deal '+this.damage+' Damage\nDisarm\nRearm Next Turn'; break
             case 218: this.desc+='Add '+this.damage+' Block\nPer Turn if Armed\n'+nfp(this.alt)+' Balance'; break
-            case 219: this.desc+='When You Take\nUnblocked Damage\nGain 1 Energy\nand 1 Strength'; break
+            case 219: this.desc+='When You Take\nUnblocked Damage,\nGain 1 Energy\nand 1 Strength'; break
             case 220: this.desc+='Hold '+this.damage+'\nLightning Charge'; break
             case 221: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nBasic Charge'; break
             case 222: this.desc+='Deal '+this.damage+' Damage\nPer Charge'; break
@@ -296,6 +296,10 @@ class card{
             case 238: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nHold '+this.alt+'\nDark Charge'; break
             case 239: this.desc+='Double\nYour Energy'; break
             case 240: this.desc+='Add '+this.damage+' Block\nRetain Your Hand'; break
+            case 241: this.desc+='Add '+this.damage+' Block\nTemporarily Increase\nBlock by '+this.alt; break
+            case 242: this.desc+='When You\nPlay a Power,\nDraw '+this.damage+' Cards'; break
+            case 243: this.desc+='At the Start of\nYour Turn, Add\na Random Common\nCard to Your Hand'; break
+            case 244: this.desc+='At the Start of\nYour Turn, Trigger\na Weak Evoke on\nRightmost Charge'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
