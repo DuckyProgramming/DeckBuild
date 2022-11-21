@@ -1007,8 +1007,62 @@ types={
             {damage:1,alt:-3,cost:2,attack:200,target:0,desc:'',spec:11,class:1},  
             {damage:2,alt:-3,cost:2,attack:200,target:0,desc:'',spec:11,class:1},
         ],
+        },{name:'Evade',rarity:2,list:4,
+        stats:[
+            {damage:2,alt:-5,cost:2,attack:201,target:0,desc:'',spec:2,class:1},
+            {damage:2,alt:-5,cost:2,attack:201,target:0,desc:'',spec:2,class:1},
+        ],
+        },{name:'Fend Off',rarity:1,list:4,
+        stats:[
+            {damage:8,alt:2,cost:2,attack:202,target:0,desc:'',spec:0,class:1},
+            {damage:10,alt:4,cost:2,attack:202,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Final\nGambit',rarity:1,list:4,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:203,target:0,desc:'',spec:11,class:1},
+            {damage:4,alt:0,cost:1,attack:203,target:0,desc:'',spec:11,class:1},
+        ],
+        },{name:'Overexert',rarity:0,list:4,
+        stats:[
+            {damage:12,alt:-7,cost:1,attack:204,target:1,desc:'',spec:0,class:0},
+            {damage:17,alt:-7,cost:1,attack:204,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Clarity',rarity:2,list:4,
+        stats:[
+            {damage:1,alt:4,cost:1,attack:205,target:0,desc:'',spec:0,class:2},
+            {damage:1,alt:4,cost:0,attack:205,target:0,desc:'',spec:0,class:2},
+        ],
+        },{name:'Sidestep',rarity:1,list:4,
+        stats:[
+            {damage:4,alt:1,cost:1,attack:206,target:0,desc:'',spec:0,class:1},
+            {damage:7,alt:1,cost:1,attack:206,target:0,desc:'',spec:0,class:1},
+        ],
+        },{name:'Embrace',rarity:2,list:4,
+        stats:[
+            {damage:6,alt:9,cost:2,attack:207,target:0,desc:'',spec:8,class:2},
+            {damage:10,alt:9,cost:2,attack:207,target:0,desc:'',spec:8,class:2},
+        ],
+        },{name:'Bipolar',rarity:0,list:4,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:208,target:0,desc:'',spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:208,target:0,desc:'',spec:2,class:2},
+        ],
+        },{name:'Reckless',rarity:1,list:4,
+        stats:[
+            {damage:7,alt:-3,cost:0,attack:209,target:1,desc:'',spec:0,class:0},
+            {damage:10,alt:-3,cost:0,attack:209,target:1,desc:'',spec:0,class:0},
+        ],
+        },{name:'Discharge',rarity:2,list:4,
+        stats:[
+            {damage:7,alt:-6,cost:2,attack:210,target:1,desc:'',spec:3,class:0},
+            {damage:7,alt:-6,cost:2,attack:210,target:1,desc:'',spec:3,class:0},
+        ],
+        },{name:'Paroxysm',rarity:2,list:4,
+        stats:[
+            {damage:25,alt:-4,cost:2,attack:211,target:0,desc:'',spec:11,class:0},
+            {damage:40,alt:-4,cost:2,attack:211,target:0,desc:'',spec:11,class:0},
+        ],
         },
-        //defense-dodge?,reflect?
         //balance mixing
         //armament cycling
         //unarmed only perhaps
@@ -1210,8 +1264,8 @@ types={
         ],
         },{name:'Void',rarity:-2,list:11,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-9,target:0,desc:'',spec:1,class:-1},
-            {damage:0,alt:0,cost:0,attack:-9,target:0,desc:'',spec:1,class:-1},
+            {damage:0,alt:0,cost:0,attack:-9,target:0,desc:'',spec:6,class:-1},
+            {damage:0,alt:0,cost:0,attack:-9,target:0,desc:'',spec:6,class:-1},
         ],
         },{name:'Burn',rarity:-2,list:11,
         stats:[
@@ -1222,6 +1276,21 @@ types={
         stats:[
             {damage:0,alt:0,cost:0,attack:-14,target:0,desc:'',spec:1,class:-1},
             {damage:0,alt:0,cost:0,attack:-14,target:0,desc:'',spec:1,class:-1},
+        ],
+        },{name:'Winded',rarity:-2,list:11,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-15,target:0,desc:'',spec:6,class:-1},
+            {damage:0,alt:0,cost:0,attack:-15,target:0,desc:'',spec:6,class:-1},
+        ],
+        },{name:'Dizzy',rarity:-2,list:11,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-16,target:0,desc:'',spec:6,class:-1},
+            {damage:0,alt:0,cost:0,attack:-16,target:0,desc:'',spec:6,class:-1},
+        ],
+        },{name:'Struggle',rarity:-2,list:11,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-17,target:0,desc:'',spec:1,class:-1},
+            {damage:0,alt:0,cost:0,attack:-17,target:0,desc:'',spec:1,class:-1},
         ],
         },
         

@@ -65,11 +65,11 @@ class group{
                 for(e=0;e<4;e++){
                     //this.add(2,0,this.battle.player)
                 }
-                this.add(196,0,this.battle.player)
-                this.add(197,0,this.battle.player)
-                this.add(198,0,this.battle.player)
-                this.add(199,0,this.battle.player)
-                this.add(200,0,this.battle.player)
+                this.add(208,0,this.battle.player)
+                this.add(209,0,this.battle.player)
+                this.add(210,0,this.battle.player)
+                this.add(211,0,this.battle.player)
+                this.add(212,0,this.battle.player)
             break
         }
     }
@@ -253,6 +253,11 @@ class group{
                 this.cards.splice(e,1)
                 e--
                 le--
+                if(this.battle.combatants[0].status[46]>0){
+                    for(f=0;f<this.battle.combatants[0].status[46];f++){
+                        this.battle.draw()
+                    }
+                }
                 if(this.battle.relics.active[71]){
                     this.battle.randomAdd()
                 }

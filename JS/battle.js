@@ -89,6 +89,7 @@ class battle{
         this.random.drawing=this.drawAmount+this.random.tempDrawAmount
         this.drawInitial()
         this.turnDraw()
+        this.drawEffect()
         if(this.relics.active[146]){
             for(g=0,lg=this.hand.cards.length;g<lg;g++){
                 this.hand.cards[g].cost=floor(random(0,4))
@@ -252,11 +253,6 @@ class battle{
     }
     draw(){
         if(this.reserve.cards.length>0){
-            switch(this.reserve.cards[0].attack){
-                case -9:
-                    this.mana.main--
-                break
-            }
             this.hand.cards.push(copyCard(this.reserve.cards[0]))
             this.hand.cards[this.hand.cards.length-1].position.x=1206
             this.hand.cards[this.hand.cards.length-1].position.y=500
@@ -267,6 +263,22 @@ class battle{
         if(this.reserve.cards.length<=0){
             this.return()
             this.reserve.shuffle()
+        }
+    }
+    drawEffect(){
+        for(let e=0,le=this.hand.cards.length;e<le;e++){
+            switch(this.hand.cards[e].attack){
+                case -9: case -17:
+                    this.mana.main--
+                break
+                case -15:
+                    this.combatants[0].boost.main[0]-=2
+                    this.combatants[0].status.main[4]++
+                break
+                case -16:
+                    this.hand.cards[floor(random(0,this.hand.cards.length))].cost++
+                break
+            }
         }
     }
     getRelic(type){
@@ -495,7 +507,7 @@ class battle{
         this.combatants[0].mantra+=this.combatants[0].status.main[20]
         this.combatants[0].boost.main[2]+=this.combatants[0].status.main[32]
         for(e=0,le=this.combatants.length;e<le;e++){
-            if(e==0){
+            if(e==0&&this.combatants[e].status.main[47]<=0){
                 if(this.relics.active[69]){
                     this.combatants[e].block=max(0,this.combatants[e].block-15)
                 }else{
@@ -532,9 +544,9 @@ class battle{
                 }else if(f==38&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].life=min(this.combatants[e].life+this.combatants[e].status.main[f],this.combatants[e].base.life)
                     this.combatants[e].status.main[f]--
-                }else if(f==9&&this.combatants[e].status.main[f]>0){
+                }else if((f==9||f==47)&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].status.main[f]--
-                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&f!=36&&f!=39&&f!=40&&f!=41&&f!=42){
+                }else if(f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }
@@ -617,6 +629,31 @@ class battle{
         if(this.relics.active[134]&&(this.random.class==1||this.random.class==2)){
             this.mana.main++
         }
+    }
+    resetTurn(){
+        this.counter.enemies.alive=0
+        for(e=1,le=this.combatants.length;e<le;e++){
+            if(this.combatants[e].life>0){
+                this.counter.enemies.alive++
+            }
+        }
+        if(this.counter.enemies.alive<this.generation.threshold&&this.generation.reinforce.length>0){
+            e=1
+            while(e<this.combatants.length){
+                if(this.combatants[e].type==0){
+                    this.combatants[e]=new combatant(this.layer,this,200+e*100,350,this.generation.reinforce[0],1,e)
+                    this.generation.reinforce.splice(0,1)
+                    break
+                }
+                e++
+            }
+        }
+        this.turnDraw()
+        for(e=0,le=this.hand.cards.length;e<le;e++){
+            this.hand.cards[e].position.y=500
+        }
+        this.endTurn()
+        this.drawEffect()
     }
     playCard(){
         this.counter.played++
@@ -775,6 +812,7 @@ class battle{
             this.turn++
             if(this.turn>=this.combatants.length){
                 this.turn=0
+                this.resetTurn()
             }
         }
     }
@@ -1314,28 +1352,8 @@ class battle{
                 this.turnTimer--
             }else if(this.turn>=this.combatants.length){
                 this.turn=0
-                this.counter.enemies.alive=0
-                for(e=1,le=this.combatants.length;e<le;e++){
-                    if(this.combatants[e].life>0){
-                        this.counter.enemies.alive++
-                    }
-                }
-                if(this.counter.enemies.alive<this.generation.threshold&&this.generation.reinforce.length>0){
-                    e=1
-                    while(e<this.combatants.length){
-                        if(this.combatants[e].type==0){
-                            this.combatants[e]=new combatant(this.layer,this,200+e*100,350,this.generation.reinforce[0],1,e)
-                            this.generation.reinforce.splice(0,1)
-                            break
-                        }
-                        e++
-                    }
-                }
-                this.turnDraw()
-                for(e=0,le=this.hand.cards.length;e<le;e++){
-                    this.hand.cards[e].position.y=500
-                }
-                this.endTurn()
+                this.resetTurn()
+
             }else if(this.combatants[this.turn].status.main[5]>0||this.combatants[this.turn].status.main[9]>0){
                 this.turn++
                 while(this.turn>0&&this.turn<this.combatants.length&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){

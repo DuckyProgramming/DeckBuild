@@ -46,12 +46,15 @@ class card{
             case -5: this.desc+='Take 1 Damage\nPer Card Not Played'; break
             case -7: this.desc+='At End of Turn,\nGain 1 Vulnerable'; break
             case -8: this.desc+='When Removed,\nLose 3 Max Health'; break
-            case -9: this.desc+='When Drawn,\nLose 1 Energy'; break
+            case -9: this.desc+='When Drawn,\nLose 1 Energy\nEthereal'; break
             case -10: this.desc+='At End of Turn,\nTake 2 Damage'; break
             case -11: this.desc+='Cannot Play more\nthan 3 Cards'; break
             case -12: this.desc+='Cannot Play more\nthan 1 Attack\nWhen Played,\nBreak Balance'; break
             case -13: this.desc+='Unremovable'; break
             case -14: this.desc+='At End of Turn,\nAdd 2 Bleed'; break
+            case -15: this.desc+='When Drawn, Gain\n2 Temporary Weak'; break
+            case -16: this.desc+='When Drawn,\na Random Card\nGains 1 Cost\nEthereal'; break
+            case -17: this.desc+='When Drawn,\nLose 1 Energy'; break
             case 1: this.desc+='Deal '+this.damage+'\nDamage'; break
             case 2: this.desc+='Add '+this.damage+'\nBlock'; break
             case 3: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times'; break
@@ -252,6 +255,17 @@ class card{
             case 198: this.desc+='Deal '+this.damage+' Damage\nApply 1 Stun\nGain 2 Weak\n'+nfp(this.alt)+' Balance'; break
             case 199: this.desc+='If Unarmed\nDeal '+this.damage+' Damage\nApply 1 Stun\nApply 1 Vulnerable\n'+nfp(this.alt)+' Balance'; break
             case 200: this.desc+='Reflect Next\n'+this.damage+' Attacks\nCounter '+(7+this.level*3)+'Once\n'+nfp(this.alt)+' Balance'; break
+            case 201: this.desc+='Add '+this.damage+' Dodge\n'+nfp(this.alt)+' Balance'; break
+            case 202: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+'\nAll 3 Times\n'+nfp(6)+' Balance'; break
+            case 203: this.desc+='Reflect Next\n'+this.damage+' Attacks\nDisarm'; break
+            case 204: this.desc+='Deal '+this.damage+' Damage\nAdd a Winded\nto Your Deck\n'+nfp(this.alt)+' Balance'; break
+            case 205: this.desc+='When a Card\nis Exhausted,\nDraw '+this.damage+' Cards\n'+nfp(this.alt)+' Balance'; break
+            case 206: this.desc+='Add '+this.damage+' Block\nSave Block\nfor 1 Turn\n'+nfp(this.alt)+' Balance'; break
+            case 207: this.desc+='When an\nEnemy Dies,\nHeal '+this.damage+' Health\n'+nfp(this.alt)+' Balance'; break
+            case 208: this.desc+='Change Balance\nto Opposite'; break
+            case 209: this.desc+='Deal '+this.damage+' Damage\nAdd a Dizzy\nto Your Deck\n'+nfp(this.alt)+' Balance'; break
+            case 210: this.desc+='Deal '+this.damage+'\nfor Each Card\nExhaust Your Hand\n'+nfp(this.alt)+' Balance'; break
+            case 211: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nAdd a Struggle\nto Your Deck\n'+nfp(this.alt)+' Balance\nPer Enemy'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

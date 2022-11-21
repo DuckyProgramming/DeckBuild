@@ -963,6 +963,60 @@ class attack{
                     this.battle.combatants[0].status.main[3]+=7+this.level*3
                     this.battle.combatants[0].meter+=this.alt
                 break
+                case 201:
+                    this.battle.combatants[0].status.main[6]+=this.damage
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 202:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].status.main[45]+=this.alt
+                    this.battle.combatants[0].meter+=6
+                break
+                case 203:
+                    this.battle.combatants[0].status.main[10]+=this.damage
+                    this.battle.combatants[0].meter+=this.alt
+                    this.battle.combatants[0].armed=0
+                break
+                case 204:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].meter+=this.alt
+                    this.battle.reserve.addShuffle(findCard('Winded'),0,0)
+                break
+                case 205:
+                    this.battle.combatants[0].status.main[46]+=this.damage
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 206:
+                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].status.main[47]++
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 207:
+                    this.battle.combatants[0].status.main[48]+=this.damage
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 208:
+                    this.battle.combatants[0].meter*=-1
+                break
+                case 209:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].meter+=this.alt
+                    this.battle.reserve.addShuffle(findCard('Dizzy'),0,0)
+                break
+                case 210:
+                    this.battle.combatants[this.target].take(this.damage*this.battle.hand.cards.length,this.user)
+                    this.battle.combatants[0].meter+=this.alt
+                    this.battle.allExhaust()
+                break
+                case 211:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0){
+                            this.battle.combatants[g].take(this.damage,this.user)
+                            this.battle.combatants[0].meter+=this.alt
+                        }
+                    }
+                    this.battle.combatants[0].armed=0
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{
