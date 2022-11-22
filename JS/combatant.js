@@ -33,7 +33,7 @@ class combatant{
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
 			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Mental Fortress','Rush','Every Block Weak All','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Absorb Attacks',
-			'Single Attack Constant','Next Turn Block','Next Turn Dexterity','Buffer','Intangible','Armor','Control','Poison','Regeneration','Strength Per Turn',
+			'First Attack Damage','Next Turn Block','Next Turn Dexterity','Buffer','Intangible','Armor','Control','Poison','Regeneration','Strength Per Turn',
 			'Metallicize','Add Bleed Once','Weak Per Turn','Counter Stun','stun','Counter All 3 Times','Exhaust Draw','Block Store','Death Heal','Rearm Next Turn',
 			'Armed Block Per Turn','Energy And Strength Per Hit','Return Played to Draw','Power Draw','Random Common','Passive Orb','Discharge','Power Basic Charge','Random Power','Conditioning',
 			'Miracle+ Gain','Calm Block Per Turn'],class:[
@@ -1250,7 +1250,7 @@ class combatant{
 					this.battle.combatants[user].take(this.status.main[45],this.id)
                     this.battle.attack.attacks.push([0,20,user,this.status.main[45]])
 				}
-				if(this.id>0&&this.battle.combatants[0].type==1){
+				if(this.id>0){
 					this.battle.combatants[0].combo++
 				}
 			}
@@ -1269,7 +1269,7 @@ class combatant{
 			this.collect.block=this.block
 		}
 		if(this.team==0){
-			if(this.combo!=0||this.type==1){
+			if(this.combo!=0&&this.battle.hand.anim.selectCombo||this.type==1){
 				this.uniqueDisplay.push(0)
 			}
 			if(this.ammo[0]!=-1||this.type==3){

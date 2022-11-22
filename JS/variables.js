@@ -358,12 +358,12 @@ types={
             {damage:1,alt:0,cost:1,attack:260,target:0,spec:3,class:2},
             {damage:2,alt:0,cost:1,attack:260,target:0,spec:3,class:2},
         ],
-        },{name:'Reflex\nStrike',rarity:1,list:1,
+        },{name:'Reflex\nStrike',rarity:0,list:1,
         stats:[
             {damage:5,alt:1,cost:1,attack:261,target:1,spec:0,class:0},
             {damage:10,alt:1,cost:1,attack:261,target:1,spec:0,class:0},
         ],
-        },{name:'Start\nStrong',rarity:1,list:1,
+        },{name:'Start\nStrong',rarity:0,list:1,
         stats:[
             {damage:4,alt:1,cost:1,attack:262,target:0,spec:10,class:1},
             {damage:8,alt:1,cost:1,attack:262,target:0,spec:10,class:1},
@@ -377,6 +377,26 @@ types={
         stats:[
             {damage:1,alt:0,cost:1,attack:264,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:0,attack:264,target:0,spec:3,class:2},
+        ],
+        },{name:'Combo\nJuice',rarity:1,list:1,
+        stats:[
+            {damage:2,alt:0,cost:2,attack:272,target:0,spec:3,class:2},
+            {damage:2,alt:0,cost:1,attack:272,target:0,spec:3,class:2},
+        ],
+        },{name:'Separate',rarity:0,list:1,
+        stats:[
+            {damage:4,alt:4,cost:1,attack:273,target:1,spec:0,class:0},
+            {damage:8,alt:4,cost:1,attack:273,target:1,spec:0,class:0},
+        ],
+        },{name:'Snap\nStrike',rarity:0,list:1,
+        stats:[
+            {damage:4,alt:2,cost:1,attack:274,target:1,spec:0,class:0},
+            {damage:6,alt:4,cost:1,attack:274,target:1,spec:0,class:0},
+        ],
+        },{name:'Utility\nPack',rarity:1,list:1,
+        stats:[
+            {damage:1,alt:5,cost:0,attack:275,target:0,spec:0,class:2},
+            {damage:2,alt:8,cost:0,attack:275,target:0,spec:0,class:2},
         ],
         },
         
@@ -1383,6 +1403,8 @@ types={
         //unarmed only perhaps
         //spartan kick
         //double bleed
+        //body blow
+        //convert self bleeding to combo
         
         
         {name:'Empty',rarity:-1,list:12,
@@ -1640,6 +1662,9 @@ types={
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1},
         {name:'Slime',alt:'',life:30,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,0,0],class:0},
         {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0},
+        //gangster
+        //bleed?
+        //plant lol
     ],attack:[
         {class:0},
         {class:0},

@@ -195,7 +195,7 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.combatants[this.target].boost.main[0]-=this.alt
                 break
-                case 35:
+                case 35: case 275:
                     this.battle.combatants[0].combo+=this.damage
                 break
                 case 36:
@@ -1329,6 +1329,19 @@ class attack{
                         this.battle.mana.main+=this.alt
                     }
                 break
+                case 272:
+                    this.battle.combatants[0].combo*=2
+                break
+                case 273:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target+1].take(this.damage,this.user)
+                    this.attacks.push([11,20,this.target,this.alt])
+                    this.attacks.push([5,20,this.target+1,this.alt])
+                break
+                case 274:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].status.main[18]+=this.alt
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{
@@ -1401,7 +1414,7 @@ class attack{
                         this.battle.combatants[0].combo=0
                     }
                 break
-                case 3:
+                case 3: case 11:
                     if(this.attacks[g][1]<10){
                         this.battle.combatants[this.attacks[g][2]].position.x+=8
                     }else{
@@ -1409,6 +1422,10 @@ class attack{
                     }
                     if(this.attacks[g][1]==10&&this.attacks[g][2]>1){
                         this.battle.combatants[this.attacks[g][2]-1].take(this.attacks[g][3]+this.battle.combatants[0].status.main[26],0)
+                        if(this.battle.combatants[this.attacks[g][2]-1].life>0&&this.attacks[g][0]==11){
+                            this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3]+this.battle.combatants[0].status.main[26],this.attacks[g][2],0)
+                            this.battle.combatants[0].combo--
+                        }
                     }
                 break
                 case 4: case 5: case 9:

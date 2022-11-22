@@ -10,7 +10,7 @@ class group{
         this.selcted=false
         this.trigger=false
         this.calc={level:0,cut:0,list:[]}
-        this.anim={discarding:0}
+        this.anim={discarding:0,selectCombo:false}
     }
     initial(type){
         /*for(e=0;e<20;e++){
@@ -26,11 +26,11 @@ class group{
                 }
                 this.add(findCard('Big\nStrike'),0,this.battle.player)
                 this.add(findCard('Triple\nPunch'),0,this.battle.player)*/
-                this.add(70,0,this.battle.player)
-                this.add(71,0,this.battle.player)
-                this.add(72,0,this.battle.player)
-                this.add(73,0,this.battle.player)
                 this.add(74,0,this.battle.player)
+                this.add(75,0,this.battle.player)
+                this.add(76,0,this.battle.player)
+                this.add(77,0,this.battle.player)
+                this.add(78,0,this.battle.player)
             break
             case 2:
                 /*for(e=0;e<4;e++){
@@ -41,9 +41,6 @@ class group{
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
                 this.add(findCard('Vigilance'),0,this.battle.player)*/
-
-                this.add(findCard('Survivor'),0,this.battle.player)
-
                 this.add(142,0,this.battle.player)
                 this.add(143,0,this.battle.player)
                 this.add(144,0,this.battle.player)
@@ -243,6 +240,8 @@ class group{
                         }
                     }else if(this.cards[e].attack==168){
                         this.battle.mana.main+=this.cards[e].damage
+                    }else if(this.cards[e].attack==275){
+                        this.battle.combatants[0].combo+=this.cards[e].damage
                     }
                 }
                 if(!this.cards[e].trigger){
@@ -436,6 +435,11 @@ class group{
                     this.cards[e].select=true
                     this.select=true
                     this.selected=true
+                    if(this.cards[e].spec==4){
+                        this.anim.selectCombo=true
+                    }else{
+                        this.anim.selectCombo=false
+                    }
                 }
             }
             if(!this.selected){

@@ -320,13 +320,17 @@ class card{
             case 262: this.desc+='Add '+this.damage+' Block\nAdd '+this.alt+' Conditioning'; break
             case 263: this.desc+='Add '+this.damage+' Conditioning\nTake '+this.alt+' Damage'; break
             case 264: this.desc+='Decrease Cost of\nAll Combo-Costing\nCards by '+this.damage; break
-            case 265: if(this.damage==0){this.desc+='Add a Miracle+\nto Your Hand\nFor the Next\nX Turns'}else{this.desc+='Add a Miracle+\nto Your Hand\nFor the Next\nX+'+this.damage+' Turns'}; break
+            case 265: if(this.damage==0){this.desc+='Add a Miracle+\nto Your Hand\nfor the Next\nX Turns'}else{this.desc+='Add a Miracle+\nto Your Hand\nFor the Next\nX+'+this.damage+' Turns'}; break
             case 266: this.desc+='Gain '+this.damage+' Strength\nGain '+this.damage+' Dexterity\nGain '+this.alt+' Less\nEnergy Per Turn'; break
             case 267: this.desc+='Gain '+this.damage+' Block\nPer Turn When\nin Calm'; break
             case 268: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Block\nWhen Retained'; break
             case 269: this.desc+='Add '+this.damage+' Block\nDraw '+this.alt+' Card\nIt Costs 1 Less'; break
             case 270: this.desc+='Add '+this.damage+' Block\nAdd '+this.alt+' Block\nNext Turn'; break
-            case 271: this.desc+='Deal '+this.damage+' Damage\nIf a Card Has\nBeen Discarded\nThis Turn,\nGain '+this.alt+' Energy'
+            case 271: this.desc+='Deal '+this.damage+' Damage\nIf a Card Has\nBeen Discarded\nThis Turn,\nGain '+this.alt+' Energy'; break
+            case 272: this.desc+='Double Your\nCombo'; break
+            case 273: this.desc+='Deal '+this.damage+' Damage\nto 2 Enemies\nPush Collision\nfor '+this.alt+' Damage\nin 2 Directions'; break
+            case 274: this.desc+='Deal '+this.damage+' Damage\nNext Attack Deals\n'+this.damage+' More Damage'; break
+            case 275: this.desc+='Gain '+this.damage+' Combo\nWhen Discarded,\nGain '+this.alt+' Combo'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
