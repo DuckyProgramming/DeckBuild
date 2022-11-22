@@ -26,11 +26,11 @@ class group{
                 }
                 this.add(findCard('Big\nStrike'),0,this.battle.player)
                 this.add(findCard('Triple\nPunch'),0,this.battle.player)*/
-                this.add(74,0,this.battle.player)
-                this.add(75,0,this.battle.player)
-                this.add(76,0,this.battle.player)
-                this.add(77,0,this.battle.player)
                 this.add(78,0,this.battle.player)
+                this.add(79,0,this.battle.player)
+                this.add(80,0,this.battle.player)
+                this.add(81,0,this.battle.player)
+                this.add(82,0,this.battle.player)
             break
             case 2:
                 /*for(e=0;e<4;e++){
@@ -241,7 +241,7 @@ class group{
                     }else if(this.cards[e].attack==168){
                         this.battle.mana.main+=this.cards[e].damage
                     }else if(this.cards[e].attack==275){
-                        this.battle.combatants[0].combo+=this.cards[e].damage
+                        this.battle.combatants[0].combo+=this.cards[e].alt
                     }
                 }
                 if(!this.cards[e].trigger){

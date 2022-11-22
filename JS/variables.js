@@ -398,6 +398,26 @@ types={
             {damage:1,alt:5,cost:0,attack:275,target:0,spec:0,class:2},
             {damage:2,alt:8,cost:0,attack:275,target:0,spec:0,class:2},
         ],
+        },{name:'Undermine',rarity:2,list:1,
+        stats:[
+            {damage:2,alt:0,cost:2,attack:276,target:0,spec:3,class:2},
+            {damage:4,alt:0,cost:2,attack:276,target:0,spec:3,class:2},
+        ],
+        },{name:'Rising\nStrength',rarity:2,list:1,
+        stats:[
+            {damage:2,alt:0,cost:3,attack:277,target:0,spec:3,class:2},
+            {damage:3,alt:0,cost:3,attack:277,target:0,spec:3,class:2},
+        ],
+        },{name:'Power\nThrough',rarity:1,list:1,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:278,target:0,spec:0,class:2},
+            {damage:4,alt:0,cost:1,attack:278,target:0,spec:0,class:2},
+        ],
+        },{name:'Prime\nMover',rarity:1,list:1,
+        stats:[
+            {damage:1,alt:2,cost:2,attack:279,target:0,spec:0,class:1},
+            {damage:1,alt:3,cost:2,attack:279,target:0,spec:0,class:1},
+        ],
         },
         
         
@@ -1405,6 +1425,7 @@ types={
         //double bleed
         //body blow
         //convert self bleeding to combo
+        //balance maneuvers
         
         
         {name:'Empty',rarity:-1,list:12,

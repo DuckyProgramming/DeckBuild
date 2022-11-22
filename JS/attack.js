@@ -1342,6 +1342,23 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.combatants[0].status.main[18]+=this.alt
                 break
+                case 276:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0){
+                            this.battle.combatants[g].status.main[62]+=this.damage
+                        }
+                    }
+                break
+                case 277:
+                    this.battle.combatants[0].status.main[39]+=this.damage
+                break
+                case 278:
+                    this.battle.combatants[0].status.main[47]+=this.damage
+                break
+                case 279:
+                    this.battle.combatants[0].status.main[6]+=this.damage
+                    this.battle.combatants[0].status.main[59]+=this.alt
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

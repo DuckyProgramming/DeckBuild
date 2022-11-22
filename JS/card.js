@@ -331,6 +331,10 @@ class card{
             case 273: this.desc+='Deal '+this.damage+' Damage\nto 2 Enemies\nPush Collision\nfor '+this.alt+' Damage\nin 2 Directions'; break
             case 274: this.desc+='Deal '+this.damage+' Damage\nNext Attack Deals\n'+this.damage+' More Damage'; break
             case 275: this.desc+='Gain '+this.damage+' Combo\nWhen Discarded,\nGain '+this.alt+' Combo'; break
+            case 276: this.desc+='Apply -'+this.damage+' Damage\nto All Enemies'; break
+            case 277: this.desc+='Gain '+this.damage+' Strength\nEvery Turn'; break
+            case 278: this.desc+='Retain Unused\nBlock for the\nNext '+this.damage+' Turns'; break
+            case 279: this.desc+='Gain '+this.damage+' Dodge\nGain '+this.alt+'\nConditioning'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

@@ -29,21 +29,21 @@ class combatant{
 			[240,100,50],[150,175,200],[0,100,255],[200,255,255],[225,255,225],[140,160,180],[200,150,200],[100,200,50],[255,200,180],[40,80,180],
 			[170,190,210],[255,75,150],[50,125,205],[175,225,175],[150,225,150],[255,105,0],[125,50,125],[140,160,180],[80,40,80],[138,141,207],
 			[139,150,193],[40,95,160],[255,245,15],[195,225,255],[145,155,65],[245,195,65],[240,255,255],[220,240,220],[215,235,255],[20,50,120],
-			[155,235,250],[5,145,250]],infoFade:[],name:[
+			[155,235,250],[5,145,250],[150,0,0]],infoFade:[],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
 			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Mental Fortress','Rush','Every Block Weak All','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Absorb Attacks',
 			'First Attack Damage','Next Turn Block','Next Turn Dexterity','Buffer','Intangible','Armor','Control','Poison','Regeneration','Strength Per Turn',
 			'Metallicize','Add Bleed Once','Weak Per Turn','Counter Stun','stun','Counter All 3 Times','Exhaust Draw','Block Store','Death Heal','Rearm Next Turn',
 			'Armed Block Per Turn','Energy And Strength Per Hit','Return Played to Draw','Power Draw','Random Common','Passive Orb','Discharge','Power Basic Charge','Random Power','Conditioning',
-			'Miracle+ Gain','Calm Block Per Turn'],class:[
+			'Miracle+ Gain','Calm Block Per Turn','Constant Damage Down'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
 			1,1,1,1,1,1,1,0,1,1,
 			1,1,0,1,0,1,1,1,1,1,
 			1,1,1,1,1,1,1,1,1,1,
-			1,1]}
+			1,1,0]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -902,25 +902,27 @@ class combatant{
 		this.layer.noStroke()
 		this.layer.fill(180)
 		for(g=0,lg=this.boost.display.length;g<lg;g++){
-			if(dist(inputs.rel.x,inputs.rel.y,this.base.position.x-21+g*14,this.base.position.y+58)<10){
+			if(dist(inputs.rel.x,inputs.rel.y,this.base.position.x-21+g*14,this.base.position.y+58)<7&&this.alt!=''||dist(inputs.rel.x,inputs.rel.y,this.base.position.x-21+g*14,this.base.position.y+50)<7&&this.alt==''){
 				this.layer.rect(130,105,240,30,5)
 			}
 		}
 		for(g=0,lg=this.status.display.length;g<lg;g++){
-			if(dist(inputs.rel.x,inputs.rel.y,this.base.position.x-21+g*14,this.base.position.y+72)<10){
+			if(dist(inputs.rel.x,inputs.rel.y,this.base.position.x-21+g*14,this.base.position.y+72)<7&this.alt!=''||dist(inputs.rel.x,inputs.rel.y,this.base.position.x-21+g*14,this.base.position.y+64)<7&&this.alt==''){
 				this.layer.rect(130,105,240,30,5)
 			}
 		}
 		this.layer.fill(0)
 		this.layer.textSize(12)
 		for(g=0,lg=this.boost.display.length;g<lg;g++){
-			if(dist(inputs.rel.x,inputs.rel.y,this.base.position.x-21+g*14,this.base.position.y+58)<10){
-				this.layer.text(this.boost.name[this.boost.display[g]],130,105)
+			if(dist(inputs.rel.x,inputs.rel.y,this.base.position.x-21+g*14,this.base.position.y+58)<7&this.alt!=''||dist(inputs.rel.x,inputs.rel.y,this.base.position.x-21+g*14,this.base.position.y+50)<7&&this.alt==''){
+				this.layer.text(this.boost.name[this.boost.display[g]],140,105)
+				this.layer.text(this.boost.main[this.boost.display[g]],30,105)
 			}
 		}
 		for(g=0,lg=this.status.display.length;g<lg;g++){
-			if(dist(inputs.rel.x,inputs.rel.y,this.base.position.x-21+g*14,this.base.position.y+72)<10){
-				this.layer.text(this.status.name[this.status.display[g]],130,105)
+			if(dist(inputs.rel.x,inputs.rel.y,this.base.position.x-21+g*14,this.base.position.y+72)<7&this.alt!=''||dist(inputs.rel.x,inputs.rel.y,this.base.position.x-21+g*14,this.base.position.y+64)<7&&this.alt==''){
+				this.layer.text(this.status.name[this.status.display[g]],140,105)
+				this.layer.text(this.status.main[this.status.display[g]],30,105)
 			}
 		}
 	}
@@ -976,7 +978,7 @@ class combatant{
 			break
 		}
 	}
-	passiveEvoke(type){
+	passiveEvoke(type,detail){
 		switch(type){
 			case 0:
 				i=0
@@ -1189,6 +1191,9 @@ class combatant{
 				}
 				if(this.status.main[34]>0&&this.calc.damage>1){
 					this.calc.damage=1
+				}
+				if(this.battle.combatants[user].status.main[62]>0){
+					this.calc.damage=max(0,this.calc.damage-this.battle.combatants[user].status.main[62])
 				}
 				this.battle.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))
 				this.battle.particles[this.battle.particles.length-1].text=round(this.calc.damage*10)/10

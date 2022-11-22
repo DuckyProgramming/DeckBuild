@@ -560,7 +560,7 @@ class battle{
                 }else if(
                     f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&
                     f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=50&&f!=51&&f!=52&&
-                    f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=61){
+                    f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }
@@ -804,7 +804,9 @@ class battle{
             }
         }
         if(this.calc.list.length>0){
-            this.hand.cards[this.calc.list[floor(random(0,this.calc.list.length))]].used=true
+            g=this.calc.list[floor(random(0,this.calc.list.length))]
+            this.hand.cards[g].used=true
+            this.hand.cards[g].selectDiscard=true
         }
     }
     randomAdd(){
@@ -819,6 +821,7 @@ class battle{
         for(g=0,lg=this.hand.cards.length;g<lg;g++){
             if(!this.hand.cards[g].trigger){
                 this.hand.cards[g].used=true
+                this.hand.cards[g].selectDiscard=true
             }
         }
     }
