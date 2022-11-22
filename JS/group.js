@@ -41,6 +41,9 @@ class group{
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
                 this.add(findCard('Vigilance'),0,this.battle.player)*/
+
+                this.add(findCard('Survivor'),0,this.battle.player)
+
                 this.add(142,0,this.battle.player)
                 this.add(143,0,this.battle.player)
                 this.add(144,0,this.battle.player)

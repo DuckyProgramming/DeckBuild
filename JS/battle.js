@@ -144,7 +144,7 @@ class battle{
             this.hand.add(findCard('Miracle'),0,0)
         }
         if(this.relics.active[6]){
-            this.combatants[0].status.main[30]+=8
+            this.combatants[0].status.main[18]+=8
         }
         if(this.relics.active[7]){
             this.combatants[0].block+=10

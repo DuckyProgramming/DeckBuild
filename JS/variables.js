@@ -401,7 +401,7 @@ types={
             {damage:4,alt:2,cost:1,attack:51,target:1,spec:2,class:0},
             {damage:6,alt:2,cost:1,attack:51,target:1,spec:2,class:0},
         ],
-        },{name:'Spinning\nWhack',rarity:1,list:2,
+        },{name:'Spinning\nBack Strike',rarity:0,list:2,
         stats:[
             {damage:12,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
             {damage:20,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
@@ -426,7 +426,7 @@ types={
             {damage:9,alt:0,cost:1,attack:30,target:1,spec:0,class:0},
             {damage:14,alt:0,cost:1,attack:30,target:1,spec:0,class:0},
         ],
-        },{name:'Empty\nMind',rarity:1,list:2,
+        },{name:'Empty\nMind',rarity:0,list:2,
         stats:[
             {damage:2,alt:0,cost:1,attack:31,target:0,spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:31,target:0,spec:0,class:2},
@@ -446,7 +446,7 @@ types={
             {damage:4,alt:0,cost:1,attack:98,target:0,spec:0,class:1},
             {damage:7,alt:0,cost:1,attack:98,target:0,spec:0,class:1},
         ],
-        },{name:'Beatdown',rarity:1,list:2,
+        },{name:'Beatdown',rarity:0,list:2,
         stats:[
             {damage:4,alt:0,cost:0,attack:99,target:1,spec:0,class:0},
             {damage:6,alt:0,cost:0,attack:99,target:1,spec:0,class:0},
@@ -481,7 +481,7 @@ types={
             {damage:9,alt:0,cost:1,attack:105,target:0,spec:0,class:0},
             {damage:12,alt:0,cost:1,attack:105,target:0,spec:0,class:0},
         ],
-        },{name:'Avoidance',rarity:1,list:2,
+        },{name:'Avoidance',rarity:0,list:2,
         stats:[
             {damage:4,alt:0,cost:1,attack:106,target:0,spec:0,class:1},
             {damage:7,alt:0,cost:1,attack:106,target:0,spec:0,class:1},
@@ -511,12 +511,12 @@ types={
             {damage:3,alt:0,cost:1,attack:111,target:0,spec:0,class:2},
             {damage:4,alt:0,cost:1,attack:111,target:0,spec:0,class:2},
         ],
-        },{name:'Rush',rarity:1,list:2,
+        },{name:'Rush',rarity:0,list:2,
         stats:[
             {damage:2,alt:0,cost:1,attack:112,target:0,spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:112,target:0,spec:0,class:2},
         ],
-        },{name:'Sanctity',rarity:1,list:2,
+        },{name:'Sanctity',rarity:0,list:2,
         stats:[
             {damage:6,alt:0,cost:1,attack:113,target:0,spec:0,class:1},
             {damage:9,alt:0,cost:1,attack:113,target:0,spec:0,class:1},
@@ -546,7 +546,7 @@ types={
             {damage:6,alt:0,cost:2,attack:102,target:0,spec:0,class:2},
             {damage:6,alt:0,cost:2,attack:102,target:0,spec:2,class:2},
         ],
-        },{name:'Flame\nRing',rarity:1,list:2,
+        },{name:'Flame\nRing',rarity:0,list:2,
         stats:[
             {damage:5,alt:0,cost:1,attack:118,target:0,spec:0,class:2},
             {damage:8,alt:0,cost:1,attack:118,target:0,spec:0,class:2},
@@ -556,7 +556,7 @@ types={
             {damage:99,alt:0,cost:1,attack:119,target:0,spec:0,class:2},
             {damage:99,alt:0,cost:1,attack:119,target:0,spec:2,class:2},
         ],
-        },{name:'Brilliance',rarity:2,list:2,
+        },{name:'Brilliance',rarity:1,list:2,
         stats:[
             {damage:4,alt:2,cost:1,attack:120,target:1,spec:0,class:0},
             {damage:6,alt:3,cost:1,attack:120,target:1,spec:0,class:0},
@@ -566,7 +566,7 @@ types={
             {damage:2,alt:0,cost:0,attack:121,target:1,spec:1,class:0},
             {damage:3,alt:0,cost:0,attack:121,target:1,spec:1,class:0},
         ],
-        },{name:'Devotion',rarity:2,list:2,
+        },{name:'Devotion',rarity:1,list:2,
         stats:[
             {damage:2,alt:0,cost:1,attack:122,target:0,spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:122,target:0,spec:0,class:2},
@@ -576,7 +576,7 @@ types={
             {damage:10,alt:0,cost:1,attack:123,target:0,spec:3,class:2},
             {damage:10,alt:0,cost:0,attack:123,target:0,spec:3,class:2},
         ],
-        },{name:'Spirit\nShield',rarity:2,list:2,
+        },{name:'Spirit\nShield',rarity:1,list:2,
         stats:[
             {damage:3,alt:0,cost:2,attack:124,target:0,spec:0,class:1},
             {damage:4,alt:0,cost:2,attack:124,target:0,spec:0,class:1},
@@ -596,7 +596,7 @@ types={
             {damage:8,alt:2,cost:1,attack:127,target:1,spec:0,class:0},
             {damage:12,alt:2,cost:1,attack:127,target:1,spec:0,class:0},
         ],
-        },{name:'Backstab',rarity:1,list:2,
+        },{name:'Backstab',rarity:0,list:2,
         stats:[
             {damage:11,alt:2,cost:1,attack:1,target:1,spec:8,class:0},
             {damage:15,alt:2,cost:1,attack:1,target:1,spec:8,class:0},
@@ -631,7 +631,7 @@ types={
             {damage:1,alt:2,cost:0,attack:133,target:0,spec:3,class:2},
             {damage:2,alt:2,cost:0,attack:133,target:0,spec:3,class:2},
         ],
-        },{name:'After\nImage',rarity:2,list:2,
+        },{name:'After\nImage',rarity:1,list:2,
         stats:[
             {damage:1,alt:0,cost:1,attack:134,target:0,spec:0,class:2},
             {damage:1,alt:0,cost:1,attack:134,target:0,spec:10,class:2},
@@ -720,6 +720,26 @@ types={
         stats:[
             {damage:5,alt:2,cost:1,attack:268,target:0,spec:0,class:1},
             {damage:7,alt:3,cost:1,attack:268,target:0,spec:0,class:1},
+        ],
+        },{name:'Neutralize',rarity:0,list:2,
+        stats:[
+            {damage:3,alt:1,cost:1,attack:34,target:1,spec:0,class:0},
+            {damage:4,alt:2,cost:1,attack:34,target:1,spec:0,class:0},
+        ],
+        },{name:'Backflip',rarity:0,list:2,
+        stats:[
+            {damage:4,alt:1,cost:1,attack:269,target:0,spec:0,class:1},
+            {damage:7,alt:1,cost:1,attack:269,target:0,spec:0,class:1},
+        ],
+        },{name:'Dodge\nRoll',rarity:0,list:2,
+        stats:[
+            {damage:4,alt:4,cost:1,attack:270,target:0,spec:0,class:1},
+            {damage:4,alt:4,cost:1,attack:270,target:0,spec:0,class:1},
+        ],
+        },{name:'Sneaky\nStrike',rarity:0,list:2,
+        stats:[
+            {damage:12,alt:2,cost:2,attack:271,target:1,spec:0,class:0},
+            {damage:16,alt:2,cost:2,attack:271,target:1,spec:0,class:0},
         ],
         },
         //4 more
@@ -1362,6 +1382,7 @@ types={
         //armament cycling
         //unarmed only perhaps
         //spartan kick
+        //double bleed
         
         
         {name:'Empty',rarity:-1,list:12,

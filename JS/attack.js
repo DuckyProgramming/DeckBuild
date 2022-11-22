@@ -1310,6 +1310,25 @@ class attack{
                 case 267:
                     this.battle.combatants[0].status.main[61]+=this.damage
                 break
+                case 269:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    for(g=0;g<this.alt;g++){
+                        this.battle.draw()
+                        if(this.battle.hand.cards[this.battle.hand.cards.length-1].cost>0){
+                            this.battle.hand.cards[this.battle.hand.cards.length-1].cost--
+                        }
+                    }
+                break
+                case 270:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[31]+=this.alt
+                break
+                case 271:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.random.discards>0){
+                        this.battle.mana.main+=this.alt
+                    }
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

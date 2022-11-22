@@ -324,6 +324,9 @@ class card{
             case 266: this.desc+='Gain '+this.damage+' Strength\nGain '+this.damage+' Dexterity\nGain '+this.alt+' Less\nEnergy Per Turn'; break
             case 267: this.desc+='Gain '+this.damage+' Block\nPer Turn When\nin Calm'; break
             case 268: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Block\nWhen Retained'; break
+            case 269: this.desc+='Add '+this.damage+' Block\nDraw '+this.alt+' Card\nIt Costs 1 Less'; break
+            case 270: this.desc+='Add '+this.damage+' Block\nAdd '+this.alt+' Block\nNext Turn'; break
+            case 271: this.desc+='Deal '+this.damage+' Damage\nIf a Card Has\nBeen Discarded\nThis Turn,\nGain '+this.alt+' Energy'
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
@@ -437,11 +440,11 @@ class card{
                         this.layer.fill(20,this.fade)
                     break
                 }
-                this.layer.text(this.name+'+',8,-this.height/2+24)
+                this.layer.text(this.name+'+',0,-this.height/2+24)
                 this.layer.fill(0,this.fade)
             }else{
                 this.layer.fill(0,this.fade)
-                this.layer.text(this.name,8,-this.height/2+24)
+                this.layer.text(this.name,0,-this.height/2+24)
             }
             this.layer.textSize(12)
             this.layer.text(this.desc,0,10)
