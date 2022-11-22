@@ -428,6 +428,16 @@ types={
             {damage:4,alt:1,cost:1,attack:301,target:1,spec:0,class:1},
             {damage:8,alt:1,cost:1,attack:301,target:1,spec:0,class:1},
         ],
+        },{name:'Big Block',rarity:0,list:5,
+        stats:[
+            {damage:34,alt:0,cost:2,attack:2,target:0,spec:0,class:1},
+            {damage:54,alt:0,cost:2,attack:2,target:0,spec:0,class:1},
+        ],
+        },{name:'Body\nHardening',rarity:1,list:5,
+        stats:[
+            {damage:2,alt:2,cost:1,attack:302,target:0,spec:0,class:2},
+            {damage:2,alt:3,cost:1,attack:302,target:0,spec:0,class:2},
+        ],
         },
         
         

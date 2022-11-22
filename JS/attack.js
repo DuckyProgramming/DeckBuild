@@ -1470,6 +1470,10 @@ class attack{
                     this.battle.combatants[0].status[6]+=this.alt
                     this.battle.turn=this.target+100
                 break
+                case 302:
+                    this.battle.combatants[0].take(this.damage,0)
+                    this.battle.combatants[0].boost.main[0]+=this.alt
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{
