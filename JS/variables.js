@@ -781,8 +781,27 @@ types={
             {damage:12,alt:2,cost:2,attack:271,target:1,spec:0,class:0},
             {damage:16,alt:2,cost:2,attack:271,target:1,spec:0,class:0},
         ],
+        },{name:'Bearing',rarity:1,list:2,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:280,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:280,target:0,spec:0,class:2},
+        ],
+        },{name:'Accuracy',rarity:1,list:2,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:281,target:0,spec:0,class:2},
+            {damage:6,alt:0,cost:0,attack:281,target:0,spec:0,class:2},
+        ],
+        },{name:'All-Out\nAttack',rarity:1,list:2,
+        stats:[
+            {damage:10,alt:2,cost:1,attack:282,target:0,spec:0,class:0},
+            {damage:14,alt:2,cost:1,attack:282,target:0,spec:0,class:0},
+        ],
+        },{name:'Closer',rarity:1,list:2,
+        stats:[
+            {damage:6,alt:0,cost:1,attack:283,target:1,spec:0,class:0},
+            {damage:8,alt:0,cost:1,attack:283,target:1,spec:0,class:0},
+        ],
         },
-        //4 more
         
         
         {name:'Charge',rarity:0,list:3,

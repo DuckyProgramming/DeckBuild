@@ -32,7 +32,7 @@ class card{
         this.exhaust=false
         this.selectDiscard=false
     }
-    displayName(deckSize,handSize,discardSize){
+    displayName(deckSize,handSize,discardSize,random){
         this.desc=''
         if(this.spec==1||this.spec==6||this.spec==7){
             this.desc+='Unplayable\n'
@@ -81,7 +81,7 @@ class card{
             case 23: this.desc+='Deal '+this.damage+'X\nDamage'; break
             case 24: this.desc+='Deal '+this.damage+' Damage\nDraw '+this.alt+' Cards'; break
             case 25: this.desc+='Heal '+this.damage+' Health'; break
-            case 26: this.desc+='Draw '+this.damage+' Shivs'; break
+            case 26: this.desc+='Add '+this.damage+' Shivs\nto Your Hand'; break
             case 27: this.desc+='Add '+this.damage+' Block\nEnter Calm'; break
             case 28: this.desc+='Add '+this.damage+' Block\nExit Stance'; break
             case 29: this.desc+='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nEnter Calm'; break
@@ -335,6 +335,10 @@ class card{
             case 277: this.desc+='Gain '+this.damage+' Strength\nEvery Turn'; break
             case 278: this.desc+='Retain Unused\nBlock for the\nNext '+this.damage+' Turns'; break
             case 279: this.desc+='Gain '+this.damage+' Dodge\nGain '+this.alt+'\nConditioning'; break
+            case 280: this.desc+='Enter Wrath\nor\nEnter Calm'; break
+            case 281: this.desc+='Shivs Deal '+this.damage+'\nMore Damage'; break
+            case 282: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nDiscard '+this.alt+'\nRandom Cards'; break
+            case 283: this.desc+='Deal '+this.damage+' Damage Per\nAttack This Turn\n('+random.attacked+')'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
@@ -349,8 +353,8 @@ class card{
             this.desc=this.desc.substr(0,this.desc.length-1)
         }
     }
-    display(deckSize,handSize,discardSize){
-        this.displayName(deckSize,handSize,discardSize)
+    display(deckSize,handSize,discardSize,random){
+        this.displayName(deckSize,handSize,discardSize,random)
         if(this.size>0){
             this.layer.translate(this.position.x,this.position.y)
             this.layer.scale(this.size)
@@ -389,7 +393,7 @@ class card{
             }
             this.layer.strokeWeight(5)
             this.layer.rect(0,0,this.width,this.height,5)
-            if(this.attack==63){
+            if(this.attack==63||this.attack==280){
                 this.layer.rect(0,-this.height/4+5,this.width,this.height/2+10,5)
                 this.layer.rect(0,this.height/4+5,this.width,this.height/2-10,5)
             }

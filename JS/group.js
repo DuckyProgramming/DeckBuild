@@ -18,19 +18,19 @@ class group{
         }*/
         switch(type){
             case 1:
-                /*for(e=0;e<4;e++){
+                for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player) 
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Big\nStrike'),0,this.battle.player)
-                this.add(findCard('Triple\nPunch'),0,this.battle.player)*/
-                this.add(78,0,this.battle.player)
+                this.add(findCard('Triple\nPunch'),0,this.battle.player)
+                /*this.add(78,0,this.battle.player)
                 this.add(79,0,this.battle.player)
                 this.add(80,0,this.battle.player)
                 this.add(81,0,this.battle.player)
-                this.add(82,0,this.battle.player)
+                this.add(82,0,this.battle.player)*/
             break
             case 2:
                 /*for(e=0;e<4;e++){
@@ -41,11 +41,11 @@ class group{
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
                 this.add(findCard('Vigilance'),0,this.battle.player)*/
-                this.add(142,0,this.battle.player)
-                this.add(143,0,this.battle.player)
-                this.add(144,0,this.battle.player)
-                this.add(145,0,this.battle.player)
-                this.add(146,0,this.battle.player)
+                this.add(154,0,this.battle.player)
+                this.add(155,0,this.battle.player)
+                this.add(156,0,this.battle.player)
+                this.add(157,0,this.battle.player)
+                this.add(158,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -88,6 +88,9 @@ class group{
             this.battle.relics.active[21]=false
         }else{
             this.cards.push(new card(this.layer,1206,500,type,this.calc.level,color))
+            if(types.card[type].stats[level].attack==1&&types.card[type].stats[level].spec==3){
+                this.cards[this.cards.length-1].damage+=this.battle.combatants[0].status.main[63]
+            }
         }
         if(types.card[type].list==10&&this.battle.relics.active[39]){
             this.battle.combatants[0].base.life+=6
@@ -197,7 +200,7 @@ class group{
         }
         for(e=0,le=this.cards.length;e<le;e++){
             this.cards[e].displayDiscarding(this.anim.discarding)
-            this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length,this.battle.discard.cards.length)
+            this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length,this.battle.discard.cards.length,this.battle.random)
         }
     }
     displayView(level){
@@ -400,6 +403,18 @@ class group{
                             this.trigger=false
                         }else{
                             this.battle.attack.targetType=this.cards[e].target
+                        }
+                    }else if(this.cards[e].attack==280){
+                        if(inputs.rel.y>this.cards[e].position.y+10){
+                            this.battle.playCard()
+                            this.battle.attack.update(103,this.cards[e].level,0)
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }else{
+                            this.battle.playCard()
+                            this.battle.attack.update(100,this.cards[e].level,0)
+                            this.cards[e].used=true
+                            this.trigger=false
                         }
                     }else if(this.cards[e].target==0){
                         this.battle.playCard()
