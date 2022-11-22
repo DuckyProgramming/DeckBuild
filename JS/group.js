@@ -33,19 +33,19 @@ class group{
                 this.add(82,0,this.battle.player)*/
             break
             case 2:
-                /*for(e=0;e<4;e++){
+                for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
-                this.add(findCard('Vigilance'),0,this.battle.player)*/
-                this.add(154,0,this.battle.player)
-                this.add(155,0,this.battle.player)
-                this.add(156,0,this.battle.player)
-                this.add(157,0,this.battle.player)
-                this.add(158,0,this.battle.player)
+                this.add(findCard('Vigilance'),0,this.battle.player)
+                /*this.add(158,0,this.battle.player)
+                this.add(159,0,this.battle.player)
+                this.add(160,0,this.battle.player)
+                this.add(161,0,this.battle.player)
+                this.add(162,0,this.battle.player)*/
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -287,7 +287,7 @@ class group{
     }
     updateHand(){
         for(e=0,le=this.cards.length;e<le;e++){
-            this.cards[e].update(this.battle.mana,this.battle.combatants[0].combo,this.battle.combatants[0].armed)
+            this.cards[e].update(this.battle.mana,this.battle.combatants[0].combo,this.battle.combatants[0].armed,this.battle.random)
             if((inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>350||this.cards[e].select)&&(!this.trigger||this.cards[e].trigger)&&this.cards[e].position.y>320){
                 this.cards[e].position.y-=20
             }else if(!((inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250||this.cards[e].select)&&(!this.trigger||this.cards[e].trigger))&&this.cards[e].position.y<500){
@@ -315,7 +315,7 @@ class group{
     }
     updateView(){
         for(e=0,le=this.cards.length;e<le;e++){
-            this.cards[e].update(0,0,0)
+            this.cards[e].update(0,0,0,{hits:0})
         }
     }
     onClickHand(){

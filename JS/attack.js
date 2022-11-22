@@ -30,7 +30,7 @@ class attack{
                         this.battle.combatants[0].meter=100
                     }
                 break
-                case 1: case 52: case 99: case 114: case 139: case 232:
+                case 1: case 52: case 99: case 114: case 139: case 232: case 284:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2: case 231: case 268:
@@ -1374,6 +1374,26 @@ class attack{
                 break
                 case 283:
                     this.battle.combatants[this.target].take(this.damage*max(0,this.battle.random.attacked-1),this.user)
+                break
+                case 285:
+                    this.hold.list=[0,0,0,1,1,2]
+                    i=this.hold.list[floor(random(0,this.hold.list.length))]
+                    j=floor(random(0,this.battle.potions.list[i].length))
+                    this.battle.getPotion(this.battle.potions.list[i][j])
+                break
+                case 286:
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].class==0){
+                            this.battle.combatants[this.target].take(this.damage,this.user)
+                        }
+                    }
+                break
+                case 287:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].boost.main[0]<0){
+                        this.battle.mana.main+=this.alt
+                        this.battle.draw()
+                    }
                 break
             }
             this.battle.combatants[0].lastPlay=this.class

@@ -339,6 +339,10 @@ class card{
             case 281: this.desc+='Shivs Deal '+this.damage+'\nMore Damage'; break
             case 282: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nDiscard '+this.alt+'\nRandom Cards'; break
             case 283: this.desc+='Deal '+this.damage+' Damage Per\nAttack This Turn\n('+random.attacked+')'; break
+            case 284: this.desc+='Deal '+this.damage+' Damage\nCosts 1 More\nPer Hit Taken'; break
+            case 285: this.desc+='Obtain '+this.damage+'\nRandom Potion'; break
+            case 286: this.desc+='Deal '+this.damage+' Damage\nPer Attack in\nYour Hand'; break
+            case 287: this.desc+='Deal '+this.damage+' Damage\nIf the Target\nHas Weak, Gain\n'+this.alt+' Energy and\nDraw '+this.alt+' Card'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
@@ -493,7 +497,10 @@ class card{
             this.layer.translate(-this.position.x,-this.position.y)
         }
     }
-    update(Energy,combo,armed){
+    update(energy,combo,armed,random){
+        if(this.base.cost==-2){
+            this.cost=random.hits
+        }
         if(this.size<1&&!this.used){
             this.size=round(this.size*5+1)*0.2
         }else if(this.size>0&&this.used){
@@ -513,9 +520,9 @@ class card{
         }else if(!this.select&&this.anim.select>0){
             this.anim.select=round(this.anim.select*5-1)/5
         }
-        if((Energy.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==5||this.spec==11||this.spec==13)&&armed!=1)&&this.anim.afford<1){
+        if((energy.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==5||this.spec==11||this.spec==13)&&armed!=1)&&this.anim.afford<1){
             this.anim.afford=round(this.anim.afford*5+1)/5
-        }else if(!(Energy.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==5||this.spec==11||this.spec==13)&&armed!=1)&&this.anim.afford>0){
+        }else if(!(energy.main<this.cost&&this.spec!=4||combo<this.cost&&this.spec==4||(this.spec==5||this.spec==11||this.spec==13)&&armed!=1)&&this.anim.afford>0){
             this.anim.afford=round(this.anim.afford*5-1)/5
         }
         if(this.trigger&&!this.used){

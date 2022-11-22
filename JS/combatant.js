@@ -1214,6 +1214,7 @@ class combatant{
 				}
 				if(this.id==0&&(this.blocked==1||this.blocked==2)){
 					this.battle.counter.taken+=this.calc.damage
+					this.battle.random.hits++
 				}
 				if(user>=0&&this.status.main[0]>0){
 					this.battle.combatants[user].take(this.status.main[0],this.id)
