@@ -33,7 +33,7 @@ class attack{
                 case 1: case 52: case 99: case 114: case 139: case 232:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
-                case 2: case 231:
+                case 2: case 231: case 268:
                     this.battle.combatants[0].addBlock(this.damage)
                 break
                 case 3: case 51: case 135:
@@ -1298,6 +1298,17 @@ class attack{
                             this.battle.discard.cards[g].base.cost=max(this.battle.discard.cards[g].base.cost-this.damage,0)
                         }
                     }
+                break
+                case 265:
+                    this.battle.combatants[0].status.main[60]+=this.damage+this.mana
+                break
+                case 266:
+                    this.battle.combatants[0].boost.main[0]+=this.damage
+                    this.battle.combatants[0].boost.main[2]+=this.damage
+                    this.battle.mana.max-=this.alt
+                break
+                case 267:
+                    this.battle.combatants[0].status.main[61]+=this.damage
                 break
             }
             this.battle.combatants[0].lastPlay=this.class

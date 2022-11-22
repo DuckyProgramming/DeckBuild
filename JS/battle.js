@@ -542,6 +542,8 @@ class battle{
                         this.combatants[e].armed=1
                     }else if(f==50&&this.combatants[e].armed==1){
                         this.combatants[e].block+=this.combatants[e].status.main[50]
+                    }else if(f==61&&this.combatants[e].stance==1){
+                        this.combatants[e].block+=this.combatants[e].status.main[61]
                     }
                 }
                 if((f==11||f==37)&&this.combatants[e].status.main[f]>0){
@@ -552,10 +554,13 @@ class battle{
                     this.combatants[e].status.main[f]--
                 }else if((f==9||f==47)&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].status.main[f]--
+                }else if(f==60&&this.combatants[e].status.main[f]>0){
+                    this.hand.add(findCard('Miracle'),1,0)
+                    this.combatants[e].status.main[f]--
                 }else if(
                     f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&
-                    f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=51&&f!=52&&f!=53&&
-                    f!=54&&f!=55&&f!=56&&f!=57&&f!=58){
+                    f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=50&&f!=51&&f!=52&&
+                    f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=61){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }

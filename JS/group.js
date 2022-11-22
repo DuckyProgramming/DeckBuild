@@ -33,19 +33,19 @@ class group{
                 this.add(74,0,this.battle.player)
             break
             case 2:
-                for(e=0;e<4;e++){
-                    //this.add(1,0,this.battle.player)
+                /*for(e=0;e<4;e++){
+                    this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
-                    //this.add(2,0,this.battle.player)
+                    this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
-                this.add(findCard('Vigilance'),0,this.battle.player)
-                /*this.add(126,0,this.battle.player)
-                this.add(127,0,this.battle.player)
-                this.add(128,0,this.battle.player)
-                this.add(129,0,this.battle.player)
-                this.add(130,0,this.battle.player)*/
+                this.add(findCard('Vigilance'),0,this.battle.player)*/
+                this.add(142,0,this.battle.player)
+                this.add(143,0,this.battle.player)
+                this.add(144,0,this.battle.player)
+                this.add(145,0,this.battle.player)
+                this.add(146,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -165,7 +165,7 @@ class group{
             }
         }
         for(let e=0,le=this.cards.length;e<le;e++){
-            if(this.cards[e].attack==52&&!this.cards[e].trigger){
+            if((this.cards[e].attack==52||this.cards[e].attack==268)&&!this.cards[e].trigger){
                 this.cards[e].damage+=this.cards[e].alt
             }else if(this.cards[e].attack==114&&this.cards[e].cost>0&&!this.cards[e].trigger){
                 this.cards[e].cost--

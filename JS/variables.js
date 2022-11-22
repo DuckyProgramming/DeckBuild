@@ -701,8 +701,28 @@ types={
             {damage:3,alt:2,cost:0,attack:169,target:0,spec:0,class:2},
             {damage:3,alt:2,cost:0,attack:169,target:0,spec:0,class:2},
         ],
+        },{name:'Collect',rarity:1,list:2,
+        stats:[
+            {damage:0,alt:0,cost:-1,attack:265,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:-1,attack:265,target:0,spec:0,class:2},
+        ],
+        },{name:'Fasting',rarity:1,list:2,
+        stats:[
+            {damage:4,alt:1,cost:2,attack:266,target:0,spec:0,class:2},
+            {damage:5,alt:1,cost:2,attack:266,target:0,spec:0,class:2},
+        ],
+        },{name:'Like\nWater',rarity:1,list:2,
+        stats:[
+            {damage:5,alt:0,cost:1,attack:267,target:0,spec:0,class:2},
+            {damage:7,alt:0,cost:1,attack:267,target:0,spec:0,class:2},
+        ],
+        },{name:'Perseverance',rarity:1,list:2,
+        stats:[
+            {damage:5,alt:2,cost:1,attack:268,target:0,spec:0,class:1},
+            {damage:7,alt:3,cost:1,attack:268,target:0,spec:0,class:1},
+        ],
         },
-        //8 more
+        //4 more
         
         
         {name:'Charge',rarity:0,list:3,

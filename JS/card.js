@@ -107,7 +107,7 @@ class card{
             case 49: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nDeal '+this.alt+' Bonus\nDamage to Downed'; break
             case 50: this.desc+='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo\nTo 3 Enemies\nEnd Combo'; break
             case 51: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times'; break
-            case 52: this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Damage\nwhen Retained'; break
+            case 52: this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Damage\nWhen Retained'; break
             case 53: this.desc+='Reduce Cost of\nAll Cards in\nHand to '+this.damage; break
             case 54: this.desc+='Deal '+this.damage+' Damage\nIgnore Block'; break
             case 55: this.desc+='Shuffle Discard\nPile into Draw Pile\nDraw '+this.damage+' Cards'; break
@@ -320,6 +320,10 @@ class card{
             case 262: this.desc+='Add '+this.damage+' Block\nAdd '+this.alt+' Conditioning'; break
             case 263: this.desc+='Add '+this.damage+' Conditioning\nTake '+this.alt+' Damage'; break
             case 264: this.desc+='Decrease Cost of\nAll Combo-Costing\nCards by '+this.damage; break
+            case 265: if(this.damage==0){this.desc+='Add a Miracle+\nto Your Hand\nFor the Next\nX Turns'}else{this.desc+='Add a Miracle+\nto Your Hand\nFor the Next\nX+'+this.damage+' Turns'}; break
+            case 266: this.desc+='Gain '+this.damage+' Strength\nGain '+this.damage+' Dexterity\nGain '+this.alt+' Less\nEnergy Per Turn'; break
+            case 267: this.desc+='Gain '+this.damage+' Block\nPer Turn When\nin Calm'; break
+            case 268: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Block\nWhen Retained'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
@@ -433,11 +437,11 @@ class card{
                         this.layer.fill(20,this.fade)
                     break
                 }
-                this.layer.text(this.name+'+',0,-this.height/2+24)
+                this.layer.text(this.name+'+',8,-this.height/2+24)
                 this.layer.fill(0,this.fade)
             }else{
                 this.layer.fill(0,this.fade)
-                this.layer.text(this.name,0,-this.height/2+24)
+                this.layer.text(this.name,8,-this.height/2+24)
             }
             this.layer.textSize(12)
             this.layer.text(this.desc,0,10)
