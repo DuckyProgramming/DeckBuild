@@ -1417,6 +1417,50 @@ class attack{
                     this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].base.meter=max(0,this.battle.combatant[0].base.meter-5)
                 break
+                case 292:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].block<=0){
+                        this.battle.combatants[this.target].status.main[11]+=this.alt
+                    }
+                    this.battle.combatants[0].status.main[11]+=4
+                    this.battle.combatants[0].meter-=7
+                break
+                case 293:
+                    this.battle.combatants[this.target].status.main[11]*=this.damage
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 294:
+                    if(this.battle.combatants[0].meter>0){
+                        this.battle.combatants[0].boost.main[0]+=round(this.battle.combatants[0].meter/this.damage)
+                    }
+                    this.battle.combatants[0].meter=0
+                break
+                case 295:
+                    if(this.battle.combatants[0].meter<0){
+                        this.battle.combatants[0].boost.main[1]+=round(-this.battle.combatants[0].meter/this.damage)
+                    }
+                    this.battle.combatants[0].meter=0
+                break
+                case 296:
+                    this.battle.combatants[0].meter+=this.damage
+                break
+                case 297:
+                    this.battle.combatants[this.target].take(this.damage*abs(this.battle.combatants[0].meter),this.user)
+                break
+                case 298:
+                    if(this.battle.combatants[0].meter<0){
+                        this.battle.hand.add(findCard('Fury'),this.alt,this.battle.player)
+                    }
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].meter+=2
+                break
+                case 299:
+                    if(this.battle.combatants[0].meter>0){
+                        this.battle.hand.add(findCard('Quiet'),this.alt,this.battle.player)
+                    }
+                    this.battle.combatants[0].addBlock(this.user)
+                    this.battle.combatants[0].meter-=2
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

@@ -123,7 +123,7 @@ class card{
             case 65: this.desc+='Deal '+this.damage+' Damage\n'+nfp(this.alt)+' Balance'; break
             case 66: this.desc+='Add '+this.damage+' Block\n'+nfp(this.alt)+' Balance'; break
             case 67: this.desc+='If Balance\nis Positive,\nDeal Damage\nEqual to Balance\nReset Balance'; break
-            case 68: this.desc+='If Balance\nis Negative, Gain\nBlock Equal to\nNegative Balance\nReset Balance'; break
+            case 68: this.desc+='If Balance\nis Negative, Add\nBlock Equal to\nNegative Balance\nReset Balance'; break
             case 69: this.desc+='Reset Balance'; break
             case 70: this.desc+='Draw '+this.damage+' Cards\n'+nfp(this.alt)+' Balance'; break
             case 71: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\n'+nfp(this.alt)+' Balance\nPer Enemy'; break
@@ -238,7 +238,7 @@ class card{
             case 180: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed\n'+nfp(-6)+' Balance'; break
             case 181: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed\n'+nfp(-7)+' Balance'; break
             case 182: this.desc+='Deal '+this.damage+' Damage\nConvert Bleed of\nTarget to Health'; break
-            case 183: this.desc+='Add '+this.damage+' Bleed to Self\nGain '+this.alt+' Strength\n'+nfp(-3)+' Balance'; break
+            case 183: this.desc+='Apply '+this.damage+' Bleed to Self\nGain '+this.alt+' Strength\n'+nfp(-3)+' Balance'; break
             case 184: this.desc+='Double all Bleed\n'+nfp(this.damage)+' Balance'; break
             case 185: this.desc+='Target Gains\n'+this.damage+' Weak\nPer Turn\n'+nfp(this.alt)+' Balance'; break
             case 186: this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Weak'; break
@@ -344,9 +344,18 @@ class card{
             case 286: this.desc+='Deal '+this.damage+' Damage\nPer Attack in\nYour Hand'; break
             case 287: this.desc+='Deal '+this.damage+' Damage\nIf Target\nHas Weak, Gain\n'+this.alt+' Energy and\nDraw '+this.alt+' Card'; break
             case 288: this.desc+='Deal '+this.damage+' Damage\nIf Target Has\nLess Than '+this.damage/2+'\nHealth, Set its\nHealth to 0\n'+nfp(this.alt)+' Balance'; break
-            case 289: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Bonus\nDamage to Stunned\n'+nfp(-2)+' Balance'; break
+            case 289: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Bonus\nDamage to Stunned'; break
             case 290: this.desc+='Convert Self\nBleed to Health'; break
             case 291: this.desc+='Add '+this.damage+' Block\nDecrease Balance\nLimit by 5'; break
+            case 292: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed\nApply 4 Bleed to Self\n'+nfp(-7)+' Balance'; break
+            case 293: this.desc+='Multiply Bleed of\nTarget by '+this.damage+'\n'+nfp(this.alt)+' Balance'; break
+            case 294: this.desc+='If Balance\nis Positive,\nGain Strength\nEqual to Balance/'+this.damage+'\nReset Balance'; break
+            case 295: this.desc+='If Balance\nis Negative, Gain\nDexterity Equal to\nNegative Balance/'+this.damage+'\nReset Balance'; break
+            case 296: this.desc+=nfp(this.damage)+' Balance\nor\n'+nfp(this.alt)+' Balance'; break
+            case 297: this.desc+='Deal Damage Equal\nto '+this.damage+'x Absolute\nValue of Balance'; break
+            case 298: this.desc+='Deal '+this.damage+' Damage\nIf Balance is\nNegative, Add a\nFury to Your Hand\n'+nfp(2)+' Balance'; break
+            case 299: this.desc+='Add '+this.damage+' Block\nIf Balance is\nPositive, Add a\nQuiet to Your Hand\n'+nfp(-2)+' Balance'; break
+
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
@@ -401,7 +410,7 @@ class card{
             }
             this.layer.strokeWeight(5)
             this.layer.rect(0,0,this.width,this.height,5)
-            if(this.attack==63||this.attack==280){
+            if(this.attack==63||this.attack==280||this.attack==296){
                 this.layer.rect(0,-this.height/4+5,this.width,this.height/2+10,5)
                 this.layer.rect(0,this.height/4+5,this.width,this.height/2-10,5)
             }

@@ -1477,12 +1477,52 @@ types={
             {damage:9,alt:0,cost:0,attack:291,target:0,spec:3,class:1},
             {damage:15,alt:0,cost:0,attack:291,target:0,spec:3,class:1},
         ],
+        },{name:'Old\nWounds',rarity:1,list:4,
+        stats:[
+            {damage:10,alt:6,cost:1,attack:292,target:1,spec:11,class:0},
+            {damage:15,alt:8,cost:1,attack:292,target:1,spec:11,class:0},
+        ],
+        },{name:'Gush of\nBlood',rarity:1,list:4,
+        stats:[
+            {damage:3,alt:-4,cost:1,attack:293,target:1,spec:0,class:2},
+            {damage:4,alt:-4,cost:1,attack:293,target:1,spec:0,class:2},
+        ],
+        },{name:'Absolution',rarity:1,list:4,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:294,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:294,target:0,spec:0,class:2},
+        ],
+        },{name:'Resolution',rarity:1,list:4,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:295,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:295,target:0,spec:0,class:2},
+        ],
+        },{name:'Instability',rarity:2,list:4,
+        stats:[
+            {damage:5,alt:-5,cost:1,attack:296,target:0,spec:0,class:2},
+            {damage:10,alt:-10,cost:1,attack:296,target:0,spec:0,class:2},
+        ],
+        },{name:'Balance\nBlast',rarity:2,list:4,
+        stats:[
+            {damage:3,alt:0,cost:2,attack:297,target:1,spec:3,class:0},
+            {damage:3,alt:0,cost:1,attack:297,target:1,spec:3,class:0},
+        ],
+        },{name:'Fury',rarity:1,list:4,
+        stats:[
+            {damage:3,alt:0,cost:0,attack:298,target:1,spec:0,class:0},
+            {damage:5,alt:1,cost:0,attack:298,target:1,spec:0,class:0},
+        ],
+        },{name:'Quiet',rarity:1,list:4,
+        stats:[
+            {damage:3,alt:0,cost:0,attack:299,target:0,spec:0,class:1},
+            {damage:5,alt:1,cost:0,attack:299,target:0,spec:0,class:1},
+        ],
         },
         //armament cycling
         //unarmed only perhaps
-        //double bleed
-        //self bleed?
-        //balance maneuvers
+        //aroma
+        //taunt
+        //false surrender
         
         
         {name:'Empty',rarity:-1,list:12,

@@ -71,12 +71,11 @@ class group{
                 }
                 this.add(findCard('Peace'),0,this.battle.player)
                 this.add(findCard('Danger'),0,this.battle.player)*/
-                this.add(findCard('Blood\nPower'),0,this.battle.player)
-                this.add(288,0,this.battle.player)
-                this.add(289,0,this.battle.player)
-                this.add(290,0,this.battle.player)
-                this.add(291,0,this.battle.player)
-                this.add(292,0,this.battle.player)
+                this.add(296,0,this.battle.player)
+                this.add(297,0,this.battle.player)
+                this.add(298,0,this.battle.player)
+                this.add(299,0,this.battle.player)
+                this.add(300,0,this.battle.player)
             break
         }
     }
@@ -396,6 +395,9 @@ class group{
                     this.battle.attack.type=this.cards[e].attack
                     this.battle.attack.level=this.cards[e].level
                     this.battle.attack.class=this.cards[e].class
+                    if(this.cards[e].attack==296&&inputs.rel.y>this.cards[e].position.y+10){
+                        this.battle.attack.damage*=-1
+                    }
                     if(this.cards[e].attack==63){
                         if(inputs.rel.y>this.cards[e].position.y+10){
                             this.battle.playCard()
