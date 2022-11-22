@@ -1215,6 +1215,53 @@ class attack{
                         this.battle.hand.cards[this.battle.hand.cards.length-1].cost=0
                     }
                 break
+                case 252:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0){
+                            this.battle.combatants[0].load(1,6)
+                        }
+                    }
+                break
+                case 253:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].status.main[36]+=this.alt
+                break
+                case 254:
+                    this.battle.combatants[0].status.main[58]+=this.damage
+                break
+                case 255:
+                    for(g=0,lg=this.battle.combatants[0].ammo.length;g<lg;g++){
+                        if(this.alt==1){
+                            this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[g],this.battle.combatants[0].ammoDetail[g])
+                        }
+                        if(this.battle.combatants[0].ammo[g]>=0){
+                            this.battle.mana.main++
+                            this.battle.draw()
+                        }
+                        this.battle.combatants[0].ammo[g]=-1
+                    }
+                break
+                case 256:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].boost.main[3]-=this.alt
+                break
+                case 257:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    for(let g=0;g<this.alt;g++){
+                        this.battle.combatants[0].load(3,0)
+                    }
+                break
+                case 258:
+                    for(g=0;g<this.damage+this.mana;g++){
+                        this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[0],this.battle.combatants[0].ammoDetail[0])
+                    }
+                    this.battle.combatants[0].cycleCharge()
+                break
+                case 259:
+                    this.battle.combatants[0].load(2,0)
+                    this.battle.combatants[0].load(4,6)
+                    this.battle.combatants[0].load(5,0)
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

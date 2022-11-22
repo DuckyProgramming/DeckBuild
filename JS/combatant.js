@@ -28,19 +28,19 @@ class combatant{
 			[255,200,255],[125,160,160],[200,25,125],[190,190,60],[225,225,75],[255,50,100],[150,150,50],[255,125,25],[255,175,75],[200,125,250],
 			[240,100,50],[150,175,200],[0,100,255],[200,255,255],[225,255,225],[140,160,180],[200,150,200],[100,200,50],[255,200,180],[40,80,180],
 			[170,190,210],[255,75,150],[50,125,205],[175,225,175],[150,225,150],[255,105,0],[125,50,125],[140,160,180],[80,40,80],[138,141,207],
-			[139,150,193],[40,95,160],[255,245,15],[195,225,255],[145,155,65],[245,195,65],[240,255,255],[220,240,220]],infoFade:[],name:[
+			[139,150,193],[40,95,160],[255,245,15],[195,225,255],[145,155,65],[245,195,65],[240,255,255],[220,240,220],[215,235,255]],infoFade:[],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
 			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Mental Fortress','Rush','Every Block Weak All','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Absorb Attacks',
 			'Single Attack Constant','Next Turn Block','Next Turn Dexterity','Buffer','Intangible','Armor','Control','Poison','Regeneration','Strength Per Turn',
 			'Metallicize','Add Bleed Once','Weak Per Turn','Counter Stun','stun','Counter All 3 Times','Exhaust Draw','Block Store','Death Heal','Rearm Next Turn',
-			'Armed Block Per Turn','Energy And Strength Per Hit','Return Played to Draw','Power Draw','Random Common','Passive Orb','Discharge','Power Basic Charge'],class:[
+			'Armed Block Per Turn','Energy And Strength Per Hit','Return Played to Draw','Power Draw','Random Common','Passive Orb','Discharge','Power Basic Charge','Random Power'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
 			1,1,1,1,1,1,1,0,1,1,
 			1,1,0,1,0,1,1,1,1,1,
-			1,1,1,1,1,1,1,1]}
+			1,1,1,1,1,1,1,1,1]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0

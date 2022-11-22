@@ -555,7 +555,7 @@ class battle{
                 }else if(
                     f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&
                     f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=51&&f!=52&&f!=53&&
-                    f!=54&&f!=55&&f!=56&&f!=57){
+                    f!=54&&f!=55&&f!=56&&f!=57&&f!=58){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }
@@ -638,11 +638,32 @@ class battle{
         if(this.relics.active[134]&&(this.random.class==1||this.random.class==2)){
             this.mana.main++
         }
-        for(g=0;g<this.combatants[0].status.main[54];g++){
-            this.hand.add(listing.card[this.player][0][floor(random(0,listing.card[this.player][0].length))],0,this.player)
+        if(this.combatants[0].status.main[54]>0){
+            for(g=0;g<this.combatants[0].status.main[54];g++){
+                this.hand.add(listing.card[this.player][0][floor(random(0,listing.card[this.player][0].length))],0,this.player)
+            }
         }
-        for(g=0;g<this.combatants[0].status.main[55];g++){
-            this.combatants[0].passiveEvoke(this.combatants[0].ammo[0],this.combatants[0].ammoDetail[0])
+        if(this.combatants[0].status.main[55]>0){
+            for(g=0;g<this.combatants[0].status.main[55];g++){
+                this.combatants[0].passiveEvoke(this.combatants[0].ammo[0],this.combatants[0].ammoDetail[0])
+            }
+        }
+        if(this.combatants[0].status.main[58]>0){
+            this.calc.list=[]
+            for(g=0,lg=listing.card[this.player].length;g<lg;g++){
+                for(h=0,lh=listing.card[this.player][g].length;h<lh;h++){
+                    if(types.card[listing.card[this.player][g][h]].stats[0].class==2){
+                        this.calc.list.push(listing.card[this.player][g][h])
+                    }
+                }
+            }
+            for(g=0;g<this.combatants[0].status.main[58];g++){
+                if(this.calc.list.length>0){
+                    g=floor(random(0,this.calc.list.length))
+                    this.hand.add(this.calc.list[g],0,this.player)
+                    this.hand.cards[this.hand.cards.length-1].cost=0
+                }
+            }
         }
         this.combatants[0].autoEvoke()
     }

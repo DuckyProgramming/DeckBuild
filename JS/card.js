@@ -305,8 +305,16 @@ class card{
             case 247: this.desc+='Deal '+this.damage+' Damage\nto a Random Enemy\n'+this.alt+' Times'; break
             case 248: this.desc+='When You\nTake Damage,\nHold '+this.damage+'\nLightning Charge'; break
             case 249: this.desc+='When You\nPlay a Power,\nHold '+this.damage+'\nBasic Charge'; break
-            case 250: this.desc+='Charge X\nBasic Charges'; break
+            case 250: this.desc+='Hold X\nBasic Charges'; break
             case 251: this.desc+='Add a Random\nPower to\nYour Hand\nIt costs 0'; break
+            case 252: this.desc+='Hold 1\nExplosive Charge\nPer Enemy'; break
+            case 253: this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Control'; break
+            case 254: this.desc+='At the Start of\nYour Turn, Add\na Power Card\nto Your Hand'; break
+            case 255: if(this.alt==0){this.desc+='Remove All Charges,\nGain 1 Energy and\nDraw 1 Card\nPer Charge'}else{this.desc+='Evoke All Charges,\nGain 1 Energy and\nDraw 1 Card\nPer Charge'}; break
+            case 256: this.desc+='Deal '+this.damage+' Damage\nLose '+this.alt+' Focus'; break
+            case 257: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+' Energy\nCharges'; break
+            case 258: if(this.damage==0){this.desc+='Fire 1st Charge\nX Times'}else{this.desc+='Fire 1st Charge\nX+'+this.damage+' Times'}; break
+            case 259: this.desc+='Hold '+this.damage+' Shield Charge\nHold '+this.damage+' Dark Charge\nHold '+this.damage+' Lightning\nCharge'
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

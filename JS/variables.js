@@ -686,10 +686,10 @@ types={
             {damage:1,alt:0,cost:0,attack:13,target:0,spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:13,target:0,spec:0,class:2},
         ],
-        },{name:'Multicast',rarity:0,list:3,
+        },{name:'Dualcast',rarity:0,list:3,
         stats:[
             {damage:2,alt:0,cost:1,attack:14,target:0,spec:0,class:2},
-            {damage:3,alt:0,cost:1,attack:14,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:14,target:0,spec:0,class:2},
         ],
         },{name:'Detonate',rarity:1,list:3,
         stats:[
@@ -901,8 +901,47 @@ types={
             {damage:0,alt:0,cost:1,attack:251,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:0,attack:251,target:0,spec:0,class:2},
         ],
+        },{name:'Ignition',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:252,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:252,target:0,spec:0,class:2},
+        ],
+        },{name:'Core\nSurge',rarity:2,list:3,
+        stats:[
+            {damage:11,alt:1,cost:1,attack:253,target:1,spec:0,class:0},
+            {damage:15,alt:1,cost:1,attack:253,target:1,spec:0,class:0},
+        ],
+        },{name:'Creativity',rarity:2,list:3,
+        stats:[
+            {damage:1,alt:3,cost:1,attack:254,target:0,spec:0,class:2},
+            {damage:1,alt:2,cost:1,attack:254,target:0,spec:0,class:2},
+        ],
+        },{name:'Fission',rarity:2,list:3,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:255,target:0,spec:3,class:2},
+            {damage:1,alt:1,cost:0,attack:255,target:0,spec:3,class:2},
+        ],
+        },{name:'Hyper\nBeam',rarity:2,list:3,
+        stats:[
+            {damage:26,alt:3,cost:2,attack:256,target:1,spec:0,class:0},
+            {damage:34,alt:3,cost:2,attack:256,target:1,spec:0,class:0},
+        ],
+        },{name:'Meteor\nBlast',rarity:2,list:3,
+        stats:[
+            {damage:24,alt:3,cost:5,attack:257,target:1,spec:0,class:0},
+            {damage:30,alt:3,cost:5,attack:257,target:1,spec:0,class:0},
+        ],
+        },{name:'Multicast',rarity:2,list:3,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:258,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:258,target:0,spec:0,class:2},
+        ],
+        },{name:'Rainbow',rarity:2,list:3,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:259,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:2,attack:259,target:0,spec:0,class:2},
+        ],
         },
-        //4 more, stop at 48
         
         
         {name:'Debilitate',rarity:2,list:4,
