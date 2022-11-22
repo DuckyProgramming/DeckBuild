@@ -1461,6 +1461,15 @@ class attack{
                     this.battle.combatants[0].addBlock(this.user)
                     this.battle.combatants[0].meter-=2
                 break
+                case 300:
+                    this.battle.combatants[0].boost.main[0]+=round(this.battle.combatants[0].combo/this.damage)
+                    this.battle.combatants[0].combo=0
+                break
+                case 301:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status[6]+=this.alt
+                    this.battle.turn=this.target+100
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

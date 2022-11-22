@@ -1362,9 +1362,9 @@ class battle{
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].update()
         }
-        if(this.turn==0&&this.anim.turn<1){
+        if((this.turn==0||this.turn>=100)&&this.anim.turn<1){
             this.anim.turn=round(this.anim.turn*10+1)/10
-        }else if(this.turn!=0&&this.anim.turn>0){
+        }else if(!(this.turn==0||this.turn>=100)&&this.anim.turn>0){
             this.anim.turn=round(this.anim.turn*10-1)/10
         }
         this.attack.run()

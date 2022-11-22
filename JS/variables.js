@@ -418,6 +418,16 @@ types={
             {damage:1,alt:2,cost:2,attack:279,target:0,spec:0,class:1},
             {damage:1,alt:3,cost:2,attack:279,target:0,spec:0,class:1},
         ],
+        },{name:'Bank\nCombo',rarity:1,list:1,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:300,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:1,attack:300,target:0,spec:0,class:2},
+        ],
+        },{name:'Shimmy',rarity:1,list:1,
+        stats:[
+            {damage:4,alt:1,cost:1,attack:301,target:1,spec:0,class:1},
+            {damage:8,alt:1,cost:1,attack:301,target:1,spec:0,class:1},
+        ],
         },
         
         

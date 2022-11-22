@@ -355,7 +355,8 @@ class card{
             case 297: this.desc+='Deal Damage Equal\nto '+this.damage+'x Absolute\nValue of Balance'; break
             case 298: this.desc+='Deal '+this.damage+' Damage\nIf Balance is\nNegative, Add a\nFury to Your Hand\n'+nfp(2)+' Balance'; break
             case 299: this.desc+='Add '+this.damage+' Block\nIf Balance is\nPositive, Add a\nQuiet to Your Hand\n'+nfp(-2)+' Balance'; break
-
+            case 300: this.desc+='Convert Combo/'+this.damage+'\nto Strength\nEnd Combo'; break
+            case 301: this.desc+='Add '+this.damage+' Block\nGain '+this.damage+' Dodge\nCause an Enemy\nto Attack'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
