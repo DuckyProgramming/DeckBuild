@@ -1267,6 +1267,38 @@ class attack{
                     this.battle.combatants[0].life=min(this.battle.combatants[0].life+this.battle.combatants[0].combo*this.damage*this.battle.random.healEffectiveness,this.battle.combatants[0].base.life)
                     this.battle.combatants[0].combo=0
                 break
+                case 261:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].status.main[59]+=this.alt
+                break
+                case 262:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[59]+=this.alt
+                break
+                case 263:
+                    this.battle.combatants[0].status.main[59]+=this.damage
+                    this.battle.combatants[0].take(this.alt,0)
+                break
+                case 264:
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].spec==4){
+                            this.battle.hand.cards[g].cost=max(this.battle.hand.cards[g].cost-this.damage,0)
+                            this.battle.hand.cards[g].base.cost=max(this.battle.hand.cards[g].base.cost-this.damage,0)
+                        }
+                    }
+                    for(g=0,lg=this.battle.reserve.cards.length;g<lg;g++){
+                        if(this.battle.reserve.cards[g].spec==4){
+                            this.battle.reserve.cards[g].cost=max(this.battle.reserve.cards[g].cost-this.damage,0)
+                            this.battle.reserve.cards[g].base.cost=max(this.battle.reserve.cards[g].base.cost-this.damage,0)
+                        }
+                    }
+                    for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
+                        if(this.battle.discard.cards[g].spec==4){
+                            this.battle.discard.cards[g].cost=max(this.battle.discard.cards[g].cost-this.damage,0)
+                            this.battle.discard.cards[g].base.cost=max(this.battle.discard.cards[g].base.cost-this.damage,0)
+                        }
+                    }
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

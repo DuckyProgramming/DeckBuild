@@ -55,8 +55,8 @@ types={
         ],
         },{name:'Exhausting\nStrike',rarity:0,list:1,
         stats:[
-            {damage:10,alt:0,cost:0,attack:9,target:1,spec:0,class:0},
-            {damage:14,alt:0,cost:0,attack:9,target:1,spec:0,class:0},
+            {damage:10,alt:0,cost:1,attack:9,target:1,spec:0,class:0},
+            {damage:14,alt:0,cost:1,attack:9,target:1,spec:0,class:0},
         ],
         },{name:'Chain\nStrike',rarity:0,list:1,
         stats:[
@@ -358,8 +358,27 @@ types={
             {damage:1,alt:0,cost:1,attack:260,target:0,spec:3,class:2},
             {damage:2,alt:0,cost:1,attack:260,target:0,spec:3,class:2},
         ],
+        },{name:'Reflex\nStrike',rarity:1,list:1,
+        stats:[
+            {damage:5,alt:1,cost:1,attack:261,target:1,spec:0,class:0},
+            {damage:10,alt:1,cost:1,attack:261,target:1,spec:0,class:0},
+        ],
+        },{name:'Start\nStrong',rarity:1,list:1,
+        stats:[
+            {damage:4,alt:1,cost:1,attack:262,target:0,spec:10,class:1},
+            {damage:8,alt:1,cost:1,attack:262,target:0,spec:10,class:1},
+        ],
+        },{name:'Extra\nReps',rarity:2,list:1,
+        stats:[
+            {damage:2,alt:4,cost:1,attack:263,target:0,spec:0,class:1},
+            {damage:2,alt:4,cost:0,attack:263,target:0,spec:0,class:1},
+        ],
+        },{name:'Plan of\nAction',rarity:2,list:1,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:264,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:0,attack:264,target:0,spec:3,class:2},
+        ],
         },
-        //3 more
         
         
         {name:'Vigilance',rarity:1,list:2,
@@ -1164,12 +1183,12 @@ types={
             {damage:30,alt:8,cost:4,attack:189,target:1,spec:11,class:0},
             {damage:44,alt:12,cost:4,attack:189,target:1,spec:11,class:0},
         ],
-        },{name:'Cleanup',rarity:1,list:1,
+        },{name:'Cleanup',rarity:1,list:4,
         stats:[
             {damage:2,alt:14,cost:1,attack:190,target:1,spec:11,class:0},
             {damage:3,alt:26,cost:1,attack:190,target:1,spec:11,class:0},
         ],
-        },{name:'Impact',rarity:1,list:1,
+        },{name:'Impact',rarity:1,list:4,
         stats:[
             {damage:34,alt:-4,cost:2,attack:191,target:1,spec:11,class:0},
             {damage:56,alt:-4,cost:2,attack:191,target:1,spec:11,class:0},

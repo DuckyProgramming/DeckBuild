@@ -1,5 +1,5 @@
 class card{
-    constructor(layer,x,y,type,level,color,damage,alt,cost){
+    constructor(layer,x,y,type,level,color,damage=types.card[type].stats[level].damage,alt=types.card[type].stats[level].alt,cost=types.card[type].stats[level].cost){
         this.layer=layer
         this.position={x:x,y:y}
         this.type=type
@@ -7,9 +7,9 @@ class card{
         this.color=color
         this.name=types.card[this.type].name
         this.list=types.card[this.type].list
-        this.damage=damage||types.card[this.type].stats[this.level].damage
-        this.alt=alt||types.card[this.type].stats[this.level].alt
-        this.cost=cost||types.card[this.type].stats[this.level].cost
+        this.damage=damage
+        this.alt=alt
+        this.cost=cost
         this.attack=types.card[this.type].stats[this.level].attack
         this.target=types.card[this.type].stats[this.level].target
         this.spec=types.card[this.type].stats[this.level].spec
@@ -316,6 +316,10 @@ class card{
             case 258: if(this.damage==0){this.desc+='Fire 1st Charge\nX Times'}else{this.desc+='Fire 1st Charge\nX+'+this.damage+' Times'}; break
             case 259: this.desc+='Hold '+this.damage+' Shield Charge\nHold '+this.damage+' Dark Charge\nHold '+this.damage+' Lightning\nCharge'; break
             case 260: this.desc+='Convert '+this.damage+'x Combo\nto Health\nEnd Combo'; break
+            case 261: this.desc+='Deal '+this.damage+' Damage\nAdd '+this.alt+' Conditioning'; break
+            case 262: this.desc+='Add '+this.damage+' Block\nAdd '+this.alt+' Conditioning'; break
+            case 263: this.desc+='Add '+this.damage+' Conditioning\nTake '+this.alt+' Damage'; break
+            case 264: this.desc+='Decrease Cost of\nAll Combo-Costing\nCards by '+this.damage; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
