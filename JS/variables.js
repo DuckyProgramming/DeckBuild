@@ -1302,7 +1302,7 @@ types={
             {damage:30,alt:8,cost:4,attack:189,target:1,spec:11,class:0},
             {damage:44,alt:12,cost:4,attack:189,target:1,spec:11,class:0},
         ],
-        },{name:'Cleanup',rarity:1,list:4,
+        },{name:'Slice\nDown',rarity:1,list:4,
         stats:[
             {damage:2,alt:14,cost:1,attack:190,target:1,spec:11,class:0},
             {damage:3,alt:26,cost:1,attack:190,target:1,spec:11,class:0},
@@ -1457,13 +1457,31 @@ types={
             {damage:1,alt:0,cost:3,attack:219,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:2,attack:219,target:0,spec:3,class:2},
         ],
+        },{name:'Body\nBlow',rarity:0,list:4,
+        stats:[
+            {damage:4,alt:6,cost:1,attack:289,target:1,spec:0,class:0},
+            {damage:8,alt:9,cost:1,attack:289,target:1,spec:0,class:0},
+        ],
+        },{name:'Spartan\nKick',rarity:2,list:4,
+        stats:[
+            {damage:24,alt:-9,cost:2,attack:288,target:1,spec:0,class:0},
+            {damage:40,alt:-9,cost:2,attack:288,target:1,spec:0,class:0},
+        ],
+        },{name:'Absorb\nBlood',rarity:1,list:4,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:290,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:290,target:0,spec:3,class:2},
+        ],
+        },{name:'Stress',rarity:0,list:4,
+        stats:[
+            {damage:9,alt:0,cost:0,attack:291,target:0,spec:3,class:1},
+            {damage:15,alt:0,cost:0,attack:291,target:0,spec:3,class:1},
+        ],
         },
         //armament cycling
         //unarmed only perhaps
-        //spartan kick
         //double bleed
-        //body blow
-        //convert self bleeding to combo
+        //self bleed?
         //balance maneuvers
         
         

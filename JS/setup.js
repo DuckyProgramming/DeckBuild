@@ -3,7 +3,7 @@ function setup(){
     setupGraphics()
     current=new battle(graphics.main,4)
     generateListing(types.card)
-    setupEncounter(current,1)
+    setupEncounter(current,6)
 
     current.initialEvent()
 

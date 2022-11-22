@@ -238,7 +238,7 @@ class card{
             case 180: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed\n'+nfp(-6)+' Balance'; break
             case 181: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed\n'+nfp(-7)+' Balance'; break
             case 182: this.desc+='Deal '+this.damage+' Damage\nConvert Bleed of\nTarget to Health'; break
-            case 183: this.desc+='Add '+this.damage+' to Self\nGain '+this.alt+' Strength\n'+nfp(-3)+' Balance'; break
+            case 183: this.desc+='Add '+this.damage+' Bleed to Self\nGain '+this.alt+' Strength\n'+nfp(-3)+' Balance'; break
             case 184: this.desc+='Double all Bleed\n'+nfp(this.damage)+' Balance'; break
             case 185: this.desc+='Target Gains\n'+this.damage+' Weak\nPer Turn\n'+nfp(this.alt)+' Balance'; break
             case 186: this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Weak'; break
@@ -342,7 +342,11 @@ class card{
             case 284: this.desc+='Deal '+this.damage+' Damage\nCosts 1 More\nPer Hit Taken'; break
             case 285: this.desc+='Obtain '+this.damage+'\nRandom Potion'; break
             case 286: this.desc+='Deal '+this.damage+' Damage\nPer Attack in\nYour Hand'; break
-            case 287: this.desc+='Deal '+this.damage+' Damage\nIf the Target\nHas Weak, Gain\n'+this.alt+' Energy and\nDraw '+this.alt+' Card'; break
+            case 287: this.desc+='Deal '+this.damage+' Damage\nIf Target\nHas Weak, Gain\n'+this.alt+' Energy and\nDraw '+this.alt+' Card'; break
+            case 288: this.desc+='Deal '+this.damage+' Damage\nIf Target Has\nLess Than '+this.damage/2+'\nHealth, Set its\nHealth to 0\n'+nfp(this.alt)+' Balance'; break
+            case 289: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Bonus\nDamage to Stunned\n'+nfp(-2)+' Balance'; break
+            case 290: this.desc+='Convert Self\nBleed to Health'; break
+            case 291: this.desc+='Add '+this.damage+' Block\nDecrease Balance\nLimit by 5'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

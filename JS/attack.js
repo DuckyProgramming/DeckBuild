@@ -1395,6 +1395,28 @@ class attack{
                         this.battle.draw()
                     }
                 break
+                case 288:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].life<this.damage/2){
+                        this.battle.combatants[this.target].life=0
+                    }
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 289:
+                    if(this.battle.combatants[this.target].status.main[9]>0){
+                        this.battle.combatants[this.target].take(this.damage+this.alt,this.user)
+                    }else{
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
+                break
+                case 290:
+                    this.battle.combatants[0].life=min(this.battle.combatants[0].life+this.battle.combatants[0].status.main[11]*this.battle.random.healEffectiveness,this.battle.combatants[0].base.life)
+                    this.battle.combatants[0].status.main[11]=0
+                break
+                case 291:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].base.meter=max(0,this.battle.combatant[0].base.meter-5)
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

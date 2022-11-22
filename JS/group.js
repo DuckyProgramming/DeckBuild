@@ -63,19 +63,20 @@ class group{
                 this.add(185,0,this.battle.player)*/
             break
             case 4:
-                for(e=0;e<4;e++){
+                /*for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Peace'),0,this.battle.player)
-                this.add(findCard('Danger'),0,this.battle.player)
-                /*this.add(213,0,this.battle.player)
-                this.add(214,0,this.battle.player)
-                this.add(215,0,this.battle.player)
-                this.add(216,0,this.battle.player)
-                this.add(217,0,this.battle.player)*/
+                this.add(findCard('Danger'),0,this.battle.player)*/
+                this.add(findCard('Blood\nPower'),0,this.battle.player)
+                this.add(288,0,this.battle.player)
+                this.add(289,0,this.battle.player)
+                this.add(290,0,this.battle.player)
+                this.add(291,0,this.battle.player)
+                this.add(292,0,this.battle.player)
             break
         }
     }
