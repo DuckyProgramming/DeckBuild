@@ -26,11 +26,11 @@ class group{
                 }
                 this.add(findCard('Big\nStrike'),0,this.battle.player)
                 this.add(findCard('Triple\nPunch'),0,this.battle.player)*/
+                this.add(68,0,this.battle.player)
                 this.add(69,0,this.battle.player)
                 this.add(70,0,this.battle.player)
                 this.add(71,0,this.battle.player)
                 this.add(72,0,this.battle.player)
-                this.add(73,0,this.battle.player)
             break
             case 2:
                 for(e=0;e<4;e++){

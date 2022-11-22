@@ -34,7 +34,7 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2: case 231:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                 break
                 case 3: case 51: case 135:
                     this.battle.combatants[this.target].take(this.damage,this.user)
@@ -49,11 +49,11 @@ class attack{
                     this.battle.combatants[this.target].boost.main[0]-=this.damage
                 break
                 case 6:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[0]+=this.alt
                 break
                 case 7:
-                    this.battle.combatants[0].block+=this.damage*this.mana
+                    this.battle.combatants[0].addBlock(this.damage*this.mana)
                 break
                 case 8:
                     this.battle.combatants[this.target].take(this.damage,this.user)
@@ -157,11 +157,11 @@ class attack{
                     }
                 break
                 case 27:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].changeStance(1)
                 break
                 case 28:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].changeStance(0)
                 break
                 case 29:
@@ -209,11 +209,11 @@ class attack{
                     this.battle.combatants[0].status.main[2]+=this.damage
                 break
                 case 39:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[3]+=this.alt
                 break
                 case 40:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[3]+=this.alt+2*this.combo
                 break
                 case 41:
@@ -294,7 +294,7 @@ class attack{
                     this.battle.allExhaust()
                 break
                 case 57:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     for(g=0;g<this.alt;g++){
                         this.battle.draw()
                     }
@@ -336,7 +336,7 @@ class attack{
                     this.battle.combatants[0].meter+=this.alt
                 break
                 case 66: case 196:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].meter+=this.alt
                 break
                 case 67:
@@ -347,7 +347,7 @@ class attack{
                 break
                 case 68:
                     if(this.battle.combatants[0].meter<0){
-                        this.battle.combatants[0].block+=this.damage*-this.battle.combatants[0].meter
+                        this.battle.combatants[0].addBlock(this.damage*-this.battle.combatants[0].meter)
                     }
                     this.battle.combatants[0].meter=0
                 break
@@ -451,13 +451,13 @@ class attack{
                     }
                 break
                 case 87:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     if(this.battle.combatants[0].armed==0){
                         this.battle.combatants[0].armed=1
                     }
                 break
                 case 88:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].armed=0
                 break
                 case 89:
@@ -489,7 +489,7 @@ class attack{
                     this.battle.combatants[0].meter+=this.alt
                 break
                 case 92:
-                    this.battle.combatants[0].block+=this.battle.combatants[0].combo*this.damage
+                    this.battle.combatants[0].addBlock(this.battle.combatants[0].combo*this.damage)
                     this.battle.combatants[0].combo=0
                 break
                 case 93:
@@ -499,7 +499,7 @@ class attack{
                     this.attacks.push([5,20,this.target,this.alt])
                 break
                 case 94:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[13]++
                 break
                 case 95:
@@ -513,7 +513,7 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage*this.battle.counter.enemies.alive,this.user)
                 break
                 case 98:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.drop.addDrop(findCard('Insight'),0,0)
                     this.battle.reserve.addShuffle(findCard('Insight'),0,0)
                 break
@@ -521,9 +521,10 @@ class attack{
                     this.battle.combatants[0].changeStance(2)
                 break
                 case 101:
-                    this.battle.combatants[0].block+=this.damage
                     if(this.battle.combatants[0].stance==2){
-                        this.battle.combatants[0].block+=this.alt
+                        this.battle.combatants[0].addBlock(this.alt+this.damage)
+                    }else{
+                        this.battle.combatants[0].addBlock(this.damage)
                     }
                 break
                 case 102:
@@ -544,7 +545,7 @@ class attack{
                     this.battle.close()
                 break
                 case 106:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.hand.addShuffle(findCard('Safety'),0,0)
                 break
                 case 107:
@@ -585,7 +586,7 @@ class attack{
                     this.battle.combatants[0].status.main[16]+=this.damage
                 break
                 case 113:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     if(this.battle.combatants[0].lastPlay==1){
                         this.battle.draw()
                         this.battle.draw()
@@ -604,7 +605,7 @@ class attack{
                 break
                 case 116:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.battle.combatants[0].block+=max(0,this.damage-this.battle.combatants[this.target].block)
+                    this.battle.combatants[0].addBlock(max(0,this.damage-this.battle.combatants[this.target].block))
                 break
                 case 117:
                     this.battle.combatants[0].status.main[17]+=this.damage
@@ -628,10 +629,10 @@ class attack{
                     }
                 break
                 case 124:
-                    this.battle.combatants[0].block+=this.damage*this.battle.hand.cards.length
+                    this.battle.combatants[0].addBlock(this.damage*this.battle.hand.cards.length)
                 break
                 case 125:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     for(let g=0;g<this.alt;g++){
                         this.battle.hand.add(findCard('Shiv'),0,0)
                     }
@@ -721,7 +722,7 @@ class attack{
                     this.battle.combatants[0].status.main[3]+=this.alt
                 break
                 case 146:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].combo+=2
                     this.battle.combatants[0].status.main[24]+=this.alt
                 break
@@ -751,12 +752,12 @@ class attack{
                     this.attacks.push([10,20,this.target,this.alt])
                 break
                 case 153:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[3]+=4
                     this.battle.combatants[0].status.main[27]+=this.alt
                 break
                 case 154:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[28]+=this.alt
                 break
                 case 155:
@@ -777,7 +778,7 @@ class attack{
                 break
                 case 158:
                     this.battle.combatants[0].mantra+=this.damage
-                    this.battle.combatants[0].block+=this.alt
+                    this.battle.combatants[0].addBlock(this.alt)
                 break
                 case 159:
                     this.battle.combatants[this.target].take(this.damage,this.user)
@@ -796,7 +797,7 @@ class attack{
                     this.battle.hand.addShuffle(findCard('Smite'),0,0)
                 break
                 case 162:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     transition.trigger=true
                     transition.scene='deck'
                     this.battle.context=7
@@ -817,11 +818,11 @@ class attack{
                 case 165:
                     this.battle.combatants[0].status.main[29]+=this.damage
                     if(this.alt>0){
-                        this.battle.combatants[0].block+=this.alt
+                        this.battle.combatants[0].addBlock(this.alt)
                     }
                 break
                 case 166:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.discarding+=this.alt
                 break
                 case 169:
@@ -860,7 +861,7 @@ class attack{
                 break
                 case 178:
                     this.battle.combatants[0].take(this.alt,0)
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                 break
                 case 179:
                     this.battle.combatants[0].status.main[41]+=this.damage
@@ -904,7 +905,7 @@ class attack{
                     this.battle.combatants[0].boost.main[0]-=this.alt
                 break
                 case 187:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[43]++
                     this.battle.combatants[0].meter+=this.alt
                 break
@@ -968,7 +969,7 @@ class attack{
                     this.battle.combatants[0].meter+=this.alt
                 break
                 case 202:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[45]+=this.alt
                     this.battle.combatants[0].meter+=6
                 break
@@ -987,7 +988,7 @@ class attack{
                     this.battle.combatants[0].meter+=this.alt
                 break
                 case 206:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[47]++
                     this.battle.combatants[0].meter+=this.alt
                 break
@@ -1026,7 +1027,7 @@ class attack{
                 break
                 case 214:
                     this.battle.combatants[0].take(4,-1)
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[47]++
                     this.battle.combatants[0].meter+=this.alt
                 break
@@ -1054,7 +1055,7 @@ class attack{
                     this.battle.combatants[0].status.main[49]++
                 break
                 case 218:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[50]+=this.damage
                     this.battle.combatants[0].meter+=this.alt
                 break
@@ -1076,7 +1077,7 @@ class attack{
                     }
                 break
                 case 223:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[1]+=this.alt
                 break
                 case 224:
@@ -1104,7 +1105,7 @@ class attack{
                     }
                 break
                 case 228:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     transition.trigger=true
                     transition.scene='deck'
                     this.battle.context=12
@@ -1114,7 +1115,7 @@ class attack{
                     this.battle.combatants[0].status.main[52]+=this.alt
                 break
                 case 230:
-                    this.battle.combatants[0].block+=this.damage+this.battle.discard.cards.length
+                    this.battle.combatants[0].addBlock(this.damage+this.battle.discard.cards.length)
                 break
                 case 233:
                     for(g=1,lg=this.battle.combatants.length;g<lg;g++){
@@ -1135,7 +1136,7 @@ class attack{
                 break
                 case 236:
                     if(this.battle.combatants[0].block<=0){
-                        this.battle.combatants[0].block+=this.damage
+                        this.battle.combatants[0].addBlock(this.damage)
                     }
                 break
                 case 237:
@@ -1153,7 +1154,7 @@ class attack{
                     this.battle.mana.main*=2
                 break
                 case 240:
-                    this.battle.combatants[0].block+=this.damage
+                    this.battle.combatants[0].addBlock(this.damage)
                     for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
                         this.battle.hand.cards[g].retain=true
                     }
@@ -1261,6 +1262,10 @@ class attack{
                     this.battle.combatants[0].load(2,0)
                     this.battle.combatants[0].load(4,6)
                     this.battle.combatants[0].load(5,0)
+                break
+                case 260:
+                    this.battle.combatants[0].life=min(this.battle.combatants[0].life+this.battle.combatants[0].combo*this.damage*this.battle.random.healEffectiveness,this.battle.combatants[0].base.life)
+                    this.battle.combatants[0].combo=0
                 break
             }
             this.battle.combatants[0].lastPlay=this.class

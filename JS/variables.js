@@ -83,7 +83,7 @@ types={
             {damage:5,alt:0,cost:-1,attack:23,target:1,spec:0,class:0},
             {damage:7,alt:0,cost:-1,attack:23,target:1,spec:0,class:0},
         ],
-        },{name:'Melt',rarity:1,list:1,
+        },{name:'Melt',rarity:0,list:1,
         stats:[
             {damage:10,alt:0,cost:1,attack:32,target:1,spec:0,class:0},
             {damage:14,alt:0,cost:1,attack:32,target:1,spec:0,class:0},
@@ -148,7 +148,7 @@ types={
             {damage:2,alt:1,cost:1,attack:42,target:1,spec:0,class:0},
             {damage:6,alt:1,cost:1,attack:42,target:1,spec:0,class:0},
         ],
-        },{name:'Stomp',rarity:1,list:1,
+        },{name:'Stomp',rarity:0,list:1,
         stats:[
             {damage:4,alt:12,cost:1,attack:43,target:1,spec:0,class:0},
             {damage:5,alt:20,cost:1,attack:43,target:1,spec:0,class:0},
@@ -163,12 +163,12 @@ types={
             {damage:14,alt:0,cost:5,attack:45,target:1,spec:4,class:0},
             {damage:26,alt:0,cost:5,attack:45,target:1,spec:4,class:0},
         ],
-        },{name:'Left\nSpin Kick',rarity:1,list:1,
+        },{name:'Left\nSpin Kick',rarity:0,list:1,
         stats:[
             {damage:11,alt:6,cost:3,attack:46,target:1,spec:4,class:0},
             {damage:18,alt:10,cost:3,attack:46,target:1,spec:4,class:0},
         ],
-        },{name:'Right\nSpin Kick',rarity:1,list:1,
+        },{name:'Right\nSpin Kick',rarity:0,list:1,
         stats:[
             {damage:11,alt:6,cost:3,attack:47,target:1,spec:4,class:0},
             {damage:18,alt:10,cost:3,attack:47,target:1,spec:4,class:0},
@@ -183,7 +183,7 @@ types={
             {damage:8,alt:28,cost:6,attack:43,target:1,spec:4,class:0},
             {damage:12,alt:40,cost:6,attack:43,target:1,spec:4,class:0},
         ],
-        },{name:'Link',rarity:1,list:1,
+        },{name:'Link',rarity:0,list:1,
         stats:[
             {damage:3,alt:0,cost:2,attack:4,target:0,spec:4,class:0},
             {damage:3,alt:0,cost:2,attack:4,target:0,spec:4,class:0},
@@ -208,7 +208,7 @@ types={
             {damage:15,alt:1,cost:6,attack:42,target:1,spec:4,class:0},
             {damage:15,alt:1,cost:5,attack:42,target:1,spec:4,class:0},
         ],
-        },{name:'Pressure\nPoint',rarity:1,list:1,
+        },{name:'Pressure\nPoint',rarity:0,list:1,
         stats:[
             {damage:15,alt:0,cost:4,attack:54,target:1,spec:4,class:0},
             {damage:23,alt:0,cost:4,attack:54,target:1,spec:4,class:0},
@@ -233,7 +233,7 @@ types={
             {damage:5,alt:6,cost:1,attack:63,target:1,spec:0,class:0},
             {damage:8,alt:9,cost:1,attack:63,target:1,spec:0,class:0},
         ],
-        },{name:'Punch-Kick\nCombo',rarity:1,list:1,
+        },{name:'Punch-Kick\nCombo',rarity:0,list:1,
         stats:[
             {damage:10,alt:4,cost:1,attack:137,target:1,spec:0,class:0},
             {damage:15,alt:6,cost:1,attack:137,target:1,spec:0,class:0},
@@ -338,7 +338,7 @@ types={
             {damage:5,alt:0,cost:5,attack:175,target:1,spec:0,class:0},
             {damage:8,alt:0,cost:5,attack:175,target:1,spec:0,class:0},
         ],
-        },{name:'Dynamic',rarity:1,list:1,
+        },{name:'Kinetic',rarity:1,list:1,
         stats:[
             {damage:1,alt:1,cost:2,attack:176,target:0,spec:0,class:1},
             {damage:1,alt:2,cost:2,attack:176,target:0,spec:0,class:1},
@@ -352,6 +352,11 @@ types={
         stats:[
             {damage:22,alt:4,cost:1,attack:178,target:0,spec:0,class:1},
             {damage:40,alt:6,cost:1,attack:178,target:0,spec:0,class:1},
+        ],
+        },{name:'Embolden',rarity:1,list:1,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:260,target:0,spec:3,class:2},
+            {damage:2,alt:0,cost:1,attack:260,target:0,spec:3,class:2},
         ],
         },
         //3 more

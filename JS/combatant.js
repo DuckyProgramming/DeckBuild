@@ -1084,6 +1084,9 @@ class combatant{
 			this.ammoDetail[this.ammoDetail.length-1]=detail
 		}
 	}
+	addBlock(value){
+		this.block+=value
+	}
 	take(damage,user,extra){
 		if(this.life>0){
 			if(user>=0&&this.status.main[10]>0){
@@ -1149,7 +1152,6 @@ class combatant{
 				}
 				if(this.id==0){
 					this.battle.random.taken++
-					this.battle.counter.taken+=this.calc.damage
 					if(this.battle.relics.active[11]){
 						this.battle.combatants[user].take(3,this.id)
 					}
@@ -1196,6 +1198,9 @@ class combatant{
 				}else{
 					this.life-=this.calc.damage
 					this.blocked=2
+				}
+				if(this.id==0&&(this.blocked==1||this.blocked==2)){
+					this.battle.counter.taken+=this.calc.damage
 				}
 				if(user>=0&&this.status.main[0]>0){
 					this.battle.combatants[user].take(this.status.main[0],this.id)

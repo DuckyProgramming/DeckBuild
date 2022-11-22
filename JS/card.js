@@ -314,7 +314,8 @@ class card{
             case 256: this.desc+='Deal '+this.damage+' Damage\nLose '+this.alt+' Focus'; break
             case 257: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+' Energy\nCharges'; break
             case 258: if(this.damage==0){this.desc+='Fire 1st Charge\nX Times'}else{this.desc+='Fire 1st Charge\nX+'+this.damage+' Times'}; break
-            case 259: this.desc+='Hold '+this.damage+' Shield Charge\nHold '+this.damage+' Dark Charge\nHold '+this.damage+' Lightning\nCharge'
+            case 259: this.desc+='Hold '+this.damage+' Shield Charge\nHold '+this.damage+' Dark Charge\nHold '+this.damage+' Lightning\nCharge'; break
+            case 260: this.desc+='Convert '+this.damage+'x Combo\nto Health\nEnd Combo'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
