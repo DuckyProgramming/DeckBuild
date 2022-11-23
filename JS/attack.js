@@ -1474,6 +1474,25 @@ class attack{
                     this.battle.combatants[0].take(this.damage,0)
                     this.battle.combatants[0].boost.main[0]+=this.alt
                 break
+                case 303:
+                    this.battle.randomDiscard()
+                    for(g=0;g<this.damage;g++){
+                        h=floor(random(0,2))
+                        this.battle.hand.add(listing.card[this.battle.player][h][floor(random(0,listing.card[this.battle.player][h].length))],0,this.battle.player)
+                    }
+                break
+                case 304:
+                    this.battle.combatants[0].boost.main[0]+=this.damage
+                    this.battle.combatants[0].status.main[64]+=this.alt
+                break
+                case 305:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[65]+=this.alt
+                break
+                case 306:
+                    this.battle.combatants[0].status.main[0]+=this.damage
+                    this.battle.combatants[0].status.main[66]++
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

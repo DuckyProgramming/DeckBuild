@@ -553,7 +553,7 @@ class battle{
                 }else if(f==38&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].life=min(this.combatants[e].life+this.combatants[e].status.main[f],this.combatants[e].base.life)
                     this.combatants[e].status.main[f]--
-                }else if((f==9||f==47)&&this.combatants[e].status.main[f]>0){
+                }else if((f==9||f==47||f==64)&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].status.main[f]--
                 }else if(f==60&&this.combatants[e].status.main[f]>0){
                     this.hand.add(findCard('Miracle'),1,0)
@@ -564,6 +564,8 @@ class battle{
                     f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&f!=63){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
+                    }else if(f==67){
+                        this.combatants[e].status.main[5]+=this.combatants[e].status.main[67]
                     }
                     this.combatants[e].status.main[f]=0
                 }
