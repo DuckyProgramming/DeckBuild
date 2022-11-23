@@ -478,6 +478,26 @@ types={
             {damage:16,alt:2,cost:9,attack:308,target:1,spec:4,class:0},
             {damage:24,alt:2,cost:9,attack:308,target:1,spec:4,class:0},
         ],
+        },{name:'Energy\nBooster',rarity:2,list:1,
+        stats:[
+            {damage:1,alt:0,cost:3,attack:310,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:2,attack:310,target:0,spec:3,class:2},
+        ],
+        },{name:'Extra\nReps',rarity:1,list:1,
+        stats:[
+            {damage:4,alt:2,cost:1,attack:311,target:0,spec:0,class:2},
+            {damage:4,alt:2,cost:0,attack:311,target:0,spec:0,class:2},
+        ],
+        },{name:'Field\nPromotion',rarity:1,list:1,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:312,target:0,spec:3,class:2},
+            {damage:2,alt:0,cost:0,attack:312,target:0,spec:3,class:2},
+        ],
+        },{name:'Ground\nPunch',rarity:0,list:1,
+        stats:[
+            {damage:1,alt:10,cost:0,attack:43,target:1,spec:2,class:0},
+            {damage:2,alt:14,cost:0,attack:43,target:1,spec:2,class:0},
+        ],
         },
         
         
@@ -1669,10 +1689,15 @@ types={
             {damage:3,alt:0,cost:2,attack:61,target:0,spec:3,class:2},
             {damage:5,alt:0,cost:2,attack:61,target:0,spec:3,class:2},
         ],
-        },{name:'Mind Blast',rarity:2,list:0,
+        },{name:'Mind\nBlast',rarity:2,list:0,
         stats:[
             {damage:6,alt:0,cost:2,attack:62,target:1,spec:10,class:0},
             {damage:9,alt:0,cost:1,attack:62,target:1,spec:2,class:0},
+        ],
+        },{name:'Panic\nButton',rarity:-1,list:0,
+        stats:[
+            {damage:30,alt:2,cost:0,attack:309,target:0,spec:0,class:1},
+            {damage:40,alt:2,cost:0,attack:309,target:0,spec:0,class:1},
         ],
         },{name:'Insight',rarity:-1,list:0,
         stats:[

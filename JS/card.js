@@ -364,6 +364,10 @@ class card{
             case 306: this.desc+='Counter '+this.damage+' All\nCounter Throw'; break
             case 307: this.desc+='Add '+this.damage+' Random\nSkill to Your\nHand'; break
             case 308: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nGain 1 Dodge'; break
+            case 309: this.desc+='Add '+this.damage+' Block\nCannot Gain Block\nfor '+this.alt+' Turns'; break
+            case 310: this.desc+='Increase Energy\nGain by '+this.damage; break
+            case 311: this.desc+='Take '+this.damage+' Damage\nGain '+this.alt+' Conditioning'; break
+            case 312: this.desc+='Upgrade '+this.damage+'\nRandom Cards\nin Your Hand'; break
             
         }
         if(this.spec==2||this.spec==5||this.spec==9){

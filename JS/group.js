@@ -26,11 +26,11 @@ class group{
                 }
                 this.add(findCard('Big\nStrike'),0,this.battle.player)
                 this.add(findCard('Triple\nPunch'),0,this.battle.player)*/
-                this.add(90 ,0,this.battle.player)
-                this.add(91,0,this.battle.player)
-                this.add(92,0,this.battle.player)
-                this.add(93,0,this.battle.player)
                 this.add(94,0,this.battle.player)
+                this.add(95,0,this.battle.player)
+                this.add(96,0,this.battle.player)
+                this.add(97,0,this.battle.player)
+                this.add(98,0,this.battle.player)
             break
             case 2:
                 for(e=0;e<4;e++){
@@ -130,6 +130,11 @@ class group{
             this.cards.push(copyCard(this.storage.cards[0]))
             this.storage.cards.splice(0,1)
         }
+    }
+    randomUpgrade(){
+        h=floor(random(0,this.cards.length))
+        this.cards[h].level++
+        this.cards[h]=reformCard(this.cards[h])
     }
     shuffle(){
         if(this.battle.relics.active[58]){

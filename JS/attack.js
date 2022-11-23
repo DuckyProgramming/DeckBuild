@@ -1306,6 +1306,7 @@ class attack{
                     this.battle.combatants[0].boost.main[0]+=this.damage
                     this.battle.combatants[0].boost.main[2]+=this.damage
                     this.battle.mana.max-=this.alt
+                    this.battle.mana.gen-=this.alt
                 break
                 case 267:
                     this.battle.combatants[0].status.main[61]+=this.damage
@@ -1513,6 +1514,22 @@ class attack{
                     this.attacks.push([0,this.alt*10-10,this.target,this.damage])
                     this.battle.combatants[0].status.main[6]++
                 break
+                case 309:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[64]+=this.alt
+                break
+                case 310:
+                    this.battle.mana.max+=this.damage
+                    this.battle.mana.gen+=this.damage
+                break
+                case 311:
+                    this.battle.combatants[0].take(this.damage,0)
+                    this.battle.combatants[0].status.main[59]+=this.alt
+                break
+                case 312:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.hand.randomUpgrade()
+                    }
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

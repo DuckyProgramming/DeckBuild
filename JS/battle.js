@@ -87,6 +87,7 @@ class battle{
         this.reserve.shuffle()
         this.mana.max=this.mana.base
         this.mana.main=this.mana.max
+        this.mana.gen=this.mana.max
         this.random.drawing=this.drawAmount+this.random.tempDrawAmount
         this.drawInitial()
         this.turnDraw()
