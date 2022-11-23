@@ -498,7 +498,7 @@ types={
             {damage:1,alt:10,cost:0,attack:43,target:1,spec:2,class:0},
             {damage:2,alt:14,cost:0,attack:43,target:1,spec:2,class:0},
         ],
-        },{name:'Rev\nUp',rarity:1,list:1,
+        },{name:'Rev Up',rarity:1,list:1,
         stats:[
             {damage:5,alt:6,cost:1,attack:313,target:0,spec:0,class:2},
             {damage:5,alt:10,cost:0,attack:313,target:0,spec:0,class:2},
@@ -1853,8 +1853,8 @@ types={
         ],
         },{name:'Slow\nBleed',rarity:-2,list:11,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-2,target:0,spec:1,class:-1},
-            {damage:0,alt:0,cost:0,attack:-2,target:0,spec:1,class:-1},
+            {damage:1,alt:0,cost:0,attack:-2,target:0,spec:1,class:-1},
+            {damage:1,alt:0,cost:0,attack:-2,target:0,spec:1,class:-1},
         ],
         },{name:'Dazed',rarity:-2,list:11,
         stats:[
@@ -1896,6 +1896,16 @@ types={
             {damage:0,alt:0,cost:0,attack:-17,target:0,spec:1,class:-1},
             {damage:0,alt:0,cost:0,attack:-17,target:0,spec:1,class:-1},
         ],
+        },{name:'Heavy\nBleed',rarity:-2,list:11,
+        stats:[
+            {damage:3,alt:0,cost:0,attack:-2,target:0,spec:1,class:-1},
+            {damage:3,alt:0,cost:0,attack:-2,target:0,spec:1,class:-1},
+        ],
+        },{name:'Concussion',rarity:-2,list:11,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-18,target:0,spec:1,class:-1},
+            {damage:0,alt:0,cost:0,attack:-18,target:0,spec:1,class:-1},
+        ],
         },
         
         
@@ -1916,17 +1926,18 @@ types={
         ],
         },
     ],combatant:[
-        {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
-        {name:'Agent',alt:'',life:80,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
-        {name:'Duelist',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
-        {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
-        {name:'Creation',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0},
-        {name:'Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[6,2,3],altAttack:[0,3,0],class:0},
-        {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0},
-        {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0},
-        {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1},
-        {name:'Slime',alt:'',life:30,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,0,0],class:0},
-        {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0},
+        {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Agent',alt:'',life:80,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Duelist',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Creation',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[6,2,3],altAttack:[0,3,0],class:0,buff:0},
+        {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
+        {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
+        {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
+        {name:'Slime',alt:'',life:30,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,0,0],class:0,buff:0},
+        {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0,buff:0},
+        {name:'Roger Reviv',alt:'',life:150,height:75,behavior:1,attacks:[1,9,3,10],damage:[15,4,2,20],altAttack:[0,6,9,0],class:0,buff:1},
         //gangster
         //bleed?
         //plant lol
@@ -1977,6 +1988,11 @@ types={
             reinforce:[],
             threshold:3,
             objective:[[0,0,0,0]],
+        },{
+            combatants:[11,0,0,0,0,0],
+            reinforce:[],
+            threshold:0,
+            objective:[[0,0,6,0]],
         },
     ],relic:[
         {
@@ -3009,7 +3025,7 @@ zones=[
         encounters:[1,5],
         elites:[2,6],
         special:[4,3],
-        bosses:[2],
+        bosses:[7],
         events:[
             [],
             [],

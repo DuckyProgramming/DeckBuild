@@ -230,6 +230,9 @@ class battle{
                 this.hand.add(findCard('Miracle'),0,0)
             }
         }
+        for(e=0,le=this.combatants.length;e<le;e++){
+            this.combatants[e].initialBuff()
+        }
         this.startTurn()
         this.random.rested=false
         this.random.drawing=this.drawAmount+this.random.tempDrawAmount
@@ -280,6 +283,13 @@ class battle{
                 break
                 case -16:
                     this.hand.cards[floor(random(0,this.hand.cards.length))].cost++
+                break
+                case -18:
+                    for(let f=0,lf=this.hand.cards.length;f<lf;f++){
+                        if(this.hand.cards[f].cost>=0){
+                            this.hand.cards[f].cost++
+                        }
+                    }
                 break
             }
         }
@@ -573,6 +583,7 @@ class battle{
                     this.combatants[e].status.main[f]=0
                 }
             }
+            this.combatants[e].turnBuff()
         }
         this.combatants[0].boost.main[0]+=this.remember[0]-this.remember[1]+this.combatants[0].status.main[39]
         this.combatants[0].boost.main[1]+=this.remember[2]
@@ -790,7 +801,7 @@ class battle{
         }
         for(g=0,lg=this.hand.cards.length;g<lg;g++){
             if(this.hand.cards[g].attack==-2){
-                this.combatants[0].take(1,0)
+                this.combatants[0].take(this.hand.cards[g].damage,-1)
             }
             if(this.hand.cards[g].attack==149){
                 this.hand.cards[g].used=true
@@ -1247,7 +1258,7 @@ class battle{
         this.layer.textAlign(LEFT,CENTER)
         this.layer.text(this.currency.money,30,18)
         this.layer.fill(80,1-this.anim.end)
-        this.layer.rect(740,this.objective.length*10+10,300,this.objective.length*20,10)
+        this.layer.rect(710,this.objective.length*10+10,360,this.objective.length*20,10)
         this.layer.fill(80,this.anim.end)
         this.layer.rect(450,this.objective.length*30+100,450,this.objective.length*60+20,10)
         this.layer.rect(450,this.objective.length*60+140,150,40,10)
@@ -1272,22 +1283,25 @@ class battle{
                 }
                 switch(this.objective[e][2]){
                     case 0:
-                        this.layer.text('Card',600,e*20+20)
+                        this.layer.text('Card',560,e*20+20)
                     break
                     case 1:
-                        this.layer.text('Card+',600,e*20+20)
+                        this.layer.text('Card+',560,e*20+20)
                     break
                     case 2:
-                        this.layer.text('$'+this.objective[e][3],600,e*20+20)
+                        this.layer.text('$'+this.objective[e][3],560,e*20+20)
                     break
                     case 3:
-                        this.layer.text(this.objective[e][3]+' HP',600,e*20+20)
+                        this.layer.text(this.objective[e][3]+' HP',560,e*20+20)
                     break
                     case 4:
-                        this.layer.text('Relic',600,e*20+20)
+                        this.layer.text('Relic',560,e*20+20)
                     break
                     case 5:
-                        this.layer.text('Potion',600,e*20+20)
+                        this.layer.text('Potion',560,e*20+20)
+                    break
+                    case 6:
+                        this.layer.text('Boss Relic',560,e*20+20)
                     break
                 }
             }
@@ -1308,7 +1322,7 @@ class battle{
                         this.layer.text('Defeat Enemies ('+this.counter.enemies.dead+'/'+this.counter.enemies.total+')',450,e*60+120)
                     break
                     case 1:
-                        this.layer.text('Complete Mission in '+this.objective[e][1]+' Turns ('+this.counter.turn+')',450,e*60+120)
+                        this.layer.text('Complete Mission in '+this.objective[e][1]+' Turns ('+(this.counter.turn+1)+')',450,e*60+120)
                     break
                     case 2:
                         this.layer.text('Take Less Than '+this.objective[e][1]+' Damage ('+ceil(this.counter.taken)+')',450,e*60+120)
@@ -1332,6 +1346,9 @@ class battle{
                     break
                     case 5:
                         this.layer.text('New Potion',450,e*60+150)
+                    break
+                    case 6:
+                        this.layer.text('New Boss Relic',450,e*60+150)
                     break
                 }
             }
@@ -1454,7 +1471,7 @@ class battle{
                     this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+6)
                 }
                 for(e=0,le=this.objective.length;e<le;e++){
-                    if(this.objective[e][0]==0||this.objective[e][0]==1&&this.counter.turn<=this.objective[e][1]||this.objective[e][0]==2&&this.counter.taken<this.objective[e][1]){
+                    if(this.objective[e][0]==0||this.objective[e][0]==1&&this.counter.turn<this.objective[e][1]||this.objective[e][0]==2&&this.counter.taken<this.objective[e][1]){
                         switch(this.objective[e][2]){
                             case 0:
                                 transition.scene='choice'
@@ -1482,6 +1499,9 @@ class battle{
                                 g=this.calc.list[floor(random(0,this.calc.list.length))]
                                 f=floor(random(0,this.potions.list[g].length))
                                 this.getPotion(this.potions.list[g][f])
+                            break
+                            case 6:
+
                             break
                         }
                     }
@@ -1776,7 +1796,7 @@ class battle{
                     this.map.scrollGoal+=100
                     transition.trigger=true
                     switch(this.map.main[e][f]){
-                        case 0:
+                        /*case 0:
                             transition.scene='battle'
                             this.random.class=0
                             setupEncounter(current,zones[this.map.zone].encounters[floor(random(0,zones[this.map.zone].encounters.length))])
@@ -1822,7 +1842,7 @@ class battle{
                             if(this.relics.active[18]){
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
                             }
-                        break
+                        break*/
                         case 5:
                             transition.scene='battle'
                             this.random.class=2

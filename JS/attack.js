@@ -1625,6 +1625,11 @@ class attack{
                     }
                     this.attacks.push([1,12,this.user,this.damage])
                 break
+                case 10:
+                    this.battle.combatants[0].take(this.damage,this.user)
+                    this.battle.drop.addDrop(findCard('Heavy\nBleed'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Heavy\nBleed'),0,stage.playerNumber+1)
+                break
             }
         }
     }

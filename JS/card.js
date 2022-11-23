@@ -41,7 +41,7 @@ class card{
             this.desc+='Innate\n'
         }
         switch(this.attack){
-            case -2: this.desc+='Take 1 Damage\nPer Card Played'; break
+            case -2: this.desc+='Take '+this.damage+' Damage\nPer Card Played'; break
             case -3: this.desc+='Ethereal'; break
             case -4: this.desc+='At End of Turn,\nGain 1 Weak'; break
             case -5: this.desc+='Take 1 Damage\nPer Card Not Played'; break
@@ -56,6 +56,7 @@ class card{
             case -15: this.desc+='When Drawn, Gain\n2 Temporary Weak'; break
             case -16: this.desc+='When Drawn,\na Random Card\nGains 1 Cost\nEthereal'; break
             case -17: this.desc+='When Drawn,\nLose 1 Energy'; break
+            case -18: this.desc+='All Cards\nCost 1 More'; break
             case 1: this.desc+='Deal '+this.damage+'\nDamage'; break
             case 2: this.desc+='Add '+this.damage+'\nBlock'; break
             case 3: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times'; break
@@ -378,7 +379,7 @@ class card{
             case 320: this.desc+='Choose Between\n3 Cards to Add\nto Your Hand'; if(this.damage>0){this.desc+='\nIt Costs 0\nThis Turn'} break
             case 321: this.desc+='At the Start\nof Your Turn,\nScry '+this.damage; break
             case 322: this.desc+='When You Scry,\nAdd '+this.damage+' Block'; break
-            
+
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

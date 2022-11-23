@@ -18,6 +18,7 @@ class combatant{
 		this.damage=types.combatant[this.type].damage
 		this.altAttack=types.combatant[this.type].altAttack
 		this.class=types.combatant[this.type].class
+		this.buff=types.combatant[this.type].buff
 		this.base={life:this.life,position:{x:this.position.x,y:this.position.y},meter:10,meterControl:10}
         this.collect={life:this.life,block:0}
 		this.calc={damage:0,block:0}
@@ -64,6 +65,7 @@ class combatant{
         this.fade=0
 		this.lastPlay=-1
 		this.uniqueDisplay=[]
+		this.initialBuff()
     }
 	resetUnique(){
 		this.block=0
@@ -78,11 +80,34 @@ class combatant{
 		this.lastPlay=-1
 		this.uniqueDisplay=[]
 	}
+	initialBuff(){
+		switch(this.buff){
+			case 1:
+				this.status.main[36]++
+			break
+		}
+	}
+	turnBuff(){
+		switch(this.buff){
+			case 1:
+				if(this.status.main[36]<=0){
+					this.status.main[36]++
+				}
+			break
+		}
+	}
 	setupIntent(type){
 		if(type==-1){
 			switch(this.behavior){
 				case 0:
 					this.intent=floor(random(0,this.attacks.length))
+				break
+				case 1:
+					if(this.battle.counter.turn==0){
+						this.intent=this.attacks.length-1
+					}else{
+						this.intent=floor(random(0,this.attacks.length-1))
+					}
 				break
 			}
 		}else{
@@ -739,6 +764,33 @@ class combatant{
 					this.layer.rect(3,-72,24,2)
 				break
 				case 11:
+					this.layer.stroke(80,160,200,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(100,this.fade)
+					this.layer.rect(0,-75,40,8)
+					this.layer.fill(80,160,200,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(75,75,150,this.fade)
+					this.layer.arc(0,-54,18,24,-180,0)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(100,100,200,this.fade)
+					this.layer.arc(0,-72,32,26,0,180)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,8,6)
+					this.layer.ellipse(12,-72,8,6)
+					this.layer.rect(3,-72,24,2)
+					this.layer.stroke(100,this.fade)
+					this.layer.strokeWeight(2)
+					this.layer.noFill()
+					this.layer.arc(0,-75,36,36,-180,0)
+				break
+				case 100:
 					this.layer.stroke(80,this.fade)
 					this.layer.strokeWeight(4)
 					this.layer.line(-4,-30,-8,0)
@@ -1194,7 +1246,7 @@ class combatant{
 				if(this.status.main[34]>0&&this.calc.damage>1){
 					this.calc.damage=1
 				}
-				if(this.battle.combatants[user].status.main[62]>0){
+				if(user>=0&&this.battle.combatants[user].status.main[62]>0){
 					this.calc.damage=max(0,this.calc.damage-this.battle.combatants[user].status.main[62])
 				}
 				this.battle.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))

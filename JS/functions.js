@@ -90,7 +90,7 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 			layer.triangle(-16,0,12,-4,12,4)
 			layer.triangle(-12,10,9,7,9,13)
 		break
-		case 6:
+		case 6: case 10:
 			layer.fill(150,255,150,fade)
 			layer.ellipse(0,0,15,15)
 			layer.fill(255,50,50,fade)
@@ -115,7 +115,7 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 	layer.fill(255,fade)
 	layer.textSize(20)
 	switch(type){
-		case 1: case 6: case 7: case 8:
+		case 1: case 6: case 7: case 8: case 10:
 			layer.text(damage,0,1)
 		break
 		case 2: case 4: case 5:
