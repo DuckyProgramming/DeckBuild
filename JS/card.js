@@ -373,6 +373,12 @@ class card{
             case 315: this.desc+='Deal '+this.damage+' Damage\nMust be Only\nCard Played\nThis Turn'; break
             case 316: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Combo'; break
             case 317: this.desc+='Remove "Exhaust"\nFrom All Shivs'; break
+            case 318: this.desc+='Deal '+this.damage+' Damage\nScry '+this.alt+'\nDraw 1 Card'; break
+            case 319: this.desc+='Deal '+(this.damage+1)+' Damage\nAdd '+this.damage+' Block\nScry '+this.alt; break
+            case 320: this.desc+='Choose Between\n3 Cards to Add\nto Your Hand'; if(this.damage>0){this.desc+='\nIt Costs 0\nThis Turn'} break
+            case 321: this.desc+='At the Start\nof Your Turn,\nScry '+this.damage; break
+            case 322: this.desc+='When You Scry,\nAdd '+this.damage+' Block'; break
+            
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

@@ -37,6 +37,7 @@ class battle{
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
         this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0}
+        this.defaultRandom={attacked:0}
         this.deck.initial(this.player)
     }
     create(){
@@ -562,7 +563,8 @@ class battle{
                 }else if(
                     f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&
                     f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=50&&f!=51&&f!=52&&
-                    f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&f!=63){
+                    f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&f!=63&&
+                    f!=68&&f!=69){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }else if(f==67){
@@ -677,6 +679,16 @@ class battle{
         this.combatants[0].autoEvoke()
     }
     resetTurn(){
+        if(this.combatants[0].status.main[68]>0){
+            transition.trigger=true
+            transition.scene='deck'
+            this.context=13
+            this.context2=this.combatants[0].status.main[68]
+        }else{
+            this.resetTurnProxy()
+        }
+    }
+    resetTurnProxy(){
         this.counter.enemies.alive=0
         for(e=1,le=this.combatants.length;e<le;e++){
             if(this.combatants[e].life>0){
@@ -1570,6 +1582,16 @@ class battle{
                     }
                 }
             break
+            case 5:
+                this.calc.list=listing.card[14][0]
+                for(g=0;g<3;g++){
+                    if(this.calc.list.length>0){
+                        h=this.calc.list[floor(random(0,this.calc.list.length))]
+                        this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
+                        this.calc.list.splice(h,1)
+                    }
+                }
+            break
         }
         for(g=0,lg=this.choice.cards.length;g<lg;g++){
             this.choice.cards[g].size=1
@@ -1585,7 +1607,7 @@ class battle{
         this.layer.textSize(20)
         this.layer.text('Skip',450,450)
         for(e=0,le=this.choice.cards.length;e<le;e++){
-            this.choice.cards[e].display(this.deck.cards.length,this.drawAmount,0)
+            this.choice.cards[e].display(this.deck.cards.length,this.drawAmount,0,this.defaultRandom)
         }
     }
     updateChoice(){
@@ -1611,7 +1633,10 @@ class battle{
                     transition.trigger=true
                     transition.scene='map'
                 }
-                if(this.context==-3){
+                if(this.context==-5){
+                    this.hand.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                    this.hand.cards[this.hand.cards.length-1].cost=0
+                }else if(this.context==-3){
                     this.hand.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
                     this.hand.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
                 }else if(this.context==-2){
@@ -1625,7 +1650,7 @@ class battle{
         if(transition.scene=='map'&&this.context==1){
             transition.scene='rest'
         }
-        if(transition.scene=='map'&&(this.context==-2||this.context==-3||this.context==-4)){
+        if(transition.scene=='map'&&(this.context==-2||this.context==-3||this.context==-4||this.context==-5)){
             transition.scene='battle'
         }
     }
@@ -1921,12 +1946,12 @@ class battle{
     displayDeck(){
         if(this.context==1||this.context==4){
             this.deck.displayView(-1)
-            this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0)
+            this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0,this.defaultRandom)
         }else if(this.context==2||this.context==3||this.context==10||this.context==11||this.context==12){
             this.discard.displayView(-1)
         }else if(this.context==5||this.context==6||this.context==9){
             this.deck.displayView(-1)
-        }else if(this.context==7||this.context==8){
+        }else if(this.context==7||this.context==8||this.context==13){
             this.reserve.displayView(this.context2)
         }
         this.layer.noStroke()
@@ -1936,7 +1961,7 @@ class battle{
         this.layer.textSize(20)
         if(this.context==3||this.context==5||this.context==6){
             this.layer.text('Back',850,570)
-        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11||this.context==12){
+        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11||this.context==12||this.context==13){
             this.layer.text('Skip',850,570)
         }
         if(this.context==6){
@@ -1980,6 +2005,12 @@ class battle{
             }else if(this.context==8){
                 this.draw()
                 transition.scene='battle'
+            }else if(this.context==13){
+                this.resetTurnProxy()
+                transition.scene='battle'
+            }
+            if((this.context==7||this.context==8||this.context==13)&&this.combatants[0].status.main[69]>0){
+                this.combatants[0].addBlock(this.combatants[0].status.main[69])
             }
         }
         if(this.context==1||this.context==4||this.context==6||this.context==9){

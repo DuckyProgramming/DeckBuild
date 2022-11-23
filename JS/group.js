@@ -41,11 +41,11 @@ class group{
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
                 this.add(findCard('Vigilance'),0,this.battle.player)*/
-                this.add(182,0,this.battle.player)
-                this.add(183,0,this.battle.player)
-                this.add(184,0,this.battle.player)
-                this.add(185,0,this.battle.player)
                 this.add(186,0,this.battle.player)
+                this.add(187,0,this.battle.player)
+                this.add(188,0,this.battle.player)
+                this.add(189,0,this.battle.player)
+                this.add(190,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -216,7 +216,7 @@ class group{
                 this.cards[e].anim.afford=0
                 this.cards[e].size=1
                 this.cards[e].fade=1
-                this.cards[e].display(le)
+                this.cards[e].display(le,0,0,this.battle.defaultRandom)
             }
         }else{
             for(e=0,le=this.cards.length;e<le;e++){
@@ -225,7 +225,7 @@ class group{
                 this.cards[e].anim.afford=0
                 this.cards[e].size=1
                 this.cards[e].fade=1
-                this.cards[e].display(le)
+                this.cards[e].display(le,0,0,this.battle.defaultRandom)
             }
         }
     }
@@ -506,7 +506,7 @@ class group{
                 }
                 this.cards[e].select=false
             }
-            if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&!(this.cards[e].level==1&&context==1)&&!(e>=context2&&(context==7||context==8))){
+            if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&!(this.cards[e].level==1&&context==1)&&!(e>=context2&&(context==7||context==8||context==13))){
                 this.cards[e].select=true
                 this.select=true
                 this.selected=true

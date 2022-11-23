@@ -1554,6 +1554,33 @@ class attack{
                         }
                     }
                 break
+                case 318:
+                    this.battle.combatants[this.target].take(this.damage,0)
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.battle.context=8
+                    this.battle.context2=this.alt
+                break
+                case 319:
+                    this.battle.combatants[this.target].take(this.damage+1,0)
+                    this.battle.combatants[0].addBlock(this.damage)
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.battle.context=7
+                    this.battle.context2=this.alt
+                break
+                case 320:
+                    transition.trigger=true
+                    transition.scene='choice'
+                    this.battle.setupChoice(0,0,5)
+                    this.battle.context=-2-this.damage*3
+                break
+                case 321:
+                    this.battle.combatants[0].status.main[68]+=this.damage
+                break
+                case 322:
+                    this.battle.combatants[0].status.main[69]+=this.damage
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

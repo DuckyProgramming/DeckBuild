@@ -29,21 +29,21 @@ class combatant{
 			[240,100,50],[150,175,200],[0,100,255],[200,255,255],[225,255,225],[140,160,180],[200,150,200],[100,200,50],[255,200,180],[40,80,180],
 			[170,190,210],[255,75,150],[50,125,205],[175,225,175],[150,225,150],[255,105,0],[125,50,125],[140,160,180],[80,40,80],[138,141,207],
 			[139,150,193],[40,95,160],[255,245,15],[195,225,255],[145,155,65],[245,195,65],[240,255,255],[220,240,220],[215,235,255],[20,50,120],
-			[155,235,250],[5,145,250],[150,0,0],[215,210,210],[100,75,150],[255,75,175],[225,175,225],[40,80,120]],infoFade:[],name:[
+			[155,235,250],[5,145,250],[150,0,0],[215,210,210],[100,75,150],[255,75,175],[225,175,225],[40,80,120],[255,195,255],[235,125,230]],infoFade:[],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
 			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Mental Fortress','Rush','Every Block Weak All','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Absorb Attacks',
 			'First Attack Damage','Next Turn Block','Next Turn Dexterity','Buffer','Intangible','Armor','Control','Poison','Regeneration','Strength Per Turn',
-			'Metallicize','Add Bleed Once','Weak Per Turn','Counter Stun','stun','Counter All 3 Times','Exhaust Draw','Block Store','Death Heal','Rearm Next Turn',
+			'Metallicize','Add Bleed Once','Weak Per Turn','Counter Stun','Stun','Counter All 3 Times','Exhaust Draw','Block Store','Death Heal','Rearm Next Turn',
 			'Armed Block Per Turn','Energy And Strength Per Hit','Return Played to Draw','Power Draw','Random Common','Passive Orb','Discharge','Power Basic Charge','Random Power','Conditioning',
-			'Miracle+ Gain','Calm Block Per Turn','Constant Damage Down','Shiv Damage','No Blocks','Counter Pull Once','Counter Throw','down'],class:[
+			'Miracle+ Gain','Calm Block Per Turn','Constant Damage Down','Shiv Damage','No Blocks','Counter Pull Once','Counter Throw','Downed','Scry Per Turn','Scry Block'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
 			1,1,1,1,1,1,1,0,1,1,
 			1,1,0,1,0,1,1,1,1,1,
 			1,1,1,1,1,1,1,1,1,1,
-			1,1,0,1,0,1,1,0]}
+			1,1,0,1,0,1,1,0,1,1]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0

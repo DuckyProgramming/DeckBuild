@@ -178,6 +178,7 @@ function generateListing(cards){
 	}
 	for(a=0,la=cards.length;a<la;a++){
 		if(cards[a].list>=0){
+			listing.card[14][0].push(a)
 			if(cards[a].rarity<0){
 				listing.card[cards[a].list][3].push(a)
 			}else{

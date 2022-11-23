@@ -931,6 +931,36 @@ types={
             {damage:0,alt:0,cost:1,attack:317,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:0,attack:317,target:0,spec:0,class:2},
         ],
+        },{name:'Cut Through\nFate',rarity:0,list:2,
+        stats:[
+            {damage:5,alt:2,cost:1,attack:318,target:1,spec:0,class:0},
+            {damage:7,alt:3,cost:1,attack:318,target:1,spec:0,class:0},
+        ],
+        },{name:'Just\nLucky',rarity:0,list:2,
+        stats:[
+            {damage:2,alt:1,cost:0,attack:319,target:1,spec:0,class:0},
+            {damage:3,alt:2,cost:0,attack:319,target:1,spec:0,class:0},
+        ],
+        },{name:'Protect',rarity:0,list:2,
+        stats:[
+            {damage:12,alt:0,cost:2,attack:2,target:1,spec:2,class:1},
+            {damage:16,alt:0,cost:2,attack:2,target:1,spec:2,class:1},
+        ],
+        },{name:'Originality',rarity:1,list:2,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:320,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:0,attack:320,target:0,spec:3,class:2},
+        ],
+        },{name:'Foresight',rarity:1,list:2,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:321,target:0,spec:0,class:2},
+            {damage:4,alt:0,cost:1,attack:321,target:0,spec:0,class:2},
+        ],
+        },{name:'Nirvana',rarity:1,list:2,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:322,target:0,spec:0,class:2},
+            {damage:5,alt:0,cost:1,attack:322,target:0,spec:0,class:2},
+        ],
         },
         
         
@@ -1637,7 +1667,7 @@ types={
         //analysis paralysis
         
         
-        {name:'Empty',rarity:-1,list:12,
+        {name:'Empty',rarity:-1,list:-1,
         stats:[
             {damage:0,alt:0,cost:0,attack:-3,target:0,spec:6,class:0},
             {damage:0,alt:0,cost:0,attack:-3,target:0,spec:6,class:0},
@@ -1710,7 +1740,7 @@ types={
             {damage:3,alt:0,cost:0,attack:4,target:0,spec:0,class:2},
             {damage:4,alt:0,cost:0,attack:4,target:0,spec:0,class:2},
         ],
-        },{name:'Hand of\nGreed',rarity:0,list:0,
+        },{name:'Hand of\nGreed',rarity:2,list:0,
         stats:[
             {damage:20,alt:20,cost:2,attack:60,target:1,spec:0,class:0},
             {damage:25,alt:25,cost:2,attack:60,target:1,spec:0,class:0},
@@ -2972,7 +3002,7 @@ types={
     ],
 }
 listing={
-    card:[[],[],[],[],[],[],[],[],[],[],[],[],[],[]],
+    card:[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]],
 }
 zones=[
     {
