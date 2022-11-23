@@ -3,19 +3,8 @@ function setup(){
     setupGraphics()
     current=new battle(graphics.main,1)
     generateListing(types.card)
-    setupEncounter(current,7)
-
-    current.initialEvent()
-
-    //current.getRelic(156)
     
-    current.create()
-
-    //transition.trigger=true
-    //transition.scene='shop'
-    current.setupMap()
-    //current.map.complete[0][0]=1
-    //current.event=14
+    current.setupTesting(7)
 }
 function windowResized(){
     resizeCanvas(windowWidth-50,windowHeight-50)

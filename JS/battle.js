@@ -25,7 +25,7 @@ class battle{
         this.objective=[]
         this.counter={}
         this.end=false
-        this.map={main:[],complete:[],scroll:0,scrollGoal:100,position:[0,0],zone:0}
+        this.map={main:[],complete:[],scroll:0,scrollGoal:0,position:[0,0],zone:0}
         this.restOptions=[0,1,2]
         this.context=0
         this.context2=0
@@ -39,6 +39,20 @@ class battle{
         this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0}
         this.defaultRandom={attacked:0}
         this.deck.initial(this.player)
+    }
+    setupTesting(type){
+        stage.scene='battle'
+        setupEncounter(this,type)
+        this.create()
+        this.initialEvent()
+        this.setupMap()
+        
+        //current.getRelic(156)
+
+        //transition.trigger=true
+        //transition.scene='map'
+        //current.map.complete[0][0]=1
+        //current.event=14
     }
     create(){
         this.end=false
@@ -120,6 +134,11 @@ class battle{
                 this.potions.list[types.potion[g].rarity].push(g)
             }
         }
+    }
+    actComplete(){
+        transition.trigger=true
+        transition.scene='map'
+        this.setupMap()
     }
     initialReserve(){
         this.reserve.cards=[]
@@ -1501,7 +1520,8 @@ class battle{
                                 this.getPotion(this.potions.list[g][f])
                             break
                             case 6:
-
+                                transition.scene='bosschoice'
+                                this.setupBossChoice(0)
                             break
                         }
                     }
@@ -1677,6 +1697,9 @@ class battle{
     setupMap(){
         this.map.main=[]
         this.map.complete=[]
+        this.map.position=[-1,0]
+        this.map.scroll=0
+        this.map.scrollGoal=0
         for(e=0;e<15;e++){
             this.map.main.push([])
             this.map.complete.push([])
@@ -1790,7 +1813,7 @@ class battle{
         }
         for(e=0,le=this.map.main.length;e<le;e++){
             for(f=0,lf=this.map.main[e].length;f<lf;f++){
-                if(dist(inputs.rel.x,inputs.rel.y,530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)<50&&e==this.map.position[0]+1&&((f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e].length-1||(f==this.map.position[1]-1||f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e].length||(f==this.map.position[1]-1||f==this.map.position[1])&&this.map.main[this.map.position[0]].length==this.map.main[e].length+1)){
+                if(dist(inputs.rel.x,inputs.rel.y,530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll)<50&&e==this.map.position[0]+1&&(this.map.position[0]==-1||(f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e].length-1||(f==this.map.position[1]-1||f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e].length||(f==this.map.position[1]-1||f==this.map.position[1])&&this.map.main[this.map.position[0]].length==this.map.main[e].length+1)){
                     this.map.position[0]=e
                     this.map.position[1]=f
                     this.map.scrollGoal+=100
@@ -2419,6 +2442,70 @@ class battle{
                 this.getRelic(this.relics.shop[e])
                 this.currency.money-=this.costs.relic[e]
                 this.relics.size[e]=0.9
+            }
+        }
+    }
+    setupBossChoice(spec){
+        switch(spec){
+            case 0:
+                this.relics.shop=[]
+                this.calc.list3=this.relics.list
+                for(g=0;g<3;g++){
+                    if(this.calc.list3.length>0){
+                        h=floor(random(0,this.calc.list3[4].length))
+                        this.relics.shop.push(this.calc.list3[4][h])
+                        this.relics.size.push(1)
+                        this.calc.list3[4].splice(h,1)
+                    }
+                }
+            break
+        }
+        for(g=0,lg=this.shop.cards.length;g<lg;g++){
+            this.shop.cards[g].size=1
+        }
+    }
+    displayBossChoice(){
+        this.layer.noStroke()
+        this.layer.fill(255)
+        this.layer.textSize(45)
+        this.layer.text('Select Relic',450,50)
+        this.layer.fill(255,225,0)
+        this.layer.ellipse(20,16,16,16)
+        this.layer.fill(255,240,0)
+        this.layer.ellipse(20,16,10,10)
+        this.layer.fill(255,225,0)
+        this.layer.textSize(16)
+        this.layer.textAlign(LEFT,CENTER)
+        this.layer.text(this.currency.money,30,18)
+        this.layer.textAlign(CENTER,CENTER)
+        this.layer.noStroke()
+        this.layer.fill(160)
+        this.layer.rect(850,570,80,40,5)
+        this.layer.fill(0)
+        this.layer.textSize(20)
+        this.layer.text('Skip',850,570)
+        for(e=0,le=this.relics.shop.length;e<le;e++){
+            if(this.relics.size[e]>0){
+                displayRelicSymbol(this.layer,225+e*225,300,this.relics.shop[e],0,3,1,true)
+            }
+            if(dist(inputs.rel.x,inputs.rel.y,225+e*225,300)<60){
+                this.layer.noStroke()
+                this.layer.fill(180)
+                this.layer.rect(450,550,240,60,5)
+                this.layer.fill(0)
+                this.layer.textSize(12)
+                this.layer.text(types.relic[this.relics.shop[e]].desc,450,550)
+            }
+        }
+    }
+    onClickBossChoice(){
+        if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570},width:80,height:40})){
+            this.actComplete()
+        }
+        for(e=0,le=this.relics.shop.length;e<le;e++){
+            if(dist(inputs.rel.x,inputs.rel.y,375+(e%3)*150,350+floor(e/3)*100)<20&&this.relics.size[e]>=1){
+                this.getRelic(this.relics.shop[e])
+                this.actComplete()
             }
         }
     }

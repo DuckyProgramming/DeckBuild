@@ -90,7 +90,7 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 			layer.triangle(-16,0,12,-4,12,4)
 			layer.triangle(-12,10,9,7,9,13)
 		break
-		case 6: case 10:
+		case 6:
 			layer.fill(150,255,150,fade)
 			layer.ellipse(0,0,15,15)
 			layer.fill(255,50,50,fade)
@@ -107,6 +107,12 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 		break
 		case 9:
 			layer.fill(200,0,0,fade)
+			layer.ellipse(0,0,15,15)
+			layer.fill(255,50,50,fade)
+			layer.triangle(-20,0,15,-6,15,6)
+		break
+		case 10:
+			layer.fill(150,50,50,fade)
 			layer.ellipse(0,0,15,15)
 			layer.fill(255,50,50,fade)
 			layer.triangle(-20,0,15,-6,15,6)
@@ -1003,7 +1009,7 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[24],-16,0,12,12)
 		break
 		case 133:
-			layer.text('>',0,-5)
+			layer.text('>',0,-4)
 			layer.image(graphics.symbol[1],-10,2,20,20)
 			layer.image(graphics.symbol[5],-10,-15,20,20)
 			layer.image(graphics.symbol[14],-12,-17,24,24)
@@ -1071,7 +1077,7 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		break
 		case 145:
 			layer.image(graphics.symbol[13],-20,-20,40,40)
-			layer.image(graphics.symbol[5],-10,-10,20,20)
+			layer.image(graphics.symbol[5],-8,-8,16,16)
 		break
 		case 146:
 			layer.textSize(30)
@@ -1090,7 +1096,7 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[5],-19,-10,20,20)
 			layer.image(graphics.symbol[8],-6,-15,30,30)
 			layer.textSize(10)
-			layer.text('X',-9,0)
+			layer.text('x',-9,0)
 		break
 		case 149:
 			layer.text('1',0,-10)

@@ -42,6 +42,10 @@ function draw(){
             current.displayShop()
             current.updateShop()
         break
+        case 'bosschoice':
+            graphics.main.background(80,85,90)
+            current.displayBossChoice()
+        break
     }
     graphics.main.pop()
     current.updateFull()

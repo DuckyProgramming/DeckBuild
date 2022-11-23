@@ -244,10 +244,10 @@ function setupGraphics(){
 	}
 	graphics.symbol[19].noFill()
 	graphics.symbol[19].stroke(0)
-	graphics.symbol[19].strokeWeight(16)
+	graphics.symbol[19].strokeWeight(14)
 	graphics.symbol[19].strokeCap(SQUARE)
-	graphics.symbol[19].arc(4,4,80,80,-45,135)
-	graphics.symbol[19].arc(-4,-4,80,80,135,315)
+	graphics.symbol[19].arc(3.5,3.5,70,70,-45,135)
+	graphics.symbol[19].arc(-3.5,-3.5,70,70,135,315)
 	for(a=0;a<12;a++){
 		graphics.symbol[20].ellipse(sin(a*30)*40,cos(a*30)*40,12,12)
 	}
