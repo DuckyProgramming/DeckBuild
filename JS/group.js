@@ -18,34 +18,34 @@ class group{
         }*/
         switch(type){
             case 1:
-                /*for(e=0;e<4;e++){
+                for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player) 
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Big\nStrike'),0,this.battle.player)
-                this.add(findCard('Triple\nPunch'),0,this.battle.player)*/
-                this.add(94,0,this.battle.player)
-                this.add(95,0,this.battle.player)
-                this.add(96,0,this.battle.player)
-                this.add(97,0,this.battle.player)
-                this.add(98,0,this.battle.player)
+                this.add(findCard('Triple\nPunch'),0,this.battle.player)
+                /*this.add(98,0,this.battle.player)
+                this.add(99,0,this.battle.player)
+                this.add(100,0,this.battle.player)
+                this.add(101,0,this.battle.player)
+                this.add(102,0,this.battle.player)*/
             break
             case 2:
-                for(e=0;e<4;e++){
+                /*for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
-                this.add(findCard('Vigilance'),0,this.battle.player)
-                /*this.add(158,0,this.battle.player)
-                this.add(159,0,this.battle.player)
-                this.add(160,0,this.battle.player)
-                this.add(161,0,this.battle.player)
-                this.add(162,0,this.battle.player)*/
+                this.add(findCard('Vigilance'),0,this.battle.player)*/
+                this.add(182,0,this.battle.player)
+                this.add(183,0,this.battle.player)
+                this.add(184,0,this.battle.player)
+                this.add(185,0,this.battle.player)
+                this.add(186,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){

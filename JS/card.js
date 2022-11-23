@@ -172,7 +172,7 @@ class card{
             case 114: this.desc+='Deal '+this.damage+' Damage\nReduce Cost by 1\nwhen Retained'; break
             case 115: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nEnter Wrath'; break
             case 116: this.desc+='Deal '+this.damage+' Damage\nGain Block Equal\nto Unblocked\nDamage Dealt'; break
-            case 117: this.desc+='When You Gain\nBlock this Turn\nApply 1 Weak\nto All Enemies'; break
+            case 117: this.desc+='When You Gain\nBlock This Turn\nApply 1 Weak\nto All Enemies'; break
             case 118: this.desc+='Next Attack Deals\n'+this.damage+' More Damage'; break
             case 119: this.desc+='Gain '+this.damage+' Faith\nDie Next Turn'; break
             case 120: this.desc+='Deal '+this.damage+' Damage\nDeal Extra Damage\nEqual to '+this.alt+'\nTimes Faith'; break
@@ -368,7 +368,11 @@ class card{
             case 310: this.desc+='Increase Energy\nGain by '+this.damage; break
             case 311: this.desc+='Take '+this.damage+' Damage\nGain '+this.alt+' Conditioning'; break
             case 312: this.desc+='Upgrade '+this.damage+'\nRandom Cards\nin Your Hand'; break
-            
+            case 313: this.desc+='Take '+this.damage+' Damage\nGain '+this.alt+' Combo'; break
+            case 314: this.desc+='Add '+this.damage+' Block Per\nCard in Your Hand\nDiscard Your Hand'; break
+            case 315: this.desc+='Deal '+this.damage+' Damage\nMust be Only\nCard Played\nThis Turn'; break
+            case 316: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Combo'; break
+            case 317: this.desc+='Remove "Exhaust"\nFrom All Shivs'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

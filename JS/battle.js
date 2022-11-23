@@ -710,18 +710,14 @@ class battle{
         }
         if(this.counter.played>=6&&this.relics.active[136]){
             this.allDiscard()
-        }else if(this.counter.played>=3){
-            for(g=0,lg=this.hand.cards.length;g<lg;g++){
-                if(this.hand.cards[g].attack==-11){
-                    this.allDiscard()
-                }
-            }
         }else if(this.attack.class==0){
             this.combatants[0].status.main[24]=0
-            for(g=0,lg=this.hand.cards.length;g<lg;g++){
-                if(this.hand.cards[g].attack==-12){
-                    this.allDiscard()
-                }
+        }
+        for(g=0,lg=this.hand.cards.length;g<lg;g++){
+            if(this.hand.cards[g].attack==-12&&this.attack.class==0||this.hand.cards[g].attack==-11&&this.counter.played>=3){
+                this.allDiscard()
+            }else if(this.hand.cards[g].attack==315){
+                this.hand.cards[g].used=true
             }
         }
         if(this.attack.class==0){

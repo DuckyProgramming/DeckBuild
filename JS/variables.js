@@ -498,6 +498,26 @@ types={
             {damage:1,alt:10,cost:0,attack:43,target:1,spec:2,class:0},
             {damage:2,alt:14,cost:0,attack:43,target:1,spec:2,class:0},
         ],
+        },{name:'Rev\nUp',rarity:1,list:1,
+        stats:[
+            {damage:5,alt:6,cost:1,attack:313,target:0,spec:0,class:2},
+            {damage:5,alt:10,cost:0,attack:313,target:0,spec:0,class:2},
+        ],
+        },{name:'Recycle',rarity:1,list:1,
+        stats:[
+            {damage:4,alt:6,cost:2,attack:314,target:0,spec:0,class:2},
+            {damage:6,alt:10,cost:2,attack:314,target:0,spec:0,class:2},
+        ],
+        },{name:'One-Inch\nPunch',rarity:2,list:1,
+        stats:[
+            {damage:25,alt:0,cost:4,attack:315,target:1,spec:4,class:0},
+            {damage:35,alt:0,cost:4,attack:315,target:1,spec:4,class:0},
+        ],
+        },{name:'Combo\nBlock',rarity:0,list:1,
+        stats:[
+            {damage:4,alt:1,cost:1,attack:316,target:0,spec:0,class:1},
+            {damage:7,alt:1,cost:1,attack:316,target:0,spec:0,class:1},
+        ],
         },
         
         
@@ -896,10 +916,20 @@ types={
             {damage:4,alt:0,cost:1,attack:286,target:1,spec:0,class:0},
             {damage:6,alt:0,cost:1,attack:286,target:1,spec:0,class:0},
         ],
-        },{name:'Side Hook',rarity:1,list:2,
+        },{name:'Side\nHook',rarity:1,list:2,
         stats:[
             {damage:5,alt:1,cost:1,attack:287,target:1,spec:0,class:0},
             {damage:8,alt:1,cost:1,attack:287,target:1,spec:0,class:0},
+        ],
+        },{name:'Backup\nBlade',rarity:1,list:2,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:26,target:0,spec:2,class:2},
+            {damage:2,alt:0,cost:0,attack:26,target:0,spec:2,class:2},
+        ],
+        },{name:'Hold\nKnives',rarity:2,list:2,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:317,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:317,target:0,spec:0,class:2},
         ],
         },
         
@@ -1604,6 +1634,7 @@ types={
         //taunt
         //false surrender
         //counter stun? petal shield already exists...
+        //analysis paralysis
         
         
         {name:'Empty',rarity:-1,list:12,

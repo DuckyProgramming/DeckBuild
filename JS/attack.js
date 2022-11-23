@@ -1530,6 +1530,30 @@ class attack{
                     for(g=0;g<this.damage;g++){
                         this.battle.hand.randomUpgrade()
                     }
+                break
+                case 313:
+                    this.battle.combatants[0].take(this.damage,0)
+                    this.battle.combatants[0].combo+=this.alt
+                break
+                case 314:
+                    this.battle.combatants[0].addBlock(this.damage*this.battle.hand.cards.length)
+                    this.battle.allDiscard()
+                break
+                case 315:
+                    this.battle.combatants[this.target].take(this.damage,0)
+                    this.battle.allDiscard()
+                break
+                case 316:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].combo+=this.alt
+                break
+                case 317:
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].attack==1&&this.battle.hand.cards[g].spec==3){
+                            this.battle.hand.cards[g].spec=0
+                        }
+                    }
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{
