@@ -138,6 +138,7 @@ class battle{
     actComplete(){
         transition.trigger=true
         transition.scene='map'
+        this.map.zone++
         this.setupMap()
     }
     initialReserve(){
@@ -2503,7 +2504,7 @@ class battle{
             this.actComplete()
         }
         for(e=0,le=this.relics.shop.length;e<le;e++){
-            if(dist(inputs.rel.x,inputs.rel.y,375+(e%3)*150,350+floor(e/3)*100)<20&&this.relics.size[e]>=1){
+            if(dist(inputs.rel.x,inputs.rel.y,225+e*225,300)<60){
                 this.getRelic(this.relics.shop[e])
                 this.actComplete()
             }

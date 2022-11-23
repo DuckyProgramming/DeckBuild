@@ -1937,7 +1937,8 @@ types={
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
         {name:'Slime',alt:'',life:30,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,0,0],class:0,buff:0},
         {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0,buff:0},
-        {name:'Roger Reviv',alt:'',life:15,height:75,behavior:1,attacks:[1,9,3,10],damage:[15,4,2,20],altAttack:[0,6,9,0],class:0,buff:1},
+        {name:'Roger Reviv',alt:'',life:150,height:75,behavior:1,attacks:[1,9,3,10],damage:[15,4,2,20],altAttack:[0,6,9,0],class:0,buff:1},
+        {name:'Gangster',alt:'',life:40,height:75,behavior:0,attacks:[1,8],damage:[8,6],altAttack:[0,0],class:0,buff:2},
         //gangster
         //bleed?
         //plant lol
@@ -1993,6 +1994,11 @@ types={
             reinforce:[],
             threshold:0,
             objective:[[0,0,6,0]],
+        },{
+            combatants:[12,12,0,0,0,0],
+            reinforce:[12],
+            threshold:2,
+            objective:[[0,0,0,0]],
         },
     ],relic:[
         {
@@ -2463,9 +2469,7 @@ types={
         },{
             name:'Balance Cycle',id:155,rarity:4,list:4,
             desc:'When Balance Broken, Trigger the Opposite\nAffect on the Other End of Spectrum',
-        },
-
-        /*{
+        },/*{
             name:'', d:15,rarity:4,list:0,
             desc:'',
         },*/
@@ -3047,7 +3051,7 @@ zones=[
         ],
     },
 ]
-stage={scale:0,quality:1,scene:'map',playerNumber:4}
+stage={scale:0,quality:1,scene:'menu',playerNumber:4}
 graphics={main:0,minor:[],symbol:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}

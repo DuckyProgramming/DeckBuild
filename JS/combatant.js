@@ -81,18 +81,22 @@ class combatant{
 		this.uniqueDisplay=[]
 	}
 	initialBuff(){
+		this.standardBuff()
+		switch(this.buff){
+		}
+	}
+	turnBuff(){
+		this.standardBuff()
+		switch(this.buff){
+		}
+	}
+	standardBuff(){
 		switch(this.buff){
 			case 1:
 				this.status.main[36]++
 			break
-		}
-	}
-	turnBuff(){
-		switch(this.buff){
-			case 1:
-				if(this.status.main[36]<=0){
-					this.status.main[36]++
-				}
+			case 2:
+				this.status.main[3]+=4
 			break
 		}
 	}
@@ -789,6 +793,32 @@ class combatant{
 					this.layer.strokeWeight(2)
 					this.layer.noFill()
 					this.layer.arc(0,-75,36,36,-180,0)
+				break
+				case 12:
+					this.layer.stroke(80,60,80,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.stroke(240,this.fade)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(240,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(80,60,80,this.fade)
+					this.layer.arc(0,-45,20,40,0,180)
+					this.layer.rect(-5,-60,3,30)
+					this.layer.rect(5,-60,3,30)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,4,4)
+					this.layer.ellipse(12,-72,4,4)
+					this.layer.stroke(80,60,80,this.fade)
+					this.layer.fill(80,60,80,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-16,-84,16,-84)
+					this.layer.quad(-12,-84,12,-84,8,-90,-8,-90)
 				break
 				case 100:
 					this.layer.stroke(80,this.fade)
