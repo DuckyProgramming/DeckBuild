@@ -458,6 +458,26 @@ types={
             {damage:2,alt:1,cost:1,attack:306,target:0,spec:0,class:2},
             {damage:4,alt:1,cost:1,attack:306,target:0,spec:0,class:2},
         ],
+        },{name:'Flip',rarity:1,list:1,
+        stats:[
+            {damage:8,alt:1,cost:5,attack:42,target:1,spec:4,class:0},
+            {damage:14,alt:1,cost:5,attack:42,target:1,spec:4,class:0},
+        ],
+        },{name:'Accelerate',rarity:2,list:1,
+        stats:[
+            {damage:4,alt:4,cost:6,attack:3,target:1,spec:4,class:0},
+            {damage:5,alt:4,cost:6,attack:3,target:1,spec:4,class:0},
+        ],
+        },{name:'Deft',rarity:0,list:1,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:307,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:1,attack:307,target:0,spec:0,class:2},
+        ],
+        },{name:'Double\nJump Kick',rarity:1,list:1,
+        stats:[
+            {damage:16,alt:2,cost:9,attack:308,target:1,spec:4,class:0},
+            {damage:24,alt:2,cost:9,attack:308,target:1,spec:4,class:0},
+        ],
         },
         
         

@@ -26,11 +26,11 @@ class group{
                 }
                 this.add(findCard('Big\nStrike'),0,this.battle.player)
                 this.add(findCard('Triple\nPunch'),0,this.battle.player)*/
-                this.add(86,0,this.battle.player)
-                this.add(87,0,this.battle.player)
-                this.add(88,0,this.battle.player)
-                this.add(89,0,this.battle.player)
-                this.add(90,0,this.battle.player)
+                this.add(90 ,0,this.battle.player)
+                this.add(91,0,this.battle.player)
+                this.add(92,0,this.battle.player)
+                this.add(93,0,this.battle.player)
+                this.add(94,0,this.battle.player)
             break
             case 2:
                 for(e=0;e<4;e++){
@@ -136,7 +136,7 @@ class group{
             this.battle.mana.main++
         }
         if(this.battle.relics.active[114]){
-            this.battle.combatants[0].block+=6
+            this.battle.combatants[0].addBlock(6)
         }
         if(this.battle.relics.active[119]){
             transition.trigger=true
@@ -258,7 +258,7 @@ class group{
                         this.battle.combatants[this.calc.list[floor(random(0,this.calc.list.length))]].take(3,0)
                     }
                     if(this.battle.relics.active[96]){
-                        this.battle.combatants[0].block+=3
+                        this.battle.combatants[0].addBlock(3)
                     }
                 }
                 this.battle.discard.cards.push(copyCard(this.cards[e]))

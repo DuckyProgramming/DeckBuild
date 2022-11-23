@@ -148,7 +148,7 @@ class battle{
             this.combatants[0].status.main[30]+=8
         }
         if(this.relics.active[7]){
-            this.combatants[0].block+=10
+            this.combatants[0].addBlock(10)
         }
         if(this.relics.active[8]&&this.random.rested){
             this.mana.main+=2
@@ -188,7 +188,7 @@ class battle{
         }
         if(this.relics.active[89]){
             this.combatants[0].status.main[35]+=4
-            this.combatants[0].block+=4
+            this.combatants[0].addBlock(4)
         }
         if(this.relics.active[98]){
             this.hand.add(findCard('Shiv'),0,0)
@@ -536,15 +536,15 @@ class battle{
                     if(f==24){
                         this.combatants[e].take(this.combatants[e].status.main[f],e)
                     }else if(f==35){
-                        this.combatants[e].block+=this.combatants[e].status.main[f]
+                        this.combatants[e].addBlock(this.combatants[e].status.main[f])
                     }else if(f==42){
                         this.combatants[e].boost.main[0]-=this.combatants[e].status.main[f]
                     }else if(f==49&&this.combatants[e].armed==0){
                         this.combatants[e].armed=1
                     }else if(f==50&&this.combatants[e].armed==1){
-                        this.combatants[e].block+=this.combatants[e].status.main[50]
+                        this.combatants[e].addBlock(this.combatants[e].status.main[50])
                     }else if(f==61&&this.combatants[e].stance==1){
-                        this.combatants[e].block+=this.combatants[e].status.main[61]
+                        this.combatants[e].addBlock(this.combatants[e].status.main[61])
                     }
                 }
                 if((f==11||f==37)&&this.combatants[e].status.main[f]>0){
@@ -574,7 +574,7 @@ class battle{
         this.combatants[0].boost.main[0]+=this.remember[0]-this.remember[1]+this.combatants[0].status.main[39]
         this.combatants[0].boost.main[1]+=this.remember[2]
         this.combatants[0].boost.main[2]-=this.remember[3]
-        this.combatants[0].block+=this.remember[4]+this.combatants[0].status.main[40]
+        this.combatants[0].addBlock(this.remember[4]+this.combatants[0].status.main[40])
         for(e=0;e<this.combatants[0].status.main[14];e++){
             this.hand.add(findCard('Smite'),0,0)
         }
@@ -585,10 +585,10 @@ class battle{
             this.mana.main++
         }
         if(this.relics.active[45]&&this.counter.turn==1){
-            this.combatants[0].block+=14
+            this.combatants[0].addBlock(14)
         }
         if(this.relics.active[70]&&this.counter.turn==2){
-            this.combatants[0].block+=18
+            this.combatants[0].addBlock(18)
         }
         if(this.relics.active[88]&&this.counter.turn==6){
             for(e=1,le=this.combatants.length;e<le;e++){
@@ -734,7 +734,7 @@ class battle{
                 this.combatants[0].boost.main[2]++
             }
             if(this.random.attacks%3==0&&this.relics.active[52]){
-                this.combatants[0].block+=4
+                this.combatants[0].addBlock(4)
             }
             if(this.random.attacks%3==0&&this.relics.active[56]){
                 this.combatants[0].boost.main[0]++
@@ -796,7 +796,7 @@ class battle{
             }
         }
         if(this.combatants[0].status.main[23]>0){
-            this.combatants[0].block+=this.combatants[0].status.main[23]
+            this.combatants[0].addBlock(this.combatants[0].status.main[23])
         }
     }
     randomDiscard(){
@@ -931,7 +931,7 @@ class battle{
                             }
                         break
                         case 3:
-                            this.combatants[0].block+=12*this.random.potionEffectiveness
+                            this.combatants[0].addBlock(12*this.random.potionEffectiveness)
                         break
                         case 4:
                             this.combatants[0].life=min(this.combatants[0].life+this.combatants[0].base.life*0.2*this.random.potionEffectiveness,this.combatants[0].base.life)

@@ -362,6 +362,8 @@ class card{
             case 304: this.desc+='Gain '+this.damage+' Strength\nCannot Add Block\nFor '+this.alt+' Turns'; break
             case 305: this.desc+='Add '+this.damage+' Block\nCounter Once With\nPull Collision\nfor '+this.alt+' Damage'; break
             case 306: this.desc+='Counter '+this.damage+' All\nCounter Throw'; break
+            case 307: this.desc+='Add '+this.damage+' Random\nSkill to Your\nHand'; break
+            case 308: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nGain 1 Dodge'; break
             
         }
         if(this.spec==2||this.spec==5||this.spec==9){
