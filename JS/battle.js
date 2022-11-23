@@ -107,6 +107,7 @@ class battle{
         this.drawInitial()
         this.turnDraw()
         this.drawEffect()
+        this.bonusObjective(this.random.class)
         if(this.relics.active[146]){
             for(g=0,lg=this.hand.cards.length;g<lg;g++){
                 this.hand.cards[g].cost=floor(random(0,4))
@@ -140,6 +141,10 @@ class battle{
         transition.scene='map'
         this.map.zone++
         this.setupMap()
+    }
+    bonusObjective(spec){
+        switch(spec){
+        }
     }
     initialReserve(){
         this.reserve.cards=[]
@@ -528,15 +533,9 @@ class battle{
         }else{
             this.mana.main=min(this.mana.max,this.mana.main+this.mana.gen)
         }
-        this.mana.main+=this.combatants[0].status.main[1]
-        this.remember=[0,0,0,0,0]
         if(this.combatants[0].status.main[19]>0){
             this.combatants[0].life=0
         }
-        this.remember[0]+=this.combatants[0].status.main[4]
-        this.remember[1]+=this.combatants[0].status.main[7]
-        this.remember[3]+=this.combatants[0].status.main[8]
-        this.remember[4]+=this.combatants[0].status.main[31]
         this.combatants[0].mantra+=this.combatants[0].status.main[20]
         this.combatants[0].boost.main[2]+=this.combatants[0].status.main[32]
         for(e=0,le=this.combatants.length;e<le;e++){
@@ -563,6 +562,9 @@ class battle{
                     }
                 }
             }
+            this.combatants[e].boost.main[0]+=this.combatants[e].status.main[4]-this.combatants[e].status.main[7]+this.combatants[e].status.main[39]
+            this.combatants[e].boost.main[2]-=this.combatants[e].status.main[8]
+            this.combatants[e].addBlock(this.combatants[e].status.main[31]+this.combatants[0].status.main[40])
             for(f=0,lf=this.combatants[e].status.main.length;f<lf;f++){
                 if(this.combatants[e].status.main[f]>0){
                     if(f==24){
@@ -594,7 +596,7 @@ class battle{
                     f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&
                     f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=50&&f!=51&&f!=52&&
                     f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&f!=63&&
-                    f!=68&&f!=69){
+                    f!=68&&f!=69&&f!=70){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }else if(f==67){
@@ -605,10 +607,6 @@ class battle{
             }
             this.combatants[e].turnBuff()
         }
-        this.combatants[0].boost.main[0]+=this.remember[0]-this.remember[1]+this.combatants[0].status.main[39]
-        this.combatants[0].boost.main[1]+=this.remember[2]
-        this.combatants[0].boost.main[2]-=this.remember[3]
-        this.combatants[0].addBlock(this.remember[4]+this.combatants[0].status.main[40])
         for(e=0;e<this.combatants[0].status.main[14];e++){
             this.hand.add(findCard('Smite'),0,0)
         }
@@ -837,6 +835,13 @@ class battle{
         }
         if(this.combatants[0].status.main[23]>0){
             this.combatants[0].addBlock(this.combatants[0].status.main[23])
+        }
+    }
+    afterPlayCard(){
+        for(g=1,lg=this.combatants.length;g<lg;g++){
+            if(this.combatants[g].status.main[70]>0){
+                this.combatants[0].take(this.combatants[g].status.main[70],g)
+            }
         }
     }
     randomDiscard(){
@@ -1820,7 +1825,7 @@ class battle{
                     this.map.scrollGoal+=100
                     transition.trigger=true
                     switch(this.map.main[e][f]){
-                        /*case 0:
+                        case 0:
                             transition.scene='battle'
                             this.random.class=0
                             setupEncounter(current,zones[this.map.zone].encounters[floor(random(0,zones[this.map.zone].encounters.length))])
@@ -1866,7 +1871,7 @@ class battle{
                             if(this.relics.active[18]){
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
                             }
-                        break*/
+                        break
                         case 5:
                             transition.scene='battle'
                             this.random.class=2

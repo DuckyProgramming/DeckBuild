@@ -1620,16 +1620,23 @@ class attack{
                 break
                 case 9:
                     this.battle.combatants[0].take(this.damage,this.user)
+                    this.attacks.push([1,12,this.user,this.damage])
                     if(this.battle.combatants[0].block<=0){
                         this.battle.combatants[0].status.main[11]+=this.alt
                     }
-                    this.attacks.push([1,12,this.user,this.damage])
                 break
                 case 10:
                     this.battle.combatants[0].take(this.damage,this.user)
                     this.attacks.push([1,12,this.user,this.damage])
-                    this.battle.drop.addDrop(findCard('Heavy\nBleed'),0,stage.playerNumber+1)
-                    this.battle.reserve.addShuffle(findCard('Heavy\nBleed'),0,stage.playerNumber+1)
+                    if(this.battle.combatants[0].block<=0){
+                        this.battle.drop.addDrop(findCard(this.alt),0,stage.playerNumber+1)
+                        this.battle.reserve.addShuffle(findCard(this.alt),0,stage.playerNumber+1)
+                    }
+                break
+                case 11:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        this.battle.combatants[g].status.main[4]+=this.damage
+                    }
                 break
             }
         }

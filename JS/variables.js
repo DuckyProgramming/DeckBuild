@@ -1937,9 +1937,11 @@ types={
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
         {name:'Slime',alt:'',life:30,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,0,0],class:0,buff:0},
         {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0,buff:0},
-        {name:'Roger Reviv',alt:'',life:150,height:75,behavior:1,attacks:[1,9,3,10],damage:[15,4,2,20],altAttack:[0,6,9,0],class:0,buff:1},
+        {name:'Roger Reviv',alt:'',life:150,height:75,behavior:1,attacks:[1,9,3,10],damage:[15,4,2,20],altAttack:[0,6,9,'Heavy\nBleed'],class:0,buff:1},
         {name:'Gangster',alt:'',life:40,height:75,behavior:0,attacks:[1,8],damage:[8,6],altAttack:[0,0],class:0,buff:2},
-        //gangster
+        {name:'Batter',alt:'',life:48,height:75,behavior:0,attacks:[10,8,11],damage:[12,6,2],altAttack:['Concussion',0,0],class:0,buff:0},
+        {name:'Slippery Gangster',alt:'',life:36,height:75,behavior:0,attacks:[1,3],damage:[8,3],altAttack:[0,2],class:0,buff:3},
+        {name:'Gangster Gunner',alt:'',life:24,height:75,behavior:0,attacks:[1],damage:[4],altAttack:[0],class:0,buff:4},
         //bleed?
         //plant lol
     ],attack:[
@@ -1963,12 +1965,12 @@ types={
             combatants:[5,0,0,0,0,0],
             reinforce:[],
             threshold:2,
-            objective:[[0,0,0,0],[2,5,5,0]],
+            objective:[[0,0,0,0]],
         },{
-            combatants:[5,5,5,0,0,0],
+            combatants:[5,5,0,0,0,0],
             reinforce:[5],
             threshold:3,
-            objective:[[0,0,1,0],[1,5,3,10]],
+            objective:[[0,0,0,0]],
         },{
             combatants:[6,6,6,0,0,0],
             reinforce:[6,6,6,6,6],
@@ -1999,6 +2001,26 @@ types={
             reinforce:[12],
             threshold:2,
             objective:[[0,0,0,0]],
+        },{
+            combatants:[13,0,0,0,0,0],
+            reinforce:[12,13,12],
+            threshold:2,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[12,0,0,0,0,0],
+            reinforce:[14,14],
+            threshold:2,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[12,13,0,0,0,0],
+            reinforce:[15,12],
+            threshold:3,
+            objective:[[0,0,1,0]],
+        },{
+            combatants:[16,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,
+            objective:[[0,0,1,0]],
         },
     ],relic:[
         {

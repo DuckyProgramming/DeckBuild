@@ -336,6 +336,7 @@ class group{
                             }else{
                                 this.battle.attack.update(this.battle.attack.type,this.battle.attack.level,0)
                             }
+                            this.battle.afterPlayCard()
                             for(f=0,lf=this.cards.length;f<lf;f++){
                                 if(this.cards[f].trigger){
                                     this.cards[f].used=true
@@ -407,6 +408,7 @@ class group{
                         if(inputs.rel.y>this.cards[e].position.y+10){
                             this.battle.playCard()
                             this.battle.attack.update(2,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
                             this.cards[e].used=true
                             this.trigger=false
                         }else{
@@ -416,17 +418,20 @@ class group{
                         if(inputs.rel.y>this.cards[e].position.y+10){
                             this.battle.playCard()
                             this.battle.attack.update(103,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
                             this.cards[e].used=true
                             this.trigger=false
                         }else{
                             this.battle.playCard()
                             this.battle.attack.update(100,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
                             this.cards[e].used=true
                             this.trigger=false
                         }
                     }else if(this.cards[e].target==0){
                         this.battle.playCard()
                         this.battle.attack.update(this.cards[e].attack,this.cards[e].level,0)
+                        this.battle.afterPlayCard()
                         this.cards[e].used=true
                         this.trigger=false
                         if(this.battle.attack.type==231){
