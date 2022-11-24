@@ -89,6 +89,10 @@ class combatant{
 			case 4:
 				this.status.main[70]=2
 			break
+			case 5:
+				this.block+=40
+				this.status.main[47]+=99
+			break
 		}
 	}
 	turnBuff(){
@@ -106,6 +110,9 @@ class combatant{
 			break
 			case 3:
 				this.status.main[6]=1
+			break
+			case 6:
+				this.status.main[13]=1
 			break
 		}
 	}
@@ -941,6 +948,55 @@ class combatant{
 					this.layer.fill(80,160,80,this.fade)
 					this.layer.ellipse(-15,-3,33,15)
 					this.layer.ellipse(15,-3,33,15)
+				break
+				case 17:
+					this.layer.noStroke()
+					this.layer.fill(225*7/8,220*7/8,200*7/8,this.fade)
+					this.layer.ellipse(sin(0)*24,cos(0)*24,10,10)
+					this.layer.ellipse(sin(120)*24,cos(120)*24,10,10)
+					this.layer.ellipse(sin(240)*24,cos(240)*24,10,10)
+					this.layer.fill(225,220,200,this.fade)
+					this.layer.ellipse(0,0,30,30)
+					this.layer.fill(235,120,110,this.fade)
+					this.layer.ellipse(sin(0)*24,cos(0)*24,4,4)
+					this.layer.ellipse(sin(120)*24,cos(120)*24,4,4)
+					this.layer.ellipse(sin(240)*24,cos(240)*24,4,4)
+					this.layer.noFill()
+					this.layer.stroke(235,120,110,this.fade)
+					this.layer.strokeWeight(3)
+					for(g=0;g<3;g++){
+						this.layer.arc(8,0,16,12,-180,-30)
+						this.layer.rotate(120)
+					}
+				break
+				case 18:
+					this.layer.stroke(125,200,125,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-6,-30,-12,0)
+					this.layer.line(6,-30,12,0)
+					this.layer.line(-12,-60,-25,-30)
+					this.layer.line(12,-60,25,-30)
+					this.layer.noStroke()
+					this.layer.fill(125,200,125,this.fade)
+					this.layer.ellipse(0,-51,30,54)
+					this.layer.fill(75,150,75,this.fade)
+					this.layer.ellipse(8,-60,4,4)
+					this.layer.ellipse(9,-51,4,4)
+					this.layer.ellipse(8,-42,4,4)
+					this.layer.ellipse(-2,-60,4,4)
+					this.layer.ellipse(-1,-51,4,4)
+					this.layer.ellipse(-2,-42,4,4)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-90,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-87,4,4)
+					this.layer.ellipse(12,-87,4,4)
+					this.layer.stroke(40,this.fade)
+					this.layer.strokeWeight(1)
+					this.layer.fill(255,this.fade/5)
+					this.layer.ellipse(4,-86,6,5)
+					this.layer.ellipse(12,-86,6,5)
+					this.layer.line(7,-86,9,-86)
 				break
 				case 100:
 					this.layer.stroke(80,this.fade)

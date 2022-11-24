@@ -1647,6 +1647,20 @@ class attack{
                     this.battle.drop.addDrop(findCard('Parasite'),0,stage.playerNumber+2)
                     this.battle.deck.add(findCard('Parasite'),0,stage.playerNumber+2)
                 break
+                case 14:
+                    this.battle.combatants[0].take(this.damage,this.user)
+                    this.attacks.push([1,12,this.user,this.damage])
+                    this.battle.combatants[this.user].block+=this.alt
+                break
+                case 15:
+                    this.battle.combatants[0].take(this.damage,this.user)
+                    this.attacks.push([1,12,this.user,this.damage])
+                    this.battle.combatants[0].boost.main[0]-=this.alt
+                break
+                case 16:
+                    this.battle.combatants[this.user].block+=this.damage
+                    this.battle.combatants[this.user].status.main[47]+=this.alt+1
+                break
             }
         }
     }

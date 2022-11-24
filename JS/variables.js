@@ -1926,7 +1926,7 @@ types={
         ],
         },
     ],combatant:[
-        {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},//0
         {name:'Agent',alt:'',life:80,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
         {name:'Duelist',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
         {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
@@ -1936,15 +1936,15 @@ types={
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
         {name:'Slime',alt:'',life:30,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,0,0],class:0,buff:0},
-        {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0,buff:0},
+        {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0,buff:0},//10
         {name:'Roger Reviv',alt:'',life:150,height:75,behavior:1,attacks:[1,9,3,10],damage:[15,4,2,20],altAttack:[0,6,9,'Heavy\nBleed'],class:0,buff:1},
         {name:'Gangster',alt:'',life:40,height:75,behavior:0,attacks:[1,8],damage:[8,6],altAttack:[0,0],class:0,buff:2},
         {name:'Batter',alt:'',life:48,height:75,behavior:0,attacks:[10,8,11],damage:[12,6,2],altAttack:['Concussion',0,0],class:0,buff:0},
         {name:'Slippery Gangster',alt:'',life:36,height:75,behavior:0,attacks:[1,3],damage:[8,3],altAttack:[0,2],class:0,buff:3},
         {name:'Gangster Gunner',alt:'',life:24,height:75,behavior:0,attacks:[1],damage:[4],altAttack:[0],class:0,buff:4},
-        {name:'Snaky Plant',alt:'',life:120,height:90,behavior:1,attacks:[1,3,13,12],damage:[18,4,0,6],altAttack:[0,4,0,0],class:0,buff:0},
-        //bleed?
-        //plant lol
+        {name:'Snaky Plant',alt:'',life:120,height:75,behavior:1,attacks:[1,3,13,12],damage:[18,4,0,6],altAttack:[0,4,0,0],class:1,buff:0},
+        {name:'Spheron',alt:'',life:20,height:60,behavior:0,attacks:[3,8,14,15],damage:[10,25,10,10],altAttack:[2,0,15,2],class:0,buff:5},
+        {name:'Enforcer',alt:'',life:80,height:90,behavior:0,attacks:[1,3,16],damage:[18,8,16],altAttack:[0,2,1],class:1,buff:6},
     ],attack:[
         {class:0},
         {class:0},
@@ -2022,6 +2022,16 @@ types={
             reinforce:[],
             threshold:2,
             objective:[[0,0,1,0]],
+        },{
+            combatants:[17,0,0,0,0,0],
+            reinforce:[],
+            threshold:3,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[18,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,
+            objective:[[0,0,0,0]],
         },
     ],relic:[
         {
