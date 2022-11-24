@@ -85,8 +85,8 @@ types={
         ],
         },{name:'Melt',rarity:0,list:1,
         stats:[
-            {damage:10,alt:0,cost:1,attack:32,target:1,spec:0,class:0},
-            {damage:14,alt:0,cost:1,attack:32,target:1,spec:0,class:0},
+            {damage:10,alt:0,cost:2,attack:32,target:1,spec:0,class:0},
+            {damage:14,alt:0,cost:2,attack:32,target:1,spec:0,class:0},
         ],
         },{name:'Nerve\nStrike',rarity:0,list:1,
         stats:[
@@ -105,8 +105,8 @@ types={
         ],
         },{name:'Hammer\nFist',rarity:0,list:1,
         stats:[
+            {damage:4,alt:1,cost:1,attack:37,target:1,spec:0,class:0},
             {damage:7,alt:1,cost:1,attack:37,target:1,spec:0,class:0},
-            {damage:10,alt:1,cost:1,attack:37,target:1,spec:0,class:0},
         ],
         },{name:'Strengthen',rarity:0,list:1,
         stats:[
@@ -235,8 +235,8 @@ types={
         ],
         },{name:'Punch-Kick\nCombo',rarity:0,list:1,
         stats:[
-            {damage:10,alt:4,cost:1,attack:137,target:1,spec:0,class:0},
-            {damage:15,alt:6,cost:1,attack:137,target:1,spec:0,class:0},
+            {damage:10,alt:4,cost:2,attack:137,target:1,spec:0,class:0},
+            {damage:15,alt:6,cost:2,attack:137,target:1,spec:0,class:0},
         ],
         },{name:'Suplex',rarity:1,list:1,
         stats:[
@@ -390,8 +390,8 @@ types={
         ],
         },{name:'Snap\nStrike',rarity:0,list:1,
         stats:[
-            {damage:4,alt:2,cost:1,attack:274,target:1,spec:0,class:0},
-            {damage:6,alt:4,cost:1,attack:274,target:1,spec:0,class:0},
+            {damage:4,alt:4,cost:1,attack:274,target:1,spec:0,class:0},
+            {damage:6,alt:8,cost:1,attack:274,target:1,spec:0,class:0},
         ],
         },{name:'Utility\nPack',rarity:1,list:1,
         stats:[
@@ -1962,82 +1962,87 @@ types={
         {
             combatants:[0,0,0,0,0,0],
             reinforce:[],
-            threshold:0,
+            threshold:0,class:-1,zone:0,
             objective:[],
-        },{
+        },{//0
             combatants:[5,0,0,0,0,0],
             reinforce:[],
-            threshold:2,
+            threshold:2,class:-1,zone:0,
             objective:[[0,0,0,0]],
         },{
             combatants:[5,5,0,0,0,0],
             reinforce:[5],
-            threshold:3,
+            threshold:3,class:0,zone:0,
             objective:[[0,0,0,0]],
         },{
             combatants:[6,6,6,0,0,0],
             reinforce:[6,6,6,6,6],
-            threshold:6,
+            threshold:6,class:-1,zone:0,
             objective:[[0,0,0,0]],
         },{
             combatants:[7,7,8,0,0,0],
             reinforce:[],
-            threshold:4,
+            threshold:4,class:-1,zone:0,
             objective:[[0,0,0,0]],
         },{
             combatants:[9,9,0,0,0,0],
             reinforce:[],
-            threshold:3,
+            threshold:3,class:0,zone:0,
             objective:[[0,0,0,0]],
-        },{
+        },{//5
             combatants:[10,10,0,0,0,0],
             reinforce:[],
-            threshold:3,
-            objective:[[0,0,0,0]],
+            threshold:3,class:1,zone:0,
+            objective:[[0,0,1,0]],
         },{
             combatants:[11,0,0,0,0,0],
             reinforce:[],
-            threshold:0,
+            threshold:0,class:2,zone:0,
             objective:[[0,0,6,0]],
         },{
             combatants:[12,12,0,0,0,0],
             reinforce:[12],
-            threshold:2,
+            threshold:2,class:0,zone:0,
             objective:[[0,0,0,0]],
         },{
             combatants:[13,0,0,0,0,0],
             reinforce:[12,13,12],
-            threshold:2,
+            threshold:2,class:1,zone:0,
             objective:[[0,0,0,0]],
         },{
             combatants:[12,0,0,0,0,0],
             reinforce:[14,14],
-            threshold:2,
-            objective:[[0,0,0,0]],
-        },{
+            threshold:2,class:1,zone:0,
+            objective:[[0,0,1,0]],
+        },{//10
             combatants:[12,13,0,0,0,0],
             reinforce:[15,12],
-            threshold:3,
+            threshold:3,class:1,zone:0,
             objective:[[0,0,1,0]],
         },{
             combatants:[16,0,0,0,0,0],
             reinforce:[],
-            threshold:2,
+            threshold:2,class:1,zone:0,
             objective:[[0,0,1,0]],
         },{
             combatants:[17,0,0,0,0,0],
             reinforce:[],
-            threshold:3,
-            objective:[[0,0,0,0]],
+            threshold:3,class:1,zone:0,
+            objective:[[0,0,1,0]],
         },{
             combatants:[19,0,0,0,0,0],
             reinforce:[19,18,19],
-            threshold:3,
-            objective:[[0,0,0,0]],
+            threshold:3,class:1,zone:0,
+            objective:[[0,0,1,0]],
         },{
-            combatants:[20,20,20,0,0,0],
+            combatants:[20,20,0,0,0,0],
             reinforce:[20],
-            threshold:3,
+            threshold:3,class:1,zone:0,
+            objective:[[0,0,1,0]],
+        },{//15
+            combatants:[19,0,0,0,0,0],
+            reinforce:[19],
+            threshold:2,class:0,zone:0,
             objective:[[0,0,0,0]],
         },
     ],relic:[
@@ -2664,7 +2669,7 @@ types={
         },
     ],event:[
         {
-            name:'',id:0,
+            name:'',id:0,list:-1,
             pages:[
                 {
                     desc:"",
@@ -2674,7 +2679,7 @@ types={
                 }
             ], 
         },{
-            name:'Dropped Book',id:1,
+            name:'Dropped Book',id:1,list:0,
             pages:[
                 {
                     desc:"You come across what appears to be a book lying in the dirt.\n"+
@@ -2698,7 +2703,7 @@ types={
                 },
             ],
         },{
-            name:'Bonus',id:2,
+            name:'Bonus',id:2,list:1,
             pages:[
                 {
                     desc:"You receive a phone call from the Ground Sector Commander. He sounds happy.\n"+
@@ -2731,7 +2736,7 @@ types={
                 },
             ],
         },{
-            name:'MSB Agent',id:3,
+            name:'MSB Agent',id:3,list:1,
             pages:[
                 {
                     desc:"You receive indication that another Agent, working for the Management Security Bureau,\n"+
@@ -2755,7 +2760,7 @@ types={
                 },
             ],
         },{
-            name:'Unstable Building',id:4,
+            name:'Unstable Building',id:4,list:1,
             pages:[
                 {
                     desc:"You enter a building, looking for a piece of intel. But as soon as you step inside,\n"+
@@ -2778,7 +2783,7 @@ types={
                 }
             ],
         },{
-            name:'Bodyguard Business',id:5,
+            name:'Bodyguard Business',id:5,list:1,
             pages:[
                 {
                     desc:"You receive word that Governor Lirestont of the Tersosi system has arrived on-world to make a speech.\n"+
@@ -2816,7 +2821,7 @@ types={
                 },
             ],
         },{
-            name:'Curious Soldier',id:6,
+            name:'Shady Soldier',id:6,list:1,
             pages:[
                 {
                     desc:"On break, you encounter a Management soldier hanging out in town. Recognizing your uniform, he pulls you over.\n"+
@@ -2848,7 +2853,7 @@ types={
                 },
             ],
         },{
-            name:'Bar Fight',id:7,
+            name:'Bar Fight',id:7,list:0,
             pages:[
                 {
                     desc:"You arrive in a bar, hoping to enjoy the evening. But you are rudely awakened when a man touches your shoulder.\n"+
@@ -2876,7 +2881,7 @@ types={
                 },
             ],
         },{
-            name:'Visions of the Past',id:8,
+            name:'Visions of the Past',id:8,list:4,
             pages:[
                 {
                     desc:"As you walk, your head suddenly fills with thoughts of your past. Images flash by before you can remember much.\n"+
@@ -2917,7 +2922,7 @@ types={
                 },
             ],
         },{
-            name:'Mountain Dojo',id:9,
+            name:'Mountain Dojo',id:9,list:2,
             pages:[
                 {
                     desc:"You've been here once before, in your youth. That time, you had a reason to go. Now, that's no longer true.\n"+
@@ -2933,7 +2938,7 @@ types={
                 },
             ],
         },{
-            name:'Getting Away',id:10,
+            name:'Getting Away',id:10,list:1,
             pages:[
                 {
                     desc:"Chasing a possible suspect, you round the corner only to see him grab a motorbike and speed off.\n"+
@@ -2968,7 +2973,7 @@ types={
                 },
             ],
         },{
-            name:'Abandoned Forge',id:11,
+            name:'Abandoned Forge',id:11,list:0,
             pages:[
                 {
                     desc:"You come across an abandoned forge, complete with tools. Looks like nobody's used it for a long time.\n"+
@@ -2995,7 +3000,7 @@ types={
                 },
             ],
         },{
-            name:'Monkey Master',id:12,
+            name:'Monkey Master',id:12,list:0,
             pages:[
                 {
                     desc:"You're walking through a clearing in the forest when you hear some rustling in the leaves.\n"+
@@ -3011,7 +3016,7 @@ types={
                 },
             ],
         },{
-            name:'Cliffs',id:13,
+            name:'Cliffs',id:13,list:0,
             pages:[
                 {
                     desc:"When crossing a large chasm, you fail to watch your step, and the rock you're standing on collapses beneath your feet,\n"+
@@ -3066,29 +3071,13 @@ listing={
 }
 zones=[
     {
-        encounters:[1,5],
-        elites:[2,6],
+        encounters:[[],[],[]],
         special:[4,3],
-        bosses:[7],
-        events:[
-            [],
-            [],
-            [],
-            [],
-            [],
-        ],
+        events:[[],[],[],[],[]],
     },{
-        encounters:[],
-        elites:[],
+        encounters:[[],[],[]],
         special:[],
-        bosses:[],
-        events:[
-            [],
-            [],
-            [],
-            [],
-            [],
-        ],
+        events:[[],[],[],[],[]],
     },
 ]
 stage={scale:0,quality:1,scene:'menu',playerNumber:4}

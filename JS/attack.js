@@ -1468,7 +1468,7 @@ class attack{
                 break
                 case 301:
                     this.battle.combatants[0].addBlock(this.damage)
-                    this.battle.combatants[0].status[6]+=this.alt
+                    this.battle.combatants[0].status.main[6]+=this.alt
                     this.battle.turn=this.target+100
                 break
                 case 302:

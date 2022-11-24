@@ -41,11 +41,11 @@ class battle{
         this.deck.initial(this.player)
     }
     setupTesting(type){
+        this.initialEvent()
+        this.setupMap()
         stage.scene='battle'
         setupEncounter(this,type)
         this.create()
-        this.initialEvent()
-        this.setupMap()
         
         //current.getRelic(156)
 
@@ -146,9 +146,9 @@ class battle{
         switch(spec){
             case 0:
                 if(floor(random(0,4))<3){
-                    this.objective.push([1,floor(random(2,9)),floor(random(1,7)),0])
+                    this.objective.push([1,floor(random(2,9)),floor(random(2,6)),0])
                 }else{
-                    this.objective.push([2,floor(random(1,5))*5,floor(random(1,7)),0])
+                    this.objective.push([2,floor(random(1,5))*5,floor(random(2,6)),0])
                 }
                 switch(this.objective[this.objective.length-1][2]){
                     case 2:
@@ -158,6 +158,26 @@ class battle{
                         this.objective[this.objective.length-1][3]=floor(random(1,5))*5
                     break
                 }
+            break
+            case 1:
+                for(g=0;g<2;g++){
+                    if(floor(random(0,4))<3){
+                        this.objective.push([1,floor(random(2,9)),floor(random(2,6)),0])
+                    }else{
+                        this.objective.push([2,floor(random(1,5))*5,floor(random(2,6)),0])
+                    }
+                    switch(this.objective[this.objective.length-1][2]){
+                        case 2:
+                            this.objective[this.objective.length-1][3]=floor(random(1,7))*10
+                        break
+                        case 3:
+                            this.objective[this.objective.length-1][3]=floor(random(1,5))*5
+                        break
+                    }
+                }
+            break
+            case 2:
+                this.objective.push(1,10,3,40)
             break
         }
     }
@@ -610,10 +630,10 @@ class battle{
                     this.hand.add(findCard('Miracle'),1,0)
                     this.combatants[e].status.main[f]--
                 }else if(
-                    f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&
-                    f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=50&&f!=51&&f!=52&&
-                    f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&f!=63&&
-                    f!=68&&f!=69&&f!=70&&f!=72){
+                    f!=2&&f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&
+                    f!=35&&f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=50&&f!=51&&
+                    f!=52&&f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&
+                    f!=63&&f!=68&&f!=69&&f!=70&&f!=72){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }else if(f==67){
@@ -1504,7 +1524,9 @@ class battle{
             if(pointInsideBox({position:inputs.rel},{position:{x:450,y:this.objective.length*60+140},width:150,height:40})){
                 transition.trigger=true
                 transition.scene='map'
-                this.map.complete[this.map.position[0]][this.map.position[1]]=1
+                if(this.map.position[0]>=0){
+                    this.map.complete[this.map.position[0]][this.map.position[1]]=1
+                }   
                 if(this.relics.active[3]){
                     this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+2)
                 }
@@ -1847,13 +1869,13 @@ class battle{
                         case 0:
                             transition.scene='battle'
                             this.random.class=0
-                            setupEncounter(current,zones[this.map.zone].encounters[floor(random(0,zones[this.map.zone].encounters.length))])
+                            setupEncounter(current,zones[this.map.zone].encounters[0][floor(random(0,zones[this.map.zone].encounters[0].length))])
                             this.create()
                         break
                         case 1:
                             transition.scene='battle'
                             this.random.class=1
-                            setupEncounter(current,zones[this.map.zone].elites[floor(random(0,zones[this.map.zone].elites.length))])
+                            setupEncounter(current,zones[this.map.zone].encounters[1][floor(random(0,zones[this.map.zone].encounters[1].length))])
                             this.create()
                             if(this.relics.active[23]){
                                 for(g=1,lg=this.combatants.length;g<lg;g++){
@@ -1876,7 +1898,7 @@ class battle{
                         break
                         case 3:
                             transition.scene='event'
-                            e=this.eventList[floor(random(0,this.eventList.length))]
+                            e=floor(random(0,this.eventList.length))
                             this.event=this.eventList[e]
                             this.eventList.splice(e,1)
                             this.page=0
@@ -1894,7 +1916,7 @@ class battle{
                         case 5:
                             transition.scene='battle'
                             this.random.class=2
-                            setupEncounter(current,zones[this.map.zone].bosses[floor(random(0,zones[this.map.zone].bosses.length))])
+                            setupEncounter(current,zones[this.map.zone].encounters[2][floor(random(0,zones[this.map.zone].encounters[2].length))])
                             this.create()
                             if(this.relics.active[53]){
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+25)

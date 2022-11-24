@@ -330,7 +330,7 @@ class card{
             case 271: this.desc+='Deal '+this.damage+' Damage\nIf a Card Has\nBeen Discarded\nThis Turn,\nGain '+this.alt+' Energy'; break
             case 272: this.desc+='Double Your\nCombo'; break
             case 273: this.desc+='Deal '+this.damage+' Damage\nto 2 Enemies\nPush Collision\nfor '+this.alt+' Damage\nin 2 Directions'; break
-            case 274: this.desc+='Deal '+this.damage+' Damage\nNext Attack Deals\n'+this.damage+' More Damage'; break
+            case 274: this.desc+='Deal '+this.damage+' Damage\nNext Attack Deals\n'+this.alt+' More Damage'; break
             case 275: this.desc+='Gain '+this.damage+' Combo\nWhen Discarded,\nGain '+this.alt+' Combo'; break
             case 276: this.desc+='Apply -'+this.damage+' Damage\nto All Enemies'; break
             case 277: this.desc+='Gain '+this.damage+' Strength\nEvery Turn'; break
@@ -357,7 +357,7 @@ class card{
             case 298: this.desc+='Deal '+this.damage+' Damage\nIf Balance is\nNegative, Add a\nFury to Your Hand\n'+nfp(2)+' Balance'; break
             case 299: this.desc+='Add '+this.damage+' Block\nIf Balance is\nPositive, Add a\nQuiet to Your Hand\n'+nfp(-2)+' Balance'; break
             case 300: this.desc+='Convert Combo/'+this.damage+'\nto Strength\nEnd Combo'; break
-            case 301: this.desc+='Add '+this.damage+' Block\nGain '+this.damage+' Dodge\nCause an Enemy\nto Attack'; break
+            case 301: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Dodge\nCause an Enemy\nto Attack'; break
             case 302: this.desc+='Take '+this.damage+' Damage\nGain '+this.alt+' Strength'; break
             case 303: this.desc+='Discard 1 Card\nAdd '+this.damage+' Random\nCards'; break
             case 304: this.desc+='Gain '+this.damage+' Strength\nCannot Add Block\nFor '+this.alt+' Turns'; break

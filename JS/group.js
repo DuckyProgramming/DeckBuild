@@ -13,19 +13,19 @@ class group{
         this.anim={discarding:0,selectCombo:false}
     }
     initial(type){
-        /*for(e=0;e<20;e++){
-            this.add(floor(random(1,118)),0,this.battle.player)
-        }*/
+        for(e=0;e<20;e++){
+            this.add(floor(random(3,103)),0,this.battle.player)
+        }
         switch(type){
             case 1:
-                for(e=0;e<4;e++){
+                /*for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player) 
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Big\nStrike'),0,this.battle.player)
-                this.add(findCard('Triple\nPunch'),0,this.battle.player)
+                this.add(findCard('Triple\nPunch'),0,this.battle.player)*/
                 /*this.add(98,0,this.battle.player)
                 this.add(99,0,this.battle.player)
                 this.add(100,0,this.battle.player)

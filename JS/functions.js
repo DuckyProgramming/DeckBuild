@@ -211,7 +211,7 @@ function copyCard(base){
 function reformCard(base){
 	return new card(base.layer,base.position.x,base.position.y,base.type,base.level,base.color)
 }
-function generateListing(cards){
+function generateListing(cards,encounters,events){
 	for(a=0,la=listing.card.length;a<la;a++){
 		for(b=0;b<4;b++){
 			listing.card[a].push([])
@@ -225,6 +225,18 @@ function generateListing(cards){
 			}else{
 				listing.card[cards[a].list][cards[a].rarity].push(a)
 				listing.card[13][cards[a].rarity].push(a)
+			}
+		}
+	}
+	for(a=0,la=encounters.length;a<la;a++){
+		if(encounters[a].class>=0){
+			zones[encounters[a].zone].encounters[encounters[a].class].push(a)
+		}
+	}
+	for(a=0,la=events.length;a<la;a++){
+		if(events[a].list>=0){
+			for(b=0,lb=zones.length;b<lb;b++){
+				zones[b].events[events[a].list].push(a)
 			}
 		}
 	}
