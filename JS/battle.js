@@ -144,6 +144,21 @@ class battle{
     }
     bonusObjective(spec){
         switch(spec){
+            case 0:
+                if(floor(random(0,4))<3){
+                    this.objective.push([1,floor(random(2,9)),floor(random(1,7)),0])
+                }else{
+                    this.objective.push([2,floor(random(1,5))*5,floor(random(1,7)),0])
+                }
+                switch(this.objective[this.objective.length-1][2]){
+                    case 2:
+                        this.objective[this.objective.length-1][3]=floor(random(1,7))*10
+                    break
+                    case 3:
+                        this.objective[this.objective.length-1][3]=floor(random(1,5))*5
+                    break
+                }
+            break
         }
     }
     initialReserve(){
@@ -584,6 +599,8 @@ class battle{
                 if((f==11||f==37)&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                     this.combatants[e].status.main[f]--
+                }else if(f==71&&this.combatants[e].status.main[f]>0){
+                    this.combatants[e].take(this.combatants[e].status.main[f],e)
                 }else if(f==38&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].life=min(this.combatants[e].life+this.combatants[e].status.main[f],this.combatants[e].base.life)
                     this.combatants[e].status.main[f]--
@@ -596,7 +613,7 @@ class battle{
                     f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&f!=35&&
                     f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=50&&f!=51&&f!=52&&
                     f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&f!=63&&
-                    f!=68&&f!=69&&f!=70){
+                    f!=68&&f!=69&&f!=70&&f!=72){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }else if(f==67){

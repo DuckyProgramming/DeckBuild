@@ -77,58 +77,71 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 	layer.scale(size)
 	switch(type){
 		case 1:
-			layer.fill(255,50,50,fade)
+			layer.fill(255,50,50,fade*3/4)
 			layer.triangle(-20,0,15,-6,15,6)
 		break
 		case 2: case 4: case 5:
-			layer.fill(125,255,255,fade)
+			layer.fill(125,255,255,fade*3/4)
 			layer.ellipse(0,-3,24,24)
 		break
 		case 3:
-			layer.fill(255,50,50,fade)
+			layer.fill(255,50,50,fade*3/4)
 			layer.triangle(-12,-10,9,-13,9,-7)
 			layer.triangle(-16,0,12,-4,12,4)
 			layer.triangle(-12,10,9,7,9,13)
 		break
 		case 6:
-			layer.fill(150,255,150,fade)
+			layer.fill(150,255,150,fade*3/4)
 			layer.ellipse(0,0,15,15)
-			layer.fill(255,50,50,fade)
+			layer.fill(255,50,50,fade*3/4)
 			layer.triangle(-20,0,15,-6,15,6)
 		break
 		case 7:
-			layer.fill(150,255,150,fade)
+			layer.fill(150,255,150,fade*3/4)
 			layer.triangle(-12,-8,12,-8,0,12)
 		break
 		case 8:
-			layer.fill(150,175,200,fade)
+			layer.fill(150,175,200,fade*3/4)
 			layer.triangle(-8,-5,8,-5,0,-9)
 			layer.arc(0,-5,16,28,0,180)
 		break
 		case 9:
-			layer.fill(200,0,0,fade)
+			layer.fill(200,0,0,fade*3/4)
 			layer.ellipse(0,0,15,15)
-			layer.fill(255,50,50,fade)
+			layer.fill(255,50,50,fade*3/4)
 			layer.triangle(-20,0,15,-6,15,6)
 		break
 		case 10:
-			layer.fill(150,50,50,fade)
+			layer.fill(150,50,50,fade*3/4)
 			layer.ellipse(0,0,15,15)
-			layer.fill(255,50,50,fade)
+			layer.fill(255,50,50,fade*3/4)
 			layer.triangle(-20,0,15,-6,15,6)
 		break
 		case 11:
-			layer.fill(125,255,125,fade)
+			layer.fill(150,255,150,fade*3/4)
+			layer.ellipse(0,-3,24,24)
+		break
+		case 12:
+			layer.fill(150,255,150,fade*3/4)
+			layer.ellipse(0,0,24,24)
+			layer.fill(255,50,50,fade*3/4)
+			layer.triangle(0,0,-15,-9,-9,-15)
+			layer.triangle(0,0,15,-9,9,-15)
+			layer.triangle(0,0,-15,9,-9,15)
+			layer.triangle(0,0,15,9,9,15)
+		break
+		case 13:
+			layer.fill(120,40,120,fade*3/4)
 			layer.ellipse(0,-3,24,24)
 		break
 	}
 	layer.fill(255,fade)
 	layer.textSize(20)
 	switch(type){
-		case 1: case 6: case 7: case 8: case 10:
+		case 1: case 6: case 7: case 8: case 10: case 12:
 			layer.text(damage,0,1)
 		break
-		case 2: case 4: case 5: case 11:
+		case 2: case 4: case 5: case 11: case 13:
 			layer.text('?',0,-2)
 		break
 		case 3:

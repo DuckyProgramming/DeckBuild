@@ -1942,6 +1942,7 @@ types={
         {name:'Batter',alt:'',life:48,height:75,behavior:0,attacks:[10,8,11],damage:[12,6,2],altAttack:['Concussion',0,0],class:0,buff:0},
         {name:'Slippery Gangster',alt:'',life:36,height:75,behavior:0,attacks:[1,3],damage:[8,3],altAttack:[0,2],class:0,buff:3},
         {name:'Gangster Gunner',alt:'',life:24,height:75,behavior:0,attacks:[1],damage:[4],altAttack:[0],class:0,buff:4},
+        {name:'Snaky Plant',alt:'',life:120,height:90,behavior:1,attacks:[1,3,13,12],damage:[18,4,0,6],altAttack:[0,4,0,0],class:0,buff:0},
         //bleed?
         //plant lol
     ],attack:[

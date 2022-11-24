@@ -31,7 +31,7 @@ class combatant{
 			[170,190,210],[255,75,150],[50,125,205],[175,225,175],[150,225,150],[255,105,0],[125,50,125],[140,160,180],[80,40,80],[138,141,207],
 			[139,150,193],[40,95,160],[255,245,15],[195,225,255],[145,155,65],[245,195,65],[240,255,255],[220,240,220],[215,235,255],[20,50,120],
 			[155,235,250],[5,145,250],[150,0,0],[215,210,210],[100,75,150],[255,75,175],[225,175,225],[40,80,120],[255,195,255],[235,125,230],
-			[120,90,120]],infoFade:[],name:[
+			[120,90,120],[60,120,60],[40,80,40]],infoFade:[],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
 			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Mental Fortress','Rush','Every Block Weak All','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Absorb Attacks',
@@ -39,7 +39,7 @@ class combatant{
 			'Metallicize','Add Bleed Once','Weak Per Turn','Counter Stun','Stun','Counter All 3 Times','Exhaust Draw','Block Store','Death Heal','Rearm Next Turn',
 			'Armed Block Per Turn','Energy And Strength Per Hit','Return Played to Draw','Power Draw','Random Common','Passive Orb','Discharge','Power Basic Charge','Random Power','Conditioning',
 			'Miracle+ Gain','Calm Block Per Turn','Constant Damage Down','Shiv Damage','No Blocks','Counter Pull Once','Counter Throw','Downed','Scry Per Turn','Scry Block',
-			'Attack Per Card Played'],class:[
+			'Attack Per Card Played','Take Damage Per Turn','Energy Gen Down'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
@@ -47,7 +47,7 @@ class combatant{
 			1,1,0,1,0,1,1,1,1,1,
 			1,1,1,1,1,1,1,1,1,1,
 			1,1,0,1,0,1,1,0,1,1,
-			1]}
+			1,0,0]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -201,6 +201,7 @@ class combatant{
 					this.layer.ellipse(0,-45,50,50)
 				}
 			}
+			this.layer.noStroke()
 			switch(this.type){
 				case 1:
 					this.layer.stroke(25,30,30,this.fade)
@@ -911,6 +912,35 @@ class combatant{
 					this.layer.strokeWeight(4)
 					this.layer.line(-16,-84,16,-84)
 					this.layer.quad(-12,-84,12,-84,8,-90,-8,-90)
+				break
+				case 16:
+					this.layer.noFill()
+					this.layer.strokeWeight(6)
+					this.layer.stroke(60,120,60,this.fade)
+					this.layer.arc(-24,-6,48,18,-150,0)
+					this.layer.arc(24,-6,48,18,-180,-30)
+					this.layer.stroke(70,140,70,this.fade)
+					this.layer.arc(-36,-6,36,48,-75,0)
+					this.layer.arc(36,-6,36,48,-180,-105)
+					this.layer.strokeWeight(10)
+					this.layer.stroke(90,180,90,this.fade)
+					this.layer.arc(0,-36,12,66,90,255)
+					this.layer.stroke(100,200,100,this.fade)
+					this.layer.arc(0,-42,12,78,-75,90)
+					this.layer.noStroke()
+					this.layer.fill(255,255,50,this.fade)
+					this.layer.ellipse(0,-9,6,12)
+					this.layer.fill(255,100,125,this.fade)
+					this.layer.ellipse(0,-30,18,36)
+					this.layer.noFill()
+					this.layer.stroke(110,220,110,this.fade)
+					this.layer.arc(0,-45,36,84,90,240)
+					this.layer.stroke(120,240,120,this.fade)
+					this.layer.arc(0,-51,36,96,-60,90)
+					this.layer.noStroke()
+					this.layer.fill(80,160,80,this.fade)
+					this.layer.ellipse(-15,-3,33,15)
+					this.layer.ellipse(15,-3,33,15)
 				break
 				case 100:
 					this.layer.stroke(80,this.fade)

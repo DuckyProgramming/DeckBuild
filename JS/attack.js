@@ -1638,6 +1638,15 @@ class attack{
                         this.battle.combatants[g].status.main[4]+=this.damage
                     }
                 break
+                case 12:
+                    this.battle.combatants[0].status.main[71]+=this.damage
+                    this.battle.combatants[0].status.main[72]++
+                    this.battle.mana.gen--
+                break
+                case 13:
+                    this.battle.drop.addDrop(findCard('Parasite'),0,stage.playerNumber+2)
+                    this.battle.deck.add(findCard('Parasite'),0,stage.playerNumber+2)
+                break
             }
         }
     }
