@@ -38,18 +38,19 @@ class battle{
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
         this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0}
         this.defaultRandom={attacked:0}
-        this.deck.initial(this.player)
     }
     setupTesting(type){
         this.initialEvent()
         this.setupMap()
-        stage.scene='battle'
+        this.draftDeck()
+        //this.deck.initial(this.player)
+        //stage.scene='battle'
         setupEncounter(this,type)
         this.create()
         
         //current.getRelic(156)
 
-        //transition.trigger=true
+        transition.trigger=true
         //transition.scene='map'
         //current.map.complete[0][0]=1
         //current.event=14
@@ -141,6 +142,11 @@ class battle{
         transition.scene='map'
         this.map.zone++
         this.setupMap()
+    }
+    draftDeck(){
+        transition.scene='choice'
+        this.setupChoice(0,0,0)
+        this.context=2
     }
     bonusObjective(spec){
         switch(spec){
@@ -1703,6 +1709,10 @@ class battle{
                 this.choice.cards[e].size=round(this.choice.cards[e].size*10-1)/10
             }
         }
+        if(this.context==3&&transition.anim>=1){
+            this.setupChoice(0,floor(this.deck.cards.length/12),0)
+            this.context=2
+        }
     }
     onClickChoice(){
         if(pointInsideBox({position:inputs.rel},{position:{x:450,y:450},width:80,height:40})){
@@ -1734,11 +1744,19 @@ class battle{
                 this.choice.cards[e].used=true
             }
         }
-        if(transition.scene=='map'&&this.context==1){
-            transition.scene='rest'
-        }
-        if(transition.scene=='map'&&(this.context==-2||this.context==-3||this.context==-4||this.context==-5)){
-            transition.scene='battle'
+        if(transition.scene=='map'){
+            if(this.context==1){
+                transition.scene='rest'
+            }else if(this.context==2){
+                if(this.deck.cards.length>=15){
+                    transition.scene='map'
+                }else{
+                    transition.scene='choice'
+                    this.context=3
+                }
+            }else if(this.context==-2||this.context==-3||this.context==-4||this.context==-5){
+                transition.scene='battle'
+            }
         }
     }
     setupMap(){
@@ -1869,7 +1887,11 @@ class battle{
                         case 0:
                             transition.scene='battle'
                             this.random.class=0
-                            setupEncounter(current,zones[this.map.zone].encounters[0][floor(random(0,zones[this.map.zone].encounters[0].length))])
+                            if(this.map.position[0]==0){
+                                setupEncounter(current,zones[this.map.zone].special[0])
+                            }else{
+                                setupEncounter(current,zones[this.map.zone].encounters[0][floor(random(0,zones[this.map.zone].encounters[0].length))])
+                            }
                             this.create()
                         break
                         case 1:
@@ -2207,12 +2229,12 @@ class battle{
                             if((this.page==0||this.page==1)&&e==0&&floor(random(0,2))==0){
                                 this.remember[0]=3-types.event[this.event].pages[this.page].link[e]
                             }else if((this.page==0||this.page==1)&&e==1){
-                                setupEncounter(current,zones[0].special[0])
+                                setupEncounter(current,zones[0].special[1])
                                 this.create()
                                 transition.scene='battle'
                             }else if(this.page==3&&e==0){
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-6)
-                                setupEncounter(current,zones[0].special[0])
+                                setupEncounter(current,zones[0].special[1])
                                 this.create()
                                 transition.scene='battle'
                             }
@@ -2265,7 +2287,7 @@ class battle{
                         break
                         case 12:
                             if(this.page==0&&e==0){
-                                setupEncounter(current,zones[0].special[1])
+                                setupEncounter(current,zones[0].special[2])
                                 this.create()
                                 transition.scene='battle'
                             }else if(this.page==1&&e==0){

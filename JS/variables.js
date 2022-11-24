@@ -2710,7 +2710,7 @@ types={
                     '"We'+"'"+'re here to discuss your recent performance. Very satisfying."\n\n'+
                     '"So, I'+"'"+'m going to ask you a question. I want an honest answer, okay?"\n'+
                     '"Do you think you deserve a bonus?"',
-                    option:['I Deserve Money','How about a break?','No'],
+                    option:['I deserve money','How about a break?','No'],
                     optionDesc:['','',''],
                     link:[1,2,3],
                 },{
@@ -3044,7 +3044,7 @@ types={
                 },
             ],
         },{
-            name:'',id:14,
+            name:'Target in Sights',id:14,list:1,
             pages:[
                 {
                     desc:"",
@@ -3054,7 +3054,7 @@ types={
                 },
             ],
         },{
-            name:'',id:0,
+            name:'',id:0,list:0,
             pages:[
                 {
                     desc:"",
@@ -3072,7 +3072,7 @@ listing={
 zones=[
     {
         encounters:[[],[],[]],
-        special:[4,3],
+        special:[1,4,3],
         events:[[],[],[],[],[]],
     },{
         encounters:[[],[],[]],
