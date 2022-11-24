@@ -141,17 +141,22 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 			layer.fill(255,50,50,fade*3/4)
 			layer.triangle(-20,0,15,-6,15,6)
 		break
-		case 15:
+		case 15: case 17:
 			layer.fill(150,255,150,fade*3/4)
 			layer.triangle(-12,-8,12,-8,0,12)
 			layer.fill(255,50,50,fade*3/4)
 			layer.triangle(-20,0,15,-6,15,6)
 		break
+		case 18:
+			layer.fill(255,125,125,fade*3/4)
+			layer.rect(0,0,8,24)
+			layer.rect(0,0,24,8)
+		break
 	}
 	layer.fill(255,fade)
 	layer.textSize(20)
 	switch(type){
-		case 1: case 6: case 7: case 8: case 10: case 12: case 16:
+		case 1: case 6: case 7: case 8: case 10: case 12: case 16: case 18:
 			layer.text(damage,0,1)
 		break
 		case 2: case 4: case 5: case 11: case 13:
@@ -161,7 +166,7 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 			layer.textSize(16)
 			layer.text(damage+'x'+alt,0,0)
 		break
-		case 9: case 14: case 15:
+		case 9: case 14: case 15: case 17:
 			layer.textSize(16)
 			layer.text(damage+'|'+alt,0,1)
 		break

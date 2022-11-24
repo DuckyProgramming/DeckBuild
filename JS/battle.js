@@ -922,7 +922,9 @@ class battle{
             }
         }
         for(e=1,le=this.combatants.length;e<le;e++){
-            this.combatants[e].block=0
+            if(this.combatants[e].status.main[47]<=0){
+                this.combatants[e].block=0
+            }
         } 
         while(this.turn>0&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
             this.turn++

@@ -1943,8 +1943,10 @@ types={
         {name:'Slippery Gangster',alt:'',life:36,height:75,behavior:0,attacks:[1,3],damage:[8,3],altAttack:[0,2],class:0,buff:3},
         {name:'Gangster Gunner',alt:'',life:24,height:75,behavior:0,attacks:[1],damage:[4],altAttack:[0],class:0,buff:4},
         {name:'Snaky Plant',alt:'',life:120,height:75,behavior:1,attacks:[1,3,13,12],damage:[18,4,0,6],altAttack:[0,4,0,0],class:1,buff:0},
-        {name:'Spheron',alt:'',life:20,height:60,behavior:0,attacks:[3,8,14,15],damage:[10,25,10,10],altAttack:[2,0,15,2],class:0,buff:5},
+        {name:'Spheron',alt:'',life:20,height:60,behavior:1,attacks:[3,8,14,15],damage:[10,25,10,10],altAttack:[2,0,15,2],class:0,buff:5},
         {name:'Enforcer',alt:'',life:80,height:90,behavior:0,attacks:[1,3,16],damage:[18,8,16],altAttack:[0,2,1],class:1,buff:6},
+        {name:'Ninja',alt:'',life:32,height:75,behavior:0,attacks:[1,3],damage:[9,4],altAttack:[0,2],class:0,buff:0},
+        {name:'Red',alt:'',life:36,height:80,behavior:0,attacks:[1,17,18],damage:[7,5,4],altAttack:[0,1,0],class:0,buff:0},//20
     ],attack:[
         {class:0},
         {class:0},
@@ -2028,9 +2030,14 @@ types={
             threshold:3,
             objective:[[0,0,0,0]],
         },{
-            combatants:[18,0,0,0,0,0],
-            reinforce:[],
-            threshold:2,
+            combatants:[19,0,0,0,0,0],
+            reinforce:[19,18,19],
+            threshold:3,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[20,20,20,0,0,0],
+            reinforce:[20],
+            threshold:3,
             objective:[[0,0,0,0]],
         },
     ],relic:[

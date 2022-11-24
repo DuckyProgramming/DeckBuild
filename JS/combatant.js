@@ -33,7 +33,7 @@ class combatant{
 			[155,235,250],[5,145,250],[150,0,0],[215,210,210],[100,75,150],[255,75,175],[225,175,225],[40,80,120],[255,195,255],[235,125,230],
 			[120,90,120],[60,120,60],[40,80,40]],infoFade:[],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
-			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Mental Fortress','Rush','Every Block Weak All','Next Attack Damage','Die Next Turn',
+			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Stance Change Block','Enter Wrath Draw','Every Block Weak All','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Absorb Attacks',
 			'First Attack Damage','Next Turn Block','Next Turn Dexterity','Buffer','Intangible','Armor','Control','Poison','Regeneration','Strength Per Turn',
 			'Metallicize','Add Bleed Once','Weak Per Turn','Counter Stun','Stun','Counter All 3 Times','Exhaust Draw','Block Store','Death Heal','Rearm Next Turn',
@@ -68,7 +68,6 @@ class combatant{
         this.fade=0
 		this.lastPlay=-1
 		this.uniqueDisplay=[]
-		this.initialBuff()
     }
 	resetUnique(){
 		this.block=0
@@ -90,7 +89,7 @@ class combatant{
 				this.status.main[70]=2
 			break
 			case 5:
-				this.block+=40
+				this.addBlock(40,0)
 				this.status.main[47]+=99
 			break
 		}
@@ -950,6 +949,7 @@ class combatant{
 					this.layer.ellipse(15,-3,33,15)
 				break
 				case 17:
+					this.layer.translate(0,-45)
 					this.layer.noStroke()
 					this.layer.fill(225*7/8,220*7/8,200*7/8,this.fade)
 					this.layer.ellipse(sin(0)*24,cos(0)*24,10,10)
@@ -968,6 +968,7 @@ class combatant{
 						this.layer.arc(8,0,16,12,-180,-30)
 						this.layer.rotate(120)
 					}
+					this.layer.translate(0,45)
 				break
 				case 18:
 					this.layer.stroke(125,200,125,this.fade)
@@ -997,6 +998,62 @@ class combatant{
 					this.layer.ellipse(4,-86,6,5)
 					this.layer.ellipse(12,-86,6,5)
 					this.layer.line(7,-86,9,-86)
+				break
+				case 19:
+					this.layer.stroke(125,200,125,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(125,200,125,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(75,150,75,this.fade)
+					this.layer.rect(0,-48,18,3)
+					this.layer.rect(0,-42,18,3)
+					this.layer.fill(125,200,125,this.fade)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.rect(8,-72,13,4,3)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,4,4)
+					this.layer.ellipse(12,-72,4,4)
+				break
+				case 20:
+					this.layer.stroke(120,110,100,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(120,110,100,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(80,70,60,this.fade)
+					this.layer.rect(-5,-45,4,2)
+					this.layer.rect(5,-45,4,2)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,4,4)
+					this.layer.ellipse(12,-72,4,4)
+					this.layer.fill(60,50,40,this.fade)
+					this.layer.rect(0,-90,30,16,4)
+					this.layer.fill(200,25,25,this.fade)
+					this.layer.ellipse(8,-90,13,13)
+					this.layer.fill(255,225,25,this.fade)
+					this.layer.beginShape()
+					for(g=0;g<10;g++){
+						this.layer.vertex(8+sin(g*36)*(3+(g%2)*3),-90+cos(g*36)*(3+(g%2)*3))
+					}
+					this.layer.endShape()
+					this.layer.fill(200,25,25,this.fade)
+					this.layer.beginShape()
+					for(g=0;g<10;g++){
+						this.layer.vertex(8+sin(g*36)*(3/2+(g%2)*3/2),-90+cos(g*36)*(3/2+(g%2)*3/2))
+					}
+					this.layer.endShape()
 				break
 				case 100:
 					this.layer.stroke(80,this.fade)

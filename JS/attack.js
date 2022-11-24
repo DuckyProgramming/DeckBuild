@@ -1655,11 +1655,21 @@ class attack{
                 case 15:
                     this.battle.combatants[0].take(this.damage,this.user)
                     this.attacks.push([1,12,this.user,this.damage])
-                    this.battle.combatants[0].boost.main[0]-=this.alt
+                    this.battle.combatants[0].boost.main[2]-=this.alt
                 break
                 case 16:
                     this.battle.combatants[this.user].block+=this.damage
                     this.battle.combatants[this.user].status.main[47]+=this.alt+1
+                break
+                case 17:
+                    this.battle.combatants[0].take(this.damage,this.user)
+                    this.attacks.push([1,12,this.user,this.damage])
+                    this.battle.combatants[0].boost.main[0]-=this.alt
+                break
+                case 18:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        this.battle.combatants[g].life=min(this.battle.combatants[g].life+this.damage,this.battle.combatants[g].base.life)
+                    }
                 break
             }
         }
