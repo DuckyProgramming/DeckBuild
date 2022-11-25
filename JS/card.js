@@ -379,7 +379,8 @@ class card{
             case 320: this.desc+='Choose Between\n3 Cards to Add\nto Your Hand'; if(this.damage>0){this.desc+='\nIt Costs 0\nThis Turn'} break
             case 321: this.desc+='At the Start\nof Your Turn,\nScry '+this.damage; break
             case 322: this.desc+='When You Scry,\nAdd '+this.damage+' Block'; break
-
+            case 323: this.desc+='Deal '+this.damage+' Damage\nShuffle a Last Path\ninto Draw Pile'; break
+            case 324: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nOther Attacks Are\nin Your Hand'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

@@ -961,6 +961,16 @@ types={
             {damage:3,alt:0,cost:1,attack:322,target:0,spec:0,class:2},
             {damage:5,alt:0,cost:1,attack:322,target:0,spec:0,class:2},
         ],
+        },{name:'First\nPath',rarity:1,list:2,
+        stats:[
+            {damage:10,alt:0,cost:2,attack:323,target:1,spec:0,class:0},
+            {damage:15,alt:0,cost:2,attack:323,target:1,spec:0,class:0},
+        ],
+        },{name:'Signature\nMove',rarity:1,list:2,
+        stats:[
+            {damage:30,alt:0,cost:2,attack:324,target:1,spec:0,class:0},
+            {damage:40,alt:0,cost:2,attack:324,target:1,spec:0,class:0},
+        ],
         },
         
         
@@ -1779,6 +1789,11 @@ types={
         stats:[
             {damage:12,alt:0,cost:1,attack:2,target:0,spec:9,class:1},
             {damage:16,alt:0,cost:1,attack:2,target:0,spec:9,class:1},
+        ],
+        },{name:'Last\nPath',rarity:-1,list:0,
+        stats:[
+            {damage:20,alt:0,cost:0,attack:1,target:1,spec:9,class:0},
+            {damage:30,alt:0,cost:0,attack:1,target:1,spec:9,class:0},
         ],
         },{name:'Shiv',rarity:-1,list:0,
         stats:[

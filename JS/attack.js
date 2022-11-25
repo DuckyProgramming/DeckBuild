@@ -1187,7 +1187,7 @@ class attack{
                         }
                     }
                     for(g=0;g<this.alt;g++){
-                        this.battle.combatants[this.hold.list[floor(random(0,this.hold.list.length))]].take(this.damage,0)
+                        this.battle.combatants[this.hold.list[floor(random(0,this.hold.list.length))]].take(this.damage,this.user)
                     }
                 break
                 case 248:
@@ -1472,7 +1472,7 @@ class attack{
                     this.battle.turn=this.target+100
                 break
                 case 302:
-                    this.battle.combatants[0].take(this.damage,0)
+                    this.battle.combatants[0].take(this.damage,this.user)
                     this.battle.combatants[0].boost.main[0]+=this.alt
                 break
                 case 303:
@@ -1526,7 +1526,7 @@ class attack{
                     this.battle.mana.gen+=this.damage
                 break
                 case 311:
-                    this.battle.combatants[0].take(this.damage,0)
+                    this.battle.combatants[0].take(this.damage,this.user)
                     this.battle.combatants[0].status.main[59]+=this.alt
                 break
                 case 312:
@@ -1535,7 +1535,7 @@ class attack{
                     }
                 break
                 case 313:
-                    this.battle.combatants[0].take(this.damage,0)
+                    this.battle.combatants[0].take(this.damage,this.user)
                     this.battle.combatants[0].combo+=this.alt
                 break
                 case 314:
@@ -1543,7 +1543,7 @@ class attack{
                     this.battle.allDiscard()
                 break
                 case 315:
-                    this.battle.combatants[this.target].take(this.damage,0)
+                    this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.allDiscard()
                 break
                 case 316:
@@ -1558,14 +1558,14 @@ class attack{
                     }
                 break
                 case 318:
-                    this.battle.combatants[this.target].take(this.damage,0)
+                    this.battle.combatants[this.target].take(this.damage,this.user)
                     transition.trigger=true
                     transition.scene='deck'
                     this.battle.context=8
                     this.battle.context2=this.alt
                 break
                 case 319:
-                    this.battle.combatants[this.target].take(this.damage+1,0)
+                    this.battle.combatants[this.target].take(this.damage+1,this.user)
                     this.battle.combatants[0].addBlock(this.damage)
                     transition.trigger=true
                     transition.scene='deck'
@@ -1583,6 +1583,22 @@ class attack{
                 break
                 case 322:
                     this.battle.combatants[0].status.main[69]+=this.damage
+                break
+                case 323:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.drop.addDrop(findCard('Last\nPath'),0,0)
+                    this.battle.reserve.addShuffle(findCard('Last\nPath'),0,0)
+                break
+                case 324:
+                    this.hold.int=0
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].class==0&&!this.battle.hand.cards[g].trigger){
+                            this.hold.int=1
+                        }
+                    }
+                    if(this.hold.int==0){
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
                 break
             }
             this.battle.combatants[0].lastPlay=this.class
