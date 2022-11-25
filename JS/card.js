@@ -70,10 +70,10 @@ class card{
             case 11: this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Energy\nNext Turn'; break
             case 12: this.desc+='Deal '+this.damage+' Damage\nto All Enemies'; break
             case 13: this.desc+='Hold '+this.damage+'\nBasic Charge'; break
-            case 14: this.desc+='Fire 1st Charge\n'+this.damage+' Times'; break
+            case 14: this.desc+='Evoke 1st Charge\n'+this.damage+' Times'; break
             case 15: this.desc+='Hold '+this.damage+'\nExplosive Charge'; break
             case 16: this.desc+='Hold '+this.damage+'\nShield Charge'; break
-            case 17: this.desc+='Fire All\nCharges'; break
+            case 17: this.desc+='Evoke All\nCharges'; break
             case 18: this.desc+='Deal '+this.damage+' Damage\nDiscard '+this.alt+' Cards'; break
             case 19: this.desc+='Lose 1\nAmmo Slot'; break
             case 20: this.desc+='Hold '+this.damage+'\nEnergy Charge'; break
@@ -89,7 +89,7 @@ class card{
             case 30: this.desc+='Deal '+this.damage+' Damage\nExit Stance'; break
             case 31: this.desc+='Draw '+this.damage+' Cards\nExit Stance'; break
             case 32: this.desc+='Remove All\nBlock of Target\nDeal '+this.damage+' Damage'; break
-            case 33: this.desc+='Fire 1st Charge\nHold that Charge'; break
+            case 33: this.desc+='Evoke 1st Charge\nHold that Charge'; break
             case 34: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Weak'; break
             case 35: this.desc+='Gain '+this.damage+'\nCombo'; break
             case 36: this.desc+='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo\nEnd Combo'; break
@@ -280,7 +280,7 @@ class card{
             case 221: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nBasic Charge'; break
             case 222: this.desc+='Deal '+this.damage+' Damage\nPer Charge'; break
             case 223: this.desc+='Add '+this.damage+' Block\nGain 1 Energy\nNext Turn'; break
-            case 224: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nShield Charge'; break
+            case 224: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nShield Charges'; break
             case 225: this.desc+='Deal '+this.damage+' Damage\nDraw '+this.alt+' Cards\nPer Charge'; break
             case 226: this.desc+='Draw '+this.damage+' Cards\nHold '+this.alt+'\nShield Charge'; break
             case 227: this.desc+='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nApply 1 Weak'; break
@@ -314,7 +314,7 @@ class card{
             case 255: if(this.alt==0){this.desc+='Remove All Charges,\nGain 1 Energy and\nDraw 1 Card\nPer Charge'}else{this.desc+='Evoke All Charges,\nGain 1 Energy and\nDraw 1 Card\nPer Charge'}; break
             case 256: this.desc+='Deal '+this.damage+' Damage\nLose '+this.alt+' Focus'; break
             case 257: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+' Energy\nCharges'; break
-            case 258: if(this.damage==0){this.desc+='Fire 1st Charge\nX Times'}else{this.desc+='Fire 1st Charge\nX+'+this.damage+' Times'}; break
+            case 258: if(this.damage==0){this.desc+='Evoke 1st Charge\nX Times'}else{this.desc+='Evoke 1st Charge\nX+'+this.damage+' Times'}; break
             case 259: this.desc+='Hold '+this.damage+' Shield Charge\nHold '+this.damage+' Dark Charge\nHold '+this.damage+' Lightning\nCharge'; break
             case 260: this.desc+='Convert '+this.damage+'x Combo\nto Health\nEnd Combo'; break
             case 261: this.desc+='Deal '+this.damage+' Damage\nAdd '+this.alt+' Conditioning'; break
@@ -390,7 +390,7 @@ class card{
             case 331: this.desc+='If Target Has\nLess Than '+this.damage+'\nHealth, Set its\nHealth to 0\n'+nfp(this.alt)+' Balance'; break
             case 332: this.desc+='Gain '+this.damage+' Max Energy\nEvery Turn\nEthereal'; break
             case 333: this.desc+='Retained Cards\nCost '+this.damage+' Less\nWhen Retained'; break
-            case 334: this.desc+='Deal '+this.damage+'x Number\nof Charges Held\nThis Combat\n('+random.orbs+')'; break
+            case 334: this.desc+='Deal Damage Equal\nto '+this.damage+'x Number\nof Charges Held\nThis Combat\n('+random.orbs+')'; break
             case 335: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Lock-on'; break
             case 336: this.desc+='Apply '+this.damage+' Lock-on'; break
             case 337: this.desc+='Hold 1\nShield Charge\nPer Enemy'; break
@@ -398,6 +398,15 @@ class card{
             case 339: this.desc+='Deal '+this.damage+' Damage\nPut All Discarded\n0 Cost Cards\nin Your Hand'; break
             case 340: this.desc+='Gain '+this.damage+' Focus\nLose '+this.alt+' Focus\nEvery Turn'; break
             case 341: this.desc+='Return All Cards\nto Draw Pile\nDraw '+this.damage+' Cards'; break
+            case 342: this.desc+='Evoke 1st Charge\n'+this.damage+' Times\nDraw '+this.alt+' Cards'; break
+            case 343: this.desc+='Evoke 1st Charge\nFor Every Enemy'; break
+            case 344: this.desc+='Evoke Last Charge\n'+this.damage+' Times'; break
+            case 345: this.desc+='Add Block Equal\nto '+this.damage+'x Number of\nShield Charges Held\nThis Combat\n('+random.orbs+')'; break
+            case 346: this.desc+='Add '+this.damage+' Block\nHold '+this.alt+'\nShield Charges'; break
+            case 347: this.desc+='Gain '+this.damage+' Strength\nPer Shield Charge'; break
+            case 348: this.desc+='Evoke All\nExplosive Charges\nReplace Them\nWith Basic Charges'; break
+            case 349: this.desc+='Deal '+this.damage+' Damage\nDouble Vulnerable\non Target'; break
+            case 350: this.desc+='Apply '+this.damage+' Vulnerable\nApply '+this.alt+' Lock-On'
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

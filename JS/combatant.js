@@ -1374,6 +1374,10 @@ class combatant{
 		}
 		this.ammoDetail[this.ammoDetail.length-1]=0
 	}
+	cycleLastCharge(){
+		this.ammo[this.ammo.length-1]=-1
+		this.ammoDetail[this.ammoDetail.length-1]=0
+	}
 	clearDebuff(){
 		for(g=0,lg=this.boost.main.length;g<lg;g++){
 			if(this.boost.main[g]<0){
@@ -1388,6 +1392,9 @@ class combatant{
 	}
 	load(type,detail){
 		this.battle.random.orbs++
+		if(type==2){
+			this.battle.random.shields++
+		}
 		this.loaded=false
 		for(h=0,lh=this.ammo.length;h<lh;h++){
 			if(this.ammo[h]==-1&&!this.loaded){

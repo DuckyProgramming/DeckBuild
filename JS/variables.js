@@ -1296,8 +1296,8 @@ types={
         ],
         },{name:'Node',rarity:0,list:3,
         stats:[
+            {damage:3,alt:0,cost:1,attack:336,target:1,spec:0,class:0},
             {damage:4,alt:0,cost:1,attack:336,target:1,spec:0,class:0},
-            {damage:6,alt:0,cost:1,attack:336,target:1,spec:0,class:0},
         ],
         },{name:'Shieldweb',rarity:1,list:3,
         stats:[
@@ -1323,6 +1323,56 @@ types={
         stats:[
             {damage:4,alt:0,cost:1,attack:341,target:0,spec:0,class:2},
             {damage:6,alt:0,cost:1,attack:341,target:0,spec:0,class:2},
+        ],
+        },{name:'Quickcast',rarity:0,list:3,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:14,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:14,target:0,spec:2,class:2},
+        ],
+        },{name:'Input',rarity:0,list:3,
+        stats:[
+            {damage:1,alt:1,cost:0,attack:342,target:0,spec:0,class:2},
+            {damage:1,alt:2,cost:0,attack:342,target:0,spec:0,class:2},
+        ],
+        },{name:'Mergecast',rarity:1,list:3,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:343,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:343,target:0,spec:0,class:2},
+        ],
+        },{name:'Backcast',rarity:0,list:3,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:344,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:344,target:0,spec:0,class:2},
+        ],
+        },{name:'Shield\nEcho',rarity:1,list:3,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:345,target:0,spec:0,class:2},
+            {damage:6,alt:0,cost:1,attack:345,target:0,spec:0,class:2},
+        ],
+        },{name:'Absorption',rarity:1,list:3,
+        stats:[
+            {damage:7,alt:2,cost:2,attack:346,target:0,spec:0,class:1},
+            {damage:11,alt:2,cost:2,attack:346,target:0,spec:0,class:1},
+        ],
+        },{name:'Aegis',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:347,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:347,target:0,spec:0,class:2},
+        ],
+        },{name:'Deflagrate',rarity:2,list:3,
+        stats:[
+            {damage:0,alt:0,cost:2,attack:348,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:1,attack:348,target:0,spec:0,class:2},
+        ],
+        },{name:'Pinpoint\nBeam',rarity:1,list:3,
+        stats:[
+            {damage:3,alt:2,cost:1,attack:349,target:1,spec:0,class:0},
+            {damage:5,alt:2,cost:1,attack:349,target:1,spec:0,class:0},
+        ],
+        },{name:'Seperate\nWeaknesses',rarity:0,list:3,
+        stats:[
+            {damage:2,alt:2,cost:1,attack:350,target:1,spec:0,class:2},
+            {damage:3,alt:3,cost:1,attack:350,target:1,spec:0,class:2},
         ],
         },
         
@@ -1765,6 +1815,8 @@ types={
         //false surrender
         //counter stun? petal shield already exists...
         //analysis paralysis
+
+        //permapower cards
         
         
         {name:'Empty',rarity:-1,list:-1,
