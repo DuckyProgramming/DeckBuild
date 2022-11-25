@@ -1425,6 +1425,7 @@ types={
             {damage:3,alt:0,cost:1,attack:360,target:0,spec:8,class:2},
         ],
         },
+        //option play
         
         
         {name:'Debilitate',rarity:2,list:4,
