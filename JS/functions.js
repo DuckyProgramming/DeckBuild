@@ -8,7 +8,10 @@ function setupEncounter(battle,type){
 	battle.generation.combatants=types.encounter[type].combatants
 	battle.generation.reinforce=types.encounter[type].reinforce
 	battle.generation.threshold=types.encounter[type].threshold
-	battle.objective=types.encounter[type].objective
+	battle.objective=[]
+	for(i=0,li=types.encounter[type].objective.length;i<li;i++){
+		battle.objective.push(types.encounter[type].objective[i])
+	}
 }
 function displayTransition(layer,transition){
 	layer.noStroke()
@@ -210,6 +213,13 @@ function copyCard(base){
 }
 function reformCard(base){
 	return new card(base.layer,base.position.x,base.position.y,base.type,base.level,base.color)
+}
+function copyList(base){
+	i=[]
+	for(j=0,lj=base.length;j<lj;j++){
+		i.push(base[j])
+	}
+	return i
 }
 function generateListing(cards,encounters,events){
 	for(a=0,la=listing.card.length;a<la;a++){
@@ -796,7 +806,7 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		case 89:
 			layer.text('1',10,1)
 			layer.textSize(10)
-			layer.text('4',-5,0)
+			layer.text('4',-8,0)
 			layer.image(graphics.symbol[33],-18,-10,20,20)
 		break
 		case 90:

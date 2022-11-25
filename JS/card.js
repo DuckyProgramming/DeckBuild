@@ -32,7 +32,7 @@ class card{
         this.exhaust=false
         this.selectDiscard=false
     }
-    displayName(deckSize,handSize,discardSize,random){
+    displayName(deckSize,handSize,discardSize,drawSize,random){
         this.desc=''
         if(this.spec==1||this.spec==6||this.spec==7){
             this.desc+='Unplayable\n'
@@ -211,7 +211,7 @@ class card{
             case 152: if(this.damage==0){this.desc+='Pull Collision\nfor '+this.alt+' Damage'}else{this.desc+='Deal '+this.damage+' Damage\nPull Collision\nfor '+this.alt+' Damage'}; break
             case 153: this.desc+='Add '+this.damage+' Block\nCounter 4 Once\nWith '+this.alt+' Bleed'; break
             case 154: this.desc+='Add '+this.damage+' Block\nCounter Once With\nPush Collision\nfor '+this.alt+' Damage'; break
-            case 155: this.desc+='Deal '+this.damage+' Damage\nDraw 1 Card\nIt Costs 0'; break
+            case 155: this.desc+='Deal '+this.damage+' Damage\nDraw 1 Card\nIt Costs 0\nThis Turn'; break
             case 156: this.desc+='Reduce Cost of\nHand by '+this.damage; break
             case 157: this.desc+='Deal '+this.damage+' Damage\nIf Last Card Played\nwas a Attack,\nGain 1 Energy'; break
             case 158: this.desc+='Gain '+this.damage+' Faith\nAdd '+this.alt+' Block'; break
@@ -291,7 +291,7 @@ class card{
             case 232: this.desc+='Deal '+this.damage+' Damage\nTemporarily Reduce\nCost by '+this.alt; break
             case 233: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nDraw '+this.alt+' Cards'; break
             case 234: this.desc+='Gain '+this.damage+' Energy\nAdd a Void\nto Draw Pile'; break
-            case 235: this.desc+='Gain Energy for\nEvery '+this.damage+' Cards\nin Draw Pile'; break
+            case 235: this.desc+='Gain Energy for\nEvery '+this.damage+' Cards\nin Draw Pile\n('+drawSize+')'; break
             case 236: this.desc+='Add '+this.damage+' Block\nIf You Have\nNo Block'; break
             case 237: this.desc+='Gain '+this.damage+'\nFocus'; break
             case 238: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nHold '+this.alt+'\nDark Charge'; break
@@ -325,7 +325,7 @@ class card{
             case 266: this.desc+='Gain '+this.damage+' Strength\nGain '+this.damage+' Dexterity\nGain '+this.alt+' Less\nEnergy Per Turn'; break
             case 267: this.desc+='Gain '+this.damage+' Block\nPer Turn When\nin Calm'; break
             case 268: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Block\nWhen Retained'; break
-            case 269: this.desc+='Add '+this.damage+' Block\nDraw '+this.alt+' Card\nIt Costs 1 Less'; break
+            case 269: this.desc+='Add '+this.damage+' Block\nDraw '+this.alt+' Card\nIt Costs 1 Less\nThis Turn'; break
             case 270: this.desc+='Add '+this.damage+' Block\nAdd '+this.alt+' Block\nNext Turn'; break
             case 271: this.desc+='Deal '+this.damage+' Damage\nIf a Card Has\nBeen Discarded\nThis Turn,\nGain '+this.alt+' Energy'; break
             case 272: this.desc+='Double Your\nCombo'; break
@@ -363,7 +363,7 @@ class card{
             case 304: this.desc+='Gain '+this.damage+' Strength\nCannot Add Block\nFor '+this.alt+' Turns'; break
             case 305: this.desc+='Add '+this.damage+' Block\nCounter Once With\nPull Collision\nfor '+this.alt+' Damage'; break
             case 306: this.desc+='Counter '+this.damage+' All\nCounter Throw'; break
-            case 307: this.desc+='Add '+this.damage+' Random\nSkill to Your\nHand'; break
+            case 307: if(this.alt>0){this.desc+='Add '+this.damage+' Random\nSkill to Your\nHand\nIt Costs 0'}else{this.desc+='Add '+this.damage+' Random\nSkill to Your\nHand\nIt Costs 0\nThis Turn'}; break
             case 308: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nGain 1 Dodge'; break
             case 309: this.desc+='Add '+this.damage+' Block\nCannot Gain Block\nfor '+this.alt+' Turns'; break
             case 310: this.desc+='Increase Energy\nGain by '+this.damage; break
@@ -394,8 +394,8 @@ class card{
             this.desc=this.desc.substr(0,this.desc.length-1)
         }
     }
-    display(deckSize,handSize,discardSize,random){
-        this.displayName(deckSize,handSize,discardSize,random)
+    display(deckSize=0,handSize=0,discardSize=0,drawSize=0,random={attacked:0}){
+        this.displayName(deckSize,handSize,discardSize,drawSize,random)
         if(this.size>0){
             this.layer.translate(this.position.x,this.position.y)
             this.layer.scale(this.size)

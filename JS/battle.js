@@ -772,6 +772,7 @@ class battle{
             while(e<this.combatants.length){
                 if(this.combatants[e].type==0){
                     this.combatants[e]=new combatant(this.layer,this,200+e*100,350,this.generation.reinforce[0],1,e)
+                    this.combatants[e].initialBuff()
                     this.generation.reinforce.splice(0,1)
                     break
                 }
@@ -1600,9 +1601,9 @@ class battle{
         switch(spec){
             case 0:
                 if(this.relics.active[111]){
-                    this.calc.list=listing.card[13][rarity]
+                    this.calc.list=copyList(listing.card[13][rarity])
                 }else{
-                    this.calc.list=listing.card[this.player][rarity]
+                    this.calc.list=copyList(listing.card[this.player][rarity])
                 }
                 if(this.relics.active[123]){
                     if(this.relics.active[55]){
@@ -1650,12 +1651,11 @@ class battle{
                 this.choice.cards.push(new card(this.layer,450,300,h,level,types.card[h].list))
             break
             case 3:
-                this.calc.list=listing.card[this.player][0]
-                for(g=0,lg=listing.card[this.player][1].length;g<lg;g++){
-                    this.calc.list.push(listing.card[this.player][1][g])
-                }
-                for(g=0,lg=listing.card[this.player][2].length;g<lg;g++){
-                    this.calc.list.push(listing.card[this.player][2][g])
+                this.calc.list=[]
+                for(g=0;g<3;g++){
+                    for(h=0,lh=listing.card[this.player][g].length;h<lh;h++){
+                        this.calc.list.push(listing.card[this.player][g][h])
+                    }
                 }
                 for(g=0;g<5;g++){
                     if(this.calc.list.length>0){
@@ -1666,7 +1666,7 @@ class battle{
                 }
             break
             case 4:
-                this.calc.list=listing.card[0][rarity]
+                this.calc.list=copyList(listing.card[0][rarity])
                 for(g=0;g<3;g++){
                     if(this.calc.list.length>0){
                         h=this.calc.list[floor(random(0,this.calc.list.length))]
@@ -1676,7 +1676,7 @@ class battle{
                 }
             break
             case 5:
-                this.calc.list=listing.card[14][0]
+                this.calc.list=copyList(listing.card[14][0])
                 for(g=0;g<3;g++){
                     if(this.calc.list.length>0){
                         h=this.calc.list[floor(random(0,this.calc.list.length))]
@@ -1700,7 +1700,7 @@ class battle{
         this.layer.textSize(20)
         this.layer.text('Skip',450,450)
         for(e=0,le=this.choice.cards.length;e<le;e++){
-            this.choice.cards[e].display(this.deck.cards.length,this.drawAmount,0,this.defaultRandom)
+            this.choice.cards[e].display(this.deck.cards.length,this.drawAmount,0,this.deck.cards.length-this.drawAmount,this.defaultRandom)
         }
     }
     updateChoice(){
@@ -1888,16 +1888,16 @@ class battle{
                             transition.scene='battle'
                             this.random.class=0
                             if(this.map.position[0]==0){
-                                setupEncounter(current,zones[this.map.zone].special[0])
+                                setupEncounter(this,zones[this.map.zone].special[0])
                             }else{
-                                setupEncounter(current,zones[this.map.zone].encounters[0][floor(random(0,zones[this.map.zone].encounters[0].length))])
+                                setupEncounter(this,zones[this.map.zone].encounters[0][floor(random(0,zones[this.map.zone].encounters[0].length))])
                             }
                             this.create()
                         break
                         case 1:
                             transition.scene='battle'
                             this.random.class=1
-                            setupEncounter(current,zones[this.map.zone].encounters[1][floor(random(0,zones[this.map.zone].encounters[1].length))])
+                            setupEncounter(this,zones[this.map.zone].encounters[1][floor(random(0,zones[this.map.zone].encounters[1].length))])
                             this.create()
                             if(this.relics.active[23]){
                                 for(g=1,lg=this.combatants.length;g<lg;g++){
@@ -1938,7 +1938,7 @@ class battle{
                         case 5:
                             transition.scene='battle'
                             this.random.class=2
-                            setupEncounter(current,zones[this.map.zone].encounters[2][floor(random(0,zones[this.map.zone].encounters[2].length))])
+                            setupEncounter(this,zones[this.map.zone].encounters[2][floor(random(0,zones[this.map.zone].encounters[2].length))])
                             this.create()
                             if(this.relics.active[53]){
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+25)
@@ -2058,7 +2058,7 @@ class battle{
     displayDeck(){
         if(this.context==1||this.context==4){
             this.deck.displayView(-1)
-            this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0,this.defaultRandom)
+            this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0,this.deck.cards.length-this.drawAmount,this.defaultRandom)
         }else if(this.context==2||this.context==3||this.context==10||this.context==11||this.context==12){
             this.discard.displayView(-1)
         }else if(this.context==5||this.context==6||this.context==9){

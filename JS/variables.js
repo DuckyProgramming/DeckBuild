@@ -185,8 +185,8 @@ types={
         ],
         },{name:'Link',rarity:0,list:1,
         stats:[
-            {damage:3,alt:0,cost:2,attack:4,target:0,spec:4,class:0},
-            {damage:3,alt:0,cost:2,attack:4,target:0,spec:4,class:0},
+            {damage:3,alt:0,cost:2,attack:4,target:0,spec:4,class:2},
+            {damage:3,alt:0,cost:2,attack:4,target:0,spec:4,class:2},
         ],
         },{name:'Shock',rarity:1,list:1,
         stats:[
@@ -428,10 +428,10 @@ types={
             {damage:4,alt:1,cost:1,attack:301,target:1,spec:0,class:1},
             {damage:8,alt:1,cost:1,attack:301,target:1,spec:0,class:1},
         ],
-        },{name:'Big Block',rarity:0,list:1,
+        },{name:'Big\nBlock',rarity:0,list:1,
         stats:[
-            {damage:34,alt:0,cost:2,attack:2,target:0,spec:0,class:1},
-            {damage:54,alt:0,cost:2,attack:2,target:0,spec:0,class:1},
+            {damage:14,alt:0,cost:2,attack:2,target:0,spec:0,class:1},
+            {damage:24,alt:0,cost:2,attack:2,target:0,spec:0,class:1},
         ],
         },{name:'Body\nHardening',rarity:1,list:1,
         stats:[
@@ -470,8 +470,8 @@ types={
         ],
         },{name:'Deft',rarity:0,list:1,
         stats:[
-            {damage:1,alt:0,cost:1,attack:307,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:1,attack:307,target:0,spec:0,class:2},
+            {damage:1,alt:1,cost:1,attack:307,target:0,spec:0,class:2},
         ],
         },{name:'Double\nJump Kick',rarity:1,list:1,
         stats:[
@@ -2050,469 +2050,469 @@ types={
             name:'',id:0,rarity:-1,list:0,
             desc:'',
         },{
-            name:'First Turn Redraw',id:1,rarity:1,list:0,
-            desc:'Add 1 Redraw at\nthe Start of Combat',
+            name:'Card Trick',id:1,rarity:1,list:0,
+            desc:'Add 1 Redraw at\nthe Start of Combat', 
         },{
-            name:'Free Avoid',id:2,rarity:1,list:0,
-            desc:'Add 1 Avoid\nEvery Turn',
+            name:'Good Shoes',id:2,rarity:1,list:0,
+            desc:'Add 1 Step\nEvery Turn', 
         },{
-            name:'2 Quick Heal',id:3,rarity:0,list:0,
+            name:'Beans',id:3,rarity:0,list:0,
             desc:'Heal 2 Health\nat the End of Combat',
         },{
-            name:'First Turn Draw',id:4,rarity:0,list:0,
-            desc:'Draw 2 Extra Cards\nat the Start of Combat',
+            name:'Hidden Cards',id:4,rarity:0,list:0,
+            desc:'Draw 2 Extra Cards\nat the Start of Combat', 
         },{
-            name:'First Turn Miracle',id:5,rarity:0,list:0,
+            name:'Divine Gift',id:5,rarity:0,list:0,
             desc:'Add 1 Miracle at\nthe Start of Combat',
         },{
-            name:'First Attack Damage',id:6,rarity:0,list:0,
+            name:'Sneak Attack',id:6,rarity:0,list:0,
             desc:'First Attack\nDeals +8 Damage',
         },{
-            name:'First Turn Block',id:7,rarity:0,list:0,
+            name:'Preemptive Block',id:7,rarity:0,list:0,
             desc:'Gain 10 Block\nat the Start of Combat',
         },{
-            name:'Resting Energy',id:8,rarity:0,list:0,
+            name:'Energy Bar',id:8,rarity:0,list:0,
             desc:'Gain 2 Energy\nafter Resting',
         },{
-            name:'No Attack Energy',id:9,rarity:0,list:0,
+            name:'Combat Nap',id:9,rarity:0,list:0,
             desc:'If You do not Attack\nGain 1 Energy Next Turn',
         },{
-            name:'First Turn Weaken',id:10,rarity:0,list:0,
+            name:'Plague Talisman',id:10,rarity:0,list:0,
             desc:'Apply 1 Weak to All\nEnemies the Start of Combat',
         },{
-            name:'Counter\nAll',id:11,rarity:0,list:0,
+            name:'Cactus Armor',id:11,rarity:0,list:0,
             desc:'Counter 3 All\nAt All Times',
         },{
-            name:'First Damage Draw',id:12,rarity:0,list:0,
+            name:'Bloody Cards',id:12,rarity:0,list:0,
             desc:'Draw 3 Extra Cards at First\nDamage Taken per Combat',
         },{
-            name:'Add Card Currency',id:13,rarity:0,list:0,
+            name:'Deck of Greed',id:13,rarity:0,list:0,
             desc:'Gain 10 Currency\nWhen Card Added',
         },{
-            name:'Add Card Rest',id:14,rarity:0,list:0,
+            name:'Bedroll of Cards',id:14,rarity:0,list:0,
             desc:'Add a Card\nafter Resting',
         },{
-            name:'Third Turn Energy',id:15,rarity:0,list:0,
+            name:'Duck of Rejuvenation',id:15,rarity:0,list:0,
             desc:'Gain 1 Energy\nevery 3rd Turn',
         },{
-            name:'First Turn Energy',id:16,rarity:0,list:0,
+            name:'Coffee',id:16,rarity:0,list:0,
             desc:'Gain 1 Energy at\nthe Start of Combat',
         },{
-            name:'Unspent Currency',id:17,rarity:0,list:0,
+            name:'Scared Piggy',id:17,rarity:0,list:0,
             desc:'Gain 10 Currency per Room\nUntil You Enter a Shop',
         },{
-            name:'Shop Heal',id:18,rarity:0,list:0,
+            name:'Pudding',id:18,rarity:0,list:0,
             desc:'Heal 15 Health\nWhen Entering a Shop',
         },{
-            name:'Critical Hit',id:19,rarity:0,list:0,
+            name:'Duck of Ten Feathers',id:19,rarity:0,list:0,
             desc:'Every 10th Attack\nDeals Double Damage',
         },{
-            name:'First Turn Dexterity',id:20,rarity:0,list:0,
+            name:'Necklace of Protection',id:20,rarity:0,list:0,
             desc:'Gain 1 Dexterity at\nthe Start of Combat',
         },{
-            name:'Curse Negate',id:21,rarity:0,list:0,
+            name:'Blessed Shiny Rock',id:21,rarity:0,list:0,
             desc:'Remove the Next\nCurse Obtained',
         },{
-            name:'10 Attack Energy',id:22,rarity:0,list:0,
+            name:'Ten Handled Coffee Cup',id:22,rarity:0,list:0,
             desc:'Every 10 Attacks\nPlayed, Gain 1 Energy',
         },{
-            name:'Weak Elites',id:23,rarity:0,list:0,
+            name:'Cursed Book of Health',id:23,rarity:0,list:0,
             desc:'Enemies in Elite Rooms\nLose 20% of their Health',
         },{
-            name:'Improved Heal',id:24,rarity:0,list:0,
+            name:'Extra Cheese',id:24,rarity:0,list:0,
             desc:'Heal 15 More\nHealth When Resting',
         },{
-            name:'Cheap Removal',id:25,rarity:0,list:0,
+            name:'Threatening Duck',id:25,rarity:0,list:0,
             desc:'Removing Cards Always\nCosts 60 Currency',
         },{
-            name:'7 Max HP',id:26,rarity:0,list:0,
+            name:'Cinnamon Roll',id:26,rarity:0,list:0,
             desc:'When Taken,\nGain 7 Max HP',
         },{
-            name:'Small Attack Bonus',id:27,rarity:0,list:0,
+            name:'Small Whetstone',id:27,rarity:0,list:0,
             desc:'If You Deal Less than 5\nDamage, Increase it to 5',
         },{
             name:'First Turn Strength',id:28,rarity:0,list:0,
             desc:'Gain 1 Strength at\nthe Start of Combat',
         },{
-            name:'Random Upgrade',id:29,rarity:-1,list:0,
+            name:'Lucky Dice',id:29,rarity:-1,list:0,
             desc:'Each Turn, Upgrade a\nRandom Card in Your Hand',
         },{
-            name:'Upgrade 2 Attacks',id:30,rarity:0,list:0,
+            name:'Training Manual',id:30,rarity:0,list:0,
             desc:'When Taken, Upgrade\n2 Random Attacks',
         },{
-            name:'Upgrade 2 Skills',id:31,rarity:0,list:0,
+            name:'Shielding Manual',id:31,rarity:0,list:0,
             desc:'When Taken, Upgrade\n2 Random Skills',
         },{
-            name:'Upgrade 2 Powers',id:32,rarity:0,list:0,
+            name:'Mystic Manual',id:32,rarity:0,list:0,
             desc:'When Taken, Upgrade\n2 Random Powers',
         },{
-            name:'Low Health Strength',id:33,rarity:0,list:0,
+            name:'Hat of Rage',id:33,rarity:0,list:0,
             desc:'Gain 1 Strength Every Turn\nWhen Health Below 50%',
         },{
-            name:'Base Combo',id:34,rarity:0,list:1,
+            name:'Twitchy',id:34,rarity:0,list:1,
             desc:'Cannot Have Less\nthan 1 Combo',
         },{
-            name:'Faith Gain',id:35,rarity:0,list:2,
+            name:'Holy Book',id:35,rarity:0,list:2,
             desc:'Gain 1 Faith\nEvery Turn',
         },{
-            name:'First Turn Focus',id:36,rarity:0,list:3,
+            name:'Concentrating Disc',id:36,rarity:0,list:3,
             desc:'Gain 1 Focus at\nthe Start of Combat',
         },{
-            name:'Balance Control',id:37,rarity:0,list:4,
+            name:'Gymnastic Guide',id:37,rarity:0,list:4,
             desc:'When Taken, Gain\n+2 Max Balance',
         },{
-            name:'Curse Play',id:38,rarity:1,list:0,
+            name:'Cursed Holy Water',id:38,rarity:1,list:0,
             desc:'You Can Play and Exhaust\nCurses, Taking 1 Damage',
         },{
-            name:'Curse Max Health',id:39,rarity:1,list:0,
+            name:'Cursed Relic',id:39,rarity:1,list:0,
             desc:'When You Obtain a Curse,\nGain 6 Max HP',
         },{
-            name:'Rest Deck Size Heal',id:40,rarity:1,list:0,
+            name:'Burning Cards',id:40,rarity:1,list:0,
             desc:'For Every Card in Your Deck, Heal\n0.5 Health When You Enter a Rest Site',
         },{
-            name:'Upgrade Attacks',id:41,rarity:1,list:0,
+            name:'Soldiers Guide',id:41,rarity:1,list:0,
             desc:'Upgrade All\nAttacks Added',
         },{
-            name:'Upgrade Skills',id:42,rarity:1,list:0,
+            name:'Heavy Shield',id:42,rarity:1,list:0,
             desc:'Upgrade All\nSkills Added',
         },{
-            name:'Upgrade Powers',id:43,rarity:1,list:0,
+            name:'Mystic Orb',id:43,rarity:1,list:0,
             desc:'Upgrade All\nPowers Added',
         },{
-            name:'Enemy Death Loot',id:44,rarity:1,list:0,
+            name:'Bloodlust',id:44,rarity:1,list:0,
             desc:'When an Enemy Dies, Gain\n1 Energy and Draw 1 Card',
         },{
-            name:'Second Turn Block',id:45,rarity:1,list:0,
+            name:'Slow Shield',id:45,rarity:1,list:0,
             desc:'Gain 14 Block at\nthe Start of Turn 2',
         },{
-            name:'Card Spam',id:46,rarity:1,list:0,
+            name:'Trick Deck',id:46,rarity:1,list:0,
             desc:'Every 10 Cards\nPlayed, Draw 1 Card',
         },{
-            name:'3 Attack Dexterity',id:47,rarity:1,list:0,
+            name:'Fluid Pose',id:47,rarity:1,list:0,
             desc:'Every 3 Attacks\nPlayed, Gain 1 Dexterity',
         },{
-            name:'3 Skill Damage All',id:48,rarity:1,list:0,
+            name:'Spiked Shield',id:48,rarity:1,list:0,
             desc:'Every 3 Skills Played, Deal\n5 Damage to All Enemies',
         },{
-            name:'Low Health Heal',id:49,rarity:1,list:0,
+            name:'Emergency Rations',id:49,rarity:1,list:0,
             desc:'At the End of Combat, If Health\nBelow 50%, Heal 12 Health',
         },{
-            name:'Turn Damage All',id:50,rarity:1,list:0,
+            name:'Swift Knife',id:50,rarity:1,list:0,
             desc:'At the Start of Your Turn,\nDeal 3 Damage to All Enemies',
         },{
-            name:'Power Cost Decrease',id:51,rarity:1,list:0,
+            name:'Magic Consuming Duck',id:51,rarity:1,list:0,
             desc:'When You Play a Power, a Random\nCard in Your Hand Costs 1 Less',
         },{
-            name:'3 Attack Block',id:52,rarity:1,list:0,
+            name:'Shield Ram',id:52,rarity:1,list:0,
             desc:'Every 3 Attacks\nPlayed, Gain 4 Block',
         },{
-            name:'Boss Health',id:53,rarity:1,list:0,
+            name:'Special Chicken',id:53,rarity:1,list:0,
             desc:'At the Start of Boss\nCombats, Heal 25 Health',
         },{
-            name:'10 Max HP',id:54,rarity:1,list:0,
+            name:'Chocolate Croissant',id:54,rarity:1,list:0,
             desc:'When Taken,\nGain 10 Max HP',
         },{
-            name:'More Card Choices',id:55,rarity:1,list:0,
+            name:'Lockpick',id:55,rarity:1,list:0,
             desc:'Card Rewards Have\n1 More Choice',
         },{
-            name:'3 Attack Strength',id:56,rarity:1,list:0,
+            name:'Consuming Sword',id:56,rarity:1,list:0,
             desc:'Every 3 Attacks\nPlayed, Gain 1 Strength',
         },{
-            name:'Resting Max HP',id:57,rarity:1,list:0,
+            name:'Legendary Muffin',id:57,rarity:1,list:0,
             desc:'Can Gain +4 Max\nHP When Resting',
         },{
-            name:'Shuffle Energy',id:58,rarity:1,list:0,
+            name:'Turbine',id:58,rarity:1,list:0,
             desc:'When You Shuffle Your\nDeck, Gain 1 Energy',
         },{
-            name:'Shop Card Supply',id:59,rarity:1,list:0,
+            name:'VIP Membership',id:59,rarity:1,list:0,
             desc:'The Shop\nRefills Cards',
         },{
-            name:'Effective Vulnerable',id:60,rarity:1,list:0,
+            name:'Brutality',id:60,rarity:1,list:0,
             desc:'Vulnerable Enemies Take 75%\nMore Damage Instead of 50%',
         },{
-            name:'Damage Taken Block',id:61,rarity:1,list:0,
+            name:'Protective Shield',id:61,rarity:1,list:0,
             desc:'When Damage Taken,\nGain 3 Block Next Turn',
         },{
-            name:'Effective Weak',id:62,rarity:1,list:0,
+            name:'Eye of Weakness',id:62,rarity:1,list:0,
             desc:'Weak Enemies Deal 50%\nLess Damage Instead of 25%',
         },{
-            name:'Attack Temporary Dexterity',id:63,rarity:1,list:0,
+            name:'Skilled Attacks',id:63,rarity:1,list:0,
             desc:'Whenever You Play an Attack,\nGain 1 Temporary Dexterity',
         },{
-            name:'Combo Cycle',id:64,rarity:1,list:1,
+            name:'Sombrero of Conversion',id:64,rarity:1,list:1,
             desc:'Whenever You Take\nDamage, Gain 1 Combo',
         },{
-            name:'Starting Calm',id:65,rarity:1,list:2,
+            name:'Mediation Mat',id:65,rarity:1,list:2,
             desc:'Start Each\nCombat in Calm',
         },{
-            name:'Starting Charge',id:66,rarity:1,list:3,
+            name:'Stone Orb',id:66,rarity:1,list:3,
             desc:'At the Start of Combat,\nCharge 1 Basic Charge',
         },{
-            name:'Imbalance Mitigation',id:67,rarity:1,list:4,
+            name:'Unbalanced Scale',id:67,rarity:1,list:4,
             desc:'Reduce the Effect\nof Breaking Balance',
         },{
-            name:'Power Heal',id:68,rarity:2,list:0,
+            name:'Enchanted Steak',id:68,rarity:2,list:0,
             desc:'Whenever You Play a\nPower, Heal 2 Health',
         },{
-            name:'End Block Loss Limit',id:69,rarity:2,list:0,
+            name:'Resilient Shield',id:69,rarity:2,list:0,
             desc:'At the End of Your Turn,\nLose 15 Block Instead of All',
         },{
-            name:'Third Turn Block',id:70,rarity:2,list:0,
+            name:'Tri Layered Iron Gloves',id:70,rarity:2,list:0,
             desc:'Gain 18 Block at\nthe Start of Turn 3',
         },{
-            name:'Exhaust Add Random',id:71,rarity:2,list:0,
+            name:'Hyper Helpful Duck',id:71,rarity:2,list:0,
             desc:'When a Card is Exhausted, Add\na Random Card to Your Hand',
         },{
-            name:'Curse Strength',id:72,rarity:2,list:0,
+            name:'Curse Feeding Relic',id:72,rarity:2,list:0,
             desc:'Gain 1 Strength for Every\nCurse at the Start of Combat',
         },{
-            name:'First Turn Buffer',id:73,rarity:2,list:0,
+            name:'Portable Wall',id:73,rarity:2,list:0,
             desc:'Start Each Combat\nWith 1 Buffer',
         },{
-            name:'First Turn Selective Redraw',id:74,rarity:2,list:0,
+            name:'Cheating Deck',id:74,rarity:2,list:0,
             desc:'Add 1 Selective Redraw\nat the Start of Combat',
         },{
-            name:'Weakness Immunity',id:75,rarity:2,list:0,
+            name:'Amulet of Resistance',id:75,rarity:2,list:0,
             desc:'You Cannot\nBecome Weak',
         },{
-            name:'Vulnerability Immunity',id:76,rarity:2,list:0,
+            name:'Fiery Soul',id:76,rarity:2,list:0,
             desc:'You Cannot\nBecome Vulnerable',
         },{
-            name:'Frailness Immunity',id:77,rarity:2,list:0,
+            name:'Vitamins',id:77,rarity:2,list:0,
             desc:'You Cannot\nBecome Frail',
         },{
-            name:'Resting Strength',id:78,rarity:2,list:0,
+            name:'Weights',id:78,rarity:2,list:0,
             desc:'Can Gain 1 Strength\nWhen Resting',
         },{
-            name:'Energy Save',id:79,rarity:2,list:0,
+            Name:'Energy Storing Aubergine',id:79,rarity:2,list:0,
             desc:'Energy Conserved\nBetween Turns',
         },{
-            name:'Intangible Gain',id:80,rarity:2,list:0,
+            name:'Quantum Cube',id:80,rarity:2,list:0,
             desc:'Every 5 Turns,\nGain 1 Intangible',
         },{
-            name:'Revive',id:81,rarity:2,list:0,
+            name:'Soul in a Bottle',id:81,rarity:2,list:0,
             desc:'Gain 50% HP Instead of\nDying, Only Usable Once',
         },{
-            name:'14 Max HP',id:82,rarity:2,list:0,
+            name:'Baguette',id:82,rarity:2,list:0,
             desc:'When Taken,\nGain 14 Max HP',
         },{
-            name:'Money Box',id:83,rarity:2,list:0,
+            name:'Lost Treasure',id:83,rarity:2,list:0,
             desc:'When Taken,\nGain 300 Currency',
         },{
-            name:'Resting Removal',id:84,rarity:2,list:0,
+            name:'Demonic Flames',id:84,rarity:2,list:0,
             desc:'Can Remove Cards\nWhen Resting',
         },{
-            name:'Low Play Return',id:85,rarity:2,list:0,
+            name:'Small Comb',id:85,rarity:2,list:0,
             desc:'When You Play Less Than 3 Cards,\nDraw 3 Extra Cards Next Turn',
         },{
-            name:'Choose 2 Cards',id:86,rarity:2,list:0,
+            name:'Split Spike',id:86,rarity:2,list:0,
             desc:'Can Select 2\nCards After Combat',
         },{
-            name:'Resting Relics',id:87,rarity:2,list:0,
+            name:'Explorer Duck',id:87,rarity:2,list:0,
             desc:'Can Gain Relics\nWhen Resting',
         },{
-            name:'Turn 7 Damage All',id:88,rarity:2,list:0,
+            name:'Time Bomb',id:88,rarity:2,list:0,
             desc:'On Turn 7, Deal 52\nDamage to All ENemies',
         },{
-            name:'First Turn Armor',id:89,rarity:2,list:0,
+            name:'Barricade Projector',id:89,rarity:2,list:0,
             desc:'Gain 4 Armor at\nthe Start of Combat',
         },{
-            name:'Small Damage Control',id:90,rarity:2,list:0,
+            name:'Amulet of the Hippo',id:90,rarity:2,list:0,
             desc:'Whenever You Take 5 or\nLess Damage, Reduce it to 1',
         },{
-            name:'Damage Reduction',id:91,rarity:2,list:0,
+            name:'Heavy Armor',id:91,rarity:2,list:0,
             desc:'Whenever You Take\nDamage, Reduce it by 1',
         },{
-            name:'Infinite Cards',id:92,rarity:2,list:0,
-            desc:'If You Have No Cards\nin Your Hand, Draw 1 Card', 
+            name:'Sentient Deck',id:92,rarity:2,list:0,
+            desc:'If You Have No Cards\nin Your Hand, Draw 1 Card',
         },{
-            name:'Exhaust Damage All',id:93,rarity:2,list:0,
+            name:'Misty Whirlwind',id:93,rarity:2,list:0,
             desc:'Whenever You Exhaust a Card,\nDeal 3 Damage to All Enemies',
         },{
-            name:'Heal Boost',id:94,rarity:2,list:0,
+            name:'Divine Crystal',id:94,rarity:2,list:0,
             desc:'Heal Twice as\nMuch in Combat',
         },{
-            name:'Discard Damage',id:95,rarity:2,list:0,
+            name:'Card Throwing Manual',id:95,rarity:2,list:0,
             desc:'Whenever You Discard a Card,\nDeal 3 Damage to a Random Enemy',
         },{
-            name:'Discard Block',id:96,rarity:2,list:0,
+            name:'Consuming Shield',id:96,rarity:2,list:0,
             desc:'Whenever You Discard\na Card, Gain 3 Block',
         },{
-            name:'Unplayed Block',id:97,rarity:2,list:0,
+            name:'Card Wall',id:97,rarity:2,list:0,
             desc:'At the End of Your Turn,\nGain 1 Block per Unplayed Card',
         },{
-            name:'First Turn Shivs',id:98,rarity:2,list:0,
+            name:'Teapot',id:98,rarity:2,list:0,
             desc:'Add 2 Shiv at the\nStart of Combat',
         },{
-            name:'Long Combo',id:99,rarity:2,list:1,
+            name:'Lost Scroll',id:99,rarity:2,list:1,
             desc:'Combo Cards Only Remove 2 Combo',
         },{
-            name:'Effective Stance',id:100,rarity:2,list:2,
+            name:'Holy Rage',id:100,rarity:2,list:2,
             desc:'Deal 3x Damage in Wrath\nand 4x Damage in Divinity',
         },{
-            name:'Starting Explosive',id:101,rarity:2,list:3,
+            name:'C4',id:101,rarity:2,list:3,
             desc:'At the Start of Combat,\nCharge 1 Explosive Charge',
         },{
-            name:'Rearm',id:102,rarity:2,list:4,
+            name:'Magnetic Weapon',id:102,rarity:2,list:4,
             desc:'If Unarmed, Rearm\nat End of Turn',
         },{
-            name:'X Cost Buff',id:103,rarity:3,list:0,
+            name:'Battery',id:103,rarity:3,list:0, 
             desc:'X Cost Cards\nGet +2 to X',
         },{
-            name:'First Turn Control',id:104,rarity:3,list:0,
+            name:'Hypnotic Pendent',id:104,rarity:3,list:0,
             desc:'Gain 1 Control at\nthe Start of Combat',
         },{
-            name:'Double Card',id:105,rarity:3,list:0,
+            name:'Mirror Card',id:105,rarity:3,list:0,
             desc:'When Taken,\nDuplicate a Card',
         },{
-            name:'Block Break Vulnerable',id:106,rarity:3,list:0,
+            name:'Cruel Blade',id:106,rarity:3,list:0,
             desc:"When You Break an Enemy's\nBlock, Apply 2 Vulnerable",
         },{
-            name:'7 Max HP and Full Heal',id:107,rarity:3,list:0,
+            name:'Kimchi',id:107,rarity:3,list:0,
             desc:'When Taken, Gain 7 Max\nHP and Heal to Full',
         },{
-            name:'Status Play',id:108,rarity:3,list:0,
+            name:'Holy Duck',id:108,rarity:3,list:0,
             desc:'Status Cards\nCan be Played',
         },{
-            name:'Shop Discount',id:109,rarity:3,list:0,
+            name:'Gold Rank',id:109,rarity:3,list:0,
             desc:'All Shop Prices\nare Reduced by 2x',
         },{
-            name:'Add 5 Cards',id:110,rarity:3,list:0,
+            name:'Card Pack',id:110,rarity:3,list:0,
             desc:'When Taken,\nAdd 5 Cards',
         },{
-            name:'Color Mix',id:111,rarity:3,list:0,
+            name:'Multitool',id:111,rarity:3,list:0,
             desc:'After Combat, Cards of\nAny Color Can Drop',
         },{
-            name:'Elite Strength',id:112,rarity:3,list:0,
+            name:'Elite Protein',id:112,rarity:3,list:0,
             desc:'Gain 3 Strength at the\nStart of Elite Combats',
         },{
-            name:'Exhaust Chance',id:113,rarity:3,list:0,
+            name:'Energizing Coin',id:113,rarity:3,list:0,
             desc:'Exhausting Cards Only\nExhaust Half of the Time',
         },{
-            name:'Shuffle Block',id:114,rarity:3,list:0,
+            name:'Snow Globe',id:114,rarity:3,list:0,
             desc:'Whenever You Shuffle\nYour Deck, Gain 6 Block',
         },{
-            name:'First Turn Colorless Card',id:115,rarity:3,list:0,
-            desc:'Choose 1 Colorless Card\nat the Start of Combat',
+            name:'Basic Die',id:115,rarity:3,list:0,
+            desc:'Add 1 Random Colorless Card\nat the Start of Combat',
         },{
-            name:'Strength Burst',id:116,rarity:3,list:0,
+            name:'Totem of Strength',id:116,rarity:3,list:0,
             desc:'At the Start of Your Turn, Gain 2 Strength,\nand All Enemies Gain 1 Strength',
         },{
-            name:'Poison All',id:117,rarity:3,list:0,
+            name:'Jade Viper',id:117,rarity:3,list:0,
             desc:'At the Start of Your Turn,\nAll Enemies Gain 2 Poison',
         },{
-            name:'Starting Combo',id:118,rarity:3,list:1,
+            name:'Dummy',id:118,rarity:3,list:1,
             desc:'Gain 4 Combo at the\nStart of Combat',
         },{
-            name:'Shuffle Scry',id:119,rarity:3,list:2,
+            name:'Whirling Crystal Ball',id:119,rarity:3,list:2,
             desc:'Whenever You Shuffle\nYour Deck, Scry 3',
         },{
-            name:'Charge Passive',id:120,rarity:3,list:3,
+            name:'Little Charm',id:120,rarity:3,list:3,
             desc:'Trigger a Weak Evoke on Your Rightmost\nCharge at the Start of Your Turn',
         },{
-            name:'Balance Damage All',id:121,rarity:3,list:4,
+            name:'Earthquake Boots',id:121,rarity:3,list:4,
             desc:'When You Break Balance,\nDeal 10 Damage to All Enemies',
         },{
-            name:'Upgrade Half',id:122,rarity:4,list:0,
-            desc:'When Taken, Upgrade\nHalf of Your Cards',
+            name:'Lucky Coin',id:122,rarity:4,list:0,
+            desc:'When Taken, Upgrade\nHalf of Your Cards',            
         },{
-            name:'Energy / Less Cards',id:123,rarity:4,list:0,
+            name:'Furnace',id:123,rarity:4,list:0,
             desc:'Gain 1 Base Energy, Have 2\nLess Cards to Choose From',
         },{
             name:'Relic / Curse',id:124,rarity:4,list:0,
             desc:'When Taken, Gain 3 Relics,\nand a Special Curse',
         },{
-            name:'Energy / Heal',id:125,rarity:4,list:0,
+            name:'Oath of Darkness',id:125,rarity:4,list:0,
             desc:'Gain 1 Base Energy,\nCannot Heal at Rest',
         },{
-            name:'Energy / Curse',id:126,rarity:4,list:0,
-            desc:'Gain 1 Base Energy,\nGain 2 Curses',
+            name:'Demonic Deal',id:126,rarity:4,list:0,
+            desc:'Gain 1 Base Energy,\nGain 3 Curses',
         },{
-            name:'Energy / No Currency',id:127,rarity:4,list:0,
-            desc:'Gain 1 Base Energy,\nHave No Currency',
+            name:'Oath of Gold',id:127,rarity:4,list:0,
+            desc:'Gain 1 Base Energy,\nCannot Gain Currency',
         },{
-            name:'Remove Unupgraded',id:128,rarity:4,list:0,
-            desc:'Remove Half of All Unupgraded\nCards from Your Deck',
+            name:'Lighter',id:128,rarity:4,list:0,
+            desc:'Remove 2 Cards\nfrom Your Deck',
         },{
-            name:'Energy / Upgrade',id:129,rarity:4,list:0,
+            name:'Metallic Coating',id:129,rarity:4,list:0,
             desc:'Gain 1 Base Energy,\nCannot Upgrade at Rest',
         },{
-            name:'Transformation',id:130,rarity:4,list:0,
+            name:'Mystical Cocoon',id:130,rarity:4,list:0,
             desc:'Transform All Strikes\nand Defends',
         },{
-            name:'Energy / Strength',id:131,rarity:4,list:0,
+            name:'Cursed Anchor',id:131,rarity:4,list:0,
             desc:'Gain 1 Base Energy, Enemies\nStart With 1 Strength',
         },{
-            name:'Energy / Intents',id:132,rarity:4,list:0,
+            name:'Cursed Eye',id:132,rarity:4,list:0,
             desc:'Gain 1 Base Energy,\nCannot See Intents',
         },{
-            name:'No Discard',id:133,rarity:4,list:0,
+            name:'Quantum Cards',id:133,rarity:4,list:0,
             desc:'You Do Not Discard Your\nHand at the End of Your Turn',
         },{
-            name:'Elite / Boss Energy',id:134,rarity:4,list:0,
+            name:'Charm of Fallen Spirits',id:134,rarity:4,list:0,
             desc:'Gain 1 Energy on\nElite and Boss Combats',
         },{
-            name:'Standard Draw',id:135,rarity:4,list:0,
+            name:'Speed Gloves',id:135,rarity:4,list:0,
             desc:'Draw 1 More\nCard per Turn',
         },{
-            name:'Energy / Max Cards',id:136,rarity:4,list:0,
-            desc:'Gain 1 Base Energy, Cannot\nPlay More Than 6 Cards per Turn',
+            name:'Oath of Limits',id:136,rarity:4,list:0,
+            desc:'Gain 1 Base Energy, Cannot\nPlay More Than 6 Cards',
         },{
-            name:'6 Quick Heal',id:137,rarity:4,list:0,
+            name:'Bread',id:137,rarity:4,list:0,
             desc:'Heal 6 Health\nat the End of Combat',
         },{
-            name:'Potion Storage',id:138,rarity:0,list:0,
+            name:'Larger Bag',id:138,rarity:0,list:0,
             desc:'You Can Hold 2\nExtra Potions',
         },{
-            name:'Potion Heal',id:139,rarity:0,list:0,
+            name:'Magic Leech',id:139,rarity:0,list:0,
             desc:'Whenever You Use a\nPotion, Heal 5 Health',
         },{
-            name:'Potion Draw',id:140,rarity:1,list:0,
+            name:'Freezing Amulet',id:140,rarity:1,list:0,
             desc:'Whenever You Use a\nPotion, Draw 2 Cards',
         },{
-            name:'Potion Supply',id:141,rarity:3,list:0,
+            name:'Alchemists Box',id:141,rarity:3,list:0,
             desc:'When Taken, Fill\nAll Potion Slots',
         },{
-            name:'Potion Effectiveness',id:142,rarity:4,list:0,
+            name:'Herbs',id:142,rarity:4,list:0,
             desc:'Potions are Twice as Effective',
         },{
-            name:'Energy / Potions',id:143,rarity:4,list:0,
+            name:'Temperance',id:143,rarity:4,list:0,
             desc:'Gain 1 Base Energy,\nCannot Use Potions',
         },{
-            name:'Energy / Wound',id:144,rarity:4,list:0,
+            name:'Bloody Oath',id:144,rarity:4,list:0,
             desc:'Gain 1 Base Energy,\nStart Combat With 1 Wound',
         },{
-            name:'Damage Draw',id:145,rarity:4,list:0,
+            name:'Bleeding Cards',id:145,rarity:4,list:0,
             desc:'Whenever You Take\nDamage, Draw 1 Card',
         },{
-            name:'Draw / Confusion',id:146,rarity:4,list:0,
+            name:'Magicians Soul',id:146,rarity:4,list:0,
             desc:'Draw 2 More Cards per Turn,\nStart Combat Confused',
         },{
-            name:'Free Power',id:147,rarity:4,list:0,
+            name:'Cup',id:147,rarity:4,list:0,
             desc:'Cards of Cost 0 Have +4 Effect',
         },{
-            name:'Discard Energy',id:148,rarity:4,list:0,
+            name:'Hungry Flames',id:148,rarity:4,list:0,
             desc:'The First Time Each Turn a\nCard is Discarded, Gain 1 Energy',
         },{
-            name:'First Turn 3 Miracles',id:149,rarity:4,list:0,
+            name:'Divine Blessing',id:149,rarity:4,list:0,
             desc:'Add 3 Miracles at\nthe Start of Combat',
         },{
-            name:'Random',id:150,rarity:4,list:0,
+            name:'Thieves Bag',id:150,rarity:4,list:0,
             desc:'Gain 1 Potion, 50 Currency, 5 Max Health,\nChoose 1 Card, Upgrade 1 Random Card',
         },{
-            name:'Triple Play Buff',id:151,rarity:3,list:0,
+            name:'Trijewel',id:151,rarity:3,list:0,
             desc:'When You Play an Attack, a Skill,\nand a Power, remove Debuffs',
         },{
-            name:'Combo Loot',id:152,rarity:4,list:1,
+            name:'Invigoration',id:152,rarity:4,list:1,
             desc:'Double Combo When\nan Enemy Dies',
         },{
-            name:'Calm Energy',id:153,rarity:4,list:2,
+            name:'Book of Peace',id:153,rarity:4,list:2,
             desc:'Gain 1 More Energy\nWhen Exiting Calm',
         },{
-            name:'Damage Evoke',id:154,rarity:4,list:3,
+            name:'Bloody Orb',id:154,rarity:4,list:3,
             desc:'Trigger a Weak Evoke on Your\nRightmost Charge When You Take a hit',
         },{
-            name:'Balance Cycle',id:155,rarity:4,list:4,
+            name:'Duality Charm',id:155,rarity:4,list:4,
             desc:'When Balance Broken, Trigger the Opposite\nAffect on the Other End of Spectrum',
         },/*{
             name:'', d:15,rarity:4,list:0,

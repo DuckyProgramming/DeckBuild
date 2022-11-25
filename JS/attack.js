@@ -1507,6 +1507,9 @@ class attack{
                         g=floor(random(0,this.hold.list.length))
                         this.battle.hand.add(this.hold.list[g],0,this.battle.player)
                         this.battle.hand.cards[this.battle.hand.cards.length-1].cost=0
+                        if(this.alt>0){
+                            this.battle.hand.cards[this.battle.hand.cards.length-1].base.cost=0
+                        }
                     }
                 break
                 case 308:

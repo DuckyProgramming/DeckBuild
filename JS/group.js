@@ -132,9 +132,19 @@ class group{
         }
     }
     randomUpgrade(){
-        h=floor(random(0,this.cards.length))
-        this.cards[h].level++
-        this.cards[h]=reformCard(this.cards[h])
+        this.calc.list=[]
+        for(h=0,lh=this.cards.length;h<lh;h++){
+            if(this.cards[h].level==0){
+                this.calc.list.push(h)
+            }
+        }
+        if(this.calc.list.length>0){
+            h=this.calc.list[floor(random(0,this.calc.list.length))]
+            if(this.cards[h].level==0){
+                this.cards[h].level++
+                this.cards[h]=reformCard(this.cards[h])
+            }
+        }
     }
     shuffle(){
         if(this.battle.relics.active[58]){
@@ -188,7 +198,7 @@ class group{
                 }else if(this.cards[e].attack==-7){
                     this.battle.combatants[0].status.main[8]++
                 }else if(this.cards[e].attack==-10){
-                    this.battle.combatants[0].take(2,0)
+                    this.battle.combatants[0].take(2,-1)
                 }else if(this.cards[e].attack==-14){
                     this.battle.combatants[0].status.main[11]+=2
                 }
@@ -205,7 +215,7 @@ class group{
         }
         for(e=0,le=this.cards.length;e<le;e++){
             this.cards[e].displayDiscarding(this.anim.discarding)
-            this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length,this.battle.discard.cards.length,this.battle.random)
+            this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length,this.battle.discard.cards.length,this.battle.reserve.cards.length,this.battle.random)
         }
     }
     displayView(level){
@@ -216,7 +226,7 @@ class group{
                 this.cards[e].anim.afford=0
                 this.cards[e].size=1
                 this.cards[e].fade=1
-                this.cards[e].display(le,0,0,this.battle.defaultRandom)
+                this.cards[e].display(le)
             }
         }else{
             for(e=0,le=this.cards.length;e<le;e++){
@@ -225,7 +235,7 @@ class group{
                 this.cards[e].anim.afford=0
                 this.cards[e].size=1
                 this.cards[e].fade=1
-                this.cards[e].display(le,0,0,this.battle.defaultRandom)
+                this.cards[e].display(le)
             }
         }
     }
