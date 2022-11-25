@@ -996,10 +996,30 @@ types={
             {damage:4,alt:0,cost:0,attack:329,target:1,spec:0,class:0},
             {damage:6,alt:0,cost:0,attack:329,target:1,spec:0,class:0},
         ],
-        },{name:'Particle\nStorm',rarity:1,list:2,
+        },{name:'Particle\nStorm',rarity:2,list:2,
         stats:[
             {damage:5,alt:5,cost:3,attack:247,target:0,spec:0,class:1},
             {damage:6,alt:6,cost:3,attack:247,target:0,spec:0,class:1},
+        ],
+        },{name:'Lesson\nLearned',rarity:2,list:2,
+        stats:[
+            {damage:10,alt:0,cost:2,attack:330,target:1,spec:0,class:0},
+            {damage:13,alt:0,cost:2,attack:330,target:1,spec:0,class:0},
+        ],
+        },{name:'Judgement',rarity:2,list:2,
+        stats:[
+            {damage:30,alt:0,cost:1,attack:331,target:1,spec:0,class:0},
+            {damage:40,alt:0,cost:1,attack:331,target:1,spec:0,class:0},
+        ],
+        },{name:'Umbral\nForm',rarity:2,list:2,
+        stats:[
+            {damage:1,alt:0,cost:3,attack:332,target:0,spec:6,class:2},
+            {damage:1,alt:0,cost:3,attack:332,target:0,spec:0,class:2},
+        ],
+        },{name:'Established',rarity:2,list:2,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:333,target:0,spec:8,class:2},
+            {damage:1,alt:0,cost:1,attack:333,target:0,spec:3,class:2},
         ],
         },
         

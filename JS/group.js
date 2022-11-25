@@ -41,11 +41,11 @@ class group{
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
                 this.add(findCard('Vigilance'),0,this.battle.player)*/
-                this.add(194,0,this.battle.player)
-                this.add(195,0,this.battle.player)
-                this.add(196,0,this.battle.player)
-                this.add(197,0,this.battle.player)
                 this.add(198,0,this.battle.player)
+                this.add(199,0,this.battle.player)
+                this.add(200,0,this.battle.player)
+                this.add(201,0,this.battle.player)
+                this.add(202,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -185,8 +185,14 @@ class group{
         for(let e=0,le=this.cards.length;e<le;e++){
             if((this.cards[e].attack==52||this.cards[e].attack==268)&&!this.cards[e].trigger){
                 this.cards[e].damage+=this.cards[e].alt
+                if(this.battle.combatants[0].status.main[79]>0&&this.cards[e].cost>0){
+                    this.cards[e].cost=max(0,this.cards[e].cost-this.battle.combatants[0].status.main[79])
+                }
             }else if(this.cards[e].attack==114&&this.cards[e].cost>0&&!this.cards[e].trigger){
                 this.cards[e].cost--
+                if(this.battle.combatants[0].status.main[79]>0&&this.cards[e].cost>0){
+                    this.cards[e].cost=max(0,this.cards[e].cost-this.battle.combatants[0].status.main[79])
+                }
             }else if((this.cards[e].spec!=2&&this.cards[e].spec!=9&&this.cards[e].spec!=12&&!this.cards[e].retain||this.cards[e].trigger)){
                 if(this.battle.relics.active[133]){
                     this.battle.random.drawing--
@@ -204,6 +210,9 @@ class group{
                 }
             }else if(this.cards[e].retain){
                 this.cards[e].retain=false
+                if(this.battle.combatants[0].status.main[79]>0&&this.cards[e].cost>0){
+                    this.cards[e].cost=max(0,this.cards[e].cost-this.battle.combatants[0].status.main[79])
+                }
             }
         }
     }

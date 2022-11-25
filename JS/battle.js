@@ -625,6 +625,10 @@ class battle{
                         for(g=0;g<this.combatants[e].status.main[f];g++){
                             this.draw()
                         }
+                    }else if(f==78){
+                        this.mana.max+=this.combatants[e].status.main[f]
+                        this.mana.gen+=this.combatants[e].status.main[f]
+                        this.mana.main+=this.combatants[e].status.main[f]
                     }
                 }
                 if((f==11||f==37)&&this.combatants[e].status.main[f]>0){
@@ -644,7 +648,7 @@ class battle{
                     f!=2&&f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&
                     f!=35&&f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=50&&f!=51&&
                     f!=52&&f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&
-                    f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77){
+                    f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }else if(f==67){

@@ -386,6 +386,10 @@ class card{
             case 327: this.desc+='Add '+this.damage+' Block\nNext Attack\nCosts 0'; break
             case 328: this.desc+='Deal '+this.damage+' Damage\nWhen You Attack\nThis Enemy,\nGain '+this.alt+' Block'; break
             case 329: this.desc+='Deal '+this.damage+' Damage\nReturn on Scry'; break
+            case 330: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Upgrade\na Random Card'; break
+            case 331: this.desc+='If Target Has\nLess Than '+this.damage+'\nHealth, Set its\nHealth to 0\n'+nfp(this.alt)+' Balance'; break
+            case 332: this.desc+='Gain '+this.damage+' Max Energy\nEvery Turn'; break
+            case 333: this.desc+='Retained Cards\nCost '+this.damage+' Less\nWhen Retained'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

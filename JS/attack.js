@@ -1615,6 +1615,23 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.combatants[this.target].status.main[77]+=this.alt
                 break
+                case 330:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].life<=0){
+                        this.battle.deck.randomUpgrade()
+                    }
+                break
+                case 331:
+                    if(this.battle.combatants[this.target].life<this.damage){
+                        this.battle.combatants[this.target].life=0
+                    }
+                break
+                case 332:
+                    this.battle.combatants[0].status.main[78]++
+                break
+                case 333:
+                    this.battle.combatants[0].status.main[79]++
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{
