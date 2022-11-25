@@ -33,34 +33,34 @@ class group{
                 this.add(102,0,this.battle.player)*/
             break
             case 2:
-                /*for(e=0;e<4;e++){
+                for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
-                this.add(findCard('Vigilance'),0,this.battle.player)*/
-                this.add(198,0,this.battle.player)
+                this.add(findCard('Vigilance'),0,this.battle.player)
+                /*this.add(198,0,this.battle.player)
                 this.add(199,0,this.battle.player)
                 this.add(200,0,this.battle.player)
                 this.add(201,0,this.battle.player)
-                this.add(202,0,this.battle.player)
+                this.add(202,0,this.battle.player)*/
             break
             case 3:
-                for(e=0;e<4;e++){
+                /*for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Charge'),0,this.battle.player)
-                this.add(findCard('Dualcast'),0,this.battle.player)
-                /*this.add(181,0,this.battle.player)
-                this.add(182,0,this.battle.player)
-                this.add(183,0,this.battle.player)
-                this.add(184,0,this.battle.player)
-                this.add(185,0,this.battle.player)*/
+                this.add(findCard('Dualcast'),0,this.battle.player)*/
+                this.add(258,0,this.battle.player)
+                this.add(259,0,this.battle.player)
+                this.add(260,0,this.battle.player)
+                this.add(261,0,this.battle.player)
+                this.add(262,0,this.battle.player)
             break
             case 4:
                 /*for(e=0;e<4;e++){
@@ -451,6 +451,10 @@ class group{
                             this.cards[e].used=true
                             this.trigger=false
                         }
+                    }else if(this.cards[e].attack==341){
+                        this.battle.attack.update(this.cards[e].attack,this.cards[e].level,0)
+                        this.trigger=false
+                        break
                     }else if(this.cards[e].target==0){
                         this.battle.playCard()
                         this.battle.attack.update(this.cards[e].attack,this.cards[e].level,0)

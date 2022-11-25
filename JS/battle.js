@@ -36,8 +36,8 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0}
-        this.defaultRandom={attacked:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0}
+        this.defaultRandom={attacked:0,orbs:0}
     }
     setupTesting(type){
         this.initialEvent()
@@ -67,27 +67,13 @@ class battle{
         this.random.played=0
         this.random.playClass=[0,0,0]
         this.random.hits=0
+        this.random.orbs=0
         this.combatants[0].resetUnique()
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
         }
         for(e=0,le=this.generation.combatants.length;e<le;e++){
             this.combatants.push(new combatant(this.layer,this,300+e*100,350,this.generation.combatants[e],1,e+1))
-        }
-        for(e=0,le=this.combatants.length;e<le;e++){
-            if(this.combatants[e].type!=0){
-                this.combatants[e].fade=1
-                if(e>0){
-                    this.combatants[e].setupIntent(-1)
-                    this.counter.enemies.total++
-                }
-                for(f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
-                    this.combatants[e].boost.main[f]=0
-                }
-                for(f=0,lf=this.combatants[e].status.main.length;f<lf;f++){
-                    this.combatants[e].status.main[f]=0
-                }
-            }
         }
         for(e=0,le=this.deck.cards.length;e<le;e++){
             this.deck.cards[e].position.x=1206
@@ -555,6 +541,14 @@ class battle{
             this.discard.cards.splice(0,1)
         }
     }
+    returnHand(){
+        while(this.hand.cards.length>0){
+            if(this.hand.cards[0].spec!=6&&this.hand.cards[0].spec!=13){
+                this.reserve.cards.push(copyCard(this.hand.cards[0]))
+            }
+            this.hand.cards.splice(0,1)
+        }
+    }
     removeCard(index){
         if(this.deck.cards[index].attack==-8){
             this.combatants[0].base.life-=3
@@ -629,6 +623,8 @@ class battle{
                         this.mana.max+=this.combatants[e].status.main[f]
                         this.mana.gen+=this.combatants[e].status.main[f]
                         this.mana.main+=this.combatants[e].status.main[f]
+                    }else if(f==80){
+                        this.combatants[e].boost.main[3]-=this.combatants[e].status.main[f]
                     }
                 }
                 if((f==11||f==37)&&this.combatants[e].status.main[f]>0){
@@ -648,7 +644,8 @@ class battle{
                     f!=2&&f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&
                     f!=35&&f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=50&&f!=51&&
                     f!=52&&f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&
-                    f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79){
+                    f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79&&
+                    f!=80){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }else if(f==67){
@@ -941,6 +938,23 @@ class battle{
         this.hand.allUpgrade()
         this.reserve.allUpgrade()
         this.discard.allUpgrade()
+    }
+    resetCombatant(){
+        for(e=0,le=this.combatants.length;e<le;e++){
+            if(this.combatants[e].type!=0){
+                this.combatants[e].fade=1
+                if(e>0){
+                    this.combatants[e].setupIntent(-1)
+                    this.counter.enemies.total++
+                }
+                for(f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
+                    this.combatants[e].boost.main[f]=0
+                }
+                for(f=0,lf=this.combatants[e].status.main.length;f<lf;f++){
+                    this.combatants[e].status.main[f]=0
+                }
+            }
+        }
     }
     close(){
         if(this.relics.active[97]){
@@ -1895,6 +1909,7 @@ class battle{
                     this.map.position[1]=f
                     this.map.scrollGoal+=100
                     transition.trigger=true
+                    this.resetCombatant()
                     switch(this.map.main[e][f]){
                         case 0:
                             transition.scene='battle'

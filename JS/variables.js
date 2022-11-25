@@ -1013,7 +1013,7 @@ types={
         ],
         },{name:'Umbral\nForm',rarity:2,list:2,
         stats:[
-            {damage:1,alt:0,cost:3,attack:332,target:0,spec:6,class:2},
+            {damage:1,alt:0,cost:3,attack:332,target:0,spec:13,class:2},
             {damage:1,alt:0,cost:3,attack:332,target:0,spec:0,class:2},
         ],
         },{name:'Established',rarity:2,list:2,
@@ -1283,6 +1283,46 @@ types={
         stats:[
             {damage:1,alt:0,cost:2,attack:259,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:2,attack:259,target:0,spec:0,class:2},
+        ],
+        },{name:'Cracked\nShards',rarity:1,list:3,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:334,target:1,spec:0,class:0},
+            {damage:3,alt:0,cost:1,attack:334,target:1,spec:0,class:0},
+        ],
+        },{name:'Bullseye',rarity:1,list:3,
+        stats:[
+            {damage:4,alt:2,cost:1,attack:335,target:1,spec:0,class:0},
+            {damage:6,alt:2,cost:1,attack:335,target:1,spec:0,class:0},
+        ],
+        },{name:'Node',rarity:0,list:3,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:336,target:1,spec:0,class:0},
+            {damage:6,alt:0,cost:1,attack:336,target:1,spec:0,class:0},
+        ],
+        },{name:'Shieldweb',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:337,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:337,target:0,spec:0,class:2},
+        ],
+        },{name:'Lightspeed',rarity:1,list:3,
+        stats:[
+            {damage:5,alt:3,cost:0,attack:338,target:1,spec:0,class:0},
+            {damage:6,alt:4,cost:0,attack:338,target:1,spec:0,class:0},
+        ],
+        },{name:'All for\nOne',rarity:2,list:3,
+        stats:[
+            {damage:10,alt:0,cost:2,attack:339,target:1,spec:0,class:0},
+            {damage:14,alt:0,cost:2,attack:339,target:1,spec:0,class:0},
+        ],
+        },{name:'Bias',rarity:1,list:3,
+        stats:[
+            {damage:4,alt:1,cost:1,attack:340,target:0,spec:0,class:2},
+            {damage:5,alt:1,cost:1,attack:340,target:0,spec:0,class:2},
+        ],
+        },{name:'Rerun',rarity:2,list:3,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:341,target:0,spec:0,class:2},
+            {damage:6,alt:0,cost:1,attack:341,target:0,spec:0,class:2},
         ],
         },
         

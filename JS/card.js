@@ -388,8 +388,16 @@ class card{
             case 329: this.desc+='Deal '+this.damage+' Damage\nReturn on Scry'; break
             case 330: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Upgrade\na Random Card'; break
             case 331: this.desc+='If Target Has\nLess Than '+this.damage+'\nHealth, Set its\nHealth to 0\n'+nfp(this.alt)+' Balance'; break
-            case 332: this.desc+='Gain '+this.damage+' Max Energy\nEvery Turn'; break
+            case 332: this.desc+='Gain '+this.damage+' Max Energy\nEvery Turn\nEthereal'; break
             case 333: this.desc+='Retained Cards\nCost '+this.damage+' Less\nWhen Retained'; break
+            case 334: this.desc+='Deal '+this.damage+'x Number\nof Charges Held\nThis Combat\n('+random.orbs+')'; break
+            case 335: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Lock-on'; break
+            case 336: this.desc+='Apply '+this.damage+' Lock-on'; break
+            case 337: this.desc+='Hold 1\nShield Charge\nPer Enemy'; break
+            case 338: this.desc+='Deal '+this.damage+' Damage\nIf You Have\nPlayed Less\nThan '+this.alt+' Cards,\nDraw 1 Card'; break
+            case 339: this.desc+='Deal '+this.damage+' Damage\nPut All Discarded\n0 Cost Cards\nin Your Hand'; break
+            case 340: this.desc+='Gain '+this.damage+' Focus\nLose '+this.alt+' Focus\nEvery Turn'; break
+            case 341: this.desc+='Return All Cards\nto Draw Pile\nDraw '+this.damage+' Cards'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

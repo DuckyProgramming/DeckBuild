@@ -1219,7 +1219,7 @@ class attack{
                 case 252:
                     for(g=1,lg=this.battle.combatants.length;g<lg;g++){
                         if(this.battle.combatants[g].life>0){
-                            this.battle.combatants[0].load(1,6)
+                            this.battle.combatants[0].load(1,0)
                         }
                     }
                 break
@@ -1631,6 +1631,53 @@ class attack{
                 break
                 case 333:
                     this.battle.combatants[0].status.main[79]++
+                break
+                case 334:
+                    this.battle.combatants[this.target].take(this.damage*this.battle.random.orbs,this.user)
+                break
+                case 335:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target].boost.main[4]+=this.alt
+                break
+                case 336:
+                    this.battle.combatants[this.target].boost.main[4]+=this.damage
+                break
+                case 337:
+                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0){
+                            this.battle.combatants[0].load(2,0)
+                        }
+                    }
+                break
+                case 338:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.counter.played<this.alt){
+                        this.battle.draw()
+                    }
+                break
+                case 339:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
+                        if(this.battle.discard.cards[g].cost==0){
+                            this.battle.hand.cards.push(copyCard(this.battle.discard.cards[g]))
+                            this.battle.hand.cards[this.battle.hand.cards.length-1].position.x=1206
+                            this.battle.hand.cards[this.battle.hand.cards.length-1].position.y=500
+                            this.battle.discard.cards.splice(g,1)
+                            g--
+                            lg--
+                        }
+                    }
+                break
+                case 340:
+                    this.battle.combatants[0].boost.main[3]+=this.damage
+                    this.battle.combatants[0].status.main[80]+=this.alt
+                break
+                case 341:
+                    this.battle.return()
+                    this.battle.returnHand()
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
                 break
             }
             this.battle.combatants[0].lastPlay=this.class
