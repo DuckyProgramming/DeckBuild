@@ -30,7 +30,7 @@ class attack{
                         this.battle.combatants[0].meter=100
                     }
                 break
-                case 1: case 52: case 99: case 114: case 139: case 232: case 284:
+                case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2: case 231: case 268:
@@ -1599,6 +1599,21 @@ class attack{
                     if(this.hold.int==0){
                         this.battle.combatants[this.target].take(this.damage,this.user)
                     }
+                break
+                case 325:
+                    this.battle.combatants[0].status.main[73]++
+                    this.battle.combatants[0].status.main[74]+=this.damage
+                break
+                case 326:
+                    this.battle.combatants[0].status.main[75]++
+                break
+                case 327:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[76]++
+                break
+                case 328:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target].status.main[77]+=this.alt
                 break
             }
             this.battle.combatants[0].lastPlay=this.class

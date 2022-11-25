@@ -971,6 +971,36 @@ types={
             {damage:30,alt:0,cost:2,attack:324,target:1,spec:0,class:0},
             {damage:40,alt:0,cost:2,attack:324,target:1,spec:0,class:0},
         ],
+        },{name:'Simmering\nFury',rarity:1,list:2,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:325,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:325,target:0,spec:0,class:2},
+        ],
+        },{name:'Knowledge',rarity:1,list:2,
+        stats:[
+            {damage:0,alt:0,cost:2,attack:326,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:1,attack:326,target:0,spec:0,class:2},
+        ],
+        },{name:'Swivel',rarity:1,list:2,
+        stats:[
+            {damage:8,alt:0,cost:2,attack:327,target:0,spec:0,class:1},
+            {damage:11,alt:0,cost:2,attack:327,target:0,spec:0,class:1},
+        ],
+        },{name:'Talk to\nthe Hand',rarity:1,list:2,
+        stats:[
+            {damage:5,alt:2,cost:1,attack:328,target:1,spec:0,class:0},
+            {damage:7,alt:3,cost:1,attack:328,target:1,spec:0,class:0},
+        ],
+        },{name:'Weave',rarity:1,list:2,
+        stats:[
+            {damage:4,alt:0,cost:0,attack:329,target:1,spec:0,class:0},
+            {damage:6,alt:0,cost:0,attack:329,target:1,spec:0,class:0},
+        ],
+        },{name:'Particle\nStorm',rarity:1,list:2,
+        stats:[
+            {damage:5,alt:5,cost:3,attack:247,target:0,spec:0,class:1},
+            {damage:6,alt:6,cost:3,attack:247,target:0,spec:0,class:1},
+        ],
         },
         
         

@@ -160,7 +160,7 @@ class card{
             case 101: this.desc+='Add '+this.damage+' Block\nWrath: Gain '+this.alt+'\nAdditional Block'; break
             case 102: this.desc+='Gain '+this.damage+'\nFaith'; break
             case 103: this.desc+='Enter Calm'; break
-            case 104: this.desc+='At the Start\nof Each Turn\nAdd a Smite'; break
+            case 104: this.desc+='At the Start\nof Each Turn\nAdd a Smite\nto Your Hand'; break
             case 105: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nEnd Turn'; break
             case 106: this.desc+='Add '+this.damage+' Block\nAdd a Safety\nto Your Hand'; break
             case 107: this.desc+='Wrath: Apply\n'+this.damage+' Vulnerable\nto All Enemies\nOtherwise,\nEnter Wrath'; break
@@ -381,6 +381,11 @@ class card{
             case 322: this.desc+='When You Scry,\nAdd '+this.damage+' Block'; break
             case 323: this.desc+='Deal '+this.damage+' Damage\nShuffle a Last Path\ninto Draw Pile'; break
             case 324: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nOther Attacks Are\nin Your Hand'; break
+            case 325: this.desc+='Next Turn,\nEnter Wrath and\nDraw '+this.damage+' Cards'; break
+            case 326: this.desc+='At the Start\nof Each Turn\nAdd an Insight\nto Your Hand'; break
+            case 327: this.desc+='Add '+this.damage+' Block\nNext Attack\nCosts 0'; break
+            case 328: this.desc+='Deal '+this.damage+' Damage\nWhen You Attack\nThis Enemy,\nGain '+this.alt+' Block'; break
+            case 329: this.desc+='Deal '+this.damage+' Damage\nReturn on Scry'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'

@@ -221,6 +221,9 @@ function copyList(base){
 	}
 	return i
 }
+function quickAdd(name){
+	current.hand.add(findCard(name),0,0)
+}
 function generateListing(cards,encounters,events){
 	for(a=0,la=listing.card.length;a<la;a++){
 		for(b=0;b<4;b++){
