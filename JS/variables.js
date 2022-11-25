@@ -3044,7 +3044,7 @@ types={
                 },
             ],
         },{
-            name:'Target in Sights',id:14,list:1,
+            name:'Augmenter',id:14,list:0,
             pages:[
                 {
                     desc:"",
@@ -3054,7 +3054,17 @@ types={
                 },
             ],
         },{
-            name:'',id:0,list:0,
+            name:'Target in Sights',id:15,list:1,
+            pages:[
+                {
+                    desc:"",
+                    option:[],
+                    optionDesc:[],
+                    link:[],
+                },
+            ],
+        },{
+            name:'',id:0,list:-1,
             pages:[
                 {
                     desc:"",

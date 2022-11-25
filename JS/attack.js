@@ -1678,7 +1678,7 @@ class attack{
         }
     }
     run(){
-        for(g=0,lg=this.attacks.length;g<lg;g++){
+        for(let g=0,lg=this.attacks.length;g<lg;g++){
             this.attacks[g][1]--
             switch(this.attacks[g][0]){
                 case 0: case 6:
@@ -1712,7 +1712,6 @@ class attack{
                         this.battle.combatants[this.attacks[g][2]-1].take(this.attacks[g][3]+this.battle.combatants[0].status.main[26],0)
                         if(this.battle.combatants[this.attacks[g][2]-1].life>0&&this.attacks[g][0]==11){
                             this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3]+this.battle.combatants[0].status.main[26],this.attacks[g][2],0)
-                            this.battle.combatants[0].combo--
                         }
                     }
                 break
@@ -1724,8 +1723,7 @@ class attack{
                     }
                     if(this.attacks[g][1]==10&&this.attacks[g][2]<this.battle.combatants.length-1&&this.battle.combatants[this.attacks[g][2]].life>0){
                         if(this.battle.combatants[this.attacks[g][2]+1].life>0&&(this.attacks[g][0]==5||this.attacks[g][0]==9)){
-                            this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3]+this.battle.combatants[0].status.main[26],this.attacks[g][2],0)
-                            this.battle.combatants[0].combo--
+                            this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3]+this.battle.combatants[0].status.main[26],this.attacks[g][2]+1,0)
                             if(this.attacks[g][0]==9){
                                 this.attacks.push([5,20,this.attacks[g][2]+1,this.attacks[g][3]])
                             }
@@ -1756,8 +1754,7 @@ class attack{
                     }
                     if(this.attacks[g][1]==10&&this.attacks[g][2]>0&&this.battle.combatants[this.attacks[g][2]].life>0){
                         if(this.battle.combatants[this.attacks[g][2]-1].life>0&&(this.attacks[g][0]==10)){
-                            this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3]+this.battle.combatants[0].status.main[26],this.attacks[g][2],0)
-                            this.battle.combatants[0].combo--
+                            this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3]+this.battle.combatants[0].status.main[26],this.attacks[g][2]-1,0)
                         }
                         this.battle.combatants[this.attacks[g][2]-1].take(this.attacks[g][3]+this.battle.combatants[0].status.main[26],this.attacks[g][2],0)
                     }

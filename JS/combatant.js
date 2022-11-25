@@ -1418,13 +1418,39 @@ class combatant{
 	}
 	take(damage,user,extra){
 		if(this.life>0){
+			if(user>=0&&this.status.main[0]>0){
+				this.battle.combatants[user].take(this.status.main[0],this.id)
+			}
+			if(user>=0&&this.status.main[3]>0){
+				this.battle.combatants[user].take(this.status.main[3],this.id)
+				this.status.main[3]=0
+			}
+			if(this.status.main[13]>0){
+				this.status.main[4]++
+			}
+			if(this.status.main[27]>0){
+				if(user>=0&&this.battle.combatants[user].block<=0){
+					this.battle.combatants[user].status.main[11]+=this.status.main[27]
+				}
+				this.status.main[27]=0
+			}
+			if(user>=0&&this.status.main[28]>0){
+				this.battle.attack.attacks.push([5,20,user,this.status.main[28]])
+				this.status.main[28]=0
+			}
+			if(user>=0&&this.status.main[65]>0){
+				this.battle.attack.attacks.push([11,20,user,this.status.main[65]])
+				this.status.main[65]=0
+			}
+			if(user>=0&&this.status.main[43]>0){
+				this.battle.combatants[user].status.main[44]+=this.status.main[43]
+			}
+			if(user>=0&&this.status.main[66]>0){
+				this.battle.combatants[user].status.main[67]+=this.status.main[66]
+			}
 			if(user>=0&&this.status.main[10]>0){
 				this.status.main[10]--
 				this.battle.combatants[user].take(damage,this.id)
-				if(this.status.main[3]>0){
-					this.battle.combatants[user].take(this.status.main[3],this.id)
-					this.status.main[3]=0
-				}
 			}else if(this.status.main[6]>0){
 				this.status.main[6]--
 			}else if(this.status.main[33]>0){
@@ -1535,36 +1561,6 @@ class combatant{
 					this.battle.counter.taken+=this.calc.damage
 					this.battle.random.hits++
 				}
-				if(user>=0&&this.status.main[0]>0){
-					this.battle.combatants[user].take(this.status.main[0],this.id)
-				}
-				if(user>=0&&this.status.main[3]>0){
-					this.battle.combatants[user].take(this.status.main[3],this.id)
-					this.status.main[3]=0
-				}
-				if(this.status.main[13]>0){
-					this.status.main[4]++
-				}
-				if(this.status.main[27]>0){
-					if(user>=0&&this.battle.combatants[user].block<=0){
-						this.battle.combatants[user].status.main[11]+=this.status.main[27]
-					}
-					this.status.main[27]=0
-				}
-				if(user>=0&&this.status.main[28]>0){
-					this.battle.attack.attacks.push([5,20,user,this.status.main[28]])
-					this.status.main[28]=0
-				}
-				if(user>=0&&this.status.main[65]>0){
-					this.battle.attack.attacks.push([11,20,user,this.status.main[65]])
-					this.status.main[65]=0
-				}
-				if(user>=0&&this.status.main[43]>0){
-					this.battle.combatants[user].status.main[44]+=this.status.main[43]
-				}
-				if(user>=0&&this.status.main[66]>0){
-					this.battle.combatants[user].status.main[67]+=this.status.main[66]
-				}
 				if(this.status.main[29]>0){
 					this.status.main[1]++
 				}
@@ -1582,7 +1578,7 @@ class combatant{
 					this.battle.combatants[user].take(this.status.main[45],this.id)
                     this.battle.attack.attacks.push([0,20,user,this.status.main[45]])
 				}
-				if(this.id>0){
+				if(this.id>0&&user==0){
 					this.battle.combatants[0].combo++
 				}
 			}

@@ -42,15 +42,15 @@ class battle{
     setupTesting(type){
         this.initialEvent()
         this.setupMap()
-        this.draftDeck()
-        //this.deck.initial(this.player)
-        //stage.scene='battle'
+        //this.draftDeck()
+        this.deck.initial(this.player)
+        stage.scene='battle'
         setupEncounter(this,type)
         this.create()
         
         //current.getRelic(156)
 
-        transition.trigger=true
+        //transition.trigger=true
         //transition.scene='map'
         //current.map.complete[0][0]=1
         //current.event=14
@@ -96,9 +96,6 @@ class battle{
         this.combatants[0].boost.main[0]+=this.random.strengthBase
         this.counter.enemies.total+=this.generation.reinforce.length
         this.random.tempDrawAmount=0
-        this.reserve.cards=[]
-        this.hand.cards=[]
-        this.drop.cards=[]
         this.initialReserve()
         this.reserve.shuffle()
         this.mana.max=this.mana.base
@@ -183,13 +180,14 @@ class battle{
                 }
             break
             case 2:
-                this.objective.push(1,10,3,40)
+                this.objective.push([1,10,3,40])
             break
         }
     }
     initialReserve(){
         this.reserve.cards=[]
         this.hand.cards=[]
+        this.drop.cards=[]
         this.discard.cards=[]
         for(e=0,le=this.deck.cards.length;e<le;e++){
             this.reserve.cards.push(copyCard(this.deck.cards[e]))
@@ -577,6 +575,7 @@ class battle{
         if(this.combatants[0].status.main[19]>0){
             this.combatants[0].life=0
         }
+        this.mana.main+=this.combatants[0].status.main[1]
         this.combatants[0].mantra+=this.combatants[0].status.main[20]
         this.combatants[0].boost.main[2]+=this.combatants[0].status.main[32]
         for(e=0,le=this.combatants.length;e<le;e++){
