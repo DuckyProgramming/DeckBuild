@@ -1374,6 +1374,56 @@ types={
             {damage:2,alt:2,cost:1,attack:350,target:1,spec:0,class:2},
             {damage:3,alt:3,cost:1,attack:350,target:1,spec:0,class:2},
         ],
+        },{name:'Illuminate',rarity:0,list:3,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:351,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:351,target:0,spec:0,class:2},
+        ],
+        },{name:'Eminence',rarity:1,list:3,
+        stats:[
+            {damage:9,alt:1,cost:2,attack:352,target:1,spec:0,class:0},
+            {damage:15,alt:1,cost:2,attack:352,target:1,spec:0,class:0},
+        ],
+        },{name:'Truth',rarity:1,list:3,
+        stats:[
+            {damage:3,alt:0,cost:2,attack:353,target:0,spec:3,class:2},
+            {damage:3,alt:0,cost:2,attack:353,target:0,spec:0,class:2},
+        ],
+        },{name:'Lies',rarity:2,list:3,
+        stats:[
+            {damage:0,alt:0,cost:3,attack:354,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:2,attack:354,target:0,spec:0,class:2},
+        ],
+        },{name:'Others'+"'"+'\nMistakes',rarity:1,list:3,
+        stats:[
+            {damage:10,alt:1,cost:2,attack:355,target:1,spec:0,class:0},
+            {damage:16,alt:1,cost:2,attack:355,target:1,spec:0,class:0},
+        ],
+        },{name:'Enflame',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:356,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:356,target:0,spec:0,class:2},
+        ],
+        },{name:'Prism',rarity:2,list:3,
+        stats:[
+            {damage:1,alt:0,cost:4,attack:357,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:4,attack:357,target:0,spec:0,class:2},
+        ],
+        },{name:'Immolate',rarity:2,list:3,
+        stats:[
+            {damage:12,alt:3,cost:4,attack:358,target:1,spec:0,class:0},
+            {damage:12,alt:3,cost:3,attack:358,target:1,spec:0,class:0},
+        ],
+        },{name:'Internal\nFire',rarity:2,list:3,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:359,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:2,attack:359,target:0,spec:0,class:2},
+        ],
+        },{name:'Opening\nLineup',rarity:1,list:3,
+        stats:[
+            {damage:3,alt:0,cost:2,attack:360,target:0,spec:8,class:2},
+            {damage:3,alt:0,cost:1,attack:360,target:0,spec:8,class:2},
+        ],
         },
         
         
@@ -1808,9 +1858,7 @@ types={
             {damage:5,alt:1,cost:0,attack:299,target:0,spec:0,class:1},
         ],
         },
-        //armament cycling
         //unarmed only perhaps
-        //aroma
         //taunt
         //false surrender
         //counter stun? petal shield already exists...

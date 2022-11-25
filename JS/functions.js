@@ -72,6 +72,24 @@ function displayAmmo(layer,x,y,type,detail,fade){
 			layer.line(-5,-5,5,5)
 			layer.line(-5,5,5,-5)
 		break
+		case 6:
+			layer.noFill()
+			layer.stroke(255,255,150,fade)
+			layer.strokeWeight(2)
+			regPoly(layer,0,0,6,6,0)
+		break
+		case 7:
+			layer.stroke(150,0,0,fade)
+			layer.strokeWeight(2)
+			layer.beginShape()
+			layer.vertex(0,6)
+			layer.vertex(-6,-4)
+			layer.vertex(-2,2)
+			layer.vertex(0,-6)
+			layer.vertex(2,2)
+			layer.vertex(6,-4)
+			layer.endShape(CLOSE)
+		break
 	}
 	layer.translate(-x,-y)
 }
@@ -223,6 +241,12 @@ function copyList(base){
 }
 function quickAdd(name){
 	current.hand.add(findCard(name),0,0)
+}
+function outList(player){
+	print('Common: '+listing.card[player][0].length+
+	'\nUncommon: '+listing.card[player][1].length+
+	'\nRare: '+listing.card[player][2].length+
+	'\nTotal: '+(listing.card[player][0].length+listing.card[player][1].length+listing.card[player][2].length))
 }
 function generateListing(cards,encounters,events){
 	for(a=0,la=listing.card.length;a<la;a++){

@@ -1736,6 +1736,68 @@ class attack{
                     this.battle.combatants[this.target].boost.main[1]-=this.damage
                     this.battle.combatants[this.target].boost.main[4]+=this.alt
                 break
+                case 351:
+                    this.battle.combatants[0].load(6,0)
+                break
+                case 352:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].load(6,0)
+                break
+                case 353:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.combatants[0].load(6,0)
+                    }
+                break
+                case 354:
+                    for(g=0,lg=this.battle.combatants[0].ammo.length;g<lg;g++){
+                        if(this.battle.combatants[0].ammo[g]==6){
+                            this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[g],this.battle.combatants[0].ammoDetail[g])
+                            this.battle.combatants[0].ammo[g]=1
+                        }
+                    }
+                break
+                case 355:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].life<=0){
+                        this.battle.combatants[0].load(6,0)
+                    }
+                break
+                case 356:
+                    this.battle.combatants[0].load(7,0)
+                break
+                case 357:
+                    this.battle.combatants[0].load(3,0)
+                    this.battle.combatants[0].load(6,6)
+                    this.battle.combatants[0].load(7,0)
+                break
+                case 358:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    for(g=0;g<this.alt;g++){
+                        this.battle.combatants[0].load(7,0)
+                    }
+                break
+                case 359:
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].attack==-10&&this.battle.hand.cards[g].list==11){
+                            this.battle.combatants[0].load(7,0)
+                        }
+                    }
+                    for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
+                        if(this.battle.discard.cards[g].attack==-10&&this.battle.discard.cards[g].list==11){
+                            this.battle.combatants[0].load(7,0)
+                        }
+                    }
+                    for(g=0,lg=this.battle.reserve.cards.length;g<lg;g++){
+                        if(this.battle.reserve.cards[g].attack==-10&&this.battle.reserve.cards[g].list==11){
+                            this.battle.combatants[0].load(7,0)
+                        }
+                    }
+                break
+                case 360:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.combatants[0].load(floor(random(0,8)),6)
+                    }
+                break
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{

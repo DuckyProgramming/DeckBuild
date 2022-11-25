@@ -1295,6 +1295,20 @@ class combatant{
 					}
 				}
 			break
+			case 6:
+				for(h=0;h<3;h++){
+					this.battle.draw()
+				}
+			break
+			case 7:
+				i=0
+				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
+					if(i==0&&this.battle.combatants[h].life>0){
+						this.battle.combatants[h].take(16*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+						i=1
+					}
+				}
+			break
 		}
 	}
 	passiveEvoke(type,detail){
@@ -1347,6 +1361,18 @@ class combatant{
 					}
 				}
 			break
+			case 6:
+				this.battle.draw()
+			break
+			case 7:
+				i=0
+				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
+					if(i==0&&this.battle.combatants[h].life>0){
+						this.battle.combatants[h].take(6*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+						i=1
+					}
+				}
+			break
 		}
 	}
 	autoEvoke(){
@@ -1360,6 +1386,11 @@ class combatant{
 							i=1
 						}
 					}
+				break
+				case 7:
+					this.battle.drop.addDrop(findCard('Burn'),0,0)
+					this.battle.drop.cards[this.battle.drop.cards.length-1].position.y-=g*100
+                    this.battle.reserve.addShuffle(findCard('Burn'),0,0)
 				break
 			}
 		}

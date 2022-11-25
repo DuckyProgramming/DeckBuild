@@ -406,7 +406,17 @@ class card{
             case 347: this.desc+='Gain '+this.damage+' Strength\nPer Shield Charge'; break
             case 348: this.desc+='Evoke All\nExplosive Charges\nReplace Them\nWith Basic Charges'; break
             case 349: this.desc+='Deal '+this.damage+' Damage\nDouble Vulnerable\non Target'; break
-            case 350: this.desc+='Apply '+this.damage+' Vulnerable\nApply '+this.alt+' Lock-On'
+            case 350: this.desc+='Apply '+this.damage+' Vulnerable\nApply '+this.alt+' Lock-On'; break
+            case 351: this.desc+='Hold '+this.damage+'\nLight Charge'; break
+            case 352: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nLight Charge'; break
+            case 353: this.desc+='Hold '+this.damage+'\nLight Charges'; break
+            case 354: this.desc+='Evoke All\nLight Charges\nReplace Them\nWith Explosive\nCharges'; break
+            case 355: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Hold '+this.alt+'\nLight Charge'; break
+            case 356: this.desc+='Hold '+this.damage+'\nFlame Charge'; break
+            case 357: this.desc+='Hold '+this.damage+' Energy Charge\nHold '+this.damage+' Light Charge\nHold '+this.damage+' Flame Charge'; break
+            case 358: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nFlame Charges'; break
+            case 359: this.desc+='Hold '+this.damage+'\nFlame Charge\nPer Burn in\nYour Deck'; break
+            case 360: this.desc+='Hold '+this.damage+'\nRandom Charges'; break
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
