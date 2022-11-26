@@ -71,11 +71,11 @@ class group{
                 }
                 this.add(findCard('Peace'),0,this.battle.player)
                 this.add(findCard('Danger'),0,this.battle.player)*/
-                this.add(388,0,this.battle.player)
-                this.add(389,0,this.battle.player)
-                this.add(390,0,this.battle.player)
-                this.add(391,0,this.battle.player)
-                this.add(392,0,this.battle.player)
+                this.add(394,0,this.battle.player)
+                this.add(395,0,this.battle.player)
+                this.add(396,0,this.battle.player)
+                this.add(397,0,this.battle.player)
+                this.add(398,0,this.battle.player)
             break
         }
     }

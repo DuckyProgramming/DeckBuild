@@ -436,6 +436,11 @@ class card{
             case 377: this.desc+='Apply '+this.damage+' Weak\nHold 1 Light\nCharge'; break
             case 378: this.desc+='Gain '+this.damage+' Control'; break
             case 379: this.desc+='Hold '+this.damage+' Dark\nCharge When You\nTake Damage'; break
+            case 380: this.desc+='Draw '+this.damage+' Cards\nNext Turn'; break
+            case 381: this.desc+='Negate the\nNext Time you\nBreak Balance'; break
+            case 382: this.desc+='If Unarmed\nAdd '+this.damage+' Block\nCounter Once With\nPush Collision\nfor '+this.damage+' Damage'; break
+            case 383: this.desc+='If Unarmed\nApply '+this.damage+' Bleed\nApply '+this.alt+' Vulnerable'; break
+            case 384: this.desc+='Gain '+this.damage+' Block\nCounter Once With\n1 Stun\n'+nfp(this.alt)+' Balance'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

@@ -626,7 +626,7 @@ types={
             {damage:4,alt:0,cost:1,attack:106,target:0,spec:0,class:1},
             {damage:7,alt:0,cost:1,attack:106,target:0,spec:0,class:1},
         ],
-        },{name:'Indignation',rarity:1,list:2,
+        },{name:'Indignation',rarity:0,list:2,
         stats:[
             {damage:2,alt:0,cost:1,attack:107,target:0,spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:107,target:0,spec:0,class:2},
@@ -646,7 +646,7 @@ types={
             {damage:4,alt:0,cost:1,attack:110,target:0,spec:0,class:2},
             {damage:6,alt:0,cost:1,attack:110,target:0,spec:0,class:2},
         ],
-        },{name:'Conviction',rarity:1,list:2,
+        },{name:'Hope',rarity:1,list:2,
         stats:[
             {damage:3,alt:0,cost:1,attack:111,target:0,spec:0,class:2},
             {damage:4,alt:0,cost:1,attack:111,target:0,spec:0,class:2},
@@ -706,7 +706,7 @@ types={
             {damage:2,alt:0,cost:0,attack:121,target:1,spec:1,class:0},
             {damage:3,alt:0,cost:0,attack:121,target:1,spec:1,class:0},
         ],
-        },{name:'Devotion',rarity:1,list:2,
+        },{name:'Devotion',rarity:0,list:2,
         stats:[
             {damage:2,alt:0,cost:1,attack:122,target:0,spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:122,target:0,spec:0,class:2},
@@ -716,7 +716,7 @@ types={
             {damage:10,alt:0,cost:1,attack:123,target:0,spec:3,class:2},
             {damage:10,alt:0,cost:0,attack:123,target:0,spec:3,class:2},
         ],
-        },{name:'Spirit\nShield',rarity:1,list:2,
+        },{name:'Spirit\nShield',rarity:0,list:2,
         stats:[
             {damage:3,alt:0,cost:2,attack:124,target:0,spec:0,class:1},
             {damage:4,alt:0,cost:2,attack:124,target:0,spec:0,class:1},
@@ -851,7 +851,7 @@ types={
             {damage:4,alt:1,cost:2,attack:266,target:0,spec:0,class:2},
             {damage:5,alt:1,cost:2,attack:266,target:0,spec:0,class:2},
         ],
-        },{name:'Like\nWater',rarity:1,list:2,
+        },{name:'Like\nWater',rarity:0,list:2,
         stats:[
             {damage:5,alt:0,cost:1,attack:267,target:0,spec:0,class:2},
             {damage:7,alt:0,cost:1,attack:267,target:0,spec:0,class:2},
@@ -1664,8 +1664,8 @@ types={
         ],
         },{name:'Parasol',rarity:1,list:4,
         stats:[
-            {damage:3,alt:1,cost:0,attack:90,target:1,spec:2,class:0},
-            {damage:5,alt:1,cost:0,attack:90,target:1,spec:2,class:0},
+            {damage:6,alt:0,cost:0,attack:90,target:1,spec:2,class:0},
+            {damage:8,alt:0,cost:0,attack:90,target:1,spec:2,class:0},
         ],
         },{name:'Sleeve\nSwipe',rarity:0,list:4,
         stats:[
@@ -1967,8 +1967,37 @@ types={
             {damage:1,alt:0,cost:0,attack:362,target:1,spec:3,class:2},
             {damage:2,alt:0,cost:0,attack:362,target:1,spec:3,class:2},
         ],
+        },{name:'Analyse',rarity:0,list:4,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:380,target:0,spec:10,class:2},
+            {damage:5,alt:0,cost:1,attack:380,target:0,spec:10,class:2},
+        ],
+        },{name:'Balance\nBuffer',rarity:0,list:4,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:381,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:381,target:0,spec:0,class:2},
+        ],
+        },{name:'Canopy',rarity:1,list:4,
+        stats:[
+            {damage:4,alt:4,cost:0,attack:382,target:0,spec:2,class:1},
+            {damage:6,alt:4,cost:0,attack:382,target:0,spec:2,class:1},
+        ],
+        },{name:'Sunshade',rarity:1,list:4,
+        stats:[
+            {damage:3,alt:1,cost:0,attack:383,target:1,spec:2,class:0},
+            {damage:5,alt:1,cost:0,attack:383,target:1,spec:2,class:0},
+        ],
+        },{name:'Petal\nBarrier',rarity:0,list:4,
+        stats:[
+            {damage:4,alt:6,cost:2,attack:384,target:0,spec:0,class:1},
+            {damage:6,alt:6,cost:2,attack:384,target:0,spec:0,class:1},
+        ],
+        },{name:'Quick\nThrow',rarity:0,list:4,
+        stats:[
+            {damage:9,alt:0,cost:0,attack:73,target:1,spec:11,class:0},
+            {damage:15,alt:0,cost:0,attack:73,target:1,spec:11,class:0},
+        ],
         },
-        //unarmed only perhaps
         //counter stun? petal shield already exists...
         //analysis paralysis
 

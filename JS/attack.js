@@ -475,7 +475,6 @@ class attack{
                     if(this.battle.combatants[0].armed!=1){ 
                         this.attacks.push([5,20,this.target,this.damage])
                     }
-                    this.battle.combatants[0].meter+=this.alt
                 break
                 case 91:
                     this.battle.combatants[this.target].take(this.damage+this.alt*this.combo,this.user)
@@ -1891,6 +1890,27 @@ class attack{
                 break
                 case 379:
                     this.battle.combatants[0].status.main[81]+=this.damage
+                break
+                case 380:
+                    this.battle.combatants[0].status.main[74]+=this.damage
+                break
+                case 381:
+                    this.battle.combatants[0].status.main[82]+=this.damage
+                break
+                case 382:
+                    if(this.battle.combatants[0].armed!=1){ 
+                        this.battle.combatants[0].addBlock(this.damage)
+                        this.battle.combatants[0].status.main[28]+=this.alt
+                    }
+                break
+                case 383:
+                    this.battle.combatants[this.target].status.main[11]+=this.damage
+                    this.battle.combatants[this.target].boost.main[1]-=this.alt
+                break
+                case 384:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[83]++
+                    this.battle.combatants[0].meter+=this.alt
                 break
                 default:
             }
