@@ -1154,7 +1154,7 @@ types={
             {damage:4,alt:0,cost:1,attack:235,target:0,spec:3,class:2},
             {damage:3,alt:0,cost:1,attack:235,target:0,spec:3,class:2},
         ],
-        },{name:'Secondary\nShield',rarity:1,list:3,
+        },{name:'Secondary\nShield',rarity:0,list:3,
         stats:[
             {damage:8,alt:0,cost:1,attack:236,target:0,spec:0,class:1},
             {damage:12,alt:0,cost:1,attack:236,target:0,spec:0,class:1},
@@ -1164,7 +1164,7 @@ types={
             {damage:10,alt:0,cost:0,attack:2,target:0,spec:8,class:1},
             {damage:13,alt:0,cost:0,attack:2,target:0,spec:8,class:1},
         ],
-        },{name:'Converge',rarity:1,list:3,
+        },{name:'Converge',rarity:0,list:3,
         stats:[
             {damage:1,alt:0,cost:0,attack:237,target:0,spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:237,target:0,spec:0,class:2},
@@ -1184,7 +1184,7 @@ types={
             {damage:13,alt:0,cost:2,attack:240,target:0,spec:0,class:1},
             {damage:16,alt:0,cost:2,attack:240,target:0,spec:0,class:1},
         ],
-        },{name:'Mecha-\nShield',rarity:1,list:3,
+        },{name:'Mecha-\nShield',rarity:0,list:3,
         stats:[
             {damage:4,alt:2,cost:1,attack:241,target:0,spec:0,class:1},
             {damage:6,alt:2,cost:1,attack:241,target:0,spec:0,class:1},
@@ -1209,12 +1209,12 @@ types={
             {damage:2,alt:0,cost:0,attack:245,target:0,spec:0,class:2},
             {damage:3,alt:0,cost:0,attack:245,target:0,spec:0,class:2},
         ],
-        },{name:'Reprogram',rarity:1,list:3,
+        },{name:'Reprogram',rarity:0,list:3,
         stats:[
             {damage:2,alt:0,cost:1,attack:246,target:0,spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:246,target:0,spec:0,class:2},
         ],
-        },{name:'Rip And\nTear',rarity:1,list:3,
+        },{name:'Rip And\nTear',rarity:0,list:3,
         stats:[
             {damage:7,alt:2,cost:1,attack:247,target:0,spec:0,class:0},
             {damage:9,alt:2,cost:1,attack:247,target:0,spec:0,class:0},
@@ -1503,6 +1503,26 @@ types={
         stats:[
             {damage:4,alt:2,cost:1,attack:375,target:1,spec:0,class:1},
             {damage:7,alt:2,cost:1,attack:375,target:1,spec:0,class:1},
+        ],
+        },{name:'Flame\nWall',rarity:0,list:3,
+        stats:[
+            {damage:10,alt:5,cost:2,attack:376,target:0,spec:0,class:1},
+            {damage:10,alt:10,cost:2,attack:376,target:0,spec:0,class:1},
+        ],
+        },{name:'Glare',rarity:0,list:3,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:377,target:1,spec:0,class:2},
+            {damage:4,alt:0,cost:1,attack:377,target:1,spec:0,class:2},
+        ],
+        },{name:'System\nBase',rarity:1,list:3,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:378,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:378,target:0,spec:0,class:2},
+        ],
+        },{name:'Abyss',rarity:2,list:3,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:379,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:379,target:0,spec:0,class:2},
         ],
         },
         

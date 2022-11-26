@@ -1876,6 +1876,22 @@ class attack{
                 case 375:
                     this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[this.target].boost.main[4]+=this.alt
+                break
+                case 376:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[3]+=this.alt
+                    this.battle.combatants[0].load(7,0)
+                break
+                case 377:
+                    this.battle.combatants[this.target].boost.main[0]-=this.damage
+                    this.battle.combatants[0].load(7,0)
+                break
+                case 378:
+                    this.battle.combatants[0].status.main[36]+=this.damage
+                break
+                case 379:
+                    this.battle.combatants[0].status.main[81]+=this.damage
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

@@ -432,6 +432,10 @@ class card{
             case 373: this.desc+='Deal '+this.damage+' Damage\nDraw '+this.alt+' Card\nDiscard if Cost\nis not 0'; break
             case 374: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Frail'; break
             case 375: this.desc+='Add '+this.damage+' Block\nApply '+this.alt+' Lock-On'; break
+            case 376: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+' All\nHold 1 Flame\nCharge'; break
+            case 377: this.desc+='Apply '+this.damage+' Weak\nHold 1 Light\nCharge'; break
+            case 378: this.desc+='Gain '+this.damage+' Control'; break
+            case 379: this.desc+='Hold '+this.damage+' Dark\nCharge When You\nTake Damage'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
