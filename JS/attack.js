@@ -1936,6 +1936,18 @@ class attack{
                     this.battle.combatants[0].boost.main[0]+=this.damage
                     this.battle.combatants[0].status.main[86]+=this.alt
                 break
+                case 392:
+                    this.battle.combatants[0].life-=this.damage
+                    this.battle.combatants[0].boost.main[0]+=this.alt
+                break
+                case 393:
+                    this.battle.combatants[0].life-=this.damage
+                    this.battle.combatants[0].boost.main[2]+=this.alt
+                break
+                case 394:
+                    this.battle.combatants[0].life-=this.damage
+                    this.battle.mana.main+=this.alt
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

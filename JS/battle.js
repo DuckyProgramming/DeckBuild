@@ -54,7 +54,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=14
+        this.event=21
     }
     create(){
         this.end=false
@@ -346,6 +346,9 @@ class battle{
                             this.hand.cards[f].cost++
                         }
                     }
+                break
+                case -19:
+                    this.combatants[0].status.main[87]+=2
                 break
             }
         }
@@ -964,17 +967,17 @@ class battle{
         this.discard.allUpgrade()
     }
     resetCombatant(){
-        for(e=0,le=this.combatants.length;e<le;e++){
+        for(let e=0,le=this.combatants.length;e<le;e++){
             if(this.combatants[e].type!=0){
                 this.combatants[e].fade=1
                 if(e>0){
                     this.combatants[e].setupIntent(-1)
                     this.counter.enemies.total++
                 }
-                for(f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
+                for(let f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
                     this.combatants[e].boost.main[f]=0
                 }
-                for(f=0,lf=this.combatants[e].status.main.length;f<lf;f++){
+                for(let f=0,lf=this.combatants[e].status.main.length;f<lf;f++){
                     this.combatants[e].status.main[f]=0
                 }
             }
@@ -1924,6 +1927,7 @@ class battle{
         if(pointInsideBox({position:inputs.rel},{position:{x:32,y:565},width:40,height:30})){
             transition.trigger=true
             transition.scene='deck'
+            this.setupDeck(5)
             this.context=5
         }
         for(e=0,le=this.map.main.length;e<le;e++){
@@ -2114,7 +2118,7 @@ class battle{
             this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0,this.deck.cards.length-this.drawAmount,this.defaultRandom)
         }else if(this.context==2||this.context==3||this.context==10||this.context==11||this.context==12){
             this.discard.displayView(-1)
-        }else if(this.context==5||this.context==6||this.context==9){
+        }else if(this.context==5||this.context==6||this.context==9||this.context==14){
             this.deck.displayView(-1)
         }else if(this.context==7||this.context==8||this.context==13){
             this.reserve.displayView(this.context2)
@@ -2126,7 +2130,7 @@ class battle{
         this.layer.textSize(20)
         if(this.context==3||this.context==5||this.context==6){
             this.layer.text('Back',850,570)
-        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11||this.context==12||this.context==13){
+        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11||this.context==12||this.context==13||this.context==14){
             this.layer.text('Skip',850,570)
         }
         if(this.context==6){
@@ -2151,14 +2155,14 @@ class battle{
             this.deck.scroll-=30
         }
         this.deck.scroll=constrain(this.deck.scroll,0,floor(this.deck.cards.length/6)*200-400)
-        if(this.context==1||this.context==4||this.context==5||this.context==6||this.context==9){
+        if(this.context==1||this.context==4||this.context==5||this.context==6||this.context==9||this.context==14){
             this.deck.updateView()
         }
     }
     onClickDeck(){
         if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570},width:80,height:40})){
             transition.trigger=true
-            if(this.context==1||this.context==4||this.context==5){
+            if(this.context==1||this.context==4||this.context==5||this.context==14){
                 transition.scene='map'
             }else if(this.context==2){
                 this.close()
@@ -2190,7 +2194,7 @@ class battle{
                 }
             }
         }
-        if(this.context==1||this.context==4||this.context==6||this.context==9){
+        if(this.context==1||this.context==4||this.context==6||this.context==9||this.context==14){
             this.deck.onClickView(this.context,this.context2)
         }else if(this.context==2||this.context==10||this.context==11||this.context==12){
             this.discard.onClickView(this.context,this.context2)
@@ -2388,6 +2392,70 @@ class battle{
                                 setupEncounter(current,zones[0].special[3])
                                 this.create()
                                 transition.scene='battle'
+                            }
+                        break
+                        case 15:
+                            if(this.page==0&&e==0){
+                                this.deck.add(findCard('Mixture A'),0,0)
+                            }else if(this.page==0&&e==1){
+                                this.deck.add(findCard('Mixture B'),0,0)
+                            }else if(this.page==0&&e==2){
+                                this.deck.add(findCard('Mixture C'),0,0)
+                            }
+                        break
+                        case 16:
+                            if(this.page==0&&(e==0||e==1)&&floor(random(0,3))==0){
+                                this.remember[0]=1
+                            }else if(this.page==1&&e==0){
+                                this.currency.money+=50
+                            }else if((this.page==2||this.page==3)&&e==0){
+                                this.currency.money-=50
+                            }else if(this.page==4&&e==0){
+                                this.currency.money+=150
+                            }
+                        break
+                        case 17:
+                            if(this.page==0&&(e==0||e==1||e==2)&&floor(random(0,3))==0){
+                                this.remember[0]=1
+                            }else if(this.page==1){
+                                this.currency.money+=100
+                            }else if(this.page==2){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-30)
+                            }
+                        break
+                        case 18:
+                            if(this.page==1&&e==0){
+                                setupEncounter(current,zones[0].special[4])
+                                this.create()
+                                transition.scene='battle'
+                            }
+                        break
+                        case 19:
+                            if(this.page==0&&e==0){
+                                transition.trigger=true
+                                transition.scene='deck'
+                                this.setupDeck(14)
+                                this.context=14
+                            }
+                        break
+                        case 20:
+                            if(this.page==1&&e==0){
+                                this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
+                            }else if(this.page==3&&e==0){
+                                this.currency.money-=20
+                            }
+                        break
+                        case 21:
+                            if(this.page==0&&e==0){
+                                this.currency.money-=50
+                                this.eventList.push(findEvent('Payout'))
+                            }
+                        break
+                        case 22:
+                            if(this.page==0&&e==0){
+                                this.currency.money+=250
                             }
                         break
                     }

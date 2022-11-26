@@ -248,6 +248,13 @@ function outList(player){
 	'\nRare: '+listing.card[player][2].length+
 	'\nTotal: '+(listing.card[player][0].length+listing.card[player][1].length+listing.card[player][2].length))
 }
+function outEvent(){
+	print('All: '+zones[0].events[0].length+
+	'\n'+types.combatant[1].name+': '+zones[0].events[1].length+
+	'\n'+types.combatant[2].name+': '+zones[0].events[2].length+
+	'\n'+types.combatant[3].name+': '+zones[0].events[3].length+
+	'\n'+types.combatant[4].name+': '+zones[0].events[4].length)
+}
 function generateListing(cards,encounters,events){
 	for(a=0,la=listing.card.length;a<la;a++){
 		for(b=0;b<4;b++){
@@ -289,6 +296,14 @@ function findCard(name){
 function findRelic(name){
 	for(i=0,li=types.relic.length;i<li;i++){
 		if(types.relic[i].name==name){
+			return i
+		}
+	}
+	return -1
+}
+function findEvent(name){
+	for(i=0,li=types.event.length;i<li;i++){
+		if(types.event[i].name==name){
 			return i
 		}
 	}

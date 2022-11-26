@@ -57,6 +57,7 @@ class card{
             case -16: this.desc+='When Drawn,\na Random Card\nGains 1 Cost\nEthereal'; break
             case -17: this.desc+='When Drawn,\nLose 1 Energy'; break
             case -18: this.desc+='All Cards\nCost 1 More'; break
+            case -19: this.desc+='When Drawn,\nAttacks Deal\n2 Less Damage'; break
             case 1: this.desc+='Deal '+this.damage+'\nDamage'; break
             case 2: this.desc+='Add '+this.damage+'\nBlock'; break
             case 3: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times'; break
@@ -448,6 +449,9 @@ class card{
             case 389: this.desc+='Add a Banked\nBalance Card With\nCurrent Balance\nto Your Hand\nReset Balance'; break
             case 390: this.desc+=nfp(this.damage)+' Balance'; break
             case 391: this.desc+='Gain '+this.damage+' Strength\nUnbalance by '+this.alt+'\nEvery Turn'; break
+            case 392: this.desc+='Lose '+this.damage+' Health\nGain '+this.alt+' Strength'; break
+            case 393: this.desc+='Lose '+this.damage+' Health\nGain '+this.alt+' Dexterity'; break
+            case 394: this.desc+='Lose '+this.damage+' Health\nGain '+this.alt+' Energy'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

@@ -2155,8 +2155,23 @@ types={
         ],
         },{name:'Banked\nBalance',rarity:-1,list:0,
         stats:[
-            {damage:0,alt:0,cost:0,attack:390,target:0,spec:9,class:0},
-            {damage:0,alt:0,cost:0,attack:390,target:0,spec:9,class:0},
+            {damage:0,alt:0,cost:0,attack:390,target:0,spec:9,class:2},
+            {damage:0,alt:0,cost:0,attack:390,target:0,spec:9,class:2},
+        ],
+        },{name:'Mixture A',rarity:-1,list:0,
+        stats:[
+            {damage:3,alt:3,cost:0,attack:392,target:0,spec:3,class:2},
+            {damage:3,alt:4,cost:0,attack:392,target:0,spec:3,class:2},
+        ],
+        },{name:'Mixture B',rarity:-1,list:0,
+        stats:[
+            {damage:3,alt:3,cost:0,attack:393,target:0,spec:3,class:2},
+            {damage:3,alt:4,cost:0,attack:393,target:0,spec:3,class:2},
+        ],
+        },{name:'Mixture C',rarity:-1,list:0,
+        stats:[
+            {damage:3,alt:1,cost:0,attack:394,target:0,spec:3,class:2},
+            {damage:3,alt:2,cost:0,attack:394,target:0,spec:3,class:2},
         ],
         },
         
@@ -2279,6 +2294,11 @@ types={
             {damage:0,alt:0,cost:0,attack:-18,target:0,spec:1,class:-1},
             {damage:0,alt:0,cost:0,attack:-18,target:0,spec:1,class:-1},
         ],
+        },{name:'Arm\nInjury',rarity:-2,list:11,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-19,target:0,spec:1,class:-1},
+            {damage:0,alt:0,cost:0,attack:-19,target:0,spec:1,class:-1},
+        ],
         },
         
         
@@ -2322,6 +2342,7 @@ types={
         {name:'Red',alt:'',life:36,height:80,behavior:0,attacks:[1,17,18],damage:[7,5,4],altAttack:[0,1,0],class:0,buff:0},//20
         {name:'Trenchcoat Man',alt:'',life:60,height:75,behavior:0,attacks:[1],damage:[8],altAttack:[0],class:0,buff:0},
         {name:'Trenchcoat Gunner',alt:'',life:45,height:75,behavior:0,attacks:[1],damage:[4],altAttack:[0],class:0,buff:4},
+        {name:'Goon',alt:'',life:45,height:75,behavior:0,attacks:[10,1],damage:[4,10],altAttack:['Arm\nInjury',0],class:0,buff:0},
     ],attack:[
         {class:0},
         {class:0},
@@ -2424,6 +2445,11 @@ types={
             reinforce:[],
             threshold:5,class:-1,zone:0,
             objective:[[0,0,0,0]],
+        },{
+            combatants:[23,23,0,0,0,0],
+            reinforce:[],
+            threshold:3,class:-1,zone:0,
+            objective:[[0,0,0,0]],
         },
     ],relic:[
         {
@@ -2437,7 +2463,7 @@ types={
             desc:'Add 1 Step\nEvery Turn', 
         },{
             name:'Beans',id:3,rarity:0,list:0,
-            desc:'Heal 2 Health\nat the End of Combat',
+            desc:'Heal 2 HP\nat the End of Combat',
         },{
             name:'Hidden Cards',id:4,rarity:0,list:0,
             desc:'Draw 2 Extra Cards\nat the Start of Combat', 
@@ -2482,7 +2508,7 @@ types={
             desc:'Gain 10 Currency per Room\nUntil You Enter a Shop',
         },{
             name:'Pudding',id:18,rarity:0,list:0,
-            desc:'Heal 15 Health\nWhen Entering a Shop',
+            desc:'Heal 15 HP\nWhen Entering a Shop',
         },{
             name:'Duck of Ten Feathers',id:19,rarity:0,list:0,
             desc:'Every 10th Attack\nDeals Double Damage',
@@ -2496,11 +2522,11 @@ types={
             name:'Ten Handled Coffee Cup',id:22,rarity:0,list:0,
             desc:'Every 10 Attacks\nPlayed, Gain 1 Energy',
         },{
-            name:'Cursed Book of Health',id:23,rarity:0,list:0,
-            desc:'Enemies in Elite Rooms\nLose 20% of their Health',
+            name:'Cursed Book of HP',id:23,rarity:0,list:0,
+            desc:'Enemies in Elite Rooms\nLose 20% of their HP',
         },{
             name:'Extra Cheese',id:24,rarity:0,list:0,
-            desc:'Heal 15 More\nHealth When Resting',
+            desc:'Heal 15 More\nHP When Resting',
         },{
             name:'Threatening Duck',id:25,rarity:0,list:0,
             desc:'Removing Cards Always\nCosts 60 Currency',
@@ -2527,7 +2553,7 @@ types={
             desc:'When Taken, Upgrade\n2 Random Powers',
         },{
             name:'Hat of Rage',id:33,rarity:0,list:0,
-            desc:'Gain 1 Strength Every Turn\nWhen Health Below 50%',
+            desc:'Gain 1 Strength Every Turn\nWhen HP Below 50%',
         },{
             name:'Twitchy',id:34,rarity:0,list:1,
             desc:'Cannot Have Less\nthan 1 Combo',
@@ -2548,7 +2574,7 @@ types={
             desc:'When You Obtain a Curse,\nGain 6 Max HP',
         },{
             name:'Burning Cards',id:40,rarity:1,list:0,
-            desc:'For Every Card in Your Deck, Heal\n0.5 Health When You Enter a Rest Site',
+            desc:'For Every Card in Your Deck, Heal\n0.5 HP When You Enter a Rest Site',
         },{
             name:'Soldiers Guide',id:41,rarity:1,list:0,
             desc:'Upgrade All\nAttacks Added',
@@ -2575,7 +2601,7 @@ types={
             desc:'Every 3 Skills Played, Deal\n5 Damage to All Enemies',
         },{
             name:'Emergency Rations',id:49,rarity:1,list:0,
-            desc:'At the End of Combat, If Health\nBelow 50%, Heal 12 Health',
+            desc:'At the End of Combat, If HP\nBelow 50%, Heal 12 HP',
         },{
             name:'Swift Knife',id:50,rarity:1,list:0,
             desc:'At the Start of Your Turn,\nDeal 3 Damage to All Enemies',
@@ -2587,7 +2613,7 @@ types={
             desc:'Every 3 Attacks\nPlayed, Gain 4 Block',
         },{
             name:'Special Chicken',id:53,rarity:1,list:0,
-            desc:'At the Start of Boss\nCombats, Heal 25 Health',
+            desc:'At the Start of Boss\nCombats, Heal 25 HP',
         },{
             name:'Chocolate Croissant',id:54,rarity:1,list:0,
             desc:'When Taken,\nGain 10 Max HP',
@@ -2632,7 +2658,7 @@ types={
             desc:'Reduce the Effect\nof Breaking Balance',
         },{
             name:'Enchanted Steak',id:68,rarity:2,list:0,
-            desc:'Whenever You Play a\nPower, Heal 2 Health',
+            desc:'Whenever You Play a\nPower, Heal 2 HP',
         },{
             name:'Resilient Shield',id:69,rarity:2,list:0,
             desc:'At the End of Your Turn,\nLose 15 Block Instead of All',
@@ -2839,13 +2865,13 @@ types={
             desc:'Gain 1 Base Energy, Cannot\nPlay More Than 6 Cards',
         },{
             name:'Bread',id:137,rarity:4,list:0,
-            desc:'Heal 6 Health\nat the End of Combat',
+            desc:'Heal 6 HP\nat the End of Combat',
         },{
             name:'Larger Bag',id:138,rarity:0,list:0,
             desc:'You Can Hold 2\nExtra Potions',
         },{
             name:'Magic Leech',id:139,rarity:0,list:0,
-            desc:'Whenever You Use a\nPotion, Heal 5 Health',
+            desc:'Whenever You Use a\nPotion, Heal 5 HP',
         },{
             name:'Freezing Amulet',id:140,rarity:1,list:0,
             desc:'Whenever You Use a\nPotion, Draw 2 Cards',
@@ -2878,7 +2904,7 @@ types={
             desc:'Add 3 Miracles at\nthe Start of Combat',
         },{
             name:'Thieves Bag',id:150,rarity:4,list:0,
-            desc:'Gain 1 Potion, 50 Currency, 5 Max Health,\nChoose 1 Card, Upgrade 1 Random Card',
+            desc:'Gain 1 Potion, 50 Currency, 5 Max HP,\nChoose 1 Card, Upgrade 1 Random Card',
         },{
             name:'Trijewel',id:151,rarity:3,list:0,
             desc:'When You Play an Attack, a Skill,\nand a Power, remove Debuffs',
@@ -2993,8 +3019,8 @@ types={
             name:'Revive',id:30,rarity:2,list:0,
             desc:'When You Die,\nHeal to Half HP',
         },{
-            name:'Max Health',id:31,rarity:2,list:0,
-            desc:'Gain 5\nMax Health',
+            name:'Max HP',id:31,rarity:2,list:0,
+            desc:'Gain 5\nMax HP',
         },{
             name:'Intangible',id:32,rarity:2,list:0,
             desc:'Gain 1\nIntangible',
@@ -3067,7 +3093,7 @@ types={
                     "When you pick it up, you notice the its extreme length and the poor condition of its pages.\n"+
                     "And there seems to be some sort of energy radiating from it...",
                     option:['Read','Leave'],
-                    optionDesc:['Lose 4 Health',''],
+                    optionDesc:['Lose 4 HP',''],
                     link:[1,2],
                 },{
                     desc:"The book is extremely long and quite confusing, but manages to keep you interested.\n"+
@@ -3098,7 +3124,7 @@ types={
                     '"The money is waiting for you at the base nearby."\n\n'+
                     "You head to the base and find the money waiting.",
                     option:['Collect the Bonus'],
-                    optionDesc:['Gain $100'],
+                    optionDesc:['Gain 100 currency'],
                     link:[-1],
                 },{
                     desc:'"I guess with how long you'+"'"+'ve been down there, you'+"'"+'ve earned it."\n'+
@@ -3153,7 +3179,7 @@ types={
                     desc:"The building collapses as you carry the heavy case out, but you get out without major injuries.\n"+
                     "You get the intel to your bosses and collect a bonus for the information.",
                     option:['Collect the money'],
-                    optionDesc:['Gain $150, take 20 damage'],
+                    optionDesc:['Gain 150 currency, take 20 damage'],
                     link:[-1],
                 },{
                     desc:"You manage to make it out, and the kit is exactly what it looks like.",
@@ -3176,7 +3202,7 @@ types={
                     desc:"It's an uneventful day, and nothing of note happens during the speech.\n"+
                     "The Governor gets out safely and you collect payment for your hard work.",
                     option:['Easy money'],
-                    optionDesc:['Gain $50'],
+                    optionDesc:['Gain 50 currency'],
                     link:[-1],
                 },{
                     desc:"As the Governor is finishing his speech, a shot appears from the center of the crowd.\n"+
@@ -3331,13 +3357,13 @@ types={
                     desc:"You catch up and bring him in. The cops are annoyed that you did it yourself, but hand over a bonus anyway.\n"+
                     "And, as a bonus, you learned a new skill.",
                     option:['Job well done'],
-                    optionDesc:['Gain $15\nGain 1 card'],
+                    optionDesc:['Gain 15 currency\nGain 1 card'],
                     link:[-1],
                 },{
                     desc:"Picking up another motorbike, you catch up only to collide into a wall.\n"+
                     "Guess you shouldn't trust random motorbikes on the side of buildings.",
                     option:['Ouch'],
-                    optionDesc:['Lose 8 Health'],
+                    optionDesc:['Lose 8 HP'],
                     link:[-1],
                 },{
                     desc:"He's long gone by the time they arrive. Another suspect lost.",
@@ -3348,7 +3374,7 @@ types={
                     desc:"You are later informed of the following events. They caught up to the suspect in the town and arrested him.\n"+
                     "You're handed a small amount of money for your assistance in bringing him in.",
                     option:['Take the money'],
-                    optionDesc:['Gain $15'],
+                    optionDesc:['Gain 15 currency'],
                     link:[-1],
                 },
             ],
@@ -3454,20 +3480,184 @@ types={
             name:'Augmenter',id:15,list:0,
             pages:[
                 {
-                    desc:"",
-                    option:[],
-                    optionDesc:[],
-                    link:[],
+                    desc:"A mysterious man walks up to you and invites you into a dark alley.\n"+
+                    "Prepared to fight, you are quite surprised when he shows you several boxes.\n"+
+                    "Within them are mysterious liquids and scientific tools.\n\n"+
+                    "He asks you which you would like to test.",
+                    option:['Mixture A','Mixture B','Mixture C','Decline'],
+                    optionDesc:['Add Mixture A to deck','Add Mixture B to deck','Add Mixture C to deck',''],
+                    link:[1,1,1,2],
+                },{
+                    desc:"He laughs and hands you the box, leaving into the darkness.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"He looks at your with a disappointed expression, and leaves.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
                 },
             ],
         },{
-            name:'Target in Sights',id:16,list:1,
+            name:'Target Locked',id:16,list:1,
             pages:[
                 {
-                    desc:"",
-                    option:[],
-                    optionDesc:[],
-                    link:[],
+                    desc:"You have your target in your sights, but you don't have authorization to fire.\n"+
+                    "This may be your only chance before he gets away.",
+                    option:['Take the shot','Do it by the book','Put down the gun'],
+                    optionDesc:['','',''],
+                    link:[1,3,5],
+                },{
+                    desc:"You pull the trigger, and the target becomes a solved problem.\n"+
+                    "A moment later, the lieutenant checks in and gives the order.",
+                    option:['Target eliminated'],
+                    optionDesc:['Gain 50 currency'],
+                    link:[-1],
+                },{
+                    desc:"You pull the trigger, and the target becomes a solved problem.\n"+
+                    "A moment later, the lieutenant checks in and asks you to explain.",
+                    option:['Oops'],
+                    optionDesc:['Lose 50 currency'],
+                    link:[-1],
+                },{
+                    desc:"You wait for the order, but it never arrives. The target escaped again.",
+                    option:['Guess not'],
+                    optionDesc:['Lose 50 currency'],
+                    link:[-1],
+                },{
+                    desc:"A minute later, you receive the order and take the shot.",
+                    option:['Target eliminated'],
+                    optionDesc:['Gain 150 currency'],
+                    link:[-1],
+                },{
+                    desc:"He's gone, but you can always try again later.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'The Bomb',id:17,list:1,
+            pages:[
+                {
+                    desc:"You receive an urgent call and rush over to help. The rebels have planted a bomb in the city.\n"+
+                    "The locals have no idea how to defuse it, but you might have a guess.",
+                    option:['Cut the red wire','Cut the green wire','Cut the blue wire','Back away'],
+                    optionDesc:['','','',''],
+                    link:[1,1,1,3],
+                },{
+                    desc:"You're thanked for preventing needless destruction.",
+                    option:['Job well done'],
+                    optionDesc:['Gain 100 Currency'],
+                    link:[-1],
+                },{
+                    desc:"It blows up in your face. Lucky that it wasn't particularly powerful.",
+                    option:['Ouch'],
+                    optionDesc:['Lose 30 health'],
+                    link:[-1],
+                },{
+                    desc:"You escape the explosion. How are you supposed to know how to defuse a bomb?",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'The Alley',id:18,list:0,
+            pages:[
+                {
+                    desc:"You notice a strange man hiding in an alley. When he notices you, he runs off.\n"+
+                    "He turns the corner, but you still have a chance to chase him down.",
+                    option:['Run after him','Not worth it'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"He leads you into an alley where his friends lie in wait.",
+                    option:['Fight them'],
+                    optionDesc:['Start fight'],
+                    link:[-1],
+                },{
+                    desc:"It's not worth going into back alleys just to stop a mystery man.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Duplication Rock',id:19,list:0,
+            pages:[
+                {
+                    desc:"You find a shiny rock on the ground. Inside it you can see reflections of yourself the loop on themselves.\n"+
+                    "You can feel power emanating from within, but nothing inside it feels new.",
+                    option:['Smash it','Drop it'],
+                    optionDesc:['Duplicate a card',''],
+                    link:[-1,1],
+                },{
+                    desc:"Somebody else can get more use out of it than you.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Riot',id:20,list:1,
+            pages:[
+                {
+                    desc:"You're called in to assist local law enforcement with a disturbance.\n"+
+                    "Disgruntled citizens have attacked the police and are preparing to assault government buildings nearby.\n\n"+
+                    "When you arrive, an officer hands you some riot gear and directs you toward the nearest group of rioters.\n"+
+                    "You meet with the angry crowd and prepare to sort things out.",
+                    option:['Tell them to leave','Push them away','Open fire'],
+                    optionDesc:['','',''],
+                    link:[1,2,3],
+                },{
+                    desc:"It takes you a long time to convince them all to leave.",
+                    option:['Riot is over'],
+                    optionDesc:['Lose a card'],
+                    link:[-1],
+                },{
+                    desc:"They fight back, but you manage to get them to end the demonstration.",
+                    option:['Riot is over'],
+                    optionDesc:['Lose 5 health'],
+                    link:[-1],
+                },{
+                    desc:"You kill most of them before they disband. You'll have to answer for the damage.",
+                    option:['Riot is over'],
+                    optionDesc:['Lose 20 currency'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Old Friend',id:21,list:0,
+            pages:[
+                {
+                    desc:"An old friend of yours contacts you to discuss something they're working on.\n"+
+                    "They need a little funding to get it off the ground, but it might eventually pay out.\n"+
+                    "Given that it succeeds, but don't worry about that.",
+                    option:['Hand over money','Wish them luck'],
+                    optionDesc:['Lose 50 currency',''],
+                    link:[1,2],
+                },{
+                    desc:"You hand over some money, hoping you might get it returned.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"You have no money to offer, but you wish them good luck in their future endeavors.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Payout',id:22,list:-1,
+            pages:[
+                {
+                    desc:"Your old friend returns with good news. Their venture has been successful, and they have money to give out.",
+                    option:['Take your share'],
+                    optionDesc:['Gain 250 currency'],
+                    link:[-1],
                 },
             ],
         },{
@@ -3489,7 +3679,7 @@ listing={
 zones=[
     {
         encounters:[[],[],[]],
-        special:[1,4,3,17],
+        special:[1,4,3,17,18],
         events:[[],[],[],[],[]],
     },{
         encounters:[[],[],[]],

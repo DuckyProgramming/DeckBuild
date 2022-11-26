@@ -549,6 +549,10 @@ class group{
                     this.cards.push(copyCard(this.cards[e]))
                     transition.trigger=true
                     transition.scene='shop'
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&context==14){
+                    this.cards.push(copyCard(this.cards[e]))
+                    transition.trigger=true
+                    transition.scene='map'
                 }
                 this.cards[e].select=false
             }
