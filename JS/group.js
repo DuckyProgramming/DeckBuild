@@ -56,11 +56,11 @@ class group{
                 }
                 this.add(findCard('Charge'),0,this.battle.player)
                 this.add(findCard('Dualcast'),0,this.battle.player)*/
-                this.add(278,0,this.battle.player)
-                this.add(279,0,this.battle.player)
-                this.add(280,0,this.battle.player)
-                this.add(281,0,this.battle.player)
-                this.add(282,0,this.battle.player)
+                this.add(290,0,this.battle.player)
+                this.add(291,0,this.battle.player)
+                this.add(292,0,this.battle.player)
+                this.add(293,0,this.battle.player)
+                this.add(294,0,this.battle.player)
             break
             case 4:
                 /*for(e=0;e<4;e++){
@@ -71,11 +71,11 @@ class group{
                 }
                 this.add(findCard('Peace'),0,this.battle.player)
                 this.add(findCard('Danger'),0,this.battle.player)*/
-                this.add(366,0,this.battle.player)
-                this.add(367,0,this.battle.player)
-                this.add(368,0,this.battle.player)
-                this.add(369,0,this.battle.player)
-                this.add(370,0,this.battle.player)
+                this.add(388,0,this.battle.player)
+                this.add(389,0,this.battle.player)
+                this.add(390,0,this.battle.player)
+                this.add(391,0,this.battle.player)
+                this.add(392,0,this.battle.player)
             break
         }
     }
@@ -455,6 +455,20 @@ class group{
                         this.battle.attack.update(this.cards[e].attack,this.cards[e].level,0)
                         this.trigger=false
                         break
+                    }else if(this.cards[e].attack==367){
+                        if(inputs.rel.y>this.cards[e].position.y+10){
+                            this.battle.playCard()
+                            this.battle.attack.update(351,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }else{
+                            this.battle.playCard()
+                            this.battle.attack.update(174,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }
                     }else if(this.cards[e].target==0){
                         this.battle.playCard()
                         this.battle.attack.update(this.cards[e].attack,this.cards[e].level,0)

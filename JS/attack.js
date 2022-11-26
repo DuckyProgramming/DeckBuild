@@ -1798,6 +1798,71 @@ class attack{
                         this.battle.combatants[0].load(floor(random(0,8)),6)
                     }
                 break
+                case 361:
+                    if(this.damage>0){
+                        this.mana+=this.damage
+                    }
+                   this.battle.combatants[0].status.main[1]+=this.mana
+                   this.battle.close()
+                break
+                case 362:
+                    this.battle.mana.main+=this.damage
+                    this.battle.turn=this.target+100
+                break
+                case 363:
+                    this.hold.int=this.battle.combatants[0].ammo[0]
+                    this.hold.int2=this.battle.combatants[0].ammoDetail[0]
+                    this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[0],this.battle.combatants[0].ammoDetail[0])
+                    this.battle.combatants[0].cycleCharge()
+                    for(g=0;g<this.damage;g++){
+                        this.battle.combatants[0].load(this.hold.int,this.hold.int2)
+                    }
+                break
+                case 364:
+                    if(this.battle.combatants[0].ammo[0]==2){
+                        this.battle.combatants[0].cycleCharge()
+                        this.battle.combatants[0].status.main[33]+=this.damage
+                    }
+                break
+                case 365:
+                    this.battle.combatants[0].load(5,0)
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.attacks.push([0,this.alt*10-10,this.target,this.damage])
+                break
+                case 366:
+                    if(this.battle.combatants[0].ammo[0]==2){
+                        this.battle.combatants[0].cycleCharge()
+                        this.battle.combatants[0].evoke(-2,0)
+                    }
+                break
+                case 368:
+                    for(g=0,lg=this.battle.combatants[0].ammo.length;g<lg;g++){
+                        if(this.battle.combatants[0].ammo[g]==3){
+                            this.battle.mana.main++
+                        }
+                    }
+                break
+                case 369:
+                    for(g=0,lg=this.battle.combatants[0].ammo.length;g<lg;g++){
+                        if(this.battle.combatants[0].ammo[g]==0){
+                            this.battle.combatants[0].ammo[g]=1
+                        }
+                    }
+                break
+                case 370:
+                    this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[0],this.battle.combatants[0].ammoDetail[0])
+                break
+                case 371:
+                    this.battle.combatants[0].evoke(this.alt,0)
+                break
+                case 372:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.combatants[0].load(0,0)
+                    }
+                    this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[0],this.battle.combatants[0].ammoDetail[0])
+                    this.battle.combatants[0].cycleCharge()
+                break
+                default:
             }
             this.battle.combatants[0].lastPlay=this.class
         }else{
@@ -1888,6 +1953,7 @@ class attack{
                         this.battle.combatants[g].life=min(this.battle.combatants[g].life+this.damage,this.battle.combatants[g].base.life)
                     }
                 break
+                default:
             }
         }
     }
@@ -1973,6 +2039,7 @@ class attack{
                         this.battle.combatants[this.attacks[g][2]-1].take(this.attacks[g][3]+this.battle.combatants[0].status.main[26],this.attacks[g][2],0)
                     }
                 break
+                default:
             }
             if(this.attacks[g][1]<=0){
                 this.attacks.splice(g,1)

@@ -188,7 +188,7 @@ types={
             {damage:3,alt:0,cost:2,attack:4,target:0,spec:4,class:2},
             {damage:3,alt:0,cost:2,attack:4,target:0,spec:4,class:2},
         ],
-        },{name:'Shock',rarity:1,list:1,
+        },{name:'Ground\nPound',rarity:1,list:1,
         stats:[
             {damage:1,alt:8,cost:1,attack:49,target:0,spec:0,class:0},
             {damage:3,alt:12,cost:1,attack:49,target:0,spec:0,class:0},
@@ -1334,7 +1334,7 @@ types={
             {damage:1,alt:1,cost:0,attack:342,target:0,spec:0,class:2},
             {damage:1,alt:2,cost:0,attack:342,target:0,spec:0,class:2},
         ],
-        },{name:'Mergecast',rarity:1,list:3,
+        },{name:'Mergecast',rarity:0,list:3,
         stats:[
             {damage:0,alt:0,cost:1,attack:343,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:0,attack:343,target:0,spec:0,class:2},
@@ -1344,7 +1344,7 @@ types={
             {damage:2,alt:0,cost:1,attack:344,target:0,spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:344,target:0,spec:0,class:2},
         ],
-        },{name:'Shield\nEcho',rarity:1,list:3,
+        },{name:'Shield\nEcho',rarity:0,list:3,
         stats:[
             {damage:4,alt:0,cost:1,attack:345,target:0,spec:0,class:2},
             {damage:6,alt:0,cost:1,attack:345,target:0,spec:0,class:2},
@@ -1364,7 +1364,7 @@ types={
             {damage:0,alt:0,cost:2,attack:348,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:1,attack:348,target:0,spec:0,class:2},
         ],
-        },{name:'Pinpoint\nBeam',rarity:1,list:3,
+        },{name:'Pinpoint\nBeam',rarity:0,list:3,
         stats:[
             {damage:3,alt:2,cost:1,attack:349,target:1,spec:0,class:0},
             {damage:5,alt:2,cost:1,attack:349,target:1,spec:0,class:0},
@@ -1424,8 +1424,67 @@ types={
             {damage:3,alt:0,cost:2,attack:360,target:0,spec:8,class:2},
             {damage:3,alt:0,cost:1,attack:360,target:0,spec:8,class:2},
         ],
+        },{name:'Chaos',rarity:0,list:3,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:360,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:1,attack:360,target:0,spec:0,class:2},
+        ],
+        },{name:'Recursion',rarity:0,list:3,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:33,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:33,target:0,spec:0,class:2},
+        ],
+        },{name:'Hydra',rarity:1,list:3,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:363,target:0,spec:3,class:2},
+            {damage:3,alt:0,cost:1,attack:363,target:0,spec:3,class:2},
+        ],
+        },{name:'Alternate\nShield',rarity:0,list:3,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:364,target:0,spec:0,class:1},
+            {damage:1,alt:0,cost:0,attack:364,target:0,spec:2,class:1},
+        ],
+        },{name:'Shock',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:6,cost:2,attack:365,target:0,spec:0,class:2},
+            {damage:2,alt:6,cost:2,attack:365,target:0,spec:0,class:2},
+        ],
+        },{name:'Concentrated\nBlast',rarity:0,list:3,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:366,target:0,spec:0,class:1},
+            {damage:1,alt:0,cost:0,attack:366,target:0,spec:2,class:1},
+        ],
+        },{name:'Bilateral',rarity:0,list:3,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:367,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:367,target:0,spec:0,class:2},
+        ],
+        },{name:'Source',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:368,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:368,target:0,spec:0,class:2},
+        ],
+        },{name:'Infuse',rarity:2,list:3,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:369,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:1,attack:369,target:0,spec:0,class:2},
+        ],
+        },{name:'Contain',rarity:0,list:3,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:370,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:370,target:0,spec:0,class:2},
+        ],
+        },{name:'Quick\nShot',rarity:0,list:3,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:371,target:0,spec:3,class:2},
+            {damage:1,alt:1,cost:0,attack:371,target:0,spec:3,class:2},
+        ],
+        },{name:'Backups',rarity:1,list:3,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:372,target:0,spec:8,class:2},
+            {damage:3,alt:0,cost:1,attack:372,target:0,spec:8,class:2},
+        ],
         },
-        //option play
         
         
         {name:'Debilitate',rarity:2,list:4,
@@ -1858,10 +1917,18 @@ types={
             {damage:3,alt:0,cost:0,attack:299,target:0,spec:0,class:1},
             {damage:5,alt:1,cost:0,attack:299,target:0,spec:0,class:1},
         ],
+        },{name:'False\nSurrender',rarity:1,list:4,
+        stats:[
+            {damage:0,alt:0,cost:-1,attack:361,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:-1,attack:361,target:0,spec:0,class:2},
+        ],
+        },{name:'Taunt',rarity:0,list:4,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:362,target:1,spec:3,class:2},
+            {damage:2,alt:0,cost:0,attack:362,target:1,spec:3,class:2},
+        ],
         },
         //unarmed only perhaps
-        //taunt
-        //false surrender
         //counter stun? petal shield already exists...
         //analysis paralysis
 

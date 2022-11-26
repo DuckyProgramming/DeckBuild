@@ -1309,6 +1309,15 @@ class combatant{
 					}
 				}
 			break
+			case -2:
+				i=0
+				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
+					if(i==0&&this.battle.combatants[h].life>0){
+						this.battle.combatants[h].take(20*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+						i=1
+					}
+				}
+			break
 		}
 	}
 	passiveEvoke(type,detail){

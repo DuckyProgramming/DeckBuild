@@ -335,7 +335,7 @@ class card{
             case 276: this.desc+='Apply -'+this.damage+' Damage\nto All Enemies'; break
             case 277: this.desc+='Gain '+this.damage+' Strength\nEvery Turn'; break
             case 278: this.desc+='Retain Unused\nBlock for the\nNext '+this.damage+' Turns'; break
-            case 279: this.desc+='Gain '+this.damage+' Dodge\nGain '+this.alt+'\nConditioning'; break
+            case 279: this.desc+='Add '+this.damage+' Dodge\nGain '+this.alt+'\nConditioning'; break
             case 280: this.desc+='Enter Wrath\nor\nEnter Calm'; break
             case 281: this.desc+='Shivs Deal '+this.damage+'\nMore Damage'; break
             case 282: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nDiscard '+this.alt+'\nRandom Cards'; break
@@ -417,6 +417,19 @@ class card{
             case 358: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nFlame Charges'; break
             case 359: this.desc+='Hold '+this.damage+'\nFlame Charge\nPer Burn in\nYour Deck'; break
             case 360: this.desc+='Hold '+this.damage+'\nRandom Charges'; break
+            case 361: if(this.damage>0){this.desc+='End Your Turn\nRetain Your Energy\nFor Next Turn\nGain '+this.damage+' Energy'}else{this.desc+='End Your Turn\nRetain Your Energy\nFor Next Turn'}; break
+            case 362: this.desc+='Gain '+this.damage+' Energy\nCause an Enemy\nto Attack'; break
+            case 363: this.desc+='Evoke 1st Charge\nHold that Charge\n'+this.damage+' Times'; break
+            case 364: this.desc+='If 1st Charge\nis a Shield\nCharge, Evoke it,\nAdding '+this.damage+' Buffer'; break
+            case 365: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nHold 1 Lightning\nCharge'; break
+            case 366: this.desc+='If 1st Charge\nis an Explosive\nCharge, Evoke it,\nDealing All Damage\nto 1 Enemy'; break
+            case 367: this.desc+='Hold '+this.damage+'\nDark Charge\nor\nHold '+this.damage+'\nLight Charge'; break
+            case 368: this.desc+='Gain '+this.damage+' Energy\nPer Energy Charge'; break
+            case 369: this.desc+='Replace All\nBasic Charges\nWith Explosive\nCharges'; break
+            case 370: this.desc+='Evoke 1st Charge\nKeep that Charge'; break
+            case 371: if(this.alt>0){this.desc+='Hold '+this.damage+'\nExplosive Charge\nEvoke It'}else{this.desc+='Hold '+this.damage+'\nBasic Charge\nEvoke It'}; break
+            case 372: this.desc+='Hold '+this.damage+'\nBasic Charges\nEvoke 1st Charge'; break
+            default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
@@ -471,7 +484,7 @@ class card{
             }
             this.layer.strokeWeight(5)
             this.layer.rect(0,0,this.width,this.height,5)
-            if(this.attack==63||this.attack==280||this.attack==296){
+            if(this.attack==63||this.attack==280||this.attack==296||this.attack==367){
                 this.layer.rect(0,-this.height/4+5,this.width,this.height/2+10,5)
                 this.layer.rect(0,this.height/4+5,this.width,this.height/2-10,5)
             }
