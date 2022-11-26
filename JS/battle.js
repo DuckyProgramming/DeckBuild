@@ -641,12 +641,20 @@ class battle{
                 }else if(f==60&&this.combatants[e].status.main[f]>0){
                     this.hand.add(findCard('Miracle'),1,0)
                     this.combatants[e].status.main[f]--
+                }else if(f==84&&this.combatants[e].status.main[f]>0){
+                    this.combatants[e].flower+=this.combatants[e].status.main[f]
+                }else if(f==86&&this.combatants[e].status.main[f]>0){
+                    if(this.combatants[e].meter<0){
+                        this.combatants[e].meter-=this.combatants[e].status.main[f]
+                    }else if(this.combatants[e].meter>0){
+                        this.combatants[e].meter-=this.combatants[e].status.main[f]
+                    }
                 }else if(
                     f!=2&&f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&
                     f!=35&&f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=50&&f!=51&&
                     f!=52&&f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&
                     f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79&&
-                    f!=80&&f!=81&&f!=82){
+                    f!=80&&f!=81&&f!=82&&f!=85){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }else if(f==67){

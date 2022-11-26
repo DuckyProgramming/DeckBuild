@@ -1997,11 +1997,37 @@ types={
             {damage:9,alt:0,cost:0,attack:73,target:1,spec:11,class:0},
             {damage:15,alt:0,cost:0,attack:73,target:1,spec:11,class:0},
         ],
+        },{name:'Fortify',rarity:0,list:4,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:385,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:385,target:0,spec:0,class:2},
+        ],
+        },{name:'Steadfast',rarity:1,list:4,
+        stats:[
+            {damage:1,alt:0,cost:3,attack:386,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:2,attack:386,target:0,spec:3,class:2},
+        ],
+        },{name:'Willpower',rarity:1,list:4,
+        stats:[
+            {damage:6,alt:2,cost:2,attack:387,target:0,spec:0,class:2},
+            {damage:11,alt:2,cost:2,attack:387,target:0,spec:0,class:2},
+        ],
+        },{name:'Decision',rarity:2,list:4,
+        stats:[
+            {damage:1,alt:0,cost:4,attack:388,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:3,attack:388,target:0,spec:0,class:2},
+        ],
+        },{name:'Bank\nBalance',rarity:1,list:4,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:389,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:389,target:0,spec:3,class:2},
+        ],
+        },{name:'Tide',rarity:1,list:4,
+        stats:[
+            {damage:3,alt:2,cost:0,attack:391,target:0,spec:0,class:2},
+            {damage:3,alt:2,cost:0,attack:391,target:0,spec:0,class:2},
+        ],
         },
-        //counter stun? petal shield already exists...
-        //analysis paralysis
-
-        //permapower cards
         
         
         {name:'Empty',rarity:-1,list:-1,
@@ -2126,6 +2152,11 @@ types={
         stats:[
             {damage:4,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
             {damage:6,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
+        ],
+        },{name:'Banked\nBalance',rarity:-1,list:0,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:390,target:0,spec:9,class:0},
+            {damage:0,alt:0,cost:0,attack:390,target:0,spec:9,class:0},
         ],
         },
         

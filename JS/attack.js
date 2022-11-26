@@ -1441,7 +1441,7 @@ class attack{
                     }
                     this.battle.combatants[0].meter=0
                 break
-                case 296:
+                case 296: case 390:
                     this.battle.combatants[0].meter+=this.damage
                 break
                 case 297:
@@ -1911,6 +1911,30 @@ class attack{
                     this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[83]++
                     this.battle.combatants[0].meter+=this.alt
+                break
+                case 385:
+                    this.battle.combatants[0].flower+=this.damage
+                break
+                case 386:
+                    this.battle.combatants[0].status.main[84]++
+                break
+                case 387:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].flower+=this.alt
+                break
+                case 388:
+                    this.battle.combatants[0].status.main[85]++
+                break
+                case 389:
+                    this.battle.drop.addDrop(findCard('Banked\nBalance'),0,0)
+                    this.battle.drop.cards[this.battle.drop.cards.length-1].damage=this.battle.combatants[0].meter
+                    this.battle.hand.add(findCard('Banked\nBalance'),0,0)
+                    this.battle.hand.cards[this.battle.hand.cards.length-1].damage=this.battle.combatants[0].meter
+                    this.battle.combatants[0].meter=0
+                break
+                case 391:
+                    this.battle.combatants[0].boost.main[0]+=this.damage
+                    this.battle.combatants[0].status.main[86]+=this.alt
                 break
                 default:
             }

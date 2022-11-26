@@ -441,6 +441,13 @@ class card{
             case 382: this.desc+='If Unarmed\nAdd '+this.damage+' Block\nCounter Once With\nPush Collision\nfor '+this.damage+' Damage'; break
             case 383: this.desc+='If Unarmed\nApply '+this.damage+' Bleed\nApply '+this.alt+' Vulnerable'; break
             case 384: this.desc+='Gain '+this.damage+' Block\nCounter Once With\n1 Stun\n'+nfp(this.alt)+' Balance'; break
+            case 385: this.desc+='Gain '+this.damage+'\nResolve'; break
+            case 386: this.desc+='Gain '+this.damage+' Resolve\nPer Turn'; break
+            case 387: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+'\nResolve'; break
+            case 388: this.desc+='Gain '+this.damage+' Resolve\nWhen You\nBlock Damage'; break
+            case 389: this.desc+='Add a Banked\nBalance Card With\nCurrent Balance\nto Your Hand\nReset Balance'; break
+            case 390: this.desc+=nfp(this.damage)+' Balance'; break
+            case 391: this.desc+='Gain '+this.damage+' Strength\nUnbalance by '+this.alt+'\nEvery Turn'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
