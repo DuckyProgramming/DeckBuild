@@ -1862,6 +1862,20 @@ class attack{
                     this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[0],this.battle.combatants[0].ammoDetail[0])
                     this.battle.combatants[0].cycleCharge()
                 break
+                case 373:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.draw()
+                    if(this.battle.hand.cards[this.battle.hand.cards.length-1].cost!=0){
+                        this.battle.hand.cards[this.battle.hand.cards.length-1].used=true
+                    }
+                break
+                case 374:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target].boost.main[2]-=this.alt
+                break
+                case 375:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[this.target].boost.main[4]+=this.alt
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

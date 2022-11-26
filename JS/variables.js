@@ -1446,8 +1446,8 @@ types={
         ],
         },{name:'Shock',rarity:1,list:3,
         stats:[
-            {damage:1,alt:6,cost:2,attack:365,target:0,spec:0,class:2},
-            {damage:2,alt:6,cost:2,attack:365,target:0,spec:0,class:2},
+            {damage:1,alt:6,cost:2,attack:365,target:1,spec:0,class:0},
+            {damage:2,alt:6,cost:2,attack:365,target:1,spec:0,class:0},
         ],
         },{name:'Concentrated\nBlast',rarity:0,list:3,
         stats:[
@@ -1483,6 +1483,26 @@ types={
         stats:[
             {damage:2,alt:0,cost:1,attack:372,target:0,spec:8,class:2},
             {damage:3,alt:0,cost:1,attack:372,target:0,spec:8,class:2},
+        ],
+        },{name:'Scrape',rarity:1,list:3,
+        stats:[
+            {damage:7,alt:1,cost:1,attack:373,target:1,spec:0,class:0},
+            {damage:10,alt:1,cost:1,attack:373,target:1,spec:0,class:0},
+        ],
+        },{name:'Quick\nScope',rarity:1,list:3,
+        stats:[
+            {damage:3,alt:2,cost:0,attack:374,target:1,spec:0,class:0},
+            {damage:5,alt:2,cost:0,attack:374,target:1,spec:0,class:0},
+        ],
+        },{name:'Quick\nBlock',rarity:0,list:3,
+        stats:[
+            {damage:3,alt:0,cost:0,attack:2,target:0,spec:0,class:1},
+            {damage:5,alt:0,cost:0,attack:2,target:0,spec:0,class:1},
+        ],
+        },{name:'Reselect',rarity:0,list:3,
+        stats:[
+            {damage:4,alt:2,cost:1,attack:375,target:1,spec:0,class:1},
+            {damage:7,alt:2,cost:1,attack:375,target:1,spec:0,class:1},
         ],
         },
         
