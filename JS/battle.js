@@ -54,7 +54,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=21
+        this.event=23
     }
     create(){
         this.end=false
@@ -2456,6 +2456,15 @@ class battle{
                         case 22:
                             if(this.page==0&&e==0){
                                 this.currency.money+=250
+                            }
+                        break
+                        case 23:
+                            if(this.page==0&&e==0){
+                                this.currency.money-=60
+                            }else if(this.page==0&&e==1){
+                                setupEncounter(current,zones[0].special[5])
+                                this.create()
+                                transition.scene='battle'
                             }
                         break
                     }

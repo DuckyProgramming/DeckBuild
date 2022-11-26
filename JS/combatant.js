@@ -117,6 +117,10 @@ class combatant{
 			case 6:
 				this.status.main[13]=1
 			break
+			case 7:
+				this.status.main[3]=6
+				this.block+=8
+			break
 		}
 	}
 	setupIntent(type){
@@ -1154,7 +1158,54 @@ class combatant{
 					this.layer.ellipse(4,-72,4,4)
 					this.layer.ellipse(12,-72,4,4)
 				break
-				
+				case 24:
+					this.layer.stroke(225,155,25,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(225,155,25,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(230,this.fade)
+					this.layer.rect(-6,-45,2,6)
+					this.layer.rect(0,-45,2,6)
+					this.layer.rect(6,-45,2,6)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,4,4)
+					this.layer.ellipse(12,-72,4,4)
+				break
+				case 25:
+					this.layer.stroke(175,100,0,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.stroke(80,this.fade)
+					this.layer.line(-16/3,-20,-20/3,-10)
+					this.layer.line(16/3,-20,20/3,-10)
+					this.layer.line(-9,-40,-12,-32)
+					this.layer.line(9,-40,12,-32)
+					this.layer.noStroke()
+					this.layer.fill(175,100,0,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(80,this.fade)
+					this.layer.rect(0,-45,18,4)
+					this.layer.rect(0,-45,8,8)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,4,4)
+					this.layer.ellipse(12,-72,4,4)
+					this.layer.fill(80,this.fade)
+					this.layer.arc(0,-75,36,36,-180,0)
+					this.layer.fill(200,this.fade/2)
+					this.layer.rect(8,-72,16,6)
+				break
 				case 100:
 					this.layer.stroke(80,this.fade)
 					this.layer.strokeWeight(4)

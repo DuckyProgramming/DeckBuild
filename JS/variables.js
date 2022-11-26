@@ -1614,8 +1614,8 @@ types={
         ],
         },{name:'Silence',rarity:1,list:4,
         stats:[
-            {damage:0,alt:-3,cost:0,attack:81,target:1,spec:3,class:1},
             {damage:0,alt:-3,cost:0,attack:81,target:1,spec:0,class:1},
+            {damage:0,alt:-3,cost:0,attack:81,target:1,spec:2,class:1},
         ],
         },{name:'Power\nWithin',rarity:1,list:4,
         stats:[
@@ -2342,7 +2342,9 @@ types={
         {name:'Red',alt:'',life:36,height:80,behavior:0,attacks:[1,17,18],damage:[7,5,4],altAttack:[0,1,0],class:0,buff:0},//20
         {name:'Trenchcoat Man',alt:'',life:60,height:75,behavior:0,attacks:[1],damage:[8],altAttack:[0],class:0,buff:0},
         {name:'Trenchcoat Gunner',alt:'',life:45,height:75,behavior:0,attacks:[1],damage:[4],altAttack:[0],class:0,buff:4},
-        {name:'Goon',alt:'',life:45,height:75,behavior:0,attacks:[10,1],damage:[4,10],altAttack:['Arm\nInjury',0],class:0,buff:0},
+        {name:'Goon',alt:'',life:45,height:75,behavior:0,attacks:[1,10,8],damage:[10,4,12],altAttack:['Arm\nInjury',0],class:0,buff:0},
+        {name:'Prisoner',alt:'',life:28,height:75,behavior:0,attacks:[1,3,8],damage:[8,5,10],altAttack:[0,2,0],class:0,buff:0},
+        {name:'Prison Guard',alt:'',life:56,height:75,behavior:0,attacks:[3,8],damage:[3,16],altAttack:[3,0],class:0,buff:7},
     ],attack:[
         {class:0},
         {class:0},
@@ -2448,6 +2450,11 @@ types={
         },{
             combatants:[23,23,0,0,0,0],
             reinforce:[],
+            threshold:3,class:-1,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[24,25,0,0,0,0],
+            reinforce:[24],
             threshold:3,class:-1,zone:0,
             objective:[[0,0,0,0]],
         },
@@ -3661,6 +3668,24 @@ types={
                 },
             ],
         },{
+            name:'Prison',id:23,list:2,
+            pages:[
+                {
+                    desc:"You've been arrested by the local police, pending extradition to Management Courts.\n"+
+                    "But until they can arrange your trial, you'll be contained in a local jail, with a couple days of time.\n"+
+                    "There's plenty of opportunities to escape while you're not being watched.",
+                    option:['Bribe the guards','Create a distraction'],
+                    optionDesc:['Lose 60 currency','Start fight'],
+                    link:[1,-1],
+                },{
+                    desc:"The prison guards accept the bribe and let you out. A short while later, your location is unknown.\n"+
+                    "You've escaped the Management's wrath this time.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
             name:'',id:0,list:-1,
             pages:[
                 {
@@ -3679,7 +3704,7 @@ listing={
 zones=[
     {
         encounters:[[],[],[]],
-        special:[1,4,3,17,18],
+        special:[1,4,3,17,18,19],
         events:[[],[],[],[],[]],
     },{
         encounters:[[],[],[]],

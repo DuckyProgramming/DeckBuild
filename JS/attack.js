@@ -415,7 +415,7 @@ class attack{
                     this.battle.combatants[0].meter+=this.alt
                 break
                 case 81:
-                    this.battle.combatants[this.target].setupIntent(0)
+                    this.battle.combatants[this.target].setupIntent()
                 break
                 case 82:
                     this.battle.combatants[0].boost.main[0]+=this.damage
