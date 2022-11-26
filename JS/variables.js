@@ -2320,6 +2320,8 @@ types={
         {name:'Enforcer',alt:'',life:80,height:90,behavior:0,attacks:[1,3,16],damage:[18,8,16],altAttack:[0,2,1],class:1,buff:6},
         {name:'Ninja',alt:'',life:32,height:75,behavior:0,attacks:[1,3],damage:[9,4],altAttack:[0,2],class:0,buff:0},
         {name:'Red',alt:'',life:36,height:80,behavior:0,attacks:[1,17,18],damage:[7,5,4],altAttack:[0,1,0],class:0,buff:0},//20
+        {name:'Trenchcoat Man',alt:'',life:60,height:75,behavior:0,attacks:[1],damage:[8],altAttack:[0],class:0,buff:0},
+        {name:'Trenchcoat Gunner',alt:'',life:45,height:75,behavior:0,attacks:[1],damage:[4],altAttack:[0],class:0,buff:4},
     ],attack:[
         {class:0},
         {class:0},
@@ -2332,12 +2334,12 @@ types={
         {class:1},
         {class:0},
     ],encounter:[
-        {
+        {//0
             combatants:[0,0,0,0,0,0],
             reinforce:[],
             threshold:0,class:-1,zone:0,
             objective:[],
-        },{//0
+        },{
             combatants:[5,0,0,0,0,0],
             reinforce:[],
             threshold:2,class:-1,zone:0,
@@ -2357,12 +2359,12 @@ types={
             reinforce:[],
             threshold:4,class:-1,zone:0,
             objective:[[0,0,0,0]],
-        },{
+        },{//5
             combatants:[9,9,0,0,0,0],
             reinforce:[],
             threshold:3,class:0,zone:0,
             objective:[[0,0,0,0]],
-        },{//5
+        },{
             combatants:[10,10,0,0,0,0],
             reinforce:[],
             threshold:3,class:1,zone:0,
@@ -2382,12 +2384,12 @@ types={
             reinforce:[12,13,12],
             threshold:2,class:1,zone:0,
             objective:[[0,0,0,0]],
-        },{
+        },{//10
             combatants:[12,0,0,0,0,0],
             reinforce:[14,14],
             threshold:2,class:1,zone:0,
             objective:[[0,0,1,0]],
-        },{//10
+        },{
             combatants:[12,13,0,0,0,0],
             reinforce:[15,12],
             threshold:3,class:1,zone:0,
@@ -2407,15 +2409,20 @@ types={
             reinforce:[19,18,19],
             threshold:3,class:1,zone:0,
             objective:[[0,0,1,0]],
-        },{
+        },{//15
             combatants:[20,20,0,0,0,0],
             reinforce:[20],
             threshold:3,class:1,zone:0,
             objective:[[0,0,1,0]],
-        },{//15
+        },{
             combatants:[19,0,0,0,0,0],
             reinforce:[19],
             threshold:2,class:0,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[21,21,21,22,0,0],
+            reinforce:[],
+            threshold:5,class:-1,zone:0,
             objective:[[0,0,0,0]],
         },
     ],relic:[
@@ -3117,7 +3124,7 @@ types={
                     "but you have to finish your current job. Then again, he's not far from where you are.\n\n"+
                     "Head over and give him a hand?",
                     option:['Help him out',"He'll do it on his own"],
-                    optionDesc:['Lose 10 HP',''],
+                    optionDesc:['Take 10 damage',''],
                     link:[1,2],
                 },{
                     desc:"You get a little beat up, but you save the Agent from certain death.\n"+
@@ -3146,7 +3153,7 @@ types={
                     desc:"The building collapses as you carry the heavy case out, but you get out without major injuries.\n"+
                     "You get the intel to your bosses and collect a bonus for the information.",
                     option:['Collect the money'],
-                    optionDesc:['Gain $150, lose 20 Health'],
+                    optionDesc:['Gain $150, take 20 damage'],
                     link:[-1],
                 },{
                     desc:"You manage to make it out, and the kit is exactly what it looks like.",
@@ -3176,7 +3183,7 @@ types={
                     "Luckily, it misses him, only to hit you instead. The other guards managed to bring the Governor out alive,\n"+
                     "and you escape under the cover of a fight. Your payment only just manages to patch you up.",
                     option:['Deal with the injury'],
-                    optionDesc:['Lose 15 Health'],
+                    optionDesc:['Take 15 damage'],
                     link:[-1],
                 },{
                     desc:"You continue with your boring work as the day goes by. At the end, a message comes in from command.\n"+
@@ -3238,7 +3245,7 @@ types={
                 },{
                     desc:"He asks you where you're from, and why you're here.",
                     option:['Tell the truth.','Punch him'],
-                    optionDesc:['','Start Fight'],
+                    optionDesc:['','Start fight'],
                     link:[2,-1],
                 },{
                     desc:"He looks at you with disapproval, but backs down, avoiding having to fight.\n"+
@@ -3249,7 +3256,7 @@ types={
                 },{
                     desc:"He manages to get in a quick strike.",
                     option:['Fight Back'],
-                    optionDesc:['Lose 6 HP, Start Fight'],
+                    optionDesc:['Take 6 damage, Start fight'],
                     link:[-1],
                 },
             ],
@@ -3378,13 +3385,13 @@ types={
                 {
                     desc:"You're walking through a clearing in the forest when you hear some rustling in the leaves.\n"+
                     "Turning around, you're too slow to stop the monkeys from grabbing you as more and more appear.",
-                    option:['Fight the Monkeys','Throw something valuable'],
-                    optionDesc:['Start Fight',''],
+                    option:['Fight the monkeys','Throw something valuable'],
+                    optionDesc:['Start fight',''],
                     link:[-1,1],
                 },{
                     desc:"The monkeys run after the object you threw.",
                     option:['Exit'],
-                    optionDesc:['Lose an Enhancement'],
+                    optionDesc:['Lose a relic'],
                     link:[-1],
                 },
             ],
@@ -3401,13 +3408,13 @@ types={
                     desc:"With some difficulty, you successfully grab on to the side and use friction with the edge to slow your fall.\n"+
                     "You seem to have dropped some items along the way, but they could be anywhere now.",
                     option:['Get out of the hole'],
-                    optionDesc:['Lose an Enhancement'],
+                    optionDesc:['Lose a relic'],
                     link:[-1],
                 },{
                     desc:"The only ledge you can see is just a little out of reach. You manage to move over, but the landing knocks you unconcious.\n"+
                     "When you get up, your head is spinning, and you forget some of what you were doing beforehand.",
                     option:['Get out of the hole'],
-                    optionDesc:['Lose 2 Random Cards'],
+                    optionDesc:['Lose 2 random cards'],
                     link:[-1],
                 },{
                     desc:"You land with a crash. After a minute of lying in pain, you get back up and leave.",
@@ -3417,7 +3424,34 @@ types={
                 },
             ],
         },{
-            name:'Augmenter',id:14,list:0,
+            name:'Backseat',id:14,list:0,
+            pages:[
+                {
+                    desc:"You're travelling in the back of a public bus when you realize that something feels off about the other passengers.\n"+
+                    "Sure enough, you notice a poorly concealed weapon inside one's coat. And the other ones probably all did the same.\n"+
+                    "If they wanted to kill you, it would be easy, now that they have you surrounded and unprepared.",
+                    option:['Attack them','Jump out of the window','Act normal'],
+                    optionDesc:['Start fight','',''],
+                    link:[-1,1,2],
+                },{
+                    desc:"It's not your best landing, sure, but the bus is far away before they can get after you.",
+                    option:['Exit'],
+                    optionDesc:['Take 7 damage'],
+                    link:[-1],
+                },{
+                    desc:"Well, if they just don't notice...",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"A few minutes later, they jump you simultaneously.",
+                    option:['Fight back'],
+                    optionDesc:['Start fight, take 11 damage'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Augmenter',id:15,list:0,
             pages:[
                 {
                     desc:"",
@@ -3427,7 +3461,7 @@ types={
                 },
             ],
         },{
-            name:'Target in Sights',id:15,list:1,
+            name:'Target in Sights',id:16,list:1,
             pages:[
                 {
                     desc:"",
@@ -3455,7 +3489,7 @@ listing={
 zones=[
     {
         encounters:[[],[],[]],
-        special:[1,4,3],
+        special:[1,4,3,17],
         events:[[],[],[],[],[]],
     },{
         encounters:[[],[],[]],

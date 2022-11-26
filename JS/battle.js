@@ -50,10 +50,11 @@ class battle{
         
         //current.getRelic(156)
 
-        //transition.trigger=true
-        //transition.scene='map'
-        //current.map.complete[0][0]=1
-        //current.event=14
+        this.map.position[0]=0
+        transition.trigger=true
+        transition.scene='event'
+        this.map.complete[0][0]=1
+        this.event=14
     }
     create(){
         this.end=false
@@ -207,8 +208,10 @@ class battle{
             this.mana.main+=2
         }
         if(this.relics.active[10]){
-            for(e=1,le=this.combatants.length;e<le;e++){
-                this.combatants[e].boost.main[1]--
+            for(e=0,le=this.combatants.length;e<le;e++){
+                if(this.combatants[e].team==1){
+                    this.combatants[e].boost.main[1]--
+                }
             }
         }
         if(this.relics.active[16]){
@@ -269,8 +272,10 @@ class battle{
             this.combatants[0].combo+=4
         }
         if(this.relics.active[131]){
-            for(e=1,le=this.combatants.length;e<le;e++){
-                this.combatants[e].boost.main[0]++
+            for(e=0,le=this.combatants.length;e<le;e++){
+                if(this.combatants[e].team==1){
+                    this.combatants[e].boost.main[0]++
+                }
             }
         }
         if(this.relics.active[144]){
@@ -684,8 +689,10 @@ class battle{
             this.combatants[0].addBlock(18)
         }
         if(this.relics.active[88]&&this.counter.turn==6){
-            for(e=1,le=this.combatants.length;e<le;e++){
-                this.combatants[e].take(52,0)
+            for(e=0,le=this.combatants.length;e<le;e++){
+                if(this.combatants[e].team==1){
+                    this.combatants[e].take(52,0)
+                }
             }
         }
         if(this.relics.active[85]&&this.counter.played<3){
@@ -712,8 +719,10 @@ class battle{
             this.combatants[0].mantra++
         }
         if(this.relics.active[50]){
-            for(g=1,lg=this.combatants.length;g<lg;g++){
-                this.combatants[g].take(3,0)
+            for(e=0,le=this.combatants.length;e<le;e++){
+                if(this.combatants[e].team==1){
+                    this.combatants[e].take(3,0)
+                }
             }
         }
         if(this.relics.active[80]&&this.counter.turn%5==0){
@@ -721,7 +730,7 @@ class battle{
         }
         if(this.relics.active[116]){
             for(e=0,le=this.combatants.length;e<le;e++){
-                if(e==0&&this.counter.turn==0){
+                if(this.combatants[e].team==0&&this.counter.turn==0){
                     this.combatants[e].boost.main[0]+=2
                 }else{
                     this.combatants[e].boost.main[0]++
@@ -729,8 +738,10 @@ class battle{
             }
         }
         if(this.relics.active[117]){
-            for(e=1,le=this.combatants.length;e<le;e++){
-                this.combatants[e].status.main[37]+=2
+            for(e=0,le=this.combatants.length;e<le;e++){
+                if(this.combatants[e].team==1){
+                    this.combatants[e].status.main[37]+=2
+                }
             }
         }
         if(this.relics.active[120]){
@@ -780,8 +791,8 @@ class battle{
     }
     resetTurnProxy(){
         this.counter.enemies.alive=0
-        for(e=1,le=this.combatants.length;e<le;e++){
-            if(this.combatants[e].life>0){
+        for(e=0,le=this.combatants.length;e<le;e++){
+            if(this.combatants[e].team==1&&this.combatants[e].life>0){
                 this.counter.enemies.alive++
             }
         }
@@ -852,8 +863,10 @@ class battle{
         if(this.attack.class==1){
             this.random.skills++
             if(this.random.skills%3==0&&this.relics.active[48]){
-                for(g=1,lg=this.combatants.length;g<lg;g++){
-                    this.combatants[g].take(5,0)
+                for(g=0,lg=this.combatants.length;g<lg;g++){
+                    if(this.combatants[g].team==1){
+                        this.combatants[g].take(5,0)
+                    }
                 }
             }
             for(g=0,lg=this.hand.cards.length;g<lg;g++){
@@ -891,8 +904,10 @@ class battle{
             this.draw()
         }
         if(this.combatants[0].status.main[22]>0){
-            for(g=1,lg=this.combatants.length;g<lg;g++){
-                this.combatants[g].take(this.combatants[0].status.main[22],0)
+            for(g=0,lg=this.combatants.length;g<lg;g++){
+                if(this.combatants[g].team==1){
+                    this.combatants[g].take(this.combatants[0].status.main[22],0)
+                }
             }
         }
         if(this.combatants[0].status.main[23]>0){
@@ -900,8 +915,8 @@ class battle{
         }
     }
     afterPlayCard(){
-        for(g=1,lg=this.combatants.length;g<lg;g++){
-            if(this.combatants[g].status.main[70]>0){
+        for(g=0,lg=this.combatants.length;g<lg;g++){
+            if(this.combatants[g].team==1&&this.combatants[g].status.main[70]>0){
                 this.combatants[0].take(this.combatants[g].status.main[70],g)
             }
         }
@@ -983,8 +998,8 @@ class battle{
 				this.combatants[0].mantra-=12
             }
         }
-        for(e=1,le=this.combatants.length;e<le;e++){
-            if(this.combatants[e].status.main[47]<=0){
+        for(e=0,le=this.combatants.length;e<le;e++){
+            if(this.combatants[e].team==1&&this.combatants[e].status.main[47]<=0){
                 this.combatants[e].block=0
             }
         } 
@@ -1084,8 +1099,8 @@ class battle{
                             this.mana.main+=2*this.random.potionEffectiveness
                         break
                         case 9:
-                            for(g=1,lg=this.combatants.length;g<lg;g++){
-                                if(this.combatants[g].life>0){
+                            for(g=0,lg=this.combatants.length;g<lg;g++){
+                                if(this.combatants[g].team==1&&this.combatants[g].life>0){
                                     this.combatants[g].take(10*this.random.potionEffectiveness,0)
                                 }
                             }
@@ -1477,8 +1492,8 @@ class battle{
             this.draw()
         }
         this.counter.enemies.alive=0
-        for(e=1,le=this.combatants.length;e<le;e++){
-            if(this.combatants[e].life>0){
+        for(e=0,le=this.combatants.length;e<le;e++){
+            if(this.combatants[e].team==1&&this.combatants[e].life>0){
                 this.counter.enemies.alive++
             }
         }
@@ -1936,8 +1951,10 @@ class battle{
                             setupEncounter(this,zones[this.map.zone].encounters[1][floor(random(0,zones[this.map.zone].encounters[1].length))])
                             this.create()
                             if(this.relics.active[23]){
-                                for(g=1,lg=this.combatants.length;g<lg;g++){
-                                    this.combatants[g].life*=0.8
+                                for(g=0,lg=this.combatants.length;g<lg;g++){
+                                    if(this.combatants[g].team==1){
+                                        this.combatants[g].life*=0.8
+                                    }
                                 }
                             }
                         break
@@ -2350,6 +2367,27 @@ class battle{
                                 this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
                             }else if(this.page==3&&e==0){
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-13)
+                            }
+                        break
+                        case 14:
+                            if(this.page==0&&e==0){
+                                setupEncounter(current,zones[0].special[3])
+                                this.create()
+                                transition.scene='battle'
+                                for(f=0,lf=this.combatants.length;f<lf;f++){
+                                    if(this.combatants[f].team==1){
+                                        this.combatants[f].life=round(this.combatants[f].life*random(0.8,1))
+                                    }
+                                }
+                            }else if(this.page==0&&e==2&&floor(random(0,3))==0){
+                                this.remember[0]=1
+                            }else if(this.page==1&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-7)
+                            }else if(this.page==3&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-11)
+                                setupEncounter(current,zones[0].special[3])
+                                this.create()
+                                transition.scene='battle'
                             }
                         break
                     }
