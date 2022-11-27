@@ -3312,7 +3312,7 @@ types={
                     "Screw the Management.\n\n"+
                     "The visions recede. It's over.",
                     option:['Accept your past'],
-                    optionDesc:['Become Cursed - Imbalance'],
+                    optionDesc:['Become cursed - Imbalance'],
                     link:[-1],
                 },{
                     desc:"You remember it now, those devices. The programmers treated you as nothing more than an experiment.\n"+
@@ -3321,7 +3321,7 @@ types={
                     "Screw the Management.\n\n"+
                     "The visions recede. It's over.",
                     option:['Accept your past'],
-                    optionDesc:['Become Cursed - Doubt'],
+                    optionDesc:['Become cursed - Doubt'],
                     link:[-1],
                 },{
                     desc:"You remember it now, those scanners. Watching you every moment of your life, everything you ever did. All on their screens.\n"+
@@ -3330,7 +3330,7 @@ types={
                     "Screw the Management.\n\n"+
                     "The visions recede. It's over.",
                     option:['Accept your past'],
-                    optionDesc:['Become Cursed - Shame'],
+                    optionDesc:['Become cursed - Shame'],
                     link:[-1],
                 },
             ],
@@ -3403,7 +3403,7 @@ types={
                     desc:"As you attempt to take the tongs from the still-hot furnace, pain jets through your arm.\n"+
                     "You are able to lift them and take them with some difficulty, but your arm continues to hurt.",
                     option:['Ouch'],
-                    optionDesc:['Gain Enhancement - Random Upgrade\nBecome Cursed - Pain'],
+                    optionDesc:['Gain a relic\nBecome cursed - Pain'],
                     link:[-1],
                 },{
                     desc:"You decide not to do anything, and continue on your path.",
@@ -3683,6 +3683,84 @@ types={
                     option:['Exit'],
                     optionDesc:[''],
                     link:[-1],
+                },
+            ],
+        },{
+            name:'The Tournament',id:24,list:2,
+            pages:[
+                {
+                    desc:"The annual Konaian combat tournament is being held nearby, and you have an opportunity to attend.\n"+
+                    "But the Management is running the tournaments now, so they might try to arrest you on sight.\n"+
+                    "You'd have a decent chance of winning if you go, but is it too risky?",
+                    option:['Go in disguise','Decide against it'],
+                    optionDesc:['',''],
+                    link:[1,3],
+                },{
+                    desc:"The Management recognizes you on the way in and attempt to have you arrested.\n"+
+                    "You escape, but they land several hits.",
+                    option:['Ouch'],
+                    optionDesc:['Lose 20 health'],
+                    link:[-1],
+                },{
+                    desc:"You successfully win a local tournament and earn some money, but you won't risk entering the finals.\n"+
+                    "The Management would have a massive security presence, and you probably wouldn't win anyway.",
+                    option:['Collect your reward'],
+                    optionDesc:['Gain 200 currency'],
+                    link:[-1],
+                },{
+                    desc:"It's not worth the risk.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Cardboard Box',id:25,list:0,
+            pages:[
+                {
+                    desc:"You notice a box at the bottom of a well. The box has some labels on it,\n"+
+                    "stating it to be a Management collection box for recent excavations on the planet.\n"+
+                    "The people intended to carry it probably dropped it and didn't want to get it back.\n"+
+                    "Smart choice, the well doesn't look easy to get down.",
+                    option:['Climb in','Leave'],
+                    optionDesc:['Lose 5 Health',''],
+                    link:[1,-1],
+                },{
+                    desc:"You climb in, but it's a lot harder to get down than you expected."+
+                    "It's almost as if the well is getting deeper...",
+                    option:['Continue','Leave'],
+                    optionDesc:['Lose 5 Health',''],
+                    link:[2,-1],
+                },{
+                    desc:"Ouch... Is this really worth it?",
+                    option:['Continue','Leave'],
+                    optionDesc:['Lose 5 Health',''],
+                    link:[3,-1],
+                },{
+                    desc:"You reach the end of the well and pick up the box. Inside you find something useful.",
+                    option:['Take it'],
+                    optionDesc:['Gain a relic'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'',id:26,list:0,
+            pages:[
+                {
+                    desc:"",
+                    option:[],
+                    optionDesc:[],
+                    link:[],
+                },
+            ],
+        },{
+            name:'Fight Club',id:27,list:0,
+            pages:[
+                {
+                    desc:"",
+                    option:[],
+                    optionDesc:[],
+                    link:[],
                 },
             ],
         },{

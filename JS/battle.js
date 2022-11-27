@@ -54,7 +54,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=23
+        this.event=26
     }
     create(){
         this.end=false
@@ -2465,6 +2465,28 @@ class battle{
                                 setupEncounter(current,zones[0].special[5])
                                 this.create()
                                 transition.scene='battle'
+                            }
+                        break
+                        case 24:
+                            if(this.page==0&&e==0&&floor(random(0,3))==0){
+                                this.remember[0]=1
+                            }else if(this.page==1){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-20)
+                            }else if(this.page==2){
+                                this.currency.money+=200
+                            }
+                        break
+                        case 25:
+                            if((this.page==0||this.page==1)&&e==0&&floor(random(0,3))==0){
+                                this.remember[0]=2-this.page
+                            }else if((this.page==0||this.page==1||this.page==2)&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
+                            }else if(this.page==3&&e==0){
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.relics.list[g].length))
+                                this.getRelic(this.relics.list[g][f])
+                                this.relics.list[g].splice(f,1)
                             }
                         break
                     }

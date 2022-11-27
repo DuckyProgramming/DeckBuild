@@ -253,7 +253,8 @@ function outEvent(){
 	'\n'+types.combatant[1].name+': '+zones[0].events[1].length+
 	'\n'+types.combatant[2].name+': '+zones[0].events[2].length+
 	'\n'+types.combatant[3].name+': '+zones[0].events[3].length+
-	'\n'+types.combatant[4].name+': '+zones[0].events[4].length)
+	'\n'+types.combatant[4].name+': '+zones[0].events[4].length+
+	'\nTotal: '+(zones[0].events[0].length+zones[0].events[1].length+zones[0].events[2].length+zones[0].events[3].length+zones[0].events[4].length))
 }
 function generateListing(cards,encounters,events){
 	for(a=0,la=listing.card.length;a<la;a++){
