@@ -3744,17 +3744,184 @@ types={
                 },
             ],
         },{
-            name:'',id:26,list:0,
+            name:'Manila Folder',id:26,list:1,
             pages:[
                 {
-                    desc:"",
-                    option:[],
-                    optionDesc:[],
-                    link:[],
+                    desc:"You are handed a folder containing information about a major deal occuring on the other side of the plane t.\n"+
+                    "The deal looks important enough from what you can see, but the exact details aren't specified.",
+                    option:['Inform the boss','Travel there'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"By the time another agent arrives at the location, the deal is over. We'll get them next time.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"You arrive and bust a meetup without much trouble.",
+                    option:['Job well done'],
+                    optionDesc:['Gain 100 currency'],
+                    link:[-1],
+                },{
+                    desc:"The information is wrong and you've traveled halfway across the planet to an empty warehouse.",
+                    option:['Time wasted'],
+                    optionDesc:['Lose 50 currency'],
+                    link:[-1],
                 },
             ],
         },{
-            name:'Fight Club',id:27,list:0,
+            name:'Glowing Spring',id:27,list:0,
+            pages:[
+                {
+                    desc:"You encounter a spring filled with shining water. It looks safe to drink.",
+                    option:['Drink','Leave'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"You feel refreshed, like a weight has been lifted off your shoulders.",
+                    option:['Done'],
+                    optionDesc:['Remove all curses'],
+                    link:[-1],
+                },{
+                    desc:"You're not touching that liquid until you find out what it is.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Hidden Bank',id:28,list:0,
+            pages:[
+                {
+                    desc:"You find a crate of money lying open of the side of the road, overflowing with coins.\n"+
+                    "A sign nearby says to take only the coins on the outside.",
+                    option:['Take the coins','Smash it'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"You pick up the scattered coins and leave the rest where you found it.",
+                    option:['Take the money'],
+                    optionDesc:['Gain 75 currency'],
+                    link:[-1],
+                },{
+                    desc:"You smash the crate and watch as more and more money streams out.",
+                    option:['Take the money'],
+                    optionDesc:['Gain 175 currency,\nbecome cursed - Regret'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Punching Bag',id:29,list:0,
+            pages:[
+                {
+                    desc:"While resting, you notice an abandoned punching bag on the ground.\n"+
+                    "Perfect for testing some of your combat abilities?",
+                    option:['Beat it up','Leave it there'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"You have a good time hitting the bag, until a breaks a few minutes later.",
+                    option:['That was fun'],
+                    optionDesc:['Upgrade a card'],
+                    link:[-1],
+                },{
+                    desc:"It's not good enough. You finish up and leave the area.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Back-Alley Deal',id:30,list:0,
+            pages:[
+                {
+                    desc:"A mysterious man appears in an alley and offers you a deal. In return for a card, he'll give you another.\n"+
+                    "You see a small pack in his hand, but he looks at you expectedly for your end of the deal.",
+                    option:['Hand him a card','Back out'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"You give him a card and he gives you the pack.",
+                    option:['Good deal'],
+                    optionDesc:['Transform a card'],
+                    link:[-1],
+                },{
+                    desc:"You run off, ending the deal prematurely. He doesn't follow.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'False Healer',id:31,list:0,
+            pages:[
+                {
+                    desc:"A strangely-dressed man approaches you on the road and asks to heal you in return for payment.\n"+
+                    "It's obvious that he doesn't have the tools necessary to heal others. You notice immediately.\n"+
+                    "In a slightly menancing voice, you tell him to back off.\n\n"+
+                    '"'+"Alright, sorry, okay? I can't heal people, I just help them unlearn bad habits..."+'"\n'+
+                    '"'+"I'll do it for free..."+'"',
+                    option:['Accept','Refuse'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"He tells you some of the most useless information you've ever heard. And yet, it's a new perspective.\n"+
+                    "He escapes when you're not looking, but you've gotten what you need.",
+                    option:['Try it out'],
+                    optionDesc:['Remove a card'],
+                    link:[-1],
+                },{
+                    desc:"You make him leave. You don't support con men.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Donut',id:32,list:0,
+            pages:[
+                {
+                    desc:"You've grabbed the box containing the supplies you need, when you notice a donut shop nearby.\n"+
+                    "When you enter, you realize that this is no ordinary donut shop. They don't take normal currency.\n"+
+                    "Whatever's in the box, it can't be worth more than a donut, right?",
+                    option:['Buy a donut','Keep the box'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"You trade the box for a donut from the shop.",
+                    option:['Eat it'],
+                    optionDesc:['Gain 5 max health'],
+                    link:[-1],
+                },{
+                    desc:"You resist the urge and open the box later.",
+                    option:['Take the contents'],
+                    optionDesc:['Gain a relic,\nbecome cursed - Regret'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Shining Light',id:33,list:0,
+            pages:[
+                {
+                    desc:"In a clearing, you notice a ball of light, floating in the center of the area.\n"+
+                    "You feel a warm glow coming from it, and feel compelled to enter.",
+                    option:['Enter the ball','Ignore it'],
+                    optionDesc:['Lose 12 health',''],
+                    link:[1,2],
+                },{
+                    desc:"Despite the pain, you see great knowledge within the ball, feeling invigorated.",
+                    option:['Gain knowledge'],
+                    optionDesc:['Upgrade 2 random cards'],
+                    link:[-1],
+                },{
+                    desc:"You go around it, wondering what it might have been.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Fight Club',id:99,list:-1,
             pages:[
                 {
                     desc:"",

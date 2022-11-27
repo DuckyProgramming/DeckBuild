@@ -54,7 +54,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=26
+        this.event=33
     }
     create(){
         this.end=false
@@ -2118,7 +2118,7 @@ class battle{
             this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0,this.deck.cards.length-this.drawAmount,this.defaultRandom)
         }else if(this.context==2||this.context==3||this.context==10||this.context==11||this.context==12){
             this.discard.displayView(-1)
-        }else if(this.context==5||this.context==6||this.context==9||this.context==14){
+        }else if(this.context==5||this.context==6||this.context==9||this.context==14||this.context==15){
             this.deck.displayView(-1)
         }else if(this.context==7||this.context==8||this.context==13){
             this.reserve.displayView(this.context2)
@@ -2130,7 +2130,7 @@ class battle{
         this.layer.textSize(20)
         if(this.context==3||this.context==5||this.context==6){
             this.layer.text('Back',850,570)
-        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11||this.context==12||this.context==13||this.context==14){
+        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11||this.context==12||this.context==13||this.context==14||this.context==15){
             this.layer.text('Skip',850,570)
         }
         if(this.context==6){
@@ -2155,14 +2155,14 @@ class battle{
             this.deck.scroll-=30
         }
         this.deck.scroll=constrain(this.deck.scroll,0,floor(this.deck.cards.length/6)*200-400)
-        if(this.context==1||this.context==4||this.context==5||this.context==6||this.context==9||this.context==14){
+        if(this.context==1||this.context==4||this.context==5||this.context==6||this.context==9||this.context==14||this.context==15){
             this.deck.updateView()
         }
     }
     onClickDeck(){
         if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570},width:80,height:40})){
             transition.trigger=true
-            if(this.context==1||this.context==4||this.context==5||this.context==14){
+            if(this.context==1||this.context==4||this.context==5||this.context==14||this.context==15){
                 transition.scene='map'
             }else if(this.context==2){
                 this.close()
@@ -2194,7 +2194,7 @@ class battle{
                 }
             }
         }
-        if(this.context==1||this.context==4||this.context==6||this.context==9||this.context==14){
+        if(this.context==1||this.context==4||this.context==6||this.context==9||this.context==14||this.context==15){
             this.deck.onClickView(this.context,this.context2)
         }else if(this.context==2||this.context==10||this.context==11||this.context==12){
             this.discard.onClickView(this.context,this.context2)
@@ -2487,6 +2487,76 @@ class battle{
                                 f=floor(random(0,this.relics.list[g].length))
                                 this.getRelic(this.relics.list[g][f])
                                 this.relics.list[g].splice(f,1)
+                            }
+                        break
+                        case 26:
+                            if(this.page==0&&e==1&&floor(random(0,2))==0){
+                                this.remember[0]=1
+                            }else if(this.page==2&&e==0){
+                                this.currency.money+=100
+                            }else if(this.page==3&&e==0){
+                                this.currency.money-=50
+                            }
+                        break
+                        case 27:
+                            if(this.page==1&&e==0){
+                                for(g=0,lg=this.deck.cards.length;g<lg;g++){
+                                    if(this.deck.cards[g].list==10){
+                                        this.deck.cards.splice(g,1)
+                                        g--
+                                        lg--
+                                    }
+                                }
+                            }
+                        break
+                        case 28:
+                            if(this.page==1&&e==0){
+                                this.currency.money+=75
+                            }else if(this.page==2&&e==0){
+                                this.currency.money+=175
+                                this.deck.add(findCard('Regret'),0,stage.playerNumber+2)
+                            }
+                        break
+                        case 29:
+                            if(this.page==1&&e==0){
+                                transition.scene='deck'
+                                this.setupDeck(1)
+                                this.context=1
+                            }
+                        break
+                        case 30:
+                            if(this.page==1&&e==0){
+                                transition.scene='deck'
+                                this.setupDeck(15)
+                                this.context=15
+                            }
+                        break
+                        case 31:
+                            if(this.page==1&&e==0){
+                                transition.scene='deck'
+                                this.setupDeck(4)
+                                this.context=4
+                            }
+                        break
+                        case 32:
+                            if(this.page==1&&e==0){
+                                this.combatants[0].life+=5
+                                this.combatants[0].base.life+=5
+                            }else if(this.page==2&&e==0){
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.relics.list[g].length))
+                                this.getRelic(this.relics.list[g][f])
+                                this.relics.list[g].splice(f,1)
+                                this.deck.add(findCard('Regret'),0,stage.playerNumber+2)
+                            }
+                        break
+                        case 33:
+                            if(this.page==0&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-12)
+                            }else if(this.page==1&&e==0){
+                                this.deck.randomUpgrade()
+                                this.deck.randomUpgrade()
                             }
                         break
                     }

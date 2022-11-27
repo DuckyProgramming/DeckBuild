@@ -553,6 +553,12 @@ class group{
                     this.cards.push(copyCard(this.cards[e]))
                     transition.trigger=true
                     transition.scene='map'
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&context==15){
+                    f=floor(random(0,3))
+                    this.cards[e].type=listing.card[this.battle.player][f][floor(random(0,listing.card[this.battle.player][f].length))]
+                    this.cards[e]=reformCard(this.cards[e])
+                    transition.trigger=true
+                    transition.scene='map'
                 }
                 this.cards[e].select=false
             }
