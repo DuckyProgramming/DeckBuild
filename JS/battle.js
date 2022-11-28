@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=51
+        this.event=54
     }
     create(){
         this.end=false
@@ -538,6 +538,10 @@ class battle{
             break
             case 157:
                 this.random.healEffectiveness=0
+            break
+            case 158:
+                this.combatants[0].base.life+=30
+                this.combatants[0].life+=30
             break
         }
     }
@@ -1035,8 +1039,10 @@ class battle{
                 this.layer.fill(180)
                 this.layer.rect(130,120,240,60,5)
                 this.layer.fill(0)
+                this.layer.textSize(18)
+                this.layer.text(types.relic[this.relics.owned[e]].name,130,105)
                 this.layer.textSize(12)
-                this.layer.text(types.relic[this.relics.owned[e]].desc,130,120)
+                this.layer.text(types.relic[this.relics.owned[e]].desc,130,130)
             }
         }
     }
@@ -2833,6 +2839,19 @@ class battle{
                                 this.getPotion(this.potions.list[g][f])
                             }
                         break
+                        case 52:
+                            if(this.page==1&&e==0){
+                                this.currency.money+=10
+                            }else if(this.page==2&&e==0){
+                                this.eventList.push(findEvent('Return of Duck'))
+                            }else if(this.page==3&&e==0){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+20)
+                            }
+                        break
+                        case 53:
+                            if(this.page==0&&e==0){
+                                this.getRelic(findRelic('McDuck Burger'))
+                            }
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){
                         this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]

@@ -1852,6 +1852,9 @@ class combatant{
 			this.collect.block=this.block
 		}
 		if(this.team==0){
+			if(this.battle.relics.active[157]&&this.base.life>this.life){
+				this.base.life=this.life
+			}
 			if(this.combo!=0&&this.battle.hand.anim.selectCombo||this.type==1){
 				this.uniqueDisplay.push(0)
 			}

@@ -2973,6 +2973,9 @@ types={
         },{
             name:'Too Much Knowledge',id:157,rarity:-1,list:0,
             desc:'You Can No Longer Heal',
+        },{
+            name:'McDuck Burger',id:158,rarity:-1,list:0,
+            desc:'When Taken,\nGain 30 Max HP',
         },/*{
             name:'', d:15,rarity:4,list:0,
             desc:'',
@@ -4423,23 +4426,79 @@ types={
                     desc:"A deep glow surrounds you and dissipates after a minute, leaving you feeling refreshed.",
                     option:['Nice'],
                     optionDesc:['Heal to Full'],
-                    link:[3],
+                    link:[4],
                 },{
                     desc:"When you look down, a relic appears in your hand.",
                     option:['Nice'],
                     optionDesc:['Gain a Relic'],
-                    link:[3],
+                    link:[4],
                 },{
                     desc:"A potion appaers next to you when you look away.",
                     option:['Nice'],
                     optionDesc:['Gain a Potion'],
-                    link:[3],
+                    link:[4],
                 },{
                     desc:'"'+"I have to leave now, they'll arrive soon. Good luck."+'"\n'+
                     "You hear a splash and turn around, but there's nobody there.",
-                    option:['Exit'],
+                    option:['Leave'],
                     optionDesc:[''],
                     link:[-1],
+                },
+            ],
+        },{
+            name:'Fat Duck',id:52,list:0,
+            pages:[
+                {
+                    desc:"On the side of the road, you find what may be the fattest duck you've ever seen.\n"+
+                    "He's so fat, in fact, that he can't move from where he is. He's not a threat to you.\n"+
+                    '"'+"Help me up..."+'"\n'+
+                    "You can do whatever you want with him, given that he's unable to fight back.",
+                    option:['Rob him','Help him','Eat him'],
+                    optionDesc:['','',''],
+                    link:[1,2,3],
+                },{
+                    desc:"You take a small amount of money from his bag, but it's not much.",
+                    option:['Steal it'],
+                    optionDesc:['Gain 10 currency'],
+                    link:[-1],
+                },{
+                    desc:"You help him up and he gets on his way, wobbling down the road.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"You wonder if he could be useful to you, but you need the food right now.",
+                    option:['Tasty'],
+                    optionDesc:['Heal 20 health'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Return of Duck',id:53,list:-1,
+            pages:[
+                {
+                    desc:"You are resting when you hear loud footsteps behind you. Turning around, you spot an unfamiliar duck.\n"+
+                    "It takes you a couple seconds to realize you've seen this duck before. You helped him out earlier, when he was fatter.\n"+
+                    '"'+"Thanks for help me back there. Here, I brought something useful for you. It's the most I could do."+'"\n'+
+                    "He hands you a large, brown, strange-smelling bag and leaves.",
+                    option:['Open it'],
+                    optionDesc:['Gain 1 relic'],
+                    link:[1],
+                },{
+                    desc:"Inside, you find a burger. You're not sure where he got this from, but it's yours now.",
+                    option:['Eat it'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Luvocorp Ship',id:54,list:0,
+            pages:[
+                {
+                    desc:"",
+                    option:[''],
+                    optionDesc:[''],
+                    link:[],
                 },
             ],
         },
