@@ -1425,7 +1425,7 @@ class combatant{
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
 					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(8*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+						this.battle.combatants[h].take(8*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
 						i=1
 					}
 				}
@@ -1434,12 +1434,12 @@ class combatant{
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
 					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(12*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+						this.battle.combatants[h].take(12*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
 						if(this.battle.combatants[h+1].life>0){
-							this.battle.combatants[h+1].take(4*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h+1].boost.main[4]))*(2+max(0,this.battle.combatants[h+1].boost.main[4])),0)
+							this.battle.combatants[h+1].take(4*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h+1].boost.main[4]))*(2+max(0,this.battle.combatants[h+1].boost.main[4])),-1)
 						}
 						if(this.battle.combatants[h-1].life>0&&h>1){
-							this.battle.combatants[h-1].take(4*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h-1].boost.main[4]))*(2+max(0,this.battle.combatants[h-1].boost.main[4])),0)
+							this.battle.combatants[h-1].take(4*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h-1].boost.main[4]))*(2+max(0,this.battle.combatants[h-1].boost.main[4])),-1)
 						}
 						i=1
 					}
@@ -1455,7 +1455,7 @@ class combatant{
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
 					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(detail*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+						this.battle.combatants[h].take(detail*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
 						i=1
 					}
 				}
@@ -1464,7 +1464,7 @@ class combatant{
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
 					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(6*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+						this.battle.combatants[h].take(6*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
 						i=1
 					}
 				}
@@ -1478,7 +1478,7 @@ class combatant{
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
 					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(16*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+						this.battle.combatants[h].take(16*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
 						i=1
 					}
 				}
@@ -1487,7 +1487,7 @@ class combatant{
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
 					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(20*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+						this.battle.combatants[h].take(20*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
 						i=1
 					}
 				}
@@ -1500,7 +1500,7 @@ class combatant{
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
 					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(3*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+						this.battle.combatants[h].take(3*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
 						i=1
 					}
 				}
@@ -1509,12 +1509,12 @@ class combatant{
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
 					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(4*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+						this.battle.combatants[h].take(4*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
 						if(this.battle.combatants[h+1].life>0){
-							this.battle.combatants[h+1].take(1*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h+1].boost.main[4]))*(2+max(0,this.battle.combatants[h+1].boost.main[4])),0)
+							this.battle.combatants[h+1].take(1*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h+1].boost.main[4]))*(2+max(0,this.battle.combatants[h+1].boost.main[4])),-1)
 						}
 						if(this.battle.combatants[h-1].life>0&&h>1){
-							this.battle.combatants[h-1].take(1*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h-1].boost.main[4]))*(2+max(0,this.battle.combatants[h-1].boost.main[4])),0)
+							this.battle.combatants[h-1].take(1*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h-1].boost.main[4]))*(2+max(0,this.battle.combatants[h-1].boost.main[4])),-1)
 						}
 						i=1
 					}
@@ -1530,7 +1530,7 @@ class combatant{
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
 					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(detail/2*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+						this.battle.combatants[h].take(detail/2*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
 						i=1
 					}
 				}
@@ -1539,7 +1539,7 @@ class combatant{
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
 					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(2*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+						this.battle.combatants[h].take(2*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
 						i=1
 					}
 				}
@@ -1551,7 +1551,7 @@ class combatant{
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
 					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(6*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+						this.battle.combatants[h].take(6*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
 						i=1
 					}
 				}
@@ -1565,7 +1565,7 @@ class combatant{
 					i=0
 					for(h=1,lh=this.battle.combatants.length;h<lh;h++){
 						if(i==0&&this.battle.combatants[h].life>0){
-							this.battle.combatants[h].take(3*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),0)
+							this.battle.combatants[h].take(3*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
 							i=1
 						}
 					}

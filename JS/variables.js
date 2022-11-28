@@ -2346,9 +2346,9 @@ types={
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},//0
         {name:'Agent',alt:'',life:80,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother']},
-        {name:'Duelist',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister']},
+        {name:'Duelist',alt:'',life:70,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister']},
         {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother']},
-        {name:'Creation',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister']},
+        {name:'Creation',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister']},
         {name:'Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[6,2,3],altAttack:[0,3,0],class:0,buff:0},
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
@@ -2372,16 +2372,25 @@ types={
         {name:'Prison Guard',alt:'',life:56,height:75,behavior:0,attacks:[3,8],damage:[3,16],altAttack:[3,0],class:0,buff:7},
         {name:'Slaver',alt:'',life:46,height:75,behavior:0,attacks:[1,17],damage:[12,7],altAttack:[0,1],class:0,buff:0},
     ],attack:[
+        {class:0},//0
         {class:0},
-        {class:0},
-        {class:1},
-        {class:0},
-        {class:1},
         {class:1},
         {class:0},
         {class:1},
         {class:1},
         {class:0},
+        {class:1},
+        {class:1},
+        {class:0},
+        {class:0},//10
+        {class:1},
+        {class:1},
+        {class:1},
+        {class:0},
+        {class:0},
+        {class:1},
+        {class:0},
+        {class:1},
     ],encounter:[
         {//0
             combatants:[0,0,0,0,0,0],
@@ -4411,23 +4420,24 @@ types={
                     optionDesc:['','',''],
                     link:[1,2,3],
                 },{
-                    desc:"",
-                    option:[''],
-                    optionDesc:[''],
+                    desc:"A deep glow surrounds you and dissipates after a minute, leaving you feeling refreshed.",
+                    option:['Nice'],
+                    optionDesc:['Heal to Full'],
                     link:[3],
                 },{
-                    desc:"",
-                    option:[''],
-                    optionDesc:[''],
+                    desc:"When you look down, a relic appears in your hand.",
+                    option:['Nice'],
+                    optionDesc:['Gain a Relic'],
                     link:[3],
                 },{
-                    desc:"",
-                    option:[''],
-                    optionDesc:[''],
+                    desc:"A potion appaers next to you when you look away.",
+                    option:['Nice'],
+                    optionDesc:['Gain a Potion'],
                     link:[3],
                 },{
-                    desc:"",
-                    option:[''],
+                    desc:'"'+"I have to leave now, they'll arrive soon. Good luck."+'"\n'+
+                    "You hear a splash and turn around, but there's nobody there.",
+                    option:['Exit'],
                     optionDesc:[''],
                     link:[-1],
                 },

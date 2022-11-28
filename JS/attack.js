@@ -1415,7 +1415,7 @@ class attack{
                 break
                 case 291:
                     this.battle.combatants[0].addBlock(this.damage)
-                    this.battle.combatants[0].base.meter=max(0,this.battle.combatant[0].base.meter-5)
+                    this.battle.combatants[0].base.meter=max(0,this.battle.combatants[0].base.meter-5)
                 break
                 case 292:
                     this.battle.combatants[this.target].take(this.damage,this.user)

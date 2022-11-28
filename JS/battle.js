@@ -1650,6 +1650,7 @@ class battle{
         }else if(this.turn==0&&this.combatants[0].life>0){
             this.onClickPotions()
             this.hand.onClickHand()
+            this.trigger=false
             if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:525},width:40,height:30})){
                 transition.trigger=true
                 transition.scene='deck'
@@ -2816,6 +2817,22 @@ class battle{
                                 this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
                             }
                         break
+                        case 51:
+                            if(this.page==1&&e==0){
+                                this.combatants[0].life=this.combatants[0].base.life
+                            }else if(this.page==2&&e==0){
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.relics.list[g].length))
+                                this.getRelic(this.relics.list[g][f])
+                                this.relics.list[g].splice(f,1)
+                            }else if(this.page==3&&e==0){
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.potions.list[g].length))
+                                this.getPotion(this.potions.list[g][f])
+                            }
+                        break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){
                         this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]
@@ -3040,9 +3057,6 @@ class battle{
                     }
                 }
             break
-        }
-        for(g=0,lg=this.shop.cards.length;g<lg;g++){
-            this.shop.cards[g].size=1
         }
     }
     displayBossChoice(){
