@@ -4399,6 +4399,39 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'Divine Intervention',id:51,list:0,
+            pages:[
+                {
+                    desc:"You see a strange blue glow coming from a nearby lake. As you approach, you notice a woman sitting on a ledge.\n"+
+                    '"'+"I've been watching you, having taken interest in your adventure. But there isn't much I can do right now."+'"\n'+
+                    '"'+"He'll always be watching, so I can only help you in a few ways."+'"\n'+
+                    "You avoid asking questions and decide what blessing you would like.",
+                    option:['Health?','A relic?','A potion?'],
+                    optionDesc:['','',''],
+                    link:[1,2,3],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:[''],
+                    link:[3],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:[''],
+                    link:[3],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:[''],
+                    link:[3],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
         
         
@@ -4432,7 +4465,7 @@ types={
                     link:[-1],
                 },
             ],
-        },//fight club, divine intervention, capture, bounty hunter, last guardian, mob doctor?
+        },//fight club, capture, bounty hunter, last guardian, mob doctor?
     ],
 }
 listing={
