@@ -264,7 +264,9 @@ function generateListing(cards,encounters,events){
 	}
 	for(a=0,la=cards.length;a<la;a++){
 		if(cards[a].list>=0){
-			listing.card[14][0].push(a)
+			if(cards[a].rarity>=0){
+				listing.card[14][0].push(a)
+			}
 			if(cards[a].rarity<0){
 				listing.card[cards[a].list][3].push(a)
 			}else{
@@ -1237,6 +1239,14 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 		case 155:
 			layer.image(graphics.symbol[22],-10,-10,20,20)
 			layer.image(graphics.symbol[0],-18,-18,36,36)
+		break
+		case 156:
+			layer.textSize(10)
+			layer.text('?',0,-5)
+			layer.image(graphics.symbol[1],-10,3,20,20)
+			layer.image(graphics.symbol[5],-10,-15,20,20)
+			layer.image(graphics.symbol[5],-18,-9,12,12)
+			layer.image(graphics.symbol[5],6,-9,12,12)
 		break
 	}
 	layer.scale(1/size,1/size/flip)

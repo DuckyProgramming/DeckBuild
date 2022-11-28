@@ -1206,6 +1206,31 @@ class combatant{
 					this.layer.fill(200,this.fade/2)
 					this.layer.rect(8,-72,16,6)
 				break
+				case 26:
+					this.layer.noFill()
+					this.layer.stroke(200,this.fade)
+					this.layer.strokeWeight(3)
+					this.layer.line(-24,-24,36,-24)
+					this.layer.arc(36,-24,24,12,90,270)
+					this.layer.stroke(50,125,150,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(50,125,150,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(240,220,150,125,150)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(50,125,150,this.fade)
+					this.layer.arc(0,-75,36,36,-180,0)
+					this.layer.arc(8,-75,52,44,135,180)
+					this.layer.arc(8,-75,20,36,0,45)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,4,4)
+					this.layer.ellipse(12,-72,4,4)
+				break
 				case 100:
 					this.layer.stroke(80,this.fade)
 					this.layer.strokeWeight(4)
@@ -1706,6 +1731,11 @@ class combatant{
 					}
 					if(this.battle.relics.active[27]&&this.calc.damage<5){
 						this.calc.damage=5
+					}
+					for(let g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+						if(this.battle.hand.cards[g].attack==-20){
+							this.battle.combatants[0].take(1,-1)
+						}
 					}
 				}
 				if(this.id==0){

@@ -54,7 +54,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=40
+        this.event=42
     }
     create(){
         this.end=false
@@ -752,6 +752,12 @@ class battle{
         }
         if(this.relics.active[134]&&(this.random.class==1||this.random.class==2)){
             this.mana.main++
+        }
+        if(this.relics.active[156]){
+            transition.trigger=true
+            transition.scene='choice'
+            this.setupChoice(0,0,5)
+            this.context=-6
         }
         if(this.combatants[0].status.main[54]>0){
             for(g=0;g<this.combatants[0].status.main[54];g++){
@@ -1783,7 +1789,9 @@ class battle{
                     transition.trigger=true
                     transition.scene='map'
                 }
-                if(this.context==-5){
+                if(this.context==-6){
+                    this.reserve.addShuffle(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                }else if(this.context==-5){
                     this.hand.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
                     this.hand.cards[this.hand.cards.length-1].cost=0
                 }else if(this.context==-3){
@@ -1807,7 +1815,7 @@ class battle{
                     transition.scene='choice'
                     this.context=3
                 }
-            }else if(this.context==-2||this.context==-3||this.context==-4||this.context==-5){
+            }else if(this.context==-2||this.context==-3||this.context==-4||this.context==-5||this.context==-6){
                 transition.scene='battle'
             }
         }
@@ -2351,7 +2359,7 @@ class battle{
                                 this.context=1
                             }else if(this.page==2&&e==0){
                                 this.deck.add(findCard('Pain'),0,stage.playerNumber+2)
-                                current.getRelic(29)
+                                current.getRelic(findRelic('Bent Pliers'))
                             }
                         break
                         case 12:
@@ -2629,6 +2637,28 @@ class battle{
                                 this.combatants[0].base.life+=5
                             }else if(this.page==2&&e==0){
                                 this.deck.add(findCard('Decay'),0,stage.playerNumber+2)
+                            }
+                        break
+                        case 41:
+                            if(this.page==0&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-1)
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-2)
+                            }else if(this.page==3&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
+                            }else if(this.page==4&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-10)
+                            }else if(this.page==5&&e==0){
+                                current.getRelic(findRelic('Audrian Codex'))
+                            }
+                        break
+                        case 42:
+                            if(this.page==0&&e==0){
+                                setupEncounter(current,zones[0].special[6])
+                                this.create()
+                                transition.scene='battle'
+                            }else if(this.page==1&&e==0){
+                                this.deck.add(findCard('Guilt'),0,stage.playerNumber+2)
                             }
                         break
                     }

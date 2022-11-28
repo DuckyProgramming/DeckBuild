@@ -2254,6 +2254,11 @@ types={
             {damage:0,alt:0,cost:0,attack:-13,target:0,spec:1,class:-2},
             {damage:0,alt:0,cost:0,attack:-13,target:0,spec:1,class:-2},
         ],
+        },{name:'Guilt',rarity:-1,list:10,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-20,target:0,spec:6,class:-2},
+            {damage:0,alt:0,cost:0,attack:-20,target:0,spec:6,class:-2},
+        ],
         },
         
         
@@ -2350,6 +2355,7 @@ types={
         {name:'Goon',alt:'',life:45,height:75,behavior:0,attacks:[1,10,8],damage:[10,4,12],altAttack:['Arm\nInjury',0],class:0,buff:0},
         {name:'Prisoner',alt:'',life:28,height:75,behavior:0,attacks:[1,3,8],damage:[8,5,10],altAttack:[0,2,0],class:0,buff:0},
         {name:'Prison Guard',alt:'',life:56,height:75,behavior:0,attacks:[3,8],damage:[3,16],altAttack:[3,0],class:0,buff:7},
+        {name:'Slaver',alt:'',life:46,height:75,behavior:0,attacks:[1,17],damage:[12,7],altAttack:[0,1],class:0,buff:0},
     ],attack:[
         {class:0},
         {class:0},
@@ -2462,6 +2468,11 @@ types={
             reinforce:[24],
             threshold:3,class:-1,zone:0,
             objective:[[0,0,0,0]],
+        },{
+            combatants:[26,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:-1,zone:0,
+            objective:[[0,0,0,0]],
         },
     ],relic:[
         {
@@ -2552,7 +2563,7 @@ types={
             name:'First Turn Strength',id:28,rarity:0,list:0,
             desc:'Gain 1 Strength at\nthe Start of Combat',
         },{
-            name:'Lucky Dice',id:29,rarity:-1,list:0,
+            name:'Bent Pliers',id:29,rarity:-1,list:0,
             desc:'Each Turn, Upgrade a\nRandom Card in Your Hand',
         },{
             name:'Training Manual',id:30,rarity:0,list:0,
@@ -2918,7 +2929,7 @@ types={
             name:'Thieves Bag',id:150,rarity:4,list:0,
             desc:'Gain 1 Potion, 50 Currency, 5 Max HP,\nChoose 1 Card, Upgrade 1 Random Card',
         },{
-            name:'Trijewel',id:151,rarity:3,list:0,
+            name:'Triebflugeljager',id:151,rarity:3,list:0,
             desc:'When You Play an Attack, a Skill,\nand a Power, remove Debuffs',
         },{
             name:'Invigoration',id:152,rarity:4,list:1,
@@ -2932,6 +2943,9 @@ types={
         },{
             name:'Duality Charm',id:155,rarity:4,list:4,
             desc:'When Balance Broken, Trigger the Opposite\nAffect on the Other End of Spectrum',
+        },{
+            name:'Audrian Codex',id:156,rarity:-1,list:0,
+            desc:'Every Turn, Choose a Random Card\nto Shuffle into Your Draw Pile',
         },/*{
             name:'', d:15,rarity:4,list:0,
             desc:'',
@@ -4098,23 +4112,60 @@ types={
                 },
             ],
         },{
-            name:'Fight Club',id:99,list:-1,
+            name:'Cursed Tome',id:41,list:0,
             pages:[
                 {
-                    desc:"",
-                    option:[],
-                    optionDesc:[],
-                    link:[],
+                    desc:"You see an abandoned temple. Within, a book is opened on a pedestal, flipped to a random page.\n"+
+                    "You arrive. It's about an abandoned Management project, known as Godhood.",
+                    option:['Read','Stop'],
+                    optionDesc:['Lose 1 health',''],
+                    link:[2,1],
+                },{
+                    desc:"You resist the urge to read and put down the book.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"Project Godhood was created by the Great Manager to unlock the secrets of life.\n"+
+                    "It was founded under the notion that control over life was the last frontier.",
+                    option:['Read','Stop'],
+                    optionDesc:['Lose 2 health',''],
+                    link:[3,1],
+                },{
+                    desc:"The project specialized in the creation of humanoids who would be capable of blending among the populace.\n"+
+                    "Due to the apparent power of this knowledge, the project was kept secret from all but the most important.",
+                    option:['Read','Stop'],
+                    optionDesc:['Lose 3 health',''],
+                    link:[4,1],
+                },{
+                    desc:"Godhood was shut down by the Great Manager upon his retirement, to hide the evidence.\n"+
+                    "The remaining organisms were destroyed, except one, who was spared after the Director requested her safety.",
+                    option:['Take','Stop'],
+                    optionDesc:['Lose 10 health',''],
+                    link:[5,1],
+                },{
+                    desc:"You pick up the book, feeling drained. You take it with you on your travels.",
+                    option:['Keep it'],
+                    optionDesc:['Gain 1 relic'],
+                    link:[-1],
                 },
             ],
         },{
-            name:'Divine Intervention',id:99,list:-1,
+            name:'Slaver',id:42,list:0,
             pages:[
                 {
-                    desc:"",
-                    option:[],
-                    optionDesc:[],
-                    link:[],
+                    desc:"A figure jumps you and tries to taze you with a makeshift staff. You easily dodge out of the way.\n"+
+                    '"'+"Come quietly, and we won't harm you!"+'"'+" He doesn't know what you're capable of.",
+                    option:['Fight','Persuade'],
+                    optionDesc:['Start fight',''],
+                    link:[-1,1],
+                },{
+                    desc:"You explain to him how most of the warriors in the region tend to travel,\n"+
+                    "so it's easier to capture civilians in the villages rather than roaming the roads.\n"+
+                    "While he's distracted, you escape.",
+                    option:['Run'],
+                    optionDesc:['Become cursed - Guilt'],
+                    link:[-1],
                 },
             ],
         },{
@@ -4147,7 +4198,7 @@ types={
                     link:[-1],
                 },
             ],
-        },
+        },//fight club, divine intervention, capture, bounty hunter
     ],
 }
 listing={
@@ -4156,7 +4207,7 @@ listing={
 zones=[
     {
         encounters:[[],[],[]],
-        special:[1,4,3,17,18,19],
+        special:[1,4,3,17,18,19,20],
         events:[[],[],[],[],[]],
     },{
         encounters:[[],[],[]],

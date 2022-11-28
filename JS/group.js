@@ -175,11 +175,11 @@ class group{
             if(this.cards[e].attack==-5){
                 for(let g=0,lg=this.cards.length;g<lg;g++){
                     if(this.cards[g].attack>=0&&!this.cards[g].trigger){
-                        this.battle.combatants[0].take(1,0)
+                        this.battle.combatants[0].take(1,-1)
                     }
                 }
             }else if(this.cards[e].attack==139){
-                this.battle.combatants[0].take(this.cards[e].alt,0)
+                this.battle.combatants[0].take(this.cards[e].alt,-1)
             }
         }
         for(let e=0,le=this.cards.length;e<le;e++){
