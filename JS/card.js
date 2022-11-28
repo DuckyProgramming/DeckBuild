@@ -454,6 +454,8 @@ class card{
             case 393: this.desc+='Lose '+this.damage+' Health\nGain '+this.alt+' Dexterity'; break
             case 394: this.desc+='Lose '+this.damage+' Health\nGain '+this.alt+' Energy'; break
             case 395: this.desc+='Gain '+this.damage+' Intangible\nExhaust\nEthereal'; break
+            case 396: this.desc+='Deal '+this.damage+' Damage\nHeal '+this.alt+' Health'; break
+            case 397: this.desc+='A Random Card\nin Your Hand\nCosts 0'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

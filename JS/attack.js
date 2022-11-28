@@ -1951,6 +1951,23 @@ class attack{
                 case 395:
                     this.battle.combatants[0].status.main[12]++
                 break
+                case 396:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].life=min(this.battle.combatants[0].life+this.alt*this.battle.random.healEffectiveness,this.battle.combatants[0].base.life)
+                break
+                case 397:
+                    this.hold.list=[]
+                    for(let g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].cost!=0){
+                            this.hold.list.push(g)
+                        }
+                    }
+                    if(this.hold.list.length>0){
+                        g=this.hold.list[floor(random(0,this.hold.list.length))]
+                        this.battle.hand.cards[g].cost=0
+                        this.battle.hand.cards[g].base.cost=0
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

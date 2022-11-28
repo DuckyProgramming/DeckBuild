@@ -38,6 +38,7 @@ class battle{
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
         this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0}
         this.defaultRandom={attacked:0,orbs:0,shields:0}
+        stage.identifier=types.combatant[this.player].identifiers[0]
     }
     setupTesting(type){
         this.initialEvent()
@@ -54,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=46
+        this.event=50
     }
     create(){
         this.end=false
@@ -408,7 +409,7 @@ class battle{
                 this.restOptions.push(6)
             break
             case 94:
-                this.random.healEffectiveness++
+                this.random.healEffectiveness*=2
             break
             case 105:
                 transition.trigger=true
@@ -534,6 +535,9 @@ class battle{
                 transition.scene='choice'
                 this.setupChoice(this.player,2,0)
                 this.context=-4
+            break
+            case 157:
+                this.random.healEffectiveness=0
             break
         }
     }
@@ -1949,6 +1953,9 @@ class battle{
                     this.map.scrollGoal+=100
                     transition.trigger=true
                     this.resetCombatant()
+                    if(floor(random(0,5))==0&&this.currency.money<0){
+                        this.deck.add(findCard('Debt'),0,stage.playerNumber+2)
+                    }
                     switch(this.map.main[e][f]){
                         case 0:
                             transition.scene='battle'
@@ -2242,6 +2249,38 @@ class battle{
     }
     updateEvent(){
         this.combatants[0].update()
+        if(types.event[this.event].id==47&&this.page==0){
+            types.event[this.event].pages[this.page].desc="You notice a group of hooded figures on the street, performing an unknown ritual.\n"+
+            "As you approach, they turn to you in unison. The largest smiles and extends a hand toward you.\n"+
+            '"'+"Join us, "+stage.identifier+", and feel our power."+'"'
+        }else if(types.event[this.event].id==49&&(this.page==1||this.page==2)){
+            types.event[this.event].pages[this.page].desc='You feel a memory from within the stone...\n\n'
+            switch(this.remember[1]){
+                case 0:
+                    types.event[this.event].pages[this.page].desc+="RAGE\n"+"The Commandant screams at all the officers, you included.\n"+
+                    "He's clearly not happy with your recent performance. When he gets to you, he hands over several papers.\n"+
+                    "Each contains worse news than the previous about the current state of the occupation forces."+
+                    '"'+"Fix this mess, agent!"+'"'
+                break
+                case 1:
+                    types.event[this.event].pages[this.page].desc+="SORROW\n"+"You stare deeply at the massive stab wound on her. Deep... and fatal.\n"+
+                    "She was the only person left who ever cared for you, who actively stayed with you just so you could grieve together.\n"+
+                    "Now, she's gone. You enter the mountains, never looking back at the home that took so much from you."
+                break
+                case 2:
+                    types.event[this.event].pages[this.page].desc+="POWER\n"+"The burning remains of the crusher lie before you. All too easy.\n"+
+                    "The officers viewing the battle applaud your effort. The leader invites you over where he shakes your hand.\n"+
+                    "It's official now: you're a Management Executor. Under their rules, nobody can every take that away from you."
+                break
+                case 3:
+                    types.event[this.event].pages[this.page].desc+="PAIN\n"+"The machine releases for the final time. Your muscles tense up once again.\n"+
+                    "The pain becomes nearly unbearable, and you lose all sight of your surroundings.\n"+
+                    "You try to cry out, but it's impossible. No sound comes out. It's over. This is your death...\n\n"+
+                    "The supervisor waves his hand. The machine stops. You're finally able to recover and reevaluate the situation.\n"+
+                    "He smiles and writes something down on a notepad, handing it to one of the scientists."
+                break
+            }
+        }
     }
     onClickEvent(){
         if(!transition.trigger){
@@ -2252,7 +2291,7 @@ class battle{
                         transition.trigger=true
                         transition.scene='map'
                     }
-                    this.remember[0]=0
+                    this.remember[0,0]=0
                     switch(types.event[this.event].id){
                         case 1:
                             if(this.page==0&&e==0){
@@ -2696,6 +2735,85 @@ class battle{
                                 g=this.calc.list[floor(random(0,this.calc.list.length))]
                                 f=floor(random(0,this.potions.list[g].length))
                                 this.getPotion(this.potions.list[g][f])
+                            }
+                        break
+                        case 46:
+                            if(this.page==0&&e==0){
+                                this.currency.money-=50
+                            }else if(this.page==1&&e==0){
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.relics.list[g].length))
+                                this.getRelic(this.relics.list[g][f])
+                                this.relics.list[g].splice(f,1)
+                            }else if(this.page==2&&e==0){
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.relics.list[g].length))
+                                this.getRelic(this.relics.list[g][f])
+                                this.relics.list[g].splice(f,1)
+                                this.deck.add(findCard('Shame'),0,stage.playerNumber+2)
+                            }
+                        break
+                        case 47:
+                            if(this.page==0&&e==0){
+                                this.combatants[0].base.life*=0.75
+                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                                for(g=0,lg=this.deck.cards.length;g<lg;g++){
+                                    if(this.deck.cards[g].list==5&&this.deck.cards[g].attack==1){
+                                        this.deck.cards.splice(g,1)
+                                        g--
+                                        lg--
+                                    }
+                                }
+                            }else if(this.page==1&&e==0){
+                                for(g=0;g<5;g++){
+                                    this.deck.add(findCard('Bite'),0,0)
+                                }
+                            }
+                        break
+                        case 48:
+                            if(this.page==0&&e==0){
+                                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
+                                    if(this.deck.cards[g].level==0){
+                                        this.deck.cards[g].level++
+                                        this.deck.cards[g]=reformCard(this.deck.cards[g])
+                                    }
+                                }
+                            }else if(this.page==0&&e==1){
+                                this.currency.money+=999
+                            }else if(this.page==0&&e==2){
+                                this.combatants[0].life+=this.combatants[0].base.life*0.5
+                                this.combatants[0].base.life*=1.5
+                            }else if(this.page==1&&e==0){
+                                this.getRelic(findRelic('Too Much Knowledge'))
+                            }else if(this.page==2&&e==0){
+                                this.deck.add(findCard('Normality'),0,stage.playerNumber+2)
+                                this.deck.add(findCard('Normality'),0,stage.playerNumber+2)
+                            }else if(this.page==3&&e==0){
+                                this.deck.add(findCard('Doubt'),0,stage.playerNumber+2)
+                            }
+                        break
+                        case 49:
+                            if(this.page==0){
+                                this.remember[1]=floor(random(0,4))
+                            }else if(this.page==1&&e==0){
+                                this.deck.add(listing.card[0][1][floor(random(0,listing.card[0][1].length))],0,0)
+                            }else if(this.page==2&&e==0){
+                                this.deck.add(listing.card[0][2][floor(random(0,listing.card[0][2].length))],0,0)
+                            }
+                        break
+                        case 50:
+                            if(this.page==1&&e==0){
+                                this.deck.add(findCard('Madness'),0,0)
+                                this.deck.add(findCard('Madness'),0,0)
+                                this.combatants[0].base.life-=10
+                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                            }else if(this.page==2&&e==0){
+                                this.deck.add(findCard('Writhe'),0,stage.playerNumber+2)
+                            }else if(this.page==3&&e==0){
+                                this.combatants[0].base.life-=5
+                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
                             }
                         break
                     }

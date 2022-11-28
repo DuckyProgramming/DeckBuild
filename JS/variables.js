@@ -2196,6 +2196,16 @@ types={
             {damage:1,alt:0,cost:1,attack:395,target:0,spec:13,class:2},
             {damage:1,alt:0,cost:0,attack:395,target:0,spec:13,class:2},
         ],
+        },{name:'Bite',rarity:-3,list:0,
+        stats:[
+            {damage:7,alt:2,cost:1,attack:396,target:1,spec:0,class:2},
+            {damage:10,alt:3,cost:1,attack:396,target:1,spec:0,class:2},
+        ],
+        },{name:'Madness',rarity:-3,list:0,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:397,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:397,target:0,spec:3,class:2},
+        ],
         },
         
         
@@ -2258,6 +2268,11 @@ types={
         stats:[
             {damage:0,alt:0,cost:0,attack:-20,target:0,spec:6,class:-2},
             {damage:0,alt:0,cost:0,attack:-20,target:0,spec:6,class:-2},
+        ],
+        },{name:'Debt',rarity:-1,list:10,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-1,target:0,spec:6,class:-2},
+            {damage:0,alt:0,cost:0,attack:-1,target:0,spec:6,class:-2},
         ],
         },
         
@@ -2330,10 +2345,10 @@ types={
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},//0
-        {name:'Agent',alt:'',life:80,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
-        {name:'Duelist',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
-        {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
-        {name:'Creation',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Agent',alt:'',life:80,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother']},
+        {name:'Duelist',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister']},
+        {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother']},
+        {name:'Creation',alt:'',life:40,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister']},
         {name:'Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[6,2,3],altAttack:[0,3,0],class:0,buff:0},
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
@@ -2946,6 +2961,9 @@ types={
         },{
             name:'Audrian Codex',id:156,rarity:-1,list:0,
             desc:'Every Turn, Choose a Random Card\nto Shuffle into Your Draw Pile',
+        },{
+            name:'Too Much Knowledge',id:157,rarity:-1,list:0,
+            desc:'You Can No Longer Heal',
         },/*{
             name:'', d:15,rarity:4,list:0,
             desc:'',
@@ -3119,7 +3137,7 @@ types={
                     "When you pick it up, you notice the its extreme length and the poor condition of its pages.\n"+
                     "And there seems to be some sort of energy radiating from it...",
                     option:['Read','Leave'],
-                    optionDesc:['Lose 4 HP',''],
+                    optionDesc:['Lose 4 Health',''],
                     link:[1,2],
                 },{
                     desc:"The book is extremely long and quite confusing, but manages to keep you interested.\n"+
@@ -3150,14 +3168,14 @@ types={
                     '"The money is waiting for you at the base nearby."\n\n'+
                     "You head to the base and find the money waiting.",
                     option:['Collect the Bonus'],
-                    optionDesc:['Gain 100 currency'],
+                    optionDesc:['Gain 100 Currency'],
                     link:[-1],
                 },{
                     desc:'"I guess with how long you'+"'"+'ve been down there, you'+"'"+'ve earned it."\n'+
                     '"You'+"'"+'re relieved of duties for the next week."'+
                     "You enjoy your time off, preparing to go back in.",
                     option:['Recover'],
-                    optionDesc:['Heal 40 HP'],
+                    optionDesc:['Heal 40 Health'],
                     link:[-1],
                 },{
                     desc:'"I guess not. Keep working hard, I hope we have this talk again.\n"'+
@@ -3176,7 +3194,7 @@ types={
                     "but you have to finish your current job. Then again, he's not far from where you are.\n\n"+
                     "Head over and give him a hand?",
                     option:['Help him out',"He'll do it on his own"],
-                    optionDesc:['Take 10 damage',''],
+                    optionDesc:['Take 10 Damage',''],
                     link:[1,2],
                 },{
                     desc:"You get a little beat up, but you save the Agent from certain death.\n"+
@@ -3205,7 +3223,7 @@ types={
                     desc:"The building collapses as you carry the heavy case out, but you get out without major injuries.\n"+
                     "You get the intel to your bosses and collect a bonus for the information.",
                     option:['Collect the money'],
-                    optionDesc:['Gain 150 currency, take 20 damage'],
+                    optionDesc:['Gain 150 Currency, Take 20 Damage'],
                     link:[-1],
                 },{
                     desc:"You manage to make it out, and the kit is exactly what it looks like.",
@@ -3228,14 +3246,14 @@ types={
                     desc:"It's an uneventful day, and nothing of note happens during the speech.\n"+
                     "The Governor gets out safely and you collect payment for your hard work.",
                     option:['Easy money'],
-                    optionDesc:['Gain 50 currency'],
+                    optionDesc:['Gain 50 Currency'],
                     link:[-1],
                 },{
                     desc:"As the Governor is finishing his speech, a shot appears from the center of the crowd.\n"+
                     "Luckily, it misses him, only to hit you instead. The other guards managed to bring the Governor out alive,\n"+
                     "and you escape under the cover of a fight. Your payment only just manages to patch you up.",
                     option:['Deal with the injury'],
-                    optionDesc:['Take 15 damage'],
+                    optionDesc:['Take 15 Damage'],
                     link:[-1],
                 },{
                     desc:"You continue with your boring work as the day goes by. At the end, a message comes in from command.\n"+
@@ -3267,14 +3285,14 @@ types={
                     desc:"You explain the intricate workings of the MPKF to a stunned audience. He's pleased with your explanation.\n"+
                     "He demonstrates some of his tricks and asks if you want to learn one.",
                     option:['Learn a technique'],
-                    optionDesc:['Gain a card'],
+                    optionDesc:['Gain 1 Card'],
                     link:[-1],
                 },{
                     desc:"You tell him, but he runs off before you can collect any sort of payment.\n"+
                     "It's not long before the secrets are leaked to the planetary rebel network.\n"+
                     "Not exactly beneficial for you or your bosses.",
                     option:['The consequences'],
-                    optionDesc:['Lose all currency'],
+                    optionDesc:['Lose All Currency'],
                     link:[-1],
                 },{
                     desc:"He's disappointed, but knows it can't be helped. There isn't much someone like him could do.\n"+
@@ -3292,12 +3310,12 @@ types={
                     "The people here might not know who you are. But they definitely know that you don't belong here.\n"+
                     "His friends surround you, ready to get some information out of you. Things could quickly get ugly.",
                     option:['Ask them what they want ','Punch him'],
-                    optionDesc:['','Start fight'],
+                    optionDesc:['','Start Fight'],
                     link:[1,-1],
                 },{
                     desc:"He asks you where you're from, and why you're here.",
                     option:['Tell the truth.','Punch him'],
-                    optionDesc:['','Start fight'],
+                    optionDesc:['','Start Fight'],
                     link:[2,-1],
                 },{
                     desc:"He looks at you with disapproval, but backs down, avoiding having to fight.\n"+
@@ -3308,7 +3326,7 @@ types={
                 },{
                     desc:"He manages to get in a quick strike.",
                     option:['Fight Back'],
-                    optionDesc:['Take 6 damage, Start fight'],
+                    optionDesc:['Take 6 Damage, Start Fight'],
                     link:[-1],
                 },
             ],
@@ -3331,7 +3349,7 @@ types={
                     "Screw the Management.\n\n"+
                     "The visions recede. It's over.",
                     option:['Accept your past'],
-                    optionDesc:['Become cursed - Imbalance'],
+                    optionDesc:['Become Cursed - Imbalance'],
                     link:[-1],
                 },{
                     desc:"You remember it now, those devices. The programmers treated you as nothing more than an experiment.\n"+
@@ -3340,7 +3358,7 @@ types={
                     "Screw the Management.\n\n"+
                     "The visions recede. It's over.",
                     option:['Accept your past'],
-                    optionDesc:['Become cursed - Doubt'],
+                    optionDesc:['Become Cursed - Doubt'],
                     link:[-1],
                 },{
                     desc:"You remember it now, those scanners. Watching you every moment of your life, everything you ever did. All on their screens.\n"+
@@ -3349,7 +3367,7 @@ types={
                     "Screw the Management.\n\n"+
                     "The visions recede. It's over.",
                     option:['Accept your past'],
-                    optionDesc:['Become cursed - Shame'],
+                    optionDesc:['Become Cursed - Shame'],
                     link:[-1],
                 },
             ],
@@ -3365,7 +3383,7 @@ types={
                     "You reply that you don't want to talk about that. "+'"Well, feel free to use the facility. I'+"'"+'m always generous to family friends."\n'+
                     'There'+"'"+'s plenty to do inside, but you'+"'"+'ll have to leave pretty soon.',
                     option:['Train a skill','Learn a skill','Forget a skill'],
-                    optionDesc:['Upgrade a card','Gain a card','Remove a card'],
+                    optionDesc:['Upgrade a Card','Gain a Card','Remove a Card'],
                     link:[-1,-1,-1],
                 },
             ],
@@ -3383,13 +3401,13 @@ types={
                     desc:"You catch up and bring him in. The cops are annoyed that you did it yourself, but hand over a bonus anyway.\n"+
                     "And, as a bonus, you learned a new skill.",
                     option:['Job well done'],
-                    optionDesc:['Gain 15 currency\nGain 1 card'],
+                    optionDesc:['Gain 15 Currency\nGain 1 Card'],
                     link:[-1],
                 },{
                     desc:"Picking up another motorbike, you catch up only to collide into a wall.\n"+
                     "Guess you shouldn't trust random motorbikes on the side of buildings.",
                     option:['Ouch'],
-                    optionDesc:['Lose 8 HP'],
+                    optionDesc:['Lose 8 Health'],
                     link:[-1],
                 },{
                     desc:"He's long gone by the time they arrive. Another suspect lost.",
@@ -3400,7 +3418,7 @@ types={
                     desc:"You are later informed of the following events. They caught up to the suspect in the town and arrested him.\n"+
                     "You're handed a small amount of money for your assistance in bringing him in.",
                     option:['Take the money'],
-                    optionDesc:['Gain 15 currency'],
+                    optionDesc:['Gain 15 Currency'],
                     link:[-1],
                 },
             ],
@@ -3422,10 +3440,10 @@ types={
                     desc:"As you attempt to take the tongs from the still-hot furnace, pain jets through your arm.\n"+
                     "You are able to lift them and take them with some difficulty, but your arm continues to hurt.",
                     option:['Ouch'],
-                    optionDesc:['Gain a relic\nBecome cursed - Pain'],
+                    optionDesc:['Gain a Relic\nBecome Cursed - Pain'],
                     link:[-1],
                 },{
-                    desc:"You decide not to do anything, and continue on your path.",
+                    desc:"You avoid the forge and continue on your path.",
                     option:['Exit'],
                     optionDesc:[''],
                     link:[-1],
@@ -3438,12 +3456,12 @@ types={
                     desc:"You're walking through a clearing in the forest when you hear some rustling in the leaves.\n"+
                     "Turning around, you're too slow to stop the monkeys from grabbing you as more and more appear.",
                     option:['Fight the monkeys','Throw something valuable'],
-                    optionDesc:['Start fight',''],
+                    optionDesc:['Start Fight',''],
                     link:[-1,1],
                 },{
                     desc:"The monkeys run after the object you threw.",
                     option:['Exit'],
-                    optionDesc:['Lose a relic'],
+                    optionDesc:['Lose 1 Relic'],
                     link:[-1],
                 },
             ],
@@ -3460,18 +3478,18 @@ types={
                     desc:"With some difficulty, you successfully grab on to the side and use friction with the edge to slow your fall.\n"+
                     "You seem to have dropped some items along the way, but they could be anywhere now.",
                     option:['Get out of the hole'],
-                    optionDesc:['Lose a relic'],
+                    optionDesc:['Lose 1 Relic'],
                     link:[-1],
                 },{
                     desc:"The only ledge you can see is just a little out of reach. You manage to move over, but the landing knocks you unconcious.\n"+
                     "When you get up, your head is spinning, and you forget some of what you were doing beforehand.",
                     option:['Get out of the hole'],
-                    optionDesc:['Lose 2 random cards'],
+                    optionDesc:['Lose 2 Random Cards'],
                     link:[-1],
                 },{
                     desc:"You land with a crash. After a minute of lying in pain, you get back up and leave.",
                     option:['Get out of the hole'],
-                    optionDesc:['Take 13 Damage'],
+                    optionDesc:['Lose 13 Health'],
                     link:[-1],
                 },
             ],
@@ -3483,12 +3501,12 @@ types={
                     "Sure enough, you notice a poorly concealed weapon inside one's coat. And the other ones probably all did the same.\n"+
                     "If they wanted to kill you, it would be easy, now that they have you surrounded and unprepared.",
                     option:['Attack them','Jump out of the window','Act normal'],
-                    optionDesc:['Start fight','',''],
+                    optionDesc:['Start Fight','',''],
                     link:[-1,1,2],
                 },{
                     desc:"It's not your best landing, sure, but the bus is far away before they can get after you.",
                     option:['Exit'],
-                    optionDesc:['Take 7 damage'],
+                    optionDesc:['Lose 7 Health'],
                     link:[-1],
                 },{
                     desc:"Well, if they just don't notice...",
@@ -3498,12 +3516,12 @@ types={
                 },{
                     desc:"A few minutes later, they jump you simultaneously.",
                     option:['Fight back'],
-                    optionDesc:['Start fight, take 11 damage'],
+                    optionDesc:['Start Fight, Lose 11 Health'],
                     link:[-1],
                 },
             ],
         },{
-            name:'Augmenter',id:15,list:0,
+            name:'Dealer',id:15,list:0,
             pages:[
                 {
                     desc:"A mysterious man walks up to you and invites you into a dark alley.\n"+
@@ -3511,7 +3529,7 @@ types={
                     "Within them are mysterious liquids and scientific tools.\n\n"+
                     "He asks you which you would like to test.",
                     option:['Mixture A','Mixture B','Mixture C','Decline'],
-                    optionDesc:['Add Mixture A to deck','Add Mixture B to deck','Add Mixture C to deck',''],
+                    optionDesc:['Add Mixture A to Deck','Add Mixture B to Deck','Add Mixture C to Deck',''],
                     link:[1,1,1,2],
                 },{
                     desc:"He laughs and hands you the box, leaving into the darkness.",
@@ -3538,23 +3556,23 @@ types={
                     desc:"You pull the trigger, and the target becomes a solved problem.\n"+
                     "A moment later, the lieutenant checks in and gives the order.",
                     option:['Target eliminated'],
-                    optionDesc:['Gain 50 currency'],
+                    optionDesc:['Gain 50 Currency'],
                     link:[-1],
                 },{
                     desc:"You pull the trigger, and the target becomes a solved problem.\n"+
                     "A moment later, the lieutenant checks in and asks you to explain.",
                     option:['Oops'],
-                    optionDesc:['Lose 50 currency'],
+                    optionDesc:['Lose 50 Currency'],
                     link:[-1],
                 },{
                     desc:"You wait for the order, but it never arrives. The target escaped again.",
                     option:['Guess not'],
-                    optionDesc:['Lose 50 currency'],
+                    optionDesc:['Lose 50 Currency'],
                     link:[-1],
                 },{
                     desc:"A minute later, you receive the order and take the shot.",
                     option:['Target eliminated'],
-                    optionDesc:['Gain 150 currency'],
+                    optionDesc:['Gain 150 Currency'],
                     link:[-1],
                 },{
                     desc:"He's gone, but you can always try again later.",
@@ -3580,7 +3598,7 @@ types={
                 },{
                     desc:"It blows up in your face. Lucky that it wasn't particularly powerful.",
                     option:['Ouch'],
-                    optionDesc:['Lose 30 health'],
+                    optionDesc:['Lose 30 Health'],
                     link:[-1],
                 },{
                     desc:"You escape the explosion. How are you supposed to know how to defuse a bomb?",
@@ -3601,7 +3619,7 @@ types={
                 },{
                     desc:"He leads you into an alley where his friends lie in wait.",
                     option:['Fight them'],
-                    optionDesc:['Start fight'],
+                    optionDesc:['Start Fight'],
                     link:[-1],
                 },{
                     desc:"It's not worth going into back alleys just to stop a mystery man.",
@@ -3617,7 +3635,7 @@ types={
                     desc:"You find a shiny rock on the ground. Inside it you can see reflections of yourself the loop on themselves.\n"+
                     "You can feel power emanating from within, but nothing inside it feels new.",
                     option:['Smash it','Drop it'],
-                    optionDesc:['Duplicate a card',''],
+                    optionDesc:['Duplicate a Card',''],
                     link:[-1,1],
                 },{
                     desc:"Somebody else can get more use out of it than you.",
@@ -3640,17 +3658,17 @@ types={
                 },{
                     desc:"It takes you a long time to convince them all to leave.",
                     option:['Riot is over'],
-                    optionDesc:['Lose a card'],
+                    optionDesc:['Lose a Card'],
                     link:[-1],
                 },{
                     desc:"They fight back, but you manage to get them to end the demonstration.",
                     option:['Riot is over'],
-                    optionDesc:['Lose 5 health'],
+                    optionDesc:['Lose 5 Health'],
                     link:[-1],
                 },{
                     desc:"You kill most of them before they disband. You'll have to answer for the damage.",
                     option:['Riot is over'],
-                    optionDesc:['Lose 20 currency'],
+                    optionDesc:['Lose 20 Currency'],
                     link:[-1],
                 },
             ],
@@ -3662,7 +3680,7 @@ types={
                     "They need a little funding to get it off the ground, but it might eventually pay out.\n"+
                     "Given that it succeeds, but don't worry about that.",
                     option:['Hand over money','Wish them luck'],
-                    optionDesc:['Lose 50 currency',''],
+                    optionDesc:['Lose 50 Currency',''],
                     link:[1,2],
                 },{
                     desc:"You hand over some money, hoping you might get it returned.",
@@ -3682,7 +3700,7 @@ types={
                 {
                     desc:"Your old friend returns with good news. Their venture has been successful, and they have money to give out.",
                     option:['Take your share'],
-                    optionDesc:['Gain 250 currency'],
+                    optionDesc:['Gain 250 Currency'],
                     link:[-1],
                 },
             ],
@@ -3694,7 +3712,7 @@ types={
                     "But until they can arrange your trial, you'll be contained in a local jail, with a couple days of time.\n"+
                     "There's plenty of opportunities to escape while you're not being watched.",
                     option:['Bribe the guards','Create a distraction'],
-                    optionDesc:['Lose 60 currency','Start fight'],
+                    optionDesc:['Lose 60 Currency','Start Fight'],
                     link:[1,-1],
                 },{
                     desc:"The prison guards accept the bribe and let you out. A short while later, your location is unknown.\n"+
@@ -3718,13 +3736,13 @@ types={
                     desc:"The Management recognizes you on the way in and attempt to have you arrested.\n"+
                     "You escape, but they land several hits.",
                     option:['Ouch'],
-                    optionDesc:['Lose 20 health'],
+                    optionDesc:['Lose 20 Health'],
                     link:[-1],
                 },{
                     desc:"You successfully win a local tournament and earn some money, but you won't risk entering the finals.\n"+
                     "The Management would have a massive security presence, and you probably wouldn't win anyway.",
                     option:['Collect your reward'],
-                    optionDesc:['Gain 200 currency'],
+                    optionDesc:['Gain 200 Currency'],
                     link:[-1],
                 },{
                     desc:"It's not worth the risk.",
@@ -3758,7 +3776,7 @@ types={
                 },{
                     desc:"You reach the end of the well and pick up the box. Inside you find something useful.",
                     option:['Take it'],
-                    optionDesc:['Gain a relic'],
+                    optionDesc:['Gain a Relic'],
                     link:[-1],
                 },
             ],
@@ -3779,12 +3797,12 @@ types={
                 },{
                     desc:"You arrive and bust a meetup without much trouble.",
                     option:['Job well done'],
-                    optionDesc:['Gain 100 currency'],
+                    optionDesc:['Gain 100 Currency'],
                     link:[-1],
                 },{
                     desc:"The information is wrong and you've traveled halfway across the planet to an empty warehouse.",
                     option:['Time wasted'],
-                    optionDesc:['Lose 50 currency'],
+                    optionDesc:['Lose 50 Currency'],
                     link:[-1],
                 },
             ],
@@ -3799,7 +3817,7 @@ types={
                 },{
                     desc:"You feel refreshed, like a weight has been lifted off your shoulders.",
                     option:['Done'],
-                    optionDesc:['Remove all curses'],
+                    optionDesc:['Remove All Curses'],
                     link:[-1],
                 },{
                     desc:"You're not touching that liquid until you find out what it is.",
@@ -3820,12 +3838,12 @@ types={
                 },{
                     desc:"You pick up the scattered coins and leave the rest where you found it.",
                     option:['Take the money'],
-                    optionDesc:['Gain 75 currency'],
+                    optionDesc:['Gain 75 Currency'],
                     link:[-1],
                 },{
                     desc:"You smash the crate and watch as more and more money streams out.",
                     option:['Take the money'],
-                    optionDesc:['Gain 175 currency,\nbecome cursed - Regret'],
+                    optionDesc:['Gain 175 Currency,\nBecome Cursed - Regret'],
                     link:[-1],
                 },
             ],
@@ -3862,7 +3880,7 @@ types={
                 },{
                     desc:"You give him a card and he gives you the pack.",
                     option:['Good deal'],
-                    optionDesc:['Transform a card'],
+                    optionDesc:['Transform a Card'],
                     link:[-1],
                 },{
                     desc:"You run off, ending the deal prematurely. He doesn't follow.",
@@ -3887,7 +3905,7 @@ types={
                     desc:"He tells you some of the most useless information you've ever heard. And yet, it's a new perspective.\n"+
                     "He escapes when you're not looking, but you've gotten what you need.",
                     option:['Try it out'],
-                    optionDesc:['Remove a card'],
+                    optionDesc:['Remove a Card'],
                     link:[-1],
                 },{
                     desc:"You make him leave. You don't support con men.",
@@ -3909,12 +3927,12 @@ types={
                 },{
                     desc:"You trade the box for a donut from the shop.",
                     option:['Eat it'],
-                    optionDesc:['Gain 5 max health'],
+                    optionDesc:['Gain 5 Max Health'],
                     link:[-1],
                 },{
-                    desc:"You resist the urge and open the box later.",
+                    desc:"You resist the urge and open the box later.\nBut you really wanted the donut...",
                     option:['Take the contents'],
-                    optionDesc:['Gain a relic,\nbecome cursed - Regret'],
+                    optionDesc:['Gain a Relic,\nBecome Cursed - Regret'],
                     link:[-1],
                 },
             ],
@@ -3925,12 +3943,12 @@ types={
                     desc:"In a clearing, you notice a ball of light, floating in the center of the area.\n"+
                     "You feel a warm glow coming from it, and feel compelled to enter.",
                     option:['Enter the ball','Ignore it'],
-                    optionDesc:['Lose 12 health',''],
+                    optionDesc:['Lose 12 Health',''],
                     link:[1,2],
                 },{
                     desc:"Despite the pain, you see great knowledge within the ball, feeling invigorated.",
                     option:['Gain knowledge'],
-                    optionDesc:['Upgrade 2 random cards'],
+                    optionDesc:['Upgrade 2 Random Cards'],
                     link:[-1],
                 },{
                     desc:"You go around it, wondering what it might have been.",
@@ -3946,17 +3964,17 @@ types={
                     desc:"A travelling merchant approaches you and offers his services.\n"+
                     "Supposedly, he specializes in healing, but he doesn't bother to explain how.",
                     option:['Heal','Purify','Refuse'],
-                    optionDesc:['Lose 35 currency','Lose 50 currency',''],
+                    optionDesc:['Lose 35 Currency','Lose 50 Currency',''],
                     link:[1,2,3],
                 },{
                     desc:"A warm golden light envelops your body and dissipates.",
                     option:['Healed'],
-                    optionDesc:['Heal 15 health'],
+                    optionDesc:['Heal 15 Health'],
                     link:[-1],
                 },{
                     desc:"A cold blue flame envelops your body and dissipates.",
                     option:['Purified'],
-                    optionDesc:['Remove a card'],
+                    optionDesc:['Remove a Card'],
                     link:[-1],
                 },{
                     desc:"You can't trust this man, so you refuse his services.",
@@ -3973,12 +3991,12 @@ types={
                     "When he sees you, he hands you a piece of paper and tells you to keep it safe, but to never give it to anybody.\n"+
                     "Seeing your confused expression, he tries to hand you some money as thanks.",
                     option:['Take it','Decline'],
-                    optionDesc:['Gain 175 currency',''],
+                    optionDesc:['Gain 175 Currency',''],
                     link:[1,2],
                 },{
                     desc:"He runs off, leaving you with the paper. You try to read it, but it's all bureaucratic nonsense.",
                     option:['Easy money'],
-                    optionDesc:['Become cursed - Doubt'],
+                    optionDesc:['Become Cursed - Doubt'],
                     link:[-1],
                 },{
                     desc:"He runs off, still holding the paper, trying to find more passerby.",
@@ -4002,12 +4020,12 @@ types={
                     desc:"The answer was elegance.\n"+
                     "Of course.",
                     option:['That'+"'"+'s what it meant'],
-                    optionDesc:['Remove a card'],
+                    optionDesc:['Remove a Card'],
                     link:[-1],
                 },{
                     desc:"The truth is always simple.",
                     option:['That'+"'"+'s what it meant'],
-                    optionDesc:['Upgrade all Strikes and Defends'],
+                    optionDesc:['Upgrade All Strikes and Defends'],
                     link:[-1],
                 },
             ],
@@ -4019,7 +4037,7 @@ types={
                     "They talk amongst themselves about you, before one descends to address you.\n"+
                     '"'+"Would you like a taste of our power?"+'"',
                     option:['Accept','Refuse'],
-                    optionDesc:['Lose 50% max health',''],
+                    optionDesc:['Lose 50% Max Health',''],
                     link:[1,2],
                 },{
                     desc:"As it speaks, you notice it nearing your body as smoke swirls around you, blocking your vision.\n"+
@@ -4043,12 +4061,12 @@ types={
                     '"'+"Would like to bet on who wins? Would make the game a litte more interesting, don't you agree?"+'"\n'+
                     "The other man smiles and stares at you expectingly.",
                     option:['Bet on first player','Bet on second player','Refuse'],
-                    optionDesc:['Lose 50 currency','Lose 50 currency',''],
+                    optionDesc:['Lose 50 Currency','Lose 50 Currency',''],
                     link:[1,1,3],
                 },{
                     desc:"The man you bet on wins the game. You receive the return on your bet.",
                     option:['Collect winnings'],
-                    optionDesc:['Gain 100 currency'],
+                    optionDesc:['Gain 100 Currency'],
                     link:[-1],
                 },{
                     desc:"The man you bet on loses the game. The winner takes your money with him as the two leave.",
@@ -4075,13 +4093,13 @@ types={
                     desc:"The book details a group of colonists who left Terra to preserve the culture destroyed in Americanization.\n"+
                     "Atlorium Inc.'s Manager personally met with the colonists' leader to negotiate the travel expenses.",
                     option:['Interesting story'],
-                    optionDesc:['Add 1 card'],
+                    optionDesc:['Add 1 Card'],
                     link:[-1],
                 },{
                     desc:"You decide that you need to recover, and that you don't have time for reading.\n"+
                     "You wake up feeling refreshed.",
                     option:['Done'],
-                    optionDesc:['Heal 25 health'],
+                    optionDesc:['Heal 25 Health'],
                     link:[-1],
                 },
             ],
@@ -4094,20 +4112,20 @@ types={
                     "She calls out to you, demanding sacrifice.\n\n"+
                     "You want to run, but the doors have shut behind you, propelled by some sort of force.",
                     option:['Sacrifice','Smash'],
-                    optionDesc:['Lose 18 health',''],
+                    optionDesc:['Lose 18 Health',''],
                     link:[1,2],
                 },{
                     desc:"You let some of your blood out and allow it to seep into the pedestal.\n"+
                     "Everything goes dark.\n"+
                     "You wake up a short while later feeling new potential.",
                     option:['Leave'],
-                    optionDesc:['Gain 5 max health'],
+                    optionDesc:['Gain 5 Max Health'],
                     link:[-1],
                 },{
                     desc:"You smash the statue with a large strike. The hold of the room ceases. The door swings open.\n"+
                     "A dark sound echoes around you, the magic seeping into you.",
                     option:['Exit'],
-                    optionDesc:['Become cursed - Decay'],
+                    optionDesc:['Become Cursed - Decay'],
                     link:[-1],
                 },
             ],
@@ -4118,7 +4136,7 @@ types={
                     desc:"You see an abandoned temple. Within, a book is opened on a pedestal, flipped to a random page.\n"+
                     "You arrive. It's about an abandoned Management project, known as Godhood.",
                     option:['Read','Stop'],
-                    optionDesc:['Lose 1 health',''],
+                    optionDesc:['Lose 1 Health',''],
                     link:[2,1],
                 },{
                     desc:"You resist the urge to read and put down the book.",
@@ -4129,24 +4147,24 @@ types={
                     desc:"Project Godhood was created by the Great Manager to unlock the secrets of life.\n"+
                     "It was founded under the notion that control over life was the last frontier.",
                     option:['Read','Stop'],
-                    optionDesc:['Lose 2 health',''],
+                    optionDesc:['Lose 2 Health',''],
                     link:[3,1],
                 },{
                     desc:"The project specialized in the creation of humanoids who would be capable of blending among the populace.\n"+
                     "Due to the apparent power of this knowledge, the project was kept secret from all but the most important.",
                     option:['Read','Stop'],
-                    optionDesc:['Lose 3 health',''],
+                    optionDesc:['Lose 3 Health',''],
                     link:[4,1],
                 },{
                     desc:"Godhood was shut down by the Great Manager upon his retirement, to hide the evidence.\n"+
                     "The remaining organisms were destroyed, except one, who was spared after the Director requested her safety.",
                     option:['Take','Stop'],
-                    optionDesc:['Lose 10 health',''],
+                    optionDesc:['Lose 10 Health',''],
                     link:[5,1],
                 },{
                     desc:"You pick up the book, feeling drained. You take it with you on your travels.",
                     option:['Keep it'],
-                    optionDesc:['Gain 1 relic'],
+                    optionDesc:['Gain 1 Relic'],
                     link:[-1],
                 },
             ],
@@ -4157,14 +4175,14 @@ types={
                     desc:"A figure jumps you and tries to taze you with a makeshift staff. You easily  dodge out of the way.\n"+
                     '"'+"Come quietly, and we won't harm you!"+'"'+" He doesn't know what you're capable of.",
                     option:['Fight','Persuade'],
-                    optionDesc:['Start fight',''],
+                    optionDesc:['Start Fight',''],
                     link:[-1,1],
                 },{
                     desc:"You explain to him how most of the warriors in the region tend to travel,\n"+
                     "so it's easier to capture civilians in the villages rather than roaming the roads.\n"+
                     "While he's distracted, you escape.",
                     option:['Run'],
-                    optionDesc:['Become cursed - Guilt'],
+                    optionDesc:['Become Cursed - Guilt'],
                     link:[-1],
                 },
             ],
@@ -4180,7 +4198,7 @@ types={
                 },{
                     desc:"He pulls out a stack of coins from his pocket and hands it to you, before taking the Codex and leaving.",
                     option:['Take it'],
-                    optionDesc:['Gain 300 currency, lose the Codex'],
+                    optionDesc:['Gain 300 Currency, Lose the Codex'],
                     link:[-1],
                 },{
                     desc:"He lifts you up with an unknown force and takes the Codex from you, leaving to put you down.",
@@ -4196,13 +4214,13 @@ types={
                     desc:"Venturing through several tombs, you arrive at the end of the catacombs. There lies a large coffin covered in gems.\n"+
                     "The text on the side is unintelligible, but you can recognize strange smoke coming out of the sides.",
                     option:['Open the coffin','Don'+"'"+'t'],
-                    optionDesc:['Gain a relic',''],
+                    optionDesc:['Gain a Relic',''],
                     link:[1,2],
                 },{
                     desc:"You push it open and find a relic within, which you take with you.\n"+
                     "The smoke flows around the room and begins to choke you. You only just make it out.",
                     option:['Take it'],
-                    optionDesc:['Become cursed - Writhe'],
+                    optionDesc:['Become Cursed - Writhe'],
                     link:[-1],
                 },{
                     desc:"You leave it undisturbed.",
@@ -4219,25 +4237,25 @@ types={
                     "A screen in the center of the room lights up, and a voice beguns speaking from within it.\n"+
                     "What are you here for? And more importantly, what shall be the price?",
                     option:['Money','Success','Help','The exit'],
-                    optionDesc:['Lose 8 health','Lose 8 health','Lose 8 health',''],
+                    optionDesc:['Lose 8 Health','Lose 8 Health','Lose 8 Health',''],
                     link:[1,2,3,4],
                 },{
                     desc:'"'+"You never change, do you?"+'"\n'+
                     "Money rains from the sky.",
                     option:['Done'],
-                    optionDesc:['Gain 45 currency'],
+                    optionDesc:['Gain 45 Currency'],
                     link:[0],
                 },{
                     desc:'"'+"Maybe this will help?"+'"\n'+
                     "A card appears in your hand.",
                     option:['Done'],
-                    optionDesc:['Gain 1 uncommon colorless card'],
+                    optionDesc:['Gain 1 Uncommon Colorless Card'],
                     link:[0],
                 },{
                     desc:'"'+"This could be useful."+'"\n'+
                     "A potion appears in your hand.",
                     option:['Done'],
-                    optionDesc:['Gain 1 potion'],
+                    optionDesc:['Gain 1 Potion'],
                     link:[0],
                 },{
                     desc:'"'+"Right behind you."+'"\n'+
@@ -4248,6 +4266,143 @@ types={
                 },
             ],
         },{
+            name:'Homeless Man',id:46,list:0,
+            pages:[
+                {
+                    desc:"You encounter a homeless-looking man in a town, begging for money. When he sees you, he runs up to you.\n"+
+                    '"'+"Please, can you spare some coin? I have things I can trade..."+'"',
+                    option:['Donate','Rob','Leave'],
+                    optionDesc:['Lose 50 Currency','',''],
+                    link:[1,2,3],
+                },{
+                    desc:"You hand him some of your money while he gives you a relic.",
+                    option:['Good deal'],
+                    optionDesc:['Gain a Relic'],
+                    link:[-1],
+                },{
+                    desc:"You grab the relic from his hands and start to escape."+
+                    '"'+"Have you no shame?"+'"'+" He calls out.\n"+
+                    "You have shame.",
+                    option:['Run'],
+                    optionDesc:['Gain a Relic, Become Cursed - Shame'],
+                    link:[-1],
+                },{
+                    desc:"You leave him to beg from somebody else.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Vampires',id:47,list:0,
+            pages:[
+                {
+                    desc:"You notice a group of hooded figures on the street, performing an unknown ritual.\n"+
+                    "As you approach, they turn to you in unison. The largest smiles and extends a hand toward you.\n"+
+                    '"'+"Join us, "+", and feel the our power."+'"',
+                    option:['Accept','Refuse'],
+                    optionDesc:['Lose 25% Max Health, Remove All Strikes',''],
+                    link:[1,2],
+                },{
+                    desc:"He pulls you forward and sinks his teeth through your neck.\n"+
+                    "You feel a dark force moing through your body from the bite.\n\n"+
+                    "You wake up some time later, alone and hungry.",
+                    option:['You must feed'],
+                    optionDesc:['Gain 5 Bites'],
+                    link:[-1],
+                },{
+                    desc:"You move back and prepare your weapon. The figure sighs and turns to leave.\n"+
+                    "The group morphs into fog and dissappear, leaving you alone once more.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Mind Bloom',id:48,list:0,
+            pages:[
+                {
+                    desc:"While traveling, your thoughts suddenly appear to feel... real.\n"+
+                    "Images of occurences began to flow between your mind and reality, manifesting themselves in real forms.\n"+
+                    "The sensation is quickly fleeting. What do you do?",
+                    option:['I am Smart','I am Rich','I am Strong'],
+                    optionDesc:['Upgrade All Cards','Gain 999 Currency','Gain 50% Max Health'],
+                    link:[1,2,3],
+                },{
+                    desc:"Can it really be this easy?",
+                    option:['I am?'],
+                    optionDesc:['You Can No Longer Heal'],
+                    link:[-1],
+                },{
+                    desc:"Can it really be this easy?",
+                    option:['I am?'],
+                    optionDesc:['Become Cursed - 2 Normalities'],
+                    link:[-1],
+                },{
+                    desc:"Can it really be this easy?",
+                    option:['I am?'],
+                    optionDesc:['Become Cursed - Doubt'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Sensory Stone',id:49,list:0,
+            pages:[
+                {
+                    desc:"You discover a glowing tesseract spinning and shifting gently in the air.\n"+
+                    "When you touch it, you begin to see a distant memory from within.",
+                    option:['Recall','Absorb'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"",
+                    option:['Accept the memories'],
+                    optionDesc:['Add 1 Uncommon Colorless Card'],
+                    link:[-1],
+                },{
+                    desc:"",
+                    option:['Accept the memories'],
+                    optionDesc:['Add 1 Rare Colorless Card'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Winding Halls',id:50,list:0,
+            pages:[
+                {
+                    desc:"As you slowly make your way up the twisting pathways, you constantly find yourself losing your way.\n"+
+                    "The walls and ground seem to inexplicably shift before your eyes.\n"+
+                    "The constant whispering voices in the back of your head aren't helping things either.\n"+
+                    "Passing by a structure you are certain you have previously seen, you start to question if you are going insane.\n"+
+                    "You need to change something, and soon.",
+                    option:['Embrace Madness','Continue','Head Back'],
+                    optionDesc:['','',''],
+                    link:[1,2,3],
+                },{
+                    desc:"You change the way you think about this place. Things are beginning to make sense now.\n"+
+                    "Maybe those voices were right after all. Things do seem to make so much more sense now.",
+                    option:['Get out'],
+                    optionDesc:['Gain 2 Madness, Lose 10 Max Health'],
+                    link:[-1],
+                },{
+                    desc:"As you take a moment to stop and carefully observe the undulating landscape around you,\n"+
+                    "the hint of a pattern starts to emerge from within the randomness. Whenever the demented noises\n"+
+                    "begin to interrupt your thoughts, you struggle through the mental pain and ignore it.",
+                    option:['Get out'],
+                    optionDesc:['Become Cursed - Writhe'],
+                    link:[-1],
+                },{
+                    desc:"You spend what seems like an eternity lost in the maze.\n"+
+                    "Slowly, you are able to retrace your steps, reorient yourself, and make it out.",
+                    option:['Get out'],
+                    optionDesc:['Lose 5 Max Health'],
+                    link:[-1],
+                },
+            ],
+        },
+        
+        
+        {
             name:'',id:0,list:-1,
             pages:[
                 {
@@ -4277,7 +4432,7 @@ types={
                     link:[-1],
                 },
             ],
-        },//fight club, divine intervention, capture, bounty hunter, last guardian
+        },//fight club, divine intervention, capture, bounty hunter, last guardian, mob doctor?
     ],
 }
 listing={
@@ -4294,7 +4449,7 @@ zones=[
         events:[[],[],[],[],[]],
     },
 ]
-stage={scale:0,quality:1,scene:'menu',playerNumber:4}
+stage={scale:0,quality:1,scene:'menu',playerNumber:4,identifier:''}
 graphics={main:0,minor:[],symbol:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}
