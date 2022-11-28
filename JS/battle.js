@@ -54,7 +54,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=33
+        this.event=40
     }
     create(){
         this.end=false
@@ -1712,8 +1712,8 @@ class battle{
                 }
                 for(g=0;g<5;g++){
                     if(this.calc.list.length>0){
-                        h=this.calc.list[floor(random(0,this.calc.list.length))]
-                        this.choice.cards.push(new card(this.layer,150+g*150,300,h,level,types.card[h].list))
+                        h=floor(random(0,this.calc.list.length))
+                        this.choice.cards.push(new card(this.layer,150+g*150,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
                         this.calc.list.splice(h,1)
                     }
                 }
@@ -1722,8 +1722,8 @@ class battle{
                 this.calc.list=copyList(listing.card[0][rarity])
                 for(g=0;g<3;g++){
                     if(this.calc.list.length>0){
-                        h=this.calc.list[floor(random(0,this.calc.list.length))]
-                        this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
+                        h=floor(random(0,this.calc.list.length))
+                        this.choice.cards.push(new card(this.layer,225+g*225,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
                         this.calc.list.splice(h,1)
                     }
                 }
@@ -1732,8 +1732,8 @@ class battle{
                 this.calc.list=copyList(listing.card[14][0])
                 for(g=0;g<3;g++){
                     if(this.calc.list.length>0){
-                        h=this.calc.list[floor(random(0,this.calc.list.length))]
-                        this.choice.cards.push(new card(this.layer,225+g*225,300,h,level,types.card[h].list))
+                        h=floor(random(0,this.calc.list.length))
+                        this.choice.cards.push(new card(this.layer,225+g*225,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
                         this.calc.list.splice(h,1)
                     }
                 }
@@ -2557,6 +2557,78 @@ class battle{
                             }else if(this.page==1&&e==0){
                                 this.deck.randomUpgrade()
                                 this.deck.randomUpgrade()
+                            }
+                        break
+                        case 34:
+                            if(this.page==0&&e==0){
+                                this.currency.main-=35
+                            }else if(this.page==0&&e==1){
+                                this.currency.main-=50
+                            }else if(this.page==1&&e==0){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
+                            }else if(this.page==2&&e==0){
+                                transition.scene='deck'
+                                this.setupDeck(4)
+                                this.context=4
+                            }
+                        break
+                        case 35:
+                            if(this.page==0&&e==0){
+                                this.currency.money+=175
+                            }else if(this.page==1&&e==0){
+                                this.deck.add(findCard('Doubt'),0,stage.playerNumber+2)
+                            }
+                        break
+                        case 36:
+                            if(this.page==1&&e==0){
+                                transition.scene='deck'
+                                this.setupDeck(4)
+                                this.context=4
+                            }else if(this.page==2&&e==0){
+                                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
+                                    if(this.deck.cards[g].list==5&&this.deck.cards[g].level==0){
+                                        this.deck.cards[g].level++
+                                        this.deck.cards[g]=reformCard(this.deck.cards[g])
+                                    }
+                                }
+                            }
+                        break
+                        case 37:
+                            if(this.page==0&&e==0){
+                                this.combatants[0].base.life*=0.5
+                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                            }else if(this.page==1&&e==0){
+                                for(g=0;g<5;g++){
+                                    this.deck.add(findCard('Apparition'),0,0)
+                                }
+                            }
+                        break
+                        case 38:
+                            if(this.page==0&&(e==0||e==1)){
+                                this.currency.money-=50
+                                if(floor(random(0,2))==0){
+                                    this.remember[0]=1
+                                }
+                            }else if(this.page==1&&e==0){
+                                this.currency.money+=100
+                            }
+                        break
+                        case 39:
+                            if(this.page==1&&e==0){
+                                transition.scene='choice'
+                                this.setupChoice(0,0,3)
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+25)
+                            }
+                        break
+                        case 40:
+                            if(this.page==0&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-18)
+                            }else if(this.page==1&&e==0){
+                                this.combatants[0].life+=5
+                                this.combatants[0].base.life+=5
+                            }else if(this.page==2&&e==0){
+                                this.deck.add(findCard('Decay'),0,stage.playerNumber+2)
                             }
                         break
                     }

@@ -2158,20 +2158,43 @@ types={
             {damage:0,alt:0,cost:0,attack:390,target:0,spec:9,class:2},
             {damage:0,alt:0,cost:0,attack:390,target:0,spec:9,class:2},
         ],
-        },{name:'Mixture A',rarity:-1,list:0,
+        },
+
+
+        {name:'Redraw',rarity:-3,list:0,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:148,target:0,spec:13,class:2},
+            {damage:0,alt:0,cost:0,attack:148,target:0,spec:13,class:2},
+        ],
+        },{name:'Step',rarity:-3,list:0,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:149,target:0,spec:13,class:2},
+            {damage:1,alt:0,cost:0,attack:149,target:0,spec:13,class:2},
+        ],
+        },{name:'Selective\nRedraw',rarity:-3,list:0,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:170,target:0,spec:13,class:2},
+            {damage:0,alt:0,cost:0,attack:170,target:0,spec:13,class:2},
+        ],
+        },{name:'Mixture A',rarity:-3,list:0,
         stats:[
             {damage:3,alt:3,cost:0,attack:392,target:0,spec:3,class:2},
             {damage:3,alt:4,cost:0,attack:392,target:0,spec:3,class:2},
         ],
-        },{name:'Mixture B',rarity:-1,list:0,
+        },{name:'Mixture B',rarity:-3,list:0,
         stats:[
             {damage:3,alt:3,cost:0,attack:393,target:0,spec:3,class:2},
             {damage:3,alt:4,cost:0,attack:393,target:0,spec:3,class:2},
         ],
-        },{name:'Mixture C',rarity:-1,list:0,
+        },{name:'Mixture C',rarity:-3,list:0,
         stats:[
             {damage:3,alt:1,cost:0,attack:394,target:0,spec:3,class:2},
             {damage:3,alt:2,cost:0,attack:394,target:0,spec:3,class:2},
+        ],
+        },{name:'Apparition',rarity:-3,list:0,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:395,target:0,spec:13,class:2},
+            {damage:1,alt:0,cost:0,attack:395,target:0,spec:13,class:2},
         ],
         },
         
@@ -2298,24 +2321,6 @@ types={
         stats:[
             {damage:0,alt:0,cost:0,attack:-19,target:0,spec:1,class:-1},
             {damage:0,alt:0,cost:0,attack:-19,target:0,spec:1,class:-1},
-        ],
-        },
-        
-        
-        {name:'Redraw',rarity:-3,list:0,
-        stats:[
-            {damage:0,alt:0,cost:0,attack:148,target:0,spec:13,class:2},
-            {damage:0,alt:0,cost:0,attack:148,target:0,spec:13,class:2},
-        ],
-        },{name:'Avoid',rarity:-3,list:0,
-        stats:[
-            {damage:1,alt:0,cost:1,attack:149,target:0,spec:13,class:2},
-            {damage:1,alt:0,cost:0,attack:149,target:0,spec:13,class:2},
-        ],
-        },{name:'Selective\nRedraw',rarity:-3,list:0,
-        stats:[
-            {damage:0,alt:0,cost:0,attack:170,target:0,spec:13,class:2},
-            {damage:0,alt:0,cost:0,attack:170,target:0,spec:13,class:2},
         ],
         },
     ],combatant:[
@@ -3921,7 +3926,189 @@ types={
                 },
             ],
         },{
+            name:'Magic Man',id:34,list:0,
+            pages:[
+                {
+                    desc:"A travelling merchant approaches you and offers his services.\n"+
+                    "Supposedly, he specializes in healing, but he doesn't bother to explain how.",
+                    option:['Heal','Purify','Refuse'],
+                    optionDesc:['Lose 35 currency','Lose 50 currency',''],
+                    link:[1,2,3],
+                },{
+                    desc:"A warm golden light envelops your body and dissipates.",
+                    option:['Healed'],
+                    optionDesc:['Heal 15 health'],
+                    link:[-1],
+                },{
+                    desc:"A cold blue flame envelops your body and dissipates.",
+                    option:['Purified'],
+                    optionDesc:['Remove a card'],
+                    link:[-1],
+                },{
+                    desc:"You can't trust this man, so you refuse his services.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Corruption',id:35,list:0,
+            pages:[
+                {
+                    desc:"As you travel, you are jumped by a man in a suit, looking around frantically for something.\n"+
+                    "When he sees you, he hands you a piece of paper and tells you to keep it safe, but to never give it to anybody.\n"+
+                    "Seeing your confused expression, he tries to hand you some money as thanks.",
+                    option:['Take it','Decline'],
+                    optionDesc:['Gain 175 currency',''],
+                    link:[1,2],
+                },{
+                    desc:"He runs off, leaving you with the paper. You try to read it, but it's all bureaucratic nonsense.",
+                    option:['Easy money'],
+                    optionDesc:['Become cursed - Doubt'],
+                    link:[-1],
+                },{
+                    desc:"He runs off, still holding the paper, trying to find more passerby.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Humanic Writings',id:36,list:0,
+            pages:[
+                {
+                    desc:"Finding a mysterious square rock, you quickly notice strange scripts on it.\n"+
+                    "This is the language of the pre-Management humans. Perhaps a relic of the first Konaian colonists.\n"+
+                    "They only changed their scripts to match the Management after the Grand Alliance War, after all.\n"+
+                    "As you continue to read, the meanings become clear.",
+                    option:['Elegance','Simplicity'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"The answer was elegance.\n"+
+                    "Of course.",
+                    option:['That'+"'"+'s what it meant'],
+                    optionDesc:['Remove a card'],
+                    link:[-1],
+                },{
+                    desc:"The truth is always simple.",
+                    option:['That'+"'"+'s what it meant'],
+                    optionDesc:['Upgrade all Strikes and Defends'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Council of Spirits',id:37,list:0,
+            pages:[
+                {
+                    desc:"A group of three apparitions appear around you as you walk, circling around you.\n"+
+                    "They talk amongst themselves about you, before one descends to address you.\n"+
+                    '"'+"Would you like a taste of our power?"+'"',
+                    option:['Accept','Refuse'],
+                    optionDesc:['Lose 50% max health',''],
+                    link:[1,2],
+                },{
+                    desc:"As it speaks, you notice it nearing your body as smoke swirls around you, blocking your vision.\n"+
+                    "You almost lose consciousness, but the smoke dissipates before you can.\n"+
+                    "The things are gone.",
+                    option:['Continue'],
+                    optionDesc:['Gain 5 Apparition'],
+                    link:[-1],
+                },{
+                    desc:"The shape laughs at you before fading away, returning to the air.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'The Bet',id:38,list:0,
+            pages:[
+                {
+                    desc:"Two men sitting across from each other at a table notice you and ask you to come over.\n"+
+                    '"'+"Would like to bet on who wins? Would make the game a litte more interesting, don't you agree?"+'"\n'+
+                    "The other man smiles and stares at you expectingly.",
+                    option:['Bet on first player','Bet on second player','Refuse'],
+                    optionDesc:['Lose 50 currency','Lose 50 currency',''],
+                    link:[1,1,3],
+                },{
+                    desc:"The man you bet on wins the game. You receive the return on your bet.",
+                    option:['Collect winnings'],
+                    optionDesc:['Gain 100 currency'],
+                    link:[-1],
+                },{
+                    desc:"The man you bet on loses the game. The winner takes your money with him as the two leave.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"The two pay you no mind and continue their game.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Library',id:39,list:0,
+            pages:[
+                {
+                    desc:"You find a large, but abandoned building. The label on the front marks it to be a library.\n"+
+                    "Entering, you see rows upon rows of books, and many spots to read in.",
+                    option:['Read','Sleep'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"The book details a group of colonists who left Terra to preserve the culture destroyed in Americanization.\n"+
+                    "Atlorium Inc.'s Manager personally met with the colonists' leader to negotiate the travel expenses.",
+                    option:['Interesting story'],
+                    optionDesc:['Add 1 card'],
+                    link:[-1],
+                },{
+                    desc:"You decide that you need to recover, and that you don't have time for reading.\n"+
+                    "You wake up feeling refreshed.",
+                    option:['Done'],
+                    optionDesc:['Heal 25 health'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Forgotten Altar',id:40,list:0,
+            pages:[
+                {
+                    desc:"In front of you sits an altar to a forgotten god.\n"+
+                    "Atop the altar sits an ornate female statue with arms outstretched.\n"+
+                    "She calls out to you, demanding sacrifice.\n\n"+
+                    "You want to run, but the doors have shut behind you, propelled by some sort of force.",
+                    option:['Sacrifice','Smash'],
+                    optionDesc:['Lose 18 health',''],
+                    link:[1,2],
+                },{
+                    desc:"You let some of your blood out and allow it to seep into the pedestal.\n"+
+                    "Everything goes dark.\n"+
+                    "You wake up a short while later feeling new potential.",
+                    option:['Leave'],
+                    optionDesc:['Gain 5 max health'],
+                    link:[-1],
+                },{
+                    desc:"You smash the statue with a large strike. The hold of the room ceases. The door swings open.\n"+
+                    "A dark sound echoes around you, the magic seeping into you.",
+                    option:['Exit'],
+                    optionDesc:['Become cursed - Decay'],
+                    link:[-1],
+                },
+            ],
+        },{
             name:'Fight Club',id:99,list:-1,
+            pages:[
+                {
+                    desc:"",
+                    option:[],
+                    optionDesc:[],
+                    link:[],
+                },
+            ],
+        },{
+            name:'Divine Intervention',id:99,list:-1,
             pages:[
                 {
                     desc:"",
@@ -3938,6 +4125,26 @@ types={
                     option:[],
                     optionDesc:[],
                     link:[],
+                },
+            ],
+        },{
+            name:'',id:0,list:-1,
+            pages:[
+                {
+                    desc:"",
+                    option:['',''],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:[''],
+                    link:[-1],
                 },
             ],
         },

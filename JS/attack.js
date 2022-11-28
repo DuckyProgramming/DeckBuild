@@ -1948,6 +1948,9 @@ class attack{
                     this.battle.combatants[0].life-=this.damage
                     this.battle.mana.main+=this.alt
                 break
+                case 395:
+                    this.battle.combatants[0].status.main[12]++
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
