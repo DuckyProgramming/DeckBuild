@@ -54,7 +54,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=42
+        this.event=46
     }
     create(){
         this.end=false
@@ -184,6 +184,9 @@ class battle{
     drawInitial(){
         for(e=0,le=this.reserve.cards.length;e<le;e++){
             if(this.reserve.cards[e].spec==7||this.reserve.cards[e].spec==8||this.reserve.cards[e].spec==10){
+                if(this.reserve.cards[e].list==10){
+                    this.random.tempDrawAmount--
+                }
                 this.hand.cards.push(copyCard(this.reserve.cards[e]))
                 this.hand.cards[this.hand.cards.length-1].position.x=1206
                 this.hand.cards[this.hand.cards.length-1].position.y=500
@@ -2650,6 +2653,7 @@ class battle{
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-10)
                             }else if(this.page==5&&e==0){
                                 current.getRelic(findRelic('Audrian Codex'))
+                                this.eventList.push(findEvent('Collector'))
                             }
                         break
                         case 42:
@@ -2659,6 +2663,39 @@ class battle{
                                 transition.scene='battle'
                             }else if(this.page==1&&e==0){
                                 this.deck.add(findCard('Guilt'),0,stage.playerNumber+2)
+                            }
+                        break
+                        case 43:
+                            if(this.page==1&&e==0){
+                                this.currency.money+=300
+                                this.relics.active[findRelic('Audrian Codex')]=false
+                            }else if(this.page==2&&e==0){
+                                this.relics.active[findRelic('Audrian Codex')]=false
+                            }
+                        break
+                        case 44:
+                            if(this.page==0&&e==0){
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.relics.list[g].length))
+                                this.getRelic(this.relics.list[g][f])
+                                this.relics.list[g].splice(f,1)
+                            }else if(this.page==1&&e==0){
+                                this.deck.add(findCard('Writhe'),0,stage.playerNumber+2)
+                            }
+                        break
+                        case 45:
+                            if(this.page==0&&(e==0||e==1||e==2)){
+                                this.combatants[0].life-=8
+                            }else if(this.page==1&&e==0){
+                                this.currency.money+=45
+                            }else if(this.page==2&&e==0){
+                                this.deck.add(listing.card[0][1][floor(random(0,listing.card[0][1].length))],0,0)
+                            }else if(this.page==3&&e==0){
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.potions.list[g].length))
+                                this.getPotion(this.potions.list[g][f])
                             }
                         break
                     }

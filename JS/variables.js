@@ -4154,7 +4154,7 @@ types={
             name:'Slaver',id:42,list:0,
             pages:[
                 {
-                    desc:"A figure jumps you and tries to taze you with a makeshift staff. You easily dodge out of the way.\n"+
+                    desc:"A figure jumps you and tries to taze you with a makeshift staff. You easily  dodge out of the way.\n"+
                     '"'+"Come quietly, and we won't harm you!"+'"'+" He doesn't know what you're capable of.",
                     option:['Fight','Persuade'],
                     optionDesc:['Start fight',''],
@@ -4169,12 +4169,91 @@ types={
                 },
             ],
         },{
+            name:'Collector',id:43,list:-1,
+            pages:[
+                {
+                    desc:"Whhie you rest, a well-dressed man appears before you, startling you.\n"+
+                    "He asks you to return the Codex to the Management, as it is rightful Management property.",
+                    option:['Ask for compensation','Refuse'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"He pulls out a stack of coins from his pocket and hands it to you, before taking the Codex and leaving.",
+                    option:['Take it'],
+                    optionDesc:['Gain 300 currency, lose the Codex'],
+                    link:[-1],
+                },{
+                    desc:"He lifts you up with an unknown force and takes the Codex from you, leaving to put you down.",
+                    option:['Get back up'],
+                    optionDesc:['Lose the Codex'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Mausoleum',id:44,list:0,
+            pages:[
+                {
+                    desc:"Venturing through several tombs, you arrive at the end of the catacombs. There lies a large coffin covered in gems.\n"+
+                    "The text on the side is unintelligible, but you can recognize strange smoke coming out of the sides.",
+                    option:['Open the coffin','Don'+"'"+'t'],
+                    optionDesc:['Gain a relic',''],
+                    link:[1,2],
+                },{
+                    desc:"You push it open and find a relic within, which you take with you.\n"+
+                    "The smoke flows around the room and begins to choke you. You only just make it out.",
+                    option:['Take it'],
+                    optionDesc:['Become cursed - Writhe'],
+                    link:[-1],
+                },{
+                    desc:"You leave it undisturbed.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Closed Chamber',id:45,list:0,
+            pages:[
+                {
+                    desc:"You enter a room, looking for anything of use, when the door locks behind you.\n"+
+                    "A screen in the center of the room lights up, and a voice beguns speaking from within it.\n"+
+                    "What are you here for? And more importantly, what shall be the price?",
+                    option:['Money','Success','Help','The exit'],
+                    optionDesc:['Lose 8 health','Lose 8 health','Lose 8 health',''],
+                    link:[1,2,3,4],
+                },{
+                    desc:'"'+"You never change, do you?"+'"\n'+
+                    "Money rains from the sky.",
+                    option:['Done'],
+                    optionDesc:['Gain 45 currency'],
+                    link:[0],
+                },{
+                    desc:'"'+"Maybe this will help?"+'"\n'+
+                    "A card appears in your hand.",
+                    option:['Done'],
+                    optionDesc:['Gain 1 uncommon colorless card'],
+                    link:[0],
+                },{
+                    desc:'"'+"This could be useful."+'"\n'+
+                    "A potion appears in your hand.",
+                    option:['Done'],
+                    optionDesc:['Gain 1 potion'],
+                    link:[0],
+                },{
+                    desc:'"'+"Right behind you."+'"\n'+
+                    "You see the door behind you has opened.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
             name:'',id:0,list:-1,
             pages:[
                 {
                     desc:"",
-                    option:[],
-                    optionDesc:[],
+                    option:[''],
+                    optionDesc:[''],
                     link:[],
                 },
             ],
@@ -4198,7 +4277,7 @@ types={
                     link:[-1],
                 },
             ],
-        },//fight club, divine intervention, capture, bounty hunter
+        },//fight club, divine intervention, capture, bounty hunter, last guardian
     ],
 }
 listing={
