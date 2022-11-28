@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=54
+        this.event=56
     }
     create(){
         this.end=false
@@ -2852,6 +2852,26 @@ class battle{
                             if(this.page==0&&e==0){
                                 this.getRelic(findRelic('McDuck Burger'))
                             }
+                        break
+                        case 54:
+                            if(this.page==1&&e==0){
+                                this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-6)
+                            }
+                        break
+                        case 55:
+                            if((this.page==2||this.page==4)&&e==0){
+                                this.calc.list=listing.card[this.player]
+                                if(this.calc.list.length>0){
+                                    g=floor(random(0,this.calc.list.length))
+                                    h=floor(random(0,this.calc.list[g].length))
+                                    this.deck.add(this.calc.list[g][h],0,types.card[this.calc.list[g][h]].list)
+                                }
+                            }else if(this.page==5&&e==0){
+                                this.combatants[0].base.meterControl+=2
+                            }
+                        break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){
                         this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]

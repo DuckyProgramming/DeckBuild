@@ -4459,7 +4459,7 @@ types={
                 },{
                     desc:"You take a small amount of money from his bag, but it's not much.",
                     option:['Steal it'],
-                    optionDesc:['Gain 10 currency'],
+                    optionDesc:['Gain 10 Currency'],
                     link:[-1],
                 },{
                     desc:"You help him up and he gets on his way, wobbling down the road.",
@@ -4469,7 +4469,7 @@ types={
                 },{
                     desc:"You wonder if he could be useful to you, but you need the food right now.",
                     option:['Tasty'],
-                    optionDesc:['Heal 20 health'],
+                    optionDesc:['Heal 20 Health'],
                     link:[-1],
                 },
             ],
@@ -4482,7 +4482,7 @@ types={
                     '"'+"Thanks for help me back there. Here, I brought something useful for you. It's the most I could do."+'"\n'+
                     "He hands you a large, brown, strange-smelling bag and leaves.",
                     option:['Open it'],
-                    optionDesc:['Gain 1 relic'],
+                    optionDesc:['Gain 1 Relic'],
                     link:[1],
                 },{
                     desc:"Inside, you find a burger. You're not sure where he got this from, but it's yours now.",
@@ -4492,13 +4492,70 @@ types={
                 },
             ],
         },{
-            name:'Luvocorp Ship',id:54,list:0,
+            name:'Luvocorp UFO',id:54,list:0,
             pages:[
                 {
-                    desc:"",
-                    option:[''],
+                    desc:"You notice a strangely shaped object in the sky. As it descends toward you, you can make out a logo and the word\n"+
+                    '"'+"Luvocorp"+'"'+" on the side. It continues its descent, moving quickly enough that you don't think you can escape.",
+                    option:['Hit it','Dodge it'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"You hit the UFO with all of your strength, causing it to move backwards and land harmlessly nearby.\n"+
+                    "The driver quickly starts up the engine again and leaves without you, much to your confusion.",
+                    option:['It'+"'"+'s gone'],
+                    optionDesc:['Lose 1 Random Card'],
+                    link:[-1],
+                },{
+                    desc:"The UFO continues its downward course and lands directly on top of you before you can escape, crushing you.\n"+
+                    "You wake up not long later. The UFO is gone.",
+                    option:['Get up'],
+                    optionDesc:['Lose 6 Health'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'The Programmer',id:55,list:4,
+            pages:[
+                {
+                    desc:"You spot a man in a Management uniform far away, heading your direction. As you prepare to escape, you realize he's injured.\n"+
+                    "You get closer, remaining hidden. You can tell that he's worked as a Management programmer, and that he's headed for the base.\n"+
+                    "You could kill him right here, but you don't have to kill him. He doesn't even have a weapon, he doesn't pose a threat.\n"+
+                    "Either way, he doesn't notice you, and continues down the path, clearly in pain.",
+                    option:['Let him go','Kill him','Meet him'],
+                    optionDesc:['','',''],
+                    link:[1,2,3],
+                },{
+                    desc:"You stay out of sight as he wanders into the base, where some of his allies are ready to patch him up.\n"+
+                    "None of them notice you, so you escape successfully and head to your next waypoint.",
+                    option:['Exit'],
                     optionDesc:[''],
-                    link:[],
+                    link:[-1],
+                },{
+                    desc:"You move in and attack him from behind.\n"+
+                    "He did't even notice.",
+                    option:['Done'],
+                    optionDesc:['Gain 1 Random Card'],
+                    link:[-1],
+                },{
+                    desc:"As you appear, he jumps backward, but he's not fast enough to escape you.\n"+
+                    '"'+"What do you want?"+'"',
+                    option:['Kill him','Let him go'],
+                    optionDesc:['',''],
+                    link:[4,5],
+                },{
+                    desc:"You raise your weapon and stab him in one massive strike.\n"+
+                    "He doesn't fight back and acceps his fate.",
+                    option:['Done'],
+                    optionDesc:['Gain 1 Random Card'],
+                    link:[-1],
+                },{
+                    desc:"You tell him that you know him, and that while you would definitely like to kill him, you won't.\n"+
+                    "For how brutal the Management can be, not ever one of their employees must be punished.\n"+
+                    "You leave him alive, but changed forever.",
+                    option:['Leave'],
+                    optionDesc:['Gain +2 Max Balance'],
+                    link:[-1],
                 },
             ],
         },
@@ -4534,7 +4591,7 @@ types={
                     link:[-1],
                 },
             ],
-        },//fight club, capture, bounty hunter, last guardian, mob doctor?
+        },//fight club, capture, bounty hunter, last guardian, mob doctor?, businessman
     ],
 }
 listing={
