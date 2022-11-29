@@ -2059,6 +2059,15 @@ class attack{
                         this.battle.combatants[g].life=min(this.battle.combatants[g].life+this.damage,this.battle.combatants[g].base.life)
                     }
                 break
+                case 19:
+                    this.battle.combatants[this.user].status.main[4]+=this.damage
+                break
+                case 20:
+                    this.battle.combatants[0].take(this.damage,this.user)
+                    this.attacks.push([1,12,this.user,this.damage])
+                    this.battle.drop.addDrop(findCard('Burn'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Burn'),0,stage.playerNumber+1)
+                break
                 default:
             }
         }

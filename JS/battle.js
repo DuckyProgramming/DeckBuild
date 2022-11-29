@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=56
+        this.event=58
     }
     create(){
         this.end=false
@@ -607,7 +607,7 @@ class battle{
                 }
             }
             for(f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
-                if(f!=3){
+                if(f!=3&&this.combatants[e].status.main[88]<=0){
                     if(this.combatants[e].boost.main[f]>0){
                         this.combatants[e].boost.main[f]=max(0,this.combatants[e].boost.main[f]-1)
                     }
@@ -673,7 +673,7 @@ class battle{
                     f!=35&&f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=50&&f!=51&&
                     f!=52&&f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&
                     f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79&&
-                    f!=80&&f!=81&&f!=82&&f!=85){
+                    f!=80&&f!=81&&f!=82&&f!=85&&f!=88){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
                     }else if(f==67){
@@ -2870,6 +2870,40 @@ class battle{
                                 }
                             }else if(this.page==5&&e==0){
                                 this.combatants[0].base.meterControl+=2
+                            }
+                        break
+                        case 56:
+                            if(this.page==0&&e==0){
+                                this.currency.money+=50
+                            }else if(this.page==0&&e==1){
+                                this.currency.money-=25
+                            }else if(this.page==1&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-11)
+                            }
+                        break
+                        case 57:
+                            if(this.page==1&&e==0){
+                                setupEncounter(current,zones[0].special[7])
+                                this.create()
+                                transition.scene='battle'
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+20)
+                                this.deck.add(findCard('Parasite'),0,stage.playerNumber+2)
+                            }
+                        break
+                        case 58:
+                            if(this.page==0&&e==0){
+                                for(h=0;h<3;h++){
+                                    this.calc.list=[0,0,0,1,1,2]
+                                    g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                    f=floor(random(0,this.relics.list[g].length))
+                                    this.getRelic(this.relics.list[g][f])
+                                    this.relics.list[g].splice(f,1)
+                                }
+                            }else if(this.page==1&&e==0){
+                                setupEncounter(current,zones[0].special[8])
+                                this.create()
+                                transition.scene='battle'
                             }
                         break
                     }

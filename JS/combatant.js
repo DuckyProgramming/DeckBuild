@@ -32,7 +32,7 @@ class combatant{
 			[139,150,193],[40,95,160],[255,245,15],[195,225,255],[145,155,65],[245,195,65],[240,255,255],[220,240,220],[215,235,255],[20,50,120],
 			[155,235,250],[5,145,250],[150,0,0],[215,210,210],[100,75,150],[255,75,175],[225,175,225],[40,80,120],[255,195,255],[235,125,230],
 			[120,90,120],[60,120,60],[40,80,40],[230,170,230],[225,225,200],[155,180,190],[105,230,255],[40,180,185],[240,175,5],[200,175,110],
-			[140,160,0],[60,30,60],[255,225,255],[150,200,150],[255,200,255],[255,150,255],[200,150,200],[150,25,25]],name:[
+			[140,160,0],[60,30,60],[255,225,255],[150,200,150],[255,200,255],[255,150,255],[200,150,200],[150,25,25],[225,210,135]],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
 			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Stance Change Block','Enter Wrath Draw','Every Block Weak All','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Absorb Attacks',
@@ -41,7 +41,7 @@ class combatant{
 			'Armed Block Per Turn','Energy And Strength Per Hit','Return Played to Draw','Power Draw','Random Common','Passive Orb','Discharge','Power Basic Charge','Random Power','Conditioning',
 			'Miracle+ Gain','Calm Block Per Turn','Constant Damage Down','Shiv Damage','No Blocks','Counter Pull Once','Counter Throw','Downed','Scry Per Turn','Scry Block',
 			'Attack Per Card Played','Take Damage Per Turn','Energy Gen Down','Next Turn Wrath','Next Turn Draw','Insight Per Turn','Free Attack','Grant Block on Hit','Energy Per Turn','Retain Cost Decrease',
-			'Lose Focus','Darkness on Death','Balance Buffer','Counter Stun Once','Flower Per Turn','Flower on Block','Debalance','Temporary Constant Damage Down'],class:[
+			'Lose Focus','Darkness on Death','Balance Buffer','Counter Stun Once','Flower Per Turn','Flower on Block','Debalance','Temporary Constant Damage Down','Retain Buffs'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
@@ -50,7 +50,7 @@ class combatant{
 			1,1,1,1,1,1,1,1,1,1,
 			1,1,0,1,0,1,1,0,1,1,
 			1,0,0,1,1,1,1,0,1,1,
-			0,1,1,1,1,1,0,0]}
+			0,1,1,1,1,1,0,0,1]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -95,6 +95,10 @@ class combatant{
 			case 5:
 				this.addBlock(40,0)
 				this.status.main[47]+=99
+			break
+			case 8:
+				this.status.main[39]=1
+				this.status.main[88]=1
 			break
 		}
 	}
@@ -1230,6 +1234,47 @@ class combatant{
 					this.layer.fill(0,this.fade)
 					this.layer.ellipse(4,-72,4,4)
 					this.layer.ellipse(12,-72,4,4)
+				break
+				case 27:
+					this.layer.noStroke()
+					this.layer.fill(200,160,120,this.fade)
+					this.layer.arc(0,-85,20,20,-180,0)
+					this.layer.fill(180,170,160,this.fade)
+					this.layer.rect(0,-81,6,8)
+					this.layer.fill(230,230,5,this.fade)
+					this.layer.ellipse(-10,-8,20,20)
+					this.layer.ellipse(10,-8,20,20)
+					this.layer.ellipse(-16,-30,20,20)
+					this.layer.fill(235,235,55,this.fade)
+					this.layer.ellipse(0,-28,24,40)
+					this.layer.fill(240,240,60,this.fade)
+					this.layer.ellipse(16,-30,20,20)
+					this.layer.fill(245,245,65,this.fade)
+					this.layer.ellipse(0,-60,40,40)
+					this.layer.fill(240,160,20,this.fade)
+					this.layer.ellipse(13.5,-52,24,16)
+					this.layer.stroke(0,this.fade)
+					this.layer.strokeWeight(1)
+					this.layer.arc(13.5,-52,22,2,-180,0)
+					this.layer.line(18-3,-56,18-3,-58)
+					this.layer.line(18+3,-56,18+3,-58)
+					this.layer.strokeWeight(3)
+					this.layer.point(9-6,-64)
+					this.layer.point(9+6,-64)
+				break
+				case 28:
+					this.layer.fill(30,120,110,this.fade)
+					this.layer.stroke(30,210,200,this.fade)
+					this.layer.strokeWeight(3)
+					this.layer.ellipse(0,-30,36,36)
+					this.layer.fill(200,180,120,this.fade)
+					this.layer.noStroke()
+					this.layer.quad(0,-6,-24,-30,0,-54,24,-30)
+					this.layer.triangle(-24,0,-21,-12,-12,-3)
+					this.layer.triangle(24,0,21,-12,12,-3)
+					this.layer.fill(130,110,75,this.fade)
+					this.layer.quad(0,-27,-24,-30,0,-33,24,-30)
+					this.layer.quad(0,-6,-3,-30,0,-54,3,-30)
 				break
 				case 100:
 					this.layer.stroke(80,this.fade)

@@ -2345,11 +2345,11 @@ types={
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},//0
-        {name:'Agent',alt:'',life:80,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother']},
-        {name:'Duelist',alt:'',life:70,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister']},
-        {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother']},
-        {name:'Creation',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister']},
-        {name:'Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[6,2,3],altAttack:[0,3,0],class:0,buff:0},
+        {name:'Agent',alt:'',life:80,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MPKF-8589869056']},
+        {name:'Duelist',alt:'',life:70,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','Princess']},
+        {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MAEP-65091']},
+        {name:'Creation',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','MPCO-SKR']},
+        {name:'Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[4,2,3],altAttack:[0,3,0],class:0,buff:0},
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
@@ -2357,12 +2357,12 @@ types={
         {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0,buff:0},//10
         {name:'Roger Reviv',alt:'',life:150,height:75,behavior:1,attacks:[1,9,3,10],damage:[15,4,2,20],altAttack:[0,6,9,'Heavy\nBleed'],class:0,buff:1},
         {name:'Gangster',alt:'',life:40,height:75,behavior:0,attacks:[1,8],damage:[8,6],altAttack:[0,0],class:0,buff:2},
-        {name:'Batter',alt:'',life:48,height:75,behavior:0,attacks:[10,8,11],damage:[12,6,2],altAttack:['Concussion',0,0],class:0,buff:0},
+        {name:'Batter',alt:'',life:48,height:75,behavior:0,attacks:[10,8,11],damage:[12,6,1],altAttack:['Concussion',0,0],class:0,buff:0},
         {name:'Slippery Gangster',alt:'',life:36,height:75,behavior:0,attacks:[1,3],damage:[8,3],altAttack:[0,2],class:0,buff:3},
         {name:'Gangster Gunner',alt:'',life:24,height:75,behavior:0,attacks:[1],damage:[4],altAttack:[0],class:0,buff:4},
         {name:'Snaky Plant',alt:'',life:120,height:75,behavior:1,attacks:[1,3,13,12],damage:[18,4,0,6],altAttack:[0,4,0,0],class:1,buff:0},
         {name:'Spheron',alt:'',life:20,height:60,behavior:1,attacks:[3,8,14,15],damage:[10,25,10,10],altAttack:[2,0,15,2],class:0,buff:5},
-        {name:'Enforcer',alt:'',life:80,height:90,behavior:0,attacks:[1,3,16],damage:[18,8,16],altAttack:[0,2,1],class:1,buff:6},
+        {name:'Enforcer',alt:'',life:80,height:90,behavior:0,attacks:[1,3,16],damage:[9,8,8],altAttack:[0,2,1],class:1,buff:6},
         {name:'Ninja',alt:'',life:32,height:75,behavior:0,attacks:[1,3],damage:[9,4],altAttack:[0,2],class:0,buff:0},
         {name:'Red',alt:'',life:36,height:80,behavior:0,attacks:[1,17,18],damage:[7,5,4],altAttack:[0,1,0],class:0,buff:0},//20
         {name:'Trenchcoat Man',alt:'',life:60,height:75,behavior:0,attacks:[1],damage:[8],altAttack:[0],class:0,buff:0},
@@ -2371,6 +2371,8 @@ types={
         {name:'Prisoner',alt:'',life:28,height:75,behavior:0,attacks:[1,3,8],damage:[8,5,10],altAttack:[0,2,0],class:0,buff:0},
         {name:'Prison Guard',alt:'',life:56,height:75,behavior:0,attacks:[3,8],damage:[3,16],altAttack:[3,0],class:0,buff:7},
         {name:'Slaver',alt:'',life:46,height:75,behavior:0,attacks:[1,17],damage:[12,7],altAttack:[0,1],class:0,buff:0},
+        {name:'Fungal Duck',alt:'',life:26,height:66,behavior:0,attacks:[1,19],damage:[6,2],altAttack:[0,0],class:0,buff:0},
+        {name:'Orb Walker',alt:'',life:90,height:60,behavior:0,attacks:[1,20],damage:[15,10],altAttack:[0,1],class:1,buff:8},
     ],attack:[
         {class:0},//0
         {class:0},
@@ -2391,6 +2393,8 @@ types={
         {class:1},
         {class:0},
         {class:1},
+        {class:1},
+        {class:0},//20
     ],encounter:[
         {//0
             combatants:[0,0,0,0,0,0],
@@ -2494,6 +2498,16 @@ types={
             objective:[[0,0,0,0]],
         },{
             combatants:[26,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:-1,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[27,27,27,0,0,0],
+            reinforce:[],
+            threshold:3,class:-1,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[28,28,0,0,0,0],
             reinforce:[],
             threshold:2,class:-1,zone:0,
             objective:[[0,0,0,0]],
@@ -2765,7 +2779,7 @@ types={
             desc:'Can Gain Relics\nWhen Resting',
         },{
             name:'Time Bomb',id:88,rarity:2,list:0,
-            desc:'On Turn 7, Deal 52\nDamage to All ENemies',
+            desc:'On Turn 7, Deal 52\nDamage to All Enemies',
         },{
             name:'Barricade Projector',id:89,rarity:2,list:0,
             desc:'Gain 4 Armor at\nthe Start of Combat',
@@ -4558,6 +4572,75 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'Goo Puddle',id:56,list:0,
+            pages:[
+                {
+                    desc:"As you walk through a marsh, the ground collapses and you fall into a puddle.\n"+
+                    "It's made of goo, which quickly causes you to sink. It takes you a few minutes to get out.\n"+
+                    "All along, the goo burns your skin, making it even moer difficult to escape the goo.\n"+
+                    "When you get out, you notice that your money is missing. Looking back into the puddle,\n"+
+                    "you notice that your money is inside, along with the money of others who have fallen in.",
+                    option:['Gather Money','Leave'],
+                    optionDesc:['Gain 50 Currency','Lose 25 Currency'],
+                    link:[1,2],
+                },{
+                    desc:"Feeling the sting of the goo as the prolonged exposure starts to melt away at your skin, you get the gold.",
+                    option:['Get out'],
+                    optionDesc:['Lose 11 Health'],
+                    link:[-1],
+                },{
+                    desc:"You decide that touching the goo isn't worth it.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Mushrooms',id:57,list:0,
+            pages:[
+                {
+                    desc:"On the ground in front of you are multiple mushrooms you are unable to identify.\n"+
+                    "They're blocking the path, so it's impossible for you to go around the patch.\n"+
+                    "You could just walk over them, but you feel like eating one for some reason...",
+                    option:['Walk through them','Eat one'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"As you step over the mushrooms, the ground begins to shake.\n"+
+                    "Ducks infected by the mushrooms appear from the dirt and attack you.",
+                    option:['Ambushed'],
+                    optionDesc:['Start Fight'],
+                    link:[-1],
+                },{
+                    desc:"You give in to the unnatural desire to eat. As you consume mushroom after mushroom,\n"+
+                    "you feel yourself entering into a daze and pass out. As you awake, you feel very odd.",
+                    option:['Get up'],
+                    optionDesc:['Heal 25 Health, Become Cursed - Parasite'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Mysterious Sphere',id:58,list:0,
+            pages:[
+                {
+                    desc:"A shining sphere juts out of the terrain nearby, objects appearing to float from within it.\n"+
+                    "Just as you are about to break it open, you notice yourself to be surrounded by deactivated automata.",
+                    option:['Smash it','Escape'],
+                    optionDesc:['Gain 3 Relics',''],
+                    link:[1,2],
+                },{
+                    desc:"As soon as you smash the sphere open, the sentries spring up and attack you.",
+                    option:['Fight them'],
+                    optionDesc:['Start Fight'],
+                    link:[-1],
+                },{
+                    desc:"No need to be greedy. The sentries remain in place.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
         
         
@@ -4591,7 +4674,7 @@ types={
                     link:[-1],
                 },
             ],
-        },//fight club, capture, bounty hunter, last guardian, mob doctor?, businessman
+        },//fight club, capture, bounty hunter, last guardian, mob doctor?, businessman, dead management agent, leverage, general zaroff, businesswoman
     ],
 }
 listing={
@@ -4600,7 +4683,7 @@ listing={
 zones=[
     {
         encounters:[[],[],[]],
-        special:[1,4,3,17,18,19,20],
+        special:[1,4,3,17,18,19,20,21,22],
         events:[[],[],[],[],[]],
     },{
         encounters:[[],[],[]],
