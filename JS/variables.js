@@ -4898,10 +4898,10 @@ types={
                 },
             ],
         },{
-            name:'',id:0,list:-1,
+            name:'Debt Squad',id:68,list:-1,
             pages:[
                 {
-                    desc:"",
+                    desc:"The debt collectors have arrived to collect your money.",
                     option:[''],
                     optionDesc:[''],
                     link:[],

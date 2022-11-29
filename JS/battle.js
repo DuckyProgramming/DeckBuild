@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=67
+        this.event=68
     }
     create(){
         this.end=false
@@ -150,6 +150,7 @@ class battle{
                         this.objective[this.objective.length-1][3]=floor(random(1,5))*5
                     break
                 }
+                this.objective.push([1,floor(random(2,9)),2,floor(random(1,7))*5])
             break
             case 1:
                 for(g=0;g<2;g++){
@@ -167,6 +168,7 @@ class battle{
                         break
                     }
                 }
+                this.objective.push([1,floor(random(2,9)),2,floor(random(1,7))*5])
             break
             case 2:
                 this.objective.push([1,10,3,40])
@@ -2981,6 +2983,15 @@ class battle{
                                 this.setupShop(1)
                             }
                         break
+                        case 67:
+                            if(this.page==0&&e==0){
+                                this.currency.main+=100
+                                g=findEvent('Debt Squad')
+                                for(f=0;f<25;f++){
+                                    this.eventList.push(g)
+                                }
+                            }
+                        break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){
                         this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]
@@ -3217,7 +3228,7 @@ class battle{
             transition.scene='map'
             this.map.complete[this.map.position[0]][this.map.position[1]]=1
         }
-        if(pointInsideBox({position:inputs.rel},{position:{x:825,y:300},width:120,height:160})){
+        if(pointInsideBox({position:inputs.rel},{position:{x:825,y:300},width:120,height:160})&&this.context!=1){
             transition.trigger=true
             transition.scene='deck'
             this.setupDeck(6)
