@@ -1054,8 +1054,10 @@ class battle{
                 this.layer.fill(180)
                 this.layer.rect(130,120,240,60,5)
                 this.layer.fill(0)
+                this.layer.textSize(18)
+                this.layer.text(types.potion[this.potions.owned[e]].name,130,105)
                 this.layer.textSize(12)
-                this.layer.text(types.potion[this.potions.owned[e]].desc,130,120)
+                this.layer.text(types.potion[this.potions.owned[e]].desc,130,130)
             }
         }
     }
@@ -2972,6 +2974,13 @@ class battle{
                                 this.setupChoice(0,2,0)
                             }
                         break
+                        case 66:
+                            if(this.page==0&&e==0){
+                                transition.trigger=true
+                                transition.scene='shop'
+                                this.setupShop(1)
+                            }
+                        break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){
                         this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]
@@ -2982,33 +2991,34 @@ class battle{
     }
     setupShop(spec){
         this.shop.cards=[]
-        this.costs.card[0][0]=round(random(40,60))
-        this.costs.card[0][1]=round(random(40,60))
-        this.costs.card[0][2]=round(random(60,80))
-        this.costs.card[0][3]=round(random(60,80))
-        this.costs.card[0][4]=round(random(120,160))
-        this.costs.card[1][0]=round(random(80,100))
-        this.costs.card[1][1]=round(random(160,180))
-        this.costs.relic[0]=round(random(50,70))
-        this.costs.relic[1]=round(random(50,70))
-        this.costs.relic[2]=round(random(100,120))
-        this.costs.relic[3]=round(random(100,120))
-        this.costs.relic[4]=round(random(180,200))
-        this.costs.relic[5]=round(random(90,110))
-        this.costs.sale=floor(random(0,5))
-        if(this.relics.active[109]){
-            for(g=0,lg=this.costs.card.length;g<lg;g++){
-                for(h=0,lh=this.costs.card[g].length;h<lh;h++){
-                    this.costs.card[g][h]=round(this.costs.card[g][h]/2)
-                }
-            }
-            for(g=0,lg=this.costs.relic.length;g<lg;g++){
-                this.costs.relic[g]=round(this.costs.relic[g]/2)
-            }
-        }
-        this.costs.card[0][this.costs.sale]=round(this.costs.card[0][this.costs.sale]/2)
+        this.context=spec
         switch(spec){
             case 0:
+                this.costs.card[0][0]=round(random(40,60))
+                this.costs.card[0][1]=round(random(40,60))
+                this.costs.card[0][2]=round(random(60,80))
+                this.costs.card[0][3]=round(random(60,80))
+                this.costs.card[0][4]=round(random(120,160))
+                this.costs.card[1][0]=round(random(80,100))
+                this.costs.card[1][1]=round(random(160,180))
+                this.costs.relic[0]=round(random(50,70))
+                this.costs.relic[1]=round(random(50,70))
+                this.costs.relic[2]=round(random(100,120))
+                this.costs.relic[3]=round(random(100,120))
+                this.costs.relic[4]=round(random(180,200))
+                this.costs.relic[5]=round(random(90,110))
+                this.costs.sale=floor(random(0,5))
+                if(this.relics.active[109]){
+                    for(g=0,lg=this.costs.card.length;g<lg;g++){
+                        for(h=0,lh=this.costs.card[g].length;h<lh;h++){
+                            this.costs.card[g][h]=round(this.costs.card[g][h]/2)
+                        }
+                    }
+                    for(g=0,lg=this.costs.relic.length;g<lg;g++){
+                        this.costs.relic[g]=round(this.costs.relic[g]/2)
+                    }
+                }
+                this.costs.card[0][this.costs.sale]=round(this.costs.card[0][this.costs.sale]/2)
                 this.calc.list=listing.card[this.player]
                 for(g=0;g<5;g++){
                     if(this.calc.list.length>0){
@@ -3036,6 +3046,26 @@ class battle{
                     }
                 }
             break
+            case 1:
+                this.relics.shop=[]
+                this.calc.list3=this.relics.list
+                for(g=0;g<2;g++){
+                    this.costs.relic[g]=round(random(50,70))
+                    this.costs.relic[2+g]=round(random(50,70))
+                    this.costs.relic[4+g]=round(random(100,120))
+                    this.costs.relic[6+g]=round(random(100,120))
+                    this.costs.relic[8+g]=round(random(180,200))
+                    this.costs.relic[10+g]=round(random(90,110))
+                    }
+                for(g=0;g<12;g++){
+                    if(this.calc.list3.length>0){
+                        h=floor(random(0,this.calc.list3[floor(g/4)+floor(g/10)].length))
+                        this.relics.shop.push(this.calc.list3[floor(g/4)+floor(g/10)][h])
+                        this.relics.size.push(1)
+                        this.calc.list3[floor(g/4)+floor(g/10)].splice(h,1)
+                    }
+                }
+            break
         }
         for(g=0,lg=this.shop.cards.length;g<lg;g++){
             this.shop.cards[g].size=1
@@ -3047,14 +3077,16 @@ class battle{
                 this.shop.cards[e].display(this.deck.cards.length,this.drawAmount,0)
             }
         }
-        this.layer.fill(160,80,80)
-        this.layer.stroke(200,100,100)
-        this.layer.strokeWeight(5)
-        this.layer.rect(825,300,120,160,5)
-        this.layer.noStroke()
-        this.layer.textSize(14)
-        this.layer.fill(0)
-        this.layer.text('Remove\nCard',825,300)
+        if(this.context!=1){
+            this.layer.fill(160,80,80)
+            this.layer.stroke(200,100,100)
+            this.layer.strokeWeight(5)
+            this.layer.rect(825,300,120,160,5)
+            this.layer.noStroke()
+            this.layer.textSize(14)
+            this.layer.fill(0)
+            this.layer.text('Remove\nCard',825,300)
+        }
         this.layer.fill(255,225,0)
         this.layer.ellipse(20,16,16,16)
         this.layer.fill(255,240,0)
@@ -3064,8 +3096,10 @@ class battle{
         this.layer.textAlign(LEFT,CENTER)
         this.layer.text(this.currency.money,30,18)
         this.layer.textAlign(CENTER,CENTER)
-        this.layer.text(this.costs.remove,825,400)
-        for(g=0;g<5;g++){
+        if(this.context!=1){
+            this.layer.text(this.costs.remove,825,400)
+        }
+        for(g=0;g<min(5,this.shop.cards.length);g++){
             if(this.shop.cards[g]!=0){
                 this.layer.fill(255,225,0,this.shop.cards[g].size)
                 this.layer.text(this.costs.card[0][g],this.shop.cards[g].position.x,this.shop.cards[g].position.y+100)
@@ -3074,7 +3108,7 @@ class battle{
                 }
             }
         }
-        for(g=0;g<2;g++){
+        for(g=0;g<min(2,this.shop.cards.length-5);g++){
             if(this.shop.cards[g+5]!=0){
                 this.layer.fill(255,225,0,this.shop.cards[g+5].size)
                 this.layer.text(this.costs.card[1][g],this.shop.cards[g+5].position.x,this.shop.cards[g+5].position.y+100)
@@ -3082,7 +3116,11 @@ class battle{
         }
         for(e=0,le=this.relics.shop.length;e<le;e++){
             this.layer.fill(255,225,0,this.relics.size[e])
-            this.layer.text(this.costs.relic[e],375+(e%3)*150,390+floor(e/3)*100)
+            if(this.context==1){
+                this.layer.text(this.costs.relic[e],225+(e%4)*150,240+floor(e/4)*100)
+            }else{
+                this.layer.text(this.costs.relic[e],375+(e%3)*150,390+floor(e/3)*100)
+            }
         }
         this.layer.noStroke()
         this.layer.fill(160)
@@ -3090,17 +3128,37 @@ class battle{
         this.layer.fill(0)
         this.layer.textSize(20)
         this.layer.text('Exit',850,570)
-        for(e=0,le=this.relics.shop.length;e<le;e++){
-            if(this.relics.size[e]>0){
-                displayRelicSymbol(this.layer,375+(e%3)*150,350+floor(e/3)*100,this.relics.shop[e],0,this.relics.size[e],1,true)
+        if(this.context==1){
+            for(e=0,le=this.relics.shop.length;e<le;e++){
+                if(this.relics.size[e]>0){
+                    displayRelicSymbol(this.layer,225+(e%4)*150,200+floor(e/4)*100,this.relics.shop[e],0,this.relics.size[e],1,true)
+                }
+                if(dist(inputs.rel.x,inputs.rel.y,225+(e%4)*150,200+floor(e/4)*100)<20){
+                    this.layer.noStroke()
+                    this.layer.fill(180)
+                    this.layer.rect(450,550,240,60,5)
+                    this.layer.fill(0)
+                    this.layer.textSize(18)
+                    this.layer.text(types.relic[this.relics.shop[e]].name,450,535)
+                    this.layer.textSize(12)
+                    this.layer.text(types.relic[this.relics.shop[e]].desc,450,560)
+                }
             }
-            if(dist(inputs.rel.x,inputs.rel.y,375+(e%3)*150,350+floor(e/3)*100)<20){
-                this.layer.noStroke()
-                this.layer.fill(180)
-                this.layer.rect(450,550,240,60,5)
-                this.layer.fill(0)
-                this.layer.textSize(12)
-                this.layer.text(types.relic[this.relics.shop[e]].desc,450,550)
+        }else{
+            for(e=0,le=this.relics.shop.length;e<le;e++){
+                if(this.relics.size[e]>0){
+                    displayRelicSymbol(this.layer,375+(e%3)*150,350+floor(e/3)*100,this.relics.shop[e],0,this.relics.size[e],1,true)
+                }
+                if(dist(inputs.rel.x,inputs.rel.y,375+(e%3)*150,350+floor(e/3)*100)<20){
+                    this.layer.noStroke()
+                    this.layer.fill(180)
+                    this.layer.rect(450,550,240,60,5)
+                    this.layer.fill(0)
+                    this.layer.textSize(18)
+                    this.layer.text(types.relic[this.relics.shop[e]].name,450,535)
+                    this.layer.textSize(12)
+                    this.layer.text(types.relic[this.relics.shop[e]].desc,450,560)
+                }
             }
         }
     }
@@ -3175,7 +3233,7 @@ class battle{
             }
         }
         for(e=0,le=this.relics.shop.length;e<le;e++){
-            if(dist(inputs.rel.x,inputs.rel.y,375+(e%3)*150,350+floor(e/3)*100)<20&&this.relics.size[e]>=1&&this.currency.money>=this.costs.relic[e]){
+            if((dist(inputs.rel.x,inputs.rel.y,375+(e%3)*150,350+floor(e/3)*100)<20&&this.context!=1||dist(inputs.rel.x,inputs.rel.y,225+(e%4)*150,200+floor(e/4)*100)<20&&this.context==1)&&this.relics.size[e]>=1&&this.currency.money>=this.costs.relic[e]){
                 this.getRelic(this.relics.shop[e])
                 this.currency.money-=this.costs.relic[e]
                 this.relics.size[e]=0.9

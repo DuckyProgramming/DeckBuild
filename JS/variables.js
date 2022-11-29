@@ -4858,6 +4858,21 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'Antiquarian',id:66,list:0,
+            pages:[
+                {
+                    desc:"Inside a shop, you see rows upon rows of artifacts.",
+                    option:['Buy something','Get out'],
+                    optionDesc:['',''],
+                    link:[-1,1],
+                },{
+                    desc:"",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
         
         
@@ -4901,7 +4916,7 @@ types={
                     link:[],
                 },
             ],
-        },//fight club, capture, last guardian, businessman, leverage, businesswoman, btb, creation symbol
+        },//fight club, capture, last guardian, businessman, leverage, btb, creation symbol
     ],
 }
 listing={
