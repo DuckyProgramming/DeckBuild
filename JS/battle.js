@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=65
+        this.event=66
     }
     create(){
         this.end=false
@@ -2962,6 +2962,14 @@ class battle{
                         case 64:
                             if(this.page==1&&e==0){
                                 this.deck.add(findCard('Philosophy'),0,0)
+                            }
+                        break
+                        case 65:
+                            if(this.page==1&&e==0){
+                                this.deck.add(findCard('Anxiety'),0,stage.playerNumber+2)
+                            }else if(this.page==2&&e==0){
+                                transition.scene='choice'
+                                this.setupChoice(0,2,0)
                             }
                         break
                     }

@@ -59,6 +59,7 @@ class card{
             case -18: this.desc+='All Cards\nCost 1 More'; break
             case -19: this.desc+='When Drawn,\nAttacks Deal\n2 Less Damage'; break
             case -20: this.desc+='Take 1 Damage\nWhen You Damage\nan Enemy'; break
+            case -21: this.desc+='At End of Turn,\nTake '+this.damage+' Damage\nIncreases by 1'; break
             case 1: this.desc+='Deal '+this.damage+'\nDamage'; break
             case 2: this.desc+='Add '+this.damage+'\nBlock'; break
             case 3: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times'; break

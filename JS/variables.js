@@ -2279,6 +2279,11 @@ types={
             {damage:0,alt:0,cost:0,attack:-1,target:0,spec:6,class:-2},
             {damage:0,alt:0,cost:0,attack:-1,target:0,spec:6,class:-2},
         ],
+        },{name:'Anxiety',rarity:-1,list:10,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:-21,target:0,spec:1,class:-2},
+            {damage:1,alt:0,cost:0,attack:-21,target:0,spec:1,class:-2},
+        ],
         },
         
         
@@ -4821,6 +4826,38 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'The Messenger',id:65,list:4,
+            pages:[
+                {
+                    desc:"A SCT Transport lands near you, fighters circling above, preventing you from escaping.\n"+
+                    "But instead of shooting you, they land nearby, stand their positions, but allow you to stand there waiting.\n"+
+                    "A woman, appearing to be a high-ranking bureaucratic officer, leaves the transport and approaches you.\n"+
+                    '"'+"MPCO-SKR, I have a message. I'll be honest with you, they gave me orders with an exact script for this conversation.\n"+
+                    "But really, I want to tell you something else. They're coming after you, and there's nothing you can do to stop it.\n"+
+                    "If I were you, I would get out now. Because when the Dreadnoughts arrive, the Manager will stop at nothing to get you,\n"+
+                    "bringing back to the lab. Good luck. Anything I said, is just between us. Understood?"+'"\n'+
+                    "You nod in reply as she hands you a piece of paper and leaves.",
+                    option:['Read it','Rip it up'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"Opening the folded paper, you see a Management order list describing upcoming events.\n"+
+                    "The invasion is occuring prematurely, and everything has been planned out. The remaining rebels will be rooted out.\n"+
+                    "Multiple encirclements will be undertaken in the first day, at the same time as high-value targets are eliminated.\n"+
+                    "And of course, one of those "+'"'+"high-value targets"+'"'+" is you.",
+                    option:['Not good'],
+                    optionDesc:['Become Cursed - Anxiety'],
+                    link:[-1],
+                },{
+                    desc:"You keep the paper closed, and in a violent outburst, rip it into hundreds of pieces.\n"+
+                    "The Management took everything from you, and yet they want to give you directions?\n"+
+                    "You go on. If they go after you, you'll be ready for them.",
+                    option:['Leave'],
+                    optionDesc:['Gain 1 Card'],
+                    link:[-1],
+                },
+            ],
         },
         
         
@@ -4854,7 +4891,17 @@ types={
                     link:[-1],
                 },
             ],
-        },//fight club, capture, last guardian, businessman, leverage, businesswoman, btb
+        },{
+            name:'',id:0,list:-1,
+            pages:[
+                {
+                    desc:'"'+""+'"',
+                    option:[''],
+                    optionDesc:[''],
+                    link:[],
+                },
+            ],
+        },//fight club, capture, last guardian, businessman, leverage, businesswoman, btb, creation symbol
     ],
 }
 listing={
