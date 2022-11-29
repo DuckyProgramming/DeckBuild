@@ -2373,6 +2373,8 @@ types={
         {name:'Slaver',alt:'',life:46,height:75,behavior:0,attacks:[1,17],damage:[12,7],altAttack:[0,1],class:0,buff:0},
         {name:'Fungal Duck',alt:'',life:26,height:66,behavior:0,attacks:[1,19],damage:[6,2],altAttack:[0,0],class:0,buff:0},
         {name:'Orb Walker',alt:'',life:90,height:60,behavior:0,attacks:[1,20],damage:[15,10],altAttack:[0,1],class:1,buff:8},
+        {name:'Pointy',alt:'',life:30,height:66,behavior:0,attacks:[3],damage:[5],altAttack:[2],class:0,buff:0},
+        {name:'Romeo',alt:'',life:40,height:75,behavior:1,attacks:[1,17,21],damage:[15,10,0],altAttack:[0,2,0],class:0,buff:0},//30
     ],attack:[
         {class:0},//0
         {class:0},
@@ -2395,6 +2397,7 @@ types={
         {class:1},
         {class:1},
         {class:0},//20
+        {class:1},
     ],encounter:[
         {//0
             combatants:[0,0,0,0,0,0],
@@ -2510,6 +2513,11 @@ types={
             combatants:[28,28,0,0,0,0],
             reinforce:[],
             threshold:2,class:-1,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[29,30,0,0,0,0],
+            reinforce:[],
+            threshold:3,class:-1,zone:0,
             objective:[[0,0,0,0]],
         },
     ],relic:[
@@ -4641,6 +4649,30 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'This is a Robbery',id:59,list:0,
+            pages:[
+                {
+                    desc:"A man jumps at you from behind a tree and attempts to hold you at knifepoint, but you spot him and jump back.\n"+
+                    "Ignoring the miss, he holds the knife and threatens you, preparing for a possible battle.\n"+
+                    '"'+"If you want to pass, you'll have to pay up. All your money will do!"+'"',
+                    option:['Resist','Pay Up'],
+                    optionDesc:['','Lose All Currency'],
+                    link:[1,2],
+                },{
+                    desc:"You raise your weapon in defiance. He follows suit.\n"+
+                    "Before you can strike first, his friend appears from behind the tree and attacks you.",
+                    option:['Battle him'],
+                    optionDesc:['Start Fight'],
+                    link:[-1],
+                },{
+                    desc:"You hand over your money. He laughs and runs off."+
+                    '"'+"What a loser, haha!"+'"',
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
         
         
@@ -4683,7 +4715,7 @@ listing={
 zones=[
     {
         encounters:[[],[],[]],
-        special:[1,4,3,17,18,19,20,21,22],
+        special:[1,4,3,17,18,19,20,21,22,23],
         events:[[],[],[],[],[]],
     },{
         encounters:[[],[],[]],
@@ -4691,7 +4723,7 @@ zones=[
         events:[[],[],[],[],[]],
     },
 ]
-stage={scale:0,quality:1,scene:'menu',playerNumber:4,identifier:''}
+stage={scale:0,quality:1,scene:'menu',playerNumber:4,identifier:['']}
 graphics={main:0,minor:[],symbol:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}

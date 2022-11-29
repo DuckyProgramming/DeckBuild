@@ -71,6 +71,7 @@ class combatant{
         this.fade=0
 		this.lastPlay=-1
 		this.uniqueDisplay=[]
+		this.setupIntent(-1)
     }
 	resetUnique(){
 		this.block=0
@@ -1275,6 +1276,51 @@ class combatant{
 					this.layer.fill(130,110,75,this.fade)
 					this.layer.quad(0,-27,-24,-30,0,-33,24,-30)
 					this.layer.quad(0,-6,-3,-30,0,-54,3,-30)
+				break
+				case 29:
+					this.layer.stroke(200,this.fade)
+					this.layer.strokeWeight(2)
+					this.layer.line(-15,-21,-18,-14)
+					this.layer.line(15,-21,18,-14)
+					this.layer.stroke(50,150,200,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.stroke(200,50,50,this.fade)
+					this.layer.line(-6,-42,-15,-21)
+					this.layer.line(6,-42,15,-21)
+					this.layer.noStroke()
+					this.layer.fill(50,150,200,this.fade)
+					this.layer.ellipse(0,-42,18,30)
+					this.layer.fill(200,50,50,this.fade)
+					this.layer.arc(0,-39,19,36,-180,0)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-66,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-63,4,4)
+					this.layer.ellipse(12,-63,4,4)
+				break
+				case 30:
+					this.layer.stroke(100,this.fade)
+					this.layer.strokeWeight(3)
+					this.layer.line(15,-24,21,-10)
+					this.layer.stroke(50,150,200,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.stroke(200,50,50,this.fade)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(50,150,200,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(200,50,50,this.fade)
+					this.layer.arc(0,-42,19,42,-180,0)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,4,4)
+					this.layer.ellipse(12,-72,4,4)
 				break
 				case 100:
 					this.layer.stroke(80,this.fade)

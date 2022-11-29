@@ -197,6 +197,9 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 			layer.textSize(16)
 			layer.text(damage+'|'+alt,0,1)
 		break
+		case 21:
+			layer.text('x',0,-2)
+		break
 	}
 	layer.scale(1/size)
 	layer.translate(-x,-y)

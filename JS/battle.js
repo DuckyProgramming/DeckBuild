@@ -38,7 +38,7 @@ class battle{
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
         this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0}
         this.defaultRandom={attacked:0,orbs:0,shields:0}
-        stage.identifier=types.combatant[this.player].identifiers[0]
+        stage.identifier=types.combatant[this.player].identifiers
     }
     setupTesting(type){
         this.initialEvent()
@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=58
+        this.event=60
     }
     create(){
         this.end=false
@@ -2259,7 +2259,7 @@ class battle{
         if(types.event[this.event].id==47&&this.page==0){
             types.event[this.event].pages[this.page].desc="You notice a group of hooded figures on the street, performing an unknown ritual.\n"+
             "As you approach, they turn to you in unison. The largest smiles and extends a hand toward you.\n"+
-            '"'+"Join us, "+stage.identifier+", and feel our power."+'"'
+            '"'+"Join us, "+stage.identifier[0]+", and feel our power."+'"'
         }else if(types.event[this.event].id==49&&(this.page==1||this.page==2)){
             types.event[this.event].pages[this.page].desc='You feel a memory from within the stone...\n\n'
             switch(this.remember[1]){
@@ -2347,7 +2347,7 @@ class battle{
                             }else if(this.page==1&&e==0){
                                 this.setupChoice(0,0,1)
                                 transition.scene='choice'
-                            }else if(this.page==2&&e==0){
+                            }else if(this.page==2&&e==0&&this.currency.money>0){
                                 this.currency.money=0
                             }
                         break
@@ -2902,6 +2902,15 @@ class battle{
                                 }
                             }else if(this.page==1&&e==0){
                                 setupEncounter(current,zones[0].special[8])
+                                this.create()
+                                transition.scene='battle'
+                            }
+                        break
+                        case 59:
+                            if(this.page==0&&e==1&&this.currency.money>0){
+                                this.currency.money=0
+                            }else if(this.page==1&&e==0){
+                                setupEncounter(current,zones[0].special[9])
                                 this.create()
                                 transition.scene='battle'
                             }
