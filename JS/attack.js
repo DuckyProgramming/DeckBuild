@@ -1968,6 +1968,13 @@ class attack{
                         this.battle.hand.cards[g].base.cost=0
                     }
                 break
+                case 398:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.combatants[0].load(6,0)
+                    }
+                    this.battle.combatants[0].boost.main[1]--
+                    this.battle.combatants[0].boost.main[2]--
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
@@ -1993,6 +2000,9 @@ class attack{
                 case 5:
                     this.battle.drop.addDrop(findCard('Burn'),0,stage.playerNumber+1)
                     this.battle.reserve.addShuffle(findCard('Burn'),0,stage.playerNumber+1)
+                    for(let g=0;g<this.damage-1;g++){
+                        this.attacks.push([8+g*8,20,0,'Burn'])
+                    }
                 break
                 case 6:
                     this.battle.combatants[0].take(this.damage,this.user)

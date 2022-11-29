@@ -2206,6 +2206,11 @@ types={
             {damage:0,alt:0,cost:1,attack:397,target:0,spec:3,class:2},
             {damage:0,alt:0,cost:0,attack:397,target:0,spec:3,class:2},
         ],
+        },{name:'Philosophy',rarity:-3,list:0,
+        stats:[
+            {damage:2,alt:1,cost:0,attack:398,target:0,spec:8,class:2},
+            {damage:2,alt:1,cost:0,attack:398,target:0,spec:8,class:2},
+        ],
         },
         
         
@@ -2375,6 +2380,7 @@ types={
         {name:'Orb Walker',alt:'',life:90,height:60,behavior:0,attacks:[1,20],damage:[15,10],altAttack:[0,1],class:1,buff:8},
         {name:'Pointy',alt:'',life:30,height:66,behavior:0,attacks:[3],damage:[5],altAttack:[2],class:0,buff:0},
         {name:'Romeo',alt:'',life:40,height:75,behavior:1,attacks:[1,17,21],damage:[15,10,0],altAttack:[0,2,0],class:0,buff:0},//30
+        {name:'Gas Man',alt:'',life:85,height:80,behavior:1,attacks:[1,3,5],damage:[15,3,4],altAttack:[0,6,0],class:1,buff:0},
     ],attack:[
         {class:0},//0
         {class:0},
@@ -2499,7 +2505,7 @@ types={
             reinforce:[24],
             threshold:3,class:-1,zone:0,
             objective:[[0,0,0,0]],
-        },{
+        },{//20
             combatants:[26,0,0,0,0,0],
             reinforce:[],
             threshold:2,class:-1,zone:0,
@@ -2518,6 +2524,11 @@ types={
             combatants:[29,30,0,0,0,0],
             reinforce:[],
             threshold:3,class:-1,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[31,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:-1,zone:0,
             objective:[[0,0,0,0]],
         },
     ],relic:[
@@ -3244,10 +3255,10 @@ types={
                 },
             ],
         },{
-            name:'Unstable Building',id:4,list:1,
+            name:'Unstable Building',id:4,list:0,
             pages:[
                 {
-                    desc:"You enter a building, looking for a piece of intel. But as soon as you step inside,\n"+
+                    desc:"You enter a building, looking for a something of value. But as soon as you step inside,\n"+
                     "the walls start shaking. You don't have much time, as the building will collapse any minute,\n"+
                     "but there's still enough to grab something before you leave.",
                     option:['Grab the briefcase','Grab the medical kit'],
@@ -4673,6 +4684,143 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'Bounty Hunter',id:60,list:2,
+            pages:[
+                {
+                    desc:"As the flames circle around you, you realize that this is a familiar situation. This has happened before.\n"+
+                    "On your excursion to Orofos, this same bounty hunter appeared to assault you. And he's back now.\n"+
+                    "The flames disappear as he descends to the ground, and you find yourself staring down the barrel of a gun.\n"+
+                    "But you're faster than he remembers, and he isn't table to land his shot.",
+                    option:['Prepare to fight','Run away'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"He dodges out of the way and begins to attack you.",
+                    option:['Fight him'],
+                    optionDesc:['Start Fight'],
+                    link:[-1],
+                },{
+                    desc:"You're faster than he remembers. Much faster. He hasn't even turned around before you're gone.\n"+
+                    "To be fair, you wouldn't want a repeat of what happened the last time you two met.",
+                    option:['Escape'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Dangerous Game',id:61,list:0,
+            pages:[
+                {
+                    desc:"You are rudely awakened by hear gunshots from a nearby forest, along with two men talking to each other..\n"+
+                    "Taking a look, you spot a hunter and his companion hunting... something. You can't really see what it is from where you are.\n"+
+                    "It at least isn't you, is it?",
+                    option:['Join in the Game','Watch the Game','Go back to sleep'],
+                    optionDesc:['','',''],
+                    link:[1,2,3],
+                },{
+                    desc:"The hunters are preoccupied, enough that they don't notice you following them.\n"+
+                    "But before you get a chance to the strike, they call it quits and leave for the town.",
+                    option:['Leave'],
+                    optionDesc:['Upgrade 1 Card'],
+                    link:[-1],
+                },{
+                    desc:"The hunters fail to catch their prey, but they're much more skilled than you initially believed.\n"+
+                    "You could take this to be a learning experience, or more, but this is a dangerous game they're playing.",
+                    option:['Leave'],
+                    optionDesc:['Gain 1 Card'],
+                    link:[-1],
+                },{
+                    desc:"You get fairly good, albeit short rest. The hunters are gone by the time you wake up.",
+                    option:['Continue'],
+                    optionDesc:['Heal 5 Health'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Mob Doctor',id:62,list:1,
+            pages:[
+                {
+                    desc:"You visit a doctor, expecting normal business, only to find that things look a little...off.\n"+
+                    "Upon further inspection, it becomes clear that this doctor is affiliated with the mob in some way.\n"+
+                    "That's good enough evidence to turn him in, but you still need his services. With the leverage you have,\n"+
+                    "he won't need much convincing to give you a discount.",
+                    option:['Treatment','Bioengineering','Arrest him'],
+                    optionDesc:['Lose 25 Currency','Lose 25 Currency',''],
+                    link:[1,2,3],
+                },{
+                    desc:"Despite working for the mob, the doctor knows his stuff.",
+                    option:['Done'],
+                    optionDesc:['Heal 15 Health'],
+                    link:[-1],
+                },{
+                    desc:"The operation is quite advanced, but the doctor sticks by his word and finishes the job.",
+                    option:['Done'],
+                    optionDesc:['Gain 4 Max Health'],
+                    link:[-1],
+                },{
+                    desc:"You don't want to risk treatment from this doctor, so you bring him in for interrogation.\n"+
+                    "Despite this, he's considered a low value target, so the reward for the catch is rather low.",
+                    option:['Get the Reward'],
+                    optionDesc:['Gain 10 Currency'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Dead Soldier',id:63,list:2,
+            pages:[
+                {
+                    desc:"You notice the body of a Management soldier on the ground, holding the apparent rank of Corporal.\n"+
+                    "Unlike most soldiers, he has a name tag, reading CPL. Ray Earle. But the main item on his body is has pack.\n"+
+                    "But as you prepare to take his possessions, you realize that you've seen this trap before.\n"+
+                    "The Management is known for using its soldiers long past their lifetimes...",
+                    option:['Steal from him','Leave him alone'],
+                    optionDesc:['',''],
+                    link:[1,3],
+                },{
+                    desc:"You carefully pick through his possessions, only to realize that he probably died of natural causes.\n"+
+                    "Finding not a single trap on his body, you take everything you can find of value.",
+                    option:['Take stuff'],
+                    optionDesc:['Gain 1 Relic, Gain 45 Currency'],
+                    link:[-1],
+                },{
+                    desc:"Hearing a beep, you are unable to escape before the explosion hits.\n"+
+                    "The Management can't help itself from using underhanded tactics.",
+                    option:['Ouch'],
+                    optionDesc:['Lose 25 Health'],
+                    link:[-1],
+                },{
+                    desc:"You leave his body where it is and continue on your path.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Philosopher'+"'"+'s Crystal',id:64,list:3,
+            pages:[
+                {
+                    desc:"You find a glowing crystal, inside which you can see pure knowledge.\n"+
+                    "But as you pick it up, you realize that there's more than just intelligence within.\n"+
+                    "You could feel the energy from this even a distance away, so maybe the power spreads.\n"+
+                    "Whatever it is, though, you can control it.",
+                    option:['Take it','Smash it'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"The knowledge within quickly spreads down your arm and into your brain.\n"+
+                    "You'll be able to control this power eventually.",
+                    option:['Too smart'],
+                    optionDesc:['Gain 1 Philosophy'],
+                    link:[-1],
+                },{
+                    desc:"It contains too much power for anybody to handle.\n"+
+                    "You smash it before anybody else can abuse its power.",
+                    option:['Done'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
         
         
@@ -4706,7 +4854,7 @@ types={
                     link:[-1],
                 },
             ],
-        },//fight club, capture, bounty hunter, last guardian, mob doctor?, businessman, dead management agent, leverage, general zaroff, businesswoman
+        },//fight club, capture, last guardian, businessman, leverage, businesswoman, btb
     ],
 }
 listing={
@@ -4715,7 +4863,7 @@ listing={
 zones=[
     {
         encounters:[[],[],[]],
-        special:[1,4,3,17,18,19,20,21,22,23],
+        special:[1,4,3,17,18,19,20,21,22,23,24],
         events:[[],[],[],[],[]],
     },{
         encounters:[[],[],[]],
