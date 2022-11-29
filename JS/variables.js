@@ -4583,7 +4583,7 @@ types={
                     link:[4,5],
                 },{
                     desc:"You raise your weapon and stab him in one massive strike.\n"+
-                    "He doesn't fight back and acceps his fate.",
+                    "He doesn't fight back and accepts his fate.",
                     option:['Done'],
                     optionDesc:['Gain 1 Random Card'],
                     link:[-1],
@@ -4862,15 +4862,49 @@ types={
             name:'Antiquarian',id:66,list:0,
             pages:[
                 {
-                    desc:"Inside a shop, you see rows upon rows of artifacts.",
+                    desc:"Inside a shop, you see rows upon rows of artifacts. The owner, tinkering with something in the back, turns to face you.\n"+
+                    '"'+"Come on in and buy something, I've got plenty of products here!"+'"\n',
                     option:['Buy something','Get out'],
                     optionDesc:['',''],
                     link:[-1,1],
                 },{
-                    desc:"",
+                    desc:"This shop owner isn't a good person, so you get out before anything can happen.",
                     option:['Exit'],
                     optionDesc:[''],
                     link:[-1],
+                },
+            ],
+        },{
+            name:'Loan Shark',id:67,list:0,
+            pages:[
+                {
+                    desc:"You enter a small shop by the side of the road, labeled "+'"'+"Bank"+'"'+", but it's obviously not a normal bank.\n"+
+                    "The proprietor quickly adresses you and asks how much money you would like to take out.\n"+
+                    "This sounds like some sort of scam, but there's lots of money on offer.\n"+
+                    "Besides, you don't have to pay him back, do you?",
+                    option:['Take a loan','Don'+"'"+'t'],
+                    optionDesc:['Gain 100 currency',''],
+                    link:[1,2],
+                },{
+                    desc:"You question if this decision will have reprecussions, but you can't turn down free money.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"You wouldn't want to risk the wrath of debt collectors.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'',id:0,list:-1,
+            pages:[
+                {
+                    desc:"",
+                    option:[''],
+                    optionDesc:[''],
+                    link:[],
                 },
             ],
         },

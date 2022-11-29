@@ -432,7 +432,7 @@ class card{
             case 370: this.desc+='Evoke 1st Charge\nKeep that Charge'; break
             case 371: if(this.alt>0){this.desc+='Hold '+this.damage+'\nExplosive Charge\nEvoke It'}else{this.desc+='Hold '+this.damage+'\nBasic Charge\nEvoke It'}; break
             case 372: this.desc+='Hold '+this.damage+'\nBasic Charges\nEvoke 1st Charge'; break
-            case 373: this.desc+='Deal '+this.damage+' Damage\nDraw '+this.alt+' Card\nDiscard if Cost\nis not 0'; break
+            case 373: this.desc+='Deal '+this.damage+' Damage\nDraw '+this.alt+' Card\nDiscard if Cost\nis Not 0'; break
             case 374: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Frail'; break
             case 375: this.desc+='Add '+this.damage+' Block\nApply '+this.alt+' Lock-On'; break
             case 376: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+' All\nHold 1 Flame\nCharge'; break

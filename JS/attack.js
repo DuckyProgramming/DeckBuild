@@ -2065,8 +2065,10 @@ class attack{
                     this.battle.combatants[0].boost.main[0]-=this.alt
                 break
                 case 18:
-                    for(g=1,lg=this.battle.combatants.length;g<lg;g++){
-                        this.battle.combatants[g].life=min(this.battle.combatants[g].life+this.damage,this.battle.combatants[g].base.life)
+                    for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].team==1&&this.battle.combatants[g].life>0){
+                            this.battle.combatants[g].life=min(this.battle.combatants[g].life+this.damage,this.battle.combatants[g].base.life)
+                        }
                     }
                 break
                 case 19:

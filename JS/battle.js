@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=66
+        this.event=67
     }
     create(){
         this.end=false
@@ -705,7 +705,7 @@ class battle{
         if(this.relics.active[88]&&this.counter.turn==6){
             for(e=0,le=this.combatants.length;e<le;e++){
                 if(this.combatants[e].team==1){
-                    this.combatants[e].take(52,0)
+                    this.combatants[e].take(52,-1)
                 }
             }
         }
@@ -735,7 +735,7 @@ class battle{
         if(this.relics.active[50]){
             for(e=0,le=this.combatants.length;e<le;e++){
                 if(this.combatants[e].team==1){
-                    this.combatants[e].take(3,0)
+                    this.combatants[e].take(3,-1)
                 }
             }
         }
@@ -885,7 +885,7 @@ class battle{
             if(this.random.skills%3==0&&this.relics.active[48]){
                 for(g=0,lg=this.combatants.length;g<lg;g++){
                     if(this.combatants[g].team==1){
-                        this.combatants[g].take(5,0)
+                        this.combatants[g].take(5,-1)
                     }
                 }
             }
