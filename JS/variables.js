@@ -2357,8 +2357,8 @@ types={
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},//0
         {name:'Agent',alt:'',life:80,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MPKF-8589869056','George']},
         {name:'Duelist',alt:'',life:70,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','Princess','Setsuna']},
-        {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MAEP-65091','Azis']},
-        {name:'Creation',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','MPCO-SKR','Sakura']},
+        {name:'Executor',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MAEP-65091','Azis']},
+        {name:'Creation',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','MPCO-SKR','Sakura']},
         {name:'Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[4,2,3],altAttack:[0,3,0],class:0,buff:0},
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
@@ -3039,6 +3039,9 @@ types={
         },{
             name:'Bottled Flame',id:160,rarity:-1,list:3,
             desc:'At the Start of Combat,\nCharge 1 Flame Charge',
+        },{
+            name:'Bottled Ice',id:161,rarity:-1,list:3,
+            desc:'At the Start of Combat,\nCharge 1 Ice Charge',
         },/*{
             name:'', d:15,rarity:4,list:0,
             desc:'',
@@ -5128,6 +5131,29 @@ types={
             ],
         },{
             name:'Permafrost',id:77,list:3,
+            pages:[
+                {
+                    desc:"The strange occurences here never do stop, do they? In the middle of a cave, you find what appears to be an ice shrine.\n"+
+                    "It's much too old for any of the items stored inside to have value except for a single shard of ice.\n"+
+                    "It hasn't melted for thousands of years, and feels extremely cold to the touch. Probably a power source.\n"+
+                    "You try to take it, but as soon as you touch it, the frost spreads down your hand, freezing it.",
+                    option:['Pull your hand away','Leave it'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"You pull you hand away and suffer only a small injury.",
+                    option:['Leave'],
+                    optionDesc:['Lose 3 Health'],
+                    link:[-1],
+                },{
+                    desc:"It freezes onto your hand and remains with you for the foreseeable future.",
+                    option:['Leave'],
+                    optionDesc:['Lose 12 Health, Gain 1 Relic'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Floating Balls',id:78,list:3,
             pages:[
                 {
                     desc:"",

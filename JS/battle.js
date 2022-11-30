@@ -132,7 +132,7 @@ class battle{
     draftDeck(){
         transition.scene='choice'
         this.setupChoice(0,0,0)
-        this.context=2
+        this.context=3
     }
     bonusObjective(spec){
         switch(spec){
@@ -264,6 +264,9 @@ class battle{
         }
         if(this.relics.active[160]){
             this.combatants[0].load(7)
+        }
+        if(this.relics.active[161]){
+            this.combatants[0].load(8)
         }
         if(this.relics.active[104]){
             this.combatants[0].status.main[36]++
@@ -1864,11 +1867,11 @@ class battle{
             for(f=0;f<min(5,8-abs(7-e));f++){
                 if(e==this.map.main.length-1){
                     this.map.main[e].push(5)
-                }else if(floor(random(0,5))<2||e<2){
+                }else if(floor(random(0,3))==0||e<2){
                     this.map.main[e].push(0)
-                }else if(floor(random(0,3))==0){
-                    this.map.main[e].push(1)
                 }else if(floor(random(0,4))==0){
+                    this.map.main[e].push(1)
+                }else if(floor(random(0,3))==0){
                     this.map.main[e].push(2)
                 }else if(floor(random(0,2))==0){
                     this.map.main[e].push(3)
@@ -3112,6 +3115,14 @@ class battle{
                         case 76:
                             if(this.page==1&&e==0){
                                 this.getRelic(findRelic('Bottled Flame'))
+                            }
+                        break
+                        case 77:
+                            if(this.page==1&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-12)
+                                this.getRelic(findRelic('Bottled Ice'))
                             }
                         break
                     }

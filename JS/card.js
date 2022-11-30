@@ -184,7 +184,7 @@ class card{
             case 121: this.desc+='When Drawn,\nAdd 2 Miracles to\nHand and Exhaust'; break
             case 122: this.desc+='Gain '+this.damage+' Faith\nat the Start\nof Your Turn'; break
             case 123: this.desc+='Draw to '+this.damage+'\nCards'; break
-            case 124: this.desc+='Deal Damage\nEqual to Number of\nCards in Deck\n('+handSize+')'; break
+            case 124: this.desc+='Gain Block\nEqual to Number of\nCards in Deck\n('+handSize+')'; break
             case 125: this.desc+='Add '+this.damage+' Block\nAdd '+this.alt+' Shivs\nto Your Hand'; break
             case 126: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\n'+this.alt+' Times'; break
             case 127: this.desc+='Deal '+this.damage+' Damage\nDraw 1 Card\nDiscard 1\nRandom Card'; break

@@ -79,6 +79,7 @@ function displayAmmo(layer,x,y,type,detail,fade){
 			regPoly(layer,0,0,6,6,0)
 		break
 		case 7:
+			layer.noFill()
 			layer.stroke(150,0,0,fade)
 			layer.strokeWeight(2)
 			layer.beginShape()
@@ -89,6 +90,12 @@ function displayAmmo(layer,x,y,type,detail,fade){
 			layer.vertex(2,2)
 			layer.vertex(6,-4)
 			layer.endShape(CLOSE)
+		break
+		case 8:
+			layer.noFill()
+			layer.stroke(155,255,255,fade)
+			layer.strokeWeight(2)
+			layer.rect(0,0,7,7)
 		break
 	}
 	layer.translate(-x,-y)
@@ -1276,6 +1283,10 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.text('1',10,1)
 			layer.image(graphics.symbol[44],-15,-10,20,20)
 		break
+		case 161:
+			layer.text('1',10,1)
+			layer.image(graphics.symbol[45],-15,-10,20,20)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)
@@ -1518,4 +1529,5 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 42-DarkCharge
 43-EnergyCharge
 44-FlameCharge
+45-IceCharge
 */

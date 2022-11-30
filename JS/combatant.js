@@ -1671,6 +1671,9 @@ class combatant{
 					}
 				}
 			break
+			case 8:
+				this.block+=20*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))
+			break
 			case -2:
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
@@ -1744,6 +1747,9 @@ class combatant{
 					}
 				}
 			break
+			case 8:
+				this.block+=6*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))
+			break
 		}
 	}
 	autoEvoke(){
@@ -1762,6 +1768,9 @@ class combatant{
 					this.battle.drop.addDrop(findCard('Burn'),0,0)
 					this.battle.drop.cards[this.battle.drop.cards.length-1].position.y-=g*100
                     this.battle.reserve.addShuffle(findCard('Burn'),0,0)
+				break
+				case 8:
+					this.battle.combatants[0].block+=4*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))
 				break
 			}
 		}

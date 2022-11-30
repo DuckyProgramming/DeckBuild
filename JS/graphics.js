@@ -446,4 +446,9 @@ function setupGraphics(){
 	graphics.symbol[44].vertex(10,10)
 	graphics.symbol[44].vertex(30,-20)
 	graphics.symbol[44].endShape(CLOSE)
+	graphics.symbol[45].strokeWeight(5)
+	graphics.symbol[45].stroke(0)
+	graphics.symbol[45].noFill()
+	graphics.symbol[45].ellipse(0,0,80,80)
+	graphics.symbol[45].rect(0,0,42,42)
 }
