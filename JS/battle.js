@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=68
+        this.event=71
     }
     create(){
         this.end=false
@@ -553,6 +553,11 @@ class battle{
                 this.potions.owned[g]=type
                 break
             }
+        }
+    }
+    loseRelic(){
+        if(this.relics.owned.length>0){
+            this.relics.active[this.relics.owned[floor(random(0,this.relics.owned.length))]]=false
         }
     }
     return(){
@@ -2240,6 +2245,15 @@ class battle{
         for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
             this.layer.rect(450,350+e*60,200,50,5)
         }
+        this.layer.fill(255,225,0)
+        this.layer.ellipse(20,16,16,16)
+        this.layer.fill(255,240,0)
+        this.layer.ellipse(20,16,10,10)
+        this.layer.fill(255,225,0)
+        this.layer.textSize(16)
+        this.layer.textAlign(LEFT,CENTER)
+        this.layer.text(this.currency.money,30,18)
+        this.layer.textAlign(CENTER,CENTER)
         this.layer.fill(255)
         this.layer.textSize(45)
         this.layer.text(types.event[this.event].name,450,50)
@@ -2421,12 +2435,12 @@ class battle{
                                 this.create()
                                 transition.scene='battle'
                             }else if(this.page==1&&e==0){
-                                this.relics.active[this.relics.owned[floor(random(0,this.relics.owned.length))]]=false
+                                this.loseRelic()
                             }
                         break
                         case 13:
                             if(this.page==1&&e==0){
-                                this.relics.active[this.relics.owned[floor(random(0,this.relics.owned.length))]]=false
+                                this.loseRelic()
                             }else if(this.page==2&&e==0){
                                 this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
                                 this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
@@ -2990,6 +3004,44 @@ class battle{
                                 for(f=0;f<25;f++){
                                     this.eventList.push(g)
                                 }
+                            }
+                        break
+                        case 68:
+                            if((this.page==0||this.page==1)&&e==0){
+                                setupEncounter(current,zones[0].special[11])
+                                this.create()
+                                transition.scene='battle'
+                            }else if(this.page==0&&e==1&&this.currency.money>0){
+                                this.currency.money=0
+                            }else if(this.page==1&&e==1){
+                                transition.trigger=false
+                            }
+                        break
+                        case 69:
+                            if(this.page==1&&e==0){
+                                setupEncounter(current,zones[0].special[12])
+                                this.create()
+                                transition.scene='battle'
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].base.life-=3
+                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                            }
+                        break
+                        case 70:
+                            if(this.page==1&&e==0){
+                                this.loseRelic()
+                                if(this.currency.money>0){
+                                    this.currency.money=0
+                                }
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].base.life-=9
+                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                            }else if(this.page==3&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-27)
+                            }else if(this.page==4&&e==0){
+                                setupEncounter(current,zones[0].special[13])
+                                this.create()
+                                transition.scene='battle'
                             }
                         break
                     }

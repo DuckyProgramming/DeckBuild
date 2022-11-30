@@ -863,8 +863,8 @@ types={
         ],
         },{name:'Neutralize',rarity:0,list:2,
         stats:[
-            {damage:3,alt:1,cost:1,attack:34,target:1,spec:0,class:0},
-            {damage:4,alt:2,cost:1,attack:34,target:1,spec:0,class:0},
+            {damage:3,alt:1,cost:0,attack:34,target:1,spec:0,class:0},
+            {damage:4,alt:2,cost:0,attack:34,target:1,spec:0,class:0},
         ],
         },{name:'Backflip',rarity:0,list:2,
         stats:[
@@ -2355,10 +2355,10 @@ types={
         },
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},//0
-        {name:'Agent',alt:'',life:80,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MPKF-8589869056']},
-        {name:'Duelist',alt:'',life:70,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','Princess']},
-        {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MAEP-65091']},
-        {name:'Creation',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','MPCO-SKR']},
+        {name:'Agent',alt:'',life:80,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MPKF-8589869056','George']},
+        {name:'Duelist',alt:'',life:70,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','Princess','Setsuna']},
+        {name:'Executor',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MAEP-65091','Azis']},
+        {name:'Creation',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','MPCO-SKR','Sakura']},
         {name:'Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[4,2,3],altAttack:[0,3,0],class:0,buff:0},
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
@@ -2386,6 +2386,10 @@ types={
         {name:'Pointy',alt:'',life:30,height:66,behavior:0,attacks:[3],damage:[5],altAttack:[2],class:0,buff:0},
         {name:'Romeo',alt:'',life:40,height:75,behavior:1,attacks:[1,17,21],damage:[15,10,0],altAttack:[0,2,0],class:0,buff:0},//30
         {name:'Gas Man',alt:'',life:85,height:80,behavior:1,attacks:[1,3,5],damage:[15,3,4],altAttack:[0,6,0],class:1,buff:0},
+        {name:'Debt Collector',alt:'',life:64,height:75,behavior:0,attacks:[1],damage:[12],altAttack:[0],class:0,buff:0},
+        {name:'Swordmaster',alt:'',life:105,height:75,behavior:0,attacks:[16,1,17],damage:[20,16,10],altAttack:[1,0,2],class:0,buff:0},
+        {name:'Dark Man',alt:'',life:35,height:75,behavior:0,attacks:[1,3],damage:[6,2],altAttack:[0,2],class:0,buff:0},
+        
     ],attack:[
         {class:0},//0
         {class:0},
@@ -2534,6 +2538,21 @@ types={
             combatants:[31,0,0,0,0,0],
             reinforce:[],
             threshold:2,class:-1,zone:0,
+            objective:[[0,0,0,0]],
+        },{//25
+            combatants:[32,32,32,32,32,32],
+            reinforce:[],
+            threshold:6,class:-1,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[33,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:-1,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[34,34,34,0,0,0],
+            reinforce:[],
+            threshold:3,class:-1,zone:0,
             objective:[[0,0,0,0]],
         },
     ],relic:[
@@ -4902,9 +4921,76 @@ types={
             pages:[
                 {
                     desc:"The debt collectors have arrived to collect your money.",
-                    option:[''],
-                    optionDesc:[''],
-                    link:[],
+                    option:['Fight them','Pay them'],
+                    optionDesc:['Start Fight','Lose 999999 Currency'],
+                    link:[-1,1],
+                },{
+                    desc:"The debt collectors have arrived to collect your money.",
+                    option:['Fight them','Pay them'],
+                    optionDesc:['Start Fight','Too Poor!'],
+                    link:[-1,-1],
+                },
+            ],
+        },{
+            name:'The Master',id:69,list:4,
+            pages:[
+                {
+                    desc:"As you sneak into the seemingly abandoned shack, you hear the door swing open.\n"+
+                    "You try to escape, but there's no other way out. The owner enters and spots you immediately.\n"+
+                    '"'+"You don't belong here, do you? I know how the Management deals with people like you.\n"+
+                    "I'm sure they'd like to pick you up from here once I'm done with you, isn't that right?"+'"\n\n'+
+                    "Both of you raise your weapons and prepare for the confrontation, but he gives you an offer.\n"+
+                    '"'+"You know, we don't have to do this. There's always a... service you can provide me."+'"\n',
+                    option:['Threaten him','Accept it'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"You're not here to be exploited. The battle begins.",
+                    option:['Fight him'],
+                    optionDesc:['Start Fight'],
+                    link:[-1],
+                },{
+                    desc:"You decide to take the path of least resistance...\n"+
+                    "Sitting down, you let him have exactly what he wants with you, letting him enjoy it to the maximum.\n"+
+                    "After a few minutes of suffering, everything goes dark, though you continue to feel the pain.\n"+
+                    "You wake up maybe an hour later, in an unknown place.",
+                    option:['Clean up'],
+                    optionDesc:['Lose 3 Max Health'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Basement',id:70,list:4,
+            pages:[
+                {
+                    desc:"The cold splash of water wakes you from your slumber. How long you've been stuck here, you don't know.\n"+
+                    "The kidnappers approach you and ask you to give them what they want, but they never specify what that is.\n"+
+                    "Most likely, they're trying to keep it secret so you won't realize when it happens...",
+                    option:['Tell them what they want','Stay silent','Lie to them','Break out'],
+                    optionDesc:['','','',''],
+                    link:[1,2,3,4],
+                },{
+                    desc:"Satisfied with the information, they settle for taking your possessions before letting you go.",
+                    option:['Run'],
+                    optionDesc:['Lose All Currency, Lose 1 Relic'],
+                    link:[-1],
+                },{
+                    desc:"Having not received information, they have a good time with you.\n"+
+                    "After what seems like an eternity, you finally find yourself in a ditch, somehow still alive.",
+                    option:['Clean Up'],
+                    optionDesc:['Lose 9 Max Health'],
+                    link:[-1],
+                },{
+                    desc:"They hit you until it becomes clear you aren't going to say anything.\n"+
+                    "Realizing this, they finally let you leave, having nothing left to take.",
+                    option:['Ouch'],
+                    optionDesc:['Lose 27 Health'],
+                    link:[-1],
+                },{
+                    desc:"You shake free of your bindings...",
+                    option:['Get out'],
+                    optionDesc:['Start Fight'],
+                    link:[-1],
                 },
             ],
         },
@@ -4950,7 +5036,7 @@ types={
                     link:[],
                 },
             ],
-        },//fight club, capture, last guardian, businessman, leverage, btb, creation symbol
+        },//fight club, capture, last guardian, leverage, creation symbol
     ],
 }
 listing={
@@ -4959,7 +5045,7 @@ listing={
 zones=[
     {
         encounters:[[],[],[]],
-        special:[1,4,3,17,18,19,20,21,22,23,24],
+        special:[1,4,3,17,18,19,20,21,22,23,24,25,26,27],
         events:[[],[],[],[],[]],
     },{
         encounters:[[],[],[]],
