@@ -5126,6 +5126,26 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'Permafrost',id:77,list:3,
+            pages:[
+                {
+                    desc:"",
+                    option:['',''],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
         
         
