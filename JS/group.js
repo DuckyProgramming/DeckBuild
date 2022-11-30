@@ -562,6 +562,23 @@ class group{
                     this.cards[e]=reformCard(this.cards[e])
                     transition.trigger=true
                     transition.scene='map'
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&context==16&&this.cards.length>0){
+                    if(this.cards[e].list==10||this.cards[e].list==11||this.cards[e].list==5){
+                        this.battle.currency.money++
+                    }else if(this.cards[e].rarity==2){
+                        this.battle.combatants[0].base.life+=10
+                        this.battle.combatants[0].life=this.battle.combatants[0].base.life
+                    }else if(this.cards[e].rarity==1){
+                        this.battle.combatants[0].life=this.battle.combatants[0].base.life
+                    }else{
+                        this.battle.combatants[0].life=min(this.battle.combatants[0].base.life,this.battle.combatants[0].life+5)
+                    }
+                    this.battle.removeCard(e)
+                    e--
+                    le--
+                    transition.trigger=true
+                    transition.scene='map'
+                    break
                 }
                 this.cards[e].select=false
             }

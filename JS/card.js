@@ -6,6 +6,7 @@ class card{
         this.level=level
         this.color=color
         this.name=types.card[this.type].name
+        this.rarity=types.card[this.type].rarity
         this.list=types.card[this.type].list
         this.damage=damage
         this.alt=alt

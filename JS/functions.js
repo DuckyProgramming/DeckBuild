@@ -1266,6 +1266,16 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.textSize(10)
 			layer.text('+30',0,11)
 		break
+		case 159:
+			layer.textSize(10)
+			layer.text('R',-10,0)
+			layer.image(graphics.symbol[5],-20,-10,20,20)
+			layer.image(graphics.symbol[16],0,-10,20,20)
+		break
+		case 160:
+			layer.text('1',10,1)
+			layer.image(graphics.symbol[44],-15,-10,20,20)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)
@@ -1507,4 +1517,5 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 41-Metallicize
 42-DarkCharge
 43-EnergyCharge
+44-FlameCharge
 */

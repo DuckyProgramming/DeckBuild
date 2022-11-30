@@ -3033,6 +3033,12 @@ types={
         },{
             name:'McDuck Burger',id:158,rarity:-1,list:0,
             desc:'When Taken,\nGain 30 Max HP',
+        },{
+            name:'Klein Box',id:159,rarity:-1,list:0,
+            desc:'Cards Earned from\nElite Fights are Rarer',
+        },{
+            name:'Bottled Flame',id:160,rarity:-1,list:3,
+            desc:'At the Start of Combat,\nCharge 1 Flame Charge',
         },/*{
             name:'', d:15,rarity:4,list:0,
             desc:'',
@@ -4993,6 +4999,133 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'Bonfire Spirits',id:71,list:0,
+            pages:[
+                {
+                    desc:"You happen upon a group of what looks like purple fire spirits dancing around a large bonfire.\n"+
+                    "The spirits toss small bones and fragments into the fire, which brilliantly erupts each time.\n"+
+                    "As you approach, the spirits all turn to you, expectantly...",
+                    option:['Toss something in'],
+                    optionDesc:['Remove a Card,\nGain Reward Based on Card'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Upscaling',id:72,list:0,
+            pages:[
+                {
+                    desc:"You enter a seemingly cheery-looking shop that seems to relate to what your working on right now.\n"+
+                    "The proprietor approaches from behidn the counter and greets you. "+'"'+"Hello, "+", what would you like?"+'", he says politely.\n'+
+                    "You're liking the place, when he looks over you again. "+'"'+"Actually, we don't serve people like you, not that it's illegal, of course..."+'"\n'+
+                    "It's illegal.\n\n"+
+                    "He reconsiders the final time. "+'"'+"Fine, what service would you like?"+'"\n'+
+                    "You could take one of the services, but you would rather punch him.",
+                    option:['Adjustments','Cleanup','Punch him'],
+                    optionDesc:['Lose 40 Currency','Lose 60 Currency',''],
+                    link:[1,2,3],
+                },{
+                    desc:"He completes the service you asked for. "+'"'+"Okay, now get out."+'"\n'+
+                    "Should've punched him.",
+                    option:['Leave'],
+                    optionDesc:['Upgrade 2 Random Cards'],
+                    link:[-1],
+                },{
+                    desc:"He completes the service you asked for. "+'"'+"Okay, now get out."+'"\n'+
+                    "Should've punched him.",
+                    option:['Leave'],
+                    optionDesc:['Remove a Card'],
+                    link:[-1],
+                },{
+                    desc:"You hit him so hard that your fist might even hurt a little.\n"+
+                    "He recoils from the collision. You leave, feeling satisfied.",
+                    option:['Serves him right'],
+                    optionDesc:['Lose 1 Health'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Mystery Gift',id:73,list:0,
+            pages:[
+                {
+                    desc:"As you pass by a dumpster, you notice a strange creature eating something inside.\n"+
+                    "When it notices you, it drops its food at runs for you, trying to take your possessions.",
+                    option:['Give it a relic','Run'],
+                    optionDesc:['Lose 1 Relic, Gain 1 Relic',''],
+                    link:[1,2],
+                },{
+                    desc:"When it sees you hand it a relic, it quickly devours it and hands you a box.",
+                    option:['Take it'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"It tries to catch up, but you're way too fast.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Electric Outlet',id:74,list:3,
+            pages:[
+                {
+                    desc:"You see a spark coming out of the ground in the center of a rock. Strange.\n"+
+                    "You expect to see a cord or some generator, but nothing's there. This might be a natural occurance.\n"+
+                    "You want to put this behind you, but it might be worth touching the electricity.",
+                    option:['Touch it','Leave'],
+                    optionDesc:['Lose 2 Max Health',''],
+                    link:[1,2],
+                },{
+                    desc:"The shock ripples through your finger, much stronger than you anticipated.\n"+
+                    "You jump backward in the pain, but your finger is already badly burnt.\n"+
+                    "Some of the energy did get abosrbed, though...",
+                    option:['Oops'],
+                    optionDesc:['Gain 1 Card'],
+                    link:[-1],
+                },{
+                    desc:"It's not a normal thing, but still too risky to touch.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Expertise',id:75,list:3,
+            pages:[
+                {
+                    desc:"You see a familiar face ahead of you. This man was intended to be a template for the Advanced Executor Program.\n"+
+                    "In many ways, he was the first among you. And there will be many more, if the Management continues its work.\n"+
+                    "You recognzie each other and open a conversation. Turns out, he's just making a rare trip here. Lucky for you.\n"+
+                    "You might have some time to get some work in, before he has to leave to go elsewhere.",
+                    option:['Learn something','Improve something'],
+                    optionDesc:['Gain 1 Card','Upgrade 1 Card'],
+                    link:[-1,-1],
+                },
+            ],
+        },{
+            name:'Eternal Flame',id:76,list:3,
+            pages:[
+                {
+                    desc:"You've reached the end of the temple. Luckily for you, it was barely guarded by anything but ineffective traps.\n"+
+                    "As you enter the central chamber, you notice that the treasure's long gone. You're dissapointed in the find.\n"+
+                    "The only thing you can find that hasn't been taken is a small bottle containing a everlasting flame.\n"+
+                    "But as soon as you grab the bottle, your hand burns. Previous theives probably did the same.",
+                    option:['Take it','Leave it'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"Despite the burning, you're able to store the bottle with you,\n"+
+                    "and it cools down once you leave the temple, returning to its initial state.",
+                    option:['Keep it'],
+                    optionDesc:['Gain 1 Relic'],
+                    link:[-1],
+                },{
+                    desc:"The burns aren't worth it. You leave and find nothing else of value in the temple.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
         
         
@@ -5036,7 +5169,7 @@ types={
                     link:[],
                 },
             ],
-        },//fight club, capture, last guardian, leverage, creation symbol
+        },//fight club, capture, last guardian, leverage, creation symbol, discord
     ],
 }
 listing={

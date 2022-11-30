@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=71
+        this.event=77
     }
     create(){
         this.end=false
@@ -256,11 +256,14 @@ class battle{
             this.hand.add(findCard('Shiv'),0,0)
             this.hand.add(findCard('Shiv'),0,0)
         }
+        if(this.relics.active[66]){
+            this.combatants[0].load(0)
+        }
         if(this.relics.active[101]){
             this.combatants[0].load(1)
         }
-        if(this.relics.active[66]){
-            this.combatants[0].load(0)
+        if(this.relics.active[160]){
+            this.combatants[0].load(7)
         }
         if(this.relics.active[104]){
             this.combatants[0].status.main[36]++
@@ -1015,6 +1018,7 @@ class battle{
                 }
             }
         }
+        this.hand.trigger=false
         this.hand.discard()
         this.turn++
         this.turnTimer=20
@@ -1633,7 +1637,11 @@ class battle{
                             break
                             case 1:
                                 transition.scene='choice'
-                                this.setupChoice(1,floor(random(0,1.5)),0)
+                                if(this.relics.active[159]){
+                                    this.setupChoice(1,floor(random(1,2.5)),0)
+                                }else{
+                                    this.setupChoice(1,floor(random(0,1.5)),0)
+                                }
                             break
                             case 2:
                                 this.currency.money+=this.objective[e][3]
@@ -1665,7 +1673,6 @@ class battle{
         }else if(this.turn==0&&this.combatants[0].life>0){
             this.onClickPotions()
             this.hand.onClickHand()
-            this.trigger=false
             if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:525},width:40,height:30})){
                 transition.trigger=true
                 transition.scene='deck'
@@ -2147,7 +2154,7 @@ class battle{
         }
     }
     displayDeck(){
-        if(this.context==1||this.context==4){
+        if(this.context==1||this.context==4||this.context==16){
             this.deck.displayView(-1)
             this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0,this.deck.cards.length-this.drawAmount,this.defaultRandom)
         }else if(this.context==2||this.context==3||this.context==10||this.context==11||this.context==12){
@@ -2164,7 +2171,7 @@ class battle{
         this.layer.textSize(20)
         if(this.context==3||this.context==5||this.context==6){
             this.layer.text('Back',850,570)
-        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11||this.context==12||this.context==13||this.context==14||this.context==15){
+        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11||this.context==12||this.context==13||this.context==14||this.context==15||this.context==16){
             this.layer.text('Skip',850,570)
         }
         if(this.context==6){
@@ -2189,14 +2196,14 @@ class battle{
             this.deck.scroll-=30
         }
         this.deck.scroll=constrain(this.deck.scroll,0,floor(this.deck.cards.length/6)*200-400)
-        if(this.context==1||this.context==4||this.context==5||this.context==6||this.context==9||this.context==14||this.context==15){
+        if(this.context==1||this.context==4||this.context==5||this.context==6||this.context==9||this.context==14||this.context==15||this.context==16){
             this.deck.updateView()
         }
     }
     onClickDeck(){
         if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570},width:80,height:40})){
             transition.trigger=true
-            if(this.context==1||this.context==4||this.context==5||this.context==14||this.context==15){
+            if(this.context==1||this.context==4||this.context==5||this.context==14||this.context==15||this.context==16){
                 transition.scene='map'
             }else if(this.context==2){
                 this.close()
@@ -2228,7 +2235,7 @@ class battle{
                 }
             }
         }
-        if(this.context==1||this.context==4||this.context==6||this.context==9||this.context==14||this.context==15){
+        if(this.context==1||this.context==4||this.context==6||this.context==9||this.context==14||this.context==15||this.context==16){
             this.deck.onClickView(this.context,this.context2)
         }else if(this.context==2||this.context==10||this.context==11||this.context==12){
             this.discard.onClickView(this.context,this.context2)
@@ -2305,6 +2312,13 @@ class battle{
                     "He smiles and writes something down on a notepad, handing it to one of the scientists."
                 break
             }
+        }else if(types.event[this.event].id==72&&this.page==0){
+            types.event[this.event].pages[this.page].desc="You enter a seemingly cheery-looking shop that seems to relate to what your working on right now.\n"+
+            "The proprietor approaches from behidn the counter and greets you. "+'"'+"Hello, "+stage.identifier[1]+", what would you like?"+'", he says politely.\n'+
+            "You're liking the place, when he looks over you again. "+'"'+"Actually, we don't serve people like you, not that it's illegal, of course..."+'"\n'+
+            "It's illegal.\n\n"+
+            "He reconsiders the final time. "+'"'+"Fine, what service would you like?"+'"\n'+
+            "You could take one of the services, but you would rather slap him."
         }
     }
     onClickEvent(){
@@ -3042,6 +3056,62 @@ class battle{
                                 setupEncounter(current,zones[0].special[13])
                                 this.create()
                                 transition.scene='battle'
+                            }
+                        break
+                        case 71:
+                            if(this.page==0&&e==0){
+                                transition.trigger=true
+                                transition.scene='deck'
+                                this.setupDeck(16)
+                                this.context=16
+                            }
+                        break
+                        case 72:
+                            if(this.page==0&&e==0){
+                                this.currency.money-=40
+                            }else if(this.page==0&&e==1){
+                                this.currency.money-=60
+                            }else if(this.page==1&&e==0){
+                                this.deck.randomUpgrade()
+                                this.deck.randomUpgrade()
+                            }else if(this.page==2&&e==0){
+                                transition.trigger=true
+                                transition.scene='deck'
+                                this.setupDeck(4)
+                                this.context=4
+                            }else if(this.page==3&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-1)
+                            }
+                        break
+                        case 73:
+                            if(this.page==0&&e==0){
+                                this.loseRelic()
+                                this.getRelic(findRelic('Klein Box'))
+                            }
+                        break
+                        case 74:
+                            if(this.page==0&&e==0){
+                                this.combatants[0].base.life-=2
+                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                            }else if(this.page==1&&e==0){
+                                transition.scene='choice'
+                                this.setupChoice(0,2,0)
+                            }
+                        break
+                        case 75:
+                            if(this.page==0&&e==0){
+                                transition.scene='choice'
+                                this.setupChoice(0,1,0)
+                            }else if(this.page==0&&e==1){
+                                transition.trigger=true
+                                transition.scene='deck'
+                                this.setupDeck(1)
+                                this.context=1
+                            }
+                        break
+                        case 76:
+                            if(this.page==1&&e==0){
+                                this.getRelic(findRelic('Bottled Flame'))
                             }
                         break
                     }
