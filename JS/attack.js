@@ -2083,6 +2083,13 @@ class attack{
                     this.battle.drop.addDrop(findCard('Burn'),0,stage.playerNumber+1)
                     this.battle.reserve.addShuffle(findCard('Burn'),0,stage.playerNumber+1)
                 break
+                case 22:
+                    this.battle.combatants[this.user].block+=this.damage
+                    this.battle.combatants[this.user].block+=this.alt
+                break//3,10
+                case 23:
+                    this.battle.combatants[this.user].block+=this.damage
+                break
                 default:
             }
         }

@@ -2394,7 +2394,7 @@ types={
         {name:'Debt Collector',alt:'',life:64,height:75,behavior:0,attacks:[1],damage:[12],altAttack:[0],class:0,buff:0},
         {name:'Swordmaster',alt:'',life:105,height:75,behavior:0,attacks:[16,1,17],damage:[20,16,10],altAttack:[1,0,2],class:0,buff:0},
         {name:'Dark Man',alt:'',life:35,height:75,behavior:0,attacks:[1,3],damage:[6,2],altAttack:[0,2],class:0,buff:0},
-        {name:'The Fencer',alt:'',life:50,height:75,behavior:0,attacks:[16,1,17],damage:[20,16,10],altAttack:[1,0,2],class:0,buff:9},
+        {name:'The Fencer',alt:'',life:50,height:75,behavior:0,attacks:[1,22,23],damage:[18,8,4],altAttack:[0,10,1],class:0,buff:9},
         
     ],attack:[
         {class:0},//0
@@ -2419,6 +2419,9 @@ types={
         {class:1},
         {class:0},//20
         {class:1},
+        {class:1},
+        {class:1},
+        
     ],encounter:[
         {//0
             combatants:[0,0,0,0,0,0],
@@ -2559,6 +2562,11 @@ types={
             combatants:[34,34,34,0,0,0],
             reinforce:[],
             threshold:3,class:-1,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[35,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:-1,zone:0,
             objective:[[0,0,0,0]],
         },
     ],relic:[

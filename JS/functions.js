@@ -135,7 +135,7 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 			layer.fill(150,255,150,fade*3/4)
 			layer.triangle(-12,-8,12,-8,0,12)
 		break
-		case 8: case 16:
+		case 8: case 16: case 22: case 23:
 			layer.fill(150,175,200,fade*3/4)
 			layer.triangle(-8,-5,8,-5,0,-9)
 			layer.arc(0,-5,16,28,0,180)
@@ -207,7 +207,7 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 			layer.textSize(16)
 			layer.text(damage+'x'+alt,0,0)
 		break
-		case 9: case 14: case 15: case 17:
+		case 9: case 14: case 15: case 17: case 22: case 23:
 			layer.textSize(16)
 			layer.text(damage+'|'+alt,0,1)
 		break
