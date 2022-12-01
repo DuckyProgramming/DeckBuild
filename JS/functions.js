@@ -327,6 +327,14 @@ function findRelic(name){
 	}
 	return -1
 }
+function findPotion(name){
+	for(i=0,li=types.potion.length;i<li;i++){
+		if(types.potion[i].name==name){
+			return i
+		}
+	}
+	return -1
+}
 function findEvent(name){
 	for(i=0,li=types.event.length;i<li;i++){
 		if(types.event[i].name==name){
@@ -1492,6 +1500,9 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 		break
 		case 48:
 			layer.image(graphics.symbol[35],-16,-18,32,32)
+		break
+		case 49:
+			layer.image(graphics.symbol[44],-10,-10,20,20)
 		break
 	}
 	layer.scale(1/size,1/size/flip)

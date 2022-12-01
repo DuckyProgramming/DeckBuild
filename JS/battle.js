@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=81
+        this.event=85
     }
     create(){
         this.end=false
@@ -267,6 +267,9 @@ class battle{
         }
         if(this.relics.active[161]){
             this.combatants[0].load(8)
+        }
+        if(this.relics.active[162]){
+            this.combatants[0].load(9)
         }
         if(this.relics.active[104]){
             this.combatants[0].status.main[36]++
@@ -1347,6 +1350,11 @@ class battle{
                             if(this.battle.combatants[0].armed!=1){
                                 this.battle.combatants[0].armed=1
                             }
+                        break
+                        case 49:
+                            this.combatants[0].boost.main[0]+=4*this.random.potionEffectiveness
+                            this.discard.add(findCard('Burn'),0,stage.playerNumber+1)
+                            this.discard.add(findCard('Burn'),0,stage.playerNumber+1)
                         break
                     }
                 }
@@ -3154,6 +3162,46 @@ class battle{
                             }
                         break
                         case 81:
+                            if(this.page==0&&e==0){
+                                this.combatants[0].base.life-=10
+                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                            }else if(this.page==1&&e==0){
+                                this.getRelic(findRelic('Bottled Life'))
+                            }
+                        break
+                        case 82:
+                            if(this.page==0&&e==0){
+                                this.getPotion(findPotion('Starflame'))
+                            }else if(this.page==1&&e==0){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+6)
+                            }
+                        break
+                        case 83:
+                            if((this.page==1||this.page==2)&&e==0){
+                                transition.trigger=true
+                                transition.scene='deck'
+                                this.setupDeck(1)
+                                this.context=1
+                            }
+                        break
+                        case 84:
+                            if(this.page==2&&e==0){
+                                transition.scene='choice'
+                                this.setupChoice(0,1,0)
+                            }
+                        break
+                        case 85:
+                            if(this.page==0&&e==0){
+                                setupEncounter(current,zones[0].special[14])
+                                this.create()
+                                transition.scene='battle'
+                            }else if(this.page==0&&e==1&&floor(random(0,2))==0){
+                                this.remember[0]=1
+                            }else if(this.page==1&&e==0){
+                                this.currency.money+=125
+                            }else if(this.page==2&&e==0){
+                                this.currency.money-=125
+                            }
                         break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){

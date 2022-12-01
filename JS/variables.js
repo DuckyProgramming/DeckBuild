@@ -2394,6 +2394,7 @@ types={
         {name:'Debt Collector',alt:'',life:64,height:75,behavior:0,attacks:[1],damage:[12],altAttack:[0],class:0,buff:0},
         {name:'Swordmaster',alt:'',life:105,height:75,behavior:0,attacks:[16,1,17],damage:[20,16,10],altAttack:[1,0,2],class:0,buff:0},
         {name:'Dark Man',alt:'',life:35,height:75,behavior:0,attacks:[1,3],damage:[6,2],altAttack:[0,2],class:0,buff:0},
+        {name:'The Fencer',alt:'',life:50,height:75,behavior:0,attacks:[16,1,17],damage:[20,16,10],altAttack:[1,0,2],class:0,buff:9},
         
     ],attack:[
         {class:0},//0
@@ -3205,6 +3206,9 @@ types={
         },{
             name:'Rearm',id:48,rarity:0,list:4,
             desc:'Rearm',
+        },{
+            name:'Starflame',id:49,rarity:-1,list:0,
+            desc:'Gain 4 Strength\nAdd 2 Burns to Discard Pile',
         },
     ],event:[
         {
@@ -5254,6 +5258,141 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'Lost Technique',id:81,list:3,
+            pages:[
+                {
+                    desc:"Have Charges always been about destruction? Was it ever possible to use one for peaceful measures?\n"+
+                    "The concept of a non-combative Charge has always been considered against the system's laws.\n"+
+                    "But having seen the wonders of Konai's natural beauty, you began to question this philosophy.\n"+
+                    "Maybe the power of Charges can be used for good?",
+                    option:['Try it','Too risky'],
+                    optionDesc:['Lose 10 Max Health',''],
+                    link:[1,2],
+                },{
+                    desc:"You draw from all of your power to merge the representations of vitality you can see into one Charge.\n"+
+                    "You've never seen something before. This Charge allows you to heal others and yourself, not just to kill.\n"+
+                    "You write down the methods and store the Charge for later use.",
+                    option:['Leave'],
+                    optionDesc:['Gain a Relic'],
+                    link:[-1],
+                },{
+                    desc:"No, they can't. That should be obvious.\n"+
+                    "Charges are inherently violent and unstable. They can't be used for civilian life.\n"+
+                    "You were dumb for even considering the possibility.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Crossroads',id:82,list:0,
+            pages:[
+                {
+                    desc:"The Management has announced a massive weapons test at the Masurian Lake.\n"+
+                    "The test is safe for viewers at 20 kilometers, and it has been announced that all are welcome to view it.\n"+
+                    "A typical show of force for the Management, they want the citizens of Konai to know what they're up against.",
+                    option:['View the test','Rest'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"You see the absolute power the Management has created as the Starflame missiles hit the water.\n"+
+                    "Watching the massive plasma explosions, you wonder why any of the fighting is even going on at all.\n"+
+                    "If the Management has four of these on every ship, they have no reason to even try to fight.\n"+
+                    "That's probably enough firepower to destroy entire planets...",
+                    option:['Beautiful?'],
+                    optionDesc:['Gain 1 Potion'],
+                    link:[-1],
+                },{
+                    desc:"You don't have the additional time to wath such a meaningless spectacle.\n"+
+                    "You rest in the meantime while others gather to watch.",
+                    option:['Good rest'],
+                    optionDesc:['Heal 6 Health'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Operation Holo',id:83,list:2,
+            pages:[
+                {
+                    desc:"You see a lone Management soldier guarding a ditch. With suprise on your side, he's not an issue.\n"+
+                    "His papers say he's working in "+'"'+"Operation Holo"+'"'+'.'+" You've never heard of it, but it looks secret anyway.\n"+
+                    "You view the ditch only to see rows upon rows of bodies. Is this what the Management does with its victims?\n"+
+                    "You look back at the paperwork. It gives the directive to eliminate all ethnic Konaians still on the planet.\n",
+                    option:['Throw his body in and\ncover up the evidence','Leave the pit open'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"You make sure to get rid of their evidence. You want to keep your conscience clean.\n"+
+                    "But you know what the Management is doing in the background. You won't let them continue this.",
+                    option:['Leave'],
+                    optionDesc:['Upgrade a Card'],
+                    link:[-1],
+                },{
+                    desc:"Within yourself you find a new drive to defeat your enemies. You aren't just fighting for yourself anymore.\n"+
+                    "You're fighting for the people of Konai who aren't the ones the Management wants.",
+                    option:['Leave'],
+                    optionDesc:['Upgrade a Card'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Two Officers',id:84,list:4,
+            pages:[
+                {
+                    desc:"You spot two Management officers talking about their recent operations with each other. You listen it, naturally.\n"+
+                    '"'+"I tell you, Operation Holo would be done by now if we had just shot all of them! This is taking way too long!"+'"\n'+
+                    '"'+"We don't need blood on ours hands. They'll die of their own accord soon enough. It's not worth our trouble."+'"\n'+
+                    '"'+"Don't think of it that way. We're put them out of their misery. Dying slowly is worse than dying by the bullet."+'"\n'+
+                    '"'+"I see you have a morbid idea of justice, Victor. I wouldn't exactly say our victims agree with your views."+'"\n'+
+                    '"'+"So what? We exterminate these people, that's our job! We should do it more efficiently!"+'"\n'+
+                    '"'+"It's better we let them die without our imput. Starvation isn't as bad as it looks."+'"\n\n'+
+                    "You haven't heard of Operation Holo before, and now you really want to know.",
+                    option:['Listen further','Kill them'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:'"'+"Once all these Konaians are gone, we'll be able to repopulate the planet."+'"\n'+
+                    '"'+"Lirestont said that it will become the new sector capital as the historic capital of the Humanic Konaian Empire."+'"\n'+
+                    '"'+"They say more than a million of them have already been exterminated in the first month."+'"\n'+
+                    '"'+"If we ramp up the pace, this will soon be a solved problem."+'"\n'+
+                    "You continue to listen, stalking them, until they reach their base and depart.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"You kill the two off with swift strikes, before they can fight back meaningfully.",
+                    option:['Leave'],
+                    optionDesc:['Gain 1 Card'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Fight Club',id:85,list:0,
+            pages:[
+                {
+                    desc:"You stumble across a secret fight club in the criminal underworld.\n"+
+                    "There are multiple fights scheduled today, but also some vacancies.",
+                    option:['Join a fight','Bet on a fight','Ignore it'],
+                    optionDesc:['Start Fight','',''],
+                    link:[-1,1,3],
+                },{
+                    desc:"You win the bet and collect winnings.",
+                    option:['Win'],
+                    optionDesc:['Gain 125 Currency'],
+                    link:[-1],
+                },{
+                    desc:"You lose the bet, but at least you didn't get beat up.",
+                    option:['Lose'],
+                    optionDesc:['Lose 125 Currency'],
+                    link:[-1],
+                },{
+                    desc:"You leave the fight club and go somewhere else.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
         
         
@@ -5297,7 +5436,7 @@ types={
                     link:[],
                 },
             ],
-        },//fight club, capture, last guardian, leverage, creation symbol, discord, ngt, assasination mission, ninja, the admiral, ibunroku, black market business
+        },//capture, last guardian, leverage, creation symbol, discord, ngt, assasination mission, ninja, the admiral, ibunroku, black market business, angelic sphere, developer, audrian story, blood, manager, midnight climax
     ],
 }
 listing={
@@ -5306,7 +5445,7 @@ listing={
 zones=[
     {
         encounters:[[],[],[]],
-        special:[1,4,3,17,18,19,20,21,22,23,24,25,26,27],
+        special:[1,4,3,17,18,19,20,21,22,23,24,25,26,27,28],
         events:[[],[],[],[],[]],
     },{
         encounters:[[],[],[]],

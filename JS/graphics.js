@@ -11,6 +11,8 @@ function setupGraphics(){
 	graphics.minor.push(createGraphics(160,160))
 	graphics.minor.push(createGraphics(80,20))
 	graphics.minor.push(createGraphics(200,200))
+	graphics.minor.push(createGraphics(160,160))
+	graphics.minor.push(createGraphics(160,160))
 	for(a=0,la=graphics.minor.length;a<la;a++){
 		setupLayer(graphics.minor[a])
 	}
@@ -139,6 +141,15 @@ function setupGraphics(){
 	graphics.minor[5].rect(0,0,160,8,3)
 	graphics.minor[5].fill(149,134,184)
 	graphics.minor[5].rect(0,-2,160,4,3)
+
+	graphics.minor[6].noStroke()
+	graphics.minor[6].fill(150,160,196)
+	graphics.minor[6].ellipse(80,80,120,120)
+	graphics.minor[7].stroke(95,55,65)
+	graphics.minor[7].strokeWeight(24)
+	graphics.minor[7].line(32,50,80,137)
+	graphics.minor[7].line(128,50,80,137)
+
 	for(a=0;a<50;a++){
 		graphics.symbol.push(createGraphics(100,100))
 		setupLayer(graphics.symbol[a])
@@ -451,12 +462,11 @@ function setupGraphics(){
 	graphics.symbol[45].noFill()
 	graphics.symbol[45].ellipse(0,0,80,80)
 	graphics.symbol[45].rect(0,0,42,42)
-
 	graphics.symbol[46].strokeWeight(5)
 	graphics.symbol[46].stroke(0)
 	graphics.symbol[46].noFill()
 	graphics.symbol[46].ellipse(0,0,80,80)
-	graphics.symbol[46].strokeWeight(24)
-	graphics.symbol[46].line(0,-32,0,32)
-	graphics.symbol[46].line(-32,0,32,0)
+	graphics.symbol[46].strokeWeight(18)
+	graphics.symbol[46].line(0,-24,0,24)
+	graphics.symbol[46].line(-24,0,24,0)
 }

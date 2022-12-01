@@ -127,6 +127,9 @@ class combatant{
 				this.status.main[3]=6
 				this.block+=8
 			break
+			case 9:
+				this.block+=12
+			break
 		}
 	}
 	setupIntent(type){
