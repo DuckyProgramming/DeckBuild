@@ -30,10 +30,13 @@ class attack{
                         this.battle.combatants[0].meter=100
                     }
                 break
+                case -22:
+                    this.battle.currency.money-=10
+                break
                 case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
-                case 2: case 231: case 268:
+                case 2: case 231: case 241: case 268:
                     this.battle.combatants[0].addBlock(this.damage)
                 break
                 case 3: case 51: case 135:
@@ -545,7 +548,7 @@ class attack{
                 break
                 case 106:
                     this.battle.combatants[0].addBlock(this.damage)
-                    this.battle.hand.addShuffle(findCard('Safety'),0,0)
+                    this.battle.hand.add(findCard('Safety'),0,0)
                 break
                 case 107:
                     if(this.battle.combatants[0].stance==2){
@@ -1829,7 +1832,7 @@ class attack{
                     this.attacks.push([0,this.alt*10-10,this.target,this.damage])
                 break
                 case 366:
-                    if(this.battle.combatants[0].ammo[0]==2){
+                    if(this.battle.combatants[0].ammo[0]==1){
                         this.battle.combatants[0].cycleCharge()
                         this.battle.combatants[0].evoke(-2,0)
                     }
@@ -1977,6 +1980,11 @@ class attack{
                 break
                 case 399:
                     this.battle.combatants[0].status.main[35]+=this.damage
+                break
+                case 400:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target].boost.main[2]-=this.alt
+                    this.battle.combatants[0].combo--
                 break
                 default:
             }

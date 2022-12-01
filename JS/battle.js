@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=86
+        this.event=87
     }
     create(){
         this.end=false
@@ -91,6 +91,7 @@ class battle{
         this.mana.main=this.mana.max
         this.mana.gen=this.mana.max
         this.random.drawing=this.drawAmount+this.random.tempDrawAmount
+        this.resetCombatant()
         this.drawInitial()
         this.turnDraw()
         this.drawEffect()
@@ -1659,7 +1660,11 @@ class battle{
                                 }
                             break
                             case 2:
-                                this.currency.money+=this.objective[e][3]
+                                if(this.relics.active[164]){
+                                    this.currency.money+=round(this.objective[e][3]*1.5)
+                                }else{
+                                    this.currency.money+=this.objective[e][3]
+                                }
                             break
                             case 3:
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+this.objective[e][3])
@@ -2210,7 +2215,7 @@ class battle{
         if(inputs.keys[0][3]||inputs.keys[1][3]){
             this.deck.scroll-=30
         }
-        this.deck.scroll=constrain(this.deck.scroll,0,floor(this.deck.cards.length/6)*200-400)
+        this.deck.scroll=constrain(this.deck.scroll,0,floor((this.deck.cards.length-1)/6)*200-400)
         if(this.context==1||this.context==4||this.context==5||this.context==6||this.context==9||this.context==14||this.context==15||this.context==16){
             this.deck.updateView()
         }
@@ -3209,9 +3214,21 @@ class battle{
                         break
                         case 86:
                             if(this.page==1&&e==0){
-                                this.deck.add(findCard('MBF-32\nShield'),0,0)
+                                this.deck.add(findCard('Pistol'),0,0)
                             }else if(this.page==12&&e==0){
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+12)
+                            }
+                        break
+                        case 87:
+                            if(this.page==0&&e==0){
+                                this.getRelic(findRelic('Gold Bar'))
+                            }else if(this.page==3&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-16)
+                            }else if(this.page==4&&e==0){
+                                this.combatants[0].base.life-=10
+                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                            }else if(this.page==5&&e==0){
+                                this.deck.add(findCard('Injury'),0,stage.playerNumber+2)
                             }
                         break
                     }

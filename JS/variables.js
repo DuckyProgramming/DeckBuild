@@ -1967,7 +1967,7 @@ types={
             {damage:1,alt:0,cost:0,attack:362,target:1,spec:3,class:2},
             {damage:2,alt:0,cost:0,attack:362,target:1,spec:3,class:2},
         ],
-        },{name:'Analyse',rarity:0,list:4,
+        },{name:'Analyze',rarity:0,list:4,
         stats:[
             {damage:4,alt:0,cost:1,attack:380,target:0,spec:10,class:2},
             {damage:5,alt:0,cost:1,attack:380,target:0,spec:10,class:2},
@@ -2216,6 +2216,11 @@ types={
             {damage:3,alt:0,cost:0,attack:399,target:0,spec:8,class:1},
             {damage:5,alt:0,cost:0,attack:399,target:0,spec:8,class:1},
         ],
+        },{name:'Pistol',rarity:-3,list:0,
+        stats:[
+            {damage:10,alt:1,cost:1,attack:400,target:1,spec:3,class:0},
+            {damage:16,alt:2,cost:1,attack:400,target:1,spec:3,class:0},
+        ],
         },
         
         
@@ -2266,8 +2271,8 @@ types={
         ],
         },{name:'Pain',rarity:-1,list:10,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-2,target:0,spec:1,class:-2},
-            {damage:0,alt:0,cost:0,attack:-2,target:0,spec:1,class:-2},
+            {damage:2,alt:0,cost:0,attack:-2,target:0,spec:1,class:-2},
+            {damage:2,alt:0,cost:0,attack:-2,target:0,spec:1,class:-2},
         ],
         },{name:'Hoarding',rarity:-1,list:10,
         stats:[
@@ -2281,13 +2286,18 @@ types={
         ],
         },{name:'Debt',rarity:-1,list:10,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-1,target:0,spec:6,class:-2},
-            {damage:0,alt:0,cost:0,attack:-1,target:0,spec:6,class:-2},
+            {damage:0,alt:0,cost:0,attack:-22,target:0,spec:3,class:-2},
+            {damage:0,alt:0,cost:0,attack:-22,target:0,spec:3,class:-2},
         ],
         },{name:'Anxiety',rarity:-1,list:10,
         stats:[
             {damage:1,alt:0,cost:0,attack:-21,target:0,spec:1,class:-2},
             {damage:1,alt:0,cost:0,attack:-21,target:0,spec:1,class:-2},
+        ],
+        },{name:'Injury',rarity:-1,list:10,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-1,target:0,spec:6,class:-2},
+            {damage:0,alt:0,cost:0,attack:-1,target:0,spec:6,class:-2},
         ],
         },
         
@@ -3062,6 +3072,9 @@ types={
         },{
             name:'Martyrdom',id:163,rarity:-1,list:3,
             desc:'When You Take Unblocked\nDamage, Gain 5 Currency',
+        },{
+            name:'Gold Bar',id:164,rarity:-1,list:3,
+            desc:'Gain 1.5x More Money from Fights',
         },/*{
             name:'', d:15,rarity:4,list:0,
             desc:'',
@@ -5421,6 +5434,43 @@ types={
                     desc:"You decide that you'll save the shipyard visit for another time.",
                     option:['Done'],
                     optionDesc:['Heal 12 Health'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Gold Bar',id:87,list:0,
+            pages:[
+                {
+                    desc:"In the center of an ancient temple, you discover that the treasures within are undisturbed.\n"+
+                    "At the end, you discover a gold bar. It might not have any direct value, but it may have other uses.",
+                    option:['Take it','Don'+"'"+'t'],
+                    optionDesc:['Gain 1 Relic',''],
+                    link:[2,1],
+                },{
+                    desc:"You won't fall for such an obvious trap.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"As you grab the bar, a trapdoor opens in the roof, causing a giant stone ball to fall in front of you.\n"+
+                    "You realize the ground is slightly slanted as the ball begins rolling toward you.",
+                    option:['Get hit','Duck','Run'],
+                    optionDesc:['','',''],
+                    link:[3,4,5],
+                },{
+                    desc:"The full force of the rolling ball nearly flattens you, but you're able to bring it to a stop.",
+                    option:['Ouch'],
+                    optionDesc:['Lose 16 Health'],
+                    link:[-1],
+                },{
+                    desc:"The ball rolls over you and ends up at the end of the hall.",
+                    option:['Ouch'],
+                    optionDesc:['Lose 4 Max Health'],
+                    link:[-1],
+                },{
+                    desc:"You get out of the way, but your foot appears broken...",
+                    option:['Ouch'],
+                    optionDesc:['Become Cursed - Injury'],
                     link:[-1],
                 },
             ],
