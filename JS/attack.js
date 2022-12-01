@@ -2085,10 +2085,11 @@ class attack{
                 break
                 case 22:
                     this.battle.combatants[this.user].block+=this.damage
-                    this.battle.combatants[this.user].block+=this.alt
-                break//3,10
+                    this.battle.combatants[this.user].status.main[89]+=this.alt
+                break
                 case 23:
                     this.battle.combatants[this.user].block+=this.damage
+                    this.battle.combatants[this.user].status.main[90]+=this.alt
                 break
                 default:
             }

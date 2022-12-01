@@ -3683,10 +3683,10 @@ types={
                 },
             ],
         },{
-            name:'The Bomb',id:17,list:1,
+            name:'The Bomb',id:17,list:0,
             pages:[
                 {
-                    desc:"You receive an urgent call and rush over to help. The rebels have planted a bomb in the city.\n"+
+                    desc:"You hear call and rush over to help. The rebels have planted a bomb in the city.\n"+
                     "The locals have no idea how to defuse it, but you might have a guess.",
                     option:['Cut the red wire','Cut the green wire','Cut the blue wire','Back away'],
                     optionDesc:['','','',''],
@@ -5401,6 +5401,29 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'The New Ship',id:86,list:1,
+            pages:[
+                {
+                    desc:"You didn't even know there's a shipyard on Konai. Well, now you know.\n"+
+                    "When you arrive, the soldiers in the area let you through the security clearance and into the main zone.\n"+
+                    "Looks like an entire lake was drained to build this shipyard. Weird that they didn't just build it in space.\n",
+                    option:['Tour the shipyard','Rest'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"You tour the shipyard, discovering its many facilities.\n"+
+                    "You were never involved in naval operations, so it's quite a jarring transition.",
+                    option:['Interesting'],
+                    optionDesc:['Gain 1 Card'],
+                    link:[-1],
+                },{
+                    desc:"You decide that you'll save the shipyard visit for another time.",
+                    option:['Done'],
+                    optionDesc:['Heal 12 Health'],
+                    link:[-1],
+                },
+            ],
         },
         
         
@@ -5444,7 +5467,7 @@ types={
                     link:[],
                 },
             ],
-        },//capture, last guardian, leverage, creation symbol, discord, ngt, assasination mission, ninja, the admiral, ibunroku, black market business, angelic sphere, developer, audrian story, blood, manager, midnight climax
+        },//capture, last guardian, leverage, creation symbol, discord, assasination mission, ninja, the admiral, ibunroku, black market business, angelic sphere, developer, audrian story, blood, manager, midnight climax
     ],
 }
 listing={

@@ -32,7 +32,8 @@ class combatant{
 			[139,150,193],[40,95,160],[255,245,15],[195,225,255],[145,155,65],[245,195,65],[240,255,255],[220,240,220],[215,235,255],[20,50,120],
 			[155,235,250],[5,145,250],[150,0,0],[215,210,210],[100,75,150],[255,75,175],[225,175,225],[40,80,120],[255,195,255],[235,125,230],
 			[120,90,120],[60,120,60],[40,80,40],[230,170,230],[225,225,200],[155,180,190],[105,230,255],[40,180,185],[240,175,5],[200,175,110],
-			[140,160,0],[60,30,60],[255,225,255],[150,200,150],[255,200,255],[255,150,255],[200,150,200],[150,25,25],[225,210,135]],name:[
+			[140,160,0],[60,30,60],[255,225,255],[150,200,150],[255,200,255],[255,150,255],[200,150,200],[150,25,25],[225,210,135],[255,75,0],
+			[100,200,200]],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
 			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Stance Change Block','Enter Wrath Draw','Every Block Weak All','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Absorb Attacks',
@@ -41,7 +42,8 @@ class combatant{
 			'Armed Block Per Turn','Energy And Strength Per Hit','Return Played to Draw','Power Draw','Random Common','Passive Orb','Discharge','Power Basic Charge','Random Power','Conditioning',
 			'Miracle+ Gain','Calm Block Per Turn','Constant Damage Down','Shiv Damage','No Blocks','Counter Pull Once','Counter Throw','Downed','Scry Per Turn','Scry Block',
 			'Attack Per Card Played','Take Damage Per Turn','Energy Gen Down','Next Turn Wrath','Next Turn Draw','Insight Per Turn','Free Attack','Grant Block on Hit','Energy Per Turn','Retain Cost Decrease',
-			'Lose Focus','Darkness on Death','Balance Buffer','Counter Stun Once','Flower Per Turn','Flower on Block','Debalance','Temporary Constant Damage Down','Retain Buffs'],class:[
+			'Lose Focus','Darkness on Death','Balance Buffer','Counter Stun Once','Flower Per Turn','Flower on Block','Debalance','Temporary Constant Damage Down','Retain Buffs','Counter Once',
+			'Reflect'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
@@ -50,7 +52,8 @@ class combatant{
 			1,1,1,1,1,1,1,1,1,1,
 			1,1,0,1,0,1,1,0,1,1,
 			1,0,0,1,1,1,1,0,1,1,
-			0,1,1,1,1,1,0,0,1]}
+			0,1,1,1,1,1,0,0,1,1,
+			1]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0

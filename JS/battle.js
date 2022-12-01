@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=85
+        this.event=86
     }
     create(){
         this.end=false
@@ -691,9 +691,13 @@ class battle{
                     f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79&&
                     f!=80&&f!=81&&f!=82&&f!=85&&f!=88){
                     if(f==44){
-                        this.combatants[e].status.main[9]+=this.combatants[e].status.main[44]
+                        this.combatants[e].status.main[9]+=this.combatants[e].status.main[f]
                     }else if(f==67){
-                        this.combatants[e].status.main[5]+=this.combatants[e].status.main[67]
+                        this.combatants[e].status.main[5]+=this.combatants[e].status.main[f]
+                    }else if(f==89){
+                        this.combatants[e].status.main[3]+=this.combatants[e].status.main[f]
+                    }else if(f==90){
+                        this.combatants[e].status.main[10]+=this.combatants[e].status.main[f]
                     }
                     this.combatants[e].status.main[f]=0
                 }
@@ -3201,6 +3205,13 @@ class battle{
                                 this.currency.money+=125
                             }else if(this.page==2&&e==0){
                                 this.currency.money-=125
+                            }
+                        break
+                        case 86:
+                            if(this.page==1&&e==0){
+                                this.deck.add(findCard('MBF-32\nShield'),0,0)
+                            }else if(this.page==12&&e==0){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+12)
                             }
                         break
                     }
