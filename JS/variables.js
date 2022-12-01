@@ -3074,7 +3074,7 @@ types={
             desc:'When You Take Unblocked\nDamage, Gain 5 Currency',
         },{
             name:'Gold Bar',id:164,rarity:-1,list:3,
-            desc:'Gain 1.5x More Money from Fights',
+            desc:'Gain 50% More\nMoney from Fights',
         },/*{
             name:'', d:15,rarity:4,list:0,
             desc:'',
@@ -4518,7 +4518,7 @@ types={
             pages:[
                 {
                     desc:"You see a strange blue glow coming from a nearby lake. As you approach, you notice a woman sitting on a ledge.\n"+
-                    '"'+"I've been watching you, having taken interest in your adventure. But there isn't much I can do right now."+'"\n'+
+                    '"'+"I've been watching you, "+", having taken interest in your adventure. But there isn't much I can do right now."+'"\n'+
                     '"'+"He'll always be watching, so I can only help you in a few ways."+'"\n'+
                     "You avoid asking questions and decide what blessing you would like.",
                     option:['Health?','A relic?','A potion?'],
@@ -5471,6 +5471,34 @@ types={
                     desc:"You get out of the way, but your foot appears broken...",
                     option:['Ouch'],
                     optionDesc:['Become Cursed - Injury'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Bootlegging',id:88,list:0,
+            pages:[
+                {
+                    desc:"A group of men are standing around a car while one attempts to fix the engine.\n"+
+                    "As you approach, one picks up his gun and prepares to fire. You do the same, raising your weapon.\n"+
+                    '"'+"No need to be so aggressive, okay? We're just doing a little business here, dealing our product out to customers."+'"\n'+
+                    '"'+"What's the product?"+'", you reply.\n'+
+                    '"'+"It's a new type of drink, with some new chemicals mixed in. It's safe to drink, but I'm afraid it's illegal."+'"\n'+
+                    '"'+"Isn't that legal, though?"+'", you ask.\n'+
+                    '"'+"Not exactly. The concentrations of some of the parts are above regulated levels."+'"\n'+
+                    '"'+"Anyway, I'll give you a sample if you keep quiet."+'"',
+                    option:['Take some','Refuse'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"He reaches into the trunk, into a box within the trunk, and pulls out a bottle containing suspicious brown liquid.\n"+
+                    '"'+"Enjoy your drink!"+'"',
+                    option:['Take it'],
+                    optionDesc:['Gain 1 Potion'],
+                    link:[-1],
+                },{
+                    desc:"You leave them to do their business alone.",
+                    option:['Exit'],
+                    optionDesc:[''],
                     link:[-1],
                 },
             ],

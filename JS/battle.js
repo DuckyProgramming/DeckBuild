@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=87
+        this.event=88
     }
     create(){
         this.end=false
@@ -2332,6 +2332,11 @@ class battle{
                     "He smiles and writes something down on a notepad, handing it to one of the scientists."
                 break
             }
+        }else if(types.event[this.event].id==51){
+            types.event[this.event].pages[this.page].desc="You see a strange blue glow coming from a nearby lake. As you approach, you notice a woman sitting on a ledge.\n"+
+            '"'+"I've been watching you, "+stage.identifier[3]+", having taken interest in your adventure. But there isn't much I can do right now."+'"\n'+
+            '"'+"He'll always be watching, so I can only help you in a few ways."+'"\n'+
+            "You avoid asking questions and decide what blessing you would like."
         }else if(types.event[this.event].id==72&&this.page==0){
             types.event[this.event].pages[this.page].desc="You enter a seemingly cheery-looking shop that seems to relate to what your working on right now.\n"+
             "The proprietor approaches from behidn the counter and greets you. "+'"'+"Hello, "+stage.identifier[1]+", what would you like?"+'", he says politely.\n'+
