@@ -1975,6 +1975,9 @@ class attack{
                     this.battle.combatants[0].boost.main[1]--
                     this.battle.combatants[0].boost.main[2]--
                 break
+                case 399:
+                    this.battle.combatants[0].status.main[35]+=this.damage
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

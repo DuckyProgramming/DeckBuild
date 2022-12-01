@@ -1674,6 +1674,9 @@ class combatant{
 			case 8:
 				this.block+=20*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))
 			break
+			case 9:
+				this.life=min(this.life+5*this.battle.random.healEffectiveness,this.base.life)
+			break
 			case -2:
 				i=0
 				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
@@ -1972,6 +1975,9 @@ class combatant{
 						this.battle.mana.gen++
 					}else if(this.flower>0){
 						this.flower--
+					}
+					if(this.battle.relics.active[163]){
+						this.battle.currency.money+=5
 					}
 				}else if(this.id==0&&this.blocked==0){
 					this.flower+=this.status.main[85]

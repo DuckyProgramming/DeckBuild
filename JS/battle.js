@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=77
+        this.event=81
     }
     create(){
         this.end=false
@@ -3124,6 +3124,36 @@ class battle{
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-12)
                                 this.getRelic(findRelic('Bottled Ice'))
                             }
+                        break
+                        case 78:
+                            if(this.page==1&&e==0){
+                                this.calc.list=[findCard('Charge'),findCard('Detonate'),findCard('Shielding'),findCard('Energize'),findCard('Darkness'),findCard('Zap'),findCard('Illuminate'),findCard('Enflame')]
+                                for(g=0;g<3;g++){
+                                    h=floor(random(0,this.calc.list.length))
+                                    this.deck.add(this.calc.list[h],floor(random(0,2)),this.player)
+                                    this.calc.list.splice(h,1)
+                                }
+                            }
+                        break
+                        case 79:
+                            if(this.page==2&&e==0){
+                                this.deck.add(findCard('MBF-32\nShield'),0,0)
+                            }
+                        break
+                        case 80:
+                            if(this.page==0&&e==0&&floor(random(0,2))==0){
+                                this.remember[0]=1
+                            }else if(this.page==1&&e==0){
+                                transition.trigger=true
+                                transition.scene='deck'
+                                this.setupDeck(1)
+                                this.context=1
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-20)
+                                this.getRelic(findRelic('Martyrdom'))
+                            }
+                        break
+                        case 81:
                         break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){

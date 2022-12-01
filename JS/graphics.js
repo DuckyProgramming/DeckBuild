@@ -451,4 +451,12 @@ function setupGraphics(){
 	graphics.symbol[45].noFill()
 	graphics.symbol[45].ellipse(0,0,80,80)
 	graphics.symbol[45].rect(0,0,42,42)
+
+	graphics.symbol[46].strokeWeight(5)
+	graphics.symbol[46].stroke(0)
+	graphics.symbol[46].noFill()
+	graphics.symbol[46].ellipse(0,0,80,80)
+	graphics.symbol[46].strokeWeight(24)
+	graphics.symbol[46].line(0,-32,0,32)
+	graphics.symbol[46].line(-32,0,32,0)
 }

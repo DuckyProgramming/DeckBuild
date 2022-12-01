@@ -2211,6 +2211,11 @@ types={
             {damage:2,alt:1,cost:0,attack:398,target:0,spec:8,class:2},
             {damage:2,alt:1,cost:0,attack:398,target:0,spec:8,class:2},
         ],
+        },{name:'MBF-32\nShield',rarity:-3,list:0,
+        stats:[
+            {damage:3,alt:0,cost:0,attack:399,target:0,spec:8,class:1},
+            {damage:5,alt:0,cost:0,attack:399,target:0,spec:8,class:1},
+        ],
         },
         
         
@@ -3042,6 +3047,12 @@ types={
         },{
             name:'Bottled Ice',id:161,rarity:-1,list:3,
             desc:'At the Start of Combat,\nCharge 1 Ice Charge',
+        },{
+            name:'Bottled Life',id:162,rarity:-1,list:3,
+            desc:'At the Start of Combat,\nCharge 1 Life Charge',
+        },{
+            name:'Martyrdom',id:163,rarity:-1,list:3,
+            desc:'When You Take Unblocked\nDamage, Gain 5 Currency',
         },/*{
             name:'', d:15,rarity:4,list:0,
             desc:'',
@@ -5156,18 +5167,89 @@ types={
             name:'Floating Balls',id:78,list:3,
             pages:[
                 {
-                    desc:"",
-                    option:['',''],
+                    desc:"You notice several mysterious balls floating in the air ahead of you. As you approach, you notice they are Charges.\n"+
+                    "Somebody out there must know how to manipulate them, since you definitely don't just leave Charges in random places.\n"+
+                    "As you near, the Charges begin to fly around, staying in the area, but bouncing erratically.\n"+
+                    "You are able to use your power to deflect them away from you.",
+                    option:['Catch them','Get out of there'],
                     optionDesc:['',''],
                     link:[1,2],
                 },{
-                    desc:"",
+                    desc:"As the Charges whizz by you are unable to differentiate them before they merge into your form.",
+                    option:['Got them'],
+                    optionDesc:['Gain 3 Random Cards'],
+                    link:[-1],
+                },{
+                    desc:"You run away, the Charges following you for a few seconds before returning to their initial positions.",
                     option:[''],
                     optionDesc:[''],
                     link:[-1],
+                },
+            ],
+        },{
+            name:'Final Orders',id:79,list:3,
+            pages:[
+                {
+                    desc:"Your remaining contact within the Management is retiring and wants to meet you one final time before he is repositioned.\n"+
+                    "He asks you to meet him at the base so he can tell you the final order you will receive as part of the Management.",
+                    option:['Go there','Leave him'],
+                    optionDesc:['',''],
+                    link:[2,1],
                 },{
-                    desc:"",
-                    option:[''],
+                    desc:"You've cut ties with the Management.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"When you arrive, he tells you that the last thing he wants is for the Management occupation of Konai to end.\n"+
+                    "How you do it is up to you. Realizing you still lack most modern tools, he gives you the few he has left.",
+                    option:['Take them','Decline'],
+                    optionDesc:['Gain 1 Card',''],
+                    link:[3,4],
+                },{
+                    desc:"You take the things offered and allow him to end his career without you.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"You politely decline and allow him to end his career without you.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Siege',id:80,list:2,
+            pages:[
+                {
+                    desc:"You arrive at the base. The battle has been occuring for more than an week at this point.\n"+
+                    "The Management forces have refused to surrender, despite having been encircled for a long time.\n"+
+                    "At this point, it's just waiting for them to run out of food, causing a breakout attempt.\n\n"+
+                    "Before anybody can react, the Management forces rush out the base gates and try to push through your lines.\n"+
+                    "Some of them head for your location, trying to escape through your allies and into the forest.\n"+
+                    "Some many of them are attacking, in fact, that it's hard to tell what's going on.",
+                    option:['Attack something','Get out of the way'],
+                    optionDesc:['',''],
+                    link:[1,3],
+                },{
+                    desc:"You manage to stab one of the Management soldiers as the others retreat into the base.\n"+
+                    "With the defensive perimeter holding, the other rebels thank you for your help.\n"+
+                    "The base will fall soon, as resources dwindle.",
+                    option:['Well done'],
+                    optionDesc:['Upgrade a Card'],
+                    link:[-1],
+                },{
+                    desc:"As you flail wildly the formations near you collapse into pockets.\n"+
+                    "Seeing no hope of success, most of the rebels retreat, but you hold your ground.\n"+
+                    "Holding some Management troops back, you are eventually overwhelmed, but not before the rebels can reorganize.\n"+
+                    "With their enemies holding strong, the Management troops retreat back into their base.",
+                    option:['Ouch'],
+                    optionDesc:['Lose 20 Health, Gain 1 Relic'],
+                    link:[-1],
+                },{
+                    desc:"Most of the soldiers avoid direct combat and get out of the base, leaving it to fall to the rebels.\n"+
+                    "You're unharmed, but significant damage has been done to the dreams of the rebel leadership.",
+                    option:['Exit'],
                     optionDesc:[''],
                     link:[-1],
                 },
@@ -5215,7 +5297,7 @@ types={
                     link:[],
                 },
             ],
-        },//fight club, capture, last guardian, leverage, creation symbol, discord
+        },//fight club, capture, last guardian, leverage, creation symbol, discord, ngt, assasination mission, ninja, the admiral, ibunroku, black market business
     ],
 }
 listing={

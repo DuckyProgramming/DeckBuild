@@ -459,6 +459,7 @@ class card{
             case 396: this.desc+='Deal '+this.damage+' Damage\nHeal '+this.alt+' Health'; break
             case 397: this.desc+='A Random Card\nin Your Hand\nCosts 0'; break
             case 398: this.desc+='Hold '+this.damage+' Light Charge\nGain '+this.alt+' Weak\nGain '+this.alt+' Frail'; break
+            case 399: this.desc+='Gain '+this.damage+'\nArmor'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
