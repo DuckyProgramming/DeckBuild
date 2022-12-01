@@ -3236,6 +3236,11 @@ class battle{
                                 this.deck.add(findCard('Injury'),0,stage.playerNumber+2)
                             }
                         break
+                        case 88:
+                            if(this.page==1&&e==0){
+                                this.getPotion(findPotion('Cola'))
+                            }
+                        break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){
                         this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]
