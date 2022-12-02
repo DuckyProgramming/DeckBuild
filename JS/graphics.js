@@ -13,6 +13,7 @@ function setupGraphics(){
 	graphics.minor.push(createGraphics(200,200))
 	graphics.minor.push(createGraphics(160,160))
 	graphics.minor.push(createGraphics(160,160))
+	graphics.minor.push(createGraphics(140,180))
 	for(a=0,la=graphics.minor.length;a<la;a++){
 		setupLayer(graphics.minor[a])
 	}
@@ -141,7 +142,6 @@ function setupGraphics(){
 	graphics.minor[5].rect(0,0,160,8,3)
 	graphics.minor[5].fill(149,134,184)
 	graphics.minor[5].rect(0,-2,160,4,3)
-
 	graphics.minor[6].noStroke()
 	graphics.minor[6].fill(150,160,196)
 	graphics.minor[6].ellipse(80,80,120,120)
@@ -149,7 +149,14 @@ function setupGraphics(){
 	graphics.minor[7].strokeWeight(24)
 	graphics.minor[7].line(32,50,80,137)
 	graphics.minor[7].line(128,50,80,137)
-
+	graphics.minor[8].strokeWeight(5)
+	for(a=0;a<20;a++){
+		graphics.minor[8].stroke(0,500-a*20,a*20)
+		graphics.minor[8].line(10,10+a*4,10,170-a*4)
+		graphics.minor[8].line(10+a*3,10,130-a*3,10)
+		graphics.minor[8].line(130,10+a*4,130,170-a*4)
+		graphics.minor[8].line(10+a*3,170,130-a*3,170)
+	}
 	for(a=0;a<50;a++){
 		graphics.symbol.push(createGraphics(100,100))
 		setupLayer(graphics.symbol[a])

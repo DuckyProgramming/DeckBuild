@@ -263,7 +263,7 @@ function copyList(base){
 	return i
 }
 function quickAdd(name){
-	current.hand.add(findCard(name),0,0)
+	current.hand.add(findCard(name),0,stage.playerNumber+3)
 }
 function outList(player){
 	print('Common: '+listing.card[player][0].length+
@@ -1362,6 +1362,11 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.text('S',8,0)
 			layer.image(graphics.symbol[5],-18,-10,20,20)
 			layer.image(graphics.symbol[5],-2,-10,20,20)
+		break
+		case 173:
+			layer.text('?',1,1)
+			layer.image(graphics.symbol[5],-20,-10,20,20)
+			layer.image(graphics.symbol[29],4,-8,16,16)
 		break
 	}
 	layer.scale(1/size,1/size/flip)

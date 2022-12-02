@@ -507,16 +507,26 @@ class card{
                     this.layer.stroke(180,160,200,this.fade)
                 break
                 case 5:
+                    this.layer.fill(160,220,240,this.fade)
+                    this.layer.stroke(120,180,200,this.fade)
+                break
+                case 6:
                     this.layer.fill(120,this.fade)
                     this.layer.stroke(80,this.fade)
                 break
-                case 6:
+                case 7:
                     this.layer.fill(80,this.fade)
                     this.layer.stroke(50,this.fade)
+                break
+                case 8:
+                    this.layer.fill(0,this.fade)
                 break
             }
             this.layer.strokeWeight(5)
             this.layer.rect(0,0,this.width,this.height,5)
+            if(this.color==8){
+                this.layer.image(graphics.minor[8],-this.width/2-10,-this.height/2-10,this.width+20,this.height+20)
+            }
             if(this.attack==63||this.attack==280||this.attack==296||this.attack==367){
                 this.layer.rect(0,-this.height/4+5,this.width,this.height/2+10,5)
                 this.layer.rect(0,this.height/4+5,this.width,this.height/2-10,5)
@@ -570,16 +580,30 @@ class card{
                         this.layer.fill(50,0,100,this.fade)
                     break
                     case 5:
-                        this.layer.fill(40,this.fade)
+                        this.layer.fill(0,50,100,this.fade)
                     break
                     case 6:
+                        this.layer.fill(40,this.fade)
+                    break
+                    case 7:
                         this.layer.fill(20,this.fade)
+                    break
+                    case 8:
+                        this.layer.fill(200,this.fade)
                     break
                 }
                 this.layer.text(this.name+'+',0,-this.height/2+24)
-                this.layer.fill(0,this.fade)
+                if(this.color==8){
+                    this.layer.fill(255,this.fade)
+                }else{
+                    this.layer.fill(0,this.fade)
+                }
             }else{
-                this.layer.fill(0,this.fade)
+                if(this.color==8){
+                    this.layer.fill(255,this.fade)
+                }else{
+                    this.layer.fill(0,this.fade)
+                }
                 this.layer.text(this.name,0,-this.height/2+24)
             }
             this.layer.textSize(12)

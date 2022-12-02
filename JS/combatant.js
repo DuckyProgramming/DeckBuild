@@ -1595,6 +1595,60 @@ class combatant{
 					this.layer.ellipse(4,-72,4,4)
 					this.layer.ellipse(12,-72,4,4)
 				break
+				case 37:
+					this.layer.noFill()
+					this.layer.stroke(220,this.fade)
+					this.layer.strokeWeight(5)
+					this.layer.line(-4,-18,-8,0)
+					this.layer.line(4,-18,8,0)
+					this.layer.line(-8,-30,-18,-18)
+					this.layer.line(8,-30,18,-18)
+					this.layer.strokeWeight(4)
+					this.layer.arc(-12,-24,16,12,0,180)
+					this.layer.noStroke()
+					this.layer.fill(220,this.fade)
+					this.layer.ellipse(0,-28,18,27)
+					this.layer.fill(255,this.fade)
+					this.layer.triangle(-4,-40,20/3,-40,4,-20)
+					this.layer.fill(100,200,200,this.fade)
+					this.layer.quad(4,-19,14/3,-25,4/3,-40,2,-25)
+					this.layer.fill(190,95,0,this.fade)
+					this.layer.ellipse(0,-54,40,40)
+					this.layer.stroke(0,this.fade)
+					this.layer.strokeWeight(1)
+					this.layer.arc(9,-53,12,2,-180,0)
+					this.layer.strokeWeight(3)
+					this.layer.point(9-6,-62)
+					this.layer.point(9+6,-62)
+					this.layer.stroke(220,this.fade)
+					this.layer.fill(220,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-16,-69,16,-69)
+					this.layer.quad(-12,-69,12,-69,8,-75,-8,-75)
+				break
+				case 38:
+					this.layer.noStroke()
+					this.layer.fill(230,230,5,this.fade)
+					this.layer.ellipse(-10,-8,20,20)
+					this.layer.ellipse(10,-8,20,20)
+					this.layer.ellipse(-16,-30,20,20)
+					this.layer.fill(235,235,55,this.fade)
+					this.layer.ellipse(0,-28,24,40)
+					this.layer.fill(240,240,60,this.fade)
+					this.layer.ellipse(16,-30,20,20)
+					this.layer.fill(245,245,65,this.fade)
+					this.layer.ellipse(0,-60,40,40)
+					this.layer.fill(240,160,20,this.fade)
+					this.layer.ellipse(13.5,-52,24,16)
+					this.layer.stroke(0,this.fade)
+					this.layer.strokeWeight(1)
+					this.layer.arc(13.5,-52,22,2,-180,0)
+					this.layer.line(18-3,-56,18-3,-58)
+					this.layer.line(18+3,-56,18+3,-58)
+					this.layer.strokeWeight(3)
+					this.layer.point(9-6,-64)
+					this.layer.point(9+6,-64)
+				break
 				/*case 35:
 					this.layer.translate(0,-1.25)
 					if(this.anim[1]<1){
@@ -1920,6 +1974,9 @@ class combatant{
 	evoke(type,detail){
 		if(this.battle.relics.active[166]&&floor(random(0,2))){
 			this.load(floor(random(0,8)),6)
+		}
+		if(this.battle.relics.active[173]){
+			this.battle.draw()
 		}
 		switch(type){
 			case 0:

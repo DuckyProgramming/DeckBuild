@@ -2374,7 +2374,7 @@ types={
         {name:'Duelist',alt:'',life:70,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','Princess','Setsuna']},
         {name:'Executor',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MAEP-65091','Azis']},
         {name:'Creation',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','MPCO-SKR','Sakura']},
-        {name:'Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[4,2,3],altAttack:[0,3,0],class:0,buff:0},
+        {name:'Wanderer',alt:'',life:60,height:66,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Friend','Duck','____','Duckipo']},
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
@@ -2406,7 +2406,8 @@ types={
         {name:'Dark Man',alt:'',life:35,height:75,behavior:0,attacks:[1,3],damage:[6,2],altAttack:[0,2],class:0,buff:0},
         {name:'The Reorganised',alt:'',life:100,height:75,behavior:0,attacks:[1,22,23],damage:[25,8,4],altAttack:[0,10,1],class:0,buff:9},
         {name:'Billy Beatup',alt:'',life:75,height:75,behavior:0,attacks:[1,3],damage:[9,2],altAttack:[0,6],class:0,buff:0},
-        
+        {name:'Monkey Gangster',alt:'',life:24,height:60,behavior:0,attacks:[1,3],damage:[8,2],altAttack:[0,5],class:0,buff:0},
+        {name:'Wild Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[4,2,3],altAttack:[0,3,0],class:0,buff:0},
     ],attack:[
         {class:0},//0
         {class:0},
@@ -2440,12 +2441,12 @@ types={
             threshold:0,class:-1,zone:0,
             objective:[],
         },{
-            combatants:[5,0,0,0,0,0],
+            combatants:[38,0,0,0,0,0],
             reinforce:[],
             threshold:2,class:-1,zone:0,
             objective:[[0,0,0,0]],
         },{
-            combatants:[5,5,0,0,0,0],
+            combatants:[38,38,0,0,0,0],
             reinforce:[5],
             threshold:3,class:0,zone:0,
             objective:[[0,0,0,0]],
@@ -2583,6 +2584,11 @@ types={
             combatants:[36,0,0,0,0,0],
             reinforce:[],
             threshold:2,class:-1,zone:0,
+            objective:[[0,0,0,0]],
+        },{//30
+            combatants:[37,37,37,0,0,0],
+            reinforce:[37,37,37,37,37],
+            threshold:6,class:-1,zone:0,
             objective:[[0,0,0,0]],
         },
     ],relic:[
@@ -3105,6 +3111,9 @@ types={
         },{
             name:'Survival Notes',id:172,rarity:-1,list:3,
             desc:'Draw 1 Card When\nYou Draw a Status',
+        },{
+            name:'Angelic Sphere',id:173,rarity:-1,list:3,
+            desc:'Draw 1 Card When\nYou Evoke an Orb',
         },/*{
             name:'', d:15,rarity:4,list:0,
             desc:'',
@@ -5943,13 +5952,38 @@ types={
                     optionDesc:['','Start Fight'],
                     link:[1,-1],
                 },{
-                    desc:'"'+"Start fight"+'"',
-                    option:[''],
+                    desc:'"'+"40,"+'"'+" he answers.\n"+
+                    '"'+"Standard Management currency."+'"',
+                    option:['Pay up','Attack him'],
+                    optionDesc:['Lose 40 Currency','Start Fight'],
+                    link:[2,-1],
+                },{
+                    desc:"You hand over the of money. The monkeys leave.",
+                    option:['Done'],
                     optionDesc:[''],
                     link:[-1],
+                },
+            ],
+        },{
+            name:'Center of Light',id:103,list:3,
+            pages:[
+                {
+                    desc:"In the center of the tower, you finally find the artifact it was built to guard: the Angelic Sphere.\n"+
+                    "As you approach hundreds of images flash through your mind, those from other adventures who possessed it.\n"+
+                    "It seems to return to the tower every time its holder dies. But you don't plan to die with in.\n"+
+                    "But you feel increasingly strained the closer you get, like your energy is being sapped.",
+                    option:['Grab the Orb','Leave it'],
+                    optionDesc:['',''],
+                    link:[1,2],
                 },{
-                    desc:"",
-                    option:[''],
+                    desc:"As you feel your remaining life drain out of your body, the Orb gravitates into your hadn.\n"+
+                    "As much as you hate it, your under its control now.",
+                    option:['Leave'],
+                    optionDesc:['Lose 1 Base Energy\nGain 1 Relic'],
+                    link:[-1],
+                },{
+                    desc:"You wouldn't risk touching that thing. Its power is beyond human understanding.",
+                    option:['Exit'],
                     optionDesc:[''],
                     link:[-1],
                 },
@@ -5997,7 +6031,7 @@ types={
                     link:[],
                 },
             ],
-        },//last guardian, leverage, the admiral, black market business, angelic sphere, manager, midnight climax, blitz, rocket troop, rally, edel, management revelation, the kids
+        },//last guardian, leverage, the admiral, black market business, manager, midnight climax, blitz, rocket troop, rally, edel, management revelation, the kids
     ],
 }
 listing={
@@ -6006,7 +6040,7 @@ listing={
 zones=[
     {
         encounters:[[],[],[]],
-        special:[1,4,3,17,18,19,20,21,22,23,24,25,26,27,29],
+        special:[1,4,3,17,18,19,20,21,22,23,24,25,26,27,29,30],
         events:[[],[],[],[],[]],
     },{
         encounters:[[],[],[]],
@@ -6014,7 +6048,7 @@ zones=[
         events:[[],[],[],[],[]],
     },
 ]
-stage={scale:0,quality:1,scene:'menu',playerNumber:4,identifier:['']}
+stage={scale:0,quality:1,scene:'menu',playerNumber:5,identifier:['']}
 graphics={main:0,minor:[],symbol:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}

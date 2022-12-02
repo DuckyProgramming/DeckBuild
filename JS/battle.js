@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=102
+        this.event=104
     }
     create(){
         this.end=false
@@ -94,7 +94,6 @@ class battle{
         this.resetCombatant()
         this.drawInitial()
         this.turnDraw()
-        this.drawEffect()
         this.bonusObjective(this.random.class)
         if(this.relics.active[146]){
             for(g=0,lg=this.hand.cards.length;g<lg;g++){
@@ -339,6 +338,7 @@ class battle{
             if(this.relics.active[172]&&this.hand.cards[this.hand.cards.length-1].list==11){
                 this.draw()
             }
+            this.drawEffect(this.hand.cards[this.hand.cards.length-1].attack)
         }else{
             this.hand.add(findCard('Empty'),0,0)
         }
@@ -347,30 +347,28 @@ class battle{
             this.reserve.shuffle()
         }
     }
-    drawEffect(){
-        for(let e=0,le=this.hand.cards.length;e<le;e++){
-            switch(this.hand.cards[e].attack){
-                case -9: case -17:
-                    this.mana.main--
-                break
-                case -15:
-                    this.combatants[0].boost.main[0]-=2
-                    this.combatants[0].status.main[4]++
-                break
-                case -16:
-                    this.hand.cards[floor(random(0,this.hand.cards.length))].cost++
-                break
-                case -18:
-                    for(let f=0,lf=this.hand.cards.length;f<lf;f++){
-                        if(this.hand.cards[f].cost>=0){
-                            this.hand.cards[f].cost++
-                        }
+    drawEffect(attack){
+        switch(attack){
+            case -9: case -17:
+                this.mana.main--
+            break
+            case -15:
+                this.combatants[0].boost.main[0]-=2
+                this.combatants[0].status.main[4]++
+            break
+            case -16:
+                this.hand.cards[floor(random(0,this.hand.cards.length))].cost++
+            break
+            case -18:
+                for(let f=0,lf=this.hand.cards.length;f<lf;f++){
+                    if(this.hand.cards[f].cost>=0){
+                        this.hand.cards[f].cost++
                     }
-                break
-                case -19:
-                    this.combatants[0].status.main[87]+=2
-                break
-            }
+                }
+            break
+            case -19:
+                this.combatants[0].status.main[87]+=2
+            break
         }
     }
     getRelic(type){
@@ -862,7 +860,6 @@ class battle{
             this.hand.cards[e].position.y=500
         }
         this.endTurn()
-        this.drawEffect()
     }
     playCard(){
         this.counter.played++
@@ -3411,6 +3408,24 @@ class battle{
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-99)
                             }else if(this.page==3&&e==0){
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-9)
+                            }
+                        break
+                        case 102:
+                            if((this.page==0||this.page==1)&&e==1){
+                                setupEncounter(current,zones[0].special[15])
+                                this.create()
+                                transition.scene='battle'
+                            }else if(this.page==1&&e==0){
+                                this.currency.money-=40
+                            }
+                        break
+                        case 103:
+                            if(this.page==1&&e==0){
+                                this.mana.gen--
+                                this.mana.main--
+                                this.mana.max--
+                                this.mana.base--
+                                this.getRelic(findRelic('Angelic Sphere'))
                             }
                         break
                     }
