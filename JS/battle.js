@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=98
+        this.event=99
     }
     create(){
         this.end=false
@@ -2358,6 +2358,18 @@ class battle{
             "It's illegal.\n\n"+
             "He reconsiders the final time. "+'"'+"Fine, what service would you like?"+'"\n'+
             "You could take one of the services, but you would rather slap him."
+        }else if(types.event[this.event].id==89&&this.page==0){
+            types.event[this.event].pages[this.page].desc="It's the same lake as before, only this time there's no glow. But something compels you to go there anyway.\n"+
+            "You here the voice before you even near the lake. He knew about this all long before.\n"+
+            '"'+"I've been watching you, "+stage.identifier[3]+", having taken interest in your adventure. But there I'm not limited like my suboordinate."+'"\n'+
+            '"'+"I'll always be watching, but I have others to observe. Developing is hard work, as you might know."+'"\n'+
+            "You have no idea what he's talking about.\n\n"+
+            '"'+"Here's your prize. You haven't earned it, but nobody's earned anything as of yet."+'"'
+        }else if(types.event[this.event].id==98&&this.page==0){
+            types.event[this.event].pages[this.page].desc="A man wearing a trenchcoat walks by you. When he gets near, he quickly hands you a paper ball and runs away.\n"+
+            "Unfolding the ball, you find a message from some sort of organization operating on the planet.\n"+
+            '"'+stage.identifier[2]+", we would like to meet you tomorrow at our base."+'"\n'+
+            "Looks like they've given you directions there as well."
         }
     }
     onClickEvent(){
@@ -3343,6 +3355,21 @@ class battle{
                                 this.currency.money-=100
                             }else if(this.page==1&&e==0){
                                 this.getRelic(findRelic('Stocks'))
+                            }
+                        break
+                        case 98:
+                            if(this.page==0&&e==0&&floor(random(0,2))==0){
+                                this.remember[0]=1
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-6)
+                            }else if((this.page==3||this.page==4)&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
+                            }else if(this.page==6&&e==0){
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.relics.list[g].length))
+                                this.getRelic(this.relics.list[g][f])
+                                this.relics.list[g].splice(f,1)
                             }
                         break
                     }

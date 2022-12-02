@@ -5537,7 +5537,7 @@ types={
             pages:[
                 {
                     desc:"It's the same lake as before, only this time there's no glow. But something compels you to go there anyway.\n"+
-                    "You here the voice before you even near the lake. He knoew about this all long before.\n"+
+                    "You here the voice before you even near the lake. He knew about this all long before.\n"+
                     '"'+"I've been watching you, "+", having taken interest in your adventure. But there I'm not limited like my suboordinate."+'"\n'+
                     '"'+"I'll always be watching, but I have others to observe. Developing is hard work, as you might know."+'"\n'+
                     "You have no idea what he's talking about.\n\n"+
@@ -5780,7 +5780,7 @@ types={
                 },
             ],
         },{
-            name:'Investments',id:97,list:-1,
+            name:'Investments',id:97,list:0,
             pages:[
                 {
                     desc:"You walk into an unknown building. On the inside, the proprietor asks if you are here to invest.\n"+
@@ -5799,6 +5799,49 @@ types={
                     desc:"It's too risky to be putting your money into things right now.",
                     option:['Exit'],
                     optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Paper Ball',id:98,list:0,
+            pages:[
+                {
+                    desc:"A man wearing a trenchcoat walks by you. When he gets near, he quickly hands you a paper ball and runs away.\n"+
+                    "Unfolding the ball, you find a message from some sort of organization operating on the planet.\n"+
+                    '"'+", we would like to meet you tomorrow at our base."+'"\n'+
+                    "Looks like they've given you directions there as well.",
+                    option:['Go there','Don'+"'"+'t'],
+                    optionDesc:['',''],
+                    link:[2,1],
+                },{
+                    desc:"Sounds like a scam. Nobody transmits messages via paper balls.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"When you arrive, a squad of people jump out from all sides and attack you.",
+                    option:['Run'],
+                    optionDesc:['Lose 6 Health'],
+                    link:[-1],
+                },{
+                    desc:"There's nobody there, only a drop box and some security systems.",
+                    option:['Go toward the box','Leave'],
+                    optionDesc:['Lose 3 Health',''],
+                    link:[4,5],
+                },{
+                    desc:"You advance, but the security system takes a chunk out of you.",
+                    option:['Keep going','Leave'],
+                    optionDesc:['Lose 3 Health',''],
+                    link:[6,5],
+                },{
+                    desc:"You leave the box behind and head out.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"You pick up the box and find useful equipment inside.",
+                    option:['Take it'],
+                    optionDesc:['Gain 1 Relic'],
                     link:[-1],
                 },
             ],
