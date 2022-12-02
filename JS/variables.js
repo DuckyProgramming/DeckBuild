@@ -5937,12 +5937,13 @@ types={
             name:'Outmonkeyed',id:102,list:0,
             pages:[
                 {
-                    desc:"You are stopped in the road by a gang of monkeys.",
-                    option:['',''],
-                    optionDesc:['',''],
-                    link:[1,2],
+                    desc:"You are stopped in the road by a gang of monkeys.\n"+
+                    '"'+"We'd like your protection payment,"+'"'+" the first one says.",
+                    option:['How much?','Attack him'],
+                    optionDesc:['','Start Fight'],
+                    link:[1,-1],
                 },{
-                    desc:"",
+                    desc:'"'+"Start fight"+'"',
                     option:[''],
                     optionDesc:[''],
                     link:[-1],
