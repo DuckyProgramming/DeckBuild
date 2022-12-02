@@ -393,7 +393,7 @@ class card{
             case 329: this.desc+='Deal '+this.damage+' Damage\nReturn on Scry'; break
             case 330: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Upgrade\na Random Card'; break
             case 331: this.desc+='If Target Has\nLess Than '+this.damage+'\nHealth, Set its\nHealth to 0\n'+nfp(this.alt)+' Balance'; break
-            case 332: this.desc+='Gain '+this.damage+' Max Energy\nEvery Turn\nEthereal'; break
+            case 332: if(this.spec==13){this.desc+='Gain '+this.damage+' Max Energy\nEvery Turn\nEthereal'}else{this.desc+='Gain '+this.damage+' Max Energy\nEvery Turn'}; break
             case 333: this.desc+='Retained Cards\nCost '+this.damage+' Less\nWhen Retained'; break
             case 334: this.desc+='Deal Damage Equal\nto '+this.damage+'x Number\nof Charges Held\nThis Combat\n('+random.orbs+')'; break
             case 335: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Lock-on'; break

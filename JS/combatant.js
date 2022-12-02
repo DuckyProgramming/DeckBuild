@@ -175,7 +175,15 @@ class combatant{
 					lg--
 				}
 			}
+			if(stance==1){
+				if(this.battle.relics.active[170]){
+					this.boost.main[2]++
+				}
+			}
 			if(stance==2){
+				if(this.battle.relics.active[169]){
+					this.boost.main[0]++
+				}
 				for(g=0;g<this.status.main[16];g++){
 					this.battle.draw()
 				}
@@ -2486,6 +2494,9 @@ class combatant{
 				}
 				if(this.battle.relics.active[152]){
 					this.battle.combatants[0].combo*=2
+				}
+				if(this.battle.relics.active[168]){
+					this.battle.combatants[0].life=min(this.battle.combatants[0].life+4*this.battle.random.healEffectiveness,this.battle.combatants[0].base.life)
 				}
 				if(this.battle.combatants[0].status.main[48]>0){
 					this.battle.combatants[0].life=min(this.battle.combatants[0].life+this.battle.combatants[0].status.main[48]*this.battle.random.healEffectiveness,this.battle.combatants[0].base.life)

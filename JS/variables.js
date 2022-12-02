@@ -335,8 +335,8 @@ types={
         ],
         },{name:'Obliterate',rarity:2,list:1,
         stats:[
-            {damage:5,alt:0,cost:5,attack:175,target:1,spec:0,class:0},
-            {damage:8,alt:0,cost:5,attack:175,target:1,spec:0,class:0},
+            {damage:6,alt:0,cost:4,attack:175,target:1,spec:0,class:0},
+            {damage:10,alt:0,cost:4,attack:175,target:1,spec:0,class:0},
         ],
         },{name:'Kinetic',rarity:1,list:1,
         stats:[
@@ -2032,8 +2032,8 @@ types={
         
         {name:'Empty',rarity:-1,list:-1,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-3,target:0,spec:6,class:0},
-            {damage:0,alt:0,cost:0,attack:-3,target:0,spec:6,class:0},
+            {damage:0,alt:0,cost:0,attack:-3,target:0,spec:13,class:0},
+            {damage:0,alt:0,cost:0,attack:-3,target:0,spec:13,class:0},
         ],
         },
         
@@ -3086,7 +3086,22 @@ types={
             desc:'When Taken, Have\n999 Max Health',
         },{
             name:'Orb of Discord',id:166,rarity:-1,list:3,
-            desc:'Whenever you Evoke an Orb, 50%\nChange to Hold Another Random One',
+            desc:'When you Evoke an Charge, 50%\nChange to Hold Another Random One',
+        },{
+            name:'Management Pin',id:167,rarity:-1,list:3,
+            desc:'When You Take No Damage in\nCombat, Gain 1 Starting Strength',
+        },{
+            name:'Shattered Pin',id:168,rarity:-1,list:3,
+            desc:'When an Enemy Dies,\nHeal 4 Health',
+        },{
+            name:'Internal Wrath',id:169,rarity:-1,list:3,
+            desc:'When You Enter Wrath,\nGain 1 Strength',
+        },{
+            name:'Internal Calm',id:170,rarity:-1,list:3,
+            desc:'When You Enter Wrath,\nGain 1 Dexterity',
+        },{
+            name:'Stocks',id:171,rarity:-1,list:3,
+            desc:'Gain 10 Currency\nPer Room',
         },/*{
             name:'', d:15,rarity:4,list:0,
             desc:'',
@@ -4851,7 +4866,7 @@ types={
                 },
             ],
         },{
-            name:'Dead Soldier',id:63,list:2,
+            name:'Dead Soldier',id:63,list:0,
             pages:[
                 {
                     desc:"You notice the body of a Management soldier on the ground, holding the apparent rank of Corporal.\n"+
@@ -5562,6 +5577,231 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'Harvester',id:91,list:4,
+            pages:[
+                {
+                    desc:"In the corner of your eye you spot a boy creeping through the forest heading towards you.\n"+
+                    "He's holding something in his hand, but you can't tell what it is at this distance.",
+                    option:['Turn around','Don'+"'"+'t'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"He stops and looks at you intently. He motions for you to come closer to him.",
+                    option:['Go closer','Raise weapon'],
+                    optionDesc:['',''],
+                    link:[3,4],
+                },{
+                    desc:"As he approaches, you can tell that he is, in fact, holding a knife.\n"+
+                    "When he reaches you he quickly slashes one your arm. You jump backwards in pain,\n"+
+                    "but he's running off too fast for you to catch up.\n"+
+                    '"'+"Got the juice!"+'"'+", he says, but you have no idea what he's saying.",
+                    option:['Why?'],
+                    optionDesc:['Lose 3 Health'],
+                    link:[-1],
+                },{
+                    desc:"When you get close to him he grabs you by the neck and holds you in front of him.\n"+
+                    "You struggle to get him off of you, but he manages to stab your arm before you do so.\n"+
+                    "When you try to finish him off, he runs away, leaving you somewhat confused.",
+                    option:['Why?'],
+                    optionDesc:['Lose 9 Health, Gain +2 Max Balance'],
+                    link:[-1],
+                },{
+                    desc:"He sees the threat and runs off before a fight starts.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Symbol of Creation',id:92,list:4,
+            pages:[
+                {
+                    desc:"In your hands, you behold a small pin, showing a single symbol of a flower along with the Management insignia.\n"+
+                    "You've had this for all your life, because it represented who you were. A creation of the Management, but unique.\n"+
+                    "In your own way, you were a part of the Management while also being disconnected from it. Something that makes you special.\n"+
+                    "But this item you now hold also represents those who did everything you hated. Did you leave the Management for this?\n",
+                    option:['Keep it','Smash it','Sell it'],
+                    optionDesc:['','',''],
+                    link:[1,2,3],
+                },{
+                    desc:"You know that as much as the Management may be the villains in your story, it isn't the only one.\n"+
+                    "And a symbol cannot be used as proxy to represent an organisation. All of that would be meaningless.\n"+
+                    "While you don't like what it stands for, this pin represents who you are.",
+                    option:['Done'],
+                    optionDesc:['Gain 1 Relic'],
+                    link:[-1],
+                },{
+                    desc:"You didn't forge your own path just to follow theirs. You are overwhelmed with relief as you hold the shards.\n"+
+                    "The Management has no control over you now... or do they?",
+                    option:['Done'],
+                    optionDesc:['Gain 1 Relic'],
+                    link:[-1],
+                },{
+                    desc:"Desperate times call for desperate measures. You don't want this thing, but it's probably still valuable.\n"+
+                    "The pawn shop gives you a modest sum for the "+'"'+"heirloom"+'"'+". The owner thinks the Management might want it back.\n"+
+                    "If so, they better not use it to track you down.",
+                    option:['Done'],
+                    optionDesc:['Gain 235 Currency'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Convenation',id:93,list:2,
+            pages:[
+                {
+                    desc:"The Management has called for all the people living in the village nearby to meet up in the town center.\n"+
+                    "Despite being on the road, you head there and watch from far away to keep tabs on Management activity in the region.\n"+
+                    "You've heard that they're taking the citizens to concentration camps, but there's too many for you to do anything.\n"+
+                    "But at the end, when the day is mostly over, you notice that only a singular Management soldiers is left.\n"+
+                    "And consequently, there's only one more victim to round up, a little girl.",
+                    option:['Help her','It'+"'"+'s, too risky'],
+                    optionDesc:['',''],
+                    link:[1,3],
+                },{
+                    desc:"You are able to successfully win the battle and help the girl out.\n"+
+                    "She thanks you with some money, but you've gained in other ways.",
+                    option:['Good job'],
+                    optionDesc:['Gain 9 Currency, Gain 1 Card'],
+                    link:[-1],
+                },{
+                    desc:"It's a trap!\n"+
+                    "The Management soldiers return and surround you from all sides.\n"+
+                    "There's no real way out that doesn't involve going through them.",
+                    option:['Fight them off','Negotiate'],
+                    optionDesc:['',''],
+                    link:[4,5],
+                },{
+                    desc:"The Management is too powerful to be fought with directly.\n"+
+                    "It's probably a trap anyway.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"After a short battle you escape the soldiers by getting through a break in their formation.\n"+
+                    "That maneuver might have been a little too risky, it might not be optimal to repeat it.",
+                    option:['Escape'],
+                    optionDesc:['Lose 14 Health'],
+                    link:[-1],
+                },{
+                    desc:"When you approach them, The Management soldiers grab you and knock you out.\n"+
+                    "You wake up a long time later, in a forest somewhere. It takes you a little time to get reoriented,\n"+
+                    "but you're able to get back on your feet. What they did to you, you don't know.",
+                    option:['Clean up'],
+                    optionDesc:['Lose 3 Max Health'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Assassination',id:94,list:2,
+            pages:[
+                {
+                    desc:"The provincial leader who's cooperative with the Management has finally returned home so he can be killed.\n"+
+                    "You've managed to track him down to his mansion and have breached the security through the back.\n"+
+                    "You can see him from your hiding spot on the top floor, but its difficult to get a good way to strike.",
+                    option:['Throw a dagger','Sneak up behind him','Jump out the window'],
+                    optionDesc:['','',''],
+                    link:[1,3,5],
+                },{
+                    desc:"You hit him with a swift, clean, dagger and escape before guards can arrive.",
+                    option:['Escape'],
+                    optionDesc:['Gain 40 Currency'],
+                    link:[-1],
+                },{
+                    desc:"You miss, and the target escapes and goes to ground. You barely escape.",
+                    option:['Run'],
+                    optionDesc:['Lose 60 Currency'],
+                    link:[-1],
+                },{
+                    desc:"You get behind him and take him out with a quick backstab.",
+                    option:['Easy'],
+                    optionDesc:['Gain 1 Card'],
+                    link:[-1],
+                },{
+                    desc:"You get spotted on the way and get chased by a group of guards.\n"+
+                    "Luckily, you escape, but you sustain multiple injuries.",
+                    option:['Ouch'],
+                    optionDesc:['Lose 20 Health'],
+                    link:[-1],
+                },{
+                    desc:"You escape, seeing all possible routes to be too risky.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Past Colleague',id:95,list:2,
+            pages:[
+                {
+                    desc:"In the mountains, you recognize an old friend who worked with you before the Management occupation.\n"+
+                    "She recognizes you at the same time and asks you what you've been up to recently.\n"+
+                    "Making small talk, the conversation quickly turns to your current work.",
+                    option:['Have anything useful?','Know any tricks?'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"She produces a relic from her bag.\n"+
+                    '"'+"You can get more use out of it than me."+'"',
+                    option:['Thank her'],
+                    optionDesc:['Gain 1 Relic'],
+                    link:[-1],
+                },{
+                    desc:"She shows you a few tricks that she's mastered recently.",
+                    option:['Thank her'],
+                    optionDesc:['Gain 1 Card'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'The Grave',id:96,list:2,
+            pages:[
+                {
+                    desc:"You have finally made a return trip to where your journey began. At this spot, you first left your home.\n"+
+                    "It's an empty land. Nothing there but mountains and wind. And yet, you feel at peace here.\n"+
+                    "But why are you here at all? You have no reason to go here, there's nothing to gain.",
+                    option:['Revenge','Closure'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"Of course.\n"+
+                    "You're here because you were wronged. Because you didn't deserve any of this. Nobody did.\n"+
+                    "And that's why you need to make them pay for everything they did to you.",
+                    option:['True'],
+                    optionDesc:['Gain 1 Relic'],
+                    link:[-1],
+                },{
+                    desc:"Of course.\n"+
+                    "You're here because this is the only place where you are peace. Alone, but not alone.\n"+
+                    "In such a cruel world, you must enjoy what you get.",
+                    option:['True'],
+                    optionDesc:['Gain 1 Relic'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Investments',id:97,list:-1,
+            pages:[
+                {
+                    desc:"You walk into an unknown building. On the inside, the proprietor asks if you are here to invest.\n"+
+                    "You tell him that you're a traveler, but he replies that his business are everywhere, so you'll be able to take money out anywhere.\n"+
+                    "He tells you that his investments are linked to a very profitable hedge fund owned by the Management.",
+                    option:['Invest','Decline'],
+                    optionDesc:['Lose 100 Currency',''],
+                    link:[1,2],
+                },{
+                    desc:"You hand over your money and he adds your information to a list.\n"+
+                    "He thanks you for your time as you leave.",
+                    option:['Worth it'],
+                    optionDesc:['Gain 1 Relic'],
+                    link:[-1],
+                },{
+                    desc:"It's too risky to be putting your money into things right now.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
         
         
@@ -5605,7 +5845,7 @@ types={
                     link:[],
                 },
             ],
-        },//capture, last guardian, leverage, creation symbol, discord, assasination mission, ninja, the admiral, ibunroku, black market business, angelic sphere, audrian story, blood, manager, midnight climax, blitz
+        },//last guardian, leverage, the admiral, black market business, angelic sphere, audrian story, manager, midnight climax, blitz, rocket troop, rally, edel, management revelation
     ],
 }
 listing={

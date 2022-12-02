@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=91
+        this.event=98
     }
     create(){
         this.end=false
@@ -1652,6 +1652,9 @@ class battle{
                 if(this.relics.active[137]){
                     this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+6)
                 }
+                if(this.relics.active[167]&&this.counter.taken==0){
+                    this.random.strengthBase++
+                }
                 for(e=0,le=this.objective.length;e<le;e++){
                     if(this.objective[e][0]==0||this.objective[e][0]==1&&this.counter.turn<this.objective[e][1]||this.objective[e][0]==2&&this.counter.taken<this.objective[e][1]){
                         switch(this.objective[e][2]){
@@ -2006,6 +2009,9 @@ class battle{
                     this.resetCombatant()
                     if(floor(random(0,5))==0&&this.currency.money<0){
                         this.deck.add(findCard('Debt'),0,stage.playerNumber+2)
+                    }
+                    if(this.relics.active[181]){
+                        this.currency.money+=10
                     }
                     switch(this.map.main[e][f]){
                         case 0:
@@ -3265,6 +3271,78 @@ class battle{
                                 this.getRelic(findRelic('Orb of Discord'))
                                 this.deck.cards=[]
                                 this.draftDeck()
+                            }
+                        break
+                        case 91:
+                            if(this.page==2&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-2)
+                            }else if(this.page==3&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
+                                this.combatants[0].base.meterControl+=2
+                            }
+                        break
+                        case 92:
+                            if(this.page==1&&e==0){
+                                this.getRelic(findRelic('Management Pin'))
+                            }else if(this.page==2&&e==0){
+                                this.getRelic(findRelic('Shattered Pin'))
+                            }else if(this.page==3&&e==0){
+                                this.currency.money+=235
+                            }
+                        break
+                        case 93:
+                            if(this.page==0&&e==0&&floor(random(0,2))==0){
+                                this.remember[0]=1
+                            }else if(this.page==1&&e==0){
+                                this.currency.money+=9
+                                transition.scene='choice'
+                                this.setupChoice(0,1,0)
+                            }else if(this.page==4&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-14)
+                            }else if(this.page==5&&e==0){
+                                this.combatants[0].base.life-=3
+                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                            }
+                        break
+                        case 94:
+                            if(this.page==0&&(e==0||e==1)&&floor(random(0,4))==0){
+                                this.remember[0]=1
+                            }else if(this.page==1&&e==0){
+                                this.currency.money+=40
+                            }else if(this.page==2&&e==0){
+                                this.currency.money+=60
+                            }else if(this.page==3&&e==0){
+                                this.currency.money+=9
+                                transition.scene='choice'
+                                this.setupChoice(0,2,0)
+                            }else if(this.page==4&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-20)
+                            }
+                        break
+                        case 95:
+                            if(this.page==1&&e==0){
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.relics.list[g].length))
+                                this.getRelic(this.relics.list[g][f])
+                                this.relics.list[g].splice(f,1)
+                            }else if(this.page==2&&e==0){
+                                transition.scene='choice'
+                                this.setupChoice(0,2,0)
+                            }
+                        break
+                        case 96:
+                            if(this.page==1&&e==0){
+                                this.getRelic(findRelic('Internal Wrath'))
+                            }else if(this.page==2&&e==0){
+                                this.getRelic(findRelic('Internal Calm'))
+                            }
+                        break
+                        case 97:
+                            if(this.page==0&&e==0){
+                                this.currency.money-=100
+                            }else if(this.page==1&&e==0){
+                                this.getRelic(findRelic('Stocks'))
                             }
                         break
                     }
