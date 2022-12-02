@@ -140,8 +140,8 @@ types={
         ],
         },{name:'Heavy\nOverhand',rarity:2,list:1,
         stats:[
-            {damage:28,alt:0,cost:10,attack:1,target:1,spec:4,class:0},
-            {damage:44,alt:0,cost:10,attack:1,target:1,spec:4,class:0},
+            {damage:40,alt:0,cost:10,attack:1,target:1,spec:4,class:0},
+            {damage:60,alt:0,cost:10,attack:1,target:1,spec:4,class:0},
         ], 
         },{name:'Throw\nDown',rarity:0,list:1,
         stats:[
@@ -2400,11 +2400,12 @@ types={
         {name:'Orb Walker',alt:'',life:90,height:60,behavior:0,attacks:[1,20],damage:[15,10],altAttack:[0,1],class:1,buff:8},
         {name:'Pointy',alt:'',life:30,height:66,behavior:0,attacks:[3],damage:[5],altAttack:[2],class:0,buff:0},
         {name:'Romeo',alt:'',life:40,height:75,behavior:1,attacks:[1,17,21],damage:[15,10,0],altAttack:[0,2,0],class:0,buff:0},//30
-        {name:'Gas Man',alt:'',life:85,height:80,behavior:1,attacks:[1,3,5],damage:[15,3,4],altAttack:[0,6,0],class:1,buff:0},
+        {name:'Gas Man',alt:'',life:85,height:80,behavior:1,attacks:[1,3,5],damage:[15,3,4],altAttack:[0,6,0],class:0,buff:0},
         {name:'Debt Collector',alt:'',life:64,height:75,behavior:0,attacks:[1],damage:[12],altAttack:[0],class:0,buff:0},
         {name:'Swordmaster',alt:'',life:105,height:75,behavior:0,attacks:[16,1,17],damage:[20,16,10],altAttack:[1,0,2],class:0,buff:0},
         {name:'Dark Man',alt:'',life:35,height:75,behavior:0,attacks:[1,3],damage:[6,2],altAttack:[0,2],class:0,buff:0},
-        {name:'The Fencer',alt:'',life:50,height:75,behavior:0,attacks:[1,22,23],damage:[18,8,4],altAttack:[0,10,1],class:0,buff:9},
+        {name:'The Reorganised',alt:'',life:100,height:75,behavior:0,attacks:[1,22,23],damage:[25,8,4],altAttack:[0,10,1],class:0,buff:9},
+        {name:'Billy Beatup',alt:'',life:75,height:75,behavior:0,attacks:[1,3],damage:[9,2],altAttack:[0,6],class:0,buff:0},
         
     ],attack:[
         {class:0},//0
@@ -2575,6 +2576,11 @@ types={
             objective:[[0,0,0,0]],
         },{
             combatants:[35,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:2,zone:0,
+            objective:[[0,0,6,0]],
+        },{
+            combatants:[36,0,0,0,0,0],
             reinforce:[],
             threshold:2,class:-1,zone:0,
             objective:[[0,0,0,0]],
@@ -3075,6 +3081,12 @@ types={
         },{
             name:'Gold Bar',id:164,rarity:-1,list:3,
             desc:'Gain 50% More\nMoney from Fights',
+        },{
+            name:'Dev Console',id:165,rarity:-1,list:3,
+            desc:'When Taken, Have\n999 Max Health',
+        },{
+            name:'Orb of Discord',id:166,rarity:-1,list:3,
+            desc:'Whenever you Evoke an Orb, 50%\nChange to Hold Another Random One',
         },/*{
             name:'', d:15,rarity:4,list:0,
             desc:'',
@@ -3230,6 +3242,9 @@ types={
         },{
             name:'Starflame',id:49,rarity:-1,list:0,
             desc:'Gain 4 Strength\nAdd 2 Burns to Discard Pile',
+        },{
+            name:'Cola',id:50,rarity:-1,list:0,
+            desc:'Heal 20 Health, You Must\nAttack or Take 15 Damage',
         },
     ],event:[
         {
@@ -5502,6 +5517,51 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'The Developer',id:89,list:-1,
+            pages:[
+                {
+                    desc:"It's the same lake as before, only this time there's no glow. But something compels you to go there anyway.\n"+
+                    "You here the voice before you even near the lake. He knoew about this all long before.\n"+
+                    '"'+"I've been watching you, "+", having taken interest in your adventure. But there I'm not limited like my suboordinate."+'"\n'+
+                    '"'+"I'll always be watching, but I have others to observe. Developing is hard work, as you might know."+'"\n'+
+                    "You have no idea what he's talking about.\n\n"+
+                    '"'+"Here's your prize. You haven't earned it, but nobody's earned anything as of yet."+'"',
+                    option:['What?'],
+                    optionDesc:[''],
+                    link:[1],
+                },{
+                    desc:"Everything is white as the massive flash of light illuminates the area and disappears just as it appeared.\n"+
+                    "He's gone, so you get up and leave.",
+                    option:['What?'],
+                    optionDesc:['Gain a Relic'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Center of Chaos',id:90,list:3,
+            pages:[
+                {
+                    desc:"In the center of the tower, you finally find the artifact it was built to guard: the Orb of Discord.\n"+
+                    "Its power is said to be ultimate, but something has seemed off during your entire journey to get here.\n"+
+                    "As you approach, you begin to see floating objects, and soon, ones flying through the air.\n"+
+                    "And as you see the Orb with your own eyes, you begin to feel your energy dissappear...",
+                    option:['Grab the Orb','Run'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"As you feel your remaining life drain out of your body, the Orb gravitates into your hadn.\n"+
+                    "As much as you hate it, your under its control now.",
+                    option:['Leave'],
+                    optionDesc:['Lose 50% of Max Health\nGain 1 Relic'],
+                    link:[-1],
+                },{
+                    desc:"You get out of that place. The Orb is too powerful for mere mortals.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
         
         
@@ -5545,7 +5605,7 @@ types={
                     link:[],
                 },
             ],
-        },//capture, last guardian, leverage, creation symbol, discord, assasination mission, ninja, the admiral, ibunroku, black market business, angelic sphere, developer, audrian story, blood, manager, midnight climax
+        },//capture, last guardian, leverage, creation symbol, discord, assasination mission, ninja, the admiral, ibunroku, black market business, angelic sphere, audrian story, blood, manager, midnight climax, blitz
     ],
 }
 listing={
@@ -5554,7 +5614,7 @@ listing={
 zones=[
     {
         encounters:[[],[],[]],
-        special:[1,4,3,17,18,19,20,21,22,23,24,25,26,27,28],
+        special:[1,4,3,17,18,19,20,21,22,23,24,25,26,27,29],
         events:[[],[],[],[],[]],
     },{
         encounters:[[],[],[]],

@@ -1316,6 +1316,17 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.text('+50%',0,10)
 			layer.image(graphics.symbol[24],-18,-15,20,20)
 		break
+		case 165:
+			layer.textSize(20)
+			layer.text('</>',0,1)
+		break
+		case 166:
+			layer.text('?',0,1)
+			layer.image(graphics.symbol[29],-17,-17,15,15)
+			layer.image(graphics.symbol[29],-17,2,15,15)
+			layer.image(graphics.symbol[29],2,-17,15,15)
+			layer.image(graphics.symbol[29],2,2,15,15)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)
@@ -1509,6 +1520,11 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 		break
 		case 49:
 			layer.image(graphics.symbol[44],-10,-10,20,20)
+		break
+		case 50:
+			layer.image(graphics.symbol[4],-8,-16,16,16)
+			layer.image(graphics.symbol[7],-10,-4,20,20)
+			layer.image(graphics.symbol[1],-8,-2,16,16)
 		break
 	}
 	layer.scale(1/size,1/size/flip)

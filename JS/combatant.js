@@ -1557,7 +1557,35 @@ class combatant{
 					this.layer.arc(0,-75,36,36,-180,0)
 					this.layer.triangle(8,-75.5,18,-76,17,-69)
 					this.layer.triangle(-18,-76,8,-75.5,-15,-63)
+					this.layer.fill(80,200,80,this.fade)
+					this.layer.triangle(-8,-81,-6,-87,-2,-83)
+					this.layer.triangle(-8,-81,-10,-75,-14,-79)
 					this.layer.translate(0,1.25)
+				break
+				case 36:
+					this.layer.stroke(60,80,100,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.stroke(240,220,180,this.fade)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.stroke(100,75,75,this.fade)
+					this.layer.strokeWeight(2)
+					this.layer.line(-16,-27,-13,-26)
+					this.layer.line(16,-27,13,-26)
+					this.layer.noStroke()
+					this.layer.fill(160,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(60,80,100,this.fade)
+					this.layer.arc(0,-45,19,37,0,180)
+					this.layer.fill(150,50,50,this.fade)
+					this.layer.ellipse(2,-51,8,8)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,4,4)
+					this.layer.ellipse(12,-72,4,4)
 				break
 				/*case 35:
 					this.layer.translate(0,-1.25)
@@ -1882,6 +1910,9 @@ class combatant{
 		}
 	}
 	evoke(type,detail){
+		if(this.battle.relics.active[166]&&floor(random(0,2))){
+			this.load(floor(random(0,8)),6)
+		}
 		switch(type){
 			case 0:
 				i=0

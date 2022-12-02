@@ -406,7 +406,7 @@ class card{
             case 342: this.desc+='Evoke 1st Charge\n'+this.damage+' Times\nDraw '+this.alt+' Cards'; break
             case 343: this.desc+='Evoke 1st Charge\nFor Every Enemy'; break
             case 344: this.desc+='Evoke Last Charge\n'+this.damage+' Times'; break
-            case 345: this.desc+='Add Block Equal\nto '+this.damage+'x Number of\nShield Charges Held\nThis Combat\n('+random.orbs+')'; break
+            case 345: this.desc+='Add Block Equal\nto '+this.damage+'x Number of\nShield Charges Held\nThis Combat\n('+random.shields+')'; break
             case 346: this.desc+='Add '+this.damage+' Block\nHold '+this.alt+'\nShield Charges'; break
             case 347: this.desc+='Gain '+this.damage+' Strength\nPer Shield Charge'; break
             case 348: this.desc+='Evoke All\nExplosive Charges\nReplace Them\nWith Basic Charges'; break

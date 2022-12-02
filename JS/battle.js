@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=88
+        this.event=91
     }
     create(){
         this.end=false
@@ -554,6 +554,10 @@ class battle{
             case 158:
                 this.combatants[0].base.life+=30
                 this.combatants[0].life+=30
+            break
+            case 165:
+                this.combatants[0].life+=999-this.combatants[0].base.life
+                this.combatants[0].base.life=999
             break
         }
     }
@@ -1360,6 +1364,10 @@ class battle{
                             this.combatants[0].boost.main[0]+=4*this.random.potionEffectiveness
                             this.discard.add(findCard('Burn'),0,stage.playerNumber+1)
                             this.discard.add(findCard('Burn'),0,stage.playerNumber+1)
+                        break
+                        case 50:
+                            this.combatants[0].life=min(this.combatants[0].life+20*this.random.potionEffectiveness,this.combatants[0].base.life)
+                            this.combatants[0].status.main[24]+=15
                         break
                     }
                 }
@@ -2881,6 +2889,9 @@ class battle{
                             }
                         break
                         case 51:
+                            if(this.page==0){
+                                this.eventList.push(findEvent('The God'))
+                            }
                             if(this.page==1&&e==0){
                                 this.combatants[0].life=this.combatants[0].base.life
                             }else if(this.page==2&&e==0){
@@ -3209,6 +3220,7 @@ class battle{
                                 setupEncounter(current,zones[0].special[14])
                                 this.create()
                                 transition.scene='battle'
+                                this.objective=[[0,0,0,0],[0,0,2,75]]
                             }else if(this.page==0&&e==1&&floor(random(0,2))==0){
                                 this.remember[0]=1
                             }else if(this.page==1&&e==0){
@@ -3239,6 +3251,20 @@ class battle{
                         case 88:
                             if(this.page==1&&e==0){
                                 this.getPotion(findPotion('Cola'))
+                            }
+                        break
+                        case 89:
+                            if(this.page==1&&e==0){
+                                this.getRelic(findRelic('Dev Console'))
+                            }
+                        break
+                        case 90:
+                            if(this.page==1&&e==0){
+                                this.combatants[0].base.life=round(this.combatants[0].base.life*0.5)
+                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                                this.getRelic(findRelic('Orb of Discord'))
+                                this.deck.cards=[]
+                                this.draftDeck()
                             }
                         break
                     }
