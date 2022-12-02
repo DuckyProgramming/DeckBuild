@@ -36,7 +36,7 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0}
         this.defaultRandom={attacked:0,orbs:0,shields:0}
         stage.identifier=types.combatant[this.player].identifiers
     }
@@ -55,7 +55,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=99
+        this.event=101
     }
     create(){
         this.end=false
@@ -134,6 +134,7 @@ class battle{
         transition.scene='choice'
         this.setupChoice(0,0,0)
         this.context=3
+        this.random.chosen=0
     }
     bonusObjective(spec){
         switch(spec){
@@ -335,6 +336,9 @@ class battle{
             this.hand.cards[this.hand.cards.length-1].position.x=1206
             this.hand.cards[this.hand.cards.length-1].position.y=500
             this.reserve.cards.splice(0,1)
+            if(this.relics.active[172]&&this.hand.cards[this.hand.cards.length-1].list==11){
+                this.draw()
+            }
         }else{
             this.hand.add(findCard('Empty'),0,0)
         }
@@ -1870,7 +1874,8 @@ class battle{
             if(this.context==1){
                 transition.scene='rest'
             }else if(this.context==2){
-                if(this.deck.cards.length>=15){
+                this.random.chosen++
+                if(this.random.chosen.length>=15){
                     transition.scene='map'
                 }else{
                     transition.scene='choice'
@@ -2370,6 +2375,11 @@ class battle{
             "Unfolding the ball, you find a message from some sort of organization operating on the planet.\n"+
             '"'+stage.identifier[2]+", we would like to meet you tomorrow at our base."+'"\n'+
             "Looks like they've given you directions there as well."
+        }else if(types.event[this.event].id==101&&this.page==0){
+            types.event[this.event].pages[this.page].desc="You get into a taxi to cross a non-pedestrian-friendly bridge. "+'"'+"Hello, "+stage.identifier[1]+',"'+" he says.\n"+
+            '"'+"I'm Alexander, your driver. Where would you like to go?"+'"'+" He accelerates as soon as you tell him your destination.\n"+
+            "As he continually speeds up, you begin to get worried. This is exacerbated when he starts swerving through traffic.\n"+
+            "It is at that moment you realize that the other cars are driving the other way."
         }
     }
     onClickEvent(){
@@ -3370,6 +3380,37 @@ class battle{
                                 f=floor(random(0,this.relics.list[g].length))
                                 this.getRelic(this.relics.list[g][f])
                                 this.relics.list[g].splice(f,1)
+                            }
+                        break
+                        case 99:
+                            if(this.page==0&&e==0&&floor(random(0,2))==0){
+                                this.remember[0]=1
+                            }else if(this.page==2&&e==0){
+                                transition.scene='choice'
+                                this.setupChoice(0,1,0)
+                            }else if(this.page==3&&e==0){
+                                this.deck.add(listing.card[this.player][2][floor(random(0,listing.card[this.player][2].length))],0,0)
+                            }
+                        break
+                        case 100:
+                            if(this.page==1&&e==0){
+                                this.getRelic(findRelic('Survival Notes'))
+                            }else if(this.page==2&&e==0){
+                                this.currency.money+=55
+                            }
+                        break
+                        case 101:
+                            if(this.page==1&&e==0){
+                                this.calc.list=listing.card[this.player]
+                                if(this.calc.list.length>0){
+                                    g=floor(random(0,this.calc.list.length))
+                                    h=floor(random(0,this.calc.list[g].length))
+                                    this.deck.add(this.calc.list[g][h],0,types.card[this.calc.list[g][h]].list)
+                                }
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-99)
+                            }else if(this.page==3&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-9)
                             }
                         break
                     }

@@ -943,8 +943,8 @@ types={
         ],
         },{name:'Protect',rarity:0,list:2,
         stats:[
-            {damage:12,alt:0,cost:2,attack:2,target:1,spec:2,class:1},
-            {damage:16,alt:0,cost:2,attack:2,target:1,spec:2,class:1},
+            {damage:12,alt:0,cost:2,attack:2,target:0,spec:2,class:1},
+            {damage:16,alt:0,cost:2,attack:2,target:0,spec:2,class:1},
         ],
         },{name:'Originality',rarity:1,list:2,
         stats:[
@@ -3102,6 +3102,9 @@ types={
         },{
             name:'Stocks',id:171,rarity:-1,list:3,
             desc:'Gain 10 Currency\nPer Room',
+        },{
+            name:'Survival Notes',id:172,rarity:-1,list:3,
+            desc:'Draw 1 Card When\nYou Draw a Status',
         },/*{
             name:'', d:15,rarity:4,list:0,
             desc:'',
@@ -5845,6 +5848,111 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'Notes on Konai',id:99,list:0,
+            pages:[
+                {
+                    desc:"You find a notebook, seemingly just left on the ground for no reason.\n"+
+                    "After making sure that there are no traps nearby, you grab the notebook and read through the first few pages.\n"+
+                    "It's just an introduction, but it explains that the culture of Konai may be the last unassimilated one in the galaxy.",
+                    option:['Read on','Leave it'],
+                    optionDesc:['',''],
+                    link:[2,1],
+                },{
+                    desc:"You let the book stay where you left it.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"Within, you see a discussion of the uniqueness of Konaian culture and how it remains despite fierce resistance.\n"+
+                    "Konaians first became colonists with the aid of RekTrek when the Human Empire tried to assimilate them. It never did.\n"+
+                    "But is that what the Management plans to do? Will they be the next to absorb Konai?",
+                    option:['Interesting'],
+                    optionDesc:['Gain 1 Card'],
+                    link:[-1],
+                },{
+                    desc:"Within, you see a discussion of the inferiority of Konai. Clearly written by the Management,\n"+
+                    "it describes the weaknesses of Konaian culture and how it will eventually become absorbed into Management methodology.\n"+
+                    "I guess this is why the Management is doing this. They have plans to recreate this place in their image.",
+                    option:['Interesting'],
+                    optionDesc:['Gain 1 Random Card'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Abandoned Home',id:100,list:0,
+            pages:[
+                {
+                    desc:"In a remote area you discover an empty house that's been turned practically upside down.\n"+
+                    "Nearly everything that's not nailed down has been taken. Only some random junk remains inside.\n"+
+                    "You find the entrance to the basement and enter. There, most of the objects inside remain intact.\n"+
+                    "You open up one closet and look inside. Hundreds of books are inside, along with many ages of notes.\n"+
+                    "There's space for one large book in the center, but it's gone.",
+                    option:['Take the stuff','Destroy the evidence'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"You grab every book you can and leave the house with the materials.",
+                    option:['Gain 1 Relic'],
+                    optionDesc:['Gain 1 Relic'],
+                    link:[-1],
+                },{
+                    desc:"You get the house burnt down, along with anything of value inside.",
+                    option:['Done'],
+                    optionDesc:['Gain 55 Currency'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Taxi',id:101,list:0,
+            pages:[
+                {
+                    desc:"You get into a taxi to cross a non-pedestrian-friendly bridge. "+'"'+"Hello, "+',"'+" he says.\n"+
+                    '"'+"I'm Alexander, your driver. Where would you like to go?"+'"'+" He accelerates as soon as you tell him your destination.\n"+
+                    "As he continually speeds up, you begin to get worried. This is exacerbated when he starts swerving through traffic.\n"+
+                    "It is at that moment you realize that the other cars are driving the other way.",
+                    option:['Grab the wheel','Hope for the best','Jump out the door'],
+                    optionDesc:['','',''],
+                    link:[1,2,3],
+                },{
+                    desc:"You push him out of the way and successfully slow the taxi down. Other cards turn around the taxi,\n"+
+                    "While you can't drive, you are able to jump out and run the rest of the trip on foot.",
+                    option:['Escape'],
+                    optionDesc:['Gain 1 Random Card'],
+                    link:[-1],
+                },{
+                    desc:"As you watch, the taxi collides directly with another and flies off the bridge. You wake up hours later, in a hospital.",
+                    option:['Pain'],
+                    optionDesc:['Lose 99 Health'],
+                    link:[-1],
+                },{
+                    desc:"You get out and land on the pavement. The taxi goes on and crashes in the distance.\n"+
+                    "You spend the next few minutes frantically dashing between cards to get off the bridge.",
+                    option:['Get out of there'],
+                    optionDesc:['Lose 9 Health'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Outmonkeyed',id:102,list:0,
+            pages:[
+                {
+                    desc:"You are stopped in the road by a gang of monkeys.",
+                    option:['',''],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
         
         
@@ -5888,7 +5996,7 @@ types={
                     link:[],
                 },
             ],
-        },//last guardian, leverage, the admiral, black market business, angelic sphere, audrian story, manager, midnight climax, blitz, rocket troop, rally, edel, management revelation
+        },//last guardian, leverage, the admiral, black market business, angelic sphere, manager, midnight climax, blitz, rocket troop, rally, edel, management revelation, the kids
     ],
 }
 listing={

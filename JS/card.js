@@ -121,7 +121,7 @@ class card{
             case 57: this.desc+='Add '+this.damage+' Block\nDraw '+this.alt+' Cards'; break
             case 58: this.desc+='Temporarily\nUpgrade All Cards'; break
             case 59: this.desc+='Shuffle '+this.damage+'\nRandom Attacks\ninto Draw Pile\nThey Cost 0'; break
-            case 60: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, gain\n'+this.alt+' Gold'; break
+            case 60: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, gain\n'+this.alt+' Currency'; break
             case 61: this.desc+='Shuffle '+this.damage+'\nRandom Skills\ninto Draw Pile\nThey Cost 0'; break
             case 62: this.desc+='Deal Damage\nEqual to Number of\nCards in Deck\n('+deckSize+')'; break
             case 63: this.desc+='Deal '+this.damage+'\nDamage\nor\nAdd '+this.damage+'\nBlock'; break
