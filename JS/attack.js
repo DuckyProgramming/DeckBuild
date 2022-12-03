@@ -2168,8 +2168,8 @@ class attack{
                 break
                 case 8:
                     if(this.attacks[g][1]==10){
-                        this.battle.drop.addDrop(findCard(this.attacks[g][3]),0,5)
-                        this.battle.reserve.addShuffle(findCard(this.attacks[g][3]),0,5)
+                        this.battle.drop.addDrop(findCard(this.attacks[g][3]),0,stage.playerNumber+1)
+                        this.battle.reserve.addShuffle(findCard(this.attacks[g][3]),0,stage.playerNumber+1)
                     }
                 break
                 case 10:

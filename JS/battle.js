@@ -51,11 +51,11 @@ class battle{
         
         //current.getRelic(156)
 
-        this.map.position[0]=0
-        transition.trigger=true
-        transition.scene='event'
-        this.map.complete[0][0]=1
-        this.event=104
+        //this.map.position[0]=0
+        //transition.trigger=true
+        //transition.scene='event'
+        //this.map.complete[0][0]=1
+        //this.event=105
     }
     create(){
         this.end=false
@@ -502,7 +502,7 @@ class battle{
             break
             case 130:
                 for(let g=0,lg=this.deck.cards.length;g<lg;g++){
-                    if(this.deck.cards[g].list==5){
+                    if(this.deck.cards[g].list==stage.playerNumber+1){
                         h=floor(random(0,3))
                         this.deck.cards[g].type=listing.card[this.player][h][floor(random(0,listing.card[this.player][h].length))]
                         this.deck.cards[g]=reformCard(this.deck.cards[g])
@@ -1722,7 +1722,7 @@ class battle{
         switch(spec){
             case 0:
                 if(this.relics.active[111]){
-                    this.calc.list=copyList(listing.card[13][rarity])
+                    this.calc.list=copyList(listing.card[14][rarity])
                 }else{
                     this.calc.list=copyList(listing.card[this.player][rarity])
                 }
@@ -1797,7 +1797,7 @@ class battle{
                 }
             break
             case 5:
-                this.calc.list=copyList(listing.card[14][0])
+                this.calc.list=copyList(listing.card[15][0])
                 for(g=0;g<3;g++){
                     if(this.calc.list.length>0){
                         h=floor(random(0,this.calc.list.length))
@@ -2733,7 +2733,7 @@ class battle{
                                 this.context=4
                             }else if(this.page==2&&e==0){
                                 for(let g=0,lg=this.deck.cards.length;g<lg;g++){
-                                    if(this.deck.cards[g].list==5&&this.deck.cards[g].level==0){
+                                    if(this.deck.cards[g].list==stage.playerNumber+1&&this.deck.cards[g].level==0){
                                         this.deck.cards[g].level++
                                         this.deck.cards[g]=reformCard(this.deck.cards[g])
                                     }
@@ -2857,7 +2857,7 @@ class battle{
                                 this.combatants[0].base.life*=0.75
                                 this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
                                 for(g=0,lg=this.deck.cards.length;g<lg;g++){
-                                    if(this.deck.cards[g].list==5&&this.deck.cards[g].attack==1){
+                                    if(this.deck.cards[g].list==stage.playerNumber+1&&this.deck.cards[g].attack==1){
                                         this.deck.cards.splice(g,1)
                                         g--
                                         lg--
@@ -3294,9 +3294,9 @@ class battle{
                         break
                         case 91:
                             if(this.page==2&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-2)
-                            }else if(this.page==3&&e==0){
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
+                            }else if(this.page==3&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-9)
                                 this.combatants[0].base.meterControl+=2
                             }
                         break
@@ -3426,6 +3426,33 @@ class battle{
                                 this.mana.max--
                                 this.mana.base--
                                 this.getRelic(findRelic('Angelic Sphere'))
+                            }
+                        break
+                        case 104:
+                            if(this.page==0&&(e==0||e==1)&&floor(random(0,2))==0){
+                                this.remember[0]=1
+                            }else if(this.page==1&&e==0){
+                                this.combatants[0].life=this.combatants[0].base.life
+                                transition.scene='deck'
+                                this.setupDeck(4)
+                                this.context=4
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-15)
+                            }else if(this.page==3&&e==0){
+                                transition.scene='deck'
+                                this.setupDeck(4)
+                                this.context=4
+                            }else if(this.page==4&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
+                            }
+                        break
+                        case 105:
+                            if(this.page==4&&e==0){
+                                this.combatants[0].base.meterControl+=2
+                            }else if(this.page==5&&e==0){
+                                transition.scene='choice'
+                                this.setupChoice(0,2,0)
+                                this.deck.add(findCard('Injury'),0,stage.playerNumber+2)
                             }
                         break
                     }

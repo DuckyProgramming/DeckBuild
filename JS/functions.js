@@ -279,6 +279,16 @@ function outEvent(){
 	'\n'+types.combatant[4].name+': '+zones[0].events[4].length+
 	'\nTotal: '+(zones[0].events[0].length+zones[0].events[1].length+zones[0].events[2].length+zones[0].events[3].length+zones[0].events[4].length))
 }
+function outEventText(){
+	i=''
+	for(a=0,la=types.event.length;a<la;a++){
+		i+='\n'+types.event[a].name+'\n'
+		for(b=0,lb=types.event[a].pages.length;b<lb;b++){
+			i+=types.event[a].pages[b].desc+'\n\n'
+		}
+	}
+	print(i)
+}
 function generateListing(cards,encounters,events){
 	for(a=0,la=listing.card.length;a<la;a++){
 		for(b=0;b<4;b++){
@@ -288,13 +298,13 @@ function generateListing(cards,encounters,events){
 	for(a=0,la=cards.length;a<la;a++){
 		if(cards[a].list>=0){
 			if(cards[a].rarity>=0){
-				listing.card[14][0].push(a)
+				listing.card[15][0].push(a)
 			}
 			if(cards[a].rarity<0){
 				listing.card[cards[a].list][3].push(a)
 			}else{
 				listing.card[cards[a].list][cards[a].rarity].push(a)
-				listing.card[13][cards[a].rarity].push(a)
+				listing.card[14][cards[a].rarity].push(a)
 			}
 		}
 	}

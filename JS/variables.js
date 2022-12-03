@@ -5,12 +5,12 @@ types={
             {damage:0,alt:0,cost:0,attack:0,target:0,spec:0,class:0},
             {damage:0,alt:0,cost:0,attack:0,target:0,spec:0,class:0},
         ],
-        },{name:'Strike',rarity:0,list:5,
+        },{name:'Strike',rarity:0,list:6,
         stats:[
             {damage:6,alt:0,cost:1,attack:1,target:1,spec:0,class:0},
             {damage:9,alt:0,cost:1,attack:1,target:1,spec:0,class:0},
         ],
-        },{name:'Defend',rarity:0,list:5,
+        },{name:'Defend',rarity:0,list:6,
         stats:[
             {damage:5,alt:0,cost:1,attack:2,target:0,spec:0,class:1},
             {damage:8,alt:0,cost:1,attack:2,target:0,spec:0,class:1},
@@ -3290,7 +3290,7 @@ types={
                 {
                     desc:"You come across what appears to be a book lying in the dirt.\n"+
                     "Peering into it, you see numerous Konaian writings on the art of combat.\n\n"+
-                    "When you pick it up, you notice the its extreme length and the poor condition of its pages.\n"+
+                    "When you pick it up, you notice its extreme length and the poor condition of its pages.\n"+
                     "And there seems to be some sort of energy radiating from it...",
                     option:['Read','Leave'],
                     optionDesc:['Lose 4 Health',''],
@@ -3369,7 +3369,7 @@ types={
             name:'Unstable Building',id:4,list:0,
             pages:[
                 {
-                    desc:"You enter a building, looking for a something of value. But as soon as you step inside,\n"+
+                    desc:"You enter a building, looking for something of value. But as soon as you step inside,\n"+
                     "the walls start shaking. You don't have much time, as the building will collapse any minute,\n"+
                     "but there's still enough to grab something before you leave.",
                     option:['Grab the briefcase','Grab the medical kit'],
@@ -3394,7 +3394,7 @@ types={
                 {
                     desc:"You receive word that Governor Lirestont of the Tersosi system has arrived on-world to make a speech.\n"+
                     "Your commander offers you to work as the Governor's bodyguard while pausing your mission.\n"+
-                    "It'll just be a couple hours at the capital building, so how can anything go wrong?",
+                    "It'll just be a couple hours at the capitol building, so how can anything go wrong?",
                     option:['Take the job','Decide against it'],
                     optionDesc:['',''],
                     link:[1,3],
@@ -3501,7 +3501,7 @@ types={
                 },{
                     desc:"You remember it now, those chains. How they would inject you with that liquid, how they disabled your ability to move.\n"+
                     "They did it because the Management told them to. The Director, the Supreme Executor, they were just there to control you.\n"+
-                    "How controlling they were. Your body still suffers trauma from withdraw, because they built reliance.\n\n"+
+                    "How controlling they were. Your body still suffers trauma from withdraw because they built reliance.\n\n"+
                     "Screw the Management.\n\n"+
                     "The visions recede. It's over.",
                     option:['Accept your past'],
@@ -3534,7 +3534,7 @@ types={
                     desc:"You've been here once before, in your youth. That time, you had a reason to go. Now, that's no longer true.\n"+
                     "Despite this, you feel oddly at home. You haven't been able to train quietly for a long time, with the dangers outside.\n"+
                     "You pass through several groups of people practicing. You don't recognize any. It's been too long since anybody knew you.\n\n"+
-                    '"Have we met?" You'+"'"+'re startled by a voice from behind. It appears to be the owner, but you don'+"'"+'recognize him immediately.\n'+
+                    '"Have we met?" You'+"'"+'re startled by a voice from behind. It appears to be the owner, but you don'+"'"+'t recognize him immediately.\n'+
                     '"You went here with your family only a couple years back, right? I remember your mother, though she hasn'+"'"+'t come with you."\n'+
                     "You reply that you don't want to talk about that. "+'"Well, feel free to use the facility. I'+"'"+'m always generous to family friends."\n'+
                     'There'+"'"+'s plenty to do inside, but you'+"'"+'ll have to leave pretty soon.',
@@ -3637,7 +3637,7 @@ types={
                     optionDesc:['Lose 1 Relic'],
                     link:[-1],
                 },{
-                    desc:"The only ledge you can see is just a little out of reach. You manage to move over, but the landing knocks you unconcious.\n"+
+                    desc:"The only ledge you can see is just a little out of reach. You manage to move over, but the landing knocks you unconscious.\n"+
                     "When you get up, your head is spinning, and you forget some of what you were doing beforehand.",
                     option:['Get out of the hole'],
                     optionDesc:['Lose 2 Random Cards'],
@@ -3653,7 +3653,7 @@ types={
             name:'Backseat',id:14,list:0,
             pages:[
                 {
-                    desc:"You're travelling in the back of a public bus when you realize that something feels off about the other passengers.\n"+
+                    desc:"You're traveling in the back of a public bus when you realize that something feels off about the other passengers.\n"+
                     "Sure enough, you notice a poorly concealed weapon inside one's coat. And the other ones probably all did the same.\n"+
                     "If they wanted to kill you, it would be easy, now that they have you surrounded and unprepared.",
                     option:['Attack them','Jump out of the window','Act normal'],
@@ -3693,7 +3693,7 @@ types={
                     optionDesc:[''],
                     link:[-1],
                 },{
-                    desc:"He looks at your with a disappointed expression, and leaves.",
+                    desc:"He looks at you with a disappointed expression, and leaves.",
                     option:['Exit'],
                     optionDesc:[''],
                     link:[-1],
@@ -3741,7 +3741,7 @@ types={
             name:'The Bomb',id:17,list:0,
             pages:[
                 {
-                    desc:"You hear call and rush over to help. The rebels have planted a bomb in the city.\n"+
+                    desc:"You hear a call and rush over to help. The rebels have planted a bomb in the city.\n"+
                     "The locals have no idea how to defuse it, but you might have a guess.",
                     option:['Cut the red wire','Cut the green wire','Cut the blue wire','Back away'],
                     optionDesc:['','','',''],
@@ -3889,7 +3889,7 @@ types={
                     optionDesc:['',''],
                     link:[1,3],
                 },{
-                    desc:"The Management recognizes you on the way in and attempt to have you arrested.\n"+
+                    desc:"The Management recognizes you on the way in and attempts to have you arrested.\n"+
                     "You escape, but they land several hits.",
                     option:['Ouch'],
                     optionDesc:['Lose 20 Health'],
@@ -3913,7 +3913,7 @@ types={
                 {
                     desc:"You notice a box at the bottom of a well. The box has some labels on it,\n"+
                     "stating it to be a Management collection box for recent excavations on the planet.\n"+
-                    "The people intended to carry it probably dropped it and didn't want to get it back.\n"+
+                    "The people who intended to carry it probably dropped it and didn't want to get it back.\n"+
                     "Smart choice, the well doesn't look easy to get down.",
                     option:['Climb in','Leave'],
                     optionDesc:['Lose 5 Health',''],
@@ -3940,7 +3940,7 @@ types={
             name:'Manila Folder',id:26,list:1,
             pages:[
                 {
-                    desc:"You are handed a folder containing information about a major deal occuring on the other side of the plane t.\n"+
+                    desc:"You are handed a folder containing information about a major deal occuring on the other side of the planet.\n"+
                     "The deal looks important enough from what you can see, but the exact details aren't specified.",
                     option:['Inform the boss','Travel there'],
                     optionDesc:['',''],
@@ -3986,7 +3986,7 @@ types={
             name:'Hidden Bank',id:28,list:0,
             pages:[
                 {
-                    desc:"You find a crate of money lying open of the side of the road, overflowing with coins.\n"+
+                    desc:"You find a crate of money lying open on the side of the road, overflowing with coins.\n"+
                     "A sign nearby says to take only the coins on the outside.",
                     option:['Take the coins','Smash it'],
                     optionDesc:['',''],
@@ -4013,7 +4013,7 @@ types={
                     optionDesc:['',''],
                     link:[1,2],
                 },{
-                    desc:"You have a good time hitting the bag, until a breaks a few minutes later.",
+                    desc:"You have a good time hitting the bag, until it breaks a few minutes later.",
                     option:['That was fun'],
                     optionDesc:['Upgrade a card'],
                     link:[-1],
@@ -4051,7 +4051,7 @@ types={
                 {
                     desc:"A strangely-dressed man approaches you on the road and asks to heal you in return for payment.\n"+
                     "It's obvious that he doesn't have the tools necessary to heal others. You notice immediately.\n"+
-                    "In a slightly menancing voice, you tell him to back off.\n\n"+
+                    "In a slightly menacing voice, you tell him to back off.\n\n"+
                     '"'+"Alright, sorry, okay? I can't heal people, I just help them unlearn bad habits..."+'"\n'+
                     '"'+"I'll do it for free..."+'"',
                     option:['Accept','Refuse'],
@@ -4117,7 +4117,7 @@ types={
             name:'Magic Man',id:34,list:0,
             pages:[
                 {
-                    desc:"A travelling merchant approaches you and offers his services.\n"+
+                    desc:"A traveling merchant approaches you and offers his services.\n"+
                     "Supposedly, he specializes in healing, but he doesn't bother to explain how.",
                     option:['Heal','Purify','Refuse'],
                     optionDesc:['Lose 35 Currency','Lose 50 Currency',''],
@@ -4214,8 +4214,8 @@ types={
             pages:[
                 {
                     desc:"Two men sitting across from each other at a table notice you and ask you to come over.\n"+
-                    '"'+"Would like to bet on who wins? Would make the game a litte more interesting, don't you agree?"+'"\n'+
-                    "The other man smiles and stares at you expectingly.",
+                    '"'+"Would like to bet on who wins? Would make the game a little more interesting, don't you agree?"+'"\n'+
+                    "The other man smiles and stares at you expectantly.",
                     option:['Bet on first player','Bet on second player','Refuse'],
                     optionDesc:['Lose 50 Currency','Lose 50 Currency',''],
                     link:[1,1,3],
@@ -4328,7 +4328,7 @@ types={
             name:'Slaver',id:42,list:0,
             pages:[
                 {
-                    desc:"A figure jumps you and tries to taze you with a makeshift staff. You easily  dodge out of the way.\n"+
+                    desc:"A figure jumps you and tries to tase you with a makeshift staff. You easily  dodge out of the way.\n"+
                     '"'+"Come quietly, and we won't harm you!"+'"'+" He doesn't know what you're capable of.",
                     option:['Fight','Persuade'],
                     optionDesc:['Start Fight',''],
@@ -4346,7 +4346,7 @@ types={
             name:'Collector',id:43,list:-1,
             pages:[
                 {
-                    desc:"Whhie you rest, a well-dressed man appears before you, startling you.\n"+
+                    desc:"While you rest, a well-dressed man appears before you, startling you.\n"+
                     "He asks you to return the Codex to the Management, as it is rightful Management property.",
                     option:['Ask for compensation','Refuse'],
                     optionDesc:['',''],
@@ -4455,20 +4455,20 @@ types={
                 {
                     desc:"You notice a group of hooded figures on the street, performing an unknown ritual.\n"+
                     "As you approach, they turn to you in unison. The largest smiles and extends a hand toward you.\n"+
-                    '"'+"Join us, "+", and feel the our power."+'"',
+                    '"'+"Join us, "+", and feel the power."+'"',
                     option:['Accept','Refuse'],
                     optionDesc:['Lose 25% Max Health, Remove All Strikes',''],
                     link:[1,2],
                 },{
                     desc:"He pulls you forward and sinks his teeth through your neck.\n"+
-                    "You feel a dark force moing through your body from the bite.\n\n"+
+                    "You feel a dark force moving through your body from the bite.\n\n"+
                     "You wake up some time later, alone and hungry.",
                     option:['You must feed'],
                     optionDesc:['Gain 5 Bites'],
                     link:[-1],
                 },{
                     desc:"You move back and prepare your weapon. The figure sighs and turns to leave.\n"+
-                    "The group morphs into fog and dissappear, leaving you alone once more.",
+                    "The group morphs into fog and disappear, leaving you alone once more.",
                     option:['Exit'],
                     optionDesc:[''],
                     link:[-1],
@@ -4479,7 +4479,7 @@ types={
             pages:[
                 {
                     desc:"While traveling, your thoughts suddenly appear to feel... real.\n"+
-                    "Images of occurences began to flow between your mind and reality, manifesting themselves in real forms.\n"+
+                    "Images of occurrences began to flow between your mind and reality, manifesting themselves in real forms.\n"+
                     "The sensation is quickly fleeting. What do you do?",
                     option:['I am Smart','I am Rich','I am Strong'],
                     optionDesc:['Upgrade All Cards','Gain 999 Currency','Gain 50% Max Health'],
@@ -4577,7 +4577,7 @@ types={
                     optionDesc:['Gain a Relic'],
                     link:[4],
                 },{
-                    desc:"A potion appaers next to you when you look away.",
+                    desc:"A potion appears next to you when you look away.",
                     option:['Nice'],
                     optionDesc:['Gain a Potion'],
                     link:[4],
@@ -4623,7 +4623,7 @@ types={
                 {
                     desc:"You are resting when you hear loud footsteps behind you. Turning around, you spot an unfamiliar duck.\n"+
                     "It takes you a couple seconds to realize you've seen this duck before. You helped him out earlier, when he was fatter.\n"+
-                    '"'+"Thanks for help me back there. Here, I brought something useful for you. It's the most I could do."+'"\n'+
+                    '"'+"Thanks for helping me back there. Here, I brought something useful for you. It's the most I could do."+'"\n'+
                     "He hands you a large, brown, strange-smelling bag and leaves.",
                     option:['Open it'],
                     optionDesc:['Gain 1 Relic'],
@@ -4677,7 +4677,7 @@ types={
                     link:[-1],
                 },{
                     desc:"You move in and attack him from behind.\n"+
-                    "He did't even notice.",
+                    "He didn't even notice.",
                     option:['Done'],
                     optionDesc:['Gain 1 Random Card'],
                     link:[-1],
@@ -4708,7 +4708,7 @@ types={
                 {
                     desc:"As you walk through a marsh, the ground collapses and you fall into a puddle.\n"+
                     "It's made of goo, which quickly causes you to sink. It takes you a few minutes to get out.\n"+
-                    "All along, the goo burns your skin, making it even moer difficult to escape the goo.\n"+
+                    "All along, the goo burns your skin, making it even more difficult to escape the goo.\n"+
                     "When you get out, you notice that your money is missing. Looking back into the puddle,\n"+
                     "you notice that your money is inside, along with the money of others who have fallen in.",
                     option:['Gather Money','Leave'],
@@ -4802,7 +4802,7 @@ types={
                     desc:"As the flames circle around you, you realize that this is a familiar situation. This has happened before.\n"+
                     "On your excursion to Orofos, this same bounty hunter appeared to assault you. And he's back now.\n"+
                     "The flames disappear as he descends to the ground, and you find yourself staring down the barrel of a gun.\n"+
-                    "But you're faster than he remembers, and he isn't table to land his shot.",
+                    "But you're faster than he remembers, and he isn't able to land his shot.",
                     option:['Prepare to fight','Run away'],
                     optionDesc:['',''],
                     link:[1,2],
@@ -4823,7 +4823,7 @@ types={
             name:'Dangerous Game',id:61,list:0,
             pages:[
                 {
-                    desc:"You are rudely awakened by hear gunshots from a nearby forest, along with two men talking to each other..\n"+
+                    desc:"You are rudely awakened by gunshots from a nearby forest, along with two men talking to each other..\n"+
                     "Taking a look, you spot a hunter and his companion hunting... something. You can't really see what it is from where you are.\n"+
                     "It at least isn't you, is it?",
                     option:['Join in the Game','Watch the Game','Go back to sleep'],
@@ -4831,7 +4831,7 @@ types={
                     link:[1,2,3],
                 },{
                     desc:"The hunters are preoccupied, enough that they don't notice you following them.\n"+
-                    "But before you get a chance to the strike, they call it quits and leave for the town.",
+                    "But before you get a chance to strike, they call it quits and leave for the town.",
                     option:['Leave'],
                     optionDesc:['Upgrade 1 Card'],
                     link:[-1],
@@ -4882,7 +4882,7 @@ types={
             pages:[
                 {
                     desc:"You notice the body of a Management soldier on the ground, holding the apparent rank of Corporal.\n"+
-                    "Unlike most soldiers, he has a name tag, reading CPL. Ray Earle. But the main item on his body is has pack.\n"+
+                    "Unlike most soldiers, he has a name tag, reading CPL. Ray Earle. But the main item on his body is his pack.\n"+
                     "But as you prepare to take his possessions, you realize that you've seen this trap before.\n"+
                     "The Management is known for using its soldiers long past their lifetimes...",
                     option:['Steal from him','Leave him alone'],
@@ -4950,7 +4950,7 @@ types={
                 },{
                     desc:"Opening the folded paper, you see a Management order list describing upcoming events.\n"+
                     "The invasion is occuring prematurely, and everything has been planned out. The remaining rebels will be rooted out.\n"+
-                    "Multiple encirclements will be undertaken in the first day, at the same time as high-value targets are eliminated.\n"+
+                    "Multiple encirclements will be undertaken on the first day, at the same time as high-value targets are eliminated.\n"+
                     "And of course, one of those "+'"'+"high-value targets"+'"'+" is you.",
                     option:['Not good'],
                     optionDesc:['Become Cursed - Anxiety'],
@@ -4985,14 +4985,14 @@ types={
             pages:[
                 {
                     desc:"You enter a small shop by the side of the road, labeled "+'"'+"Bank"+'"'+", but it's obviously not a normal bank.\n"+
-                    "The proprietor quickly adresses you and asks how much money you would like to take out.\n"+
+                    "The proprietor quickly addresses you and asks how much money you would like to take out.\n"+
                     "This sounds like some sort of scam, but there's lots of money on offer.\n"+
                     "Besides, you don't have to pay him back, do you?",
                     option:['Take a loan','Don'+"'"+'t'],
                     optionDesc:['Gain 100 currency',''],
                     link:[1,2],
                 },{
-                    desc:"You question if this decision will have reprecussions, but you can't turn down free money.",
+                    desc:"You question if this decision will have repercussions, but you can't turn down free money.",
                     option:['Leave'],
                     optionDesc:[''],
                     link:[-1],
@@ -5097,7 +5097,7 @@ types={
             pages:[
                 {
                     desc:"You enter a seemingly cheery-looking shop that seems to relate to what your working on right now.\n"+
-                    "The proprietor approaches from behidn the counter and greets you. "+'"'+"Hello, "+", what would you like?"+'", he says politely.\n'+
+                    "The proprietor approaches from behind the counter and greets you. "+'"'+"Hello, "+", what would you like?"+'", he says politely.\n'+
                     "You're liking the place, when he looks over you again. "+'"'+"Actually, we don't serve people like you, not that it's illegal, of course..."+'"\n'+
                     "It's illegal.\n\n"+
                     "He reconsiders the final time. "+'"'+"Fine, what service would you like?"+'"\n'+
@@ -5130,7 +5130,7 @@ types={
             pages:[
                 {
                     desc:"As you pass by a dumpster, you notice a strange creature eating something inside.\n"+
-                    "When it notices you, it drops its food at runs for you, trying to take your possessions.",
+                    "When it notices you, it drops its food and runs towards you, trying to take your possessions.",
                     option:['Give it a relic','Run'],
                     optionDesc:['Lose 1 Relic, Gain 1 Relic',''],
                     link:[1,2],
@@ -5151,7 +5151,7 @@ types={
             pages:[
                 {
                     desc:"You see a spark coming out of the ground in the center of a rock. Strange.\n"+
-                    "You expect to see a cord or some generator, but nothing's there. This might be a natural occurance.\n"+
+                    "You expect to see a cord or some generator, but nothing's there. This might be a natural occurrance.\n"+
                     "You want to put this behind you, but it might be worth touching the electricity.",
                     option:['Touch it','Leave'],
                     optionDesc:['Lose 2 Max Health',''],
@@ -5159,7 +5159,7 @@ types={
                 },{
                     desc:"The shock ripples through your finger, much stronger than you anticipated.\n"+
                     "You jump backward in the pain, but your finger is already badly burnt.\n"+
-                    "Some of the energy did get abosrbed, though...",
+                    "Some of the energy did get absorbed, though...",
                     option:['Oops'],
                     optionDesc:['Gain 1 Card'],
                     link:[-1],
@@ -5176,7 +5176,7 @@ types={
                 {
                     desc:"You see a familiar face ahead of you. This man was intended to be a template for the Advanced Executor Program.\n"+
                     "In many ways, he was the first among you. And there will be many more, if the Management continues its work.\n"+
-                    "You recognzie each other and open a conversation. Turns out, he's just making a rare trip here. Lucky for you.\n"+
+                    "You recognize each other and open a conversation. Turns out, he's just making a rare trip here. Lucky for you.\n"+
                     "You might have some time to get some work in, before he has to leave to go elsewhere.",
                     option:['Learn something','Improve something'],
                     optionDesc:['Gain 1 Card','Upgrade 1 Card'],
@@ -5188,9 +5188,9 @@ types={
             pages:[
                 {
                     desc:"You've reached the end of the temple. Luckily for you, it was barely guarded by anything but ineffective traps.\n"+
-                    "As you enter the central chamber, you notice that the treasure's long gone. You're dissapointed in the find.\n"+
-                    "The only thing you can find that hasn't been taken is a small bottle containing a everlasting flame.\n"+
-                    "But as soon as you grab the bottle, your hand burns. Previous theives probably did the same.",
+                    "As you enter the central chamber, you notice that the treasure's long gone. You're disappointed in the find.\n"+
+                    "The only thing you can find that hasn't been taken is a small bottle containing an everlasting flame.\n"+
+                    "But as soon as you grab the bottle, your hand burns. Previous thieves probably did the same.",
                     option:['Take it','Leave it'],
                     optionDesc:['',''],
                     link:[1,2],
@@ -5211,7 +5211,7 @@ types={
             name:'Permafrost',id:77,list:3,
             pages:[
                 {
-                    desc:"The strange occurences here never do stop, do they? In the middle of a cave, you find what appears to be an ice shrine.\n"+
+                    desc:"The strange occurrences here never do stop, do they? In the middle of a cave, you find what appears to be an ice shrine.\n"+
                     "It's much too old for any of the items stored inside to have value except for a single shard of ice.\n"+
                     "It hasn't melted for thousands of years, and feels extremely cold to the touch. Probably a power source.\n"+
                     "You try to take it, but as soon as you touch it, the frost spreads down your hand, freezing it.",
@@ -5219,7 +5219,7 @@ types={
                     optionDesc:['',''],
                     link:[1,2],
                 },{
-                    desc:"You pull you hand away and suffer only a small injury.",
+                    desc:"You pull your hand away and suffer only a small injury.",
                     option:['Leave'],
                     optionDesc:['Lose 3 Health'],
                     link:[-1],
@@ -5289,7 +5289,7 @@ types={
             name:'Siege',id:80,list:2,
             pages:[
                 {
-                    desc:"You arrive at the base. The battle has been occuring for more than an week at this point.\n"+
+                    desc:"You arrive at the base. The battle has been occurring for more than a week at this point.\n"+
                     "The Management forces have refused to surrender, despite having been encircled for a long time.\n"+
                     "At this point, it's just waiting for them to run out of food, causing a breakout attempt.\n\n"+
                     "Before anybody can react, the Management forces rush out the base gates and try to push through your lines.\n"+
@@ -5367,7 +5367,7 @@ types={
                     optionDesc:['Gain 1 Potion'],
                     link:[-1],
                 },{
-                    desc:"You don't have the additional time to wath such a meaningless spectacle.\n"+
+                    desc:"You don't have the additional time to watch such a meaningless spectacle.\n"+
                     "You rest in the meantime while others gather to watch.",
                     option:['Good rest'],
                     optionDesc:['Heal 6 Health'],
@@ -5378,7 +5378,7 @@ types={
             name:'Operation Holo',id:83,list:2,
             pages:[
                 {
-                    desc:"You see a lone Management soldier guarding a ditch. With suprise on your side, he's not an issue.\n"+
+                    desc:"You see a lone Management soldier guarding a ditch. With surprise on your side, he's not an issue.\n"+
                     "His papers say he's working in "+'"'+"Operation Holo"+'"'+'.'+" You've never heard of it, but it looks secret anyway.\n"+
                     "You view the ditch only to see rows upon rows of bodies. Is this what the Management does with its victims?\n"+
                     "You look back at the paperwork. It gives the directive to eliminate all ethnic Konaians still on the planet.\n",
@@ -5403,13 +5403,13 @@ types={
             name:'Two Officers',id:84,list:4,
             pages:[
                 {
-                    desc:"You spot two Management officers talking about their recent operations with each other. You listen it, naturally.\n"+
+                    desc:"You spot two Management officers talking about their recent operations with each other. You listen in, naturally.\n"+
                     '"'+"I tell you, Operation Holo would be done by now if we had just shot all of them! This is taking way too long!"+'"\n'+
                     '"'+"We don't need blood on ours hands. They'll die of their own accord soon enough. It's not worth our trouble."+'"\n'+
                     '"'+"Don't think of it that way. We're put them out of their misery. Dying slowly is worse than dying by the bullet."+'"\n'+
                     '"'+"I see you have a morbid idea of justice, Victor. I wouldn't exactly say our victims agree with your views."+'"\n'+
                     '"'+"So what? We exterminate these people, that's our job! We should do it more efficiently!"+'"\n'+
-                    '"'+"It's better we let them die without our imput. Starvation isn't as bad as it looks."+'"\n\n'+
+                    '"'+"It's better we let them die without our input. Starvation isn't as bad as it looks."+'"\n\n'+
                     "You haven't heard of Operation Holo before, and now you really want to know.",
                     option:['Listen further','Kill them'],
                     optionDesc:['',''],
@@ -5549,8 +5549,8 @@ types={
             pages:[
                 {
                     desc:"It's the same lake as before, only this time there's no glow. But something compels you to go there anyway.\n"+
-                    "You here the voice before you even near the lake. He knew about this all long before.\n"+
-                    '"'+"I've been watching you, "+", having taken interest in your adventure. But there I'm not limited like my suboordinate."+'"\n'+
+                    "You hear the voice before you even near the lake. He knew about this all long before.\n"+
+                    '"'+"I've been watching you, "+", having taken interest in your adventure. But there I'm not limited like my subordinate."+'"\n'+
                     '"'+"I'll always be watching, but I have others to observe. Developing is hard work, as you might know."+'"\n'+
                     "You have no idea what he's talking about.\n\n"+
                     '"'+"Here's your prize. You haven't earned it, but nobody's earned anything as of yet."+'"',
@@ -5572,13 +5572,13 @@ types={
                     desc:"In the center of the tower, you finally find the artifact it was built to guard: the Orb of Discord.\n"+
                     "Its power is said to be ultimate, but something has seemed off during your entire journey to get here.\n"+
                     "As you approach, you begin to see floating objects, and soon, ones flying through the air.\n"+
-                    "And as you see the Orb with your own eyes, you begin to feel your energy dissappear...",
+                    "And as you see the Orb with your own eyes, you begin to feel your energy disappear...",
                     option:['Grab the Orb','Run'],
                     optionDesc:['',''],
                     link:[1,2],
                 },{
-                    desc:"As you feel your remaining life drain out of your body, the Orb gravitates into your hadn.\n"+
-                    "As much as you hate it, your under its control now.",
+                    desc:"As you feel your remaining life drain out of your body, the Orb gravitates into your hand.\n"+
+                    "As much as you hate it, you're under its control now.",
                     option:['Leave'],
                     optionDesc:['Lose 50% of Max Health\nGain 1 Relic'],
                     link:[-1],
@@ -5605,7 +5605,7 @@ types={
                     link:[3,4],
                 },{
                     desc:"As he approaches, you can tell that he is, in fact, holding a knife.\n"+
-                    "When he reaches you he quickly slashes one your arm. You jump backwards in pain,\n"+
+                    "When he reaches you he quickly slashes open your arm. You jump backwards in pain,\n"+
                     "but he's running off too fast for you to catch up.\n"+
                     '"'+"Got the juice!"+'"'+", he says, but you have no idea what he's saying.",
                     option:['Why?'],
@@ -5638,7 +5638,7 @@ types={
                     link:[1,2,3],
                 },{
                     desc:"You know that as much as the Management may be the villains in your story, it isn't the only one.\n"+
-                    "And a symbol cannot be used as proxy to represent an organisation. All of that would be meaningless.\n"+
+                    "And a symbol cannot be used as a proxy to represent an organization. All of that would be meaningless.\n"+
                     "While you don't like what it stands for, this pin represents who you are.",
                     option:['Done'],
                     optionDesc:['Gain 1 Relic'],
@@ -5665,7 +5665,7 @@ types={
                     desc:"The Management has called for all the people living in the village nearby to meet up in the town center.\n"+
                     "Despite being on the road, you head there and watch from far away to keep tabs on Management activity in the region.\n"+
                     "You've heard that they're taking the citizens to concentration camps, but there's too many for you to do anything.\n"+
-                    "But at the end, when the day is mostly over, you notice that only a singular Management soldiers is left.\n"+
+                    "But at the end, when the day is mostly over, you notice that only a singular Management soldier is left.\n"+
                     "And consequently, there's only one more victim to round up, a little girl.",
                     option:['Help her','It'+"'"+'s, too risky'],
                     optionDesc:['',''],
@@ -5784,7 +5784,7 @@ types={
                     link:[-1],
                 },{
                     desc:"Of course.\n"+
-                    "You're here because this is the only place where you are peace. Alone, but not alone.\n"+
+                    "You're here because this is the only place where you are at peace. Alone, but not alone.\n"+
                     "In such a cruel world, you must enjoy what you get.",
                     option:['True'],
                     optionDesc:['Gain 1 Relic'],
@@ -5958,7 +5958,7 @@ types={
                     optionDesc:['Lose 40 Currency','Start Fight'],
                     link:[2,-1],
                 },{
-                    desc:"You hand over the of money. The monkeys leave.",
+                    desc:"You hand over the money. The monkeys leave.",
                     option:['Done'],
                     optionDesc:[''],
                     link:[-1],
@@ -5970,14 +5970,14 @@ types={
                 {
                     desc:"In the center of the tower, you finally find the artifact it was built to guard: the Angelic Sphere.\n"+
                     "As you approach hundreds of images flash through your mind, those from other adventures who possessed it.\n"+
-                    "It seems to return to the tower every time its holder dies. But you don't plan to die with in.\n"+
+                    "It seems to return to the tower every time its holder dies. But you don't plan to die with it.\n"+
                     "But you feel increasingly strained the closer you get, like your energy is being sapped.",
                     option:['Grab the Orb','Leave it'],
                     optionDesc:['',''],
                     link:[1,2],
                 },{
-                    desc:"As you feel your remaining life drain out of your body, the Orb gravitates into your hadn.\n"+
-                    "As much as you hate it, your under its control now.",
+                    desc:"You notice that you're becoming increasingly tired. Your energy is in the orb now.\n"+
+                    "But there's no escape now. You've taken it, and it's staying with you.",
                     option:['Leave'],
                     optionDesc:['Lose 1 Base Energy\nGain 1 Relic'],
                     link:[-1],
@@ -5985,6 +5985,96 @@ types={
                     desc:"You wouldn't risk touching that thing. Its power is beyond human understanding.",
                     option:['Exit'],
                     optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'The River',id:104,list:4,
+            pages:[
+                {
+                    desc:"In your way you see a massive river that glows a strange green color, much too wide to get across easily.\n"+
+                    "Around you, you see nothing but the riverbank. Maybe there's something useful further along, but for now, nothing.\n"+
+                    "You'll have to go through it to get to the other side.",
+                    option:['Bathe in it','Wade through','Find a bridge'],
+                    optionDesc:['','',''],
+                    link:[1,3,5],
+                },{
+                    desc:"You feel a strange feeling of reminiscence. It's like you've been here before.\n"+
+                    "You relax in the river for what might be hours, as time flies by without you noticing a thing.\n"+
+                    "Eventually, you leave the river on the other side, feeling refreshed.",
+                    option:['Nice'],
+                    optionDesc:['Heal to Full, Remove a Card'],
+                    link:[-1],
+                },{
+                    desc:"Halfway through the river, the river starts to burn your skin more and more.\n"+
+                    "You're not sure what the green stuff is, but you regret having gone through it.",
+                    option:['Ouch'],
+                    optionDesc:['Lose 15 Health'],
+                    link:[-1],
+                },{
+                    desc:"You get to the other side fairly quickly and with little trouble.\n"+
+                    "The water seems to have some sort of cleansing property, but you can't really tell.",
+                    option:['Nice'],
+                    optionDesc:['Remove a Card'],
+                    link:[-1],
+                },{
+                    desc:"A ways into the river, the water begins to burn your skin. You get out as quickly as possible.\n"+
+                    "You find a bridge far away, down the river, and use it to cross safely.",
+                    option:['Ouch'],
+                    optionDesc:['Lose 5 Health'],
+                    link:[-1],
+                },{
+                    desc:"A long distance down, you finally find a place to cross.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Note for Yourself',id:105,list:4,
+            pages:[
+                {
+                    desc:"You see a wrapped note and taped on a sign in your path. You're about to disregard it when you notice your name on the front.\n"+
+                    "You take it and open it. Sure enough, it's addressed to you. And written in your own handwriting, no less. Very confusing.\n"+
+                    "But this isn't your writing style. You didn't write this. Somebody else knew what your handwriting looks like and sent it.\n"+
+                    "Only the Management could've sent this.",
+                    option:['Read it','Leave it'],
+                    optionDesc:['',''],
+                    link:[2,1],
+                },{
+                    desc:"You leave it where you found it and head away. No sense in helping them locate you.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"It's an invitation to a meeting taking place nearby. Obviously, it's a trap, but are they really expecting you to come?\n"+
+                    "They would have prepared for the most straightforward approach, but they might not have for the other options.",
+                    option:['Go in','Check for traps beforehand'],
+                    optionDesc:['',''],
+                    link:[4,3],
+                },{
+                    desc:"That was pretty obvious. Of course it's a trap.\n"+
+                    "You see some of the prepared heavy weaponry from a mile away. They should really learn to hide their plans better.",
+                    option:['Ambush them','Go in','Just leave'],
+                    optionDesc:['','',''],
+                    link:[5,4,1],
+                },{
+                    desc:"You enter the building, surrounded by guards who watch you but avoid fire.\n"+
+                    "You soon reach the conference room at the center, but there's nobody else there. You sit down and wait.\n"+
+                    "A few minutes later, an unknown bereaucrat finally arrives and looks at you.\n\n"+
+                    '"'+"I am sorry, Miss Sakura, but the Manager is unable to meet you at this time."+'"'+"\n"+
+                    "So it was the Manager himself who wanted to meet with you. But why would he?\n"+
+                    "The beaureaucrat holds the door open as you leave, confused.",
+                    option:['Leave'],
+                    optionDesc:['Gain +2 Max Balance'],
+                    link:[-1],
+                },{
+                    desc:"You take one guard out, but he manages to raise the alarm before he dies.\n"+
+                    "More and more Management soldiers chase you down, but they hold their fire and avoid direct engagement.\n"+
+                    "It looks like they're trying to capture you, though, so you have to run from them before they get you.\n"+
+                    "You barely get away. Unfortunately it feels like you sprained something however.",
+                    option:['Escape'],
+                    optionDesc:['Gain 1 Card, Become Cursed - Injury'],
                     link:[-1],
                 },
             ],
@@ -6031,21 +6121,21 @@ types={
                     link:[],
                 },
             ],
-        },//last guardian, leverage, the admiral, black market business, manager, midnight climax, blitz, rocket troop, rally, edel, management revelation, the kids
+        },//last guardian, leverage, the admiral, black market business, midnight climax, blitz, rocket troop, rally, edel, management revelation, the kids
     ],
 }
 listing={
-    card:[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]],
+    card:[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]],
 }
 zones=[
     {
         encounters:[[],[],[]],
         special:[1,4,3,17,18,19,20,21,22,23,24,25,26,27,29,30],
-        events:[[],[],[],[],[]],
+        events:[[],[],[],[],[],[]],
     },{
         encounters:[[],[],[]],
         special:[],
-        events:[[],[],[],[],[]],
+        events:[[],[],[],[],[],[]],
     },
 ]
 stage={scale:0,quality:1,scene:'menu',playerNumber:5,identifier:['']}
