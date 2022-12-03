@@ -277,6 +277,7 @@ function outEvent(){
 	'\n'+types.combatant[2].name+': '+zones[0].events[2].length+
 	'\n'+types.combatant[3].name+': '+zones[0].events[3].length+
 	'\n'+types.combatant[4].name+': '+zones[0].events[4].length+
+	'\n'+types.combatant[5].name+': '+zones[0].events[5].length+
 	'\nTotal: '+(zones[0].events[0].length+zones[0].events[1].length+zones[0].events[2].length+zones[0].events[3].length+zones[0].events[4].length))
 }
 function outEventText(){

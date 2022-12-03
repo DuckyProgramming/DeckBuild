@@ -9,3 +9,4 @@ function setup(){
 function windowResized(){
     resizeCanvas(windowWidth-50,windowHeight-50)
 }
+//long term map selection bug

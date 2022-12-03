@@ -101,7 +101,7 @@ class card{
             case 37: this.desc+='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo'; break
             case 38: this.desc+='Next '+this.damage+'\nAttacks Deal\nDouble Damage'; break
             case 39: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+' Once'; break
-            case 40: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+' +2\nPer Combo'+' Once'; break
+            case 40: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+'+2\nPer Combo'+' Once'; break
             case 41: this.desc+='Deal '+this.damage+' Damage\nGain +'+this.alt+' Damage\nNext Turn'; break
             case 42: this.desc+='Deal '+this.damage+' Damage\nKnockdown'; break
             case 43: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Bonus\nDamage to Downed'; break

@@ -142,7 +142,7 @@ class group{
             this.cards.splice(0,1)
         }
         while(this.storage.cards.length>0){
-            this.cards.push(copyCard(this.storage.cards[0]))
+            this.cards.push(reformCard(this.storage.cards[0]))
             this.storage.cards.splice(0,1)
         }
     }
@@ -292,8 +292,8 @@ class group{
                 if(!this.cards[e].trigger){
                     if(this.battle.relics.active[95]){
                         this.calc.list=[]
-                        for(f=1,lf=this.battle.combatants.length;f<lf;f++){
-                            if(this.battle.combatants[f].life>0){
+                        for(f=0,lf=this.battle.combatants.length;f<lf;f++){
+                            if(this.battle.combatants[f].life>0&&this.battle.combatants[f].team==1){
                                 this.calc.list.push(f)
                             }
                         }
@@ -320,8 +320,10 @@ class group{
                     this.battle.randomAdd()
                 }
                 if(this.battle.relics.active[93]){
-                    for(f=1,lf=this.battle.combatants.length;f<lf;f++){
-                        this.battle.combatants[f].take(3,0)
+                    for(f=0,lf=this.battle.combatants.length;f<lf;f++){
+                        if(this.battle.combatants[f].team==1){
+                            this.battle.combatants[f].take(3,0)
+                        }
                     }
                 }
             }

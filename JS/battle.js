@@ -11,6 +11,7 @@ class battle{
         this.particles=[]
         this.combatants=[]
         this.combatants.push(new combatant(this.layer,this,100,350,this.player,0,0))
+        this.combatants.push(new combatant(this.layer,this,150,350,0,0,1))
         this.choice={cards:[]}
         this.shop={cards:[]}
         this.mana={main:3,gen:3,max:3,base:3}
@@ -48,7 +49,7 @@ class battle{
         stage.scene='battle'
         setupEncounter(this,type)
         this.create()
-        
+
         //current.getRelic(156)
 
         //this.map.position[0]=0
@@ -76,7 +77,7 @@ class battle{
             this.combatants.splice(this.combatants.length-1,1)
         }
         for(e=0,le=this.generation.combatants.length;e<le;e++){
-            this.combatants.push(new combatant(this.layer,this,300+e*100,350,this.generation.combatants[e],1,e+1))
+            this.combatants.push(new combatant(this.layer,this,300+e*100,350,this.generation.combatants[e],1,e+2))
         }
         for(e=0,le=this.deck.cards.length;e<le;e++){
             this.deck.cards[e].position.x=1206
@@ -844,7 +845,7 @@ class battle{
             }
         }
         if(this.counter.enemies.alive<this.generation.threshold&&this.generation.reinforce.length>0){
-            e=1
+            e=stage.playerCombatantNumber
             while(e<this.combatants.length){
                 if(this.combatants[e].type==0){
                     this.combatants[e]=new combatant(this.layer,this,200+e*100,350,this.generation.reinforce[0],1,e)
@@ -860,6 +861,13 @@ class battle{
             this.hand.cards[e].position.y=500
         }
         this.endTurn()
+    }
+    takeAll(damage,user,team){
+        for(g=0,lg=this.combatants.length;g<lg;g++){
+            if(this.combatants[g].life>0&&this.combatants[g].team==team){
+                this.combatants[g].take(damage,user)
+            }
+        }
     }
     playCard(){
         this.counter.played++
@@ -951,7 +959,7 @@ class battle{
         }
         if(this.combatants[0].status.main[22]>0){
             for(g=0,lg=this.combatants.length;g<lg;g++){
-                if(this.combatants[g].team==1){
+                if(this.combatants[g].team==1&&this.combatants[g].status.main[22]>0&&this.combatants[g].life>0){
                     this.combatants[g].take(this.combatants[0].status.main[22],0)
                 }
             }
@@ -969,7 +977,7 @@ class battle{
     }
     randomDiscard(){
         this.calc.list=[]
-        for(g=0,lg=this.hand.cards.length;g<lg;g++){
+        for(let g=0,lg=this.hand.cards.length;g<lg;g++){
             if(!this.hand.cards[g].trigger&&!this.hand.cards[g].used){
                 this.calc.list.push(g)
             }
@@ -1872,7 +1880,7 @@ class battle{
                 transition.scene='rest'
             }else if(this.context==2){
                 this.random.chosen++
-                if(this.random.chosen.length>=15){
+                if(this.random.chosen>=15){
                     transition.scene='map'
                 }else{
                     transition.scene='choice'
@@ -3288,8 +3296,6 @@ class battle{
                                 this.combatants[0].base.life=round(this.combatants[0].base.life*0.5)
                                 this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
                                 this.getRelic(findRelic('Orb of Discord'))
-                                this.deck.cards=[]
-                                this.draftDeck()
                             }
                         break
                         case 91:

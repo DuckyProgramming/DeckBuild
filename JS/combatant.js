@@ -707,10 +707,15 @@ class combatant{
 					this.layer.ellipse(-10,-8,20,20)
 					this.layer.ellipse(10,-8,20,20)
 					this.layer.ellipse(-16,-30,20,20)
-					this.layer.fill(235,235,55,this.fade)
-					this.layer.ellipse(0,-28,24,40)
-					this.layer.fill(240,240,60,this.fade)
 					this.layer.ellipse(16,-30,20,20)
+					this.layer.fill(60,30,15,this.fade)
+					this.layer.rect(-16,-30,3,20)
+					this.layer.rect(16,-30,3,20)
+					this.layer.fill(120,130,130,this.fade)
+					this.layer.ellipse(0,-28,24,40)
+					this.layer.fill(165,155,45,this.fade)
+					this.layer.arc(4,-28,16,40,-90,90)
+					this.layer.arc(-4,-28,16,40,90,270)
 					this.layer.fill(245,245,65,this.fade)
 					this.layer.ellipse(0,-60,40,40)
 					this.layer.fill(240,160,20,this.fade)
@@ -723,6 +728,10 @@ class combatant{
 					this.layer.strokeWeight(3)
 					this.layer.point(9-6,-64)
 					this.layer.point(9+6,-64)
+					this.layer.noStroke()
+					this.layer.fill(150,150,50,this.fade)
+					this.layer.arc(0,-64,44,44,-180,0)
+					this.layer.rect(20,-66.5,24,5)
 				break
 				case 6:
 					this.layer.noFill()
@@ -1632,10 +1641,9 @@ class combatant{
 					this.layer.ellipse(-10,-8,20,20)
 					this.layer.ellipse(10,-8,20,20)
 					this.layer.ellipse(-16,-30,20,20)
+					this.layer.ellipse(16,-30,20,20)
 					this.layer.fill(235,235,55,this.fade)
 					this.layer.ellipse(0,-28,24,40)
-					this.layer.fill(240,240,60,this.fade)
-					this.layer.ellipse(16,-30,20,20)
 					this.layer.fill(245,245,65,this.fade)
 					this.layer.ellipse(0,-60,40,40)
 					this.layer.fill(240,160,20,this.fade)
@@ -1971,6 +1979,46 @@ class combatant{
 			}
 		}
 	}
+	orbAttack(damage,user,spec){
+		switch(spec){
+			case 0:
+				for(let h=0,lh=this.battle.combatants.length;h<lh;h++){
+					if(this.battle.combatants[h].team==1&&this.battle.combatants[h].life>0){
+						this.battle.combatants[h].take(damage*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),user)
+						break
+					}
+				}
+			break
+			case 1:
+				for(let h=0,lh=this.battle.combatants.length;h<lh;h++){
+					if(this.battle.combatants[h].team==1&&this.battle.combatants[h].life>0){
+						this.battle.combatants[h].take(damage*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),user)
+						if(this.battle.combatants[h+1].life>0){
+							this.battle.combatants[h+1].take(damage/3*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h+1].boost.main[4]))*(2+max(0,this.battle.combatants[h+1].boost.main[4])),user)
+						}
+						if(this.battle.combatants[h-1].life>0&&h>1){
+							this.battle.combatants[h-1].take(damage/3*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h-1].boost.main[4]))*(2+max(0,this.battle.combatants[h-1].boost.main[4])),user)
+						}
+						break
+					}
+				}
+			break
+			case 2:
+				for(let h=0,lh=this.battle.combatants.length;h<lh;h++){
+					if(this.battle.combatants[h].team==1&&this.battle.combatants[h].life>0){
+						this.battle.combatants[h].take(damage*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),user)
+						if(this.battle.combatants[h+1].life>0){
+							this.battle.combatants[h+1].take(damage/4*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h+1].boost.main[4]))*(2+max(0,this.battle.combatants[h+1].boost.main[4])),user)
+						}
+						if(this.battle.combatants[h-1].life>0&&h>1){
+							this.battle.combatants[h-1].take(damage/4*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h-1].boost.main[4]))*(2+max(0,this.battle.combatants[h-1].boost.main[4])),user)
+						}
+						break
+					}
+				}
+			break
+		}
+	}
 	evoke(type,detail){
 		if(this.battle.relics.active[166]&&floor(random(0,2))){
 			this.load(floor(random(0,8)),6)
@@ -1980,28 +2028,10 @@ class combatant{
 		}
 		switch(type){
 			case 0:
-				i=0
-				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
-					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(8*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
-						i=1
-					}
-				}
+				this.orbAttack(8,-1,0)
 			break
 			case 1:
-				i=0
-				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
-					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(12*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
-						if(this.battle.combatants[h+1].life>0){
-							this.battle.combatants[h+1].take(4*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h+1].boost.main[4]))*(2+max(0,this.battle.combatants[h+1].boost.main[4])),-1)
-						}
-						if(this.battle.combatants[h-1].life>0&&h>1){
-							this.battle.combatants[h-1].take(4*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h-1].boost.main[4]))*(2+max(0,this.battle.combatants[h-1].boost.main[4])),-1)
-						}
-						i=1
-					}
-				}
+				this.orbAttack(12,-1,1)
 			break
 			case 2:
 				this.block+=10*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))
@@ -2010,22 +2040,10 @@ class combatant{
 				this.battle.mana.main+=3
 			break
 			case 4:
-				i=0
-				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
-					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(detail*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
-						i=1
-					}
-				}
+				this.orbAttack(detail,-1,0)
 			break
 			case 5:
-				i=0
-				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
-					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(6*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
-						i=1
-					}
-				}
+				this.orbAttack(6,-1,0)
 			break
 			case 6:
 				for(h=0;h<3;h++){
@@ -2033,13 +2051,7 @@ class combatant{
 				}
 			break
 			case 7:
-				i=0
-				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
-					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(16*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
-						i=1
-					}
-				}
+				this.orbAttack(16,-1,0)
 			break
 			case 8:
 				this.block+=20*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))
@@ -2048,41 +2060,17 @@ class combatant{
 				this.life=min(this.life+5*this.battle.random.healEffectiveness,this.base.life)
 			break
 			case -2:
-				i=0
-				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
-					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(20*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
-						i=1
-					}
-				}
+				this.orbAttack(20,-1,0)
 			break
 		}
 	}
 	passiveEvoke(type,detail){
 		switch(type){
 			case 0:
-				i=0
-				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
-					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(3*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
-						i=1
-					}
-				}
+				this.orbAttack(3,-1,0)
 			break
 			case 1:
-				i=0
-				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
-					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(4*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
-						if(this.battle.combatants[h+1].life>0){
-							this.battle.combatants[h+1].take(1*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h+1].boost.main[4]))*(2+max(0,this.battle.combatants[h+1].boost.main[4])),-1)
-						}
-						if(this.battle.combatants[h-1].life>0&&h>1){
-							this.battle.combatants[h-1].take(1*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h-1].boost.main[4]))*(2+max(0,this.battle.combatants[h-1].boost.main[4])),-1)
-						}
-						i=1
-					}
-				}
+				this.orbAttack(4,-1,2)
 			break
 			case 2:
 				this.block+=3*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))
@@ -2091,34 +2079,16 @@ class combatant{
 				this.battle.mana.main++
 			break
 			case 4:
-				i=0
-				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
-					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(detail/2*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
-						i=1
-					}
-				}
+				this.orbAttack(detail/2,-1,0)
 			break
 			case 5:
-				i=0
-				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
-					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(2*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
-						i=1
-					}
-				}
+				this.orbAttack(2,-1,0)
 			break
 			case 6:
 				this.battle.draw()
 			break
 			case 7:
-				i=0
-				for(h=1,lh=this.battle.combatants.length;h<lh;h++){
-					if(i==0&&this.battle.combatants[h].life>0){
-						this.battle.combatants[h].take(6*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
-						i=1
-					}
-				}
+				this.orbAttack(6,-1,0)
 			break
 			case 8:
 				this.block+=6*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))
@@ -2129,13 +2099,7 @@ class combatant{
 		for(g=0;g<this.ammo.length;g++){
 			switch(this.ammo[g]){
 				case 5:
-					i=0
-					for(h=1,lh=this.battle.combatants.length;h<lh;h++){
-						if(i==0&&this.battle.combatants[h].life>0){
-							this.battle.combatants[h].take(3*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),-1)
-							i=1
-						}
-					}
+					this.orbAttack(3,-1,0)
 				break
 				case 7:
 					this.battle.drop.addDrop(findCard('Burn'),0,0)
@@ -2424,8 +2388,10 @@ class combatant{
 		this.uniqueDisplay=[]
 		if(this.block>this.collect.block&&this.id==0){
 			this.collect.block=this.block
-			for(g=1,lg=this.battle.combatants.length;g<lg;g++){
-				this.battle.combatants[g].boost.main[0]-=this.status.main[17]
+			for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+				if(this.battle.combatants[g].team==1){
+					this.battle.combatants[g].boost.main[0]-=this.status.main[17]
+				}
 			}
 		}else if(this.block<this.collect.block&&this.id==0){
 			this.collect.block=this.block
@@ -2462,8 +2428,10 @@ class combatant{
 					this.battle.mana.main=max(this.battle.mana.main+1,this.battle.mana.main*2)
 				}
 				if(this.battle.relics.active[121]){
-					for(g=1,lg=this.battle.combatants.length;g<lg;g++){
-						this.battle.combatants[g].take(10,0)
+					for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+						if(this.battle.combatants[g].team==1){
+							this.battle.combatants[g].take(10,0)
+						}
 					}
 				}
 			}else if(this.meter>this.base.meter){
@@ -2481,8 +2449,10 @@ class combatant{
 					this.life=min(this.life+10,this.base.life)
 				}
 				if(this.battle.relics.active[121]){
-					for(g=1,lg=this.battle.combatants.length;g<lg;g++){
-						this.battle.combatants[g].take(10,0)
+					for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+						if(this.battle.combatants[g].team==1){
+							this.battle.combatants[g].take(10,0)
+						}
 					}
 				}
 			}

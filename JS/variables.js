@@ -343,7 +343,7 @@ types={
             {damage:1,alt:1,cost:2,attack:176,target:0,spec:0,class:1},
             {damage:1,alt:2,cost:2,attack:176,target:0,spec:0,class:1},
         ],
-        },{name:'Twist Kick',rarity:0,list:1,
+        },{name:'Twist\nKick',rarity:0,list:1,
         stats:[
             {damage:12,alt:0,cost:2,attack:177,target:1,spec:0,class:0},
             {damage:16,alt:0,cost:2,attack:177,target:1,spec:0,class:0},
@@ -2374,7 +2374,7 @@ types={
         {name:'Duelist',alt:'',life:70,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','Princess','Setsuna']},
         {name:'Executor',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MAEP-65091','Azis']},
         {name:'Creation',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','MPCO-SKR','Sakura']},
-        {name:'Wanderer',alt:'',life:60,height:66,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Friend','Duck','____','Duckipo']},
+        {name:'The Builder',alt:'',life:60,height:66,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Friend','Duck','____','Duckipo']},
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
@@ -2447,7 +2447,7 @@ types={
             objective:[[0,0,0,0]],
         },{
             combatants:[38,38,0,0,0,0],
-            reinforce:[5],
+            reinforce:[38],
             threshold:3,class:0,zone:0,
             objective:[[0,0,0,0]],
         },{
@@ -6138,7 +6138,7 @@ zones=[
         events:[[],[],[],[],[],[]],
     },
 ]
-stage={scale:0,quality:1,scene:'menu',playerNumber:5,identifier:['']}
+stage={scale:0,quality:1,scene:'menu',playerNumber:5,playerCombatantNumber:1,identifier:['']}
 graphics={main:0,minor:[],symbol:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}
