@@ -1969,6 +1969,24 @@ class attack{
                 case 401:
                     this.battle.buildAlly('Wall')
                 break
+                case 402:
+                    if(this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 403:
+                    if(this.battle.combatants[1].type>0&&this.battle.combatants[1].built==1){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 404:
+                    if(this.battle.combatants[1].type>0&&this.battle.combatants[1].built==1){
+                        this.battle.combatants[1].addBlock(this.damage)
+                    }
+                break
+                case 405:
+                    this.battle.buildAlly('Spikes')
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

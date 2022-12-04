@@ -86,11 +86,11 @@ class group{
                 }
                 this.add(findCard(''),0,this.battle.player)
                 this.add(findCard(''),0,this.battle.player)*/
-                this.add(403,0,this.battle.player)
-                this.add(404,0,this.battle.player)
-                this.add(405,0,this.battle.player)
-                this.add(406,0,this.battle.player)
-                this.add(407,0,this.battle.player)
+                this.add(408,0,this.battle.player)
+                this.add(409,0,this.battle.player)
+                this.add(410,0,this.battle.player)
+                this.add(411,0,this.battle.player)
+                this.add(412,0,this.battle.player)
             break
         }
     }
@@ -366,8 +366,8 @@ class group{
         if(this.trigger){
             switch(this.battle.attack.targetType){
                 case 1:
-                    for(e=1,le=this.battle.combatants.length;e<le;e++){
-                        if(pointInsideBox({position:inputs.rel},{position:{x:this.battle.combatants[e].position.x,y:this.battle.combatants[e].position.y-this.battle.combatants[e].height/2},width:80,height:160})&&this.battle.combatants[e].life>0){
+                    for(e=0,le=this.battle.combatants.length;e<le;e++){
+                        if(this.battle.combatants[e].team==1&&pointInsideBox({position:inputs.rel},{position:{x:this.battle.combatants[e].position.x,y:this.battle.combatants[e].position.y-this.battle.combatants[e].height/2},width:80,height:160})&&this.battle.combatants[e].life>0){
                             this.battle.attack.target=e
                             this.battle.playCard()
                             if(this.battle.attack.type==63){

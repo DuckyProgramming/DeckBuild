@@ -2035,6 +2035,26 @@ types={
             {damage:0,alt:0,cost:0,attack:401,target:0,spec:10,class:0},
             {damage:0,alt:0,cost:0,attack:401,target:0,spec:10,class:0},
         ],
+        },{name:'[Blueprint]\nSpikes',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:405,target:0,spec:10,class:0},
+            {damage:0,alt:0,cost:0,attack:405,target:0,spec:10,class:0},
+        ],
+        },{name:'Construct',rarity:0,list:5,
+        stats:[
+            {damage:15,alt:0,cost:1,attack:402,target:0,spec:0,class:0},
+            {damage:25,alt:0,cost:1,attack:402,target:0,spec:0,class:0},
+        ],
+        },{name:'Repair',rarity:0,list:5,
+        stats:[
+            {damage:8,alt:0,cost:1,attack:403,target:0,spec:0,class:0},
+            {damage:12,alt:0,cost:1,attack:403,target:0,spec:0,class:0},
+        ],
+        },{name:'Duct Tape',rarity:0,list:5,
+        stats:[
+            {damage:12,alt:0,cost:1,attack:404,target:0,spec:0,class:0},
+            {damage:20,alt:0,cost:1,attack:404,target:0,spec:0,class:0},
+        ],
         },
         
         
@@ -2417,6 +2437,7 @@ types={
         {name:'Monkey Gangster',alt:'',life:24,height:60,behavior:0,attacks:[1,3],damage:[8,2],altAttack:[0,5],class:0,buff:0},
         {name:'Wild Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[4,2,3],altAttack:[0,3,0],class:0,buff:0},
         {name:'Wall',alt:'',life:40,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Spikes',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},//40
     ],attack:[
         {class:0},//0
         {class:0},

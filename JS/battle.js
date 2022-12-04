@@ -1616,7 +1616,7 @@ class battle{
             }else if(this.turn>=this.combatants.length+100||this.combatants[this.turn-100].status.main[5]>0||this.combatants[this.turn-100].status.main[9]>0){
                 this.turn=0
             }else{
-                if(this.combatants[1].life>0){
+                if(this.combatants[1].life>0&&this.combatants[1].built==1&&this.combatants[1].class!=-1){
                     this.attack.target=1
                 }else{
                     this.attack.target=0
@@ -1627,13 +1627,21 @@ class battle{
                 this.attack.update(this.combatants[this.turn-100].attacks[this.combatants[this.turn-100].intent],0,1)
                 this.turn=200
             }
+        }else if(this.turn==1){
+            if(this.combatants[this.turn].built==1){
+                switch(this.combatants[this.turn].name){
+                    case 'Spikes':
+                        this.combatants[0].status.main[0]+=5
+                    break
+                }
+            }
+            this.turn++
         }else if(this.turn>0){
             if(this.turnTimer>0){
                 this.turnTimer--
             }else if(this.turn>=this.combatants.length){
                 this.turn=0
                 this.resetTurn()
-
             }else if(this.combatants[this.turn].status.main[5]>0||this.combatants[this.turn].status.main[9]>0){
                 this.turn++
                 while(this.turn>0&&this.turn<this.combatants.length&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
@@ -1643,7 +1651,7 @@ class battle{
                     this.turnTimer=30
                 }
             }else{
-                if(this.combatants[1].life>0){
+                if(this.combatants[1].life>0&&this.combatants[1].built==1&&this.combatants[1].class!=-1){
                     this.attack.target=1
                 }else{
                     this.attack.target=0

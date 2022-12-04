@@ -462,7 +462,11 @@ class card{
             case 398: this.desc+='Hold '+this.damage+' Light Charge\nGain '+this.alt+' Weak\nGain '+this.alt+' Frail'; break
             case 399: this.desc+='Gain '+this.damage+'\nArmor'; break
             case 400: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Frail\nNo Combo Gain'; break
-            case 401: this.desc+='Set Build\nto Wall'; break
+            case 401: this.desc+='Set Construct\nto Wall'; break
+            case 402: this.desc+='Build '+this.damage+' of\nConstruct'; break
+            case 403: this.desc+='Heal '+this.damage+' Life\nof Construct'; break
+            case 404: this.desc+='Add '+this.damage+' Block\nto Construct'; break
+            case 405: this.desc+='Set Construct\nto Spikes'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
