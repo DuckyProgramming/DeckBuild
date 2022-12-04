@@ -487,6 +487,14 @@ class card{
             case 423: this.desc+='Set Construct to\nExplosive Turret'; break
             case 424: this.desc+='Deal '+this.damage+' Damage\nto 2 Enemies'; break
             case 425: this.desc+='Attacks Deal\n'+this.damage+' More Damage\nThis Turn'; break
+            case 426: this.desc+='Add '+this.damage+' Block\nNullify All Stat\nChanges This Turn'; break
+            case 427: this.desc+='Add '+this.alt+'\nConditioning'; break
+            case 428: this.desc+='Draw '+this.damage+' Cards\nDiscard '+this.alt+' Cards'; break
+            case 429: this.desc+='Heal '+this.damage+'X Health'; break
+            case 430: this.desc+='Gain '+this.damage+' Combo\nGain '+this.alt+' Energy\nNext Turn'; break
+            case 431: this.desc+='Gain '+this.damage+' Combo\nLose Combo at\nEnd of Turn'; break
+            case 432: this.desc+='Next Card Played\nis Duplicated'; break
+            case 433: this.desc+='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo\nDraw 1 Card'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

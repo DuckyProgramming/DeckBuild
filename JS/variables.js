@@ -95,8 +95,8 @@ types={
         ],
         },{name:'Jolt',rarity:0,list:1,
         stats:[
-            {damage:2,alt:0,cost:0,attack:35,target:0,spec:0,class:0},
-            {damage:4,alt:0,cost:0,attack:35,target:0,spec:0,class:0},
+            {damage:2,alt:0,cost:0,attack:35,target:0,spec:0,class:2},
+            {damage:4,alt:0,cost:0,attack:35,target:0,spec:0,class:2},
         ],
         },{name:'Combo\nFinish',rarity:0,list:1,
         stats:[
@@ -518,7 +518,7 @@ types={
             {damage:4,alt:1,cost:1,attack:316,target:0,spec:0,class:1},
             {damage:7,alt:1,cost:1,attack:316,target:0,spec:0,class:1},
         ],
-        },{name:'Split Kick',rarity:0,list:1,
+        },{name:'Split\nKick',rarity:0,list:1,
         stats:[
             {damage:12,alt:0,cost:2,attack:424,target:1,spec:0,class:0},
             {damage:16,alt:0,cost:2,attack:424,target:1,spec:0,class:0},
@@ -527,6 +527,46 @@ types={
         stats:[
             {damage:2,alt:0,cost:0,attack:425,target:0,spec:0,class:2},
             {damage:3,alt:0,cost:0,attack:425,target:0,spec:0,class:2},
+        ],
+        },{name:'Root\nDown',rarity:1,list:1,
+        stats:[
+            {damage:8,alt:1,cost:1,attack:426,target:0,spec:2,class:1},
+            {damage:12,alt:1,cost:1,attack:426,target:0,spec:2,class:1},
+        ],
+        },{name:'Ready Up',rarity:0,list:1,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:427,target:0,spec:0,class:1},
+            {damage:2,alt:0,cost:0,attack:427,target:0,spec:0,class:1},
+        ],
+        },{name:'Ponder',rarity:1,list:1,
+        stats:[
+            {damage:3,alt:1,cost:1,attack:428,target:0,spec:0,class:2},
+            {damage:4,alt:1,cost:1,attack:428,target:0,spec:0,class:2},
+        ],
+        },{name:'Painkillers',rarity:1,list:1,
+        stats:[
+            {damage:3,alt:0,cost:-1,attack:429,target:0,spec:3,class:2},
+            {damage:4,alt:0,cost:-1,attack:429,target:0,spec:3,class:2},
+        ],
+        },{name:'Bump',rarity:1,list:1,
+        stats:[
+            {damage:4,alt:1,cost:1,attack:430,target:0,spec:0,class:2},
+            {damage:6,alt:1,cost:1,attack:430,target:0,spec:0,class:2},
+        ],
+        },{name:'Overdrive',rarity:2,list:1,
+        stats:[
+            {damage:20,alt:1,cost:1,attack:431,target:0,spec:0,class:2},
+            {damage:30,alt:1,cost:1,attack:431,target:0,spec:0,class:2},
+        ],
+        },{name:'One-Two\nPunch',rarity:1,list:1,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:432,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:432,target:0,spec:0,class:2},
+        ],
+        },{name:'Spin\nPunch',rarity:0,list:1,
+        stats:[
+            {damage:6,alt:2,cost:2,attack:433,target:1,spec:0,class:0},
+            {damage:10,alt:2,cost:2,attack:433,target:1,spec:0,class:0},
         ],
         },
         //specs
@@ -2187,8 +2227,8 @@ types={
         ],
         },{name:'Heal Up',rarity:1,list:0,
         stats:[
-            {damage:4,alt:0,cost:1,attack:25,target:0,spec:3,class:2},
-            {damage:6,alt:0,cost:1,attack:25,target:0,spec:3,class:2},
+            {damage:4,alt:0,cost:0,attack:25,target:0,spec:3,class:2},
+            {damage:6,alt:0,cost:0,attack:25,target:0,spec:3,class:2},
         ],
         },{name:'Breath',rarity:1,list:0,
         stats:[

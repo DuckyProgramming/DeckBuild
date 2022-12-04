@@ -37,7 +37,7 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0}
         this.defaultRandom={attacked:0,orbs:0,shields:0}
         stage.identifier=types.combatant[this.player].identifiers
     }
@@ -72,6 +72,7 @@ class battle{
         this.random.hits=0
         this.random.orbs=0
         this.random.shields=0
+        this.random.doubling=0
         this.combatants[0].resetUnique()
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
@@ -670,6 +671,12 @@ class battle{
                         this.mana.main+=this.combatants[e].status.main[f]
                     }else if(f==80){
                         this.combatants[e].boost.main[3]-=this.combatants[e].status.main[f]
+                    }else if(f==92){
+                        for(g=0,lg=this.combatants[e].remember.boost.length;g<lg;g++){
+                            this.combatants[e].boost.main[g]=this.combatants[e].remember.boost[g]
+                        }
+                    }else if(f==93){
+                        this.combatants[e].combo=0
                     }
                 }
                 if((f==11||f==37)&&this.combatants[e].status.main[f]>0){

@@ -2081,6 +2081,40 @@ class attack{
                 case 425:
                     this.battle.combatants[0].status.main[87]+=this.damage
                 break
+                case 426:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[92]++
+                    for(g=0,lg=this.battle.combatants[0].remember.boost.length;g<lg;g++){
+                        this.battle.combatants[0].remember.boost[g]=this.battle.combatants[0].boost.main[g]
+                    }
+                break
+                case 427:
+                    this.battle.combatants[0].status.main[59]+=this.alt
+                break
+                case 428:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                    this.battle.discarding+=this.alt
+                break
+                case 429:
+                    this.battle.combatants[0].life=min(this.battle.combatants[0].life+this.damage*this.mana*this.battle.random.healEffectiveness,this.battle.combatants[0].base.life)
+                break
+                case 430:
+                    this.battle.combatants[0].combo+=this.damage
+                    this.battle.combatants[0].status.main[1]+=this.alt
+                break
+                case 431:
+                    this.battle.combatants[0].combo+=this.damage
+                    this.battle.combatants[0].status.main[93]+=this.alt
+                break
+                case 432:
+                    this.battle.random.doubling++
+                break
+                case 433:
+                    this.battle.combatants[this.target].take(this.damage+this.alt*this.combo,this.user)
+                    this.battle.draw()
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
