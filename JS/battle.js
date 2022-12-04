@@ -1005,9 +1005,9 @@ class battle{
             }
         }
     }
-    allExhaust(){
+    allExhaust(type){
         for(g=0,lg=this.hand.cards.length;g<lg;g++){
-            if(!this.hand.cards[g].trigger){
+            if(!this.hand.cards[g].trigger&&(type==-1||type==this.hand.cards[g].class)){
                 this.hand.cards[g].used=true
                 this.hand.cards[g].exhaust=true
             }
@@ -1253,7 +1253,7 @@ class battle{
                             }
                         break
                         case 22:
-                            this.allExhaust()
+                            this.allExhaust(-1)
                         break
                         case 23:
                             this.combatants[0].status.main[35]+=4*this.random.potionEffectiveness
@@ -1633,6 +1633,12 @@ class battle{
                     case 'Spikes':
                         this.combatants[0].status.main[0]+=5
                     break
+                    case 'Projector':
+                        this.combatants[0].block+=5
+                    break
+                    case 'Turret':
+                        this.combatants[0].orbAttack(10,-1,0)
+                    break
                 }
             }
             this.turn++
@@ -1973,6 +1979,10 @@ class battle{
             case 4:
                 this.layer.fill(220,200,240)
                 this.layer.stroke(180,160,200)
+            break
+            case 5:
+                this.layer.fill(160,220,240)
+                this.layer.stroke(120,180,200)
             break
         }
         this.layer.strokeWeight(5)

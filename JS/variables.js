@@ -2042,6 +2042,16 @@ types={
             {damage:0,alt:0,cost:0,attack:405,target:0,spec:10,class:3},
             {damage:0,alt:0,cost:0,attack:405,target:0,spec:10,class:3},
         ],
+        },{name:'Build\nProjector',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:410,target:0,spec:10,class:3},
+            {damage:0,alt:0,cost:0,attack:410,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nTurret',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:411,target:0,spec:10,class:3},
+            {damage:0,alt:0,cost:0,attack:411,target:0,spec:10,class:3},
+        ],
         },{name:'Construct',rarity:0,list:5,
         stats:[
             {damage:15,alt:0,cost:1,attack:402,target:0,spec:0,class:2},
@@ -2077,10 +2087,40 @@ types={
             {damage:5,alt:1,cost:2,attack:409,target:1,spec:0,class:0},
             {damage:8,alt:1,cost:2,attack:409,target:1,spec:0,class:0},
         ],
-        },{name:'Quickdraw',rarity:0,list:5,
+        },{name:'Quickdraw',rarity:1,list:5,
         stats:[
             {damage:12,alt:0,cost:1,attack:406,target:1,spec:8,class:0},
             {damage:17,alt:0,cost:1,attack:406,target:1,spec:8,class:0},
+        ],
+        },{name:'Clean Slate',rarity:1,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:412,target:0,spec:0,class:0},
+            {damage:0,alt:0,cost:0,attack:412,target:0,spec:2,class:0},
+        ],
+        },{name:'Upgrade',rarity:0,list:5,
+        stats:[
+            {damage:10,alt:0,cost:1,attack:413,target:0,spec:0,class:0},
+            {damage:15,alt:0,cost:1,attack:413,target:0,spec:0,class:0},
+        ],
+        },{name:'Bash',rarity:0,list:5,
+        stats:[
+            {damage:9,alt:2,cost:1,attack:414,target:1,spec:0,class:0},
+            {damage:13,alt:2,cost:1,attack:414,target:1,spec:0,class:0},
+        ],
+        },{name:'Spiky Whack',rarity:0,list:5,
+        stats:[
+            {damage:3,alt:3,cost:1,attack:415,target:1,spec:0,class:0},
+            {damage:6,alt:4,cost:1,attack:415,target:1,spec:0,class:0},
+        ],
+        },{name:'Spiky Cut',rarity:0,list:5,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:416,target:1,spec:0,class:0},
+            {damage:6,alt:0,cost:1,attack:416,target:1,spec:0,class:0},
+        ],
+        },{name:'Sawblade',rarity:0,list:5,
+        stats:[
+            {damage:1,alt:4,cost:1,attack:417,target:1,spec:0,class:0},
+            {damage:2,alt:4,cost:1,attack:417,target:1,spec:0,class:0},
         ],
         },
         
@@ -2465,6 +2505,8 @@ types={
         {name:'Wild Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[4,2,3],altAttack:[0,3,0],class:0,buff:0},
         {name:'Wall',alt:'',life:40,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
         {name:'Spikes',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},//40
+        {name:'Projector',alt:'',life:50,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
+        {name:'Turret',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
     ],attack:[
         {class:0},//0
         {class:0},

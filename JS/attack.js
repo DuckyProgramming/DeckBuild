@@ -290,7 +290,7 @@ class attack{
                     }
                 break
                 case 56:
-                    this.battle.allExhaust()
+                    this.battle.allExhaust(-1)
                 break
                 case 57:
                     this.battle.combatants[0].addBlock(this.damage)
@@ -1001,7 +1001,7 @@ class attack{
                 case 210:
                     this.battle.combatants[this.target].take(this.damage*this.battle.hand.cards.length,this.user)
                     this.battle.combatants[0].meter+=this.alt
-                    this.battle.allExhaust()
+                    this.battle.allExhaust(-1)
                 break
                 case 211:
                     for(g=0,lg=this.battle.combatants.length;g<lg;g++){
@@ -2021,6 +2021,22 @@ class attack{
                             this.battle.mana.main++
                         }
                     }
+                break
+                case 410:
+                    this.battle.buildAlly('Projector')
+                break
+                case 411:
+                    this.battle.buildAlly('Turret')
+                break
+                case 412:
+                    this.battle.allExhaust(3)
+                break
+                case 413:
+                    this.battle.combatants[1].base.life+=this.damage
+                break
+                case 414:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.discarding=this.alt
                 break
                 default:
             }

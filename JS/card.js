@@ -208,7 +208,7 @@ class card{
             case 144: this.desc+='Add '+this.damage+'\nDodge'; break
             case 145: this.desc+='Add '+this.damage+' Dodge\nCounter '+this.alt+' Once'; break
             case 146: this.desc+='Add '+this.damage+' Block\nGain 2 Combo\nYou Must Attack\nor Take '+this.alt+' Damage'; break
-            case 147: this.desc+='Attacks add '+this.damage+'\nBleed Current Turn'; break
+            case 147: this.desc+='Attacks Add '+this.damage+'\nBleed Current Turn'; break
             case 148: this.desc+='Redraw your hand\nExhaust\nEthereal'; break
             case 149: this.desc+='Add '+this.damage+' Dodge\nExhausted when\nAnother Card Played\nDiscard Hand\nExhaust\nEthereal'; break
             case 150: if(this.damage==0){this.desc+='Draw X Cards'}else{this.desc+='Draw X+'+this.damage+' Cards'}; break
@@ -240,7 +240,7 @@ class card{
             case 176: this.desc+='Add '+this.damage+' Dodge\nGain '+this.alt+' Strength'; break
             case 177: this.desc+='Deal '+this.damage+' Damage\nDeal Double Damage\nto Heavy Enemies'; break
             case 178: this.desc+='Add '+this.damage+' Block\nTake '+this.alt+' Damage'; break
-            case 179: this.desc+='Next Attack\nadds '+this.damage+' Bleed'; break
+            case 179: this.desc+='Next Attack\nAdds '+this.damage+' Bleed'; break
             case 180: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed\n'+nfp(-6)+' Balance'; break
             case 181: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed\n'+nfp(-7)+' Balance'; break
             case 182: this.desc+='Deal '+this.damage+' Damage\nConvert Bleed of\nTarget to Health'; break
@@ -471,6 +471,12 @@ class card{
             case 407: this.desc+='Deal '+this.damage+' Damage\nto 3 Enemies\nCannot be\nCountered'; break
             case 408: this.desc+='Remove All\nStrength of Target'; break
             case 409: this.desc+='Deal '+this.damage+' Damage\nto 3 Enemies\nGain '+this.alt+' Energy\nPer Fatal\nCannot be\nCountered'; break
+            case 410: this.desc+='Set Construct\nto Projector'; break
+            case 411: this.desc+='Set Construct\nto Turret'; break
+            case 412: this.desc+='Exhaust All\nBlueprints in\nYour Hand'; break
+            case 413: this.desc+='Increase\nConstruct Max\nHealth by '+this.damage; break
+            case 414: this.desc+='Deal '+this.damage+' Damage\nDiscard '+this.alt+' Cards'; break
+            case 415: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

@@ -86,11 +86,11 @@ class group{
                 }
                 this.add(findCard(''),0,this.battle.player)
                 this.add(findCard(''),0,this.battle.player)*/
-                this.add(408,0,this.battle.player)
-                this.add(409,0,this.battle.player)
-                this.add(410,0,this.battle.player)
-                this.add(411,0,this.battle.player)
-                this.add(412,0,this.battle.player)
+                this.add(416,0,this.battle.player)
+                this.add(417,0,this.battle.player)
+                this.add(418,0,this.battle.player)
+                this.add(419,0,this.battle.player)
+                this.add(420,0,this.battle.player)
             break
         }
     }

@@ -154,44 +154,6 @@ class combatant{
 			this.intent=type
 		}
 	}
-	changeStance(stance){
-		if(stance!=this.stance){
-			if(this.stance==1){
-				this.battle.mana.main+=2
-				if(this.battle.relics.active[153]){
-					this.battle.mana.main++
-				}
-			}
-			if(stance==3){
-				this.battle.mana.main+=3
-			}
-			this.block+=this.status.main[15]
-			for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
-				if(this.battle.discard.cards[g].attack==99){
-					this.battle.hand.cards.push(copyCard(this.battle.discard.cards[g]))
-					this.battle.hand.cards[this.battle.hand.cards.length-1].position.x=1206
-					this.battle.hand.cards[this.battle.hand.cards.length-1].position.y=500
-					this.battle.discard.cards.splice(g,1)
-					g--
-					lg--
-				}
-			}
-			if(stance==1){
-				if(this.battle.relics.active[170]){
-					this.boost.main[2]++
-				}
-			}
-			if(stance==2){
-				if(this.battle.relics.active[169]){
-					this.boost.main[0]++
-				}
-				for(g=0;g<this.status.main[16];g++){
-					this.battle.draw()
-				}
-			}
-		}
-		this.stance=stance
-	}
     display(detail){
 		if(this.fade>0){
 			this.layer.translate(this.position.x,this.position.y)
@@ -1672,6 +1634,31 @@ class combatant{
 						this.layer.triangle(-30+g*12,0,-18+g*12,0,-24+g*12,-15*max(this.life/this.base.life,this.built))
 					}
 				break
+				case 41:
+					if(this.built==1){
+						this.layer.fill(100,200,255,this.fade/3)
+						for(g=1;g<9;g++){
+							this.layer.quad(-20,-20,20,-20,20+g*2,-20-g*10,-20-g*2,-20-g*10)
+						}
+					}
+					this.layer.strokeWeight(5)
+					this.layer.stroke(100,this.fade)
+					this.layer.fill(120,this.fade)
+					this.layer.quad(-25,0,25,0,20,-20*max(this.life/this.base.life,this.built),-20,-20*max(this.life/this.base.life,this.built))
+				break
+				case 42:
+					this.layer.strokeWeight(5)
+					this.layer.stroke(100,this.fade)
+					this.layer.fill(120,this.fade)
+					this.layer.rect(25+5*max(this.life/this.base.life,this.built),-40*max(this.life/this.base.life,this.built),10*max(this.life/this.base.life,this.built),20*max(this.life/this.base.life,this.built))
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built)+40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
+					this.layer.stroke(200,0,0,this.fade)
+					this.layer.fill(240,0,0,this.fade)
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built),50,50*max(this.life/this.base.life,this.built))
+					this.layer.stroke(100,this.fade)
+					this.layer.fill(120,this.fade)
+					this.layer.ellipse(0,-40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
+				break
 				/*case 35:
 					this.layer.translate(0,-1.25)
 					if(this.anim[1]<1){
@@ -1993,6 +1980,44 @@ class combatant{
 				this.layer.text(this.status.main[this.status.display[g]],30,105)
 			}
 		}
+	}
+	changeStance(stance){
+		if(stance!=this.stance){
+			if(this.stance==1){
+				this.battle.mana.main+=2
+				if(this.battle.relics.active[153]){
+					this.battle.mana.main++
+				}
+			}
+			if(stance==3){
+				this.battle.mana.main+=3
+			}
+			this.block+=this.status.main[15]
+			for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
+				if(this.battle.discard.cards[g].attack==99){
+					this.battle.hand.cards.push(copyCard(this.battle.discard.cards[g]))
+					this.battle.hand.cards[this.battle.hand.cards.length-1].position.x=1206
+					this.battle.hand.cards[this.battle.hand.cards.length-1].position.y=500
+					this.battle.discard.cards.splice(g,1)
+					g--
+					lg--
+				}
+			}
+			if(stance==1){
+				if(this.battle.relics.active[170]){
+					this.boost.main[2]++
+				}
+			}
+			if(stance==2){
+				if(this.battle.relics.active[169]){
+					this.boost.main[0]++
+				}
+				for(g=0;g<this.status.main[16];g++){
+					this.battle.draw()
+				}
+			}
+		}
+		this.stance=stance
 	}
 	orbAttack(damage,user,spec){
 		switch(spec){
