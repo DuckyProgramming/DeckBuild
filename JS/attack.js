@@ -267,10 +267,10 @@ class attack{
                 case 50:
                     this.battle.combatants[this.target].take(this.damage+this.alt*this.combo,this.user)
                     if(this.target>1){
-                        this.battle.combatants[this.target-1].take(this.damage+this.alt*this.combo,0)
+                        this.battle.combatants[this.target-1].take(this.damage+this.alt*this.combo,this.user)
                     }
                     if(this.target<this.battle.combatants.length-1){
-                        this.battle.combatants[this.target+1].take(this.damage+this.alt*this.combo,0)
+                        this.battle.combatants[this.target+1].take(this.damage+this.alt*this.combo,this.user)
                     }
                     this.battle.combatants[0].combo=0
                 break
@@ -1986,6 +1986,41 @@ class attack{
                 break
                 case 405:
                     this.battle.buildAlly('Spikes')
+                break
+                case 406:
+                    this.battle.combatants[this.target].take(this.damage,-1)
+                break
+                case 407:
+                    this.battle.combatants[this.target].take(this.damage,-1)
+                    if(this.target>1){
+                        this.battle.combatants[this.target-1].take(this.damage,-1)
+                    }
+                    if(this.target<this.battle.combatants.length-1){
+                        this.battle.combatants[this.target+1].take(this.damage,-1)
+                    }
+                break
+                case 408:
+                    if(this.battle.combatants[this.target].boost.main[0]>0){
+                        this.battle.combatants[this.target].boost.main[0]=0
+                    }
+                break
+                case 409:
+                    this.battle.combatants[this.target].take(this.damage,-1)
+                    if(this.battle.combatants[this.target].life<=0){
+                        this.battle.mana.main++
+                    }
+                    if(this.target>1&&this.battle.combatants[this.target-1].life>0){
+                        this.battle.combatants[this.target-1].take(this.damage,-1)
+                        if(this.battle.combatants[this.target-1].life<=0){
+                            this.battle.mana.main++
+                        }
+                    }
+                    if(this.target<this.battle.combatants.length-1&&this.battle.combatants[this.target+1].life>0){
+                        this.battle.combatants[this.target+1].take(this.damage,-1)
+                        if(this.battle.combatants[this.target+1].life<=0){
+                            this.battle.mana.main++
+                        }
+                    }
                 break
                 default:
             }

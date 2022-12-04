@@ -467,6 +467,10 @@ class card{
             case 403: this.desc+='Heal '+this.damage+' Life\nof Construct'; break
             case 404: this.desc+='Add '+this.damage+' Block\nto Construct'; break
             case 405: this.desc+='Set Construct\nto Spikes'; break
+            case 406: this.desc+='Deal '+this.damage+' Damage\nCannot be\nCountered'; break
+            case 407: this.desc+='Deal '+this.damage+' Damage\nto 3 Enemies\nCannot be\nCountered'; break
+            case 408: this.desc+='Remove All\nStrength of Target'; break
+            case 409: this.desc+='Deal '+this.damage+' Damage\nto 3 Enemies\nGain '+this.alt+' Energy\nPer Fatal\nCannot be\nCountered'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -628,6 +632,9 @@ class card{
                     break
                     case 2:
                         this.layer.text('Power',0,this.height/2-10)
+                    break
+                    case 3:
+                        this.layer.text('Blueprint',0,this.height/2-10)
                     break
                 }
             }

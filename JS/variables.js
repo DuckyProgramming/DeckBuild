@@ -841,7 +841,7 @@ types={
             {damage:3,alt:2,cost:0,attack:169,target:0,spec:0,class:2},
             {damage:3,alt:2,cost:0,attack:169,target:0,spec:0,class:2},
         ],
-        },{name:'Collect',rarity:1,list:2,
+        },{name:'Amass',rarity:1,list:2,
         stats:[
             {damage:0,alt:0,cost:-1,attack:265,target:0,spec:0,class:2},
             {damage:1,alt:0,cost:-1,attack:265,target:0,spec:0,class:2},
@@ -2028,32 +2028,59 @@ types={
             {damage:3,alt:2,cost:0,attack:391,target:0,spec:0,class:2},
         ],
         },
+        //hospitality
+        //nifty
+
         
-        
-        {name:'[Blueprint]\nWall',rarity:0,list:5,
+        {name:'Build\nWall',rarity:0,list:5,
         stats:[
-            {damage:0,alt:0,cost:0,attack:401,target:0,spec:10,class:0},
-            {damage:0,alt:0,cost:0,attack:401,target:0,spec:10,class:0},
+            {damage:0,alt:0,cost:0,attack:401,target:0,spec:10,class:3},
+            {damage:0,alt:0,cost:0,attack:401,target:0,spec:10,class:3},
         ],
-        },{name:'[Blueprint]\nSpikes',rarity:0,list:5,
+        },{name:'Build\nSpikes',rarity:0,list:5,
         stats:[
-            {damage:0,alt:0,cost:0,attack:405,target:0,spec:10,class:0},
-            {damage:0,alt:0,cost:0,attack:405,target:0,spec:10,class:0},
+            {damage:0,alt:0,cost:0,attack:405,target:0,spec:10,class:3},
+            {damage:0,alt:0,cost:0,attack:405,target:0,spec:10,class:3},
         ],
         },{name:'Construct',rarity:0,list:5,
         stats:[
-            {damage:15,alt:0,cost:1,attack:402,target:0,spec:0,class:0},
-            {damage:25,alt:0,cost:1,attack:402,target:0,spec:0,class:0},
+            {damage:15,alt:0,cost:1,attack:402,target:0,spec:0,class:2},
+            {damage:25,alt:0,cost:1,attack:402,target:0,spec:0,class:2},
         ],
         },{name:'Repair',rarity:0,list:5,
         stats:[
-            {damage:8,alt:0,cost:1,attack:403,target:0,spec:0,class:0},
-            {damage:12,alt:0,cost:1,attack:403,target:0,spec:0,class:0},
+            {damage:8,alt:0,cost:1,attack:403,target:0,spec:0,class:2},
+            {damage:12,alt:0,cost:1,attack:403,target:0,spec:0,class:2},
         ],
         },{name:'Duct Tape',rarity:0,list:5,
         stats:[
-            {damage:12,alt:0,cost:1,attack:404,target:0,spec:0,class:0},
-            {damage:20,alt:0,cost:1,attack:404,target:0,spec:0,class:0},
+            {damage:12,alt:0,cost:1,attack:404,target:0,spec:0,class:1},
+            {damage:20,alt:0,cost:1,attack:404,target:0,spec:0,class:1},
+        ],
+        },{name:'Pistol',rarity:0,list:5,
+        stats:[
+            {damage:7,alt:0,cost:1,attack:406,target:1,spec:0,class:0},
+            {damage:11,alt:0,cost:1,attack:406,target:1,spec:0,class:0},
+        ],
+        },{name:'Shotgun',rarity:0,list:5,
+        stats:[
+            {damage:9,alt:0,cost:2,attack:407,target:1,spec:0,class:0},
+            {damage:13,alt:0,cost:2,attack:407,target:1,spec:0,class:0},
+        ],
+        },{name:'Circuit',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:408,target:1,spec:0,class:0},
+            {damage:0,alt:0,cost:0,attack:408,target:1,spec:2,class:0},
+        ],
+        },{name:'Fire\nAway',rarity:1,list:5,
+        stats:[
+            {damage:5,alt:1,cost:2,attack:409,target:1,spec:0,class:0},
+            {damage:8,alt:1,cost:2,attack:409,target:1,spec:0,class:0},
+        ],
+        },{name:'Quickdraw',rarity:0,list:5,
+        stats:[
+            {damage:12,alt:0,cost:1,attack:406,target:1,spec:8,class:0},
+            {damage:17,alt:0,cost:1,attack:406,target:1,spec:8,class:0},
         ],
         },
         
