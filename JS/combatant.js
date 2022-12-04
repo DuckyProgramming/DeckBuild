@@ -1657,6 +1657,14 @@ class combatant{
 					this.layer.point(9-6,-64)
 					this.layer.point(9+6,-64)
 				break
+				case 39:
+					this.layer.strokeWeight(5)
+					this.layer.stroke(100,this.fade)
+					this.layer.fill(120,this.fade)
+					this.layer.quad(-25,0,25,0,20,-60*this.life/this.base.life,-20,-60*this.life/this.base.life)
+					this.layer.line(-25,0,20,-60*this.life/this.base.life)
+					this.layer.line(25,0,-20,-60*this.life/this.base.life)
+				break
 				/*case 35:
 					this.layer.translate(0,-1.25)
 					if(this.anim[1]<1){
@@ -2493,12 +2501,12 @@ class combatant{
 		}else if(this.fades.block>0&&this.block<=0){
 			this.fades.block=round(this.fades.block*5-1)/5
 		}
-		if(this.fade<1&&this.life>0){
+		if(this.fade<1&&(this.life>0||this.id==1&&this.type>0)){
 			this.fade=round(this.fade*5+1)/5
-		}else if(this.fade>0&&this.life<=0){
+		}else if(this.fade>0&&!(this.life>0||this.id==1&&this.type>0)){
 			this.fade=round(this.fade*5-1)/5
 		}
-		if(this.life<=0&&this.type!=0){
+		if(this.life<=0&&this.type!=0&&this.id!=1){
 			if(this.id==0&&this.battle.relics.active[81]){
 				this.battle.relics.active[81]=false
 				this.life=this.base.life/2

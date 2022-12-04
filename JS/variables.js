@@ -2030,6 +2030,14 @@ types={
         },
         
         
+        {name:'[Blueprint]\nWall',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:401,target:0,spec:10,class:0},
+            {damage:0,alt:0,cost:0,attack:401,target:0,spec:10,class:0},
+        ],
+        },
+        
+        
         {name:'Empty',rarity:-1,list:-1,
         stats:[
             {damage:0,alt:0,cost:0,attack:-3,target:0,spec:13,class:0},
@@ -2408,6 +2416,7 @@ types={
         {name:'Billy Beatup',alt:'',life:75,height:75,behavior:0,attacks:[1,3],damage:[9,2],altAttack:[0,6],class:0,buff:0},
         {name:'Monkey Gangster',alt:'',life:24,height:60,behavior:0,attacks:[1,3],damage:[8,2],altAttack:[0,5],class:0,buff:0},
         {name:'Wild Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[4,2,3],altAttack:[0,3,0],class:0,buff:0},
+        {name:'Wall',alt:'',life:40,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
     ],attack:[
         {class:0},//0
         {class:0},

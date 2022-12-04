@@ -11,7 +11,7 @@ class battle{
         this.particles=[]
         this.combatants=[]
         this.combatants.push(new combatant(this.layer,this,100,350,this.player,0,0))
-        this.combatants.push(new combatant(this.layer,this,150,350,0,0,1))
+        this.combatants.push(new combatant(this.layer,this,200,350,0,0,1))
         this.choice={cards:[]}
         this.shop={cards:[]}
         this.mana={main:3,gen:3,max:3,base:3}
@@ -76,6 +76,7 @@ class battle{
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
         }
+        this.combatants.push(new combatant(this.layer,this,200,350,0,0,1))
         for(e=0,le=this.generation.combatants.length;e<le;e++){
             this.combatants.push(new combatant(this.layer,this,300+e*100,350,this.generation.combatants[e],1,e+2))
         }
@@ -1017,6 +1018,11 @@ class battle{
         this.reserve.allUpgrade()
         this.discard.allUpgrade()
     }
+    buildAlly(type){
+        this.combatants[1]=new combatant(this.layer,this,200,350,findCombatant(type),0,1)
+        this.combatants[1].life=0
+        this.combatants[1].collect.life=0
+    }
     resetCombatant(){
         for(let e=0,le=this.combatants.length;e<le;e++){
             if(this.combatants[e].type!=0){
@@ -1511,7 +1517,7 @@ class battle{
                         this.layer.text('Defeat Enemies ('+this.counter.enemies.dead+'/'+this.counter.enemies.total+')',450,e*60+120)
                     break
                     case 1:
-                        this.layer.text('Complete Mission in '+this.objective[e][1]+' Turns ('+(this.counter.turn+1)+')',450,e*60+120)
+                        this.layer.text('Complete Mission in '+this.objective[e][1]+' Turns ('+this.counter.turn+')',450,e*60+120)
                     break
                     case 2:
                         this.layer.text('Take Less Than '+this.objective[e][1]+' Damage ('+ceil(this.counter.taken)+')',450,e*60+120)
@@ -1610,6 +1616,11 @@ class battle{
             }else if(this.turn>=this.combatants.length+100||this.combatants[this.turn-100].status.main[5]>0||this.combatants[this.turn-100].status.main[9]>0){
                 this.turn=0
             }else{
+                if(this.combatants[1].life>0){
+                    this.attack.target=1
+                }else{
+                    this.attack.target=0
+                }
                 this.attack.user=this.turn-100
                 this.attack.damage=round(this.combatants[this.turn-100].damage[this.combatants[this.turn-100].intent]*(2+max(0,this.combatants[this.turn-100].boost.main[0]))/(2-min(0,this.combatants[this.turn-100].boost.main[0])))
                 this.attack.alt=this.combatants[this.turn-100].altAttack[this.combatants[this.turn-100].intent]
@@ -1632,6 +1643,11 @@ class battle{
                     this.turnTimer=30
                 }
             }else{
+                if(this.combatants[1].life>0){
+                    this.attack.target=1
+                }else{
+                    this.attack.target=0
+                }
                 this.attack.user=this.turn
                 this.attack.damage=round(this.combatants[this.turn].damage[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0])))
                 this.attack.alt=this.combatants[this.turn].altAttack[this.combatants[this.turn].intent]

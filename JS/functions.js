@@ -330,6 +330,14 @@ function findCard(name){
 	}
 	return -1
 }
+function findCombatant(name){
+	for(i=0,li=types.combatant.length;i<li;i++){
+		if(types.combatant[i].name==name){
+			return i
+		}
+	}
+	return -1
+}
 function findRelic(name){
 	for(i=0,li=types.relic.length;i<li;i++){
 		if(types.relic[i].name==name){
