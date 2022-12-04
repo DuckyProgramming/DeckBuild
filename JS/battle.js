@@ -698,7 +698,7 @@ class battle{
                     f!=35&&f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=50&&f!=51&&
                     f!=52&&f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&
                     f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79&&
-                    f!=80&&f!=81&&f!=82&&f!=85&&f!=88){
+                    f!=80&&f!=81&&f!=82&&f!=85&&f!=88&&f!=91){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[f]
                     }else if(f==67){
@@ -1019,9 +1019,14 @@ class battle{
         this.discard.allUpgrade()
     }
     buildAlly(type){
+        if(this.combatants[1].status.main[91]>0){
+            this.remember[0]=this.combatants[1].life
+        }else{
+            this.remember[0]=0
+        }
         this.combatants[1]=new combatant(this.layer,this,200,350,findCombatant(type),0,1)
-        this.combatants[1].life=0
-        this.combatants[1].collect.life=0
+        this.combatants[1].life=min(this.remember[0],this.combatants[1].base.life)
+        this.combatants[1].collect.life=this.remember[0]
     }
     resetCombatant(){
         for(let e=0,le=this.combatants.length;e<le;e++){

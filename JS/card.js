@@ -476,7 +476,11 @@ class card{
             case 412: this.desc+='Exhaust All\nBlueprints in\nYour Hand'; break
             case 413: this.desc+='Increase\nConstruct Max\nHealth by '+this.damage; break
             case 414: this.desc+='Deal '+this.damage+' Damage\nDiscard '+this.alt+' Cards'; break
-            case 415: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed'; break
+            case 415: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed,\nIgnoring Block'; break
+            case 416: this.desc+='Apply '+this.damage+' Bleed,\nIgnoring Block'; break
+            case 417: this.desc+='Deal '+this.damage+' Damage and\nApply 1 Bleed\n'+this.alt+' Times'; break
+            case 418: this.desc+='If Construct is Built,\nDeal Damage\nEqual to Half\nof Construct Health\nto All Enemies\nDestroy Construct'; break
+            case 419: this.desc+='Next Construct\nChange Maintains\nHealth/Progress'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

@@ -2038,6 +2038,30 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.discarding=this.alt
                 break
+                case 415:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target].status.main[11]+=this.alt
+                break
+                case 416:
+                    this.battle.combatants[this.target].status.main[11]+=this.damage
+                break
+                case 417:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].block<=0){
+                        this.battle.combatants[this.target].status.main[11]++
+                    }
+                    this.attacks.push([0,this.alt*10-10,this.target,this.damage])
+                    this.attacks.push([12,this.alt*10-10,this.target,1])
+                break
+                case 418:
+                    if(this.battle.combatants[1].built==1){
+                        this.battle.takeAll(this.battle.combatants[1].life/2,this.user,1)
+                        this.battle.combatants[1].life=0
+                    }
+                break
+                case 419:
+                    this.battle.combatants[1].status.main[91]++
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
@@ -2237,6 +2261,11 @@ class attack{
                             this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3]+this.battle.combatants[0].status.main[26],this.attacks[g][2]-1,0)
                         }
                         this.battle.combatants[this.attacks[g][2]-1].take(this.attacks[g][3]+this.battle.combatants[0].status.main[26],this.attacks[g][2],0)
+                    }
+                break
+                case 12:
+                    if(this.attacks[g][1]%10==0&&this.battle.combatants[this.attacks[g][2]].block<=0){
+                        this.battle.combatants[this.attacks[g][2]].status.main[11]+=this.attacks[g][3]
                     }
                 break
                 default:

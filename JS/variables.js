@@ -2107,12 +2107,12 @@ types={
             {damage:9,alt:2,cost:1,attack:414,target:1,spec:0,class:0},
             {damage:13,alt:2,cost:1,attack:414,target:1,spec:0,class:0},
         ],
-        },{name:'Spiky Whack',rarity:0,list:5,
+        },{name:'Spiky\nWhack',rarity:0,list:5,
         stats:[
             {damage:3,alt:3,cost:1,attack:415,target:1,spec:0,class:0},
             {damage:6,alt:4,cost:1,attack:415,target:1,spec:0,class:0},
         ],
-        },{name:'Spiky Cut',rarity:0,list:5,
+        },{name:'Spiky\nCut',rarity:0,list:5,
         stats:[
             {damage:4,alt:0,cost:1,attack:416,target:1,spec:0,class:0},
             {damage:6,alt:0,cost:1,attack:416,target:1,spec:0,class:0},
@@ -2121,6 +2121,16 @@ types={
         stats:[
             {damage:1,alt:4,cost:1,attack:417,target:1,spec:0,class:0},
             {damage:2,alt:4,cost:1,attack:417,target:1,spec:0,class:0},
+        ],
+        },{name:'Self-\nDestruct',rarity:2,list:5,
+        stats:[
+            {damage:0,alt:0,cost:2,attack:418,target:0,spec:0,class:0},
+            {damage:0,alt:0,cost:1,attack:418,target:0,spec:0,class:0},
+        ],
+        },{name:'Maintain',rarity:1,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:419,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:419,target:0,spec:0,class:2},
         ],
         },
         
