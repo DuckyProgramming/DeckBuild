@@ -2074,6 +2074,13 @@ class attack{
                 case 423:
                     this.battle.buildAlly('Explosive Turret')
                 break
+                case 424:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target+1].take(this.damage,this.user)
+                break
+                case 425:
+                    this.battle.combatants[0].status.main[87]+=this.damage
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

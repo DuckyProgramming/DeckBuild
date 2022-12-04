@@ -485,6 +485,8 @@ class card{
             case 421: this.desc+='Set Construct to\nGenerator'; break
             case 422: this.desc+='Set Construct to\nStrengthener'; break
             case 423: this.desc+='Set Construct to\nExplosive Turret'; break
+            case 424: this.desc+='Deal '+this.damage+' Damage\nto 2 Enemies'; break
+            case 425: this.desc+='Attacks Deal\n'+this.damage+' More Damage\nThis Turn'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

@@ -369,7 +369,7 @@ class battle{
                 }
             break
             case -19:
-                this.combatants[0].status.main[87]+=2
+                this.combatants[0].status.main[87]-=2
             break
         }
     }

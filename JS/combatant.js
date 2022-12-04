@@ -42,7 +42,7 @@ class combatant{
 			'Armed Block Per Turn','Energy And Strength Per Hit','Return Played to Draw','Power Draw','Random Common','Passive Orb','Discharge','Power Basic Charge','Random Power','Conditioning',
 			'Miracle+ Gain','Calm Block Per Turn','Constant Damage Down','Shiv Damage','No Blocks','Counter Pull Once','Counter Throw','Downed','Scry Per Turn','Scry Block',
 			'Attack Per Card Played','Take Damage Per Turn','Energy Gen Down','Next Turn Wrath','Next Turn Draw','Insight Per Turn','Free Attack','Grant Block on Hit','Energy Per Turn','Retain Cost Decrease',
-			'Lose Focus','Dark Charge on Death','Balance Buffer','Counter Stun Once','Flower Per Turn','Flower on Block','Debalance','Temporary Constant Damage Down','Retain Buffs','Counter Once',
+			'Lose Focus','Dark Charge on Death','Balance Buffer','Counter Stun Once','Flower Per Turn','Flower on Block','Debalance','Temporary Constant Damage','Retain Buffs','Counter Once',
 			'Reflect','Construct Health Maintain'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
@@ -2363,7 +2363,7 @@ class combatant{
 					this.calc.damage=max(0,this.calc.damage-this.battle.combatants[user].status.main[62])
 				}
 				if(user>=0&&this.battle.combatants[user].status.main[87]>0){
-					this.calc.damage=max(0,this.calc.damage-this.battle.combatants[user].status.main[87])
+					this.calc.damage=max(0,this.calc.damage+this.battle.combatants[user].status.main[87])
 				}
 				this.battle.particles.push(new particle(this.layer,this.position.x,this.position.y-this.height/2,0,random(0,360),3,2,[255,0,0]))
 				this.battle.particles[this.battle.particles.length-1].text=round(this.calc.damage*10)/10

@@ -383,7 +383,7 @@ types={
             {damage:2,alt:0,cost:2,attack:272,target:0,spec:3,class:2},
             {damage:2,alt:0,cost:1,attack:272,target:0,spec:3,class:2},
         ],
-        },{name:'Separate',rarity:0,list:1,
+        },{name:'Seperator',rarity:0,list:1,
         stats:[
             {damage:4,alt:4,cost:1,attack:273,target:1,spec:0,class:0},
             {damage:8,alt:4,cost:1,attack:273,target:1,spec:0,class:0},
@@ -517,6 +517,16 @@ types={
         stats:[
             {damage:4,alt:1,cost:1,attack:316,target:0,spec:0,class:1},
             {damage:7,alt:1,cost:1,attack:316,target:0,spec:0,class:1},
+        ],
+        },{name:'Split Kick',rarity:0,list:1,
+        stats:[
+            {damage:12,alt:0,cost:2,attack:424,target:1,spec:0,class:0},
+            {damage:16,alt:0,cost:2,attack:424,target:1,spec:0,class:0},
+        ],
+        },{name:'Secret\nWeapon',rarity:0,list:1,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:425,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:0,attack:425,target:0,spec:0,class:2},
         ],
         },
         //specs
