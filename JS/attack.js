@@ -2062,6 +2062,18 @@ class attack{
                 case 419:
                     this.battle.combatants[1].status.main[91]++
                 break
+                case 420:
+                    this.battle.buildAlly('Readout')
+                break
+                case 421:
+                    this.battle.buildAlly('Generator')
+                break
+                case 422:
+                    this.battle.buildAlly('Strengthener')
+                break
+                case 423:
+                    this.battle.buildAlly('Explosive Turret')
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

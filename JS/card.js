@@ -462,17 +462,17 @@ class card{
             case 398: this.desc+='Hold '+this.damage+' Light Charge\nGain '+this.alt+' Weak\nGain '+this.alt+' Frail'; break
             case 399: this.desc+='Gain '+this.damage+'\nArmor'; break
             case 400: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Frail\nNo Combo Gain'; break
-            case 401: this.desc+='Set Construct\nto Wall'; break
+            case 401: this.desc+='Set Construct to\nWall'; break
             case 402: this.desc+='Build '+this.damage+' of\nConstruct'; break
             case 403: this.desc+='Heal '+this.damage+' Life\nof Construct'; break
             case 404: this.desc+='Add '+this.damage+' Block\nto Construct'; break
-            case 405: this.desc+='Set Construct\nto Spikes'; break
+            case 405: this.desc+='Set Construct to\nSpikes'; break
             case 406: this.desc+='Deal '+this.damage+' Damage\nCannot be\nCountered'; break
             case 407: this.desc+='Deal '+this.damage+' Damage\nto 3 Enemies\nCannot be\nCountered'; break
             case 408: this.desc+='Remove All\nStrength of Target'; break
             case 409: this.desc+='Deal '+this.damage+' Damage\nto 3 Enemies\nGain '+this.alt+' Energy\nPer Fatal\nCannot be\nCountered'; break
-            case 410: this.desc+='Set Construct\nto Projector'; break
-            case 411: this.desc+='Set Construct\nto Turret'; break
+            case 410: this.desc+='Set Construct to\nProjector'; break
+            case 411: this.desc+='Set Construct to\nTurret'; break
             case 412: this.desc+='Exhaust All\nBlueprints in\nYour Hand'; break
             case 413: this.desc+='Increase\nConstruct Max\nHealth by '+this.damage; break
             case 414: this.desc+='Deal '+this.damage+' Damage\nDiscard '+this.alt+' Cards'; break
@@ -481,6 +481,10 @@ class card{
             case 417: this.desc+='Deal '+this.damage+' Damage and\nApply 1 Bleed\n'+this.alt+' Times'; break
             case 418: this.desc+='If Construct is Built,\nDeal Damage\nEqual to Half\nof Construct Health\nto All Enemies\nDestroy Construct'; break
             case 419: this.desc+='Next Construct\nChange Maintains\nHealth/Progress'; break
+            case 420: this.desc+='Set Construct to\nReadout'; break
+            case 421: this.desc+='Set Construct to\nGenerator'; break
+            case 422: this.desc+='Set Construct to\nStrengthener'; break
+            case 423: this.desc+='Set Construct to\nExplosive Turret'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

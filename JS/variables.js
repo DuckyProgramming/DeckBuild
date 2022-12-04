@@ -519,6 +519,7 @@ types={
             {damage:7,alt:1,cost:1,attack:316,target:0,spec:0,class:1},
         ],
         },
+        //specs
         
         
         {name:'Vigilance',rarity:1,list:2,
@@ -1022,6 +1023,7 @@ types={
             {damage:1,alt:0,cost:1,attack:333,target:0,spec:3,class:2},
         ],
         },
+        //gimmick disjoint
         
         
         {name:'Charge',rarity:0,list:3,
@@ -2028,8 +2030,8 @@ types={
             {damage:3,alt:2,cost:0,attack:391,target:0,spec:0,class:2},
         ],
         },
-        //hospitality
         //nifty
+        //powers
 
         
         {name:'Build\nWall',rarity:0,list:5,
@@ -2051,6 +2053,26 @@ types={
         stats:[
             {damage:0,alt:0,cost:0,attack:411,target:0,spec:10,class:3},
             {damage:0,alt:0,cost:0,attack:411,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nReadout',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:420,target:0,spec:10,class:3},
+            {damage:0,alt:0,cost:0,attack:420,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nGenerator',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:421,target:0,spec:10,class:3},
+            {damage:0,alt:0,cost:0,attack:421,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nStrengthener',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:422,target:0,spec:10,class:3},
+            {damage:0,alt:0,cost:0,attack:422,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nExplosive Turret',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:423,target:0,spec:10,class:3},
+            {damage:0,alt:0,cost:0,attack:423,target:0,spec:10,class:3},
         ],
         },{name:'Construct',rarity:0,list:5,
         stats:[
@@ -2517,6 +2539,10 @@ types={
         {name:'Spikes',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},//40
         {name:'Projector',alt:'',life:50,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Turret',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Readout',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
+        {name:'Generator',alt:'',life:40,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Strengthener',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Explosive Turret',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
     ],attack:[
         {class:0},//0
         {class:0},

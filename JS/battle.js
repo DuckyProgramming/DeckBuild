@@ -1644,6 +1644,18 @@ class battle{
                     case 'Turret':
                         this.combatants[0].orbAttack(10,-1,0)
                     break
+                    case 'Readout':
+                        this.draw()
+                    break
+                    case 'Generator':
+                        this.combatants[0].status.main[1]++
+                    break
+                    case 'Strengthener':
+                        this.combatants[0].status.main[4]++
+                    break
+                    case 'Explosive Turret':
+                        this.combatants[0].orbAttack(8,-1,1)
+                    break
                 }
             }
             this.turn++
