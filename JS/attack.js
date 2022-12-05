@@ -2115,6 +2115,50 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage+this.alt*this.combo,this.user)
                     this.battle.draw()
                 break
+                case 434:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[94]+=this.alt
+                break
+                case 435:
+                    this.hold.list=[]
+                    for(g=0,lg=listing.card[this.battle.player].length;g<lg;g++){
+                        for(h=0,lh=listing.card[this.battle.player][g].length;h<lh;h++){
+                            if(types.card[listing.card[this.battle.player][g][h]].stats[0].class==0){
+                                this.hold.list.push(listing.card[this.battle.player][g][h])
+                            }
+                        }
+                    }
+                    if(this.hold.list.length>0){
+                        g=floor(random(0,this.hold.list.length))
+                        this.battle.hand.add(this.hold.list[g],0,this.battle.player)
+                        this.battle.hand.cards[this.battle.hand.cards.length-1].cost=0
+                        if(this.alt>0){
+                            this.battle.hand.cards[this.battle.hand.cards.length-1].base.cost=0
+                        }
+                    }
+                break
+                case 436:
+                    this.battle.combatants[0].status.main[1]+=this.damage
+                break
+                case 437:
+                    this.battle.combatants[0].status.main[95]+=this.damage
+                break
+                case 438:
+                    this.battle.combatants[0].status.main[96]+=this.damage
+                break
+                case 439:
+                    this.battle.combatants[0].status.main[97]+=this.damage
+                break
+                case 440:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].life<=0){
+                        this.battle.combatants[0].combo+=this.alt
+                    }
+                break
+                case 441:
+                    this.battle.combatants[0].addBlock(this.damage*this.mana)
+                    this.battle.combatants[0].status.main[3]+=this.alt*this.mana
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

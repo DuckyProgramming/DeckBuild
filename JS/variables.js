@@ -45,8 +45,8 @@ types={
         ],
         },{name:'Hunker\nDown',rarity:0,list:1,
         stats:[
-            {damage:4,alt:0,cost:-1,attack:7,target:0,spec:0,class:1},
             {damage:6,alt:0,cost:-1,attack:7,target:0,spec:0,class:1},
+            {damage:9,alt:0,cost:-1,attack:7,target:0,spec:0,class:1},
         ],
         },{name:'Limit\nBreak',rarity:1,list:1,
         stats:[
@@ -61,7 +61,7 @@ types={
         },{name:'Chain\nStrike',rarity:0,list:1,
         stats:[
             {damage:5,alt:1,cost:1,attack:10,target:1,spec:0,class:0},
-            {damage:7,alt:1,cost:0,attack:10,target:1,spec:0,class:0},
+            {damage:8,alt:1,cost:1,attack:10,target:1,spec:0,class:0},
         ],
         },{name:'Hook\nStrike',rarity:1,list:1,
         stats:[
@@ -568,8 +568,57 @@ types={
             {damage:6,alt:2,cost:2,attack:433,target:1,spec:0,class:0},
             {damage:10,alt:2,cost:2,attack:433,target:1,spec:0,class:0},
         ],
+        },{name:'Impasse',rarity:0,list:1,
+        stats:[
+            {damage:8,alt:0,cost:2,attack:2,target:1,spec:4,class:1},
+            {damage:12,alt:0,cost:2,attack:2,target:1,spec:4,class:1},
+        ],
+        },{name:'Double\nCounter',rarity:1,list:1,
+        stats:[
+            {damage:8,alt:10,cost:2,attack:434,target:0,spec:0,class:1},
+            {damage:14,alt:12,cost:2,attack:434,target:0,spec:0,class:1},
+        ],
+        },{name:'Jab',rarity:0,list:1,
+        stats:[
+            {damage:3,alt:1,cost:0,attack:10,target:1,spec:0,class:0},
+            {damage:5,alt:1,cost:0,attack:10,target:1,spec:0,class:0},
+        ],
+        },{name:'Improvise',rarity:1,list:1,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:435,target:0,spec:0,class:2},
+            {damage:1,alt:1,cost:1,attack:435,target:0,spec:0,class:2},
+        ],
+        },{name:'Focus',rarity:0,list:1,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:436,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:0,attack:436,target:0,spec:0,class:2},
+        ],
+        },{name:'String',rarity:1,list:1,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:437,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:437,target:0,spec:0,class:2},
+        ],
+        },{name:'Massed\nAssault',rarity:2,list:1,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:438,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:1,attack:438,target:0,spec:0,class:2},
+        ],
+        },{name:'Springback',rarity:2,list:1,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:439,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:1,attack:439,target:0,spec:0,class:2},
+        ],
+        },{name:'Continuity',rarity:1,list:1,
+        stats:[
+            {damage:12,alt:6,cost:4,attack:440,target:1,spec:4,class:0},
+            {damage:16,alt:8,cost:4,attack:440,target:1,spec:4,class:0},
+        ],
+        },{name:'Charge\nCounter',rarity:1,list:1,
+        stats:[
+            {damage:4,alt:4,cost:-1,attack:441,target:0,spec:0,class:1},
+            {damage:8,alt:6,cost:-1,attack:441,target:0,spec:0,class:1},
+        ],
         },
-        //specs
         
         
         {name:'Vigilance',rarity:1,list:2,
@@ -1074,6 +1123,7 @@ types={
         ],
         },
         //gimmick disjoint
+        //outmaneuver
         
         
         {name:'Charge',rarity:0,list:3,
@@ -1577,6 +1627,7 @@ types={
             {damage:1,alt:0,cost:1,attack:379,target:0,spec:0,class:2},
         ],
         },
+        //sequence
         
         
         {name:'Debilitate',rarity:2,list:4,
@@ -2209,8 +2260,8 @@ types={
         
         {name:'Empty',rarity:-1,list:-1,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-3,target:0,spec:13,class:0},
-            {damage:0,alt:0,cost:0,attack:-3,target:0,spec:13,class:0},
+            {damage:0,alt:0,cost:0,attack:-3,target:0,spec:13,class:4},
+            {damage:0,alt:0,cost:0,attack:-3,target:0,spec:13,class:4},
         ],
         },
         

@@ -495,6 +495,14 @@ class card{
             case 431: this.desc+='Gain '+this.damage+' Combo\nLose Combo at\nEnd of Turn'; break
             case 432: this.desc+='Next Card Played\nis Duplicated'; break
             case 433: this.desc+='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo\nDraw 1 Card'; break
+            case 434: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+' Twice'; break
+            case 435: if(this.alt>0){this.desc+='Add '+this.damage+' Random\nAttack to Your Hand\nIt Costs 0'}else{this.desc+='Add '+this.damage+' Random\nAttack to Your Hand\nIt Costs 0\nThis Turn'}; break
+            case 436: this.desc+='Gain '+this.damage+' Energy\nNext Turn'; break
+            case 437: this.desc+='Gain '+this.damage+' More\nCombo Per Hit'; break
+            case 438: this.desc+='When You\nPlay an Attack,\nDraw '+this.damage+' Cards'; break
+            case 439: this.desc+='When You Add\nBlock, Gain\n1 Combo'; break
+            case 440: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, gain\n'+this.alt+' Combo'; break
+            case 441: this.desc+='Add '+this.damage+'X Block\nCounter '+this.alt+'X Once'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
