@@ -603,7 +603,7 @@ types={
             {damage:1,alt:0,cost:1,attack:438,target:0,spec:0,class:2},
             {damage:2,alt:0,cost:1,attack:438,target:0,spec:0,class:2},
         ],
-        },{name:'Springback',rarity:2,list:1,
+        },{name:'Springback',rarity:1,list:1,
         stats:[
             {damage:1,alt:0,cost:1,attack:439,target:0,spec:0,class:2},
             {damage:2,alt:0,cost:1,attack:439,target:0,spec:0,class:2},
@@ -613,7 +613,7 @@ types={
             {damage:12,alt:6,cost:4,attack:440,target:1,spec:4,class:0},
             {damage:16,alt:8,cost:4,attack:440,target:1,spec:4,class:0},
         ],
-        },{name:'Charge\nCounter',rarity:1,list:1,
+        },{name:'Charge\nCounter',rarity:2,list:1,
         stats:[
             {damage:4,alt:4,cost:-1,attack:441,target:0,spec:0,class:1},
             {damage:8,alt:6,cost:-1,attack:441,target:0,spec:0,class:1},
