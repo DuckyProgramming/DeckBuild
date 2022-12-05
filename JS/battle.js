@@ -855,8 +855,8 @@ class battle{
         if(this.counter.enemies.alive<this.generation.threshold&&this.generation.reinforce.length>0){
             e=stage.playerCombatantNumber
             while(e<this.combatants.length){
-                if(this.combatants[e].type==0){
-                    this.combatants[e]=new combatant(this.layer,this,200+e*100,350,this.generation.reinforce[0],1,e)
+                if(this.combatants[e].type==0&&this.combatants[e].id!=1){
+                    this.combatants[e]=new combatant(this.layer,this,100+e*100,350,this.generation.reinforce[0],1,e)
                     this.combatants[e].initialBuff()
                     this.generation.reinforce.splice(0,1)
                     break
@@ -1896,7 +1896,7 @@ class battle{
             }
         }
         if(this.context==3&&transition.anim>=1){
-            this.setupChoice(0,floor(this.deck.cards.length/12),0)
+            this.setupChoice(0,floor(this.random.chosen/12),0)
             this.context=2
         }
     }

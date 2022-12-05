@@ -2602,7 +2602,7 @@ types={
         {name:'Duelist',alt:'',life:70,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','Princess','Setsuna']},
         {name:'Executor',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MAEP-65091','Azis']},
         {name:'Creation',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','MPCO-SKR','Sakura']},
-        {name:'The Builder',alt:'',life:60,height:66,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Friend','Duck','____','Duckipo']},
+        {name:'Builder',alt:'',life:60,height:66,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Friend','Duck','____','Duckipo']},
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
