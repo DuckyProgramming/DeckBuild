@@ -6172,7 +6172,7 @@ types={
                     link:[-1],
                 },{
                     desc:"You get out and land on the pavement. The taxi goes on and crashes in the distance.\n"+
-                    "You spend the next few minutes frantically dashing between cards to get off the bridge.",
+                    "You spend the next few minutes frantically dashing between cars to get off the bridge.",
                     option:['Get out of there'],
                     optionDesc:['Lose 9 Health'],
                     link:[-1],
