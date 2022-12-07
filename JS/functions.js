@@ -893,7 +893,7 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[9],-8,6,16,16)
 		break
 		case 88:
-			layer.text('1',10,1)
+			layer.text('7',10,1)
 			layer.textSize(10)
 			layer.text('52',-5,0)
 			layer.image(graphics.symbol[7],-15,-10,20,20)

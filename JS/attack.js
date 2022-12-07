@@ -653,8 +653,10 @@ class attack{
                     this.battle.combatants[0].status.main[21]+=this.damage
                 break
                 case 130:
-                    this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.attacks.push([0,this.alt*this.mana*10-10,this.target,this.damage])
+                    if(this.mana>0){
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                        this.attacks.push([0,this.alt*this.mana*10-10,this.target,this.damage])
+                    }
                 break
                 case 131:
                     this.battle.combatants[0].status.main[22]+=this.damage
@@ -1027,7 +1029,7 @@ class attack{
                 break
                 case 215:
                     for(g=0,lg=this.battle.combatants.length;g<lg;g++){
-                        if(this.battle.combatants[g].life>0&&this.batttle.combatants[g].team==1){
+                        if(this.battle.combatants[g].life>0&&this.battle.combatants[g].team==1){
                             this.hold.int=this.battle.combatants[g].life
                             this.battle.combatants[g].take(this.damage,this.user)
                             this.battle.combatants[0].meter+=this.alt

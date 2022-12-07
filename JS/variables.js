@@ -1118,8 +1118,8 @@ types={
         ],
         },{name:'Established',rarity:2,list:2,
         stats:[
-            {damage:1,alt:0,cost:1,attack:333,target:0,spec:8,class:2},
             {damage:1,alt:0,cost:1,attack:333,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:1,attack:333,target:0,spec:8,class:2},
         ],
         },
         //gimmick disjoint
@@ -4767,7 +4767,7 @@ types={
                     "The constant whispering voices in the back of your head aren't helping things either.\n"+
                     "Passing by a structure you are certain you have previously seen, you start to question if you are going insane.\n"+
                     "You need to change something, and soon.",
-                    option:['Embrace Madness','Continue','Head Back'],
+                    option:['Embrace madness','Continue','Head back'],
                     optionDesc:['','',''],
                     link:[1,2,3],
                 },{
