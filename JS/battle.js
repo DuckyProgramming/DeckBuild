@@ -37,7 +37,7 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0}
         this.defaultRandom={attacked:0,orbs:0,shields:0}
         stage.identifier=types.combatant[this.player].identifiers
     }
@@ -73,6 +73,7 @@ class battle{
         this.random.orbs=0
         this.random.shields=0
         this.random.doubling=0
+        this.random.upgrading=0
         this.combatants[0].resetUnique()
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
@@ -643,7 +644,7 @@ class battle{
                 }
             }
             this.combatants[e].boost.main[0]+=this.combatants[e].status.main[4]-this.combatants[e].status.main[7]+this.combatants[e].status.main[39]
-            this.combatants[e].boost.main[2]-=this.combatants[e].status.main[8]
+            this.combatants[e].boost.main[2]+=this.combatants[e].status.main[32]-this.combatants[e].status.main[8]
             if(this.combatants[e].status.main[31]+this.combatants[e].status.main[40]>0){
                 this.combatants[e].addBlock(this.combatants[e].status.main[31]+this.combatants[e].status.main[40])
             }

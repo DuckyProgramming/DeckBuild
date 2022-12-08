@@ -507,6 +507,9 @@ class card{
             case 443: this.desc+='Set Construct to\nThorns'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
             case 444: this.desc+='Set Construct to\nBufferer'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
             case 445: this.desc+='Set Construct to\nGun Rack'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'}; break
+            case 446: this.desc+='If Construct\nis Unbuilt,\nBuild '+this.damage+' of\nConstruct'; break
+            case 447: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Dexterity\nNext Turn'; break
+            case 448: this.desc+='Add '+this.damage+' Block\nUpgrade a Card\nTemporariliy'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -683,6 +686,17 @@ class card{
             this.layer.translate(this.position.x,this.position.y)
             this.layer.scale(this.size)
             this.layer.fill(255,0,0,this.fade*discarding)
+            this.layer.noStroke()
+            this.layer.rect(0,0,this.width+15,this.height+15,10)
+            this.layer.scale(1/this.size)
+            this.layer.translate(-this.position.x,-this.position.y)
+        }
+    }
+    displayUpgrading(upgrading){
+        if(this.size>0){
+            this.layer.translate(this.position.x,this.position.y)
+            this.layer.scale(this.size)
+            this.layer.fill(255,255,50,this.fade*upgrading)
             this.layer.noStroke()
             this.layer.rect(0,0,this.width+15,this.height+15,10)
             this.layer.scale(1/this.size)

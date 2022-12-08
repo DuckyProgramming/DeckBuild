@@ -2276,8 +2276,34 @@ types={
             {damage:0,alt:0,cost:0,attack:419,target:0,spec:3,class:2},
             {damage:0,alt:0,cost:0,attack:419,target:0,spec:0,class:2},
         ],
+        },{name:'Quick\nConstruct',rarity:0,list:5,
+        stats:[
+            {damage:6,alt:0,cost:0,attack:402,target:0,spec:0,class:2},
+            {damage:10,alt:0,cost:0,attack:402,target:0,spec:0,class:2},
+        ],
+        },{name:'Foundations',rarity:1,list:5,
+        stats:[
+            {damage:24,alt:0,cost:1,attack:446,target:0,spec:0,class:2},
+            {damage:40,alt:0,cost:1,attack:446,target:0,spec:0,class:2},
+        ],
+        },{name:'Defended',rarity:0,list:5,
+        stats:[
+            {damage:10,alt:1,cost:1,attack:447,target:0,spec:0,class:2},
+            {damage:12,alt:2,cost:1,attack:447,target:0,spec:0,class:2},
+        ],
+        },{name:'Materials',rarity:0,list:5,
+        stats:[
+            {damage:4,alt:1,cost:1,attack:448,target:0,spec:0,class:2},
+            {damage:7,alt:1,cost:1,attack:448,target:0,spec:0,class:2},
+        ],
+        },{name:'Coffee',rarity:1,list:5,
+        stats:[
+            {damage:24,alt:0,cost:1,attack:446,target:0,spec:0,class:2},
+            {damage:40,alt:0,cost:1,attack:446,target:0,spec:0,class:2},
+        ],
         },
         //half
+        //employee
         
         
         {name:'Empty',rarity:-1,list:-1,

@@ -10,7 +10,7 @@ class group{
         this.selcted=false
         this.trigger=false
         this.calc={level:0,cut:0,list:[]}
-        this.anim={discarding:0,selectCombo:false}
+        this.anim={discarding:0,upgrading:0,selectCombo:false}
     }
     initial(type){
         /*for(e=0;e<20;e++){
@@ -87,10 +87,10 @@ class group{
                 this.add(findCard('Build\nWall'),0,this.battle.player)
                 this.add(findCard('Construct'),0,this.battle.player)*/
                 this.add(430,0,this.battle.player)
-                this.add(451,0,this.battle.player)
-                this.add(452,0,this.battle.player)
-                this.add(453,0,this.battle.player)
                 this.add(454,0,this.battle.player)
+                this.add(455,0,this.battle.player)
+                this.add(456,0,this.battle.player)
+                this.add(457,0,this.battle.player)
             break
         }
     }
@@ -240,8 +240,14 @@ class group{
         }else if(!this.battle.discarding&&this.anim.discarding>0){
             this.anim.discarding=round(this.anim.discarding*5-1)/5
         }
+        if(this.battle.random.upgrading&&this.anim.upgrading<1){
+            this.anim.upgrading=round(this.anim.upgrading*5+1)/5
+        }else if(!this.battle.random.upgrading&&this.anim.upgrading>0){
+            this.anim.upgrading=round(this.anim.upgrading*5-1)/5
+        }
         for(e=0,le=this.cards.length;e<le;e++){
             this.cards[e].displayDiscarding(this.anim.discarding)
+            this.cards[e].displayUpgrading(this.anim.upgrading)
             this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length,this.battle.discard.cards.length,this.battle.reserve.cards.length,this.battle.random)
         }
     }
@@ -526,6 +532,10 @@ class group{
                     if(this.battle.random.discards==1&&this.battle.relics.active[148]){
                         this.battle.mana.main++
                     }
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.random.upgrading>0){
+                    this.battle.random.upgrading--
+                    this.cards[e].level++
+                    this.cards[e]=reformCard(this.cards[e])
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&(this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7||this.cards[e].list==10&&this.battle.relics.active[38]||this.cards[e].list==11&&this.battle.relics.active[108])){
                     this.cards[e].select=true
                     this.select=true

@@ -2209,6 +2209,19 @@ class attack{
                         this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
                     }
                 break
+                case 446:
+                    if(this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0&&this.battle.combatants[1].life==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 447:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[32]+=this.alt
+                break
+                case 448:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.random.upgrading++
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
