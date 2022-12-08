@@ -509,7 +509,9 @@ class card{
             case 445: this.desc+='Set Construct to\nGun Rack'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'}; break
             case 446: this.desc+='If Construct\nis Unbuilt,\nBuild '+this.damage+' of\nConstruct'; break
             case 447: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Dexterity\nNext Turn'; break
-            case 448: this.desc+='Add '+this.damage+' Block\nUpgrade a Card\nTemporariliy'; break
+            case 448: this.desc+='Add '+this.damage+' Block\nUpgrade '+this.alt+' Cards\nTemporariliy'; break
+            case 449: this.desc+='Upgrade '+this.damage+' Cards\nTemporariliy'; break
+            case 450: this.desc+='Deal '+this.damage+' Damage\nUpgrade '+this.alt+' Cards\nTemporariliy'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

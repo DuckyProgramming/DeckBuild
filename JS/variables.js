@@ -2296,10 +2296,15 @@ types={
             {damage:4,alt:1,cost:1,attack:448,target:0,spec:0,class:2},
             {damage:7,alt:1,cost:1,attack:448,target:0,spec:0,class:2},
         ],
-        },{name:'Coffee',rarity:1,list:5,
+        },{name:'Coffee',rarity:0,list:5,
         stats:[
-            {damage:24,alt:0,cost:1,attack:446,target:0,spec:0,class:2},
-            {damage:40,alt:0,cost:1,attack:446,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:449,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:449,target:0,spec:0,class:2},
+        ],
+        },{name:'Extend',rarity:0,list:5,
+        stats:[
+            {damage:5,alt:1,cost:1,attack:450,target:0,spec:0,class:4},
+            {damage:8,alt:1,cost:1,attack:450,target:0,spec:0,class:4},
         ],
         },
         //half

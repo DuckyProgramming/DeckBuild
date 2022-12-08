@@ -2220,7 +2220,14 @@ class attack{
                 break
                 case 448:
                     this.battle.combatants[0].addBlock(this.damage)
-                    this.battle.random.upgrading++
+                    this.battle.random.upgrading+=this.alt
+                break
+                case 449:
+                    this.battle.random.upgrading+=this.damage
+                break
+                case 450:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.random.upgrading+=this.alt
                 break
                 default:
             }
