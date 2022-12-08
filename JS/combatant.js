@@ -1693,13 +1693,13 @@ class combatant{
 					this.layer.strokeWeight(5)
 					this.layer.stroke(100,this.fade)
 					this.layer.fill(120,this.fade)
-					this.layer.rect(0,-40*max(this.life/this.base.life,this.built),60,40*max(this.life/this.base.life,this.built))
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built),60,80*max(this.life/this.base.life,this.built))
 					this.layer.noStroke()
 					this.layer.fill(255,100,100,this.fade)
-					this.layer.rect(-18,-40*max(this.life/this.base.life,this.built),6,30*max(this.life/this.base.life,this.built))
-					this.layer.rect(-6,-40*max(this.life/this.base.life,this.built),6,30*max(this.life/this.base.life,this.built))
-					this.layer.rect(6,-40*max(this.life/this.base.life,this.built),6,30*max(this.life/this.base.life,this.built))
-					this.layer.rect(18,-40*max(this.life/this.base.life,this.built),6,30*max(this.life/this.base.life,this.built))
+					this.layer.rect(-18,-40*max(this.life/this.base.life,this.built),6,60*max(this.life/this.base.life,this.built))
+					this.layer.rect(-6,-40*max(this.life/this.base.life,this.built),6,60*max(this.life/this.base.life,this.built))
+					this.layer.rect(6,-40*max(this.life/this.base.life,this.built),6,60*max(this.life/this.base.life,this.built))
+					this.layer.rect(18,-40*max(this.life/this.base.life,this.built),6,60*max(this.life/this.base.life,this.built))
 				break
 				case 46:
 					this.layer.strokeWeight(5)
@@ -1713,6 +1713,46 @@ class combatant{
 					this.layer.stroke(100,this.fade)
 					this.layer.fill(120,this.fade)
 					this.layer.ellipse(0,-40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
+				break
+				case 47:
+					this.layer.strokeWeight(5)
+					this.layer.stroke(100,this.fade)
+					this.layer.fill(120,this.fade)
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built),60,80*max(this.life/this.base.life,this.built))
+					this.layer.noStroke()
+					this.layer.fill(100,255,255,this.fade)
+					this.layer.rect(-18,-40*max(this.life/this.base.life,this.built),6,60*max(this.life/this.base.life,this.built))
+					this.layer.rect(-6,-40*max(this.life/this.base.life,this.built),6,60*max(this.life/this.base.life,this.built))
+					this.layer.rect(6,-40*max(this.life/this.base.life,this.built),6,60*max(this.life/this.base.life,this.built))
+					this.layer.rect(18,-40*max(this.life/this.base.life,this.built),6,60*max(this.life/this.base.life,this.built))
+				break
+				case 48:
+					this.layer.fill(40,80,40,this.fade)
+					for(g=0;g<10;g++){
+						this.layer.triangle(-30+g*6,0,-24+g*6,0,-27+g*6,-10*max(this.life/this.base.life,this.built))
+					}
+				break
+				case 49:
+					if(this.built==1){
+						this.layer.fill(200,255,100,this.fade/3)
+						for(g=1;g<9;g++){
+							this.layer.quad(-20,-20,20,-20,20+g*2,-20-g*10,-20-g*2,-20-g*10)
+						}
+					}
+					this.layer.strokeWeight(5)
+					this.layer.stroke(100,this.fade)
+					this.layer.fill(120,this.fade)
+					this.layer.quad(-25,0,25,0,20,-20*max(this.life/this.base.life,this.built),-20,-20*max(this.life/this.base.life,this.built))
+				break
+				case 50:
+					this.layer.strokeWeight(5)
+					this.layer.stroke(100,this.fade)
+					this.layer.fill(120,this.fade)
+					this.layer.rect(0,-30*max(this.life/this.base.life,this.built),50,60*max(this.life/this.base.life,this.built))
+					this.layer.noStroke()
+					this.layer.fill(40,this.fade)
+					this.layer.rect(-12,-30*max(this.life/this.base.life,this.built),6,12*max(this.life/this.base.life,this.built))
+					this.layer.rect(3,-33*max(this.life/this.base.life,this.built),24,6*max(this.life/this.base.life,this.built))
 				break
 				/*case 35:
 					this.layer.translate(0,-1.25)

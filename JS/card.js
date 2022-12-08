@@ -105,7 +105,7 @@ class card{
             case 41: this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Strength\nNext Turn'; break
             case 42: this.desc+='Deal '+this.damage+' Damage\nKnockdown'; break
             case 43: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Bonus\nDamage to Downed'; break
-            case 44: this.desc+='Deal '+this.damage+' Damage\n+1 Per Combo\n'+this.alt+' Times'; break
+            case 44: this.desc+='Deal '+this.damage+' Damage\n+1 Per Combo\n'+this.alt+' Times\nEnd Combo'; break
             case 45: this.desc+='Deal '+this.damage+' Damage\nGain 1 Dodge'; break
             case 46: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Damage\nto the Left'; break
             case 47: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Damage\nto the Right'; break
@@ -462,17 +462,17 @@ class card{
             case 398: this.desc+='Hold '+this.damage+' Light Charge\nGain '+this.alt+' Weak\nGain '+this.alt+' Frail'; break
             case 399: this.desc+='Gain '+this.damage+'\nArmor'; break
             case 400: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Frail\nNo Combo Gain'; break
-            case 401: this.desc+='Set Construct to\nWall'; break
+            case 401: this.desc+='Set Construct to\nWall'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
             case 402: this.desc+='Build '+this.damage+' of\nConstruct'; break
             case 403: this.desc+='Heal '+this.damage+' Life\nof Construct'; break
             case 404: this.desc+='Add '+this.damage+' Block\nto Construct'; break
-            case 405: this.desc+='Set Construct to\nSpikes'; break
+            case 405: this.desc+='Set Construct to\nSpikes'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
             case 406: this.desc+='Deal '+this.damage+' Damage\nCannot be\nCountered'; break
             case 407: this.desc+='Deal '+this.damage+' Damage\nto 3 Enemies\nCannot be\nCountered'; break
             case 408: this.desc+='Remove All\nStrength of Target'; break
             case 409: this.desc+='Deal '+this.damage+' Damage\nto 3 Enemies\nGain '+this.alt+' Energy\nPer Fatal\nCannot be\nCountered'; break
-            case 410: this.desc+='Set Construct to\nProjector'; break
-            case 411: this.desc+='Set Construct to\nTurret'; break
+            case 410: this.desc+='Set Construct to\nProjector'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 411: this.desc+='Set Construct to\nTurret'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
             case 412: this.desc+='Exhaust All\nBlueprints in\nYour Hand'; break
             case 413: this.desc+='Increase\nConstruct Max\nHealth by '+this.damage; break
             case 414: this.desc+='Deal '+this.damage+' Damage\nDiscard '+this.alt+' Cards'; break
@@ -481,10 +481,10 @@ class card{
             case 417: this.desc+='Deal '+this.damage+' Damage and\nApply 1 Bleed\n'+this.alt+' Times'; break
             case 418: this.desc+='If Construct is Built,\nDeal Damage\nEqual to Half\nof Construct Health\nto All Enemies\nDestroy Construct'; break
             case 419: this.desc+='Next Construct\nChange Maintains\nHealth/Progress'; break
-            case 420: this.desc+='Set Construct to\nReadout'; break
-            case 421: this.desc+='Set Construct to\nGenerator'; break
-            case 422: this.desc+='Set Construct to\nStrengthener'; break
-            case 423: this.desc+='Set Construct to\nExplosive Turret'; break
+            case 420: this.desc+='Set Construct to\nReadout'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 421: this.desc+='Set Construct to\nGenerator'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 422: this.desc+='Set Construct to\nStrengthener'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 423: this.desc+='Set Construct to\nExplosive Turret'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
             case 424: this.desc+='Deal '+this.damage+' Damage\nto 2 Enemies'; break
             case 425: this.desc+='Attacks Deal\n'+this.damage+' More Damage\nThis Turn'; break
             case 426: this.desc+='Add '+this.damage+' Block\nNullify All Stat\nChanges This Turn'; break
@@ -503,6 +503,10 @@ class card{
             case 439: this.desc+='When You Add\nBlock, Gain\n1 Combo'; break
             case 440: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, gain\n'+this.alt+' Combo'; break
             case 441: this.desc+='Add '+this.damage+'X Block\nCounter '+this.alt+'X Once'; break
+            case 442: this.desc+='Set Construct to\nDexterizer'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 443: this.desc+='Set Construct to\nThorns'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 444: this.desc+='Set Construct to\nBufferer'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 445: this.desc+='Set Construct to\nGun Rack'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'}; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

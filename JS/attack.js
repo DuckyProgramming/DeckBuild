@@ -1970,6 +1970,9 @@ class attack{
                 break
                 case 401:
                     this.battle.buildAlly('Wall')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
                 break
                 case 402:
                     if(this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
@@ -1988,6 +1991,9 @@ class attack{
                 break
                 case 405:
                     this.battle.buildAlly('Spikes')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
                 break
                 case 406:
                     this.battle.combatants[this.target].take(this.damage,-1)
@@ -2026,9 +2032,15 @@ class attack{
                 break
                 case 410:
                     this.battle.buildAlly('Projector')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
                 break
                 case 411:
                     this.battle.buildAlly('Turret')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
                 break
                 case 412:
                     this.battle.allExhaust(3)
@@ -2066,15 +2078,27 @@ class attack{
                 break
                 case 420:
                     this.battle.buildAlly('Readout')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
                 break
                 case 421:
                     this.battle.buildAlly('Generator')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
                 break
                 case 422:
                     this.battle.buildAlly('Strengthener')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
                 break
                 case 423:
                     this.battle.buildAlly('Explosive Turret')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
                 break
                 case 424:
                     this.battle.combatants[this.target].take(this.damage,this.user)
@@ -2160,6 +2184,30 @@ class attack{
                 case 441:
                     this.battle.combatants[0].addBlock(this.damage*this.mana)
                     this.battle.combatants[0].status.main[3]+=this.alt*this.mana
+                break
+                case 442:
+                    this.battle.buildAlly('Dexterizer')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 443:
+                    this.battle.buildAlly('Thorns')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 444:
+                    this.battle.buildAlly('Bufferer')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 445:
+                    this.battle.buildAlly('Gun Rack')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
                 break
                 default:
             }

@@ -1670,6 +1670,18 @@ class battle{
                     case 'Explosive Turret':
                         this.combatants[0].orbAttack(8,-1,1)
                     break
+                    case 'Dexterizer':
+                        this.combatants[0].status.main[32]++
+                    break
+                    case 'Thorns':
+                        this.combatants[0].status.main[27]+=3
+                    break
+                    case 'Bufferer':
+                        this.combatants[0].status.main[33]++
+                    break
+                    case 'Gun Rack':
+                        this.hand.add(findCard('Revolver'),0,0)
+                    break
                 }
             }
             this.turn++

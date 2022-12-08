@@ -2138,42 +2138,62 @@ types={
         {name:'Build\nWall',rarity:0,list:5,
         stats:[
             {damage:0,alt:0,cost:0,attack:401,target:0,spec:10,class:3},
-            {damage:0,alt:0,cost:0,attack:401,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:401,target:0,spec:10,class:3},
         ],
         },{name:'Build\nSpikes',rarity:0,list:5,
         stats:[
             {damage:0,alt:0,cost:0,attack:405,target:0,spec:10,class:3},
-            {damage:0,alt:0,cost:0,attack:405,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:405,target:0,spec:10,class:3},
         ],
         },{name:'Build\nProjector',rarity:0,list:5,
         stats:[
             {damage:0,alt:0,cost:0,attack:410,target:0,spec:10,class:3},
-            {damage:0,alt:0,cost:0,attack:410,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:410,target:0,spec:10,class:3},
         ],
         },{name:'Build\nTurret',rarity:0,list:5,
         stats:[
             {damage:0,alt:0,cost:0,attack:411,target:0,spec:10,class:3},
-            {damage:0,alt:0,cost:0,attack:411,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:411,target:0,spec:10,class:3},
         ],
         },{name:'Build\nReadout',rarity:0,list:5,
         stats:[
             {damage:0,alt:0,cost:0,attack:420,target:0,spec:10,class:3},
-            {damage:0,alt:0,cost:0,attack:420,target:0,spec:10,class:3},
-        ],
-        },{name:'Build\nGenerator',rarity:0,list:5,
-        stats:[
-            {damage:0,alt:0,cost:0,attack:421,target:0,spec:10,class:3},
-            {damage:0,alt:0,cost:0,attack:421,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:420,target:0,spec:10,class:3},
         ],
         },{name:'Build\nStrengthener',rarity:0,list:5,
         stats:[
             {damage:0,alt:0,cost:0,attack:422,target:0,spec:10,class:3},
-            {damage:0,alt:0,cost:0,attack:422,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:422,target:0,spec:10,class:3},
         ],
         },{name:'Build\nExplosive Turret',rarity:0,list:5,
         stats:[
             {damage:0,alt:0,cost:0,attack:423,target:0,spec:10,class:3},
-            {damage:0,alt:0,cost:0,attack:423,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:423,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nDexterizer',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:442,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:442,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nGenerator',rarity:1,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:421,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:421,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nThorns',rarity:1,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:443,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:443,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nBufferer',rarity:1,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:444,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:444,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nGun Rack',rarity:1,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:445,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:445,target:0,spec:10,class:3},
         ],
         },{name:'Construct',rarity:0,list:5,
         stats:[
@@ -2256,6 +2276,7 @@ types={
             {damage:0,alt:0,cost:0,attack:419,target:0,spec:0,class:2},
         ],
         },
+        //half
         
         
         {name:'Empty',rarity:-1,list:-1,
@@ -2444,10 +2465,15 @@ types={
             {damage:3,alt:0,cost:0,attack:399,target:0,spec:8,class:1},
             {damage:5,alt:0,cost:0,attack:399,target:0,spec:8,class:1},
         ],
-        },{name:'Pistol',rarity:-3,list:0,
+        },{name:'Glock',rarity:-3,list:0,
         stats:[
             {damage:10,alt:1,cost:1,attack:400,target:1,spec:3,class:0},
             {damage:16,alt:2,cost:1,attack:400,target:1,spec:3,class:0},
+        ],
+        },{name:'Revolver',rarity:-3,list:0,
+        stats:[
+            {damage:6,alt:0,cost:0,attack:406,target:1,spec:0,class:0},
+            {damage:9,alt:0,cost:0,attack:406,target:1,spec:0,class:0},
         ],
         },
         
@@ -2644,6 +2670,11 @@ types={
         {name:'Generator',alt:'',life:40,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
         {name:'Strengthener',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
         {name:'Explosive Turret',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Dexterizer',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Thorns',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
+        {name:'Bufferer',alt:'',life:40,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
+        {name:'Gun Rack',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},//50
+        //deca,rock
     ],attack:[
         {class:0},//0
         {class:0},
