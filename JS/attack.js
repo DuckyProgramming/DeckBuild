@@ -2241,8 +2241,8 @@ class attack{
                 case 6:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.attacks.push([1,12,this.user,this.damage])
-                    this.battle.drop.addDrop(findCard('Stuck'),0,stage.playerNumber+1)
-                    this.battle.reserve.addShuffle(findCard('Stuck'),0,stage.playerNumber+1)
+                    this.battle.drop.addDrop(findCard(this.alt),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard(this.alt),0,stage.playerNumber+1)
                 break
                 case 7:
                     this.battle.combatants[this.target].boost.main[0]-=this.damage
@@ -2323,6 +2323,16 @@ class attack{
                 case 23:
                     this.battle.combatants[this.user].block+=this.damage
                     this.battle.combatants[this.user].status.main[90]+=this.alt
+                break
+                case 24:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.attacks.push([7,7+this.alt*5,this.user,this.damage,this.alt,this.target])
+                    this.battle.drop.addDrop(findCard('Dazed'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Dazed'),0,stage.playerNumber+1)
+                    this.attacks.push([8,20,0,'Dazed'])
+                break
+                case 25:
+                    this.battle.combatants[this.user].status.main[40]+=this.damage
                 break
                 default:
             }

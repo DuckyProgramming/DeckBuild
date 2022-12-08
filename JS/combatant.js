@@ -155,6 +155,13 @@ class combatant{
 						this.intent=floor(random(0,this.attacks.length-1))
 					}
 				break
+				case 2:
+					if(this.battle.counter.turn==0){
+						this.intent=this.attacks.length-1
+					}else{
+						this.intent=floor(random(0,this.attacks.length))
+					}
+				break
 			}
 		}else{
 			this.intent=type
@@ -1754,6 +1761,83 @@ class combatant{
 					this.layer.rect(-12,-30*max(this.life/this.base.life,this.built),6,12*max(this.life/this.base.life,this.built))
 					this.layer.rect(3,-33*max(this.life/this.base.life,this.built),24,6*max(this.life/this.base.life,this.built))
 				break
+				case 51:
+					this.layer.fill(250,235,155,this.fade)
+					this.layer.triangle(0,-100,45,-55,0,-55)
+					this.layer.triangle(40,-50,30,-50,36,-24)
+					this.layer.fill(235,140,70,this.fade)
+					this.layer.triangle(0,-100,-45,-55,15,-55)
+					this.layer.triangle(-40,-50,-30,-50,-36,-24)
+					this.layer.fill(235,180,100,this.fade)
+					this.layer.triangle(0,-10,45,-55,0,-55)
+					this.layer.triangle(20,-35,8,-35,18,5)
+					this.layer.fill(185,115,70,this.fade)
+					this.layer.triangle(0,-10,-45,-55,15,-55)
+					this.layer.triangle(-20,-35,-8,-35,-18,5)
+				break
+				case 52:
+					this.layer.fill(80,75,70,this.fade)
+					regPoly(this.layer,0,-48,8,16,0)
+					regPoly(this.layer,-24,-32,8,10,0)
+					regPoly(this.layer,24,-32,8,10,0)
+					this.layer.fill(32,30,28,this.fade)
+					this.layer.ellipse(8,-46,5,5)
+					this.layer.ellipse(-2,-46,5,5)
+				break
+				case 53:
+					this.layer.noStroke()
+					this.layer.fill(230,230,5,this.fade)
+					this.layer.ellipse(-12,-10,24,24)
+					this.layer.ellipse(12,-10,24,24)
+					this.layer.ellipse(-20,-36,24,24)
+					this.layer.fill(235,235,55,this.fade)
+					this.layer.ellipse(0,-36,32,52)
+					this.layer.fill(240,240,60,this.fade)
+					this.layer.ellipse(20,-36,24,24)
+					this.layer.fill(245,245,65,this.fade)
+					this.layer.ellipse(0,-75,40,40)
+					this.layer.fill(240,160,20,this.fade)
+					this.layer.ellipse(13.5,-67,24,16)
+					this.layer.stroke(0,this.fade)
+					this.layer.strokeWeight(1)
+					this.layer.arc(13.5,-67,22,2,-180,0)
+					this.layer.line(18-3,-71,18-3,-73)
+					this.layer.line(18+3,-71,18+3,-73)
+					this.layer.strokeWeight(3)
+					this.layer.point(9-6,-79)
+					this.layer.point(9+6,-79)
+				break
+				case 54:
+					this.layer.noStroke()
+					this.layer.fill(66,22,22,this.fade)
+					this.layer.ellipse(-12,-10,24,24)
+					this.layer.ellipse(12,-10,24,24)
+					this.layer.ellipse(-20,-36,24,24)
+					this.layer.fill(72,24,24,this.fade)
+					this.layer.ellipse(0,-36,32,52)
+					this.layer.fill(200,this.fade)
+					this.layer.ellipse(-6,-51,10,10)
+					this.layer.fill(255,255,150,this.fade)
+					this.layer.quad(-6,-53,0,-51,-6,-49,-12,-51)
+					this.layer.quad(-6,-57,-4,-51,-6,-45,-8,-51)
+					this.layer.fill(66,22,22,this.fade)
+					this.layer.ellipse(20,-36,24,24)
+					this.layer.fill(245,245,65,this.fade)
+					this.layer.ellipse(0,-75,40,40)
+					this.layer.fill(240,160,20,this.fade)
+					this.layer.ellipse(13.5,-67,24,16)
+					this.layer.stroke(0,this.fade)
+					this.layer.strokeWeight(1)
+					this.layer.arc(13.5,-67,22,2,-180,0)
+					this.layer.line(18-3,-71,18-3,-73)
+					this.layer.line(18+3,-71,18+3,-73)
+					this.layer.strokeWeight(3)
+					this.layer.point(9-6,-79)
+					this.layer.point(9+6,-79)
+					this.layer.noStroke()
+					this.layer.fill(60,20,20,this.fade)
+					this.layer.arc(0,-75,48,48,-195,-15)
+				break
 				/*case 35:
 					this.layer.translate(0,-1.25)
 					if(this.anim[1]<1){
@@ -2658,7 +2742,7 @@ class combatant{
 			}else if(this.id==0){
 				for(g=0,lg=this.battle.potions.owned.length;g<lg;g++){
 					if(this.battle.potions.owned[g]==30){
-						this.life=this.base.life/2*this.battle.random.potionEffectiveness
+						this.life=this.base.life/10*this.battle.random.potionEffectiveness
 						this.battle.potions.owned[g]=-1
 					}
 				}

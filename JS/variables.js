@@ -1124,6 +1124,7 @@ types={
         },
         //gimmick disjoint
         //outmaneuver
+        //alpha
         
         
         {name:'Charge',rarity:0,list:3,
@@ -2632,9 +2633,9 @@ types={
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
-        {name:'Slime',alt:'',life:30,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,0,0],class:0,buff:0},
+        {name:'Slime',alt:'',life:30,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,'Stuck',0],class:0,buff:0},
         {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0,buff:0},//10
-        {name:'Roger Reviv',alt:'',life:150,height:75,behavior:1,attacks:[1,9,3,10],damage:[15,4,2,20],altAttack:[0,6,9,'Heavy\nBleed'],class:0,buff:1},
+        {name:'Roger Reviv',alt:'',life:300,height:75,behavior:1,attacks:[1,9,3,10],damage:[15,4,2,20],altAttack:[0,6,9,'Heavy\nBleed'],class:0,buff:1},
         {name:'Gangster',alt:'',life:40,height:75,behavior:0,attacks:[1,8],damage:[8,6],altAttack:[0,0],class:0,buff:2},
         {name:'Batter',alt:'',life:48,height:75,behavior:0,attacks:[10,8,11],damage:[12,6,1],altAttack:['Concussion',0,0],class:0,buff:0},
         {name:'Slippery Gangster',alt:'',life:36,height:75,behavior:0,attacks:[1,3],damage:[8,3],altAttack:[0,2],class:0,buff:3},
@@ -2658,7 +2659,7 @@ types={
         {name:'Debt Collector',alt:'',life:64,height:75,behavior:0,attacks:[1],damage:[12],altAttack:[0],class:0,buff:0},
         {name:'Swordmaster',alt:'',life:105,height:75,behavior:0,attacks:[16,1,17],damage:[20,16,10],altAttack:[1,0,2],class:0,buff:0},
         {name:'Dark Man',alt:'',life:35,height:75,behavior:0,attacks:[1,3],damage:[6,2],altAttack:[0,2],class:0,buff:0},
-        {name:'The Reorganised',alt:'',life:100,height:75,behavior:0,attacks:[1,22,23],damage:[25,8,4],altAttack:[0,10,1],class:0,buff:9},
+        {name:'The Reorganised',alt:'',life:200,height:75,behavior:0,attacks:[1,22,23],damage:[25,8,4],altAttack:[0,10,1],class:0,buff:9},
         {name:'Billy Beatup',alt:'',life:75,height:75,behavior:0,attacks:[1,3],damage:[9,2],altAttack:[0,6],class:0,buff:0},
         {name:'Monkey Gangster',alt:'',life:24,height:60,behavior:0,attacks:[1,3],damage:[8,2],altAttack:[0,5],class:0,buff:0},
         {name:'Wild Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[4,2,3],altAttack:[0,3,0],class:0,buff:0},
@@ -2674,7 +2675,11 @@ types={
         {name:'Thorns',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Bufferer',alt:'',life:40,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Gun Rack',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},//50
-        //deca,rock
+        {name:'Deca',alt:'',life:125,height:90,behavior:2,attacks:[8,24],damage:[16,10],altAttack:[0,2],class:1,buff:0},
+        {name:'Rock Golem',alt:'',life:25,height:60,behavior:2,attacks:[8,6],damage:[4,5],altAttack:[0,'Dazed'],class:1,buff:0},
+        {name:'Big Wild Duck',alt:'',life:50,height:81,behavior:0,attacks:[1,3,4],damage:[8,3,3],altAttack:[0,3,0],class:0,buff:0},
+        {name:'General Duckion',alt:'',life:120,height:81,behavior:0,attacks:[3,4,25],damage:[10,3,3,4],altAttack:[2,0,0],class:0,buff:0},
+        
     ],attack:[
         {class:0},//0
         {class:0},
@@ -2857,6 +2862,26 @@ types={
             reinforce:[37,37,37,37,37],
             threshold:6,class:-1,zone:0,
             objective:[[0,0,0,0]],
+        },{
+            combatants:[51,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:2,zone:0,
+            objective:[[0,0,6,0]],
+        },{
+            combatants:[52,52,0,0,0,0],
+            reinforce:[],
+            threshold:3,class:0,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[38,38,53,0,0,0],
+            reinforce:[38,38],
+            threshold:4,class:1,zone:0,
+            objective:[[0,0,1,0]],
+        },{
+            combatants:[54,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:2,zone:0,
+            objective:[[0,0,6,0]],
         },
     ],relic:[
         {
@@ -3289,7 +3314,7 @@ types={
             name:'Herbs',id:142,rarity:4,list:0,
             desc:'Potions are Twice as Effective',
         },{
-            name:'Temperance',id:143,rarity:4,list:0,
+            name:'Sozu',id:143,rarity:4,list:0,
             desc:'Gain 1 Base Energy,\nCannot Use Potions',
         },{
             name:'Bloody Oath',id:144,rarity:4,list:0,
@@ -3387,151 +3412,148 @@ types={
         },*/
     ],potion:[
         {
-            name:'',id:0,rarity:0,list:0,
-            desc:'',
-        },{
-            name:'Attack',id:1,rarity:0,list:0,
+            name:'Liquid Rage',id:1,rarity:0,list:0,
             desc:'Add an Attack to Your\nHand. It Costs 0',
         },{
-            name:'Upgrade',id:2,rarity:0,list:0,
+            name:'Tonic Plus',id:2,rarity:0,list:0,
             desc:'Upgrade Cards Currently in Your\nHand for the Rest of Combat',
         },{
-            name:'Block',id:3,rarity:0,list:0,
+            name:'Frozen Tonic',id:3,rarity:0,list:0,
             desc:'Gain 12\nBlock',
         },{
-            name:'Heal',id:4,rarity:0,list:0,
+            name:'Soda',id:4,rarity:0,list:0,
             desc:'Heal 20% of\nMax HP',
         },{
-            name:'Miracle',id:5,rarity:0,list:0,
+            name:'Divine Soda',id:5,rarity:0,list:0,
             desc:'Add 2 Miracles\nto Your Hand',
         },{
-            name:'Colorless',id:6,rarity:0,list:0,
+            name:'Bland Drink',id:6,rarity:0,list:0,
             desc:'Add 1 Colorless\nCard to Your Hand',
         },{
-            name:'Dexterity',id:7,rarity:0,list:0,
+            name:'Athletes Potion',id:7,rarity:0,list:0,
             desc:'Gain 2\nDexterity',
         },{
-            name:'Energy',id:8,rarity:0,list:0,
+            name:'Caffeinated Tonic',id:8,rarity:0,list:0,
             desc:'Gain 2\nEnergy',
         },{
-            name:'Explosion',id:9,rarity:0,list:0,
+            name:'Volatile Substance',id:9,rarity:0,list:0,
             desc:'Deal 10 Damage\nto All Enemies',
         },{
-            name:'Vulnerable',id:10,rarity:0,list:0,
+            name:'Splash Potion of Weakness',id:10,rarity:0,list:0,
             desc:'Apply 3\nVulnerable',
         },{
-            name:'Damage',id:11,rarity:0,list:0,
+            name:'Splash Potion of Harming',id:11,rarity:0,list:0,
             desc:'Deal 20\nDamage',
         },{
-            name:'Temporary Strength',id:12,rarity:0,list:0,
+            name:'Mysterious Drink',id:12,rarity:0,list:0,
             desc:'Gain 5 Temporary\nStrength',
         },{
-            name:'Poison',id:13,rarity:0,list:0,
+            name:'Splash Potion of Poison',id:13,rarity:0,list:0,
             desc:'Apply 6\nPoison',
         },{
             name:'Skill',id:14,rarity:0,list:0,
             desc:'Add an Skill to Your\nHand. It Costs 0',
         },{
-            name:'Power',id:15,rarity:0,list:0,
+            name:'Kelvin',id:15,rarity:0,list:0,
             desc:'Add an Power to Your\nHand. It Costs 0',
         },{
-            name:'Temporary Dexterity',id:16,rarity:0,list:0,
+            name:'Frappuccino',id:16,rarity:0,list:0,
             desc:'Gain 5 Temporary\nDexterity',
         },{
-            name:'Strength',id:17,rarity:0,list:0,
+            name:'Protein Shake',id:17,rarity:0,list:0,
             desc:'Gain 2\nStrength',
         },{
-            name:'Draw',id:18,rarity:0,list:0,
+            name:'DeCaf',id:18,rarity:0,list:0,
             desc:'Draw 3\nCards',
         },{
-            name:'Weak',id:19,rarity:0,list:0,
+            name:'Splash Potion of Weakness',id:19,rarity:0,list:0,
             desc:'Apply 3\nWeak',
         },{
-            name:'Control',id:20,rarity:1,list:0,
+            name:'Mushroom Smoothie',id:20,rarity:1,list:0,
             desc:'Gain 1\nControl',
         },{
-            name:'Shiv',id:21,rarity:1,list:0,
+            name:'Quantam Potion',id:21,rarity:1,list:0,
             desc:'Add 3 Shivs+\nto Your Hand',
         },{
-            name:'Exhaust',id:22,rarity:1,list:0,
+            name:'Sleeping Potion',id:22,rarity:1,list:0,
             desc:'Exhaust\nYour Hand',
         },{
-            name:'Armor',id:23,rarity:1,list:0,
+            name:'Bottled Armor',id:23,rarity:1,list:0,
             desc:'Gain 4\nArmor',
         },{
-            name:'Redraw',id:24,rarity:1,list:0,
+            name:'Fresh Tonic',id:24,rarity:1,list:0,
             desc:'Redraw\nYour Hand',
         },{
-            name:'Counter',id:25,rarity:1,list:0,
+            name:'Black Coffee',id:25,rarity:1,list:0,
             desc:'Counter\n5 All',
         },{
-            name:'Recall',id:26,rarity:1,list:0,
+            name:'Oil',id:26,rarity:1,list:0,
             desc:'Recall 1 Card,\nit Costs 0',
         },{
-            name:'Regen',id:27,rarity:1,list:0,
+            name:'Health Potion',id:27,rarity:1,list:0,
             desc:'Gain 5\nRegen',
         },{
-            name:'Strength Gain',id:28,rarity:2,list:0,
+            name:'Mysterious Powder',id:28,rarity:2,list:0,
             desc:'Gain 2 Strength\nPer Turn',
         },{
-            name:'Potion',id:29,rarity:2,list:0,
+            name:'Satchel of Potions',id:29,rarity:2,list:0,
             desc:'Fill All\nPotion Slots',
         },{
-            name:'Revive',id:30,rarity:2,list:0,
-            desc:'When You Die,\nHeal to Half HP',
+            name:'Ectoplasm',id:30,rarity:2,list:0,
+            desc:'When You Die,\nHeal to 10% HP',
         },{
-            name:'Max HP',id:31,rarity:2,list:0,
-            desc:'Gain 5\nMax HP',
+            name:'Stew',id:31,rarity:2,list:0,
+            desc:'Gain 5\nMax Health',
         },{
-            name:'Intangible',id:32,rarity:2,list:0,
+            name:'Ghostly Drink',id:32,rarity:2,list:0,
             desc:'Gain 1\nIntangible',
         },{
-            name:'Metallicize',id:33,rarity:2,list:0,
+            name:'Liquid Metal',id:33,rarity:2,list:0,
             desc:'Gain 6\nMetallicize',
         },{
-            name:'Escape',id:34,rarity:2,list:0,
+            name:'Dry Ice',id:34,rarity:2,list:0,
             desc:'End a\nNon-Boss Combat',
         },{
-            name:'Confusion',id:35,rarity:2,list:0,
+            name:'Cursed Bottle of Cards',id:35,rarity:2,list:0,
             desc:'Draw 5 Cards,\nBecome Confused',
         },{
-            name:'Buffer',id:36,rarity:2,list:0,
+            name:'Construction Juice',id:36,rarity:2,list:0,
             desc:'Gain 2\nBuffer',
         },{
-            name:'Combo',id:37,rarity:0,list:1,
+            name:'Pumpkin Spice Latte',id:37,rarity:0,list:1,
             desc:'Gain 5\nCombo',
         },{
-            name:'Flurry',id:38,rarity:0,list:1,
+            name:'Extreme Soda',id:38,rarity:0,list:1,
             desc:'Gain 1 Energy, Discard All\nNon-Attack Cards and Redraw',
         },{
-            name:'Flow',id:39,rarity:0,list:1,
+            name:'Oily Tonic',id:39,rarity:0,list:1,
             desc:'All Cards in\nHand Cost 2 Less',
         },{
-            name:'Calm',id:40,rarity:0,list:2,
+            name:'Calming Potion',id:40,rarity:0,list:2,
             desc:'Enter\nCalm',
         },{
-            name:'Wrath',id:41,rarity:0,list:2,
+            name:'Wrathful Potion',id:41,rarity:0,list:2,
             desc:'Enter\nWrath',
         },{
-            name:'Divinity',id:42,rarity:2,list:2,
+            name:'Overdrive',id:42,rarity:2,list:2,
             desc:'Enter\nDivinity',
         },{
-            name:'Focus',id:43,rarity:0,list:3,
+            name:'Blinding Potion',id:43,rarity:0,list:3,
             desc:'Gain 2\nFocus',
         },{
-            name:'Darkness',id:44,rarity:1,list:3,
+            name:'Black Tonic',id:44,rarity:1,list:3,
             desc:'Charge 1\nDark',
         },{
-            name:'Fusion',id:45,rarity:0,list:3,
+            name:'White Tonic',id:45,rarity:0,list:3,
             desc:'Charge 1\nEnergy',
         },{
-            name:'Negative Balance',id:46,rarity:0,list:4,
+            name:'Negative Concoction',id:46,rarity:0,list:4,
             desc:'Set Balance to Minimum',
         },{
-            name:'Positive Balance',id:47,rarity:2,list:4,
+            name:'Positive Concoction',id:47,rarity:2,list:4,
             desc:'Set Balance to Maximum',
         },{
-            name:'Rearm',id:48,rarity:0,list:4,
+            name:'Magnet Tonic',id:48,rarity:0,list:4,
             desc:'Rearm',
         },{
             name:'Starflame',id:49,rarity:-1,list:0,

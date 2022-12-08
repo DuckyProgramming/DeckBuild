@@ -644,7 +644,9 @@ class battle{
             }
             this.combatants[e].boost.main[0]+=this.combatants[e].status.main[4]-this.combatants[e].status.main[7]+this.combatants[e].status.main[39]
             this.combatants[e].boost.main[2]-=this.combatants[e].status.main[8]
-            this.combatants[e].addBlock(this.combatants[e].status.main[31]+this.combatants[0].status.main[40])
+            if(this.combatants[e].status.main[31]+this.combatants[e].status.main[40]>0){
+                this.combatants[e].addBlock(this.combatants[e].status.main[31]+this.combatants[e].status.main[40])
+            }
             for(f=0,lf=this.combatants[e].status.main.length;f<lf;f++){
                 if(this.combatants[e].status.main[f]>0){
                     if(f==24){
