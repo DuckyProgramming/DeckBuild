@@ -2346,7 +2346,7 @@ types={
             {damage:8,alt:1,cost:1,attack:458,target:1,spec:0,class:4},
             {damage:12,alt:1,cost:1,attack:458,target:1,spec:0,class:4},
         ],
-        },{name:'Drinks',rarity:2,list:0,
+        },{name:'Drinks',rarity:2,list:5,
         stats:[
             {damage:10,alt:0,cost:1,attack:459,target:0,spec:3,class:2},
             {damage:15,alt:0,cost:1,attack:459,target:0,spec:3,class:2},
