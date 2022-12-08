@@ -2237,6 +2237,48 @@ class attack{
                         this.battle.combatants[1].status.main[38]+=this.damage
                     }
                 break
+                case 453:
+                    this.hold.list=[]
+                    for(g=0,lg=listing.card[this.battle.player].length;g<lg;g++){
+                        for(h=0,lh=listing.card[this.battle.player][g].length;h<lh;h++){
+                            if(types.card[listing.card[this.battle.player][g][h]].stats[0].class==3){
+                                this.hold.list.push(listing.card[this.battle.player][g][h])
+                            }
+                        }
+                    }
+                    for(h=0;h<this.damage;h++){
+                        if(this.hold.list.length>0){
+                            g=floor(random(0,this.hold.list.length))
+                            this.battle.hand.add(this.hold.list[g],0,this.battle.player)
+                        }
+                    }
+                break
+                case 454:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].block>0){
+                        this.battle.combatants[this.target].boost.main[1]-=this.alt
+                    }
+                break
+                case 455:
+                    this.hold.list=[]
+                    for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0&&this.battle.combatants[g].team==1){
+                            this.hold.list.push(g)
+                        }
+                    }
+                    for(g=0;g<this.alt;g++){
+                        this.battle.combatants[this.hold.list[floor(random(0,this.hold.list.length))]].take(this.damage,-1)
+                    }
+                break
+                case 456:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                        if(this.battle.hand.cards[this.battle.hand.cards.length-1].level==0){
+                            this.battle.hand.cards[this.battle.hand.cards.length-1].level++
+                            this.battle.hand.cards[this.battle.hand.cards.length-1]=reformCard(this.battle.hand.cards[this.battle.hand.cards.length-1])
+                        }
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

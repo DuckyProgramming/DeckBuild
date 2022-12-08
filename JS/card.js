@@ -514,6 +514,10 @@ class card{
             case 450: this.desc+='Deal '+this.damage+' Damage\nUpgrade '+this.alt+' Cards\nTemporariliy'; break
             case 451: this.desc+='Build '+this.damage+'\nof Construct\nEvery Turn'; break
             case 452: this.desc+='If Construct is Built,\nConstruct Gains\n'+this.damage+' Regeneration'; break
+            case 453: this.desc+='Add '+this.damage+' Random\nBlueprints to\nYour Hand'; break
+            case 454: this.desc+='Deal '+this.damage+' Damage\nIf Blocked, Apply\n'+this.alt+' Vulnerable'; break
+            case 455: this.desc+='Deal '+this.damage+' Damage\nto a Random Enemy\n'+this.alt+' Times\nCannot be\nCountered'; break
+            case 456: this.desc+='Draw and\nTemporarily\nUpgrade\n'+this.damage+' Cards'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

@@ -2316,6 +2316,26 @@ types={
             {damage:6,alt:1,cost:1,attack:452,target:0,spec:0,class:4},
             {damage:8,alt:1,cost:1,attack:452,target:0,spec:0,class:4},
         ],
+        },{name:'Concept',rarity:1,list:5,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:453,target:0,spec:0,class:4},
+            {damage:3,alt:0,cost:0,attack:453,target:0,spec:0,class:4},
+        ],
+        },{name:'Particulation',rarity:0,list:5,
+        stats:[
+            {damage:7,alt:2,cost:1,attack:454,target:1,spec:0,class:4},
+            {damage:9,alt:3,cost:1,attack:454,target:1,spec:0,class:4},
+        ],
+        },{name:'Bullet\nSpray',rarity:1,list:5,
+        stats:[
+            {damage:2,alt:12,cost:3,attack:455,target:0,spec:0,class:0},
+            {damage:3,alt:15,cost:3,attack:455,target:0,spec:0,class:0},
+        ],
+        },{name:'Methods',rarity:0,list:5,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:456,target:0,spec:0,class:4},
+            {damage:2,alt:0,cost:0,attack:456,target:0,spec:0,class:4},
+        ],
         },
         //half
         //employee
