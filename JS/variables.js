@@ -2306,6 +2306,16 @@ types={
             {damage:5,alt:1,cost:1,attack:450,target:0,spec:0,class:4},
             {damage:8,alt:1,cost:1,attack:450,target:0,spec:0,class:4},
         ],
+        },{name:'Auto\nBuild',rarity:1,list:5,
+        stats:[
+            {damage:10,alt:1,cost:2,attack:451,target:0,spec:0,class:4},
+            {damage:15,alt:1,cost:2,attack:451,target:0,spec:0,class:4},
+        ],
+        },{name:'Fixing',rarity:0,list:5,
+        stats:[
+            {damage:6,alt:1,cost:1,attack:452,target:0,spec:0,class:4},
+            {damage:8,alt:1,cost:1,attack:452,target:0,spec:0,class:4},
+        ],
         },
         //half
         //employee

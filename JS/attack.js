@@ -2229,6 +2229,14 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.random.upgrading+=this.alt
                 break
+                case 451:
+                    this.battle.combatants[0].status.main[101]+=this.damage
+                break
+                case 452:
+                    if(this.battle.combatants[1].type>0&&this.battle.combatants[1].built==1){
+                        this.battle.combatants[1].status.main[38]+=this.damage
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

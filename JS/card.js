@@ -512,6 +512,8 @@ class card{
             case 448: this.desc+='Add '+this.damage+' Block\nUpgrade '+this.alt+' Cards\nTemporariliy'; break
             case 449: this.desc+='Upgrade '+this.damage+' Cards\nTemporariliy'; break
             case 450: this.desc+='Deal '+this.damage+' Damage\nUpgrade '+this.alt+' Cards\nTemporariliy'; break
+            case 451: this.desc+='Build '+this.damage+'\nof Construct\nEvery Turn'; break
+            case 452: this.desc+='If Construct is Built,\nConstruct Gains\n'+this.damage+' Regeneration'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
