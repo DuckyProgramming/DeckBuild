@@ -71,7 +71,7 @@ class card{
             case 7: this.desc+='Add '+this.damage+'X\nBlock'; break
             case 8: this.desc+='Deal '+this.damage+' Damage\nAdd 1 Slow Bleed\nto Deck'; break
             case 9: this.desc+='Deal '+this.damage+' Damage\nDiscard 1\nRandom Card'; break
-            case 10: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, gain\n'+this.alt+' Energy'; break
+            case 10: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Gain\n'+this.alt+' Energy'; break
             case 11: this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Energy\nNext Turn'; break
             case 12: this.desc+='Deal '+this.damage+' Damage\nto All Enemies'; break
             case 13: this.desc+='Hold '+this.damage+'\nBasic Charge'; break
@@ -518,6 +518,10 @@ class card{
             case 454: this.desc+='Deal '+this.damage+' Damage\nIf Blocked, Apply\n'+this.alt+' Vulnerable'; break
             case 455: this.desc+='Deal '+this.damage+' Damage\nto a Random Enemy\n'+this.alt+' Times\nCannot be\nCountered'; break
             case 456: this.desc+='Draw and\nTemporarily\nUpgrade\n'+this.damage+' Cards'; break
+            case 457: this.desc+='Deal '+this.damage+' Damage\nIf Enemy is\nUndamaged, Gain\n'+this.alt+' Energy'; break
+            case 458: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Lose\n'+this.alt+' Energy'; break
+            case 459: this.desc+='Heal '+this.damage+' Health\nCards in Hand Cost\n1 More or 1 Less'; break
+            case 460: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Temporary Weak\nCannot be\nCountered'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

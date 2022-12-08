@@ -43,7 +43,7 @@ class combatant{
 			'Armed Block Per Turn','Energy And Strength Per Hit','Return Played to Draw','Power Draw','Random Common','Passive Orb','Discharge','Power Basic Charge','Random Power','Conditioning',
 			'Miracle+ Gain','Calm Block Per Turn','Constant Damage Down','Shiv Damage','No Blocks','Counter Pull Once','Counter Throw','Downed','Scry Per Turn','Scry Block',
 			'Attack Per Card Played','Take Damage Per Turn','Energy Gen Down','Next Turn Wrath','Next Turn Draw','Insight Per Turn','Free Attack','Grant Block on Hit','Energy Per Turn','Retain Cost Decrease',
-			'Lose Focus','Dark Charge on Death','Balance Buffer','Counter Stun Once','Flower Per Turn','Flower on Block','Debalance','Temporary Constant Damage','Retain Buffs','Counter Once',
+			'Lose Focus','Dark Charge on Death','Balance Buffer','Counter Stun Once','Resolve Per Turn','Resolve on Block','Debalance','Temporary Constant Damage','Retain Buffs','Counter Once',
 			'Reflect','Construct Health Maintain','Stat Change Immunity','Lose Combo','Counter Twice','Combo Build','Attack Draw','Combo on Block','Temporary Constant Damage Down','Temporary Constant Damage Down',
 			'Next Turn Strength','Build Per Turn'],class:[
 			1,1,1,1,1,0,1,0,0,0,

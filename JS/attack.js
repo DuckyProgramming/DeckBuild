@@ -2279,6 +2279,35 @@ class attack{
                         }
                     }
                 break
+                case 457:
+                    if(this.battle.combatants[this.target].life>=this.battle.combatants[this.target].base.life){
+                        this.battle.mana.main+=this.alt
+                    }
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                break
+                case 458:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].life<=0){
+                        this.battle.mana.main-=this.alt
+                    }
+                break
+                case 459:
+                    this.battle.combatants[0].life=min(this.battle.combatants[0].life+this.damage*this.battle.random.healEffectiveness,this.battle.combatants[0].base.life)
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(floor(random(0,2))==0){
+                            this.battle.hand.cards[g].cost++
+                            this.battle.hand.cards[g].base.cost++
+                        }else{
+                            this.battle.hand.cards[g].cost--
+                            this.battle.hand.cards[g].base.cost--
+                        }
+                    }
+                break
+                case 460:
+                    this.battle.combatants[this.target].take(this.damage,-1)
+                    this.battle.combatants[this.target].boost.main[0]-=this.alt
+                    this.battle.combatants[this.target].status.main[8]+=this.alt-1
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
