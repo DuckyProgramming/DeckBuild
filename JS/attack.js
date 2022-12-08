@@ -2297,7 +2297,7 @@ class attack{
                         if(floor(random(0,2))==0){
                             this.battle.hand.cards[g].cost++
                             this.battle.hand.cards[g].base.cost++
-                        }else{
+                        }else if(this.battle.hand.cards[g].cost>0){
                             this.battle.hand.cards[g].cost--
                             this.battle.hand.cards[g].base.cost--
                         }
@@ -2307,6 +2307,21 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,-1)
                     this.battle.combatants[this.target].boost.main[0]-=this.alt
                     this.battle.combatants[this.target].status.main[8]+=this.alt-1
+                break
+                case 461:
+                    if(this.battle.combatants[1].type>0&&this.battle.combatants[1].built==1){
+                        this.battle.combatants[1].status.main[40]+=this.damage
+                    }
+                break
+                case 462:
+                    this.hold.list=copyList(listing.card[15][0])
+                    for(g=0;g<this.damage;g++){
+                        if(this.hold.list.length>0){
+                            h=floor(random(0,this.hold.list.length))
+                            this.battle.hand.add(this.hold.list[h],0,types.card[this.hold.list[h]].list)
+                            this.hold.list.splice(h,1)
+                        }
+                    }
                 break
                 default:
             }

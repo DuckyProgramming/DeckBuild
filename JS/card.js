@@ -521,7 +521,9 @@ class card{
             case 457: this.desc+='Deal '+this.damage+' Damage\nIf Enemy is\nUndamaged, Gain\n'+this.alt+' Energy'; break
             case 458: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Lose\n'+this.alt+' Energy'; break
             case 459: this.desc+='Heal '+this.damage+' Health\nCards in Hand Cost\n1 More or 1 Less'; break
-            case 460: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Temporary Weak\nCannot be\nCountered'; break
+            case 460: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+'\nTemporary Weak\nCannot be\nCountered'; break
+            case 461: this.desc+='If Construct is Built,\nConstruct Gains\n'+this.damage+' Metallicize'; break
+            case 462: this.desc+='Add '+this.damage+' Random\nCards to\nYour Hand'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

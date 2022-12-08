@@ -2351,10 +2351,20 @@ types={
             {damage:10,alt:0,cost:1,attack:459,target:0,spec:3,class:2},
             {damage:15,alt:0,cost:1,attack:459,target:0,spec:3,class:2},
         ],
-        },{name:'Supressing\nFire',rarity:0,list:5,
+        },{name:'Supressing\nFire',rarity:1,list:5,
         stats:[
             {damage:10,alt:4,cost:2,attack:460,target:1,spec:2,class:0},
             {damage:14,alt:6,cost:2,attack:460,target:1,spec:2,class:0},
+        ],
+        },{name:'Harden',rarity:0,list:5,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:461,target:0,spec:2,class:0},
+            {damage:6,alt:0,cost:1,attack:461,target:0,spec:2,class:0},
+        ],
+        },{name:'Mystery\nBox',rarity:2,list:5,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:462,target:0,spec:2,class:0},
+            {damage:4,alt:0,cost:1,attack:462,target:0,spec:2,class:0},
         ],
         },
         //half
