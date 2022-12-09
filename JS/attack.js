@@ -114,9 +114,11 @@ class attack{
                     }
                 break
                 case 19:
-                    this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[this.battle.combatants[0].ammo.length-1].type,this.battle.combatants[0].ammoDetail[this.battle.combatants[0].ammoDetail.length-1].type)
-                    this.battle.combatants[0].ammo.splice(this.battle.combatants[0].ammo.length-1,1)
-                    this.battle.combatants[0].ammoDetail.splice(this.battle.combatants[0].ammoDetail.length-1,1)
+                    if(this.battle.combatants[0].ammo.length>1){
+                        this.battle.combatants[0].evoke(this.battle.combatants[0].ammo[this.battle.combatants[0].ammo.length-1].type,this.battle.combatants[0].ammoDetail[this.battle.combatants[0].ammoDetail.length-1].type)
+                        this.battle.combatants[0].ammo.splice(this.battle.combatants[0].ammo.length-1,1)
+                        this.battle.combatants[0].ammoDetail.splice(this.battle.combatants[0].ammoDetail.length-1,1)
+                    }
                 break
                 case 20:
                     this.battle.combatants[0].load(3,0)
@@ -623,7 +625,7 @@ class attack{
                     }
                 break
                 case 124:
-                    this.battle.combatants[0].addBlock(this.damage*this.battle.hand.cards.length)
+                    this.battle.combatants[0].addBlock(this.damage*this.battle.deck.cards.length)
                 break
                 case 125:
                     this.battle.combatants[0].addBlock(this.damage)
@@ -790,7 +792,7 @@ class attack{
                 break
                 case 161:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.battle.hand.addShuffle(findCard('Smite'),0,0)
+                    this.battle.hand.add(findCard('Smite'),0,0)
                 break
                 case 162:
                     this.battle.combatants[0].addBlock(this.damage)
