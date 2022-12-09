@@ -2366,6 +2366,26 @@ types={
             {damage:3,alt:0,cost:1,attack:462,target:0,spec:2,class:0},
             {damage:4,alt:0,cost:1,attack:462,target:0,spec:2,class:0},
         ],
+        },{name:'Slap',rarity:0,list:5,
+        stats:[
+            {damage:4,alt:2,cost:1,attack:463,target:1,spec:2,class:0},
+            {damage:6,alt:2,cost:1,attack:463,target:1,spec:2,class:0},
+        ],
+        },{name:'Slap\nParade',rarity:0,list:5,
+        stats:[
+            {damage:4,alt:1,cost:1,attack:464,target:0,spec:2,class:0},
+            {damage:6,alt:1,cost:1,attack:464,target:0,spec:2,class:0},
+        ],
+        },{name:'Thunder\nSlap',rarity:1,list:5,
+        stats:[
+            {damage:8,alt:1,cost:2,attack:465,target:1,spec:2,class:0},
+            {damage:12,alt:1,cost:2,attack:465,target:1,spec:2,class:0},
+        ],
+        },{name:'Line Up',rarity:1,list:5,
+        stats:[
+            {damage:5,alt:0,cost:1,attack:466,target:0,spec:0,class:0},
+            {damage:7,alt:0,cost:1,attack:466,target:0,spec:0,class:0},
+        ],
         },
         //half
         //employee

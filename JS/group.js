@@ -87,10 +87,10 @@ class group{
                 this.add(findCard('Build\nWall'),0,this.battle.player)
                 this.add(findCard('Construct'),0,this.battle.player)*/
                 this.add(430,0,this.battle.player)
-                this.add(467,0,this.battle.player)
-                this.add(468,0,this.battle.player)
-                this.add(469,0,this.battle.player)
-                this.add(470,0,this.battle.player)
+                this.add(471,0,this.battle.player)
+                this.add(472,0,this.battle.player)
+                this.add(473,0,this.battle.player)
+                this.add(474,0,this.battle.player)
             break
         }
     }

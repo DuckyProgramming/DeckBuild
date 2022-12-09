@@ -2327,6 +2327,25 @@ class attack{
                         }
                     }
                 break
+                case 463:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.attacks.push([0,this.alt*10-10,this.target,this.damage])
+                    this.battle.draw()
+                break
+                case 464:
+                    this.battle.takeAll(this.damage,this.user,1)
+                    this.battle.draw()
+                break
+                case 465:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.attacks.push([0,this.alt*10-10,this.target,this.damage])
+                    if(this.battle.combatants[this.target].block<=0){
+                        this.battle.combatants[this.target].boost.main[2]-=4
+                    }
+                break
+                case 466:
+                    this.battle.takeAll(this.damage,-1,1)
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

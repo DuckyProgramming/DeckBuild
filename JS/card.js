@@ -524,6 +524,10 @@ class card{
             case 460: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+'\nTemporary Weak\nCannot be\nCountered'; break
             case 461: this.desc+='If Construct is Built,\nConstruct Gains\n'+this.damage+' Metallicize'; break
             case 462: this.desc+='Add '+this.damage+' Random\nCards to\nYour Hand'; break
+            case 463: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nDraw 1 Card'; break
+            case 464: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nDraw '+this.alt+' Cards'; break
+            case 465: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nDraw 1 Card\nIf Unblocked,\nApply 4 Frail'; break
+            case 466: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nCannot be\nCountered'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
