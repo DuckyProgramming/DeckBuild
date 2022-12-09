@@ -534,6 +534,7 @@ class card{
             case 470: this.desc+='Whenever You\nDamage an Enemy,\nBuild '+this.damage+'\nof Construct'; break
             case 471: this.desc+='Gain '+this.damage+' Currency'; break
             case 472: this.desc+='Deal '+this.damage+' Damage\nLose '+this.alt+' Currency'; break
+            case 473: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+'x More\nDamage if Target\nhas Block'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

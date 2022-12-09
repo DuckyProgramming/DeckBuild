@@ -2368,6 +2368,13 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.currency.money-=this.alt
                 break
+                case 473:
+                    if(this.battle.combatants[this.target].block>0){
+                        this.battle.combatants[this.target].take(this.damage*this.alt,this.user)
+                    }else{
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

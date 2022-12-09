@@ -2406,15 +2406,30 @@ types={
             {damage:5,alt:0,cost:2,attack:470,target:0,spec:0,class:2},
             {damage:5,alt:0,cost:1,attack:470,target:0,spec:0,class:2},
         ],
-        },{name:'Business',rarity:1,list:5,
+        },{name:'Business',rarity:2,list:5,
         stats:[
-            {damage:10,alt:0,cost:1,attack:471,target:0,spec:3,class:2},
-            {damage:15,alt:0,cost:1,attack:471,target:0,spec:3,class:2},
+            {damage:20,alt:0,cost:1,attack:471,target:0,spec:3,class:2},
+            {damage:30,alt:0,cost:1,attack:471,target:0,spec:3,class:2},
         ],
         },{name:'Moneybags',rarity:1,list:5,
         stats:[
-            {damage:12,alt:5,cost:0,attack:472,target:1,spec:3,class:0},
-            {damage:20,alt:5,cost:0,attack:472,target:1,spec:3,class:0},
+            {damage:12,alt:5,cost:0,attack:472,target:1,spec:0,class:0},
+            {damage:20,alt:5,cost:0,attack:472,target:1,spec:0,class:0},
+        ],
+        },{name:'Quick\nRepair',rarity:0,list:5,
+        stats:[
+            {damage:4,alt:0,cost:0,attack:403,target:0,spec:0,class:2},
+            {damage:8,alt:0,cost:0,attack:403,target:0,spec:0,class:2},
+        ],
+        },{name:'Breaking\nShot',rarity:1,list:5,
+        stats:[
+            {damage:4,alt:3,cost:1,attack:473,target:1,spec:0,class:0},
+            {damage:6,alt:4,cost:1,attack:473,target:1,spec:0,class:0},
+        ],
+        },{name:'Bash',rarity:0,list:5,
+        stats:[
+            {damage:9,alt:2,cost:1,attack:478,target:1,spec:0,class:1},
+            {damage:13,alt:2,cost:1,attack:478,target:1,spec:0,class:1},
         ],
         },
         //employee
