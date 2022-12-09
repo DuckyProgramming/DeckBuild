@@ -530,8 +530,10 @@ class card{
             case 466: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nCannot be\nCountered'; break
             case 467: this.desc+='Gain '+this.damage+' Dodge\nAdd '+this.alt+' Block\nNext Turn'; break
             case 468: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Dodge\nNext Turn'; break
-            case 469: this.desc+='Discard and Upgrade\nYour Hand'; break
+            case 469: this.desc+='Discard\nand Upgrade\nYour Hand'; break
             case 470: this.desc+='Whenever You\nDamage an Enemy,\nBuild '+this.damage+'\nof Construct'; break
+            case 471: this.desc+='Gain '+this.damage+' Currency'; break
+            case 472: this.desc+='Deal '+this.damage+' Damage\nLose '+this.alt+' Currency'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

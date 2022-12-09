@@ -2406,6 +2406,16 @@ types={
             {damage:5,alt:0,cost:2,attack:470,target:0,spec:0,class:2},
             {damage:5,alt:0,cost:1,attack:470,target:0,spec:0,class:2},
         ],
+        },{name:'Business',rarity:1,list:5,
+        stats:[
+            {damage:10,alt:0,cost:1,attack:471,target:0,spec:3,class:2},
+            {damage:15,alt:0,cost:1,attack:471,target:0,spec:3,class:2},
+        ],
+        },{name:'Moneybags',rarity:1,list:5,
+        stats:[
+            {damage:12,alt:5,cost:0,attack:472,target:1,spec:3,class:0},
+            {damage:20,alt:5,cost:0,attack:472,target:1,spec:3,class:0},
+        ],
         },
         //employee
         

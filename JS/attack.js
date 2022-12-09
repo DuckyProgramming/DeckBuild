@@ -2361,6 +2361,13 @@ class attack{
                 case 470:
                     this.battle.combatants[0].status.main[103]+=this.damage
                 break
+                case 471:
+                    this.battle.currency.money+=this.damage
+                break
+                case 472:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.currency.money-=this.alt
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
