@@ -2346,6 +2346,21 @@ class attack{
                 case 466:
                     this.battle.takeAll(this.damage,-1,1)
                 break
+                case 467:
+                    this.battle.combatants[0].status.main[6]+=this.damage
+                    this.battle.combatants[0].status.main[31]+=this.alt
+                break
+                case 468:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[102]+=this.alt
+                break
+                case 469:
+                    this.battle.hand.allUpgrade()
+                    this.battle.allDiscard()
+                break
+                case 470:
+                    this.battle.combatants[0].status.main[103]+=this.damage
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

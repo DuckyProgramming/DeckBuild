@@ -87,10 +87,10 @@ class group{
                 this.add(findCard('Build\nWall'),0,this.battle.player)
                 this.add(findCard('Construct'),0,this.battle.player)*/
                 this.add(430,0,this.battle.player)
-                this.add(471,0,this.battle.player)
-                this.add(472,0,this.battle.player)
-                this.add(473,0,this.battle.player)
-                this.add(474,0,this.battle.player)
+                this.add(475,0,this.battle.player)
+                this.add(476,0,this.battle.player)
+                this.add(477,0,this.battle.player)
+                this.add(478,0,this.battle.player)
             break
         }
     }
@@ -149,15 +149,15 @@ class group{
     randomUpgrade(){
         this.calc.list=[]
         for(h=0,lh=this.cards.length;h<lh;h++){
-            if(this.cards[h].level==0){
+            if(this.cards[h].level==0&&!this.cards[h].trigger){
                 this.calc.list.push(h)
             }
         }
         if(this.calc.list.length>0){
             h=this.calc.list[floor(random(0,this.calc.list.length))]
-            if(this.cards[h].level==0){
-                this.cards[h].level++
-                this.cards[h]=reformCard(this.cards[h])
+            if(this.cards[this.calc.list[h]].level==0){
+                this.cards[this.calc.list[h]].level++
+                this.cards[this.calc.list[h]]=reformCard(this.cards[h])
             }
         }
     }

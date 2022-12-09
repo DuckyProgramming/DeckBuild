@@ -528,6 +528,10 @@ class card{
             case 464: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nDraw '+this.alt+' Cards'; break
             case 465: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nDraw 1 Card\nIf Unblocked,\nApply 4 Frail'; break
             case 466: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nCannot be\nCountered'; break
+            case 467: this.desc+='Gain '+this.damage+' Dodge\nAdd '+this.alt+' Block\nNext Turn'; break
+            case 468: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Dodge\nNext Turn'; break
+            case 469: this.desc+='Discard and Upgrade\nYour Hand'; break
+            case 470: this.desc+='Whenever You\nDamage an Enemy,\nBuild '+this.damage+'\nof Construct'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

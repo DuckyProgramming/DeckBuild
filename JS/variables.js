@@ -2386,8 +2386,27 @@ types={
             {damage:5,alt:0,cost:1,attack:466,target:0,spec:0,class:0},
             {damage:7,alt:0,cost:1,attack:466,target:0,spec:0,class:0},
         ],
+        },{name:'Duck and\nCover',rarity:0,list:5,
+        stats:[
+            {damage:1,alt:12,cost:2,attack:467,target:0,spec:0,class:1},
+            {damage:1,alt:20,cost:2,attack:467,target:0,spec:0,class:1},
+        ],
+        },{name:'Cover and\nDuck',rarity:0,list:5,
+        stats:[
+            {damage:12,alt:1,cost:2,attack:468,target:0,spec:0,class:1},
+            {damage:20,alt:1,cost:2,attack:468,target:0,spec:0,class:1},
+        ],
+        },{name:'Bide',rarity:1,list:5,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:469,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:469,target:0,spec:3,class:2},
+        ],
+        },{name:'Construc\ntionist',rarity:2,list:5,
+        stats:[
+            {damage:5,alt:0,cost:2,attack:470,target:0,spec:0,class:2},
+            {damage:5,alt:0,cost:1,attack:470,target:0,spec:0,class:2},
+        ],
         },
-        //half
         //employee
         
         
