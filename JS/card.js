@@ -232,7 +232,7 @@ class card{
             case 168: this.desc+='When Discarded,\nGain '+this.damage+' Energy'; break
             case 169: this.desc+='Discard '+this.damage+' Cards\nGain '+this.alt+' Energy'; break
             case 170: this.desc+='Draw 1 Card\nDiscard 1 Card\nExhaust\nEthereal'; break
-            case 171: this.desc+='Gain '+this.damage+'\nArtifact'; break
+            case 171: this.desc+='Gain '+this.damage+'\nControl'; break
             case 172: this.desc+='Apply '+this.damage+'\nVulnerable'; break
             case 173: this.desc+='Apply '+this.damage+'\nPoison'; break
             case 174: this.desc+='Hold '+this.damage+'\nDark Charge'; break
@@ -488,7 +488,7 @@ class card{
             case 424: this.desc+='Deal '+this.damage+' Damage\nto 2 Enemies'; break
             case 425: this.desc+='Attacks Deal\n'+this.damage+' More Damage\nThis Turn'; break
             case 426: this.desc+='Add '+this.damage+' Block\nNullify All Stat\nChanges This Turn'; break
-            case 427: this.desc+='Add '+this.alt+'\nConditioning'; break
+            case 427: this.desc+='Add '+this.damage+'\nConditioning'; break
             case 428: this.desc+='Draw '+this.damage+' Cards\nDiscard '+this.alt+' Cards'; break
             case 429: this.desc+='Heal '+this.damage+'X Health'; break
             case 430: this.desc+='Gain '+this.damage+' Combo\nGain '+this.alt+' Energy\nNext Turn'; break

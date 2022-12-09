@@ -1009,7 +1009,7 @@ types={
         },{name:'Cook',rarity:2,list:2,
         stats:[
             {damage:1,alt:0,cost:1,attack:285,target:0,spec:3,class:2},
-            {damage:1,alt:0,cost:1,attack:285,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:0,attack:285,target:0,spec:3,class:2},
         ],
         },{name:'Flechettes',rarity:1,list:2,
         stats:[
@@ -1339,7 +1339,7 @@ types={
         ],
         },{name:'Charge\nSource',rarity:1,list:3,
         stats:[
-            {damage:0,alt:0,cost:-1,attack:250,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:-1,attack:250,target:0,spec:3,class:2},
             {damage:0,alt:0,cost:-1,attack:250,target:0,spec:0,class:2},
         ],
         },{name:'White\nNoise',rarity:1,list:3,

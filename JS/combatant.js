@@ -112,6 +112,9 @@ class combatant{
 				this.status.main[39]=1
 				this.status.main[88]=1
 			break
+			case 9:
+				this.block+=12
+			break
 		}
 	}
 	turnBuff(){
@@ -136,9 +139,6 @@ class combatant{
 			case 7:
 				this.status.main[3]=6
 				this.block+=8
-			break
-			case 9:
-				this.block+=12
 			break
 		}
 	}

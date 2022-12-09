@@ -304,12 +304,14 @@ class attack{
                 case 59: case 61:
                     this.hold.list=[]
                     for(g=0,lg=listing.card[this.battle.player].length;g<lg;g++){
-                        if(types.card[listing.card[this.battle.player][g]].rarity>=0&&(types.card[listing.card[this.battle.player][g]].stats[0].class==0&&this.type==59||(types.card[listing.card[this.battle.player][g]].stats[0].class==1||types.card[listing.card[this.battle.player][g]].stats[0].class==2)&&this.type==61)){
-                            this.hold.list.push(g)
+                        for(h=0,lh=listing.card[this.battle.player][g].length;h<lh;h++){
+                            if(types.card[listing.card[this.battle.player][g][h]].rarity>=0&&(types.card[listing.card[this.battle.player][g][h]].stats[0].class==0&&this.type==59||(types.card[listing.card[this.battle.player][g][h]].stats[0].class==1||types.card[listing.card[this.battle.player][g][h]].stats[0].class==2)&&this.type==61)){
+                                this.hold.list.push(listing.card[this.battle.player][g][h])
+                            }
                         }
                     }
                     for(g=0;g<this.damage;g++){
-                        this.battle.reserve.addShuffle(this.hold.list[floor(random(0,this.hold.list.length))],0,this.color)
+                        this.battle.reserve.addShuffle(this.hold.list[floor(random(0,this.hold.list.length))],0,this.battle.player)
                         this.battle.reserve.cards[this.battle.reserve.cards.length-1].cost=0
                         this.battle.reserve.cards[this.battle.reserve.cards.length-1].base.cost=0
                     }
