@@ -464,7 +464,7 @@ class card{
             case 400: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Frail\nNo Combo Gain'; break
             case 401: this.desc+='Set Construct to\nWall'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
             case 402: this.desc+='Build '+this.damage+' of\nConstruct'; break
-            case 403: this.desc+='Heal '+this.damage+' Life\nof Construct'; break
+            case 403: this.desc+='Heal '+this.damage+' Health\nof Construct'; break
             case 404: this.desc+='Add '+this.damage+' Block\nto Construct'; break
             case 405: this.desc+='Set Construct to\nSpikes'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
             case 406: this.desc+='Deal '+this.damage+' Damage\nCannot be\nCountered'; break
@@ -549,6 +549,10 @@ class card{
             case 485: this.desc+='Set Construct to\nTransformer'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
             case 486: this.desc+='Set Construct to\nDoubler'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
             case 487: this.desc+='Set Construct to\nExhauster'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 488: this.desc+='All Cards in\nHand Cost '+this.damage; break
+            case 489: this.desc+='Draw Cards\nEqual to the\nNumber of Cards\nin Your Hand'; if(this.damage>0){this.desc+='\n+'+this.damage} break
+            case 490: this.desc+='Build All\nof Construct'; break
+            case 491: this.desc+='Heal All Health\nof Construct'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

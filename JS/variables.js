@@ -2496,9 +2496,30 @@ types={
             {damage:9,alt:1,cost:1,attack:475,target:1,spec:0,class:1},
             {damage:13,alt:1,cost:1,attack:475,target:1,spec:0,class:1},
         ],
+        },{name:'Regulate',rarity:1,list:5,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:488,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:0,attack:488,target:0,spec:0,class:2},
+        ],
+        },{name:'Copy',rarity:1,list:5,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:489,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:1,attack:489,target:0,spec:0,class:2},
+        ],
+        },{name:'Fabricate',rarity:1,list:5,
+        stats:[
+            {damage:0,alt:0,cost:3,attack:490,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:2,attack:490,target:0,spec:3,class:2},
+        ],
+        },{name:'Restore',rarity:1,list:5,
+        stats:[
+            {damage:0,alt:0,cost:3,attack:491,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:2,attack:491,target:0,spec:3,class:2},
+        ],
         },
         //employee
         //megablock
+        //apply buffs to construct
         
         
         {name:'Empty',rarity:-1,list:-1,
@@ -2559,6 +2580,11 @@ types={
             {damage:1,alt:0,cost:0,attack:171,target:0,spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:171,target:0,spec:0,class:2},
         ],
+        },{name:'Panic\nButton',rarity:1,list:0,
+        stats:[
+            {damage:30,alt:2,cost:0,attack:309,target:0,spec:0,class:1},
+            {damage:40,alt:2,cost:0,attack:309,target:0,spec:0,class:1},
+        ],
         },{name:'Apotheosis',rarity:2,list:0,
         stats:[
             {damage:0,alt:0,cost:2,attack:58,target:0,spec:3,class:2},
@@ -2589,12 +2615,10 @@ types={
             {damage:6,alt:0,cost:2,attack:62,target:1,spec:10,class:0},
             {damage:9,alt:0,cost:1,attack:62,target:1,spec:2,class:0},
         ],
-        },{name:'Panic\nButton',rarity:-1,list:0,
-        stats:[
-            {damage:30,alt:2,cost:0,attack:309,target:0,spec:0,class:1},
-            {damage:40,alt:2,cost:0,attack:309,target:0,spec:0,class:1},
-        ],
-        },{name:'Insight',rarity:-1,list:0,
+        },
+        
+        
+        {name:'Insight',rarity:-1,list:0,
         stats:[
             {damage:2,alt:0,cost:0,attack:4,target:0,spec:9,class:2},
             {damage:3,alt:0,cost:0,attack:4,target:0,spec:9,class:2},

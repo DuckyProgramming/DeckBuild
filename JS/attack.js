@@ -2455,6 +2455,27 @@ class attack{
                         this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
                     }
                 break
+                case 488:
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        this.battle.hand.cards[g].cost=1
+                        this.battle.hand.cards[g].base.cost=1
+                    }
+                break
+                case 489:
+                    for(g=0,lg=this.damage+this.battle.hand.cards.length;g<lg;g++){
+                        this.battle.draw()
+                    }
+                break
+                case 490:
+                    if(this.battle.combatants[1].life<this.battle.combatants[1].base.life&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=this.battle.combatants[1].base.life
+                    }
+                break
+                case 491:
+                    if(this.battle.combatants[1].life<this.battle.combatants[1].base.life&&this.battle.combatants[1].built==1){
+                        this.battle.combatants[1].life=this.battle.combatants[1].base.life
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
