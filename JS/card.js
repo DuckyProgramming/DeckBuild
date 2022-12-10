@@ -117,7 +117,7 @@ class card{
             case 53: this.desc+='Reduce Cost of\nAll Cards in\nHand to '+this.damage; break
             case 54: this.desc+='Deal '+this.damage+' Damage\nIgnore Block'; break
             case 55: this.desc+='Shuffle Discard\nPile into Draw Pile\nDraw '+this.damage+' Cards'; break
-            case 56: this.desc+='Exhaust\nYour Hand'; break
+            case 56: this.desc+='Exhaust\n3 Cards'; break
             case 57: this.desc+='Add '+this.damage+' Block\nDraw '+this.alt+' Cards'; break
             case 58: this.desc+='Temporarily\nUpgrade All Cards'; break
             case 59: this.desc+='Shuffle '+this.damage+'\nRandom Attacks\ninto Draw Pile\nThey Cost 0'; break
@@ -535,6 +535,8 @@ class card{
             case 471: this.desc+='Gain '+this.damage+' Currency'; break
             case 472: this.desc+='Deal '+this.damage+' Damage\nLose '+this.alt+' Currency'; break
             case 473: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+'x More\nDamage if Target\nhas Block'; break
+            case 474: this.desc+='Deal '+this.damage+' Damage\nExhaust '+this.alt+' Card'; break
+            case 475: this.desc+='Deal '+this.damage+' Damage\nTransform '+this.alt+' Card'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -706,22 +708,11 @@ class card{
             this.layer.translate(-this.position.x,-this.position.y)
         }
     }
-    displayDiscarding(discarding){
+    displayExtra(color,value){
         if(this.size>0){
             this.layer.translate(this.position.x,this.position.y)
             this.layer.scale(this.size)
-            this.layer.fill(255,0,0,this.fade*discarding)
-            this.layer.noStroke()
-            this.layer.rect(0,0,this.width+15,this.height+15,10)
-            this.layer.scale(1/this.size)
-            this.layer.translate(-this.position.x,-this.position.y)
-        }
-    }
-    displayUpgrading(upgrading){
-        if(this.size>0){
-            this.layer.translate(this.position.x,this.position.y)
-            this.layer.scale(this.size)
-            this.layer.fill(255,255,50,this.fade*upgrading)
+            this.layer.fill(color[0],color[1],color[2],this.fade*value)
             this.layer.noStroke()
             this.layer.rect(0,0,this.width+15,this.height+15,10)
             this.layer.scale(1/this.size)

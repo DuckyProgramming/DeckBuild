@@ -10,7 +10,7 @@ class group{
         this.selcted=false
         this.trigger=false
         this.calc={level:0,cut:0,list:[]}
-        this.anim={discarding:0,upgrading:0,selectCombo:false}
+        this.anim={discarding:0,upgrading:0,exhausting:0,transforming:0,selectCombo:false}
     }
     initial(type){
         /*for(e=0;e<20;e++){
@@ -245,9 +245,21 @@ class group{
         }else if(!this.battle.random.upgrading&&this.anim.upgrading>0){
             this.anim.upgrading=round(this.anim.upgrading*5-1)/5
         }
+        if(this.battle.random.exhausting&&this.anim.exhausting<1){
+            this.anim.exhausting=round(this.anim.exhausting*5+1)/5
+        }else if(!this.battle.random.exhausting&&this.anim.exhausting>0){
+            this.anim.exhausting=round(this.anim.exhausting*5-1)/5
+        }
+        if(this.battle.random.transforming&&this.anim.transforming<1){
+            this.anim.transforming=round(this.anim.transforming*5+1)/5
+        }else if(!this.battle.random.transforming&&this.anim.transforming>0){
+            this.anim.transforming=round(this.anim.transforming*5-1)/5
+        }
         for(e=0,le=this.cards.length;e<le;e++){
-            this.cards[e].displayDiscarding(this.anim.discarding)
-            this.cards[e].displayUpgrading(this.anim.upgrading)
+            this.cards[e].displayExtra([255,0,0],this.anim.discarding)
+            this.cards[e].displayExtra([255,255,50],this.anim.upgrading)
+            this.cards[e].displayExtra([150,200,255],this.anim.exhausting)
+            this.cards[e].displayExtra([100,255,100],this.anim.transforming)
             this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length,this.battle.discard.cards.length,this.battle.reserve.cards.length,this.battle.random)
         }
     }
@@ -537,6 +549,15 @@ class group{
                     if(this.cards[e].level<1){
                         this.cards[e].level++
                     }
+                    this.cards[e]=reformCard(this.cards[e])
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.random.exhausting>0){
+                    this.battle.random.exhausting--
+                    this.cards[e].used=true
+                    this.cards[e].exhaust=true
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.random.transforming>0){
+                    this.battle.random.transforming--
+                    g=floor(random(0,3))
+                    this.cards[e].type=listing.card[this.battle.player][g][floor(random(0,listing.card[this.battle.player][g].length))]
                     this.cards[e]=reformCard(this.cards[e])
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&(this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7||this.cards[e].list==10&&this.battle.relics.active[38]||this.cards[e].list==11&&this.battle.relics.active[108])){
                     this.cards[e].select=true

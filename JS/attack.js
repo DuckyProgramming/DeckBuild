@@ -292,7 +292,7 @@ class attack{
                     }
                 break
                 case 56:
-                    this.battle.allExhaust(-1)
+                    this.battle.random.exhausting+=3
                 break
                 case 57:
                     this.battle.combatants[0].addBlock(this.damage)
@@ -2374,6 +2374,14 @@ class attack{
                     }else{
                         this.battle.combatants[this.target].take(this.damage,this.user)
                     }
+                break
+                case 474:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.random.exhausting=this.alt
+                break
+                case 475:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.random.transforming=this.alt
                 break
                 default:
             }

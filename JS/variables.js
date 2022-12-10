@@ -2426,10 +2426,15 @@ types={
             {damage:4,alt:3,cost:1,attack:473,target:1,spec:0,class:0},
             {damage:6,alt:4,cost:1,attack:473,target:1,spec:0,class:0},
         ],
-        },{name:'Bash',rarity:0,list:5,
+        },{name:'Clear Up',rarity:0,list:5,
         stats:[
-            {damage:9,alt:2,cost:1,attack:478,target:1,spec:0,class:1},
-            {damage:13,alt:2,cost:1,attack:478,target:1,spec:0,class:1},
+            {damage:7,alt:1,cost:1,attack:474,target:1,spec:0,class:1},
+            {damage:11,alt:1,cost:1,attack:474,target:1,spec:0,class:1},
+        ],
+        },{name:'Genevon',rarity:2,list:5,
+        stats:[
+            {damage:9,alt:1,cost:1,attack:475,target:1,spec:0,class:1},
+            {damage:13,alt:1,cost:1,attack:475,target:1,spec:0,class:1},
         ],
         },
         //employee
