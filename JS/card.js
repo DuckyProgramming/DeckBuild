@@ -556,6 +556,14 @@ class card{
             case 492: this.desc+='If Construct\nis Built,\nConstruct Gains\n'+this.damage+' Metallicize'; break
             case 493: this.desc+='Construct Takes\nExtra Turn'; break
             case 494: this.desc+='Finish Construct\nRegardless of\nBuild Progress'; break
+            case 495: this.desc+='If Construct\nis Built,\nConstruct Gains\n'+this.damage+' Intangible'; break
+            case 496: this.desc+='Add '+this.damage+' Block\nExhaust '+this.alt+' Card'; break
+            case 497: this.desc+='Draw '+this.damage+' Cards\nExhaust '+this.alt+' Card'; break
+            case 498: this.desc+='Transform\n'+this.damage+' Cards'; break
+            case 499: this.desc+='Add '+this.damage+' Block\nTransform '+this.alt+' Card'; break
+            case 500: this.desc+='Deal '+this.damage+' Damage\nNext Card Played\nis Duplicated'; break
+            case 501: this.desc+='Upgrade X Cards\nDraw X Cards\nNext Turn'; break
+            case 502: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nGain Block Equal\nto Unblocked\nDamage Dealt'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

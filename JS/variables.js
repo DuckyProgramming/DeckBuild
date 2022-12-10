@@ -2134,6 +2134,9 @@ types={
         },
         //nifty
         //powers
+        //deal damage, lose draw
+        //buff bleed
+        //buff balance-related cards
 
         
         {name:'Build\nWall',rarity:0,list:5,
@@ -2306,7 +2309,7 @@ types={
             {damage:10,alt:0,cost:1,attack:413,target:0,spec:0,class:0},
             {damage:15,alt:0,cost:1,attack:413,target:0,spec:0,class:0},
         ],
-        },{name:'Bash',rarity:0,list:5,
+        },{name:'Heavy\nBash',rarity:0,list:5,
         stats:[
             {damage:9,alt:2,cost:1,attack:414,target:1,spec:0,class:0},
             {damage:13,alt:2,cost:1,attack:414,target:1,spec:0,class:0},
@@ -2531,14 +2534,54 @@ types={
             {damage:0,alt:0,cost:1,attack:493,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:0,attack:493,target:0,spec:0,class:2},
         ],
-        },{name:'Early\nFinish',rarity:2,list:5,
+        },{name:'Early\nCompletion',rarity:2,list:5,
         stats:[
             {damage:0,alt:0,cost:2,attack:494,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:1,attack:494,target:0,spec:0,class:2},
         ],
+        },{name:'Hypothetical',rarity:2,list:5,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:495,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:495,target:0,spec:0,class:2},
+        ],
+        },{name:'Disposal',rarity:0,list:5,
+        stats:[
+            {damage:6,alt:1,cost:1,attack:496,target:0,spec:0,class:1},
+            {damage:9,alt:1,cost:1,attack:496,target:0,spec:0,class:1},
+        ],
+        },{name:'Redeem',rarity:0,list:5,
+        stats:[
+            {damage:1,alt:1,cost:1,attack:497,target:0,spec:0,class:2},
+            {damage:2,alt:1,cost:1,attack:497,target:0,spec:0,class:2},
+        ],
+        },{name:'New Ideas',rarity:1,list:5,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:498,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:498,target:0,spec:0,class:2},
+        ],
+        },{name:'Phase\nShift',rarity:1,list:5,
+        stats:[
+            {damage:4,alt:1,cost:1,attack:499,target:0,spec:0,class:1},
+            {damage:8,alt:1,cost:1,attack:499,target:0,spec:0,class:1},
+        ],
+        },{name:'Repeater',rarity:1,list:5,
+        stats:[
+            {damage:7,alt:1,cost:2,attack:500,target:1,spec:0,class:0},
+            {damage:10,alt:1,cost:2,attack:500,target:1,spec:0,class:0},
+        ],
+        },{name:'Instructions',rarity:2,list:5,
+        stats:[
+            {damage:0,alt:0,cost:-1,attack:501,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:-1,attack:501,target:0,spec:0,class:2},
+        ],
+        },{name:'Double\nPoke',rarity:1,list:5,
+        stats:[
+            {damage:3,alt:2,cost:1,attack:502,target:1,spec:0,class:0},
+            {damage:3,alt:2,cost:1,attack:502,target:1,spec:0,class:0},
+        ],
         },
-        //megablock
         //apply buffs to construct
+        //option play
         
         
         {name:'Empty',rarity:-1,list:-1,

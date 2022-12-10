@@ -601,7 +601,9 @@ class attack{
                 break
                 case 116:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.battle.combatants[0].addBlock(max(0,this.damage-this.battle.combatants[this.target].block))
+                    if(this.battle.combatants[this.target].blocked>0&&this.battle.combatants[this.target].calc.damage>0){
+                        this.battle.combatants[0].addBlock(this.battle.combatants[this.target].calc.damage)
+                    }
                 break
                 case 117:
                     this.battle.combatants[0].status.main[17]+=this.damage
@@ -2488,6 +2490,44 @@ class attack{
                     if(this.battle.combatants[1].life>0){
                         this.battle.combatants[1].built=1
                     }
+                break
+                case 495:
+                    if(this.battle.combatants[1].life>0&&this.battle.combatants[1].built==1){
+                        this.battle.combatants[1].status.main[12]+=this.damage
+                    }
+                break
+                case 496:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.random.exhausting=this.alt
+                break
+                case 497:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                    this.battle.random.exhausting=this.alt
+                break
+                case 498:
+                    this.battle.random.transforming=this.damage
+                break
+                case 499:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.random.transforming=this.alt
+                break
+                case 500:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.random.doubling++
+                break
+                case 501:
+                    this.battle.random.upgrading=this.mana
+                    this.battle.combatants[0].status.main[74]+=this.mana
+                break
+                case 502:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].blocked>0&&this.battle.combatants[this.target].calc.damage>0){
+                        this.battle.combatants[0].addBlock(this.battle.combatants[this.target].calc.damage)
+                    }
+                    this.attacks.push([13,this.alt*10-10,this.target,this.damage])
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
@@ -2621,9 +2661,12 @@ class attack{
         for(let g=0,lg=this.attacks.length;g<lg;g++){
             this.attacks[g][1]--
             switch(this.attacks[g][0]){
-                case 0: case 6:
+                case 0: case 6: case 13:
                     if(this.attacks[g][1]%10==0){
                         this.battle.combatants[this.attacks[g][2]].take(this.attacks[g][3],0)
+                        if(this.attacks[g][0]==13&&this.battle.combatants[this.attacks[g][2]].blocked>0&&this.battle.combatants[this.attacks[g][2]].calc.damage>0){
+                            this.battle.combatants[0].addBlock(this.battle.combatants[this.attacks[g][2]].calc.damage)
+                        }
                     }
                     if(this.attacks[g][1]==0&&this.attacks[g][0]==6){
                         this.attacks.push([5,20,this.attacks[g][2],this.attacks[g][3]*0.4])

@@ -2548,16 +2548,18 @@ class combatant{
 		}
 	}
 	addBlock(value){
-		this.calc.block=value
-		if(this.status.main[59]>0){
-			this.calc.block*=1.5
-			this.status.main[59]--
-		}
-		if(this.status.main[64]<=0){
-			this.block+=this.calc.block
-		}
-		if(this.status.main[97]>0){
-			this.combo+=this.status.main[97]
+		if(value>0){
+			this.calc.block=value
+			if(this.status.main[59]>0){
+				this.calc.block*=1.5
+				this.status.main[59]--
+			}
+			if(this.status.main[64]<=0){
+				this.block+=this.calc.block
+			}
+			if(this.status.main[97]>0){
+				this.combo+=this.status.main[97]
+			}
 		}
 	}
 	take(damage,user,extra){
