@@ -2601,6 +2601,26 @@ types={
             {damage:3,alt:0,cost:1,attack:506,target:0,spec:3,class:2},
             {damage:4,alt:0,cost:1,attack:506,target:0,spec:3,class:2},
         ],
+        },{name:'Upscale',rarity:1,list:5,
+        stats:[
+            {damage:9,alt:9,cost:1,attack:507,target:0,spec:0,class:2},
+            {damage:15,alt:15,cost:1,attack:507,target:0,spec:0,class:2},
+        ],
+        },{name:'Moving Out',rarity:1,list:5,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:508,target:0,spec:0,class:1},
+            {damage:1,alt:0,cost:0,attack:508,target:0,spec:2,class:1},
+        ],
+        },{name:'Aggresive\nMonopolist',rarity:2,list:5,
+        stats:[
+            {damage:16,alt:0,cost:2,attack:509,target:1,spec:0,class:0},
+            {damage:24,alt:0,cost:2,attack:509,target:1,spec:0,class:0},
+        ],
+        },{name:'Defensive\nMonopolist',rarity:2,list:5,
+        stats:[
+            {damage:15,alt:0,cost:2,attack:510,target:0,spec:0,class:1},
+            {damage:22,alt:0,cost:2,attack:510,target:0,spec:0,class:1},
+        ],
         },
         //apply buffs to construct
         //option play
@@ -3046,7 +3066,8 @@ types={
         {class:1},
         {class:1},
         {class:1},
-        
+        {class:0},
+        {class:1},
     ],encounter:[
         {//0
             combatants:[0,0,0,0,0,0],

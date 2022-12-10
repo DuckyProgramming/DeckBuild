@@ -1980,7 +1980,7 @@ class attack{
                         this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
                     }
                 break
-                case 402:
+                case 402: case 507:
                     if(this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
                         this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
                     }
@@ -2538,6 +2538,27 @@ class attack{
                 break
                 case 506:
                     this.battle.combatants[0].status.main[38]+=this.damage
+                break
+                case 508:
+                    if(this.battle.combatants[1].life>0&&this.battle.combatants[1].built==1){
+                        this.battle.combatants[0].status.main[6]+=this.damage
+                    }
+                break
+                case 509:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    for(let g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0&&this.battle.combatants[g].team==1&&types.attack[this.battle.combatants[g].attacks[this.battle.combatants[g].intent]].class==0){
+                            this.battle.combatants[g].setupIntent(-1)
+                        }
+                    }
+                break
+                case 510:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    for(let g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0&&this.battle.combatants[g].team==1&&types.attack[this.battle.combatants[g].attacks[this.battle.combatants[g].intent]].class==1){
+                            this.battle.combatants[g].setupIntent(-1)
+                        }
+                    }
                 break
                 default:
             }

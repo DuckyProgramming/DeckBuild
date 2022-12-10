@@ -87,10 +87,10 @@ class group{
                 this.add(findCard('Build\nWall'),0,this.battle.player)
                 this.add(findCard('Construct'),0,this.battle.player)*/
                 this.add(443,0,this.battle.player)
-                this.add(515,0,this.battle.player)
-                this.add(516,0,this.battle.player)
-                this.add(517,0,this.battle.player)
-                this.add(518,0,this.battle.player)
+                this.add(519,0,this.battle.player)
+                this.add(520,0,this.battle.player)
+                this.add(521,0,this.battle.player)
+                this.add(522,0,this.battle.player)
             break
         }
     }
@@ -541,7 +541,7 @@ class group{
                         this.trigger=false
                         if(this.battle.attack.type==231){
                             this.cards[e].damage-=this.cards[e].alt
-                        }else if(this.battle.attack.type==241){
+                        }else if(this.battle.attack.type==241||this.battle.attack.type==507){
                             this.cards[e].damage+=this.cards[e].alt
                         }
                     }else{

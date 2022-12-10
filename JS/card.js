@@ -568,6 +568,10 @@ class card{
             case 504: this.desc+='Apply '+this.damage+' Weak\nNext Turn'; break
             case 505: this.desc+='Deal '+this.damage+'X Damage\nApply X Weak\nApply X Vulnerable'; break
             case 506: this.desc+='Gain '+this.damage+'\nRegeneration'; break
+            case 507: this.desc+='Build '+this.damage+'\nof Construct\nBuild Increases\nby '+this.alt; break
+            case 508: this.desc+='If Construct\nis Built,\nGain '+this.damage+' Dodge'; break
+            case 509: this.desc+='Deal '+this.damage+' Damage\nReset Attacking\nIntents'; break
+            case 510: this.desc+='Add '+this.damage+' Block\nReset Non-Attacking\nIntents'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
