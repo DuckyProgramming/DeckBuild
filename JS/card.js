@@ -537,6 +537,12 @@ class card{
             case 473: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+'x More\nDamage if Target\nhas Block'; break
             case 474: this.desc+='Deal '+this.damage+' Damage\nExhaust '+this.alt+' Card'; break
             case 475: this.desc+='Deal '+this.damage+' Damage\nTransform '+this.alt+' Card'; break
+            case 476: this.desc+='Set Construct to\nTrap'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 477: this.desc+='Set Construct to\nMultiturret'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 478: this.desc+='Set Construct to\nMetallicizer'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 479: this.desc+='Set Construct to\nMirror Shield'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 480: this.desc+='Set Construct to\nLimiter'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 481: this.desc+='Set Construct to\nRepulsor'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

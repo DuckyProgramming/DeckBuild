@@ -1694,6 +1694,24 @@ class battle{
                     case 'Gun Rack':
                         this.hand.add(findCard('Revolver'),0,0)
                     break
+                    case 'Trap':
+                        this.combatants[0].status.main[3]+=8
+                    break
+                    case 'Multiturret':
+                        this.takeAll(6,-1,1)
+                    break
+                    case 'Metallicizer':
+                        this.combatants[0].status.main[40]+=2
+                    break
+                    case 'Mirror Shield':
+                        this.combatants[0].status.main[10]++
+                    break
+                    case 'Limiter':
+                        this.combatants[0].status.main[36]++
+                    break
+                    case 'Repulsor':
+                        this.combatants[0].orbAttack(4,-1,3)
+                    break
                 }
             }
             this.turn++

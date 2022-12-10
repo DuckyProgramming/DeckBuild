@@ -2196,6 +2196,36 @@ types={
             {damage:0,alt:0,cost:0,attack:445,target:0,spec:10,class:3},
             {damage:5,alt:0,cost:0,attack:445,target:0,spec:10,class:3},
         ],
+        },{name:'Build\nTrap',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:476,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:476,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nMultiturret',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:477,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:477,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nMetallicizer',rarity:1,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:478,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:478,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nMirror Shield',rarity:1,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:479,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:479,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nLimiter',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:480,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:480,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nRepulsor',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:481,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:481,target:0,spec:10,class:3},
+        ],
         },{name:'Construct',rarity:0,list:5,
         stats:[
             {damage:15,alt:0,cost:1,attack:402,target:0,spec:0,class:2},
@@ -2839,7 +2869,12 @@ types={
         {name:'Rock Golem',alt:'',life:25,height:60,behavior:2,attacks:[8,6],damage:[4,5],altAttack:[0,'Dazed'],class:1,buff:0},
         {name:'Big Wild Duck',alt:'',life:50,height:81,behavior:0,attacks:[1,3,4],damage:[8,3,3],altAttack:[0,3,0],class:0,buff:0},
         {name:'General Duckion',alt:'',life:120,height:81,behavior:0,attacks:[3,4,25],damage:[10,3,3,4],altAttack:[2,0,0],class:0,buff:0},
-        
+        {name:'Trap',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
+        {name:'Multiturret',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Metallicizer',alt:'',life:50,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
+        {name:'Mirror Shield',alt:'',life:80,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
+        {name:'Limiter',alt:'',life:10,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Repulsor',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},//60
     ],attack:[
         {class:0},//0
         {class:0},

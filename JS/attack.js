@@ -2383,6 +2383,42 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.random.transforming=this.alt
                 break
+                case 476:
+                    this.battle.buildAlly('Trap')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 477:
+                    this.battle.buildAlly('Multiturret')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 478:
+                    this.battle.buildAlly('Metallicizer')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 479:
+                    this.battle.buildAlly('Mirror Shield')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 480:
+                    this.battle.buildAlly('Limiter')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 481:
+                    this.battle.buildAlly('Repulsor')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
