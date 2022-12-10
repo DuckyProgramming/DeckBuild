@@ -3277,7 +3277,7 @@ types={
             name:'Weights',id:78,rarity:2,list:0,
             desc:'Can Gain 1 Strength\nWhen Resting',
         },{
-            Name:'Energy Storing Aubergine',id:79,rarity:2,list:0,
+            name:'Energy Storing Aubergine',id:79,rarity:2,list:0,
             desc:'Energy Conserved\nBetween Turns',
         },{
             name:'Quantum Cube',id:80,rarity:2,list:0,
