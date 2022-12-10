@@ -10,7 +10,7 @@ class group{
         this.selcted=false
         this.trigger=false
         this.calc={level:0,cut:0,list:[]}
-        this.anim={discarding:0,upgrading:0,exhausting:0,transforming:0,selectCombo:false}
+        this.anim={discarding:0,doubling:0,upgrading:0,exhausting:0,transforming:0,selectCombo:false}
     }
     initial(type){
         /*for(e=0;e<20;e++){
@@ -86,17 +86,17 @@ class group{
                 }
                 this.add(findCard('Build\nWall'),0,this.battle.player)
                 this.add(findCard('Construct'),0,this.battle.player)*/
-                this.add(436,0,this.battle.player)
-                this.add(437,0,this.battle.player)
-                this.add(438,0,this.battle.player)
-                this.add(439,0,this.battle.player)
-                this.add(440,0,this.battle.player)
+                this.add(442,0,this.battle.player)
+                this.add(443,0,this.battle.player)
+                this.add(444,0,this.battle.player)
+                this.add(445,0,this.battle.player)
+                this.add(446,0,this.battle.player)
 
-                this.add(441,0,this.battle.player)
-                this.add(441,0,this.battle.player)
-                this.add(441,0,this.battle.player)
-                this.add(441,0,this.battle.player)
-                this.add(441,0,this.battle.player)
+                this.add(447,0,this.battle.player)
+                this.add(447,0,this.battle.player)
+                this.add(447,0,this.battle.player)
+                this.add(447,0,this.battle.player)
+                this.add(447,0,this.battle.player)
             break
         }
     }
@@ -246,6 +246,11 @@ class group{
         }else if(!this.battle.discarding&&this.anim.discarding>0){
             this.anim.discarding=round(this.anim.discarding*5-1)/5
         }
+        if(this.battle.random.doubling&&this.anim.doubling<1){
+            this.anim.doubling=round(this.anim.doubling*5+1)/5
+        }else if(!this.battle.random.doubling&&this.anim.doubling>0){
+            this.anim.doubling=round(this.anim.doubling*5-1)/5
+        }
         if(this.battle.random.upgrading&&this.anim.upgrading<1){
             this.anim.upgrading=round(this.anim.upgrading*5+1)/5
         }else if(!this.battle.random.upgrading&&this.anim.upgrading>0){
@@ -263,6 +268,7 @@ class group{
         }
         for(e=0,le=this.cards.length;e<le;e++){
             this.cards[e].displayExtra([255,0,0],this.anim.discarding)
+            this.cards[e].displayExtra([255,100,255],this.anim.doubling)
             this.cards[e].displayExtra([255,255,50],this.anim.upgrading)
             this.cards[e].displayExtra([150,200,255],this.anim.exhausting)
             this.cards[e].displayExtra([100,255,100],this.anim.transforming)
@@ -564,6 +570,7 @@ class group{
                     this.battle.random.transforming--
                     g=floor(random(0,3))
                     this.cards[e].type=listing.card[this.battle.player][g][floor(random(0,listing.card[this.battle.player][g].length))]
+                    this.cards[e].color=this.battle.player
                     this.cards[e]=reformCard(this.cards[e])
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&(this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7||this.cards[e].list==10&&this.battle.relics.active[38]||this.cards[e].list==11&&this.battle.relics.active[108])){
                     this.cards[e].select=true
@@ -621,6 +628,7 @@ class group{
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&context==15){
                     f=floor(random(0,3))
                     this.cards[e].type=listing.card[this.battle.player][f][floor(random(0,listing.card[this.battle.player][f].length))]
+                    this.cards[e].color=this.battle.player
                     this.cards[e]=reformCard(this.cards[e])
                     transition.trigger=true
                     transition.scene='map'

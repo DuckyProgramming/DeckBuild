@@ -511,6 +511,7 @@ class battle{
                     if(this.deck.cards[g].list==stage.playerNumber+1){
                         h=floor(random(0,3))
                         this.deck.cards[g].type=listing.card[this.player][h][floor(random(0,listing.card[this.player][h].length))]
+                        this.deck.cards[g].color=this.player
                         this.deck.cards[g]=reformCard(this.deck.cards[g])
                     }
                 }
@@ -1711,6 +1712,24 @@ class battle{
                     break
                     case 'Repulsor':
                         this.combatants[0].orbAttack(4,-1,3)
+                    break
+                    case 'Machine Gun':
+                        this.combatants[0].orbAttack(4,-1,4)
+                    break
+                    case 'Maintainer':
+                        this.combatants[0].status.main[47]++
+                    break
+                    case 'Upgrader':
+                        this.random.upgrading++
+                    break
+                    case 'Transformer':
+                        this.random.transforming++
+                    break
+                    case 'Doubler':
+                        this.random.doubling++
+                    break
+                    case 'Exhauster':
+                        this.random.exhausting++
                     break
                 }
             }

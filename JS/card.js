@@ -543,6 +543,12 @@ class card{
             case 479: this.desc+='Set Construct to\nMirror Shield'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
             case 480: this.desc+='Set Construct to\nLimiter'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
             case 481: this.desc+='Set Construct to\nRepulsor'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 482: this.desc+='Set Construct to\nMachine Gun'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 483: this.desc+='Set Construct to\nMaintainer'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 484: this.desc+='Set Construct to\nUpgrader'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 485: this.desc+='Set Construct to\nTransformer'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 486: this.desc+='Set Construct to\nDoubler'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
+            case 487: this.desc+='Set Construct to\nExhauster'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

@@ -2216,15 +2216,45 @@ types={
             {damage:0,alt:0,cost:0,attack:479,target:0,spec:10,class:3},
             {damage:5,alt:0,cost:0,attack:479,target:0,spec:10,class:3},
         ],
-        },{name:'Build\nLimiter',rarity:0,list:5,
+        },{name:'Build\nLimiter',rarity:1,list:5,
         stats:[
             {damage:0,alt:0,cost:0,attack:480,target:0,spec:10,class:3},
             {damage:5,alt:0,cost:0,attack:480,target:0,spec:10,class:3},
         ],
-        },{name:'Build\nRepulsor',rarity:0,list:5,
+        },{name:'Build\nRepulsor',rarity:1,list:5,
         stats:[
             {damage:0,alt:0,cost:0,attack:481,target:0,spec:10,class:3},
             {damage:5,alt:0,cost:0,attack:481,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nMachine Gun',rarity:1,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:482,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:482,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nMaintainer',rarity:1,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:483,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:483,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nUpgrader',rarity:2,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:484,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:484,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nTransformer',rarity:2,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:485,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:485,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nDoubler',rarity:2,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:486,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:486,target:0,spec:10,class:3},
+        ],
+        },{name:'Build\nExhauster',rarity:2,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:487,target:0,spec:10,class:3},
+            {damage:5,alt:0,cost:0,attack:487,target:0,spec:10,class:3},
         ],
         },{name:'Construct',rarity:0,list:5,
         stats:[
@@ -2333,28 +2363,28 @@ types={
         ],
         },{name:'Extend',rarity:0,list:5,
         stats:[
-            {damage:5,alt:1,cost:1,attack:450,target:0,spec:0,class:4},
-            {damage:8,alt:1,cost:1,attack:450,target:0,spec:0,class:4},
+            {damage:5,alt:1,cost:1,attack:450,target:1,spec:0,class:0},
+            {damage:8,alt:1,cost:1,attack:450,target:1,spec:0,class:0},
         ],
         },{name:'Auto\nBuild',rarity:1,list:5,
         stats:[
-            {damage:10,alt:1,cost:2,attack:451,target:0,spec:0,class:4},
-            {damage:15,alt:1,cost:2,attack:451,target:0,spec:0,class:4},
+            {damage:10,alt:1,cost:2,attack:451,target:0,spec:0,class:2},
+            {damage:15,alt:1,cost:2,attack:451,target:0,spec:0,class:2},
         ],
         },{name:'Fixing',rarity:0,list:5,
         stats:[
-            {damage:6,alt:1,cost:1,attack:452,target:0,spec:0,class:4},
-            {damage:8,alt:1,cost:1,attack:452,target:0,spec:0,class:4},
+            {damage:6,alt:1,cost:1,attack:452,target:0,spec:0,class:2},
+            {damage:8,alt:1,cost:1,attack:452,target:0,spec:0,class:2},
         ],
         },{name:'Concept',rarity:1,list:5,
         stats:[
-            {damage:2,alt:0,cost:0,attack:453,target:0,spec:0,class:4},
-            {damage:3,alt:0,cost:0,attack:453,target:0,spec:0,class:4},
+            {damage:2,alt:0,cost:0,attack:453,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:0,attack:453,target:0,spec:0,class:2},
         ],
         },{name:'Particulation',rarity:0,list:5,
         stats:[
-            {damage:7,alt:2,cost:1,attack:454,target:1,spec:0,class:4},
-            {damage:9,alt:3,cost:1,attack:454,target:1,spec:0,class:4},
+            {damage:7,alt:2,cost:1,attack:454,target:1,spec:0,class:0},
+            {damage:9,alt:3,cost:1,attack:454,target:1,spec:0,class:0},
         ],
         },{name:'Bullet\nSpray',rarity:1,list:5,
         stats:[
@@ -2468,6 +2498,7 @@ types={
         ],
         },
         //employee
+        //megablock
         
         
         {name:'Empty',rarity:-1,list:-1,
@@ -2873,8 +2904,15 @@ types={
         {name:'Multiturret',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
         {name:'Metallicizer',alt:'',life:50,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Mirror Shield',alt:'',life:80,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
-        {name:'Limiter',alt:'',life:10,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Limiter',alt:'',life:10,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Repulsor',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},//60
+        {name:'Machine Gun',alt:'',life:40,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
+        {name:'Maintainer',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
+        {name:'Upgrader',alt:'',life:40,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
+        {name:'Transformer',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
+        {name:'Doubler',alt:'',life:50,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
+        {name:'Exhauster',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
+        
     ],attack:[
         {class:0},//0
         {class:0},

@@ -1850,9 +1850,9 @@ class combatant{
 					this.layer.strokeWeight(5)
 					this.layer.stroke(100,this.fade)
 					this.layer.fill(120,this.fade)
-					this.layer.rect(25+5*max(this.life/this.base.life,this.built),-55*max(this.life/this.base.life,this.built),10*max(this.life/this.base.life,this.built),8*max(this.life/this.base.life,this.built))
-					this.layer.rect(25+5*max(this.life/this.base.life,this.built),-40*max(this.life/this.base.life,this.built),10*max(this.life/this.base.life,this.built),8*max(this.life/this.base.life,this.built))
-					this.layer.rect(25+5*max(this.life/this.base.life,this.built),-25*max(this.life/this.base.life,this.built),10*max(this.life/this.base.life,this.built),8*max(this.life/this.base.life,this.built))
+					this.layer.rect(25+12*max(this.life/this.base.life,this.built),-48*max(this.life/this.base.life,this.built),8*max(this.life/this.base.life,this.built),8*max(this.life/this.base.life,this.built))
+					this.layer.rect(25+12*max(this.life/this.base.life,this.built),-40*max(this.life/this.base.life,this.built),24*max(this.life/this.base.life,this.built),8*max(this.life/this.base.life,this.built))
+					this.layer.rect(25+12*max(this.life/this.base.life,this.built),-32*max(this.life/this.base.life,this.built),8*max(this.life/this.base.life,this.built),8*max(this.life/this.base.life,this.built))
 					this.layer.rect(0,-40*max(this.life/this.base.life,this.built)+40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
 					this.layer.stroke(0,200,200,this.fade)
 					this.layer.fill(0,240,240,this.fade)
@@ -1908,6 +1908,81 @@ class combatant{
 					this.layer.rect(0,-40*max(this.life/this.base.life,this.built),50,50*max(this.life/this.base.life,this.built))
 					this.layer.stroke(100,this.fade)
 					this.layer.fill(120,this.fade)
+					this.layer.ellipse(0,-40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
+				break
+				case 61:
+					this.layer.strokeWeight(5)
+					this.layer.stroke(100,this.fade)
+					this.layer.fill(120,this.fade)
+					this.layer.rect(25+5*max(this.life/this.base.life,this.built),-55*max(this.life/this.base.life,this.built),10*max(this.life/this.base.life,this.built),8*max(this.life/this.base.life,this.built))
+					this.layer.rect(25+5*max(this.life/this.base.life,this.built),-40*max(this.life/this.base.life,this.built),10*max(this.life/this.base.life,this.built),8*max(this.life/this.base.life,this.built))
+					this.layer.rect(25+5*max(this.life/this.base.life,this.built),-25*max(this.life/this.base.life,this.built),10*max(this.life/this.base.life,this.built),8*max(this.life/this.base.life,this.built))
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built)+40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
+					this.layer.stroke(0,200,0,this.fade)
+					this.layer.fill(0,240,0,this.fade)
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built),50,50*max(this.life/this.base.life,this.built))
+					this.layer.stroke(100,this.fade)
+					this.layer.fill(120,this.fade)
+					this.layer.ellipse(0,-40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
+				break
+				case 62:
+					this.layer.strokeWeight(5)
+					this.layer.stroke(100,this.fade)
+					this.layer.fill(120,this.fade)
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built),60,80*max(this.life/this.base.life,this.built))
+					this.layer.noStroke()
+					this.layer.fill(140,160,180,this.fade)
+					this.layer.rect(-18,-40*max(this.life/this.base.life,this.built),6,60*max(this.life/this.base.life,this.built))
+					this.layer.rect(-6,-40*max(this.life/this.base.life,this.built),6,60*max(this.life/this.base.life,this.built))
+					this.layer.rect(6,-40*max(this.life/this.base.life,this.built),6,60*max(this.life/this.base.life,this.built))
+					this.layer.rect(18,-40*max(this.life/this.base.life,this.built),6,60*max(this.life/this.base.life,this.built))
+				break
+				case 63:
+					this.layer.strokeWeight(5)
+					this.layer.stroke(100,this.fade)
+					this.layer.fill(120,this.fade)
+					this.layer.rect(-25-5*max(this.life/this.base.life,this.built),-40*max(this.life/this.base.life,this.built),10*max(this.life/this.base.life,this.built),30*max(this.life/this.base.life,this.built))
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built)-30*max(this.life/this.base.life,this.built),30,10*max(this.life/this.base.life,this.built))
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built)+40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built),50,50*max(this.life/this.base.life,this.built))
+					this.layer.stroke(255,255,50,this.fade)
+					this.layer.fill(200,200,40,this.fade)
+					this.layer.ellipse(0,-40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
+				break
+				case 64:
+					this.layer.strokeWeight(5)
+					this.layer.stroke(100,this.fade)
+					this.layer.fill(120,this.fade)
+					this.layer.rect(-25-5*max(this.life/this.base.life,this.built),-40*max(this.life/this.base.life,this.built),10*max(this.life/this.base.life,this.built),30*max(this.life/this.base.life,this.built))
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built)-30*max(this.life/this.base.life,this.built),30,10*max(this.life/this.base.life,this.built))
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built)+40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built),50,50*max(this.life/this.base.life,this.built))
+					this.layer.stroke(100,255,100,this.fade)
+					this.layer.fill(80,200,80,this.fade)
+					this.layer.ellipse(0,-40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
+				break
+				case 65:
+					this.layer.strokeWeight(5)
+					this.layer.stroke(100,this.fade)
+					this.layer.fill(120,this.fade)
+					this.layer.rect(-25-5*max(this.life/this.base.life,this.built),-40*max(this.life/this.base.life,this.built),10*max(this.life/this.base.life,this.built),30*max(this.life/this.base.life,this.built))
+					this.layer.rect(25+5*max(this.life/this.base.life,this.built),-40*max(this.life/this.base.life,this.built),10*max(this.life/this.base.life,this.built),30*max(this.life/this.base.life,this.built))
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built)-30*max(this.life/this.base.life,this.built),30,10*max(this.life/this.base.life,this.built))
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built)+40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built),50,50*max(this.life/this.base.life,this.built))
+					this.layer.stroke(255,100,255,this.fade)
+					this.layer.fill(200,80,200,this.fade)
+					this.layer.ellipse(0,-40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
+				break
+				case 66:
+					this.layer.strokeWeight(5)
+					this.layer.stroke(100,this.fade)
+					this.layer.fill(120,this.fade)
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built)-30*max(this.life/this.base.life,this.built),30,10*max(this.life/this.base.life,this.built))
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built)+40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
+					this.layer.rect(0,-40*max(this.life/this.base.life,this.built),50,50*max(this.life/this.base.life,this.built))
+					this.layer.stroke(150,200,255,this.fade)
+					this.layer.fill(120,160,200,this.fade)
 					this.layer.ellipse(0,-40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
 				break
 				/*case 35:
@@ -2311,7 +2386,16 @@ class combatant{
 			case 3:
 				for(let h=0,lh=this.battle.combatants.length;h<lh;h++){
 					if(this.battle.combatants[h].team==1&&this.battle.combatants[h].life>0){
-						this.battle.attack.attacks.push([5,20,h,damage])
+						this.battle.attack.attacks.push([5,20,h,damage*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h-1].boost.main[4]))*(2+max(0,this.battle.combatants[h-1].boost.main[4]))])
+						break
+					}
+				}
+			break
+			case 4:
+				for(let h=0,lh=this.battle.combatants.length;h<lh;h++){
+					if(this.battle.combatants[h].team==1&&this.battle.combatants[h].life>0){
+						this.battle.combatants[h].take(damage*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h].boost.main[4]))*(2+max(0,this.battle.combatants[h].boost.main[4])),user)
+						this.battle.attack.attacks.push([0,30,h,damage*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))/(2-min(0,this.battle.combatants[h-1].boost.main[4]))*(2+max(0,this.battle.combatants[h-1].boost.main[4]))])
 						break
 					}
 				}

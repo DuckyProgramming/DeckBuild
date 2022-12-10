@@ -2419,6 +2419,42 @@ class attack{
                         this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
                     }
                 break
+                case 482:
+                    this.battle.buildAlly('Machine Gun')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 483:
+                    this.battle.buildAlly('Maintainer')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 484:
+                    this.battle.buildAlly('Upgrader')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 485:
+                    this.battle.buildAlly('Transformer')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 486:
+                    this.battle.buildAlly('Doubler')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
+                case 487:
+                    this.battle.buildAlly('Exhauster')
+                    if(this.damage>0&&this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
