@@ -2528,6 +2528,17 @@ class attack{
                     }
                     this.attacks.push([13,this.alt*10-10,this.target,this.damage])
                 break
+                case 504:
+                    this.battle.combatants[this.target].status.main[7]+=this.damage
+                break
+                case 505:
+                    this.battle.combatants[this.target].take(this.damage*this.mana,this.user)
+                    this.battle.combatants[this.target].boost.main[0]-=this.alt*this.mana
+                    this.battle.combatants[this.target].boost.main[1]-=this.alt*this.mana
+                break
+                case 506:
+                    this.battle.combatants[0].status.main[38]+=this.damage
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

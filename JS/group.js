@@ -87,10 +87,10 @@ class group{
                 this.add(findCard('Build\nWall'),0,this.battle.player)
                 this.add(findCard('Construct'),0,this.battle.player)*/
                 this.add(443,0,this.battle.player)
-                this.add(511,0,this.battle.player)
-                this.add(512,0,this.battle.player)
-                this.add(513,0,this.battle.player)
-                this.add(514,0,this.battle.player)
+                this.add(515,0,this.battle.player)
+                this.add(516,0,this.battle.player)
+                this.add(517,0,this.battle.player)
+                this.add(518,0,this.battle.player)
             break
         }
     }
@@ -515,6 +515,20 @@ class group{
                         }else{
                             this.battle.playCard()
                             this.battle.attack.update(174,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }
+                    }else if(this.cards[e].attack==503){
+                        if(inputs.rel.y>this.cards[e].position.y+10){
+                            this.battle.playCard()
+                            this.battle.attack.update(403,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }else{
+                            this.battle.playCard()
+                            this.battle.attack.update(402,this.cards[e].level,0)
                             this.battle.afterPlayCard()
                             this.cards[e].used=true
                             this.trigger=false

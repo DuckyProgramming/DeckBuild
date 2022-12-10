@@ -564,6 +564,10 @@ class card{
             case 500: this.desc+='Deal '+this.damage+' Damage\nNext Card Played\nis Duplicated'; break
             case 501: this.desc+='Upgrade X Cards\nDraw X Cards\nNext Turn'; break
             case 502: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nGain Block Equal\nto Unblocked\nDamage Dealt'; break
+            case 503: this.desc+='Build '+this.damage+' of\nConstruct\nor\nHeal '+this.alt+' Health\nof Construct'; break
+            case 504: this.desc+='Apply '+this.damage+' Weak\nNext Turn'; break
+            case 505: this.desc+='Deal '+this.damage+'X Damage\nApply X Weak\nApply X Vulnerable'; break
+            case 506: this.desc+='Gain '+this.damage+'\nRegeneration'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -629,7 +633,7 @@ class card{
             if(this.color==8){
                 this.layer.image(graphics.minor[8],-this.width/2-10,-this.height/2-10,this.width+20,this.height+20)
             }
-            if(this.attack==63||this.attack==280||this.attack==296||this.attack==367){
+            if(this.attack==63||this.attack==280||this.attack==296||this.attack==367||this.attack==503){
                 this.layer.rect(0,-this.height/4+5,this.width,this.height/2+10,5)
                 this.layer.rect(0,this.height/4+5,this.width,this.height/2-10,5)
             }

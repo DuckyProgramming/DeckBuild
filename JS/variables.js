@@ -480,8 +480,8 @@ types={
         ],
         },{name:'Energy\nBooster',rarity:2,list:1,
         stats:[
-            {damage:1,alt:0,cost:3,attack:310,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:2,attack:310,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:1,attack:310,target:0,spec:3,class:2},
         ],
         },{name:'Extra\nReps',rarity:1,list:1,
         stats:[
@@ -2137,6 +2137,8 @@ types={
         //deal damage, lose draw
         //buff bleed
         //buff balance-related cards
+        //strength on hit
+        //energy related cards
 
         
         {name:'Build\nWall',rarity:0,list:5,
@@ -2578,6 +2580,26 @@ types={
         stats:[
             {damage:3,alt:2,cost:1,attack:502,target:1,spec:0,class:0},
             {damage:3,alt:2,cost:1,attack:502,target:1,spec:0,class:0},
+        ],
+        },{name:'Multitool',rarity:1,list:5,
+        stats:[
+            {damage:12,alt:6,cost:1,attack:503,target:1,spec:0,class:0},
+            {damage:20,alt:9,cost:1,attack:503,target:1,spec:0,class:0},
+        ],
+        },{name:'Sabotage',rarity:1,list:5,
+        stats:[
+            {damage:3,alt:0,cost:0,attack:504,target:1,spec:0,class:0},
+            {damage:4,alt:0,cost:0,attack:504,target:1,spec:0,class:0},
+        ],
+        },{name:'Sever',rarity:2,list:5,
+        stats:[
+            {damage:3,alt:1,cost:-1,attack:505,target:1,spec:0,class:0},
+            {damage:5,alt:1,cost:-1,attack:505,target:1,spec:0,class:0},
+        ],
+        },{name:'Rapid\nRecovery',rarity:1,list:5,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:506,target:0,spec:3,class:2},
+            {damage:4,alt:0,cost:1,attack:506,target:0,spec:3,class:2},
         ],
         },
         //apply buffs to construct
