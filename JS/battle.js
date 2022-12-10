@@ -665,6 +665,9 @@ class battle{
                         this.combatants[e].addBlock(this.combatants[e].status.main[50])
                     }else if(f==61&&this.combatants[e].stance==1){
                         this.combatants[e].addBlock(this.combatants[e].status.main[61])
+                    }else if(f==72&&this.mana.main==this.mana.max){
+                        this.combatants[e].status.main[f]--
+                        this.mana.gen++
                     }else if(f==73){
                         this.combatants[e].changeStance(2)
                     }else if(f==74){
@@ -692,7 +695,7 @@ class battle{
                 if((f==11||f==37)&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                     this.combatants[e].status.main[f]--
-                }else if(f==71&&this.combatants[e].status.main[f]>0){
+                }else if((f==71||f==104)&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].take(this.combatants[e].status.main[f],e)
                 }else if(f==38&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].life=min(this.combatants[e].life+this.combatants[e].status.main[f],this.combatants[e].base.life)

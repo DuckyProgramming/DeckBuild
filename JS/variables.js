@@ -2621,9 +2621,29 @@ types={
             {damage:15,alt:0,cost:2,attack:510,target:0,spec:0,class:1},
             {damage:22,alt:0,cost:2,attack:510,target:0,spec:0,class:1},
         ],
+        },{name:'Reflexive\nArmor',rarity:1,list:5,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:511,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:1,attack:511,target:0,spec:0,class:2},
+        ],
+        },{name:'Barbed\nWire',rarity:1,list:5,
+        stats:[
+            {damage:8,alt:0,cost:1,attack:512,target:0,spec:0,class:2},
+            {damage:12,alt:0,cost:1,attack:512,target:0,spec:0,class:2},
+        ],
+        },{name:'Barbed\nWire',rarity:1,list:5,
+        stats:[
+            {damage:6,alt:0,cost:1,attack:513,target:0,spec:0,class:2},
+            {damage:9,alt:0,cost:1,attack:513,target:0,spec:0,class:2},
+        ],
+        },{name:'Lighter',rarity:1,list:5,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:514,target:1,spec:0,class:2},
+            {damage:5,alt:0,cost:1,attack:514,target:1,spec:0,class:2},
+        ],
         },
-        //apply buffs to construct
-        //option play
+        //oil
+        //grinder
         
         
         {name:'Empty',rarity:-1,list:-1,

@@ -2560,6 +2560,24 @@ class attack{
                         }
                     }
                 break
+                case 511:
+                    if(this.battle.combatants[1].life>0&&this.battle.combatants[1].built==1){
+                        this.battle.combatants[1].status.main[10]+=this.damage
+                    }
+                break
+                case 512:
+                    if(this.battle.combatants[1].life>0&&this.battle.combatants[1].built==1){
+                        this.battle.combatants[1].status.main[3]+=this.damage
+                    }
+                break
+                case 513:
+                    if(this.battle.combatants[1].life>0&&this.battle.combatants[1].built==1){
+                        this.battle.combatants[1].status.main[0]+=this.damage
+                    }
+                break
+                case 514:
+                    this.battle.combatants[this.target].status.main[104]+=this.damage
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

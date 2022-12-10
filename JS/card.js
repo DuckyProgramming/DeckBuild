@@ -572,6 +572,10 @@ class card{
             case 508: this.desc+='If Construct\nis Built,\nGain '+this.damage+' Dodge'; break
             case 509: this.desc+='Deal '+this.damage+' Damage\nReset Attacking\nIntents'; break
             case 510: this.desc+='Add '+this.damage+' Block\nReset Non-Attacking\nIntents'; break
+            case 511: this.desc+='If Construct\nis Built,\nConstruct Reflects\nNext Attack'; break
+            case 512: this.desc+='If Construct\nis Built,\nConstruct Counters\n'+this.damage+' Once'; break
+            case 513: this.desc+='If Construct\nis Built,\nConstruct Counters\n'+this.damage+' All'; break
+            case 514: this.desc+='Apply '+this.damage+'\nBurn'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
