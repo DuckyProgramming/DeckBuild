@@ -3163,7 +3163,7 @@ types={
             name:'Burning Cards',id:40,rarity:1,list:0,
             desc:'For Every Card in Your Deck, Heal\n0.5 HP When You Enter a Rest Site',
         },{
-            name:'Soldiers Guide',id:41,rarity:1,list:0,
+            name:'Soldier Guide',id:41,rarity:1,list:0,
             desc:'Upgrade All\nAttacks Added',
         },{
             name:'Heavy Shield',id:42,rarity:1,list:0,
