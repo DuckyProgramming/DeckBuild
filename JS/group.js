@@ -87,10 +87,10 @@ class group{
                 this.add(findCard('Build\nWall'),0,this.battle.player)
                 this.add(findCard('Construct'),0,this.battle.player)*/
                 this.add(443,0,this.battle.player)
-                this.add(519,0,this.battle.player)
-                this.add(520,0,this.battle.player)
-                this.add(521,0,this.battle.player)
-                this.add(522,0,this.battle.player)
+                this.add(523,0,this.battle.player)
+                this.add(524,0,this.battle.player)
+                this.add(525,0,this.battle.player)
+                this.add(526,0,this.battle.player)
             break
         }
     }
@@ -277,7 +277,7 @@ class group{
                 this.cards[e].anim.afford=0
                 this.cards[e].size=1
                 this.cards[e].fade=1
-                this.cards[e].display(le)
+                this.cards[e].display(le,this.battle.drawAmount,0,le,this.battle.defaultRandom)
             }
         }else{
             for(e=0,le=this.cards.length;e<le;e++){
@@ -286,7 +286,7 @@ class group{
                 this.cards[e].anim.afford=0
                 this.cards[e].size=1
                 this.cards[e].fade=1
-                this.cards[e].display(le)
+                this.cards[e].display(le,this.battle.drawAmount,0,le,this.battle.defaultRandom)
             }
         }
     }

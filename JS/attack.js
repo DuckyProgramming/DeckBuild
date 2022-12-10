@@ -2578,6 +2578,24 @@ class attack{
                 case 514:
                     this.battle.combatants[this.target].status.main[104]+=this.damage
                 break
+                case 515:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target].status.main[104]+=this.alt
+                break
+                case 516:
+                    for(let g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0&&this.battle.combatants[g].team==1){
+                            this.battle.combatants[g].status.main[104]+=this.damage
+                        }
+                    }
+                break
+                case 517:
+                    this.battle.combatants[this.target].status.main[104]*=this.damage
+                break
+                case 518:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[105]+=this.alt
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

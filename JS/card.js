@@ -576,6 +576,10 @@ class card{
             case 512: this.desc+='If Construct\nis Built,\nConstruct Counters\n'+this.damage+' Once'; break
             case 513: this.desc+='If Construct\nis Built,\nConstruct Counters\n'+this.damage+' All'; break
             case 514: this.desc+='Apply '+this.damage+'\nBurn'; break
+            case 515: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+'\nBurn'; break
+            case 516: this.desc+='Apply '+this.damage+' Burn\nto All Enemies'; break
+            case 517: this.desc+='Multiply Target'+"'"+'s\nBurn by '+this.damage; break
+            case 518: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+' Burn'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -591,7 +595,7 @@ class card{
             this.desc=this.desc.substr(0,this.desc.length-1)
         }
     }
-    display(deckSize=0,handSize=0,discardSize=0,drawSize=0,random={attacked:0}){
+    display(deckSize=0,handSize=0,discardSize=0,drawSize=0,random=current.defaultRandom){
         this.displayName(deckSize,handSize,discardSize,drawSize,random)
         if(this.size>0){
             this.layer.translate(this.position.x,this.position.y)

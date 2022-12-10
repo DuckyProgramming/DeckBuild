@@ -2641,9 +2641,27 @@ types={
             {damage:3,alt:0,cost:1,attack:514,target:1,spec:0,class:2},
             {damage:5,alt:0,cost:1,attack:514,target:1,spec:0,class:2},
         ],
+        },{name:'Flame\nThrower',rarity:1,list:5,
+        stats:[
+            {damage:8,alt:4,cost:2,attack:515,target:1,spec:0,class:0},
+            {damage:14,alt:6,cost:2,attack:515,target:1,spec:0,class:0},
+        ],
+        },{name:'Firespin',rarity:1,list:5,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:516,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:516,target:0,spec:0,class:2},
+        ],
+        },{name:'Oil Up',rarity:1,list:5,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:517,target:1,spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:517,target:1,spec:0,class:2},
+        ],
+        },{name:'Scorched\nEarth',rarity:1,list:5,
+        stats:[
+            {damage:4,alt:2,cost:1,attack:518,target:0,spec:0,class:2},
+            {damage:6,alt:3,cost:1,attack:518,target:0,spec:0,class:2},
+        ],
         },
-        //oil
-        //grinder
         
         
         {name:'Empty',rarity:-1,list:-1,

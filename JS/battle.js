@@ -1001,7 +1001,7 @@ class battle{
     }
     afterPlayCard(){
         for(g=0,lg=this.combatants.length;g<lg;g++){
-            if(this.combatants[g].team==1&&this.combatants[g].status.main[70]>0){
+            if(this.combatants[g].team==1&&this.combatants[g].life>0&&this.combatants[g].status.main[70]>0){
                 this.combatants[0].take(this.combatants[g].status.main[70],g)
             }
         }
