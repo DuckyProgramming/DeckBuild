@@ -2110,7 +2110,7 @@ class battle{
                     if(floor(random(0,5))==0&&this.currency.money<0){
                         this.deck.add(findCard('Debt'),0,stage.playerNumber+2)
                     }
-                    if(this.relics.active[181]){
+                    if(this.relics.active[171]){
                         this.currency.money+=10
                     }
                     switch(this.map.main[e][f]){
