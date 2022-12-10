@@ -2476,6 +2476,18 @@ class attack{
                         this.battle.combatants[1].life=this.battle.combatants[1].base.life
                     }
                 break
+                case 492:
+                    if(this.battle.combatants[1].life>0&&this.battle.combatants[1].built==1){
+                        this.battle.combatants[1].status.main[40]+=this.damage
+                    }
+                break
+                case 493:
+                    this.battle.constructEffect()
+                break
+                case 494:
+                    if(this.battle.combatants[1].life>0){
+                        this.battle.combatants[1].built=1
+                    }
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

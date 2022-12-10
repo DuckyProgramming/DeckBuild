@@ -2516,8 +2516,27 @@ types={
             {damage:0,alt:0,cost:3,attack:491,target:0,spec:3,class:2},
             {damage:0,alt:0,cost:2,attack:491,target:0,spec:3,class:2},
         ],
+        },{name:'Metallurgy',rarity:1,list:5,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:492,target:0,spec:0,class:2},
+            {damage:5,alt:0,cost:1,attack:492,target:0,spec:0,class:2},
+        ],
+        },{name:'Impenetrable',rarity:2,list:5,
+        stats:[
+            {damage:40,alt:0,cost:3,attack:2,target:0,spec:3,class:2},
+            {damage:60,alt:0,cost:3,attack:2,target:0,spec:3,class:2},
+        ],
+        },{name:'Activate',rarity:0,list:5,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:493,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:493,target:0,spec:0,class:2},
+        ],
+        },{name:'Early\nFinish',rarity:2,list:5,
+        stats:[
+            {damage:0,alt:0,cost:2,attack:494,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:1,attack:494,target:0,spec:0,class:2},
+        ],
         },
-        //employee
         //megablock
         //apply buffs to construct
         

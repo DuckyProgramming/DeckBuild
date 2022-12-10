@@ -553,6 +553,9 @@ class card{
             case 489: this.desc+='Draw Cards\nEqual to the\nNumber of Cards\nin Your Hand'; if(this.damage>0){this.desc+='\n+'+this.damage} break
             case 490: this.desc+='Build All\nof Construct'; break
             case 491: this.desc+='Heal All Health\nof Construct'; break
+            case 492: this.desc+='If Construct\nis Built,\nConstruct Gains\n'+this.damage+' Metallicize'; break
+            case 493: this.desc+='Construct Takes\nExtra Turn'; break
+            case 494: this.desc+='Finish Construct\nRegardless of\nBuild Progress'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

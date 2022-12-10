@@ -1055,6 +1055,81 @@ class battle{
         this.combatants[1].life=min(this.remember[0],this.combatants[1].base.life)
         this.combatants[1].collect.life=this.remember[0]
     }
+    constructEffect(){
+        if(this.combatants[1].built==1){
+            switch(this.combatants[1].name){
+                case 'Spikes':
+                    this.combatants[0].status.main[0]+=5
+                break
+                case 'Projector':
+                    this.combatants[0].block+=5
+                break
+                case 'Turret':
+                    this.combatants[0].orbAttack(10,-1,0)
+                break
+                case 'Readout':
+                    this.draw()
+                break
+                case 'Generator':
+                    this.combatants[0].status.main[1]++
+                break
+                case 'Strengthener':
+                    this.combatants[0].status.main[4]++
+                break
+                case 'Explosive Turret':
+                    this.combatants[0].orbAttack(8,-1,1)
+                break
+                case 'Dexterizer':
+                    this.combatants[0].status.main[32]++
+                break
+                case 'Thorns':
+                    this.combatants[0].status.main[27]+=3
+                break
+                case 'Bufferer':
+                    this.combatants[0].status.main[33]++
+                break
+                case 'Gun Rack':
+                    this.hand.add(findCard('Revolver'),0,0)
+                break
+                case 'Trap':
+                    this.combatants[0].status.main[3]+=8
+                break
+                case 'Multiturret':
+                    this.takeAll(6,-1,1)
+                break
+                case 'Metallicizer':
+                    this.combatants[0].status.main[40]+=2
+                break
+                case 'Mirror Shield':
+                    this.combatants[0].status.main[10]++
+                break
+                case 'Limiter':
+                    this.combatants[0].status.main[36]++
+                break
+                case 'Repulsor':
+                    this.combatants[0].orbAttack(4,-1,3)
+                break
+                case 'Machine Gun':
+                    this.combatants[0].orbAttack(4,-1,4)
+                break
+                case 'Maintainer':
+                    this.combatants[0].status.main[47]++
+                break
+                case 'Upgrader':
+                    this.random.upgrading++
+                break
+                case 'Transformer':
+                    this.random.transforming++
+                break
+                case 'Doubler':
+                    this.random.doubling++
+                break
+                case 'Exhauster':
+                    this.random.exhausting++
+                break
+            }
+        }
+    }
     resetCombatant(){
         for(let e=0,le=this.combatants.length;e<le;e++){
             if(this.combatants[e].type!=0){
@@ -1660,79 +1735,7 @@ class battle{
                 this.turn=200
             }
         }else if(this.turn==1){
-            if(this.combatants[this.turn].built==1){
-                switch(this.combatants[this.turn].name){
-                    case 'Spikes':
-                        this.combatants[0].status.main[0]+=5
-                    break
-                    case 'Projector':
-                        this.combatants[0].block+=5
-                    break
-                    case 'Turret':
-                        this.combatants[0].orbAttack(10,-1,0)
-                    break
-                    case 'Readout':
-                        this.draw()
-                    break
-                    case 'Generator':
-                        this.combatants[0].status.main[1]++
-                    break
-                    case 'Strengthener':
-                        this.combatants[0].status.main[4]++
-                    break
-                    case 'Explosive Turret':
-                        this.combatants[0].orbAttack(8,-1,1)
-                    break
-                    case 'Dexterizer':
-                        this.combatants[0].status.main[32]++
-                    break
-                    case 'Thorns':
-                        this.combatants[0].status.main[27]+=3
-                    break
-                    case 'Bufferer':
-                        this.combatants[0].status.main[33]++
-                    break
-                    case 'Gun Rack':
-                        this.hand.add(findCard('Revolver'),0,0)
-                    break
-                    case 'Trap':
-                        this.combatants[0].status.main[3]+=8
-                    break
-                    case 'Multiturret':
-                        this.takeAll(6,-1,1)
-                    break
-                    case 'Metallicizer':
-                        this.combatants[0].status.main[40]+=2
-                    break
-                    case 'Mirror Shield':
-                        this.combatants[0].status.main[10]++
-                    break
-                    case 'Limiter':
-                        this.combatants[0].status.main[36]++
-                    break
-                    case 'Repulsor':
-                        this.combatants[0].orbAttack(4,-1,3)
-                    break
-                    case 'Machine Gun':
-                        this.combatants[0].orbAttack(4,-1,4)
-                    break
-                    case 'Maintainer':
-                        this.combatants[0].status.main[47]++
-                    break
-                    case 'Upgrader':
-                        this.random.upgrading++
-                    break
-                    case 'Transformer':
-                        this.random.transforming++
-                    break
-                    case 'Doubler':
-                        this.random.doubling++
-                    break
-                    case 'Exhauster':
-                        this.random.exhausting++
-                    break
-                }
-            }
+            this.constructEffect()
             this.turn++
             while(this.turn>0&&this.turn<this.combatants.length&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
                 this.turn++
