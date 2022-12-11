@@ -1758,7 +1758,7 @@ class battle{
             }else if(this.turn>=this.combatants.length){
                 this.turn=0
                 this.resetTurn()
-            }else if(this.combatants[this.turn].status.main[5]>0||this.combatants[this.turn].status.main[9]>0){
+            }else if(this.combatants[this.turn].status.main[5]>0||this.combatants[this.turn].status.main[9]>0||this.combatants[this.turn].status.main[106]>0){
                 this.turn++
                 while(this.turn>0&&this.turn<this.combatants.length&&(this.combatants[this.turn].type<=0||this.combatants[this.turn].life<=0)){
                     this.turn++

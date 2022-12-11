@@ -307,7 +307,7 @@ class attack{
                     this.hold.list=[]
                     for(g=0,lg=listing.card[this.battle.player].length;g<lg;g++){
                         for(h=0,lh=listing.card[this.battle.player][g].length;h<lh;h++){
-                            if(types.card[listing.card[this.battle.player][g][h]].rarity>=0&&(types.card[listing.card[this.battle.player][g][h]].stats[0].class==0&&this.type==59||(types.card[listing.card[this.battle.player][g][h]].stats[0].class==1||types.card[listing.card[this.battle.player][g][h]].stats[0].class==2)&&this.type==61)){
+                            if(types.card[listing.card[this.battle.player][g][h]].rarity>=0&&(types.card[listing.card[this.battle.player][g][h]].stats[0].class==0&&this.type==59||types.card[listing.card[this.battle.player][g][h]].stats[0].class==1&&this.type==61)){
                                 this.hold.list.push(listing.card[this.battle.player][g][h])
                             }
                         }
@@ -317,7 +317,6 @@ class attack{
                         this.battle.reserve.cards[this.battle.reserve.cards.length-1].cost=0
                         this.battle.reserve.cards[this.battle.reserve.cards.length-1].base.cost=0
                     }
-                    this.battle.reserve.shuffle()
                 break
                 case 60:
                     this.battle.combatants[this.target].take(this.damage,this.user)
@@ -2647,6 +2646,25 @@ class attack{
                         this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
                     }
                     this.battle.combatants[0].block+=this.alt
+                break
+                case 528:
+                    this.battle.combatants[this.target].status.main[106]+=this.damage
+                break
+                case 529:
+                    this.battle.random.upgrading=this.damage
+                    this.battle.combatants[0].status.main[33]+=this.alt
+                break
+                case 530:
+                    this.hold.list=[]
+                    for(g=0,lg=listing.card[15][0].length;g<lg;g++){
+                        if(types.card[listing.card[15][0][g]].rarity>=0&&types.card[listing.card[15][0][g]].stats[0].class==2){
+                            this.hold.list.push(listing.card[15][0][g])
+                        }
+                    }
+                    for(g=0;g<this.damage;g++){
+                        h=floor(random(0,this.hold.list.length))
+                        this.battle.hand.add(this.hold.list[h],0,types.card[this.hold.list[h]].list)
+                    }
                 break
                 default:
             }

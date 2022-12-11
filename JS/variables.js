@@ -425,8 +425,8 @@ types={
         ],
         },{name:'Shimmy',rarity:1,list:1,
         stats:[
-            {damage:4,alt:1,cost:1,attack:301,target:1,spec:0,class:1},
-            {damage:8,alt:1,cost:1,attack:301,target:1,spec:0,class:1},
+            {damage:6,alt:1,cost:1,attack:301,target:1,spec:0,class:1},
+            {damage:12,alt:1,cost:1,attack:301,target:1,spec:0,class:1},
         ],
         },{name:'Big\nBlock',rarity:0,list:1,
         stats:[
@@ -2700,6 +2700,26 @@ types={
         stats:[
             {damage:3,alt:0,cost:1,attack:526,target:0,spec:0,class:2},
             {damage:4,alt:0,cost:1,attack:526,target:0,spec:2,class:2},
+        ],
+        },{name:'Bore',rarity:0,list:5,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:528,target:1,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:528,target:1,spec:0,class:2},
+        ],
+        },{name:'Spam\nPunch',rarity:0,list:5,
+        stats:[
+            {damage:1,alt:10,cost:1,attack:3,target:1,spec:0,class:2},
+            {damage:1,alt:15,cost:1,attack:3,target:1,spec:0,class:2},
+        ],
+        },{name:'Caffeine\nHigh',rarity:1,list:5,
+        stats:[
+            {damage:2,alt:1,cost:2,attack:529,target:0,spec:0,class:2},
+            {damage:3,alt:1,cost:2,attack:529,target:0,spec:0,class:2},
+        ],
+        },{name:'Best\nGuess',rarity:1,list:5,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:530,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:0,attack:530,target:0,spec:0,class:2},
         ],
         },
         

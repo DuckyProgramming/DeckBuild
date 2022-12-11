@@ -510,7 +510,7 @@ class card{
             case 446: this.desc+='If Construct\nis Unbuilt,\nBuild '+this.damage+' of\nConstruct'; break
             case 447: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Dexterity\nNext Turn'; break
             case 448: this.desc+='Add '+this.damage+' Block\nUpgrade '+this.alt+' Cards\nTemporariliy'; break
-            case 449: this.desc+='Upgrade '+this.damage+' Cards\nTemporariliy'; break
+            case 449: this.desc+='Upgrade '+this.damage+' Cards'; break
             case 450: this.desc+='Deal '+this.damage+' Damage\nUpgrade '+this.alt+' Cards\nTemporariliy'; break
             case 451: this.desc+='Build '+this.damage+'\nof Construct\nEvery Turn'; break
             case 452: this.desc+='If Construct is Built,\nConstruct Gains\n'+this.damage+' Regeneration'; break
@@ -589,7 +589,9 @@ class card{
             case 525: this.desc+='Deal '+this.damage+' Damage\nIf Fatal,\nApply '+this.alt+' Burn\nto All Enemies'; break
             case 526: this.desc+='Add '+this.damage+' Scrap Metals\nto Your Hand'; break
             case 527: this.desc+='Build '+this.damage+' of\nConstruct\nGain '+this.alt+' Block'; break
-            
+            case 528: this.desc+='Apply '+this.damage+' Sleep'; break
+            case 529: this.desc+='Upgrade '+this.damage+' Cards\nGain '+this.alt+' Buffer'; break
+            case 530: this.desc+='Add '+this.damage+'\nRandom Powers\nto Your Hand'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

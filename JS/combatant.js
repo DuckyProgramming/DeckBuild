@@ -34,7 +34,7 @@ class combatant{
 			[120,90,120],[60,120,60],[40,80,40],[230,170,230],[225,225,200],[155,180,190],[105,230,255],[40,180,185],[240,175,5],[200,175,110],
 			[140,160,0],[60,30,60],[255,225,255],[150,200,150],[255,200,255],[255,150,255],[200,150,200],[150,25,25],[225,210,135],[255,75,0],
 			[100,200,200],[100,100,100],[80,40,0],[180,180,30],[255,100,50],[240,240,60],[255,225,195],[180,180,100],[150,25,25],[150,25,25],
-			[200,125,50],[200,180,160],[120,200,60],[80,100,140],[255,150,50],[255,200,50]],name:[
+			[200,125,50],[200,180,160],[120,200,60],[80,100,140],[255,150,50],[255,200,50],[255,200,255]],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
 			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Stance Change Block','Enter Wrath Draw','Every Block Weak All','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Energy on Hit',
@@ -45,7 +45,7 @@ class combatant{
 			'Attack Per Card Played','Conscriction','Energy Gen Down','Next Turn Wrath','Next Turn Draw','Insight Per Turn','Free Attack','Grant Block on Hit','Energy Per Turn','Retain Cost Decrease',
 			'Lose Focus','Dark Charge on Death','Balance Buffer','Counter Stun Once','Resolve Per Turn','Resolve on Block','Debalance','Temporary Constant Damage','Retain Buffs','Counter Once',
 			'Reflect','Construct Health Maintain','Stat Change Immunity','Lose Combo','Counter Twice','Combo Build','Attack Draw','Combo on Block','Temporary Constant Damage Down','Temporary Constant Damage Down',
-			'Next Turn Strength','Build Per Turn','Next Turn Dodge','Build on Hit','Burn','Counter Burn'],class:[
+			'Next Turn Strength','Build Per Turn','Next Turn Dodge','Build on Hit','Burn','Counter Burn','Sleep'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
@@ -56,7 +56,7 @@ class combatant{
 			1,0,0,1,1,1,1,0,1,1,
 			0,1,1,1,1,1,0,0,1,1,
 			1,1,1,0,1,1,1,1,0,0,
-			1,1,1,1,0,1]}
+			1,1,1,1,0,1,0]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -2660,6 +2660,10 @@ class combatant{
 					if(this.type==3&&this.battle.relics.active[154]){
 						this.passiveEvoke(this.ammo[0],this.ammoDetail[0])
 					}
+				}
+				if(this.status.main[106]>0){
+					this.status.main[106]=0
+					this.calc.damage*=2
 				}
 				if(this.status.main[34]>0&&this.calc.damage>1){
 					this.calc.damage=1
