@@ -78,19 +78,19 @@ class group{
                 this.add(482,0,this.battle.player)*/
             break
             case 5:
-                /*for(e=0;e<4;e++){
+                for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Build\nWall'),0,this.battle.player)
-                this.add(findCard('Construct'),0,this.battle.player)*/
-                this.add(563,0,this.battle.player)
-                this.add(564,0,this.battle.player)
-                this.add(565,0,this.battle.player)
-                this.add(566,0,this.battle.player)
-                this.add(567,0,this.battle.player)
+                this.add(findCard('Construct'),0,this.battle.player)
+                /*this.add(598,0,this.battle.player)
+                this.add(599,0,this.battle.player)
+                this.add(600,0,this.battle.player)
+                this.add(601,0,this.battle.player)
+                this.add(602,0,this.battle.player)*/
             break
         }
     }
