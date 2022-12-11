@@ -584,6 +584,12 @@ class card{
             case 520: this.desc+='Add '+this.damage+' Block\nto Construct\nMaintain Block\nfor '+this.alt+' Turns'; break
             case 521: this.desc+='Add '+this.damage+' Block\nto Construct\nIncrease\nConstruct Max\nHealth by '+this.alt; break
             case 522: this.desc+='Construct Takes\nX Extra Turns'; break
+            case 523: this.desc+='Transform\nYour Hand'; break
+            case 524: this.desc+='If Construct\nis Built,\nConstruct Gains\n'+this.damage+' Buffer'; break
+            case 525: this.desc+='Deal '+this.damage+' Damage\nIf Fatal,\nApply '+this.alt+' Burn\nto All Enemies'; break
+            case 526: this.desc+='Add '+this.damage+' Scrap Metals\nto Your Hand'; break
+            case 527: this.desc+='Build '+this.damage+' of\nConstruct\nGain '+this.alt+' Block'; break
+            
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

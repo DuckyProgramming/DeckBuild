@@ -2681,6 +2681,26 @@ types={
             {damage:0,alt:0,cost:-1,attack:522,target:0,spec:3,class:2},
             {damage:0,alt:0,cost:-1,attack:522,target:0,spec:0,class:2},
         ],
+        },{name:'Revise',rarity:2,list:5,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:523,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:523,target:0,spec:2,class:2},
+        ],
+        },{name:'Construct\nBuffer',rarity:1,list:5,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:524,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:524,target:0,spec:0,class:2},
+        ],
+        },{name:'You'+"'"+'re\nFired',rarity:2,list:5,
+        stats:[
+            {damage:12,alt:6,cost:3,attack:525,target:1,spec:0,class:0},
+            {damage:20,alt:9,cost:3,attack:525,target:1,spec:0,class:0},
+        ],
+        },{name:'Metal\nSupply',rarity:1,list:5,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:526,target:0,spec:0,class:2},
+            {damage:4,alt:0,cost:1,attack:526,target:0,spec:2,class:2},
+        ],
         },
         
         
@@ -2814,6 +2834,11 @@ types={
         stats:[
             {damage:0,alt:0,cost:0,attack:390,target:0,spec:9,class:2},
             {damage:0,alt:0,cost:0,attack:390,target:0,spec:9,class:2},
+        ],
+        },{name:'Scrap\nMetal',rarity:0,list:5,
+        stats:[
+            {damage:8,alt:4,cost:0,attack:527,target:0,spec:9,class:9},
+            {damage:12,alt:6,cost:0,attack:527,target:0,spec:9,class:9},
         ],
         },
 

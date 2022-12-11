@@ -1048,8 +1048,17 @@ class battle{
         this.reserve.allUpgrade()
         this.discard.allUpgrade()
     }
+    allTransform(){
+        for(let g=0,lg=this.hand.cards.length;g<lg;g++){
+            h=floor(random(0,3))
+            this.hand.cards[g].type=listing.card[this.player][h][floor(random(0,listing.card[this.player][h].length))]
+            this.hand.cards[g].color=this.player
+            this.hand.cards[g]=reformCard(this.hand.cards[g])
+        }
+    }
     buildAlly(type){
         if(this.combatants[1].status.main[91]>0){
+            this.combatants[1].status.main[91]--
             this.remember[0]=this.combatants[1].life
         }else{
             this.remember[0]=0

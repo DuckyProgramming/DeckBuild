@@ -2619,6 +2619,35 @@ class attack{
                         this.battle.constructEffect()
                     }
                 break
+                case 523:
+                    this.battle.allTransform()
+                break
+                case 524:
+                    if(this.battle.combatants[1].life>0&&this.battle.combatants[1].built==1){
+                        this.battle.combatants[1].status.main[33]+=this.damage
+                    }
+                break
+                case 525:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].life<0){
+                        for(let g=0,lg=this.battle.combatants.length;g<lg;g++){
+                            if(this.battle.combatants[g].life>0&&this.battle.combatants[g].team==1){
+                                this.battle.combatants[g].status.main[104]+=this.damage
+                            }
+                        }
+                    }
+                break
+                case 526:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.hand.add(findCard('Scrap\nMetal'),0,0)
+                    }
+                break
+                case 527:
+                    if(this.battle.combatants[1].type>0&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=min(this.battle.combatants[1].life+this.damage,this.battle.combatants[1].base.life)
+                    }
+                    this.battle.combatants[0].block+=this.alt
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
