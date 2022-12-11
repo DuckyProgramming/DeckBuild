@@ -86,11 +86,11 @@ class group{
                 }
                 this.add(findCard('Build\nWall'),0,this.battle.player)
                 this.add(findCard('Construct'),0,this.battle.player)*/
-                this.add(443,0,this.battle.player)
-                this.add(535,0,this.battle.player)
-                this.add(536,0,this.battle.player)
-                this.add(537,0,this.battle.player)
-                this.add(538,0,this.battle.player)
+                this.add(444,0,this.battle.player)
+                this.add(539,0,this.battle.player)
+                this.add(540,0,this.battle.player)
+                this.add(541,0,this.battle.player)
+                this.add(542,0,this.battle.player)
             break
         }
     }

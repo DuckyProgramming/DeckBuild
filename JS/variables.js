@@ -2721,6 +2721,26 @@ types={
             {damage:2,alt:0,cost:0,attack:530,target:0,spec:0,class:2},
             {damage:3,alt:0,cost:0,attack:530,target:0,spec:0,class:2},
         ],
+        },{name:'Take\nCredit',rarity:1,list:5,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:531,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:1,attack:531,target:0,spec:3,class:2},
+        ],
+        },{name:'Secret\nStash',rarity:1,list:5,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:532,target:0,spec:3,class:2},
+            {damage:1,alt:1,cost:0,attack:532,target:0,spec:3,class:2},
+        ],
+        },{name:'On a\nRoll',rarity:1,list:5,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:533,target:0,spec:0,class:2},
+            {damage:4,alt:0,cost:1,attack:533,target:0,spec:0,class:2},
+        ],
+        },{name:'Lucky\nBullet',rarity:0,list:5,
+        stats:[
+            {damage:6,alt:1,cost:1,attack:534,target:1,spec:0,class:0},
+            {damage:8,alt:2,cost:1,attack:534,target:1,spec:0,class:0},
+        ],
         },
         
         

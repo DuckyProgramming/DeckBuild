@@ -592,6 +592,10 @@ class card{
             case 528: this.desc+='Apply '+this.damage+' Sleep'; break
             case 529: this.desc+='Upgrade '+this.damage+' Cards\nGain '+this.alt+' Buffer'; break
             case 530: this.desc+='Add '+this.damage+'\nRandom Powers\nto Your Hand'; break
+            case 531: this.desc+='Next Hit\nTaken Heals\nYou Instead'; break
+            case 532: this.desc+='Gain '+this.damage+' Energy'; if(this.alt>0){this.desc+='\nDraw '+this.alt+' Card'} break
+            case 533: this.desc+='Gain '+this.damage+' Strength\nRedraw Your Hand'; break
+            case 534: this.desc+='Deal '+this.damage+' Damage\nIf Fatal,\nDraw '+this.alt+' Cards\nCannot be\nCountered'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

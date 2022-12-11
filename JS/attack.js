@@ -2666,6 +2666,30 @@ class attack{
                         this.battle.hand.add(this.hold.list[h],0,types.card[this.hold.list[h]].list)
                     }
                 break
+                case 531:
+                    this.battle.combatants[0].status.main[107]+=this.damage
+                break
+                case 532:
+                    this.battle.mana.main+=this.damage
+                    if(this.alt>0){
+                        for(g=0;g<this.alt;g++){
+                            this.battle.draw()
+                        }
+                    }
+                break
+                case 533:
+                    this.battle.allDiscard()
+                    this.battle.turnDraw()
+                    this.battle.combatants[0].boost.main[0]+=this.damage
+                break
+                case 534:
+                    this.battle.combatants[this.target].take(this.damage,-1)
+                    if(this.battle.combatants[this.target].life<=0){
+                        for(g=0;g<this.alt;g++){
+                            this.battle.draw()
+                        }
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
