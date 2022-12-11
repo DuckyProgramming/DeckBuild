@@ -2636,17 +2636,17 @@ types={
             {damage:6,alt:0,cost:1,attack:513,target:0,spec:0,class:2},
             {damage:9,alt:0,cost:1,attack:513,target:0,spec:0,class:2},
         ],
-        },{name:'Lighter',rarity:1,list:5,
+        },{name:'Lighter',rarity:0,list:5,
         stats:[
             {damage:3,alt:0,cost:1,attack:514,target:1,spec:0,class:2},
             {damage:5,alt:0,cost:1,attack:514,target:1,spec:0,class:2},
         ],
-        },{name:'Flame\nThrower',rarity:1,list:5,
+        },{name:'Flame\nThrower',rarity:0,list:5,
         stats:[
             {damage:8,alt:4,cost:2,attack:515,target:1,spec:0,class:0},
             {damage:14,alt:6,cost:2,attack:515,target:1,spec:0,class:0},
         ],
-        },{name:'Firespin',rarity:1,list:5,
+        },{name:'Firespin',rarity:0,list:5,
         stats:[
             {damage:2,alt:0,cost:1,attack:516,target:0,spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:516,target:0,spec:0,class:2},
@@ -2660,6 +2660,26 @@ types={
         stats:[
             {damage:4,alt:2,cost:1,attack:518,target:0,spec:0,class:2},
             {damage:6,alt:3,cost:1,attack:518,target:0,spec:0,class:2},
+        ],
+        },{name:'Augment',rarity:0,list:5,
+        stats:[
+            {damage:4,alt:1,cost:0,attack:519,target:0,spec:0,class:2},
+            {damage:6,alt:1,cost:0,attack:519,target:0,spec:0,class:2},
+        ],
+        },{name:'Advanced\nAdhesive',rarity:0,list:5,
+        stats:[
+            {damage:24,alt:1,cost:2,attack:520,target:0,spec:0,class:1},
+            {damage:40,alt:1,cost:2,attack:520,target:0,spec:0,class:1},
+        ],
+        },{name:'Welding',rarity:1,list:5,
+        stats:[
+            {damage:6,alt:3,cost:1,attack:521,target:0,spec:0,class:1},
+            {damage:10,alt:5,cost:1,attack:521,target:0,spec:0,class:1},
+        ],
+        },{name:'Overcharge',rarity:2,list:5,
+        stats:[
+            {damage:0,alt:0,cost:-1,attack:522,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:-1,attack:522,target:0,spec:0,class:2},
         ],
         },
         

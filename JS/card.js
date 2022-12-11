@@ -580,6 +580,10 @@ class card{
             case 516: this.desc+='Apply '+this.damage+' Burn\nto All Enemies'; break
             case 517: this.desc+='Multiply Target'+"'"+'s\nBurn by '+this.damage; break
             case 518: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+' Burn'; break
+            case 519: this.desc+='Increase\nConstruct Max\nHealth by '+this.damage+'\nDraw '+this.alt+' Cards'; break
+            case 520: this.desc+='Add '+this.damage+' Block\nto Construct\nMaintain Block\nfor '+this.alt+' Turns'; break
+            case 521: this.desc+='Add '+this.damage+' Block\nto Construct\nIncrease\nConstruct Max\nHealth by '+this.alt; break
+            case 522: this.desc+='Construct Takes\nX Extra Turns'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

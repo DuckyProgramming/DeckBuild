@@ -370,6 +370,14 @@ function findEvent(name){
 	}
 	return -1
 }
+function findStatus(name){
+	for(i=0,li=current.combatants[0].status.name.length;i<li;i++){
+		if(current.combatants[0].status.name[i]==name){
+			return i
+		}
+	}
+	return -1
+}
 function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 	layer.translate(x,y)
 	layer.rotate(direction)

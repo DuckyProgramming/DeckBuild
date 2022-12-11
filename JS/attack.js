@@ -2596,6 +2596,29 @@ class attack{
                     this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[105]+=this.alt
                 break
+                case 519:
+                    this.battle.combatants[1].base.life+=this.damage
+                    for(g=0;g<this.alt;g++){
+                        this.battle.draw()
+                    }
+                break
+                case 520:
+                    if(this.battle.combatants[1].type>0&&this.battle.combatants[1].built==1){
+                        this.battle.combatants[1].addBlock(this.damage)
+                    }
+                    this.battle.combatants[1].status.main[47]+=this.alt
+                break
+                case 521:
+                    if(this.battle.combatants[1].type>0&&this.battle.combatants[1].built==1){
+                        this.battle.combatants[1].addBlock(this.damage)
+                    }
+                    this.battle.combatants[1].base.life+=this.alt
+                break
+                case 522:
+                    for(g=0;g<this.mana;g++){
+                        this.battle.constructEffect()
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
