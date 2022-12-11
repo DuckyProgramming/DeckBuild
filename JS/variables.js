@@ -2726,7 +2726,7 @@ types={
             {damage:1,alt:0,cost:2,attack:531,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:1,attack:531,target:0,spec:3,class:2},
         ],
-        },{name:'Secret\nStash',rarity:1,list:5,
+        },{name:'Secret\nStash',rarity:0,list:5,
         stats:[
             {damage:1,alt:0,cost:0,attack:532,target:0,spec:3,class:2},
             {damage:1,alt:1,cost:0,attack:532,target:0,spec:3,class:2},
@@ -2875,7 +2875,7 @@ types={
             {damage:0,alt:0,cost:0,attack:390,target:0,spec:9,class:2},
             {damage:0,alt:0,cost:0,attack:390,target:0,spec:9,class:2},
         ],
-        },{name:'Scrap\nMetal',rarity:0,list:5,
+        },{name:'Scrap\nMetal',rarity:-1,list:0,
         stats:[
             {damage:8,alt:4,cost:0,attack:527,target:0,spec:9,class:9},
             {damage:12,alt:6,cost:0,attack:527,target:0,spec:9,class:9},
