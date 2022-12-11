@@ -37,7 +37,7 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0}
         this.defaultRandom={attacked:0,orbs:0,shields:0}
         stage.identifier=types.combatant[this.player].identifiers
     }
@@ -76,6 +76,7 @@ class battle{
         this.random.upgrading=0
         this.random.exhausting=0
         this.random.transforming=0
+        this.random.forethinking=0
         this.combatants[0].resetUnique()
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
@@ -690,6 +691,8 @@ class battle{
                         if(this.combatants[1].type>0&&this.combatants[1].built==0){
                             this.combatants[1].life=min(this.combatants[1].life+this.combatants[e].status.main[f],this.combatants[1].base.life)
                         }
+                    }else if(f==109){
+                        this.takeAll(this.combatants[e].status.main[f],-1,1)
                     }
                 }
                 if((f==11||f==37)&&this.combatants[e].status.main[f]>0){
@@ -719,7 +722,7 @@ class battle{
                     f!=52&&f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&
                     f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79&&
                     f!=80&&f!=81&&f!=82&&f!=85&&f!=88&&f!=91&&f!=95&&f!=96&&f!=97&&f!=101&&
-                    f!=103&&f!=107){
+                    f!=103&&f!=107&&f!=108){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[f]
                     }else if(f==67){
@@ -734,6 +737,10 @@ class battle{
                         this.combatants[e].status.main[4]+=this.combatants[e].status.main[f]
                     }else if(f==102){
                         this.combatants[e].status.main[6]+=this.combatants[e].status.main[f]
+                    }else if(f==110){
+                        this.combatants[e].status.main[109]+=this.combatants[e].status.main[f]
+                    }else if(f==111){
+                        this.combatants[e].status.main[110]+=this.combatants[e].status.main[f]
                     }
                     this.combatants[e].status.main[f]=0
                 }
@@ -903,6 +910,9 @@ class battle{
         this.random.playClass[this.attack.class]++
         if(this.relics.active[151]&&this.random.playClass[0]>0&&this.random.playClass[1]>0&&this.random.playClass[2]>0){
             this.combatants[0].clearDebuff()
+        }
+        if(this.counter.played%5==0&&this.combatants[0].status.main[108]>0){
+            this.takeAll(this.combatants[0].status.main[108],-1,1)
         }
         if(this.counter.played>=6&&this.relics.active[136]){
             this.allDiscard()
@@ -1945,6 +1955,22 @@ class battle{
                 }
             break
             case 5:
+                this.calc.list=[]
+                for(g=0,lg=listing.card[15][0].length;g<lg;g++){
+                    if(types.card[listing.card[15][0][g]].stats[0].class==0){
+                        this.calc.list.push(listing.card[15][0][g])
+                    }
+                }
+                print(this.calc.list)
+                for(g=0;g<3;g++){
+                    if(this.calc.list.length>0){
+                        h=floor(random(0,this.calc.list.length))
+                        this.choice.cards.push(new card(this.layer,225+g*225,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
+                        this.calc.list.splice(h,1)
+                    }
+                }
+            break
+            case 6:
                 this.calc.list=copyList(listing.card[15][0])
                 for(g=0;g<3;g++){
                     if(this.calc.list.length>0){

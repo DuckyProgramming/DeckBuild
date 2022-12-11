@@ -381,7 +381,7 @@ class card{
             case 317: this.desc+='Remove "Exhaust"\nFrom All Shivs'; break
             case 318: this.desc+='Deal '+this.damage+' Damage\nScry '+this.alt+'\nDraw 1 Card'; break
             case 319: this.desc+='Deal '+(this.damage+1)+' Damage\nAdd '+this.damage+' Block\nScry '+this.alt; break
-            case 320: this.desc+='Choose Between\n3 Cards to Add\nto Your Hand'; if(this.damage>0){this.desc+='\nIt Costs 0\nThis Turn'} break
+            case 320: this.desc+='Choose Between\n3 Attacks to Add\nto Your Hand'; if(this.damage>0){this.desc+='\nIt Costs 0\nThis Turn'} break
             case 321: this.desc+='At the Start\nof Your Turn,\nScry '+this.damage; break
             case 322: this.desc+='When You Scry,\nAdd '+this.damage+' Block'; break
             case 323: this.desc+='Deal '+this.damage+' Damage\nShuffle a Last Path\ninto Draw Pile'; break
@@ -596,6 +596,13 @@ class card{
             case 532: this.desc+='Gain '+this.damage+' Energy'; if(this.alt>0){this.desc+='\nDraw '+this.alt+' Card'} break
             case 533: this.desc+='Gain '+this.damage+' Strength\nRedraw Your Hand'; break
             case 534: this.desc+='Deal '+this.damage+' Damage\nIf Fatal,\nDraw '+this.alt+' Cards\nCannot be\nCountered'; break
+            case 535: this.desc+='Apply '+this.damage+'\nWeak'; break
+            case 536: this.desc+='Apply '+this.damage+'\nVulnerable'; break
+            case 537: this.desc+='Choose Between\n3 Cards to Add\nto Your Hand\nIt Costs 0\nThis Turn'; break
+            case 538: this.desc+='Put a Card\non Top of\nYour Draw Pile\nIt Costs 0'; break
+            case 539: this.desc+='Add '+this.damage+' Random\nColorless Cards\nto Your hand'
+            case 540: this.desc+='When You Play 5\nCards in a Turn,\nDeal '+this.damage+' Damage\nto All Enemies'; break
+            case 541: this.desc+='Do '+this.damage+' Damage\nto All Enemies\nin 3 Turns'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

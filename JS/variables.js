@@ -2807,6 +2807,31 @@ types={
             {damage:30,alt:2,cost:0,attack:309,target:0,spec:0,class:1},
             {damage:40,alt:2,cost:0,attack:309,target:0,spec:0,class:1},
         ],
+        },{name:'Blind',rarity:1,list:0,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:535,target:1,spec:0,class:2},
+            {damage:4,alt:0,cost:0,attack:535,target:1,spec:0,class:2},
+        ],
+        },{name:'Trip',rarity:1,list:0,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:536,target:1,spec:0,class:2},
+            {damage:4,alt:0,cost:0,attack:536,target:1,spec:0,class:2},
+        ],
+        },{name:'Discovery',rarity:1,list:0,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:537,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:1,attack:537,target:0,spec:0,class:2},
+        ],
+        },{name:'Forethought',rarity:1,list:0,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:538,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:538,target:0,spec:2,class:2},
+        ],
+        },{name:'Jack of\nAll Trades',rarity:1,list:0,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:539,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:539,target:0,spec:0,class:2},
+        ],
         },{name:'Apotheosis',rarity:2,list:0,
         stats:[
             {damage:0,alt:0,cost:2,attack:58,target:0,spec:3,class:2},
@@ -2836,6 +2861,16 @@ types={
         stats:[
             {damage:6,alt:0,cost:2,attack:62,target:1,spec:10,class:0},
             {damage:9,alt:0,cost:1,attack:62,target:1,spec:2,class:0},
+        ],
+        },{name:'Panache',rarity:2,list:0,
+        stats:[
+            {damage:10,alt:0,cost:0,attack:540,target:0,spec:0,class:2},
+            {damage:15,alt:0,cost:0,attack:540,target:0,spec:0,class:2},
+        ],
+        },{name:'The\nBomb',rarity:2,list:0,
+        stats:[
+            {damage:40,alt:0,cost:2,attack:541,target:0,spec:0,class:2},
+            {damage:50,alt:0,cost:2,attack:541,target:0,spec:0,class:2},
         ],
         },
         

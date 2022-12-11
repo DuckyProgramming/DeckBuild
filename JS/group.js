@@ -10,7 +10,7 @@ class group{
         this.selcted=false
         this.trigger=false
         this.calc={level:0,cut:0,list:[]}
-        this.anim={discarding:0,doubling:0,upgrading:0,exhausting:0,transforming:0,selectCombo:false}
+        this.anim={discarding:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,selectCombo:false}
     }
     initial(type){
         /*for(e=0;e<20;e++){
@@ -86,11 +86,11 @@ class group{
                 }
                 this.add(findCard('Build\nWall'),0,this.battle.player)
                 this.add(findCard('Construct'),0,this.battle.player)*/
-                this.add(444,0,this.battle.player)
-                this.add(539,0,this.battle.player)
-                this.add(540,0,this.battle.player)
-                this.add(541,0,this.battle.player)
-                this.add(542,0,this.battle.player)
+                this.add(563,0,this.battle.player)
+                this.add(564,0,this.battle.player)
+                this.add(565,0,this.battle.player)
+                this.add(566,0,this.battle.player)
+                this.add(567,0,this.battle.player)
             break
         }
     }
@@ -260,12 +260,18 @@ class group{
         }else if(!this.battle.random.transforming&&this.anim.transforming>0){
             this.anim.transforming=round(this.anim.transforming*5-1)/5
         }
+        if(this.battle.random.forethinking&&this.anim.forethinking<1){
+            this.anim.forethinking=round(this.anim.forethinking*5+1)/5
+        }else if(!this.battle.random.forethinking&&this.anim.forethinking>0){
+            this.anim.forethinking=round(this.anim.forethinking*5-1)/5
+        }
         for(e=0,le=this.cards.length;e<le;e++){
             this.cards[e].displayExtra([255,0,0],this.anim.discarding)
             this.cards[e].displayExtra([255,100,255],this.anim.doubling)
             this.cards[e].displayExtra([255,255,50],this.anim.upgrading)
             this.cards[e].displayExtra([150,200,255],this.anim.exhausting)
             this.cards[e].displayExtra([100,255,100],this.anim.transforming)
+            this.cards[e].displayExtra([255,200,255],this.anim.forethinking)
             this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length,this.battle.discard.cards.length,this.battle.reserve.cards.length,this.battle.random)
         }
     }
@@ -580,6 +586,12 @@ class group{
                     this.cards[e].type=listing.card[this.battle.player][g][floor(random(0,listing.card[this.battle.player][g].length))]
                     this.cards[e].color=this.battle.player
                     this.cards[e]=reformCard(this.cards[e])
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.random.forethinking>0){
+                    this.battle.random.forethinking--
+                    this.cards[e].used=true
+                    this.cards[e].draw=true
+                    this.cards[e].cost=0
+                    this.cards[e].base.cost=0
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&(this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7||this.cards[e].list==10&&this.battle.relics.active[38]||this.cards[e].list==11&&this.battle.relics.active[108])){
                     this.cards[e].select=true
                     this.select=true

@@ -2690,6 +2690,33 @@ class attack{
                         }
                     }
                 break
+                case 535:
+                    this.battle.combatants[this.target].boost.main[0]-=this.damage
+                break
+                case 536:
+                    this.battle.combatants[this.target].boost.main[1]-=this.damage
+                break
+                case 537:
+                    transition.trigger=true
+                    transition.scene='choice'
+                    this.battle.setupChoice(0,0,6)
+                    this.battle.context=-5
+                break
+                case 538:
+                    this.battle.random.forethinking=this.damag
+                break
+                case 539:
+                    for(g=0;g<this.damage;g++){
+                        h=floor(random(1,3))
+                        this.battle.hand.add(listing.card[0][h][floor(random(0,listing.card[0][h].length))],0,0)
+                    }
+                break
+                case 540:
+                    this.battle.combatants[0].status.main[108]+=this.damage
+                break
+                case 541:
+                    this.battle.combatants[0].status.main[111]+=this.damage
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
