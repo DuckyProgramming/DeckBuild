@@ -450,7 +450,7 @@ class card{
             case 386: this.desc+='Gain '+this.damage+' Resolve\nPer Turn'; break
             case 387: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+'\nResolve'; break
             case 388: this.desc+='Gain '+this.damage+' Resolve\nWhen You\nBlock Damage'; break
-            case 389: this.desc+='Add a Banked\nBalance Card With\nCurrent Balance\nto Your Hand\nReset Balance'; break
+            case 389: this.desc+='Add a Banked\nBalance With\nCurrent Balance\nto Your Hand\nReset Balance'; break
             case 390: this.desc+=nfp(this.damage)+' Balance'; break
             case 391: this.desc+='Gain '+this.damage+' Strength\nUnbalance by '+this.alt+'\nEvery Turn'; break
             case 392: this.desc+='Lose '+this.damage+' Health\nGain '+this.alt+' Strength'; break
@@ -600,9 +600,15 @@ class card{
             case 536: this.desc+='Apply '+this.damage+'\nVulnerable'; break
             case 537: this.desc+='Choose Between\n3 Cards to Add\nto Your Hand\nIt Costs 0\nThis Turn'; break
             case 538: this.desc+='Put a Card\non Top of\nYour Draw Pile\nIt Costs 0'; break
-            case 539: this.desc+='Add '+this.damage+' Random\nColorless Cards\nto Your hand'
+            case 539: this.desc+='Add '+this.damage+' Random\nColorless Cards\nto Your Hand'; break
             case 540: this.desc+='When You Play 5\nCards in a Turn,\nDeal '+this.damage+' Damage\nto All Enemies'; break
             case 541: this.desc+='Do '+this.damage+' Damage\nto All Enemies\nin 3 Turns'; break
+            case 542: this.desc+='Apply '+this.damage+' Mark\nAll Enemies Take\nUncounterable\nDamage Equal\nto their Mark'; break
+            case 543: this.desc+='Target Takes\nUncounterable\nDamage Equal '+this.damage+'x\n to their Mark'; break
+            case 544: this.desc+='Shuffle a Beta\ninto Your\nDraw Pile'; break
+            case 545: this.desc+='Shuffle a Omega\ninto Your\nDraw Pile'; break
+            case 546: this.desc+='At the End\nof Your Turn,\nDeal '+this.damage+' Damage\nto All Enemies'; break
+            case 547: if(this.damage<=0){this.desc+='Shuffle an\nExpunger with\nX into Your\nDraw Pile'}else{this.desc+='Shuffle an\nExpunger with\nX+'+this.damage+' into Your\nDraw Pile'}; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

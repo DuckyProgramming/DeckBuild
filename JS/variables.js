@@ -776,7 +776,7 @@ types={
             {damage:6,alt:0,cost:2,attack:102,target:0,spec:0,class:2},
             {damage:6,alt:0,cost:2,attack:102,target:0,spec:2,class:2},
         ],
-        },{name:'Flame\nRing',rarity:0,list:2,
+        },{name:'Wreath\nof Flame',rarity:0,list:2,
         stats:[
             {damage:5,alt:0,cost:1,attack:118,target:0,spec:0,class:2},
             {damage:8,alt:0,cost:1,attack:118,target:0,spec:0,class:2},
@@ -960,6 +960,26 @@ types={
         stats:[
             {damage:1,alt:0,cost:1,attack:333,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:1,attack:333,target:0,spec:8,class:2},
+        ],
+        },{name:'Markup',rarity:0,list:2,
+        stats:[
+            {damage:8,alt:0,cost:1,attack:542,target:1,spec:0,class:0},
+            {damage:12,alt:0,cost:1,attack:542,target:1,spec:0,class:0},
+        ],
+        },{name:'Surgical\nAssault',rarity:1,list:2,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:543,target:1,spec:0,class:0},
+            {damage:5,alt:0,cost:1,attack:543,target:1,spec:0,class:0},
+        ],
+        },{name:'Alpha',rarity:2,list:2,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:544,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:1,attack:544,target:0,spec:8,class:2},
+        ],
+        },{name:'Conjure\nBlade',rarity:2,list:2,
+        stats:[
+            {damage:0,alt:0,cost:-1,attack:547,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:-1,attack:547,target:0,spec:3,class:2},
         ],
         },
         
@@ -2916,6 +2936,21 @@ types={
         stats:[
             {damage:8,alt:4,cost:0,attack:527,target:0,spec:9,class:9},
             {damage:12,alt:6,cost:0,attack:527,target:0,spec:9,class:9},
+        ],
+        },{name:'Beta',rarity:-1,list:0,
+        stats:[
+            {damage:0,alt:0,cost:2,attack:545,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:1,attack:545,target:0,spec:3,class:2},
+        ],
+        },{name:'Omega',rarity:-1,list:0,
+        stats:[
+            {damage:50,alt:0,cost:3,attack:546,target:0,spec:3,class:2},
+            {damage:60,alt:0,cost:3,attack:546,target:0,spec:3,class:2},
+        ],
+        },{name:'Expunger',rarity:-1,list:0,
+        stats:[
+            {damage:9,alt:1,cost:1,attack:3,target:1,spec:0,class:0},
+            {damage:15,alt:1,cost:1,attack:3,target:1,spec:0,class:0},
         ],
         },
 

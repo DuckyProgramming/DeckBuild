@@ -2717,6 +2717,34 @@ class attack{
                 case 541:
                     this.battle.combatants[0].status.main[111]+=this.damage
                 break
+                case 542:
+                    this.battle.combatants[this.target].status.main[112]+=this.damage
+                    for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0&&this.battle.combatants[g].team==1&&this.battle.combatants[g].status.main[112]>0){
+                            this.battle.combatants[g].take(this.battle.combatants[g].status.main[112],-1)
+                        }
+                    }
+                break
+                case 543:
+                    if(this.battle.combatants[this.target].status.main[112]>0){
+                        this.battle.combatants[this.target].take(this.battle.combatants[this.target].status.main[112]*this.damage,-1)
+                    }
+                break
+                case 544:
+                    this.battle.reserve.addShuffle(findCard('Beta'),0,0)
+                    this.battle.drop.addDrop(findCard('Beta'),0,0)
+                break
+                case 545:
+                    this.battle.reserve.addShuffle(findCard('Omega'),0,0)
+                    this.battle.drop.addDrop(findCard('Omega'),0,0)
+                break
+                case 546:
+                    this.battle.combatants[0].status.main[113]+=this.damage
+                break
+                case 547:
+                    this.battle.reserve.addShuffleAlt(findCard('Expunger'),0,0,this.mana+this.damage)
+                    this.battle.drop.addDrop(findCard('Expunger'),0,0)
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

@@ -41,11 +41,11 @@ class group{
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
                 this.add(findCard('Vigilance'),0,this.battle.player)*/
-                this.add(198,0,this.battle.player)
-                this.add(199,0,this.battle.player)
-                this.add(200,0,this.battle.player)
-                this.add(201,0,this.battle.player)
-                this.add(202,0,this.battle.player)
+                this.add(190,0,this.battle.player)
+                this.add(191,0,this.battle.player)
+                this.add(192,0,this.battle.player)
+                this.add(193,0,this.battle.player)
+                this.add(194,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -141,6 +141,21 @@ class group{
             lg--
         }
         this.add(type,level,color)
+        while(this.storage.cards.length>0){
+            this.cards.push(copyCard(this.storage.cards[0]))
+            this.storage.cards.splice(0,1)
+        }
+    }
+    addShuffleAlt(type,level,color,alt){
+        this.calc.cut=floor(random(0,this.cards.length))
+        for(let g=this.calc.cut,lg=this.cards.length;g<lg;g++){
+            this.storage.cards.push(this.cards[g])
+            this.cards.splice(g,1)
+            g--
+            lg--
+        }
+        this.add(type,level,color)
+        this.cards[this.cards.length-1].alt=alt
         while(this.storage.cards.length>0){
             this.cards.push(copyCard(this.storage.cards[0]))
             this.storage.cards.splice(0,1)
