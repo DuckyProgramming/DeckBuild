@@ -613,6 +613,10 @@ class card{
             case 549: this.desc+='Take an Extra Turn\nEnd Turn'; break
             case 550: this.desc+='Wrath: Deal\n'+this.damage+' Damage'; break
             case 551: this.desc+='Calm: Add\n'+this.damage+' Block'; break
+            case 552: this.desc+='Next '+this.damage+'\nAttacks Deal\n Double Damage\nEnter Wrath'; break
+            case 553: this.desc+='Gain '+this.damage+' Intangible\nEnter Calm'; break
+            case 554: this.desc+='Wrath: Gain\n'+this.damage+' Energy'; break
+            case 555: this.desc+='Calm: Gain\n'+this.damage+' Energy'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

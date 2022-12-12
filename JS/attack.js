@@ -2763,6 +2763,24 @@ class attack{
                         this.battle.combatants[0].addBlock(this.damage)
                     }
                 break
+                case 552:
+                    this.battle.combatants[0].status.main[2]+=this.damage
+                    this.battle.combatants[0].changeStance(2)
+                break
+                case 553:
+                    this.battle.combatants[0].status.main[12]+=this.damage
+                    this.battle.combatants[0].changeStance(1)
+                break
+                case 554:
+                    if(this.battle.combatants[0].stance==2){
+                        this.battle.mana.main++
+                    }
+                break
+                case 555:
+                    if(this.battle.combatants[0].stance==1){
+                        this.battle.mana.main++
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

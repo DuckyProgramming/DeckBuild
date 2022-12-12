@@ -1001,6 +1001,26 @@ types={
             {damage:10,alt:0,cost:1,attack:551,target:0,spec:0,class:1},
             {damage:14,alt:0,cost:1,attack:551,target:0,spec:0,class:1},
         ],
+        },{name:'Growing\nResentment',rarity:1,list:2,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:552,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:2,attack:552,target:0,spec:0,class:2},
+        ],
+        },{name:'Fading\nExistence',rarity:1,list:2,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:553,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:2,attack:553,target:0,spec:0,class:2},
+        ],
+        },{name:'Press',rarity:0,list:2,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:554,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:554,target:0,spec:0,class:2},
+        ],
+        },{name:'Rest',rarity:0,list:2,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:555,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:555,target:0,spec:0,class:2},
+        ],
         },
         
         
