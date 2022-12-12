@@ -33,19 +33,19 @@ class group{
                 this.add(122,0,this.battle.player)
             break
             case 2:
-                for(e=0;e<4;e++){
+                /*for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
-                this.add(findCard('Vigilance'),0,this.battle.player)
-                /*this.add(238,0,this.battle.player)
-                this.add(239,0,this.battle.player)
-                this.add(240,0,this.battle.player)
-                this.add(241,0,this.battle.player)
-                this.add(242,0,this.battle.player)*/
+                this.add(findCard('Vigilance'),0,this.battle.player)*/
+                this.add(198,0,this.battle.player)
+                this.add(199,0,this.battle.player)
+                this.add(200,0,this.battle.player)
+                this.add(201,0,this.battle.player)
+                this.add(202,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -91,6 +91,21 @@ class group{
                 this.add(600,0,this.battle.player)
                 this.add(601,0,this.battle.player)
                 this.add(602,0,this.battle.player)*/
+            break
+            case 6:
+                /*for(e=0;e<4;e++){
+                    this.add(1,0,this.battle.player)
+                }
+                for(e=0;e<4;e++){
+                    this.add(2,0,this.battle.player)
+                }*/
+                //this.add(findCard(''),0,this.battle.player)
+                //this.add(findCard(''),0,this.battle.player)
+                this.add(503,0,this.battle.player)
+                this.add(504,0,this.battle.player)
+                this.add(505,0,this.battle.player)
+                this.add(506,0,this.battle.player)
+                this.add(507,0,this.battle.player)
             break
         }
     }

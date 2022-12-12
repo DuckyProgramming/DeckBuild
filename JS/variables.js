@@ -5,12 +5,12 @@ types={
             {damage:0,alt:0,cost:0,attack:0,target:0,spec:0,class:0},
             {damage:0,alt:0,cost:0,attack:0,target:0,spec:0,class:0},
         ],
-        },{name:'Strike',rarity:0,list:6,
+        },{name:'Strike',rarity:0,list:7,
         stats:[
             {damage:6,alt:0,cost:1,attack:1,target:1,spec:0,class:0},
             {damage:9,alt:0,cost:1,attack:1,target:1,spec:0,class:0},
         ],
-        },{name:'Defend',rarity:0,list:6,
+        },{name:'Defend',rarity:0,list:7,
         stats:[
             {damage:5,alt:0,cost:1,attack:2,target:0,spec:0,class:1},
             {damage:8,alt:0,cost:1,attack:2,target:0,spec:0,class:1},
@@ -641,16 +641,6 @@ types={
             {damage:4,alt:2,cost:1,attack:51,target:1,spec:2,class:0},
             {damage:6,alt:2,cost:1,attack:51,target:1,spec:2,class:0},
         ],
-        },{name:'Spinning\nBack Strike',rarity:0,list:2,
-        stats:[
-            {damage:12,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
-            {damage:20,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
-        ],
-        },{name:'Blade\nDance',rarity:2,list:2,
-        stats:[
-            {damage:3,alt:0,cost:1,attack:26,target:0,spec:0,class:2},
-            {damage:4,alt:0,cost:1,attack:26,target:0,spec:0,class:2},
-        ],
         },{name:'Empty\nBody',rarity:0,list:2,
         stats:[
             {damage:7,alt:0,cost:1,attack:28,target:0,spec:0,class:1},
@@ -661,7 +651,7 @@ types={
             {damage:8,alt:0,cost:1,attack:29,target:1,spec:0,class:0},
             {damage:11,alt:0,cost:1,attack:29,target:1,spec:0,class:0},
         ],
-        },{name:'Empty\nBlade',rarity:0,list:2,
+        },{name:'Empty\nFist',rarity:0,list:2,
         stats:[
             {damage:9,alt:0,cost:1,attack:30,target:1,spec:0,class:0},
             {damage:14,alt:0,cost:1,attack:30,target:1,spec:0,class:0},
@@ -696,7 +686,7 @@ types={
             {damage:0,alt:0,cost:1,attack:100,target:0,spec:9,class:2},
             {damage:0,alt:0,cost:0,attack:100,target:0,spec:9,class:2},
         ],
-        },{name:'Deflect',rarity:0,list:2,
+        },{name:'Halt',rarity:0,list:2,
         stats:[
             {damage:3,alt:9,cost:0,attack:101,target:0,spec:0,class:1},
             {damage:4,alt:14,cost:0,attack:101,target:0,spec:0,class:1},
@@ -821,71 +811,6 @@ types={
             {damage:3,alt:0,cost:2,attack:124,target:0,spec:0,class:1},
             {damage:4,alt:0,cost:2,attack:124,target:0,spec:0,class:1},
         ],
-        },{name:'In the\nFolds',rarity:0,list:2,
-        stats:[
-            {damage:6,alt:1,cost:1,attack:125,target:0,spec:0,class:1},
-            {damage:6,alt:2,cost:1,attack:125,target:0,spec:0,class:1},
-        ],
-        },{name:'Dagger\nSpray',rarity:0,list:2,
-        stats:[
-            {damage:2,alt:2,cost:1,attack:126,target:0,spec:0,class:0},
-            {damage:4,alt:2,cost:1,attack:126,target:0,spec:0,class:0},
-        ],
-        },{name:'Dagger\nThrow',rarity:0,list:2,
-        stats:[
-            {damage:8,alt:2,cost:1,attack:127,target:1,spec:0,class:0},
-            {damage:12,alt:2,cost:1,attack:127,target:1,spec:0,class:0},
-        ],
-        },{name:'Backstab',rarity:0,list:2,
-        stats:[
-            {damage:11,alt:2,cost:1,attack:1,target:1,spec:8,class:0},
-            {damage:15,alt:2,cost:1,attack:1,target:1,spec:8,class:0},
-        ],
-        },{name:'Gamble',rarity:1,list:2,
-        stats:[
-            {damage:0,alt:0,cost:0,attack:128,target:0,spec:3,class:2},
-            {damage:0,alt:0,cost:0,attack:128,target:0,spec:0,class:2},
-        ],
-        },{name:'Blade\nSupply',rarity:1,list:2,
-        stats:[
-            {damage:1,alt:0,cost:1,attack:129,target:0,spec:0,class:2},
-            {damage:1,alt:0,cost:1,attack:129,target:0,spec:10,class:2},
-        ],
-        },{name:'Skewer',rarity:0,list:2,
-        stats:[
-            {damage:7,alt:1,cost:-1,attack:130,target:1,spec:0,class:0},
-            {damage:10,alt:1,cost:-1,attack:130,target:1,spec:0,class:0},
-        ],
-        },{name:'Thousand\nCuts',rarity:2,list:2,
-        stats:[
-            {damage:1,alt:0,cost:2,attack:131,target:0,spec:0,class:2},
-            {damage:2,alt:0,cost:2,attack:131,target:0,spec:0,class:2},
-        ],
-        },{name:'Dagger\nStorm',rarity:2,list:2,
-        stats:[
-            {damage:0,alt:0,cost:1,attack:132,target:0,spec:0,class:2},
-            {damage:1,alt:0,cost:1,attack:132,target:0,spec:0,class:2},
-        ],
-        },{name:'Adrenaline',rarity:2,list:2,
-        stats:[
-            {damage:1,alt:2,cost:0,attack:133,target:0,spec:3,class:2},
-            {damage:2,alt:2,cost:0,attack:133,target:0,spec:3,class:2},
-        ],
-        },{name:'After\nImage',rarity:1,list:2,
-        stats:[
-            {damage:1,alt:0,cost:1,attack:134,target:0,spec:0,class:2},
-            {damage:1,alt:0,cost:1,attack:134,target:0,spec:10,class:2},
-        ],
-        },{name:'Mass\nStab',rarity:2,list:2,
-        stats:[
-            {damage:13,alt:0,cost:1,attack:12,target:0,spec:3,class:0},
-            {damage:17,alt:0,cost:1,attack:12,target:0,spec:3,class:0},
-        ],
-        },{name:'Glass\nKnife',rarity:2,list:2,
-        stats:[
-            {damage:8,alt:2,cost:1,attack:135,target:1,spec:0,class:0},
-            {damage:12,alt:2,cost:1,attack:135,target:1,spec:0,class:0},
-        ],
         },{name:'Follow\nUp',rarity:0,list:2,
         stats:[
             {damage:7,alt:0,cost:1,attack:157,target:1,spec:0,class:0},
@@ -921,26 +846,6 @@ types={
             {damage:2,alt:1,cost:0,attack:163,target:0,spec:0,class:2},
             {damage:4,alt:1,cost:0,attack:163,target:0,spec:0,class:2},
         ],
-        },{name:'Survivor',rarity:0,list:2,
-        stats:[
-            {damage:8,alt:1,cost:1,attack:166,target:0,spec:0,class:1},
-            {damage:12,alt:1,cost:1,attack:166,target:0,spec:0,class:1},
-        ],
-        },{name:'Reflex',rarity:1,list:2,
-        stats:[
-            {damage:2,alt:0,cost:0,attack:167,target:0,spec:1,class:2},
-            {damage:3,alt:0,cost:0,attack:167,target:0,spec:1,class:2},
-        ],
-        },{name:'Tactician',rarity:1,list:2,
-        stats:[
-            {damage:1,alt:0,cost:0,attack:168,target:0,spec:1,class:2},
-            {damage:1,alt:0,cost:0,attack:168,target:0,spec:1,class:2},
-        ],
-        },{name:'Concentrate',rarity:1,list:2,
-        stats:[
-            {damage:3,alt:2,cost:0,attack:169,target:0,spec:0,class:2},
-            {damage:3,alt:2,cost:0,attack:169,target:0,spec:0,class:2},
-        ],
         },{name:'Amass',rarity:1,list:2,
         stats:[
             {damage:0,alt:0,cost:-1,attack:265,target:0,spec:0,class:2},
@@ -961,75 +866,10 @@ types={
             {damage:5,alt:2,cost:1,attack:268,target:0,spec:0,class:1},
             {damage:7,alt:3,cost:1,attack:268,target:0,spec:0,class:1},
         ],
-        },{name:'Neutralize',rarity:0,list:2,
-        stats:[
-            {damage:3,alt:1,cost:0,attack:34,target:1,spec:0,class:0},
-            {damage:4,alt:2,cost:0,attack:34,target:1,spec:0,class:0},
-        ],
-        },{name:'Backflip',rarity:0,list:2,
-        stats:[
-            {damage:4,alt:1,cost:1,attack:269,target:0,spec:0,class:1},
-            {damage:7,alt:1,cost:1,attack:269,target:0,spec:0,class:1},
-        ],
-        },{name:'Dodge\nRoll',rarity:0,list:2,
-        stats:[
-            {damage:4,alt:4,cost:1,attack:270,target:0,spec:0,class:1},
-            {damage:4,alt:4,cost:1,attack:270,target:0,spec:0,class:1},
-        ],
-        },{name:'Sneaky\nStrike',rarity:0,list:2,
-        stats:[
-            {damage:12,alt:2,cost:2,attack:271,target:1,spec:0,class:0},
-            {damage:16,alt:2,cost:2,attack:271,target:1,spec:0,class:0},
-        ],
         },{name:'Bearing',rarity:0,list:2,
         stats:[
             {damage:0,alt:0,cost:1,attack:280,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:0,attack:280,target:0,spec:0,class:2},
-        ],
-        },{name:'Accuracy',rarity:1,list:2,
-        stats:[
-            {damage:4,alt:0,cost:1,attack:281,target:0,spec:0,class:2},
-            {damage:6,alt:0,cost:0,attack:281,target:0,spec:0,class:2},
-        ],
-        },{name:'All-Out\nAttack',rarity:1,list:2,
-        stats:[
-            {damage:10,alt:2,cost:1,attack:282,target:0,spec:0,class:0},
-            {damage:14,alt:2,cost:1,attack:282,target:0,spec:0,class:0},
-        ],
-        },{name:'Closer',rarity:1,list:2,
-        stats:[
-            {damage:6,alt:0,cost:1,attack:283,target:1,spec:0,class:0},
-            {damage:8,alt:0,cost:1,attack:283,target:1,spec:0,class:0},
-        ],
-        },{name:'Masterful\nStab',rarity:2,list:2,
-        stats:[
-            {damage:12,alt:0,cost:-2,attack:284,target:1,spec:0,class:0},
-            {damage:16,alt:0,cost:-2,attack:284,target:1,spec:0,class:0},
-        ],
-        },{name:'Cook',rarity:2,list:2,
-        stats:[
-            {damage:1,alt:0,cost:1,attack:285,target:0,spec:3,class:2},
-            {damage:1,alt:0,cost:0,attack:285,target:0,spec:3,class:2},
-        ],
-        },{name:'Flechettes',rarity:1,list:2,
-        stats:[
-            {damage:4,alt:0,cost:1,attack:286,target:1,spec:0,class:0},
-            {damage:6,alt:0,cost:1,attack:286,target:1,spec:0,class:0},
-        ],
-        },{name:'Side\nHook',rarity:1,list:2,
-        stats:[
-            {damage:5,alt:1,cost:1,attack:287,target:1,spec:0,class:0},
-            {damage:8,alt:1,cost:1,attack:287,target:1,spec:0,class:0},
-        ],
-        },{name:'Backup\nBlade',rarity:1,list:2,
-        stats:[
-            {damage:1,alt:0,cost:0,attack:26,target:0,spec:2,class:2},
-            {damage:2,alt:0,cost:0,attack:26,target:0,spec:2,class:2},
-        ],
-        },{name:'Hold\nKnives',rarity:2,list:2,
-        stats:[
-            {damage:0,alt:0,cost:1,attack:317,target:0,spec:0,class:2},
-            {damage:0,alt:0,cost:0,attack:317,target:0,spec:0,class:2},
         ],
         },{name:'Cut Through\nFate',rarity:0,list:2,
         stats:[
@@ -1122,9 +962,6 @@ types={
             {damage:1,alt:0,cost:1,attack:333,target:0,spec:8,class:2},
         ],
         },
-        //gimmick disjoint
-        //outmaneuver
-        //alpha
         
         
         {name:'Charge',rarity:0,list:3,
@@ -2742,6 +2579,171 @@ types={
             {damage:8,alt:2,cost:1,attack:534,target:1,spec:0,class:0},
         ],
         },
+
+
+        {name:'Spinning\nBack Slice',rarity:0,list:6,
+        stats:[
+            {damage:12,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
+            {damage:20,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
+        ],
+        },{name:'Blade\nDance',rarity:2,list:6,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:26,target:0,spec:0,class:2},
+            {damage:4,alt:0,cost:1,attack:26,target:0,spec:0,class:2},
+        ],
+        },{name:'In the\nFolds',rarity:0,list:6,
+        stats:[
+            {damage:6,alt:1,cost:1,attack:125,target:0,spec:0,class:1},
+            {damage:6,alt:2,cost:1,attack:125,target:0,spec:0,class:1},
+        ],
+        },{name:'Dagger\nSpray',rarity:0,list:6,
+        stats:[
+            {damage:2,alt:2,cost:1,attack:126,target:0,spec:0,class:0},
+            {damage:4,alt:2,cost:1,attack:126,target:0,spec:0,class:0},
+        ],
+        },{name:'Dagger\nThrow',rarity:0,list:6,
+        stats:[
+            {damage:8,alt:2,cost:1,attack:127,target:1,spec:0,class:0},
+            {damage:12,alt:2,cost:1,attack:127,target:1,spec:0,class:0},
+        ],
+        },{name:'Backstab',rarity:0,list:6,
+        stats:[
+            {damage:11,alt:2,cost:1,attack:1,target:1,spec:8,class:0},
+            {damage:15,alt:2,cost:1,attack:1,target:1,spec:8,class:0},
+        ],
+        },{name:'Gamble',rarity:1,list:6,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:128,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:128,target:0,spec:0,class:2},
+        ],
+        },{name:'Blade\nSupply',rarity:1,list:6,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:129,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:129,target:0,spec:10,class:2},
+        ],
+        },{name:'Skewer',rarity:0,list:6,
+        stats:[
+            {damage:7,alt:1,cost:-1,attack:130,target:1,spec:0,class:0},
+            {damage:10,alt:1,cost:-1,attack:130,target:1,spec:0,class:0},
+        ],
+        },{name:'Thousand\nCuts',rarity:2,list:6,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:131,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:2,attack:131,target:0,spec:0,class:2},
+        ],
+        },{name:'Dagger\nStorm',rarity:2,list:6,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:132,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:132,target:0,spec:0,class:2},
+        ],
+        },{name:'Adrenaline',rarity:2,list:6,
+        stats:[
+            {damage:1,alt:2,cost:0,attack:133,target:0,spec:3,class:2},
+            {damage:2,alt:2,cost:0,attack:133,target:0,spec:3,class:2},
+        ],
+        },{name:'After\nImage',rarity:1,list:6,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:134,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:134,target:0,spec:10,class:2},
+        ],
+        },{name:'Mass\nStab',rarity:2,list:6,
+        stats:[
+            {damage:13,alt:0,cost:1,attack:12,target:0,spec:3,class:0},
+            {damage:17,alt:0,cost:1,attack:12,target:0,spec:3,class:0},
+        ],
+        },{name:'Glass\nKnife',rarity:2,list:6,
+        stats:[
+            {damage:8,alt:2,cost:1,attack:135,target:1,spec:0,class:0},
+            {damage:12,alt:2,cost:1,attack:135,target:1,spec:0,class:0},
+        ],
+        },{name:'Survivor',rarity:0,list:6,
+        stats:[
+            {damage:8,alt:1,cost:1,attack:166,target:0,spec:0,class:1},
+            {damage:12,alt:1,cost:1,attack:166,target:0,spec:0,class:1},
+        ],
+        },{name:'Reflex',rarity:1,list:6,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:167,target:0,spec:1,class:2},
+            {damage:3,alt:0,cost:0,attack:167,target:0,spec:1,class:2},
+        ],
+        },{name:'Tactician',rarity:1,list:6,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:168,target:0,spec:1,class:2},
+            {damage:1,alt:0,cost:0,attack:168,target:0,spec:1,class:2},
+        ],
+        },{name:'Concentrate',rarity:1,list:6,
+        stats:[
+            {damage:3,alt:2,cost:0,attack:169,target:0,spec:0,class:2},
+            {damage:3,alt:2,cost:0,attack:169,target:0,spec:0,class:2},
+        ],
+        },{name:'Neutralize',rarity:0,list:6,
+        stats:[
+            {damage:3,alt:1,cost:0,attack:34,target:1,spec:0,class:0},
+            {damage:4,alt:2,cost:0,attack:34,target:1,spec:0,class:0},
+        ],
+        },{name:'Backflip',rarity:0,list:6,
+        stats:[
+            {damage:4,alt:1,cost:1,attack:269,target:0,spec:0,class:1},
+            {damage:7,alt:1,cost:1,attack:269,target:0,spec:0,class:1},
+        ],
+        },{name:'Dodge\nRoll',rarity:0,list:6,
+        stats:[
+            {damage:4,alt:4,cost:1,attack:270,target:0,spec:0,class:1},
+            {damage:4,alt:4,cost:1,attack:270,target:0,spec:0,class:1},
+        ],
+        },{name:'Sneaky\nStrike',rarity:0,list:6,
+        stats:[
+            {damage:12,alt:2,cost:2,attack:271,target:1,spec:0,class:0},
+            {damage:16,alt:2,cost:2,attack:271,target:1,spec:0,class:0},
+        ],
+        },{name:'Accuracy',rarity:1,list:6,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:281,target:0,spec:0,class:2},
+            {damage:6,alt:0,cost:0,attack:281,target:0,spec:0,class:2},
+        ],
+        },{name:'All-Out\nAttack',rarity:1,list:6,
+        stats:[
+            {damage:10,alt:2,cost:1,attack:282,target:0,spec:0,class:0},
+            {damage:14,alt:2,cost:1,attack:282,target:0,spec:0,class:0},
+        ],
+        },{name:'Closer',rarity:1,list:6,
+        stats:[
+            {damage:6,alt:0,cost:1,attack:283,target:1,spec:0,class:0},
+            {damage:8,alt:0,cost:1,attack:283,target:1,spec:0,class:0},
+        ],
+        },{name:'Masterful\nStab',rarity:2,list:6,
+        stats:[
+            {damage:12,alt:0,cost:-2,attack:284,target:1,spec:0,class:0},
+            {damage:16,alt:0,cost:-2,attack:284,target:1,spec:0,class:0},
+        ],
+        },{name:'Cook',rarity:2,list:6,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:285,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:0,attack:285,target:0,spec:3,class:2},
+        ],
+        },{name:'Flechettes',rarity:1,list:6,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:286,target:1,spec:0,class:0},
+            {damage:6,alt:0,cost:1,attack:286,target:1,spec:0,class:0},
+        ],
+        },{name:'Side\nHook',rarity:1,list:6,
+        stats:[
+            {damage:5,alt:1,cost:1,attack:287,target:1,spec:0,class:0},
+            {damage:8,alt:1,cost:1,attack:287,target:1,spec:0,class:0},
+        ],
+        },{name:'Backup\nBlade',rarity:1,list:6,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:26,target:0,spec:2,class:2},
+            {damage:2,alt:0,cost:0,attack:26,target:0,spec:2,class:2},
+        ],
+        },{name:'Hold\nKnives',rarity:2,list:6,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:317,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:317,target:0,spec:0,class:2},
+        ],
+        },
+        //outmaneuver
+
         
         
         {name:'Empty',rarity:-1,list:-1,
