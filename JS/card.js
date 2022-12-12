@@ -609,6 +609,10 @@ class card{
             case 545: this.desc+='Shuffle a Omega\ninto Your\nDraw Pile'; break
             case 546: this.desc+='At the End\nof Your Turn,\nDeal '+this.damage+' Damage\nto All Enemies'; break
             case 547: if(this.damage<=0){this.desc+='Shuffle an\nExpunger with\nX into Your\nDraw Pile'}else{this.desc+='Shuffle an\nExpunger with\nX+'+this.damage+' into Your\nDraw Pile'}; break
+            case 548: this.desc+='Upgrade All\nCards Added\nThis Combat'; break
+            case 549: this.desc+='Take an Extra Turn\nEnd Turn'; break
+            case 550: this.desc+='Wrath: Deal\n'+this.damage+' Damage'; break
+            case 551: this.desc+='Calm: Add\n'+this.damage+' Block'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

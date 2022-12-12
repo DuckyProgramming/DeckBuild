@@ -41,11 +41,11 @@ class group{
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
                 this.add(findCard('Vigilance'),0,this.battle.player)*/
-                this.add(190,0,this.battle.player)
-                this.add(191,0,this.battle.player)
-                this.add(192,0,this.battle.player)
-                this.add(193,0,this.battle.player)
-                this.add(194,0,this.battle.player)
+                this.add(196,0,this.battle.player)
+                this.add(197,0,this.battle.player)
+                this.add(198,0,this.battle.player)
+                this.add(199,0,this.battle.player)
+                this.add(200,0,this.battle.player)
             break
             case 3:
                 for(e=0;e<4;e++){
@@ -111,7 +111,10 @@ class group{
     }
     add(type,level,color){
         this.calc.level=level
-        if(types.card[type].stats[level].class==0&&this.battle.relics.active[41]||types.card[type].stats[level].class==1&&this.battle.relics.active[42]||types.card[type].stats[level].class==2&&this.battle.relics.active[43]){
+        if(this.calc.level==0&&(types.card[type].stats[level].class==0&&this.battle.relics.active[41]||types.card[type].stats[level].class==1&&this.battle.relics.active[42]||types.card[type].stats[level].class==2&&this.battle.relics.active[43])){
+            this.calc.level++
+        }
+        if(this.calc.level==0&&this.battle.combatants[0].status.main[114]>0){
             this.calc.level++
         }
         if(types.card[type].list==10&&this.battle.relics.active[21]){

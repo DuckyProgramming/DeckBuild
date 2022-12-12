@@ -981,6 +981,26 @@ types={
             {damage:0,alt:0,cost:-1,attack:547,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:-1,attack:547,target:0,spec:3,class:2},
         ],
+        },{name:'Master\nReality',rarity:2,list:2,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:548,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:0,attack:548,target:0,spec:3,class:2},
+        ],
+        },{name:'Vault',rarity:2,list:2,
+        stats:[
+            {damage:1,alt:0,cost:3,attack:549,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:2,attack:549,target:0,spec:3,class:2},
+        ],
+        },{name:'Agitation',rarity:0,list:2,
+        stats:[
+            {damage:12,alt:0,cost:1,attack:550,target:1,spec:0,class:0},
+            {damage:16,alt:0,cost:1,attack:550,target:1,spec:0,class:0},
+        ],
+        },{name:'Preservation',rarity:0,list:2,
+        stats:[
+            {damage:10,alt:0,cost:1,attack:551,target:0,spec:0,class:1},
+            {damage:14,alt:0,cost:1,attack:551,target:0,spec:0,class:1},
+        ],
         },
         
         
@@ -1957,26 +1977,6 @@ types={
         stats:[
             {damage:9,alt:0,cost:0,attack:73,target:1,spec:11,class:0},
             {damage:15,alt:0,cost:0,attack:73,target:1,spec:11,class:0},
-        ],
-        },{name:'Fortify',rarity:0,list:4,
-        stats:[
-            {damage:1,alt:0,cost:1,attack:385,target:0,spec:0,class:2},
-            {damage:1,alt:0,cost:0,attack:385,target:0,spec:0,class:2},
-        ],
-        },{name:'Steadfast',rarity:1,list:4,
-        stats:[
-            {damage:1,alt:0,cost:3,attack:386,target:0,spec:3,class:2},
-            {damage:1,alt:0,cost:2,attack:386,target:0,spec:3,class:2},
-        ],
-        },{name:'Willpower',rarity:1,list:4,
-        stats:[
-            {damage:6,alt:2,cost:2,attack:387,target:0,spec:0,class:2},
-            {damage:11,alt:2,cost:2,attack:387,target:0,spec:0,class:2},
-        ],
-        },{name:'Decision',rarity:2,list:4,
-        stats:[
-            {damage:1,alt:0,cost:4,attack:388,target:0,spec:0,class:2},
-            {damage:1,alt:0,cost:3,attack:388,target:0,spec:0,class:2},
         ],
         },{name:'Bank\nBalance',rarity:1,list:4,
         stats:[
@@ -3167,6 +3167,28 @@ types={
             {damage:0,alt:0,cost:0,attack:-19,target:0,spec:1,class:-1},
         ],
         },
+
+        /*{name:'Fortify',rarity:0,list:4,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:385,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:385,target:0,spec:0,class:2},
+        ],
+        },{name:'Steadfast',rarity:1,list:4,
+        stats:[
+            {damage:1,alt:0,cost:3,attack:386,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:2,attack:386,target:0,spec:3,class:2},
+        ],
+        },{name:'Willpower',rarity:1,list:4,
+        stats:[
+            {damage:6,alt:2,cost:2,attack:387,target:0,spec:0,class:2},
+            {damage:11,alt:2,cost:2,attack:387,target:0,spec:0,class:2},
+        ],
+        },{name:'Decision',rarity:2,list:4,
+        stats:[
+            {damage:1,alt:0,cost:4,attack:388,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:3,attack:388,target:0,spec:0,class:2},
+        ],
+        },*/
     ],combatant:[
         {name:'',alt:'',life:0,height:0,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},//0
         {name:'Agent',alt:'',life:80,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MPKF-8589869056','George']},

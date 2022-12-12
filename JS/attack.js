@@ -40,7 +40,9 @@ class attack{
                     this.battle.combatants[0].addBlock(this.damage)
                 break
                 case 3: case 51: case 135:
-                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.alt>0){
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
                     this.attacks.push([0,this.alt*10-10,this.target,this.damage])
                 break
                 case 4:
@@ -2744,6 +2746,22 @@ class attack{
                 case 547:
                     this.battle.reserve.addShuffleAlt(findCard('Expunger'),0,0,this.mana+this.damage)
                     this.battle.drop.addDrop(findCard('Expunger'),0,0)
+                break
+                case 548:
+                    this.battle.combatants[0].status.main[114]+=this.damage
+                break
+                case 549:
+                    this.battle.combatants[0].status.main[115]+=this.damage
+                break
+                case 550:
+                    if(this.battle.combatants[0].stance==2){
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
+                break
+                case 551:
+                    if(this.battle.combatants[0].stance==1){
+                        this.battle.combatants[0].addBlock(this.damage)
+                    }
                 break
                 default:
             }
