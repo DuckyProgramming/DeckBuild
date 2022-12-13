@@ -2275,18 +2275,18 @@ types={
         ],
         },{name:'Methods',rarity:0,list:5,
         stats:[
-            {damage:1,alt:0,cost:0,attack:456,target:0,spec:0,class:4},
-            {damage:2,alt:0,cost:0,attack:456,target:0,spec:0,class:4},
+            {damage:1,alt:0,cost:0,attack:456,target:0,spec:0,class:0},
+            {damage:2,alt:0,cost:0,attack:456,target:0,spec:0,class:0},
         ],
         },{name:'Starter',rarity:0,list:5,
         stats:[
-            {damage:7,alt:1,cost:1,attack:457,target:1,spec:0,class:4},
-            {damage:10,alt:1,cost:1,attack:457,target:1,spec:0,class:4},
+            {damage:7,alt:1,cost:1,attack:457,target:1,spec:0,class:0},
+            {damage:10,alt:1,cost:1,attack:457,target:1,spec:0,class:0},
         ],
         },{name:'Drill',rarity:0,list:5,
         stats:[
-            {damage:8,alt:1,cost:1,attack:458,target:1,spec:0,class:4},
-            {damage:12,alt:1,cost:1,attack:458,target:1,spec:0,class:4},
+            {damage:8,alt:1,cost:1,attack:458,target:1,spec:0,class:0},
+            {damage:12,alt:1,cost:1,attack:458,target:1,spec:0,class:0},
         ],
         },{name:'Drinks',rarity:2,list:5,
         stats:[
