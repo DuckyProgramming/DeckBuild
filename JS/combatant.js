@@ -713,26 +713,35 @@ class combatant{
 					this.layer.rect(20,-66.5,24,5)
 				break
 				case 6:
-					this.layer.noFill()
-					this.layer.stroke(160,80,0,this.fade)
-					this.layer.strokeWeight(5)
-					this.layer.line(-4,-18,-8,0)
-					this.layer.line(4,-18,8,0)
-					this.layer.line(-8,-30,-18,-18)
-					this.layer.line(8,-30,18,-18)
+					this.layer.stroke(220,this.fade)
 					this.layer.strokeWeight(4)
-					this.layer.arc(-12,-24,16,12,0,180)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.stroke(240,this.fade)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
 					this.layer.noStroke()
-					this.layer.fill(170,85,0,this.fade)
-					this.layer.ellipse(0,-28,18,27)
-					this.layer.fill(190,95,0,this.fade)
-					this.layer.ellipse(0,-54,40,40)
-					this.layer.stroke(0,this.fade)
-					this.layer.strokeWeight(1)
-					this.layer.arc(9,-53,12,2,-180,0)
-					this.layer.strokeWeight(3)
-					this.layer.point(9-6,-62)
-					this.layer.point(9+6,-62)
+					this.layer.fill(220,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(240,this.fade)
+					this.layer.arc(0,-45,19,36,-180,0)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,4,4)
+					this.layer.ellipse(12,-72,4,4)
+					this.layer.fill(50,200,50,this.fade)
+					this.layer.rect(-6,-50,1,4)
+					this.layer.fill(200,50,50,this.fade)
+					this.layer.ellipse(-6,-54,5,5)
+					this.layer.fill(100,this.fade)
+					this.layer.quad(4,-53,0,-50,0,-56)
+					this.layer.quad(4,-53,8,-50,8,-56)
+					this.layer.stroke(240,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.fill(240,this.fade)
+					this.layer.line(-16,-84,16,-84)
+					this.layer.rect(0,-88,20,8,3)
 				break
 				case 7:
 					this.layer.stroke(225,25,25,this.fade)
@@ -1988,6 +1997,28 @@ class combatant{
 					this.layer.fill(120,160,200,this.fade)
 					this.layer.ellipse(0,-40*max(this.life/this.base.life,this.built),30,30*max(this.life/this.base.life,this.built))
 				break
+				case 67:
+					this.layer.noFill()
+					this.layer.stroke(160,80,0,this.fade)
+					this.layer.strokeWeight(5)
+					this.layer.line(-4,-18,-8,0)
+					this.layer.line(4,-18,8,0)
+					this.layer.line(-8,-30,-18,-18)
+					this.layer.line(8,-30,18,-18)
+					this.layer.strokeWeight(4)
+					this.layer.arc(-12,-24,16,12,0,180)
+					this.layer.noStroke()
+					this.layer.fill(170,85,0,this.fade)
+					this.layer.ellipse(0,-28,18,27)
+					this.layer.fill(190,95,0,this.fade)
+					this.layer.ellipse(0,-54,40,40)
+					this.layer.stroke(0,this.fade)
+					this.layer.strokeWeight(1)
+					this.layer.arc(9,-53,12,2,-180,0)
+					this.layer.strokeWeight(3)
+					this.layer.point(9-6,-62)
+					this.layer.point(9+6,-62)
+				break
 				/*case 35:
 					this.layer.translate(0,-1.25)
 					if(this.anim[1]<1){
@@ -2580,6 +2611,7 @@ class combatant{
 			}else{
 				this.calc.damage=damage
 				if(user>=0&&this.battle.combatants[user].status.main[2]>0){
+					this.battle.combatants[user].status.main[2]--
 					this.calc.damage*=2
 				}
 				if(this.status.main[12]>0&&this.calc.damage>1){

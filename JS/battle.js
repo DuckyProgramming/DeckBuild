@@ -1820,7 +1820,7 @@ class battle{
                     this.random.strengthBase++
                 }
                 for(e=0,le=this.objective.length;e<le;e++){
-                    if(this.objective[e][0]==0||this.objective[e][0]==1&&this.counter.turn<this.objective[e][1]||this.objective[e][0]==2&&this.counter.taken<this.objective[e][1]){
+                    if(this.objective[e][0]==0||this.objective[e][0]==1&&this.counter.turn<=this.objective[e][1]||this.objective[e][0]==2&&this.counter.taken<this.objective[e][1]){
                         switch(this.objective[e][2]){
                             case 0:
                                 transition.scene='choice'
@@ -3691,6 +3691,7 @@ class battle{
                     }
                 }
                 this.relics.shop=[]
+                this.relics.size=[]
                 this.calc.list3=this.relics.list
                 for(g=0;g<6;g++){
                     if(this.calc.list3.length>0){
@@ -3703,6 +3704,7 @@ class battle{
             break
             case 1:
                 this.relics.shop=[]
+                this.relics.size=[]
                 this.calc.list3=this.relics.list
                 for(g=0;g<2;g++){
                     this.costs.relic[g]=round(random(50,70))
@@ -3711,7 +3713,7 @@ class battle{
                     this.costs.relic[6+g]=round(random(100,120))
                     this.costs.relic[8+g]=round(random(180,200))
                     this.costs.relic[10+g]=round(random(90,110))
-                    }
+                }
                 for(g=0;g<12;g++){
                     if(this.calc.list3.length>0){
                         h=floor(random(0,this.calc.list3[floor(g/4)+floor(g/10)].length))

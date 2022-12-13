@@ -570,8 +570,8 @@ types={
         ],
         },{name:'Impasse',rarity:0,list:1,
         stats:[
-            {damage:8,alt:0,cost:2,attack:2,target:1,spec:4,class:1},
-            {damage:12,alt:0,cost:2,attack:2,target:1,spec:4,class:1},
+            {damage:8,alt:0,cost:2,attack:2,target:0,spec:4,class:1},
+            {damage:12,alt:0,cost:2,attack:2,target:0,spec:4,class:1},
         ],
         },{name:'Double\nCounter',rarity:1,list:1,
         stats:[
@@ -3216,7 +3216,7 @@ types={
         {name:'Executor',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MAEP-65091','Azis']},
         {name:'Creation',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','MPCO-SKR','Sakura']},
         {name:'Builder',alt:'',life:60,height:66,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Friend','Duck','____','Duckipo']},
-        {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
+        {name:'Gentleman',alt:'',life:70,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MPKF-8589869056','George']},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
         {name:'Slime',alt:'',life:30,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,'Stuck',0],class:0,buff:0},
@@ -3277,6 +3277,7 @@ types={
         {name:'Transformer',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Doubler',alt:'',life:50,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Exhauster',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
+        {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
         
     ],attack:[
         {class:0},//0
@@ -3322,8 +3323,8 @@ types={
             threshold:3,class:0,zone:0,
             objective:[[0,0,0,0]],
         },{
-            combatants:[6,6,6,0,0,0],
-            reinforce:[6,6,6,6,6],
+            combatants:[67,67,67,0,0,0],
+            reinforce:[67,67,67,67,67],
             threshold:6,class:-1,zone:0,
             objective:[[0,0,0,0]],
         },{
@@ -7019,11 +7020,11 @@ zones=[
     {
         encounters:[[],[],[]],
         special:[1,4,3,17,18,19,20,21,22,23,24,25,26,27,29,30],
-        events:[[],[],[],[],[],[]],
+        events:[[],[],[],[],[],[],[]],
     },{
         encounters:[[],[],[]],
         special:[],
-        events:[[],[],[],[],[],[]],
+        events:[[],[],[],[],[],[],[]],
     },
 ]
 stage={scale:0,quality:1,scene:'menu',playerNumber:5,playerCombatantNumber:1,identifier:['']}
