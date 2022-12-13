@@ -2781,8 +2781,47 @@ types={
             {damage:0,alt:0,cost:1,attack:317,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:0,attack:317,target:0,spec:0,class:2},
         ],
+        },{name:'Tap',rarity:0,list:6,
+        stats:[
+            {damage:3,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
+            {damage:5,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
+        ],
+        },{name:'Berlin\nKey',rarity:1,list:6,
+        stats:[
+            {damage:1,alt:1,cost:0,attack:556,target:0,spec:0,class:2},
+            {damage:2,alt:1,cost:0,attack:556,target:0,spec:0,class:2},
+        ],
+        },{name:'The Best\nDefense',rarity:0,list:6,
+        stats:[
+            {damage:9,alt:6,cost:2,attack:557,target:1,spec:0,class:0},
+            {damage:12,alt:9,cost:2,attack:557,target:1,spec:0,class:0},
+        ],
+        },{name:'Bap',rarity:0,list:6,
+        stats:[
+            {damage:5,alt:0,cost:-1,attack:558,target:1,spec:0,class:0},
+            {damage:7,alt:0,cost:-1,attack:558,target:1,spec:0,class:0},
+        ],
+        },{name:'Mystery\nDust',rarity:1,list:6,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:559,target:1,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:559,target:1,spec:0,class:2},
+        ],
+        },{name:'Buster',rarity:0,list:6,
+        stats:[
+            {damage:5,alt:0,cost:1,attack:560,target:1,spec:0,class:0},
+            {damage:8,alt:0,cost:1,attack:560,target:1,spec:0,class:0},
+        ],
+        },{name:'Square\nStrike',rarity:1,list:6,
+        stats:[
+            {damage:3,alt:0,cost:-1,attack:561,target:1,spec:0,class:0},
+            {damage:5,alt:0,cost:-1,attack:561,target:1,spec:0,class:0},
+        ],
+        },{name:'Chisel',rarity:1,list:6,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:562,target:1,spec:0,class:0},
+            {damage:7,alt:0,cost:1,attack:562,target:1,spec:0,class:0},
+        ],
         },
-        //outmaneuver
 
         
         
@@ -2971,6 +3010,11 @@ types={
         stats:[
             {damage:9,alt:1,cost:1,attack:3,target:1,spec:0,class:0},
             {damage:15,alt:1,cost:1,attack:3,target:1,spec:0,class:0},
+        ],
+        },{name:'Chip',rarity:-1,list:0,
+        stats:[
+            {damage:2,alt:2,cost:0,attack:563,target:1,spec:0,class:0},
+            {damage:2,alt:2,cost:0,attack:563,target:1,spec:0,class:0},
         ],
         },
 

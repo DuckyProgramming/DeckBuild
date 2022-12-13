@@ -617,6 +617,14 @@ class card{
             case 553: this.desc+='Gain '+this.damage+' Intangible\nEnter Calm'; break
             case 554: this.desc+='Wrath: Gain\n'+this.damage+' Energy'; break
             case 555: this.desc+='Calm: Gain\n'+this.damage+' Energy'; break
+            case 556: this.desc+='Duplicate Next\n'+this.damage+' Cards Played\nDiscard '+this.alt+' Random\nCard'; break
+            case 557: this.desc+='Deal '+this.damage+' Damage\nCounter '+this.alt+' All'; break
+            case 558: this.desc+='Deal '+this.damage+' Damage\nHave 1 Energy'; break
+            case 559: this.desc+='Apply '+this.damage+'\nRandom Status'; break
+            case 560: this.desc+='Deal '+this.damage+' Damage\nAlways Returns'; break
+            case 561: this.desc+='Deal '+this.damage+'(X*X)\nDamage'; break
+            case 562: this.desc+='Deal '+this.damage+' Damage\nShuffle a Chip\ninto Your\nDraw Pile'; break
+            case 563: this.desc+='Deal '+this.damage+' Damage\nAdd '+this.alt+' Block'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

@@ -342,6 +342,10 @@ class battle{
         }
     }
     draw(){
+        if(this.reserve.cards.length<=0){
+            this.return()
+            this.reserve.shuffle()
+        }
         if(this.reserve.cards.length>0){
             this.drawEffect(this.reserve.cards[0].attack)
             this.hand.cards.push(copyCard(this.reserve.cards[0]))
@@ -353,10 +357,6 @@ class battle{
             }
         }else{
             this.hand.add(findCard('Empty'),0,0)
-        }
-        if(this.reserve.cards.length<=0){
-            this.return()
-            this.reserve.shuffle()
         }
     }
     drawEffect(attack){
@@ -1701,11 +1701,25 @@ class battle{
         if(this.relics.active[77]&&this.combatants[0].boost.main[2]<0){
             this.combatants[0].boost.main[2]=0
         }
-        if(this.relics.active[92]&&this.hand.cards.length<=0){
-            this.draw()
-        }
-        if(this.player==6&&this.hand.cards.length<3&&this.reserve.cards.length>0){
-            this.draw()
+        if(this.turn==0){
+            if(this.relics.active[92]&&this.hand.cards.length<=0){
+                this.draw()
+            }
+            if(this.player==6&&this.hand.cards.length<3){
+                if(this.reserve.cards.length<=0){
+                    for(g=0,lg=this.discard.cards.length;g<lg;g++){
+                        if(this.discard.cards[g].attack==560){
+                            this.reserve.cards.push(this.discard.cards[g])
+                            this.discard.cards.splice(g,1)
+                            g--
+                            lg--
+                        }
+                    }
+                }
+                if(this.reserve.cards.length>0){
+                    this.draw()
+                }
+            }
         }
         this.counter.enemies.alive=0
         for(e=0,le=this.combatants.length;e<le;e++){

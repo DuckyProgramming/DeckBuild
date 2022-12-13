@@ -33,7 +33,7 @@ class attack{
                 case -22:
                     this.battle.currency.money-=10
                 break
-                case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329:
+                case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329: case 560:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2: case 231: case 241: case 268:
@@ -2780,6 +2780,39 @@ class attack{
                     if(this.battle.combatants[0].stance==1){
                         this.battle.mana.main++
                     }
+                break
+                case 556:
+                    this.battle.randomDiscard()
+                    this.battle.random.doubling=this.damage
+                break
+                case 557:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].status.main[0]+=this.alt
+                break
+                case 558:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.mana.main=1
+                break
+                case 559:
+                    this.hold.list=[]
+                    for(g=0,lg=this.battle.combatants[this.target].status.class.length;g<lg;g++){
+                        if(this.battle.combatants[this.target].status.class[g]==0){
+                            this.hold.list.push(g)
+                        }
+                    }
+                    this.battle.combatants[this.target].status.main[this.hold.list[floor(random(0,this.hold.list.length))]]+=this.damage
+                break
+                case 561:
+                    this.battle.combatants[this.target].take(this.damage*this.mana*this.mana,this.user)
+                break
+                case 562:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.reserve.addShuffle(findCard('Chip'),0,0)
+                    this.battle.drop.addDrop(findCard('Chip'),0,0)
+                break
+                case 563:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].addBlock(this.damage)
                 break
                 default:
             }
