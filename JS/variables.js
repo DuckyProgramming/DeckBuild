@@ -2821,7 +2821,16 @@ types={
             {damage:4,alt:0,cost:1,attack:562,target:1,spec:0,class:0},
             {damage:7,alt:0,cost:1,attack:562,target:1,spec:0,class:0},
         ],
+        },{name:'Crescent',rarity:-1,list:0,
+        stats:[
+            {damage:7,alt:7,cost:-1,attack:564,target:1,spec:0,class:0},
+            {damage:10,alt:10,cost:-1,attack:564,target:1,spec:0,class:0},
+        ],
         },
+        //iron wave
+        //anger
+        //clash
+        //carnage
 
         
         

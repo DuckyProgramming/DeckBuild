@@ -625,6 +625,7 @@ class card{
             case 561: this.desc+='Deal '+this.damage+'(X*X)\nDamage'; break
             case 562: this.desc+='Deal '+this.damage+' Damage\nShuffle a Chip\ninto Your\nDraw Pile'; break
             case 563: this.desc+='Deal '+this.damage+' Damage\nAdd '+this.alt+' Block'; break
+            case 564: this.desc+='If X is Even,\nDeal '+this.damage+'X Damage\nIf X is Odd,\nAdd '+this.alt+'X Block'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

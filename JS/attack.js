@@ -2814,6 +2814,13 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.combatants[0].addBlock(this.damage)
                 break
+                case 564:
+                    if(this.mana%2==0){
+                        this.battle.combatants[this.target].take(this.damage*this.mana,this.user)
+                    }else{
+                        this.battle.combatants[0].addBlock(this.alt*this.mana)
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

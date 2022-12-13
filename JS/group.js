@@ -101,9 +101,9 @@ class group{
                 }*/
                 //this.add(findCard(''),0,this.battle.player)
                 //this.add(findCard(''),0,this.battle.player)
+                this.add(558,0,this.battle.player)
                 this.add(559,0,this.battle.player)
                 this.add(560,0,this.battle.player)
-                this.add(561,0,this.battle.player)
             break
         }
     }
@@ -570,7 +570,7 @@ class group{
                             this.cards[e].used=true
                             this.trigger=false
                         }
-                    }else if(this.cards[e].target==0){
+                    }else if(this.cards[e].target==0||(this.cards[e].attack==564&&this.battle.attack.mana%2==1)){
                         this.battle.playCard()
                         this.battle.attack.update(this.cards[e].attack,this.cards[e].level,0)
                         this.battle.afterPlayCard()
