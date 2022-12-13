@@ -18,7 +18,7 @@ class battle{
         this.anim={turn:0,lost:0,end:0}
         this.turn=0
         this.turnTimer=0
-        this.drawAmount=5
+        this.drawAmount=0
         this.calc={list:[]}
         this.remember=[0,0,0,0,0]
         this.currency={money:100}
@@ -128,6 +128,11 @@ class battle{
             if(g>=1&&types.potion[g].rarity>=0&&(types.potion[g].list==0||types.potion[g].list==this.player)){
                 this.potions.list[types.potion[g].rarity].push(g)
             }
+        }
+        if(this.player==6){
+            this.drawAmount=3
+        }else{
+            this.drawAmount=5
         }
     }
     actComplete(){
@@ -1697,6 +1702,9 @@ class battle{
             this.combatants[0].boost.main[2]=0
         }
         if(this.relics.active[92]&&this.hand.cards.length<=0){
+            this.draw()
+        }
+        if(this.player==6&&this.hand.cards.length<3&&this.reserve.cards.length>0){
             this.draw()
         }
         this.counter.enemies.alive=0
