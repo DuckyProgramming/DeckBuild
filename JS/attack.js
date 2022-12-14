@@ -2821,6 +2821,50 @@ class attack{
                         this.battle.combatants[0].addBlock(this.alt*this.mana)
                     }
                 break
+                case 566:
+                    this.hold.int=0
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].class!=0&&!this.battle.hand.cards[g].trigger){
+                            this.hold.int=1
+                        }
+                    }
+                    if(this.hold.int==0){
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
+                break
+                case 567:
+                    this.battle.combatants[0].boost.main[0]+=this.damage
+                    this.battle.combatants[0].status.main[7]+=this.damage-1
+                break
+                case 568:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                        this.battle.hand.cards[this.battle.hand.cards.length-1].cost=0
+                    }
+                break
+                case 569:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.battle.context=12
+                break
+                case 570:
+                    this.hold.int=0
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].class==0&&!this.battle.hand.cards[g].trigger){
+                            this.hold.int++
+                        }
+                    }
+                    this.battle.combatants[this.target].take(this.damage+this.alt*this.hold.int,this.user)
+                break
+                case 571:
+                    this.battle.takeAll(this.damage,this.user,1)
+                    for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0&&this.battle.combatants[g].team==1){
+                            this.battle.combatants[g].boost.main[1]-=this.alt
+                        }
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

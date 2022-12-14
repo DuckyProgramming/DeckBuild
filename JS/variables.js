@@ -70,8 +70,8 @@ types={
         ],
         },{name:'Multi\nStrike',rarity:0,list:1,
         stats:[
-            {damage:6,alt:0,cost:2,attack:12,target:0,spec:0,class:0},
-            {damage:9,alt:0,cost:2,attack:12,target:0,spec:0,class:0},
+            {damage:8,alt:0,cost:2,attack:12,target:0,spec:0,class:0},
+            {damage:14,alt:0,cost:2,attack:12,target:0,spec:0,class:0},
         ],
         },{name:'Head\nSmash',rarity:1,list:1,
         stats:[
@@ -2822,11 +2822,47 @@ types={
             {damage:6,alt:0,cost:0,attack:565,target:1,spec:0,class:0},
             {damage:8,alt:0,cost:0,attack:565,target:1,spec:0,class:0},
         ],
+        },{name:'Clash',rarity:0,list:6,
+        stats:[
+            {damage:14,alt:0,cost:0,attack:566,target:1,spec:0,class:0},
+            {damage:18,alt:0,cost:0,attack:566,target:1,spec:0,class:0},
+        ],
+        },{name:'Carnage',rarity:1,list:6,
+        stats:[
+            {damage:20,alt:0,cost:2,attack:1,target:1,spec:13,class:0},
+            {damage:28,alt:0,cost:2,attack:1,target:1,spec:13,class:0},
+        ],
+        },{name:'Pulsate',rarity:0,list:6,
+        stats:[
+            {damage:3,alt:0,cost:0,attack:567,target:1,spec:13,class:0},
+            {damage:5,alt:0,cost:0,attack:567,target:1,spec:13,class:0},
+        ],
+        },{name:'Havoc',rarity:0,list:6,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:568,target:0,spec:3,class:2},
+            {damage:2,alt:0,cost:0,attack:568,target:0,spec:3,class:2},
+        ],
+        },{name:'Recollection',rarity:0,list:3,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:569,target:1,spec:0,class:0},
+            {damage:6,alt:0,cost:1,attack:569,target:1,spec:0,class:0},
+        ],
+        },{name:'Combined\nStrike',rarity:0,list:6,
+        stats:[
+            {damage:6,alt:2,cost:1,attack:570,target:1,spec:0,class:0},
+            {damage:6,alt:3,cost:1,attack:570,target:1,spec:0,class:0},
+        ],
+        },{name:'Flying\nSpikes',rarity:0,list:6,
+        stats:[
+            {damage:3,alt:3,cost:1,attack:247,target:0,spec:2,class:0},
+            {damage:3,alt:3,cost:1,attack:247,target:0,spec:2,class:0},
+        ],
+        },{name:'Thunderclap',rarity:0,list:6,
+        stats:[
+            {damage:3,alt:1,cost:1,attack:571,target:0,spec:2,class:0},
+            {damage:5,alt:1,cost:1,attack:571,target:0,spec:2,class:0},
+        ],
         },
-        //iron wave
-        //anger
-        //clash
-        //carnage
         //opening double
 
 

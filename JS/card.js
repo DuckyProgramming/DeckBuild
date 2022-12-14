@@ -326,7 +326,7 @@ class card{
             case 262: this.desc+='Add '+this.damage+' Block\nAdd '+this.alt+' Conditioning'; break
             case 263: this.desc+='Add '+this.damage+' Conditioning\nTake '+this.alt+' Damage'; break
             case 264: this.desc+='Decrease Cost of\nAll Combo-Costing\nCards by '+this.damage; break
-            case 265: if(this.damage==0){this.desc+='Add a Miracle+\nto Your Hand\nfor the Next\nX Turns'}else{this.desc+='Add a Miracle+\nto Your Hand\nFor the Next\nX+'+this.damage+' Turns'}; break
+            case 265: if(this.damage==0){this.desc+='Add a Miracle+\nto Your Hand\nfor the Next\nX Turns'}else{this.desc+='Add a Miracle+\nto Your Hand\nfor the Next\nX+'+this.damage+' Turns'}; break
             case 266: this.desc+='Gain '+this.damage+' Strength\nGain '+this.damage+' Dexterity\nGain '+this.alt+' Less\nEnergy Per Turn'; break
             case 267: this.desc+='Gain '+this.damage+' Block\nPer Turn When\nin Calm'; break
             case 268: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Block\nWhen Retained'; break
@@ -365,7 +365,7 @@ class card{
             case 301: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Dodge\nCause an Enemy\nto Attack'; break
             case 302: this.desc+='Take '+this.damage+' Damage\nGain '+this.alt+' Strength'; break
             case 303: this.desc+='Discard 1 Card\nAdd '+this.damage+' Random\nCards'; break
-            case 304: this.desc+='Gain '+this.damage+' Strength\nCannot Add Block\nFor '+this.alt+' Turns'; break
+            case 304: this.desc+='Gain '+this.damage+' Strength\nCannot Add Block\nfor '+this.alt+' Turns'; break
             case 305: this.desc+='Add '+this.damage+' Block\nCounter Once With\nPull Collision\nfor '+this.alt+' Damage'; break
             case 306: this.desc+='Counter '+this.damage+' All\nCounter Throw'; break
             case 307: if(this.alt>0){this.desc+='Add '+this.damage+' Random\nSkill to Your Hand\nIt Costs 0'}else{this.desc+='Add '+this.damage+' Random\nSkill to Your Hand\nIt Costs 0\nThis Turn'}; break
@@ -404,7 +404,7 @@ class card{
             case 340: this.desc+='Gain '+this.damage+' Focus\nLose '+this.alt+' Focus\nEvery Turn'; break
             case 341: this.desc+='Return All Cards\nto Draw Pile\nDraw '+this.damage+' Cards'; break
             case 342: this.desc+='Evoke 1st Charge\n'+this.damage+' Times\nDraw '+this.alt+' Cards'; break
-            case 343: this.desc+='Evoke 1st Charge\nFor Every Enemy'; break
+            case 343: this.desc+='Evoke 1st Charge\nfor Every Enemy'; break
             case 344: this.desc+='Evoke Last Charge\n'+this.damage+' Times'; break
             case 345: this.desc+='Add Block Equal\nto '+this.damage+'x Number of\nShield Charges Held\nThis Combat\n('+random.shields+')'; break
             case 346: this.desc+='Add '+this.damage+' Block\nHold '+this.alt+'\nShield Charges'; break
@@ -422,7 +422,7 @@ class card{
             case 358: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nFlame Charges'; break
             case 359: this.desc+='Hold '+this.damage+'\nFlame Charge\nPer Burn in\nYour Deck'; break
             case 360: this.desc+='Hold '+this.damage+'\nRandom Charges'; break
-            case 361: if(this.damage>0){this.desc+='End Your Turn\nRetain Your Energy\nFor Next Turn\nGain '+this.damage+' Energy'}else{this.desc+='End Your Turn\nRetain Your Energy\nFor Next Turn'}; break
+            case 361: if(this.damage>0){this.desc+='End Your Turn\nRetain Your Energy\nfor Next Turn\nGain '+this.damage+' Energy'}else{this.desc+='End Your Turn\nRetain Your Energy\nfor Next Turn'}; break
             case 362: this.desc+='Gain '+this.damage+' Energy\nCause an Enemy\nto Attack'; break
             case 363: this.desc+='Evoke 1st Charge\nHold that Charge\n'+this.damage+' Times'; break
             case 364: this.desc+='If 1st Charge\nis a Shield\nCharge, Evoke it,\nAdding '+this.damage+' Buffer'; break
@@ -627,6 +627,12 @@ class card{
             case 563: this.desc+='Deal '+this.damage+' Damage\nAdd '+this.alt+' Block'; break
             case 564: this.desc+='If X is Even,\nDeal '+this.damage+'X Damage\nIf X is Odd,\nAdd '+this.alt+'X Block'; break
             case 565: this.desc+='Deal '+this.damage+' Damage\nAdd a Copy of\nThis Card to Your\nDiscard Pile'; break
+            case 566: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nNon-Attacks Are\nin Your Hand'; break
+            case 567: this.desc+='Gain '+this.damage+'\nTemporary Strength'; break
+            case 568: this.desc+='Draw '+this.damage+' Cards\nThey Cost 0\nTemporarily'; break
+            case 569: this.desc+='Deal '+this.damage+' Damage\nPut a\nDiscarded Card\ninto Your Hand'; break
+            case 570: this.desc+='Deal '+this.damage+' Damage\nDeals '+this.alt+' Extra\nDamage for Every\nAttack in\nYour Hand'; break
+            case 571: this.desc+='Deal '+this.damage+' Damage and\nApply '+this.alt+' Vulnerable\nto All Enemies'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -653,7 +659,7 @@ class card{
             playerFill(this.layer,this.color,this.fade)
             this.layer.strokeWeight(5)
             this.layer.rect(0,0,this.width,this.height,5)
-            if(this.color==8){
+            if(this.color==10){
                 this.layer.image(graphics.minor[8],-this.width/2-10,-this.height/2-10,this.width+20,this.height+20)
             }
             if(this.attack==63||this.attack==280||this.attack==296||this.attack==367||this.attack==503){
@@ -728,13 +734,13 @@ class card{
                     break
                 }
                 this.layer.text(this.name+'+',0,-this.height/2+24)
-                if(this.color==8){
+                if(this.color==10){
                     this.layer.fill(255,this.fade)
                 }else{
                     this.layer.fill(0,this.fade)
                 }
             }else{
-                if(this.color==8){
+                if(this.color==10){
                     this.layer.fill(255,this.fade)
                 }else{
                     this.layer.fill(0,this.fade)
