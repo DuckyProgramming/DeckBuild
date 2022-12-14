@@ -670,23 +670,24 @@ class card{
                     this.layer.fill(220,200,240,this.fade)
                     this.layer.stroke(180,160,200,this.fade)
                 break
-                case 5:
+
+                case 6:
                     this.layer.fill(160,220,240,this.fade)
                     this.layer.stroke(120,180,200,this.fade)
                 break
-                case 6:
+                case 7:
                     this.layer.fill(200,200,160,this.fade)
                     this.layer.stroke(160,160,120,this.fade)
                 break
-                case 7:
+                case 8:
                     this.layer.fill(120,this.fade)
                     this.layer.stroke(80,this.fade)
                 break
-                case 8:
+                case 9:
                     this.layer.fill(80,this.fade)
                     this.layer.stroke(50,this.fade)
                 break
-                case 9:
+                case 10:
                     this.layer.fill(0,this.fade)
                 break
             }
@@ -747,19 +748,20 @@ class card{
                     case 4:
                         this.layer.fill(50,0,100,this.fade)
                     break
-                    case 5:
+
+                    case 6:
                         this.layer.fill(0,50,100,this.fade)
                     break
-                    case 6:
+                    case 7:
                         this.layer.fill(100,100,50,this.fade)
                     break
-                    case 7:
+                    case 8:
                         this.layer.fill(40,this.fade)
                     break
-                    case 8:
+                    case 9:
                         this.layer.fill(20,this.fade)
                     break
-                    case 9:
+                    case 10:
                         this.layer.fill(200,this.fade)
                     break
                 }

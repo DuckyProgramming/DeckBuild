@@ -2016,6 +2016,7 @@ types={
         //buff balance-related cards
         //strength on hit
         //energy related cards
+        //lament
 
         
         {name:'Build\nWall',rarity:0,list:5,
@@ -2831,6 +2832,7 @@ types={
         //anger
         //clash
         //carnage
+        //opening double
 
         
         
@@ -3269,8 +3271,8 @@ types={
         {name:'Executor',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MAEP-65091','Azis']},
         {name:'Creation',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','MPCO-SKR','Sakura']},
         {name:'Builder',alt:'',life:60,height:66,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Friend','Duck','____','Duckipo']},
-        {name:'Gentleman',alt:'',life:70,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MPKF-8589869056','George']},
-        {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
+
+        {name:'Gentleman',alt:'',life:70,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MCFN-3742105','Alexander']},
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
         {name:'Slime',alt:'',life:30,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,'Stuck',0],class:0,buff:0},
         {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0,buff:0},//10
@@ -3331,6 +3333,7 @@ types={
         {name:'Doubler',alt:'',life:50,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Exhauster',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
+        {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
         
     ],attack:[
         {class:0},//0
@@ -3381,7 +3384,7 @@ types={
             threshold:6,class:-1,zone:0,
             objective:[[0,0,0,0]],
         },{
-            combatants:[7,7,8,0,0,0],
+            combatants:[68,68,8,0,0,0],
             reinforce:[],
             threshold:4,class:-1,zone:0,
             objective:[[0,0,0,0]],
@@ -7073,14 +7076,14 @@ zones=[
     {
         encounters:[[],[],[]],
         special:[1,4,3,17,18,19,20,21,22,23,24,25,26,27,29,30],
-        events:[[],[],[],[],[],[],[]],
+        events:[[],[],[],[],[],[],[],[]],
     },{
         encounters:[[],[],[]],
         special:[],
-        events:[[],[],[],[],[],[],[]],
+        events:[[],[],[],[],[],[],[],[]],
     },
 ]
-stage={scale:0,quality:1,scene:'menu',playerNumber:5,playerCombatantNumber:1,identifier:['']}
+stage={scale:0,quality:1,scene:'menu',playerNumber:7,playerCombatantNumber:1,identifier:['']}
 graphics={main:0,minor:[],symbol:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}
