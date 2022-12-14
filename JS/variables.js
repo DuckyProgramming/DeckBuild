@@ -2842,7 +2842,7 @@ types={
             {damage:2,alt:0,cost:1,attack:568,target:0,spec:3,class:2},
             {damage:2,alt:0,cost:0,attack:568,target:0,spec:3,class:2},
         ],
-        },{name:'Recollection',rarity:0,list:3,
+        },{name:'Recollection',rarity:0,list:6,
         stats:[
             {damage:4,alt:0,cost:1,attack:569,target:1,spec:0,class:0},
             {damage:6,alt:0,cost:1,attack:569,target:1,spec:0,class:0},
@@ -2862,8 +2862,27 @@ types={
             {damage:3,alt:1,cost:1,attack:571,target:0,spec:2,class:0},
             {damage:5,alt:1,cost:1,attack:571,target:0,spec:2,class:0},
         ],
+        },{name:'Launch',rarity:0,list:6,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:432,target:0,spec:8,class:2},
+            {damage:2,alt:0,cost:0,attack:432,target:0,spec:8,class:2},
+        ],
+        },{name:'Grit',rarity:0,list:6,
+        stats:[
+            {damage:7,alt:0,cost:1,attack:572,target:0,spec:0,class:0},
+            {damage:12,alt:0,cost:1,attack:572,target:0,spec:0,class:0},
+        ],
+        },{name:'Trade',rarity:1,list:6,
+        stats:[
+            {damage:18,alt:0,cost:-3,attack:573,target:1,spec:0,class:0},
+            {damage:22,alt:0,cost:-3,attack:573,target:1,spec:0,class:0},
+        ],
+        },{name:'Incision',rarity:1,list:6,
+        stats:[
+            {damage:2,alt:3,cost:0,attack:574,target:0,spec:0,class:2},
+            {damage:3,alt:3,cost:0,attack:574,target:0,spec:0,class:2},
+        ],
         },
-        //opening double
 
 
         {name:'Buster',rarity:0,list:7,

@@ -1034,6 +1034,19 @@ class battle{
             this.hand.cards[g].selectDiscard=true
         }
     }
+    randomExhaust(){
+        this.calc.list=[]
+        for(let g=0,lg=this.hand.cards.length;g<lg;g++){
+            if(!this.hand.cards[g].trigger&&!this.hand.cards[g].used){
+                this.calc.list.push(g)
+            }
+        }
+        if(this.calc.list.length>0){
+            g=this.calc.list[floor(random(0,this.calc.list.length))]
+            this.hand.cards[g].used=true
+            this.hand.cards[g].exhaust=true
+        }
+    }
     randomAdd(){
         this.calc.list=listing.card[this.player]
         if(this.calc.list.length>0){

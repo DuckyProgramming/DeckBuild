@@ -33,7 +33,7 @@ class attack{
                 case -22:
                     this.battle.currency.money-=10
                 break
-                case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329: case 560: case 565:
+                case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329: case 560: case 565: case 573:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2: case 231: case 241: case 268:
@@ -2142,7 +2142,7 @@ class attack{
                     this.battle.combatants[0].status.main[93]+=this.alt
                 break
                 case 432:
-                    this.battle.random.doubling++
+                    this.battle.random.doubling+=this.damage
                 break
                 case 433:
                     this.battle.combatants[this.target].take(this.damage+this.alt*this.combo,this.user)
@@ -2865,6 +2865,13 @@ class attack{
                         }
                     }
                 break
+                case 572:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.randomExhaust()
+                break
+                case 574:
+                    this.battle.mana.main+=this.damage
+                    this.battle.combatants[0].life-=this.alt
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

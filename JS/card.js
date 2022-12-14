@@ -493,7 +493,7 @@ class card{
             case 429: this.desc+='Heal '+this.damage+'X Health'; break
             case 430: this.desc+='Gain '+this.damage+' Combo\nGain '+this.alt+' Energy\nNext Turn'; break
             case 431: this.desc+='Gain '+this.damage+' Combo\nLose Combo at\nEnd of Turn'; break
-            case 432: this.desc+='Next Card Played\nis Duplicated'; break
+            case 432: if(this.damage>1){this.desc+='Next '+this.damage+' Cards Played\nis Duplicated'}else{this.desc+='Next '+this.damage+' Card Played\nis Duplicated'} break
             case 433: this.desc+='Deal '+this.damage+' Damage\n+'+this.alt+' Per Combo\nDraw 1 Card'; break
             case 434: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+' Twice'; break
             case 435: if(this.alt>0){this.desc+='Add '+this.damage+' Random\nAttack to Your Hand\nIt Costs 0'}else{this.desc+='Add '+this.damage+' Random\nAttack to Your Hand\nIt Costs 0\nThis Turn'}; break
@@ -633,6 +633,9 @@ class card{
             case 569: this.desc+='Deal '+this.damage+' Damage\nPut a\nDiscarded Card\ninto Your Hand'; break
             case 570: this.desc+='Deal '+this.damage+' Damage\nDeals '+this.alt+' Extra\nDamage for Every\nAttack in\nYour Hand'; break
             case 571: this.desc+='Deal '+this.damage+' Damage and\nApply '+this.alt+' Vulnerable\nto All Enemies'; break
+            case 572: this.desc+='Add '+this.damage+' Block\nExhaust a\nRandom Card'; break
+            case 573: this.desc+='Deal '+this.damage+' Damage\nCosts 1 Less For\nEach Time You Take\nUnblocked Damage'; break
+            case 574: this.desc+='Gain '+this.damage+' Energy\nLose '+this.alt+' Health'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -788,6 +791,9 @@ class card{
     update(energy,combo,armed,random){
         if(this.base.cost==-2){
             this.cost=random.hits
+        }
+        if(this.base.cost==-3){
+            this.cost=max(0,4-random.hits)
         }
         if(this.size<1&&!this.used){
             this.size=round(this.size*5+1)*0.2
