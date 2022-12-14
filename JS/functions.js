@@ -378,6 +378,53 @@ function findStatus(name){
 	}
 	return -1
 }
+function playerFill(layer,player,fade){
+	switch(player){
+		case 0:
+			layer.fill(200,fade)
+			layer.stroke(160,fade)
+		break
+		case 1:
+			layer.fill(160,200,160,fade)
+			layer.stroke(120,160,120,fade)
+		break
+		case 2:
+			layer.fill(200,120,160,fade)
+			layer.stroke(160,80,120,fade)
+		break
+		case 3:
+			layer.fill(240,200,160,fade)
+			layer.stroke(200,160,120,fade)
+		break
+		case 4:
+			layer.fill(220,200,240,fade)
+			layer.stroke(180,160,200,fade)
+		break
+		case 5:
+			layer.fill(160,220,240,fade)
+			layer.stroke(120,180,200,fade)
+		break
+		case 6:
+			layer.fill(120,100,200,fade)
+			layer.stroke(80,60,160,fade)
+		break
+		case 7:
+			layer.fill(200,200,160,fade)
+			layer.stroke(160,160,120,fade)
+		break
+		case 8:
+			layer.fill(120,fade)
+			layer.stroke(80,fade)
+		break
+		case 9:
+			layer.fill(80,fade)
+			layer.stroke(50,fade)
+		break
+		case 10:
+			layer.fill(0,fade)
+		break
+	}
+}
 function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 	layer.translate(x,y)
 	layer.rotate(direction)

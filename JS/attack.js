@@ -33,7 +33,7 @@ class attack{
                 case -22:
                     this.battle.currency.money-=10
                 break
-                case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329: case 560:
+                case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329: case 560: case 565:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2: case 231: case 241: case 268:
@@ -2812,7 +2812,7 @@ class attack{
                 break
                 case 563:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].addBlock(this.alt)
                 break
                 case 564:
                     if(this.mana%2==0){

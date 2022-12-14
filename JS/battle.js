@@ -129,7 +129,7 @@ class battle{
                 this.potions.list[types.potion[g].rarity].push(g)
             }
         }
-        if(this.player==6){
+        if(this.player==7){
             this.drawAmount=3
         }else{
             this.drawAmount=5
@@ -1536,40 +1536,15 @@ class battle{
         this.layer.noStroke()
         this.layer.fill(80,85,90)
         this.layer.rect(450,475,910,250)
-        this.layer.fill(200,225,250,this.fade)
-        this.layer.stroke(150,200,250,this.fade)
+        this.layer.fill(200,225,250)
+        this.layer.stroke(150,200,250)
         this.layer.strokeWeight(6)
         this.layer.quad(-92+this.anim.turn*100,390,-68+this.anim.turn*100,358,-44+this.anim.turn*100,390,-68+this.anim.turn*100,422)
-        switch(this.player){
-            case 1:
-                this.layer.fill(160,200,160)
-                this.layer.stroke(120,160,120)
-            break
-            case 2:
-                this.layer.fill(200,120,160)
-                this.layer.stroke(160,80,120)
-            break
-            case 3:
-                this.layer.fill(240,200,160)
-                this.layer.stroke(200,160,120)
-            break
-            case 4:
-                this.layer.fill(220,200,240)
-                this.layer.stroke(180,160,200)
-            break
-            case 5:
-                this.layer.fill(160,220,240,this.fade)
-                this.layer.stroke(120,180,200,this.fade)
-            break
-            case 6:
-                this.layer.fill(200,200,160,this.fade)
-                this.layer.stroke(160,160,120,this.fade)
-            break
-        }
+        playerFill(this.layer,this.player,1)
         this.layer.strokeWeight(5)
         this.layer.rect(-68+this.anim.turn*100,525,40,30,5)
         this.layer.rect(-68+this.anim.turn*100,565,40,30,5)
-        this.layer.fill(0,this.fade)
+        this.layer.fill(0)
         this.layer.noStroke()
         this.layer.textSize(10)
         this.layer.text(this.mana.gen,-68+this.anim.turn*100,370)
@@ -1714,7 +1689,7 @@ class battle{
             if(this.relics.active[92]&&this.hand.cards.length<=0){
                 this.draw()
             }
-            if(this.player==6&&this.hand.cards.length<3){
+            if(this.player==7&&this.hand.cards.length<3){
                 if(this.reserve.cards.length<=0){
                     for(g=0,lg=this.discard.cards.length;g<lg;g++){
                         if(this.discard.cards[g].attack==560){
@@ -2135,35 +2110,10 @@ class battle{
                 }
             }
         }
-        switch(this.player){
-            case 1:
-                this.layer.fill(160,200,160)
-                this.layer.stroke(120,160,120)
-            break
-            case 2:
-                this.layer.fill(200,120,160)
-                this.layer.stroke(160,80,120)
-            break
-            case 3:
-                this.layer.fill(240,200,160)
-                this.layer.stroke(200,160,120)
-            break
-            case 4:
-                this.layer.fill(220,200,240)
-                this.layer.stroke(180,160,200)
-            break
-            case 5:
-                this.layer.fill(160,220,240)
-                this.layer.stroke(120,180,200)
-            break
-            case 6:
-                this.layer.fill(200,200,160,this.fade)
-                this.layer.stroke(160,160,120,this.fade)
-            break
-        }
+        playerFill(this.layer,this.player,1)
         this.layer.strokeWeight(5)
         this.layer.rect(32,565,40,30,5)
-        this.layer.fill(0,this.fade)
+        this.layer.fill(0)
         this.layer.noStroke()
         this.layer.textSize(12)
         this.layer.text('Deck',32,565)

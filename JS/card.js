@@ -626,6 +626,7 @@ class card{
             case 562: this.desc+='Deal '+this.damage+' Damage\nShuffle a Chip\ninto Your\nDraw Pile'; break
             case 563: this.desc+='Deal '+this.damage+' Damage\nAdd '+this.alt+' Block'; break
             case 564: this.desc+='If X is Even,\nDeal '+this.damage+'X Damage\nIf X is Odd,\nAdd '+this.alt+'X Block'; break
+            case 565: this.desc+='Deal '+this.damage+' Damage\nAdd a Copy of\nThis Card to Your\nDiscard Pile'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -649,48 +650,7 @@ class card{
             this.layer.fill(255,this.fade*this.anim.select)
             this.layer.noStroke()
             this.layer.rect(0,0,this.width+15,this.height+15,10)
-            switch(this.color){
-                case 0:
-                    this.layer.fill(200,this.fade)
-                    this.layer.stroke(160,this.fade)
-                break
-                case 1:
-                    this.layer.fill(160,200,160,this.fade)
-                    this.layer.stroke(120,160,120,this.fade)
-                break
-                case 2:
-                    this.layer.fill(200,120,160,this.fade)
-                    this.layer.stroke(160,80,120,this.fade)
-                break
-                case 3:
-                    this.layer.fill(240,200,160,this.fade)
-                    this.layer.stroke(200,160,120,this.fade)
-                break
-                case 4:
-                    this.layer.fill(220,200,240,this.fade)
-                    this.layer.stroke(180,160,200,this.fade)
-                break
-
-                case 6:
-                    this.layer.fill(160,220,240,this.fade)
-                    this.layer.stroke(120,180,200,this.fade)
-                break
-                case 7:
-                    this.layer.fill(200,200,160,this.fade)
-                    this.layer.stroke(160,160,120,this.fade)
-                break
-                case 8:
-                    this.layer.fill(120,this.fade)
-                    this.layer.stroke(80,this.fade)
-                break
-                case 9:
-                    this.layer.fill(80,this.fade)
-                    this.layer.stroke(50,this.fade)
-                break
-                case 10:
-                    this.layer.fill(0,this.fade)
-                break
-            }
+            playerFill(this.layer,this.color,this.fade)
             this.layer.strokeWeight(5)
             this.layer.rect(0,0,this.width,this.height,5)
             if(this.color==8){
@@ -746,11 +706,13 @@ class card{
                         this.layer.fill(150,100,50,this.fade)
                     break
                     case 4:
-                        this.layer.fill(50,0,100,this.fade)
+                        this.layer.fill(100,0,100,this.fade)
                     break
-
-                    case 6:
+                    case 5:
                         this.layer.fill(0,50,100,this.fade)
+                    break
+                    case 6:
+                        this.layer.fill(50,0,100,this.fade)
                     break
                     case 7:
                         this.layer.fill(100,100,50,this.fade)

@@ -5,12 +5,12 @@ types={
             {damage:0,alt:0,cost:0,attack:0,target:0,spec:0,class:0},
             {damage:0,alt:0,cost:0,attack:0,target:0,spec:0,class:0},
         ],
-        },{name:'Strike',rarity:0,list:7,
+        },{name:'Strike',rarity:0,list:8,
         stats:[
             {damage:6,alt:0,cost:1,attack:1,target:1,spec:0,class:0},
             {damage:9,alt:0,cost:1,attack:1,target:1,spec:0,class:0},
         ],
-        },{name:'Defend',rarity:0,list:7,
+        },{name:'Defend',rarity:0,list:8,
         stats:[
             {damage:5,alt:0,cost:1,attack:2,target:0,spec:0,class:1},
             {damage:8,alt:0,cost:1,attack:2,target:0,spec:0,class:1},
@@ -2782,35 +2782,15 @@ types={
             {damage:0,alt:0,cost:1,attack:317,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:0,attack:317,target:0,spec:0,class:2},
         ],
-        },{name:'Tap',rarity:0,list:6,
-        stats:[
-            {damage:3,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
-            {damage:5,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
-        ],
-        },{name:'Berlin\nKey',rarity:1,list:6,
-        stats:[
-            {damage:1,alt:1,cost:0,attack:556,target:0,spec:0,class:2},
-            {damage:2,alt:1,cost:0,attack:556,target:0,spec:0,class:2},
-        ],
         },{name:'The Best\nDefense',rarity:0,list:6,
         stats:[
             {damage:9,alt:6,cost:2,attack:557,target:1,spec:0,class:0},
             {damage:12,alt:9,cost:2,attack:557,target:1,spec:0,class:0},
         ],
-        },{name:'Bap',rarity:0,list:6,
-        stats:[
-            {damage:5,alt:0,cost:-1,attack:558,target:1,spec:0,class:0},
-            {damage:7,alt:0,cost:-1,attack:558,target:1,spec:0,class:0},
-        ],
         },{name:'Mystery\nDust',rarity:1,list:6,
         stats:[
             {damage:1,alt:0,cost:0,attack:559,target:1,spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:559,target:1,spec:0,class:2},
-        ],
-        },{name:'Buster',rarity:0,list:6,
-        stats:[
-            {damage:5,alt:0,cost:1,attack:560,target:1,spec:0,class:0},
-            {damage:8,alt:0,cost:1,attack:560,target:1,spec:0,class:0},
         ],
         },{name:'Square\nStrike',rarity:1,list:6,
         stats:[
@@ -2822,10 +2802,25 @@ types={
             {damage:4,alt:0,cost:1,attack:562,target:1,spec:0,class:0},
             {damage:7,alt:0,cost:1,attack:562,target:1,spec:0,class:0},
         ],
-        },{name:'Crescent',rarity:-1,list:0,
+        },{name:'Crescent',rarity:1,list:6,
         stats:[
             {damage:7,alt:7,cost:-1,attack:564,target:1,spec:0,class:0},
             {damage:10,alt:10,cost:-1,attack:564,target:1,spec:0,class:0},
+        ],
+        },{name:'Keyhole',rarity:1,list:6,
+        stats:[
+            {damage:1,alt:1,cost:0,attack:556,target:0,spec:0,class:2},
+            {damage:2,alt:1,cost:0,attack:556,target:0,spec:0,class:2},
+        ],
+        },{name:'Iron\nWave',rarity:0,list:6,
+        stats:[
+            {damage:5,alt:5,cost:1,attack:563,target:0,spec:0,class:0},
+            {damage:7,alt:7,cost:1,attack:563,target:0,spec:0,class:0},
+        ],
+        },{name:'Overflow',rarity:0,list:6,
+        stats:[
+            {damage:6,alt:0,cost:0,attack:565,target:1,spec:0,class:0},
+            {damage:8,alt:0,cost:0,attack:565,target:1,spec:0,class:0},
         ],
         },
         //iron wave
@@ -2834,6 +2829,23 @@ types={
         //carnage
         //opening double
 
+
+        {name:'Buster',rarity:0,list:7,
+        stats:[
+            {damage:5,alt:0,cost:1,attack:560,target:1,spec:0,class:0},
+            {damage:8,alt:0,cost:1,attack:560,target:1,spec:0,class:0},
+        ],
+        },{name:'Bap',rarity:0,list:7,
+        stats:[
+            {damage:5,alt:0,cost:-1,attack:558,target:1,spec:0,class:0},
+            {damage:7,alt:0,cost:-1,attack:558,target:1,spec:0,class:0},
+        ],
+        },{name:'Tap',rarity:0,list:7,
+        stats:[
+            {damage:3,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
+            {damage:5,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
+        ],
+        },
         
         
         {name:'Empty',rarity:-1,list:-1,
@@ -3241,6 +3253,11 @@ types={
             {damage:0,alt:0,cost:0,attack:-19,target:0,spec:1,class:-1},
             {damage:0,alt:0,cost:0,attack:-19,target:0,spec:1,class:-1},
         ],
+        },{name:'Glued',rarity:-2,list:11,
+        stats:[
+            {damage:0,alt:0,cost:2,attack:0,target:0,spec:3,class:-1},
+            {damage:0,alt:0,cost:2,attack:0,target:0,spec:3,class:-1},
+        ],
         },
 
         /*{name:'Fortify',rarity:0,list:4,
@@ -3271,8 +3288,8 @@ types={
         {name:'Executor',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MAEP-65091','Azis']},
         {name:'Creation',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','MPCO-SKR','Sakura']},
         {name:'Builder',alt:'',life:60,height:66,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Friend','Duck','____','Duckipo']},
-
-        {name:'Gentleman',alt:'',life:70,height:80,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MCFN-3742105','Alexander']},
+        {name:'Phantasm',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','____','Certes']},
+        {name:'Gentleman',alt:'',life:70,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MCFN-3742105','Alexander']},
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
         {name:'Slime',alt:'',life:30,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,'Stuck',0],class:0,buff:0},
         {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0,buff:0},//10
