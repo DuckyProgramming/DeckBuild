@@ -534,7 +534,7 @@ class card{
             case 470: this.desc+='Whenever You\nDamage an Enemy,\nBuild '+this.damage+'\nof Construct'; break
             case 471: this.desc+='Gain '+this.damage+' Currency'; break
             case 472: this.desc+='Deal '+this.damage+' Damage\nLose '+this.alt+' Currency'; break
-            case 473: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+'x More\nDamage if Target\nhas Block'; break
+            case 473: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+'x More\nDamage if Target\nHas Block'; break
             case 474: this.desc+='Deal '+this.damage+' Damage\nExhaust '+this.alt+' Card'; break
             case 475: this.desc+='Deal '+this.damage+' Damage\nTransform '+this.alt+' Card'; break
             case 476: this.desc+='Set Construct to\nTrap'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break

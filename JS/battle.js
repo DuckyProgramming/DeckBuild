@@ -1160,6 +1160,7 @@ class battle{
     resetCombatant(){
         for(let e=0,le=this.combatants.length;e<le;e++){
             if(this.combatants[e].type!=0){
+                this.combatants[e].block=0
                 this.combatants[e].fade=1
                 if(e>0){
                     this.combatants[e].setupIntent(-1)
@@ -1555,6 +1556,14 @@ class battle{
             case 4:
                 this.layer.fill(220,200,240)
                 this.layer.stroke(180,160,200)
+            break
+            case 5:
+                this.layer.fill(160,220,240,this.fade)
+                this.layer.stroke(120,180,200,this.fade)
+            break
+            case 6:
+                this.layer.fill(200,200,160,this.fade)
+                this.layer.stroke(160,160,120,this.fade)
             break
         }
         this.layer.strokeWeight(5)
@@ -2146,6 +2155,10 @@ class battle{
             case 5:
                 this.layer.fill(160,220,240)
                 this.layer.stroke(120,180,200)
+            break
+            case 6:
+                this.layer.fill(200,200,160,this.fade)
+                this.layer.stroke(160,160,120,this.fade)
             break
         }
         this.layer.strokeWeight(5)
