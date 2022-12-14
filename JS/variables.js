@@ -2882,6 +2882,11 @@ types={
             {damage:2,alt:3,cost:0,attack:574,target:0,spec:0,class:2},
             {damage:3,alt:3,cost:0,attack:574,target:0,spec:0,class:2},
         ],
+        },{name:'Combustion',rarity:1,list:6,
+        stats:[
+            {damage:5,alt:1,cost:1,attack:575,target:0,spec:0,class:2},
+            {damage:8,alt:1,cost:1,attack:575,target:0,spec:0,class:2},
+        ],
         },
 
 
@@ -2901,6 +2906,7 @@ types={
             {damage:5,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
         ],
         },
+        //3/4
         
         
         {name:'Empty',rarity:-1,list:-1,
@@ -3163,6 +3169,7 @@ types={
             {damage:9,alt:0,cost:0,attack:406,target:1,spec:0,class:0},
         ],
         },
+        //13/16
         
         
         {name:'Clumsy',rarity:-1,list:10,
@@ -3241,6 +3248,7 @@ types={
             {damage:0,alt:0,cost:0,attack:-1,target:0,spec:6,class:-2},
         ],
         },
+        //15/16
         
         
         {name:'Confusion',rarity:-2,list:11,
@@ -3314,6 +3322,7 @@ types={
             {damage:0,alt:0,cost:2,attack:0,target:0,spec:3,class:-1},
         ],
         },
+        //14/16
 
         /*{name:'Fortify',rarity:0,list:4,
         stats:[

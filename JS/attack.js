@@ -2872,6 +2872,11 @@ class attack{
                 case 574:
                     this.battle.mana.main+=this.damage
                     this.battle.combatants[0].life-=this.alt
+                break
+                case 575:
+                    this.battle.combatants[0].status.main[113]+=this.damage
+                    this.battle.combatants[0].status.main[71]+=this.alt
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

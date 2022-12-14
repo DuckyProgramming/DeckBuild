@@ -636,6 +636,7 @@ class card{
             case 572: this.desc+='Add '+this.damage+' Block\nExhaust a\nRandom Card'; break
             case 573: this.desc+='Deal '+this.damage+' Damage\nCosts 1 Less For\nEach Time You Take\nUnblocked Damage'; break
             case 574: this.desc+='Gain '+this.damage+' Energy\nLose '+this.alt+' Health'; break
+            case 575: this.desc+='Every Turn,\nDeal '+this.damage+' Damage\nto All Enemies\nand Take '+this.alt+' Damage'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
