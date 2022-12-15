@@ -39,7 +39,7 @@ class attack{
                 case 2: case 231: case 241: case 268:
                     this.battle.combatants[0].addBlock(this.damage)
                 break
-                case 3: case 51: case 135:
+                case 3: case 51: case 135: case 582:
                     if(this.alt>0){
                         this.battle.combatants[this.target].take(this.damage,this.user)
                     }
@@ -139,6 +139,11 @@ class attack{
                     for(g=0,lg=this.battle.reserve.cards.length;g<lg;g++){
                         if(this.battle.reserve.cards[g].attack==22){
                             this.battle.reserve.cards[g].damage+=2
+                        }
+                    }
+                    for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
+                        if(this.battle.discard.cards[g].attack==22){
+                            this.battle.discard.cards[g].damage+=2
                         }
                     }
                 break
@@ -2900,6 +2905,30 @@ class attack{
                 break
                 case 581:
                     this.battle.combatants[0].status.main[118]++
+                break
+                case 583:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].boost.main[1]<0){
+                        this.battle.mana.main+=this.alt
+                        this.battle.draw()
+                    }
+                break
+                case 584:
+                    this.battle.combatants[this.target].boost.main[0]-=this.damage
+                    this.battle.combatants[0].block+=this.alt
+                break
+                case 585:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].status.main[74]+=this.alt
+                break
+                case 586:
+                    this.battle.random.reserving=this.damage
+                break
+                case 587:
+                    this.battle.combatants[0].status.main[119]++
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        this.battle.hand.cards[g].cost=0
+                    }
                 break
                 default:
             }

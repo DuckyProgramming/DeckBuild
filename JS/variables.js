@@ -2020,6 +2020,7 @@ types={
 
         //Apply 3 poison to a random enemy 3(4) times.
         //Apply 4(7) Poison and 2 Weak to ALL enemies. Exhaust.
+        //	At the start of your turn, apply 2(3) Poison to ALL enemies.
 
         
         {name:'Build\nWall',rarity:0,list:5,
@@ -2929,6 +2930,41 @@ types={
         stats:[
             {damage:1,alt:3,cost:0,attack:580,target:0,spec:0,class:2},
             {damage:1,alt:5,cost:0,attack:580,target:0,spec:0,class:2},
+        ],
+        },{name:'Eviscerate',rarity:1,list:6,
+        stats:[
+            {damage:7,alt:3,cost:-4,attack:582,target:1,spec:0,class:0},
+            {damage:9,alt:3,cost:-4,attack:582,target:1,spec:0,class:0},
+        ],
+        },{name:'Expertise',rarity:1,list:6,
+        stats:[
+            {damage:6,alt:0,cost:1,attack:123,target:0,spec:0,class:2},
+            {damage:7,alt:0,cost:1,attack:123,target:0,spec:0,class:2},
+        ],
+        },{name:'Back\nHook',rarity:1,list:6,
+        stats:[
+            {damage:5,alt:1,cost:1,attack:583,target:1,spec:0,class:0},
+            {damage:8,alt:1,cost:1,attack:583,target:1,spec:0,class:0},
+        ],
+        },{name:'Torrent',rarity:1,list:6,
+        stats:[
+            {damage:2,alt:11,cost:2,attack:584,target:1,spec:0,class:1},
+            {damage:3,alt:14,cost:2,attack:584,target:1,spec:0,class:1},
+        ],
+        },{name:'Predate',rarity:1,list:6,
+        stats:[
+            {damage:15,alt:2,cost:2,attack:585,target:1,spec:0,class:0},
+            {damage:20,alt:2,cost:2,attack:585,target:1,spec:0,class:0},
+        ],
+        },{name:'Reserve',rarity:1,list:6,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:586,target:0,spec:0,class:0},
+            {damage:1,alt:0,cost:0,attack:586,target:0,spec:0,class:0},
+        ],
+        },{name:'Bullet\nTime',rarity:2,list:6,
+        stats:[
+            {damage:0,alt:0,cost:3,attack:587,target:0,spec:0,class:0},
+            {damage:0,alt:0,cost:2,attack:587,target:0,spec:0,class:0},
         ],
         },
 

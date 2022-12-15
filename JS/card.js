@@ -31,6 +31,7 @@ class card{
         this.trigger=false
         this.used=false
         this.exhaust=false
+        this.drawTop=false
         this.selectDiscard=false
     }
     displayName(deckSize,handSize,discardSize,drawSize,random){
@@ -599,7 +600,7 @@ class card{
             case 535: this.desc+='Apply '+this.damage+'\nWeak'; break
             case 536: this.desc+='Apply '+this.damage+'\nVulnerable'; break
             case 537: this.desc+='Choose Between\n3 Cards to Add\nto Your Hand\nIt Costs 0\nThis Turn'; break
-            case 538: this.desc+='Put a Card\non Top of\nYour Draw Pile\nIt Costs 0'; break
+            case 538: this.desc+='Put a Card\non the Bottom of\nYour Draw Pile\nIt Costs 0'; break
             case 539: this.desc+='Add '+this.damage+' Random\nColorless Cards\nto Your Hand'; break
             case 540: this.desc+='When You Play 5\nCards in a Turn,\nDeal '+this.damage+' Damage\nto All Enemies'; break
             case 541: this.desc+='Do '+this.damage+' Damage\nto All Enemies\nin 3 Turns'; break
@@ -643,6 +644,12 @@ class card{
             case 579: this.desc+='Is Copied '+this.alt+'\nTimes When Drawn\nDeal '+this.damage+' Damage'; break
             case 580: this.desc+='Draw '+this.damage+' Card\nIf it is a Skill,\nGain '+this.alt+' Block'; break
             case 581: this.desc+='Next Card\nPlayed is Free'; break
+            case 582: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nCosts 1 Less\nFor Each Discard\nThis Turn'; break
+            case 583: this.desc+='Deal '+this.damage+' Damage\nIf Target Has\nVulnerable, Gain\n'+this.alt+' Energy and\nDraw '+this.alt+' Card'; break
+            case 584: this.desc+='Apply '+this.damage+' Weak\nGain '+this.alt+' Block'; break
+            case 585: this.desc+='Deal '+this.damage+' Damage\nDraw '+this.alt+' Cards\nNext Turn'; break
+            case 586: this.desc+='Put a Card\non Top of\nYour Draw Pile\nIt Costs 0'; break
+            case 587: this.desc+='All Cards in\nHand Cost 0\nCannot Draw Cards\nThis Turn'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -801,6 +808,9 @@ class card{
         }
         if(this.base.cost==-3){
             this.cost=max(0,4-random.hits)
+        }
+        if(this.base.cost==-4){
+            this.cost=max(0,3-random.discards)
         }
         if(this.size<1&&!this.used){
             this.size=round(this.size*5+1)*0.2

@@ -10,7 +10,7 @@ class group{
         this.selcted=false
         this.trigger=false
         this.calc={level:0,cut:0,list:[]}
-        this.anim={discarding:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,selectCombo:false}
+        this.anim={discarding:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,selectCombo:false}
     }
     initial(type){
         /*for(e=0;e<20;e++){
@@ -101,11 +101,11 @@ class group{
                 }*/
                 //this.add(findCard(''),0,this.battle.player)
                 //this.add(findCard(''),0,this.battle.player)
-                this.add(578,0,this.battle.player)
-                this.add(579,0,this.battle.player)
-                this.add(580,0,this.battle.player)
-                this.add(581,0,this.battle.player)
                 this.add(582,0,this.battle.player)
+                this.add(583,0,this.battle.player)
+                this.add(584,0,this.battle.player)
+                this.add(585,0,this.battle.player)
+                this.add(586,0,this.battle.player)
             break
             case 7:
                 this.add(558,0,this.battle.player)
@@ -164,6 +164,19 @@ class group{
         }
         this.add(type,level,color)
         this.cards[this.cards.length-1].alt=alt
+        while(this.storage.cards.length>0){
+            this.cards.push(copyCard(this.storage.cards[0]))
+            this.storage.cards.splice(0,1)
+        }
+    }
+    pushTop(card){
+        for(let g=0,lg=this.cards.length;g<lg;g++){
+            this.storage.cards.push(this.cards[g])
+            this.cards.splice(g,1)
+            g--
+            lg--
+        }
+        this.cards.push(card)
         while(this.storage.cards.length>0){
             this.cards.push(copyCard(this.storage.cards[0]))
             this.storage.cards.splice(0,1)
@@ -303,6 +316,11 @@ class group{
         }else if(!this.battle.random.forethinking&&this.anim.forethinking>0){
             this.anim.forethinking=round(this.anim.forethinking*5-1)/5
         }
+        if(this.battle.random.reserving&&this.anim.reserving<1){
+            this.anim.reserving=round(this.anim.reserving*5+1)/5
+        }else if(!this.battle.random.reserving&&this.anim.reserving>0){
+            this.anim.reserving=round(this.anim.reserving*5-1)/5
+        }
         for(e=0,le=this.cards.length;e<le;e++){
             this.cards[e].displayExtra([255,0,0],this.anim.discarding)
             this.cards[e].displayExtra([255,100,255],this.anim.doubling)
@@ -310,6 +328,7 @@ class group{
             this.cards[e].displayExtra([150,200,255],this.anim.exhausting)
             this.cards[e].displayExtra([100,255,100],this.anim.transforming)
             this.cards[e].displayExtra([255,200,255],this.anim.forethinking)
+            this.cards[e].displayExtra([255,150,0],this.anim.reserving)
             this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length,this.battle.discard.cards.length,this.battle.reserve.cards.length,this.battle.random)
         }
     }
@@ -336,7 +355,12 @@ class group{
     }
     update(){
         for(e=0,le=this.cards.length;e<le;e++){
-            if(this.cards[e].draw||this.battle.combatants[0].status.main[52]>0&&this.cards[e].attack!=229&&(this.cards[e].discard||this.cards[e].remove)){
+            if(this.cards[e].drawTop){
+                this.battle.reserve.pushTop(copyCard(this.cards[e]))
+                this.cards.splice(e,1)
+                e--
+                le--
+            }if(this.cards[e].draw||this.battle.combatants[0].status.main[52]>0&&this.cards[e].attack!=229&&(this.cards[e].discard||this.cards[e].remove)){
                 this.battle.reserve.cards.push(copyCard(this.cards[e]))
                 this.cards.splice(e,1)
                 e--
@@ -463,7 +487,7 @@ class group{
         }else{
             this.selected=false
             for(e=0,le=this.cards.length;e<le;e++){
-                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.select&&this.cards[e].select&&(this.battle.mana.main>=this.cards[e].cost&&this.cards[e].spec!=4||this.battle.combatants[0].combo>=this.cards[e].cost&&this.cards[e].spec==4||this.battle.combatants[0].status.main[76]>0&&this.cards[e].class==0||this.combatants[0].status.main[118]>0)&&!((this.cards[e].spec==5||this.cards[e].spec==11||this.cards[e].spec==14)&&this.battle.combatants[0].armed!=1)){
+                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.select&&this.cards[e].select&&(this.battle.mana.main>=this.cards[e].cost&&this.cards[e].spec!=4||this.battle.combatants[0].combo>=this.cards[e].cost&&this.cards[e].spec==4||this.battle.combatants[0].status.main[76]>0&&this.cards[e].class==0||this.battle.combatants[0].status.main[118]>0)&&!((this.cards[e].spec==5||this.cards[e].spec==11||this.cards[e].spec==14)&&this.battle.combatants[0].armed!=1)){
                     this.trigger=true
                     this.cards[e].trigger=true
                     this.select=false
@@ -635,6 +659,12 @@ class group{
                     this.battle.random.forethinking--
                     this.cards[e].used=true
                     this.cards[e].draw=true
+                    this.cards[e].cost=0
+                    this.cards[e].base.cost=0
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.random.reserving>0){
+                    this.battle.random.reserving--
+                    this.cards[e].used=true
+                    this.cards[e].drawTop=true
                     this.cards[e].cost=0
                     this.cards[e].base.cost=0
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&(this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7||this.cards[e].list==10&&this.battle.relics.active[38]||this.cards[e].list==11&&this.battle.relics.active[108])){

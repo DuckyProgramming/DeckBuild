@@ -37,8 +37,8 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0}
-        this.defaultRandom={attacked:0,orbs:0,shields:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0}
+        this.defaultRandom={attacked:0,orbs:0,shields:0,hits:0,discards:0}
         stage.identifier=types.combatant[this.player].identifiers
     }
     setupTesting(type){
@@ -77,6 +77,7 @@ class battle{
         this.random.exhausting=0
         this.random.transforming=0
         this.random.forethinking=0
+        this.random.reserving=0
         this.combatants[0].resetUnique()
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
@@ -342,28 +343,30 @@ class battle{
         }
     }
     draw(){
-        if(this.reserve.cards.length<=0){
-            this.return()
-            this.reserve.shuffle()
-        }
-        if(this.reserve.cards.length>0){
-            this.drawEffect(this.reserve.cards[0].attack)
-            this.hand.cards.push(copyCard(this.reserve.cards[0]))
-            this.hand.cards[this.hand.cards.length-1].position.x=1206
-            this.hand.cards[this.hand.cards.length-1].position.y=500
-            if(this.reserve.cards[0].attack==579){
-                for(let g=0;g<this.reserve.cards[0].alt;g++){
-                    this.hand.cards.push(copyCard(this.reserve.cards[0]))
-                    this.hand.cards[this.hand.cards.length-1].position.x=1206
-                    this.hand.cards[this.hand.cards.length-1].position.y=500
+        if(this.combatants[0].status.main[119]<=0){
+            if(this.reserve.cards.length<=0){
+                this.return()
+                this.reserve.shuffle()
+            }
+            if(this.reserve.cards.length>0){
+                this.drawEffect(this.reserve.cards[0].attack)
+                this.hand.cards.push(copyCard(this.reserve.cards[0]))
+                this.hand.cards[this.hand.cards.length-1].position.x=1206
+                this.hand.cards[this.hand.cards.length-1].position.y=500
+                if(this.reserve.cards[0].attack==579){
+                    for(let g=0;g<this.reserve.cards[0].alt;g++){
+                        this.hand.cards.push(copyCard(this.reserve.cards[0]))
+                        this.hand.cards[this.hand.cards.length-1].position.x=1206
+                        this.hand.cards[this.hand.cards.length-1].position.y=500
+                    }
                 }
+                this.reserve.cards.splice(0,1)
+                if(this.relics.active[172]&&this.hand.cards[this.hand.cards.length-1].list==11){
+                    this.draw()
+                }
+            }else{
+                this.hand.add(findCard('Empty'),0,0)
             }
-            this.reserve.cards.splice(0,1)
-            if(this.relics.active[172]&&this.hand.cards[this.hand.cards.length-1].list==11){
-                this.draw()
-            }
-        }else{
-            this.hand.add(findCard('Empty'),0,0)
         }
     }
     drawEffect(attack){
@@ -795,7 +798,7 @@ class battle{
         this.startTurn()
         this.counter.played=0
         this.random.attacked=0
-        this.random.discarded=0
+        this.random.discards=0
     }
     startTurn(){
         if(this.relics.active[15]&&this.counter.turn%3==0){
