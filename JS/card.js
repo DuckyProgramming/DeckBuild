@@ -641,6 +641,8 @@ class card{
             case 577: this.desc+='Counter '+this.damage+' All\nThis Combat'; break
             case 578: this.desc+='Deal '+this.damage+' Damage\nTarget Takes '+this.alt+'\nDamage Per\nCard Played'; break
             case 579: this.desc+='Is Copied '+this.alt+'\nTimes When Drawn\nDeal '+this.damage+' Damage'; break
+            case 580: this.desc+='Draw '+this.damage+' Card\nIf it is a Skill,\nGain '+this.alt+' Block'; break
+            case 581: this.desc+='Next Card\nPlayed is Free'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

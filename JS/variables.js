@@ -2925,6 +2925,11 @@ types={
             {damage:4,alt:1,cost:0,attack:579,target:1,spec:3,class:0},
             {damage:5,alt:2,cost:0,attack:579,target:1,spec:3,class:0},
         ],
+        },{name:'Escape\nPlan',rarity:1,list:6,
+        stats:[
+            {damage:1,alt:3,cost:0,attack:580,target:0,spec:0,class:2},
+            {damage:1,alt:5,cost:0,attack:580,target:0,spec:0,class:2},
+        ],
         },
 
 
@@ -2943,8 +2948,12 @@ types={
             {damage:3,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
             {damage:5,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
         ],
+        },{name:'Spare',rarity:1,list:7,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:581,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:581,target:0,spec:3,class:2},
+        ],
         },
-        //3/4
         
         
         {name:'Empty',rarity:-1,list:-1,

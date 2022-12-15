@@ -2892,6 +2892,15 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.combatants[this.target].status.main[117]+=this.alt
                 break
+                case 580:
+                    this.battle.draw()
+                    if(this.battle.hand.cards[this.battle.hand.cards.length-1].class==1){
+                        this.battle.combatants[0].block+=this.alt
+                    }
+                break
+                case 581:
+                    this.battle.combatants[0].status.main[118]++
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

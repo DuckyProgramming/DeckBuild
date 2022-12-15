@@ -349,13 +349,15 @@ class battle{
         if(this.reserve.cards.length>0){
             this.drawEffect(this.reserve.cards[0].attack)
             this.hand.cards.push(copyCard(this.reserve.cards[0]))
+            this.hand.cards[this.hand.cards.length-1].position.x=1206
+            this.hand.cards[this.hand.cards.length-1].position.y=500
             if(this.reserve.cards[0].attack==579){
                 for(let g=0;g<this.reserve.cards[0].alt;g++){
                     this.hand.cards.push(copyCard(this.reserve.cards[0]))
+                    this.hand.cards[this.hand.cards.length-1].position.x=1206
+                    this.hand.cards[this.hand.cards.length-1].position.y=500
                 }
             }
-            this.hand.cards[this.hand.cards.length-1].position.x=1206
-            this.hand.cards[this.hand.cards.length-1].position.y=500
             this.reserve.cards.splice(0,1)
             if(this.relics.active[172]&&this.hand.cards[this.hand.cards.length-1].list==11){
                 this.draw()

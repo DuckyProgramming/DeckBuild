@@ -463,7 +463,7 @@ class group{
         }else{
             this.selected=false
             for(e=0,le=this.cards.length;e<le;e++){
-                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.select&&this.cards[e].select&&(this.battle.mana.main>=this.cards[e].cost&&this.cards[e].spec!=4||this.battle.combatants[0].combo>=this.cards[e].cost&&this.cards[e].spec==4||this.battle.combatants[0].status.main[76]>0&&this.cards[e].class==0)&&!((this.cards[e].spec==5||this.cards[e].spec==11||this.cards[e].spec==14)&&this.battle.combatants[0].armed!=1)){
+                if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.select&&this.cards[e].select&&(this.battle.mana.main>=this.cards[e].cost&&this.cards[e].spec!=4||this.battle.combatants[0].combo>=this.cards[e].cost&&this.cards[e].spec==4||this.battle.combatants[0].status.main[76]>0&&this.cards[e].class==0||this.combatants[0].status.main[118]>0)&&!((this.cards[e].spec==5||this.cards[e].spec==11||this.cards[e].spec==14)&&this.battle.combatants[0].armed!=1)){
                     this.trigger=true
                     this.cards[e].trigger=true
                     this.select=false
@@ -493,9 +493,13 @@ class group{
                     this.battle.attack.mana=this.battle.mana.main
                     this.battle.attack.combo=this.battle.combatants[0].combo
                     this.battle.attack.color=this.cards[e].color
-                    if(this.battle.combatants[0].status.main[76]>0&&this.cards[e].class==0){
+                    if(this.battle.combatants[0].status.main[76]>0&&this.cards[e].class==0&&this.cards[e].cost>0){
                         this.cards[e].cost=0
                         this.battle.combatants[0].status.main[76]=0
+                    }
+                    if(this.battle.combatants[0].status.main[118]>0&&this.cards[e].cost>0){
+                        this.cards[e].cost=0
+                        this.battle.combatants[0].status.main[118]=0
                     }
                     if(this.cards[e].spec==4){
                         if(this.battle.relics.active[99]){
