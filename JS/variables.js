@@ -40,8 +40,8 @@ types={
         ],
         },{name:'Electrify',rarity:1,list:1,
         stats:[
-            {damage:2,alt:3,cost:1,attack:6,target:0,spec:0,class:1},
-            {damage:4,alt:6,cost:1,attack:6,target:0,spec:0,class:1},
+            {damage:5,alt:4,cost:1,attack:6,target:0,spec:0,class:1},
+            {damage:8,alt:6,cost:1,attack:6,target:0,spec:0,class:1},
         ],
         },{name:'Hunker\nDown',rarity:0,list:1,
         stats:[
@@ -115,13 +115,13 @@ types={
         ],
         },{name:'Counter',rarity:0,list:1,
         stats:[
-            {damage:4,alt:5,cost:1,attack:39,target:0,spec:0,class:1},
-            {damage:7,alt:6,cost:1,attack:39,target:0,spec:0,class:1},
+            {damage:6,alt:8,cost:1,attack:39,target:0,spec:0,class:1},
+            {damage:10,alt:12,cost:1,attack:39,target:0,spec:0,class:1},
         ],
         },{name:'Combo\nCounter',rarity:0,list:1,
         stats:[
-            {damage:3,alt:2,cost:1,attack:40,target:0,spec:0,class:1},
-            {damage:5,alt:6,cost:1,attack:40,target:0,spec:0,class:1},
+            {damage:5,alt:2,cost:1,attack:40,target:0,spec:0,class:1},
+            {damage:8,alt:6,cost:1,attack:40,target:0,spec:0,class:1},
         ],
         },{name:'Combo\nStrike',rarity:0,list:1,
         stats:[
@@ -200,8 +200,8 @@ types={
         ],
         },{name:'Surprise\nCounter',rarity:1,list:1,
         stats:[
-            {damage:2,alt:15,cost:4,attack:39,target:0,spec:4,class:1},
-            {damage:6,alt:22,cost:4,attack:39,target:0,spec:4,class:1},
+            {damage:3,alt:15,cost:4,attack:39,target:0,spec:4,class:1},
+            {damage:9,alt:22,cost:4,attack:39,target:0,spec:4,class:1},
         ],
         },{name:'Stagger',rarity:1,list:1,
         stats:[
@@ -295,8 +295,8 @@ types={
         ],
         },{name:'Counter\nPush',rarity:1,list:1,
         stats:[
-            {damage:3,alt:4,cost:1,attack:154,target:0,spec:0,class:1},
-            {damage:5,alt:4,cost:1,attack:154,target:0,spec:0,class:1},
+            {damage:6,alt:4,cost:1,attack:154,target:0,spec:0,class:1},
+            {damage:12,alt:4,cost:1,attack:154,target:0,spec:0,class:1},
         ],
         },{name:'Rising\nUpper',rarity:2,list:1,
         stats:[
@@ -450,13 +450,13 @@ types={
         ],
         },{name:'Counter\nPull',rarity:1,list:1,
         stats:[
-            {damage:4,alt:6,cost:1,attack:305,target:0,spec:0,class:1},
-            {damage:7,alt:6,cost:1,attack:305,target:0,spec:0,class:1},
+            {damage:8,alt:6,cost:1,attack:305,target:0,spec:0,class:1},
+            {damage:14,alt:6,cost:1,attack:305,target:0,spec:0,class:1},
         ],
         },{name:'Counter\nThrow',rarity:1,list:1,
         stats:[
-            {damage:2,alt:1,cost:1,attack:306,target:0,spec:0,class:2},
             {damage:4,alt:1,cost:1,attack:306,target:0,spec:0,class:2},
+            {damage:8,alt:1,cost:1,attack:306,target:0,spec:0,class:2},
         ],
         },{name:'Flip',rarity:1,list:1,
         stats:[
@@ -575,8 +575,8 @@ types={
         ],
         },{name:'Double\nCounter',rarity:1,list:1,
         stats:[
-            {damage:8,alt:10,cost:2,attack:434,target:0,spec:0,class:1},
-            {damage:14,alt:12,cost:2,attack:434,target:0,spec:0,class:1},
+            {damage:12,alt:10,cost:2,attack:434,target:0,spec:0,class:1},
+            {damage:20,alt:12,cost:2,attack:434,target:0,spec:0,class:1},
         ],
         },{name:'Jab',rarity:0,list:1,
         stats:[
@@ -615,7 +615,7 @@ types={
         ],
         },{name:'Charge\nCounter',rarity:2,list:1,
         stats:[
-            {damage:4,alt:4,cost:-1,attack:441,target:0,spec:0,class:1},
+            {damage:6,alt:4,cost:-1,attack:441,target:0,spec:0,class:1},
             {damage:8,alt:6,cost:-1,attack:441,target:0,spec:0,class:1},
         ],
         },
@@ -1685,8 +1685,8 @@ types={
         ],
         },{name:'Counter\nStab',rarity:0,list:4,
         stats:[
-            {damage:3,alt:3,cost:1,attack:153,target:0,spec:11,class:1},
-            {damage:6,alt:5,cost:1,attack:153,target:0,spec:11,class:1},
+            {damage:6,alt:3,cost:1,attack:153,target:0,spec:11,class:1},
+            {damage:10,alt:5,cost:1,attack:153,target:0,spec:11,class:1},
         ],
         },{name:'Extra\nCuts',rarity:1,list:4,
         stats:[
@@ -1830,8 +1830,8 @@ types={
         ],
         },{name:'Sidestep',rarity:1,list:4,
         stats:[
-            {damage:4,alt:1,cost:1,attack:206,target:0,spec:0,class:1},
-            {damage:7,alt:1,cost:1,attack:206,target:0,spec:0,class:1},
+            {damage:5,alt:1,cost:1,attack:206,target:0,spec:0,class:1},
+            {damage:8,alt:1,cost:1,attack:206,target:0,spec:0,class:1},
         ],
         },{name:'Embrace',rarity:2,list:4,
         stats:[
@@ -2017,6 +2017,9 @@ types={
         //strength on hit
         //energy related cards
         //lament
+
+        //Apply 3 poison to a random enemy 3(4) times.
+        //Apply 4(7) Poison and 2 Weak to ALL enemies. Exhaust.
 
         
         {name:'Build\nWall',rarity:0,list:5,
@@ -2886,6 +2889,41 @@ types={
         stats:[
             {damage:5,alt:1,cost:1,attack:575,target:0,spec:0,class:2},
             {damage:8,alt:1,cost:1,attack:575,target:0,spec:0,class:2},
+        ],
+        },{name:'Rematerialize',rarity:0,list:6,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:436,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:436,target:0,spec:0,class:2},
+        ],
+        },{name:'Piercing Wail',rarity:0,list:6,
+        stats:[
+            {damage:6,alt:0,cost:1,attack:576,target:0,spec:3,class:2},
+            {damage:8,alt:0,cost:1,attack:576,target:0,spec:3,class:2},
+        ],
+        },{name:'Prepared',rarity:0,list:6,
+        stats:[
+            {damage:1,alt:1,cost:0,attack:428,target:0,spec:3,class:2},
+            {damage:2,alt:2,cost:0,attack:428,target:0,spec:3,class:2},
+        ],
+        },{name:'Quick\nStrike',rarity:0,list:6,
+        stats:[
+            {damage:8,alt:1,cost:1,attack:24,target:1,spec:0,class:0},
+            {damage:12,alt:1,cost:1,attack:24,target:1,spec:0,class:0},
+        ],
+        },{name:'Residue',rarity:1,list:6,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:577,target:0,spec:0,class:2},
+            {damage:5,alt:0,cost:1,attack:577,target:0,spec:0,class:2},
+        ],
+        },{name:'Choke',rarity:1,list:6,
+        stats:[
+            {damage:12,alt:3,cost:2,attack:578,target:1,spec:0,class:0},
+            {damage:12,alt:5,cost:2,attack:578,target:1,spec:0,class:0},
+        ],
+        },{name:'Endless\nStream',rarity:1,list:6,
+        stats:[
+            {damage:4,alt:1,cost:0,attack:579,target:1,spec:3,class:0},
+            {damage:5,alt:2,cost:0,attack:579,target:1,spec:3,class:0},
         ],
         },
 

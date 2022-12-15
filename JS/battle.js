@@ -349,6 +349,11 @@ class battle{
         if(this.reserve.cards.length>0){
             this.drawEffect(this.reserve.cards[0].attack)
             this.hand.cards.push(copyCard(this.reserve.cards[0]))
+            if(this.reserve.cards[0].attack==579){
+                for(let g=0;g<this.reserve.cards[0].alt;g++){
+                    this.hand.cards.push(copyCard(this.reserve.cards[0]))
+                }
+            }
             this.hand.cards[this.hand.cards.length-1].position.x=1206
             this.hand.cards[this.hand.cards.length-1].position.y=500
             this.reserve.cards.splice(0,1)
@@ -727,7 +732,7 @@ class battle{
                     f!=52&&f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&
                     f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79&&
                     f!=80&&f!=81&&f!=82&&f!=85&&f!=88&&f!=91&&f!=95&&f!=96&&f!=97&&f!=101&&
-                    f!=103&&f!=107&&f!=108&&f!=112&&f!=113&&f!=114){
+                    f!=103&&f!=107&&f!=108&&f!=112&&f!=113&&f!=114&&f!=116){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[f]
                     }else if(f==67){
@@ -1012,6 +1017,11 @@ class battle{
         }
         if(this.combatants[0].status.main[23]>0){
             this.combatants[0].addBlock(this.combatants[0].status.main[23])
+        }
+        for(g=0,lg=this.combatants.length;g<lg;g++){
+            if(this.combatants[g].team==1&&this.combatants[g].life>0&&this.combatants[g].status.main[117]>0){
+                this.combatants[g].take(this.combatants[g].status.main[117],g)
+            }
         }
     }
     afterPlayCard(){

@@ -33,7 +33,7 @@ class attack{
                 case -22:
                     this.battle.currency.money-=10
                 break
-                case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329: case 560: case 565: case 573:
+                case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329: case 560: case 565: case 573: case 579:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2: case 231: case 241: case 268:
@@ -2876,6 +2876,21 @@ class attack{
                 case 575:
                     this.battle.combatants[0].status.main[113]+=this.damage
                     this.battle.combatants[0].status.main[71]+=this.alt
+                break
+                case 576:
+                    for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0&&this.battle.combatants[g].team==1){
+                            this.battle.combatants[g].boost.main[0]-=this.damage
+                            this.battle.combatants[g].status.main[4]+=this.damage-1
+                        }
+                    }
+                break
+                case 577:
+                    this.battle.combatants[0].status.main[116]+=this.damage
+                break
+                case 578:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target].status.main[117]+=this.alt
                 break
                 default:
             }

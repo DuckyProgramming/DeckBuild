@@ -261,7 +261,7 @@ class card{
             case 197: this.desc+='Apply '+this.damage+' Stun\nto All Enemies'; break
             case 198: this.desc+='Deal '+this.damage+' Damage\nApply 1 Stun\nGain 2 Weak\n'+nfp(this.alt)+' Balance'; break
             case 199: this.desc+='If Unarmed\nDeal '+this.damage+' Damage\nApply 1 Stun\nApply 1 Vulnerable\n'+nfp(this.alt)+' Balance'; break
-            case 200: this.desc+='Reflect Next\n'+this.damage+' Attacks\nCounter '+(7+this.level*3)+' Once\n'+nfp(this.alt)+' Balance'; break
+            case 200: this.desc+='Reflect Next\n'+this.damage+' Attacks\nCounter '+(8+this.level*7)+' Once\n'+nfp(this.alt)+' Balance'; break
             case 201: this.desc+='Add '+this.damage+' Dodge\n'+nfp(this.alt)+' Balance'; break
             case 202: this.desc+='Add '+this.damage+' Block\nCounter '+this.alt+'\nAll 3 Times\n'+nfp(6)+' Balance'; break
             case 203: this.desc+='Reflect Next\n'+this.damage+' Attacks\nDisarm'; break
@@ -637,6 +637,10 @@ class card{
             case 573: this.desc+='Deal '+this.damage+' Damage\nCosts 1 Less For\nEach Time You Take\nUnblocked Damage'; break
             case 574: this.desc+='Gain '+this.damage+' Energy\nLose '+this.alt+' Health'; break
             case 575: this.desc+='Every Turn,\nDeal '+this.damage+' Damage\nto All Enemies\nand Take '+this.alt+' Damage'; break
+            case 576: this.desc+='All Enemies Gain\n'+this.alt+' Temporary Weak'; break
+            case 577: this.desc+='Counter '+this.damage+' All\nThis Combat'; break
+            case 578: this.desc+='Deal '+this.damage+' Damage\nTarget Takes '+this.alt+'\nDamage Per\nCard Played'; break
+            case 579: this.desc+='Is Copied '+this.alt+'\nTimes When Drawn\nDeal '+this.damage+' Damage'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
