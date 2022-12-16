@@ -1346,8 +1346,8 @@ types={
         ],
         },{name:'Shield\nEcho',rarity:0,list:3,
         stats:[
-            {damage:4,alt:0,cost:1,attack:345,target:0,spec:0,class:2},
-            {damage:6,alt:0,cost:1,attack:345,target:0,spec:0,class:2},
+            {damage:4,alt:0,cost:1,attack:345,target:0,spec:0,class:1},
+            {damage:6,alt:0,cost:1,attack:345,target:0,spec:0,class:1},
         ],
         },{name:'Absorption',rarity:1,list:3,
         stats:[
@@ -1366,8 +1366,8 @@ types={
         ],
         },{name:'Pinpoint\nBeam',rarity:0,list:3,
         stats:[
-            {damage:3,alt:2,cost:1,attack:349,target:1,spec:0,class:0},
-            {damage:5,alt:2,cost:1,attack:349,target:1,spec:0,class:0},
+            {damage:3,alt:2,cost:0,attack:349,target:1,spec:0,class:0},
+            {damage:5,alt:2,cost:0,attack:349,target:1,spec:0,class:0},
         ],
         },{name:'Seperate\nWeaknesses',rarity:0,list:3,
         stats:[
@@ -2017,7 +2017,8 @@ types={
         //strength on hit
         //energy related cards
         //lament
-
+        
+        //Whenever an attack deals unblocked damage, apply 1 Poison.
         //Apply 3 poison to a random enemy 3(4) times.
         //Apply 4(7) Poison and 2 Weak to ALL enemies. Exhaust.
         //	At the start of your turn, apply 2(3) Poison to ALL enemies.
@@ -2958,13 +2959,33 @@ types={
         ],
         },{name:'Reserve',rarity:1,list:6,
         stats:[
-            {damage:1,alt:0,cost:1,attack:586,target:0,spec:0,class:0},
-            {damage:1,alt:0,cost:0,attack:586,target:0,spec:0,class:0},
+            {damage:1,alt:0,cost:1,attack:586,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:586,target:0,spec:0,class:2},
         ],
         },{name:'Bullet\nTime',rarity:2,list:6,
         stats:[
-            {damage:0,alt:0,cost:3,attack:587,target:0,spec:0,class:0},
-            {damage:0,alt:0,cost:2,attack:587,target:0,spec:0,class:0},
+            {damage:1,alt:0,cost:3,attack:587,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:2,attack:587,target:0,spec:0,class:2},
+        ],
+        },{name:'Death\nExplosion',rarity:2,list:6,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:588,target:1,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:588,target:1,spec:0,class:2},
+        ],
+        },{name:'Finale',rarity:2,list:6,
+        stats:[
+            {damage:50,alt:0,cost:0,attack:589,target:0,spec:0,class:0},
+            {damage:60,alt:0,cost:0,attack:589,target:0,spec:0,class:0},
+        ],
+        },{name:'Malaise',rarity:2,list:6,
+        stats:[
+            {damage:2,alt:0,cost:-1,attack:590,target:1,spec:0,class:2},
+            {damage:3,alt:0,cost:-1,attack:590,target:1,spec:0,class:2},
+        ],
+        },{name:'Nightmare',rarity:2,list:6,
+        stats:[
+            {damage:3,alt:0,cost:2,attack:591,target:0,spec:3,class:2},
+            {damage:5,alt:0,cost:2,attack:591,target:0,spec:3,class:2},
         ],
         },
 
@@ -2986,8 +3007,8 @@ types={
         ],
         },{name:'Spare',rarity:1,list:7,
         stats:[
-            {damage:0,alt:0,cost:0,attack:581,target:0,spec:3,class:2},
-            {damage:0,alt:0,cost:0,attack:581,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:0,attack:581,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:0,attack:581,target:0,spec:3,class:2},
         ],
         },
         

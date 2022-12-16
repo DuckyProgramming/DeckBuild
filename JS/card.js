@@ -501,7 +501,7 @@ class card{
             case 436: this.desc+='Gain '+this.damage+' Energy\nNext Turn'; break
             case 437: this.desc+='Gain '+this.damage+' More\nCombo Per Hit'; break
             case 438: this.desc+='When You\nPlay an Attack,\nDraw '+this.damage+' Cards'; break
-            case 439: this.desc+='When You Add\nBlock, Gain\n1 Combo'; break
+            case 439: this.desc+='When You Add\nBlock, Gain\n'+this.damage+' Combo'; break
             case 440: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, gain\n'+this.alt+' Combo'; break
             case 441: this.desc+='Add '+this.damage+'X Block\nCounter '+this.alt+'X Once'; break
             case 442: this.desc+='Set Construct to\nDexterizer'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
@@ -650,6 +650,11 @@ class card{
             case 585: this.desc+='Deal '+this.damage+' Damage\nDraw '+this.alt+' Cards\nNext Turn'; break
             case 586: this.desc+='Put a Card\non Top of\nYour Draw Pile\nIt Costs 0'; break
             case 587: this.desc+='All Cards in\nHand Cost 0\nCannot Draw Cards\nThis Turn'; break
+            case 588: this.desc+='When Target Dies,\nDeal Damage to\nAll Enemies Equal\nto its Max HP'; break
+            case 589: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nHas No Effect if\nThere Are Cards\nin Your Draw Pile'; break
+            case 590: this.desc+='Apply '+this.damage+'X\nWeak'; break
+            case 591: this.desc+='Put '+this.damage+' Copies\nof a Card\non Top of\nYour Draw Pile\nIt Costs 0'; break
+            
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

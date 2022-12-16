@@ -101,11 +101,11 @@ class group{
                 }*/
                 //this.add(findCard(''),0,this.battle.player)
                 //this.add(findCard(''),0,this.battle.player)
-                this.add(582,0,this.battle.player)
-                this.add(583,0,this.battle.player)
-                this.add(584,0,this.battle.player)
-                this.add(585,0,this.battle.player)
                 this.add(586,0,this.battle.player)
+                this.add(587,0,this.battle.player)
+                this.add(588,0,this.battle.player)
+                this.add(589,0,this.battle.player)
+                this.add(590,0,this.battle.player)
             break
             case 7:
                 this.add(558,0,this.battle.player)
@@ -663,10 +663,17 @@ class group{
                     this.cards[e].base.cost=0
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.random.reserving>0){
                     this.battle.random.reserving--
-                    this.cards[e].used=true
-                    this.cards[e].drawTop=true
-                    this.cards[e].cost=0
-                    this.cards[e].base.cost=0
+                    if(this.battle.random.copying>0){
+                        for(let f=0;f<this.battle.random.copying;f++){
+                            this.battle.reserve.pushTop(copyCard(this.cards[e]))
+                        }
+                        this.battle.random.copying=0
+                    }else{
+                        this.cards[e].used=true
+                        this.cards[e].drawTop=true
+                        this.cards[e].cost=0
+                        this.cards[e].base.cost=0
+                    }
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&(this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7||this.cards[e].list==10&&this.battle.relics.active[38]||this.cards[e].list==11&&this.battle.relics.active[108])){
                     this.cards[e].select=true
                     this.select=true

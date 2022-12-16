@@ -37,7 +37,7 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,copying:0}
         this.defaultRandom={attacked:0,orbs:0,shields:0,hits:0,discards:0}
         stage.identifier=types.combatant[this.player].identifiers
     }
@@ -56,7 +56,7 @@ class battle{
         //transition.trigger=true
         //transition.scene='event'
         //this.map.complete[0][0]=1
-        //this.event=105
+        //this.event=findEvent('Punching Bag')
     }
     create(){
         this.end=false
@@ -78,6 +78,7 @@ class battle{
         this.random.transforming=0
         this.random.forethinking=0
         this.random.reserving=0
+        this.random.copying=0
         this.combatants[0].resetUnique()
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
@@ -327,6 +328,9 @@ class battle{
         }
     }
     turnDraw(){
+        if(this.combatants[0].status.main[119]>0){
+            this.combatants[0].status.main[119]=0
+        }
         for(e=0,le=this.random.drawing;e<le;e++){
             this.draw()
         }
@@ -737,7 +741,7 @@ class battle{
                     f!=52&&f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&
                     f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79&&
                     f!=80&&f!=81&&f!=82&&f!=85&&f!=88&&f!=91&&f!=95&&f!=96&&f!=97&&f!=101&&
-                    f!=103&&f!=107&&f!=108&&f!=112&&f!=113&&f!=114&&f!=116){
+                    f!=103&&f!=107&&f!=108&&f!=112&&f!=113&&f!=114&&f!=116&&f!=120){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[f]
                     }else if(f==67){
@@ -993,7 +997,7 @@ class battle{
                 }
             }
             if(this.relics.active[68]){
-                this.combatants[0].life=min(this.combatants[0].life+this.damage*this.random.healEffectiveness,this.combatants[0].base.life)
+                this.combatants[0].life=min(this.combatants[0].life+2*this.random.healEffectiveness,this.combatants[0].base.life)
             }
             for(g=0;g<this.combatants[0].status.main[53];g++){
                 this.draw()
@@ -1570,6 +1574,7 @@ class battle{
         this.layer.quad(-92+this.anim.turn*100,390,-68+this.anim.turn*100,358,-44+this.anim.turn*100,390,-68+this.anim.turn*100,422)
         playerFill(this.layer,this.player,1)
         this.layer.strokeWeight(5)
+        this.layer.rect(-68+this.anim.turn*100,485,40,30,5)
         this.layer.rect(-68+this.anim.turn*100,525,40,30,5)
         this.layer.rect(-68+this.anim.turn*100,565,40,30,5)
         this.layer.fill(0)
@@ -1579,8 +1584,12 @@ class battle{
         this.layer.textSize(20)
         this.layer.text(this.mana.main+'/'+this.mana.max,-68+this.anim.turn*100,390)
         this.layer.textSize(12)
-        this.layer.text('Discard',-68+this.anim.turn*100,525)
+        this.layer.text('('+this.reserve.cards.length+')',-68+this.anim.turn*100,491)
+        this.layer.text('Discard',-68+this.anim.turn*100,519)
+        this.layer.text('('+this.discard.cards.length+')',-68+this.anim.turn*100,531)
         this.layer.text('End',-68+this.anim.turn*100,565)
+        this.layer.fill(50)
+        this.layer.text('Draw',-68+this.anim.turn*100,479)
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].displayInfo()
         }
@@ -2421,13 +2430,18 @@ class battle{
         }
     }
     updateDeck(){
-        if(inputs.keys[0][2]||inputs.keys[1][2]){
+        if((inputs.keys[0][2]||inputs.keys[1][2])&&this.deck.scroll<floor((this.deck.cards.length-1)/6)*200-400){
             this.deck.scroll+=30
+            for(let g=0,lg=this.choice.cards.length;g<lg;g++){
+                this.choice.cards[g].position.y-=30
+            }
         }
-        if(inputs.keys[0][3]||inputs.keys[1][3]){
+        if((inputs.keys[0][3]||inputs.keys[1][3])&&this.deck.scroll>0){
             this.deck.scroll-=30
+            for(let g=0,lg=this.choice.cards.length;g<lg;g++){
+                this.choice.cards[g].position.y+=30
+            }
         }
-        this.deck.scroll=constrain(this.deck.scroll,0,floor((this.deck.cards.length-1)/6)*200-400)
         if(this.context==1||this.context==4||this.context==5||this.context==6||this.context==9||this.context==14||this.context==15||this.context==16){
             this.deck.updateView()
         }

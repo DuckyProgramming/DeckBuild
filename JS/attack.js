@@ -111,9 +111,7 @@ class attack{
                 break
                 case 18:
                     this.battle.combatants[this.target].take(this.damage,this.user)
-                    for(let g=0;g<this.alt;g++){
-                        this.battle.randomDiscard()
-                    }
+                    this.battle.discarding=this.alt
                 break
                 case 19:
                     if(this.battle.combatants[0].ammo.length>1){
@@ -2904,7 +2902,7 @@ class attack{
                     }
                 break
                 case 581:
-                    this.battle.combatants[0].status.main[118]++
+                    this.battle.combatants[0].status.main[118]+=this.damage
                 break
                 case 583:
                     this.battle.combatants[this.target].take(this.damage,this.user)
@@ -2925,10 +2923,25 @@ class attack{
                     this.battle.random.reserving=this.damage
                 break
                 case 587:
-                    this.battle.combatants[0].status.main[119]++
+                    this.battle.combatants[0].status.main[119]+=this.damage
                     for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
                         this.battle.hand.cards[g].cost=0
                     }
+                break
+                case 588:
+                    this.battle.combatants[this.target].status.main[120]+=this.damage
+                break
+                case 589:
+                    if(this.battle.reserve.cards.length<=0){
+                        this.battle.takeAll(this.damage,this.user,1)
+                    }
+                break
+                case 590:
+                    this.battle.combatants[this.target].boost.main[0]-=this.mana*this.damage
+                break
+                case 591:
+                    this.battle.random.reserving++
+                    this.battle.random.copying+=this.damage
                 break
                 default:
             }
