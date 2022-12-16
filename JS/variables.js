@@ -1022,7 +1022,8 @@ types={
             {damage:2,alt:0,cost:0,attack:555,target:0,spec:0,class:2},
         ],
         },
-        
+        //gain 1 energy, draw 1 card, after turn 5
+
         
         {name:'Charge',rarity:0,list:3,
         stats:[
@@ -2017,6 +2018,8 @@ types={
         //strength on hit
         //energy related cards
         //lament
+
+        //99 control
         
         //Whenever an attack deals unblocked damage, apply 1 Poison.
         //Apply 3 poison to a random enemy 3(4) times.
@@ -3107,6 +3110,26 @@ types={
             {damage:7,alt:9,cost:1,attack:616,target:1,spec:0,class:0},
             {damage:10,alt:14,cost:1,attack:616,target:1,spec:0,class:0},
         ],
+        },{name:'Impatient',rarity:0,list:6,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:617,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:617,target:0,spec:0,class:2},
+        ],
+        },{name:'Respawn',rarity:1,list:6,
+        stats:[
+            {damage:0,alt:0,cost:2,attack:618,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:1,attack:618,target:0,spec:0,class:2},
+        ],
+        },{name:'Memories',rarity:1,list:6,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:619,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:619,target:0,spec:0,class:2},
+        ],
+        },{name:'Remember\nAttack',rarity:0,list:6,
+        stats:[
+            {damage:15,alt:0,cost:0,attack:1,target:1,spec:16,class:0},
+            {damage:24,alt:0,cost:0,attack:1,target:1,spec:16,class:0},
+        ],
         },
 
 
@@ -3576,7 +3599,7 @@ types={
         {name:'Executor',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MAEP-65091','Azis']},
         {name:'Creation',alt:'',life:60,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','MPCO-SKR','Sakura']},
         {name:'Builder',alt:'',life:60,height:66,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Friend','Duck','____','Duckipo']},
-        {name:'Phantasm',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Sister','Miss','____','Certes']},
+        {name:'Phantasm',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Friend','Thing','____','Certes']},
         {name:'Gentleman',alt:'',life:70,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MCFN-3742105','Alexander']},
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
         {name:'Slime',alt:'',life:30,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,'Stuck',0],class:0,buff:0},

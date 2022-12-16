@@ -3063,6 +3063,30 @@ class attack{
                         this.battle.combatants[this.target].take(this.damage,this.user)
                     }
                 break
+                case 617:
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.battle.context=17
+                break
+                case 618:
+                    while(this.battle.discard.cards.length>0){
+                        this.battle.hand.cards.push(copyCard(this.battle.discard.cards[0]))
+                        this.battle.hand.cards[this.battle.hand.cards.length-1].position.x=1206
+                        this.battle.hand.cards[this.battle.hand.cards.length-1].position.y=500
+                        this.battle.discard.cards.splice(0,1)
+                    }
+                break
+                case 619:
+                    for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
+                        if(this.battle.discard.cards[g].spec==16){
+                            this.battle.hand.cards.push(copyCard(this.battle.discard.cards[g]))
+                            this.battle.hand.cards[this.battle.hand.cards.length-1].position.x=1206
+                            this.battle.hand.cards[this.battle.hand.cards.length-1].position.y=500
+                            this.battle.discard.cards.splice(g,1)
+                            break
+                        }
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

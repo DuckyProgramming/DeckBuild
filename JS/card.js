@@ -43,6 +43,9 @@ class card{
         if(this.spec==7||this.spec==8||this.spec==10){
             this.desc+='Innate\n'
         }
+        if(this.spec==16){
+            this.desc+='Memory\n'
+        }
         switch(this.attack){
             case -2: this.desc+='Take '+this.damage+' Damage\nPer Card Played'; break
             case -3: this.desc+='Ethereal'; break
@@ -680,6 +683,9 @@ class card{
             case 614: this.desc+='When You\nPlay a Shiv,\nDraw '+this.damage+' Cards'; break
             case 615: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Deal '+this.alt+'\nDamage to\nAll Enemies'; break
             case 616: this.desc+='Deal '+this.damage+' Damage\nIf You Have Weak,\nDeal '+this.alt+'\nExtra Damage'; break
+            case 617: this.desc+='Put a Card\nFrom Your Draw\nPile into\nYour Hand'; break
+            case 618: this.desc+='Return Discard\nPile to Hand'; break
+            case 619: this.desc+='Put First Memory\nin Discard Pile\ninto Your Hand'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -845,7 +851,11 @@ class card{
         if(this.size<1&&!this.used){
             this.size=round(this.size*5+1)*0.2
         }else if(this.size>0&&this.used){
-            this.size=round(this.size*5-1)*0.2
+            if(this.spec==16&&!this.trigger){
+                this.size=round(this.size*50-1)*0.02
+            }else{
+                this.size=round(this.size*5-1)*0.2
+            }
         }
         if(this.size<=0&&this.used){
             if((this.spec==3||this.spec==8||this.spec==9||this.spec==13||this.spec==14||this.playExhaust)&&this.trigger||this.exhaust){

@@ -363,6 +363,10 @@ class battle{
                 if(this.combatants[0].status.main[125]>0&&(this.hand.cards[this.hand.cards.length-1].list==10||this.hand.cards[this.hand.cards.length-1].list==11)){
                     this.takeAll(this.combatants[0].status.main[125],-1,1)
                 }
+                if(this.reserve.cards[0].spec==16){
+                    this.hand.cards[this.hand.cards.length-1].size=1
+                    this.hand.cards[this.hand.cards.length-1].used=true
+                }
                 if(this.reserve.cards[0].attack==579){
                     for(let g=0;g<this.reserve.cards[0].alt;g++){
                         this.hand.cards.push(copyCard(this.reserve.cards[0]))
@@ -373,6 +377,10 @@ class battle{
                         }
                         if(this.combatants[0].status.main[125]>0&&(this.hand.cards[this.hand.cards.length-1].list==10||this.hand.cards[this.hand.cards.length-1].list==11)){
                             this.takeAll(this.combatants[0].status.main[125],-1,1)
+                        }
+                        if(this.reserve.cards[0].spec==16){
+                            this.hand.cards[this.hand.cards.length-1].size=1
+                            this.hand.cards[this.hand.cards.length-1].used=true
                         }
                     }
                 }
@@ -2433,7 +2441,7 @@ class battle{
             this.discard.displayView(-1)
         }else if(this.context==5||this.context==6||this.context==9||this.context==14||this.context==15){
             this.deck.displayView(-1)
-        }else if(this.context==7||this.context==8||this.context==13){
+        }else if(this.context==7||this.context==8||this.context==13||this.context==17){
             this.reserve.displayView(this.context2)
         }
         this.layer.noStroke()
@@ -2443,7 +2451,7 @@ class battle{
         this.layer.textSize(20)
         if(this.context==3||this.context==5||this.context==6){
             this.layer.text('Back',850,570)
-        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11||this.context==12||this.context==13||this.context==14||this.context==15||this.context==16){
+        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11||this.context==12||this.context==13||this.context==14||this.context==15||this.context==16||this.context==17){
             this.layer.text('Skip',850,570)
         }
         if(this.context==6){
@@ -2485,7 +2493,7 @@ class battle{
             }else if(this.context==2){
                 this.close()
                 transition.scene='battle'
-            }else if(this.context==3||this.context==7||this.context==10||this.context==11||this.context==12){
+            }else if(this.context==3||this.context==7||this.context==10||this.context==11||this.context==12||this.context==17){
                 transition.scene='battle'
             }else if(this.context==6||this.context==9){
                 transition.scene='shop'
@@ -2516,7 +2524,7 @@ class battle{
             this.deck.onClickView(this.context,this.context2)
         }else if(this.context==2||this.context==10||this.context==11||this.context==12){
             this.discard.onClickView(this.context,this.context2)
-        }else if(this.context==7||this.context==8){
+        }else if(this.context==7||this.context==8||this.context==17){
             this.reserve.onClickView(this.context,this.context2)
         }
     }

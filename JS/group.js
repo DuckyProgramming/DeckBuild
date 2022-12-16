@@ -101,11 +101,11 @@ class group{
                 }*/
                 //this.add(findCard(''),0,this.battle.player)
                 //this.add(findCard(''),0,this.battle.player)
-                this.add(610,0,this.battle.player)
-                this.add(611,0,this.battle.player)
-                this.add(612,0,this.battle.player)
-                this.add(613,0,this.battle.player)
                 this.add(614,0,this.battle.player)
+                this.add(615,0,this.battle.player)
+                this.add(616,0,this.battle.player)
+                this.add(617,0,this.battle.player)
+                this.add(618,0,this.battle.player)
             break
             case 7:
                 this.add(558,0,this.battle.player)
@@ -805,7 +805,7 @@ class group{
                     e--
                     le--
                     this.battle.context2--
-                }else if(context==2){
+                }else if(context==2||context==17){
                     this.battle.hand.cards.push(copyCard(this.cards[e]))
                     this.battle.hand.cards[this.battle.hand.cards.length-1].position.x=1206
                     this.battle.hand.cards[this.battle.hand.cards.length-1].position.y=500
