@@ -3054,7 +3054,7 @@ types={
         ],
         },{name:'Brutality',rarity:2,list:6,
         stats:[
-            {damage:1,alt:1,cost:0,attack:606,target:0,spec:10,class:2},
+            {damage:1,alt:1,cost:0,attack:606,target:0,spec:0,class:2},
             {damage:1,alt:1,cost:0,attack:606,target:0,spec:10,class:2},
         ],
         },{name:'Corruption',rarity:2,list:6,
@@ -3076,6 +3076,16 @@ types={
         stats:[
             {damage:2,alt:0,cost:1,attack:610,target:0,spec:3,class:2},
             {damage:2,alt:0,cost:1,attack:610,target:0,spec:0,class:2},
+        ],
+        },{name:'Spinning\nBlades',rarity:0,list:6,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:611,target:0,spec:0,class:1},
+            {damage:1,alt:0,cost:1,attack:611,target:0,spec:10,class:1},
+        ],
+        },{name:'Bladestream',rarity:0,list:6,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:612,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:612,target:0,spec:0,class:2},
         ],
         },
 
@@ -3294,7 +3304,7 @@ types={
             {damage:2,alt:2,cost:0,attack:563,target:1,spec:0,class:0},
             {damage:2,alt:2,cost:0,attack:563,target:1,spec:0,class:0},
         ],
-        },
+        },//12/16
 
 
         {name:'Redraw',rarity:-3,list:0,
@@ -3609,7 +3619,7 @@ types={
         {name:'Exhauster',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
-        
+        //the sharpshooter
     ],attack:[
         {class:0},//0
         {class:0},

@@ -305,7 +305,7 @@ class card{
             case 239: this.desc+='Double\nYour Energy'; break
             case 240: this.desc+='Add '+this.damage+' Block\nRetain Your Hand'; break
             case 241: this.desc+='Add '+this.damage+' Block\nTemporarily Increase\nBlock by '+this.alt; break
-            case 242: this.desc+='When You\nPlay a Power,\nDraw '+this.damage+' Cards'; break
+            case 242: this.desc+='When You\nPlay a Power That\nCosts 1 or More,\nDraw '+this.damage+' Cards'; break
             case 243: this.desc+='At the Start of\nYour Turn, Add\na Random Common\nCard to Your Hand'; break
             case 244: this.desc+='At the Start of\nYour Turn, Trigger\na Weak Evoke on\nRightmost Charge'; break
             case 245: this.desc+='Draw '+this.damage+' Cards\nAdd a Burn\nto Draw Pile'; break
@@ -674,6 +674,8 @@ class card{
             case 608: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Gain\n'+this.alt+' Max Health'; break
             case 609: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nWhen You Gain\nBlock'; break
             case 610: this.desc+='Double All\nYour Stat Buffs'; break
+            case 611: this.desc+='When You\nTake Damage,\nAdd '+this.damage+' Shivs\nto Your Hand'; break
+            case 612: this.desc+='Play All Shivs,\nDealing 8\nUnblockable Damage\nfor Each Shiv'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

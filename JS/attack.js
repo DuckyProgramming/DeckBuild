@@ -3027,6 +3027,18 @@ class attack{
                         }
                     }
                 break
+                case 611:
+                    this.battle.combatants[0].status.main[127]+=this.damage
+                break
+                case 612:
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].attack==1&&this.battle.hand.cards[g].spec==3){
+                            this.battle.hand.cards[g].trigger=true
+                            this.battle.hand.cards[g].used=true
+                            this.battle.combatants[0].orbAttack(8,-1,0)
+                        }
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

@@ -755,7 +755,7 @@ class battle{
                     f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79&&
                     f!=80&&f!=81&&f!=82&&f!=85&&f!=88&&f!=91&&f!=95&&f!=96&&f!=97&&f!=101&&
                     f!=103&&f!=107&&f!=108&&f!=112&&f!=113&&f!=114&&f!=116&&f!=120&&f!=123&&f!=124&&
-                    f!=125&&f!=126){
+                    f!=125&&f!=126&&f!=127){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[f]
                     }else if(f==67){
@@ -1015,8 +1015,12 @@ class battle{
             if(this.relics.active[68]){
                 this.combatants[0].life=min(this.combatants[0].life+2*this.random.healEffectiveness,this.combatants[0].base.life)
             }
-            for(g=0;g<this.combatants[0].status.main[53];g++){
-                this.draw()
+            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                if(this.hand.cards[g].trigger&&this.hand.cards[g].cost!=0){
+                    for(h=0;h<this.combatants[0].status.main[53];h++){
+                        this.draw()
+                    }
+                }
             }
             for(g=0;g<this.combatants[0].status.main[57];g++){
                 this.combatants[0].load(0,0)
