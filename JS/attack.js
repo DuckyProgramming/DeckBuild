@@ -3039,6 +3039,30 @@ class attack{
                         }
                     }
                 break
+                case 613:
+                    this.battle.draw()
+                    if(this.battle.hand.cards[this.battle.hand.cards.length-1].class==0){
+                        for(g=0;g<this.alt;g++){
+                            this.battle.hand.add(findCard('Shiv'),0,0)
+                        }
+                    }
+                break
+                case 614:
+                    this.battle.combatants[0].status.main[128]+=this.damage
+                break
+                case 615:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].life<=0){
+                        this.battle.takeAll(this.alt,this.user,1)
+                    }
+                break
+                case 616:
+                    if(this.battle.combatants[0].boost.main[0]<0){
+                        this.battle.combatants[this.target].take(this.damage+this.alt,this.user)
+                    }else{
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

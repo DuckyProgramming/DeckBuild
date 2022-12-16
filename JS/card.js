@@ -676,6 +676,10 @@ class card{
             case 610: this.desc+='Double All\nYour Stat Buffs'; break
             case 611: this.desc+='When You\nTake Damage,\nAdd '+this.damage+' Shivs\nto Your Hand'; break
             case 612: this.desc+='Play All Shivs,\nDealing 8\nUnblockable Damage\nfor Each Shiv'; break
+            case 613: this.desc+='Draw '+this.damage+' Card\nIf it is an Attack,\nAdd '+this.alt+' Shivs\nto Your Hand'; break
+            case 614: this.desc+='When You\nPlay a Shiv,\nDraw '+this.damage+' Cards'; break
+            case 615: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Deal '+this.alt+'\nDamage to\nAll Enemies'; break
+            case 616: this.desc+='Deal '+this.damage+' Damage\nIf You Have Weak,\nDeal '+this.alt+'\nExtra Damage'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

@@ -3082,10 +3082,30 @@ types={
             {damage:1,alt:0,cost:1,attack:611,target:0,spec:0,class:1},
             {damage:1,alt:0,cost:1,attack:611,target:0,spec:10,class:1},
         ],
-        },{name:'Bladestream',rarity:0,list:6,
+        },{name:'Bladestream',rarity:1,list:6,
         stats:[
             {damage:0,alt:0,cost:1,attack:612,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:0,attack:612,target:0,spec:0,class:2},
+        ],
+        },{name:'Summon\nBlade',rarity:1,list:6,
+        stats:[
+            {damage:1,alt:1,cost:0,attack:613,target:0,spec:0,class:2},
+            {damage:1,alt:2,cost:0,attack:613,target:0,spec:0,class:2},
+        ],
+        },{name:'Blade\nChain',rarity:1,list:6,
+        stats:[
+            {damage:1,alt:1,cost:0,attack:614,target:0,spec:0,class:2},
+            {damage:1,alt:2,cost:0,attack:614,target:0,spec:0,class:2},
+        ],
+        },{name:'Interior\nBurst',rarity:0,list:6,
+        stats:[
+            {damage:4,alt:4,cost:1,attack:615,target:1,spec:0,class:0},
+            {damage:6,alt:8,cost:1,attack:615,target:1,spec:0,class:0},
+        ],
+        },{name:'Facade',rarity:0,list:6,
+        stats:[
+            {damage:7,alt:9,cost:1,attack:616,target:1,spec:0,class:0},
+            {damage:10,alt:14,cost:1,attack:616,target:1,spec:0,class:0},
         ],
         },
 
