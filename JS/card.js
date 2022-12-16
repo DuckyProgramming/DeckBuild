@@ -672,6 +672,8 @@ class card{
             case 606: this.desc+='Draw '+this.damage+' More\nCards Per Turn\nLose '+this.alt+' Health\nPer Turn'; break
             case 607: this.desc+='All Current\nSkills Cost 0\nand Exhaust'; break
             case 608: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Gain\n'+this.alt+' Max Health'; break
+            case 609: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nWhen You Gain\nBlock'; break
+            case 610: this.desc+='Double All\nYour Stat Buffs'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

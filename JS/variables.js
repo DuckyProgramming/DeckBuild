@@ -2677,7 +2677,7 @@ types={
             {damage:1,alt:0,cost:2,attack:131,target:0,spec:0,class:2},
             {damage:2,alt:0,cost:2,attack:131,target:0,spec:0,class:2},
         ],
-        },{name:'Dagger\nStorm',rarity:2,list:6,
+        },{name:'Dagger\nStorm',rarity:1,list:6,
         stats:[
             {damage:0,alt:0,cost:1,attack:132,target:0,spec:0,class:2},
             {damage:1,alt:0,cost:1,attack:132,target:0,spec:0,class:2},
@@ -2839,8 +2839,8 @@ types={
         ],
         },{name:'Pulsate',rarity:0,list:6,
         stats:[
-            {damage:3,alt:0,cost:0,attack:567,target:1,spec:0,class:0},
-            {damage:5,alt:0,cost:0,attack:567,target:1,spec:0,class:0},
+            {damage:3,alt:0,cost:0,attack:567,target:0,spec:0,class:0},
+            {damage:5,alt:0,cost:0,attack:567,target:0,spec:0,class:0},
         ],
         },{name:'Havoc',rarity:0,list:6,
         stats:[
@@ -3062,10 +3062,20 @@ types={
             {damage:0,alt:0,cost:3,attack:607,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:2,attack:607,target:0,spec:0,class:2},
         ],
-        },{name:'Consume',rarity:1,list:6,
+        },{name:'Consume',rarity:2,list:6,
         stats:[
             {damage:10,alt:3,cost:1,attack:608,target:1,spec:3,class:0},
             {damage:12,alt:4,cost:1,attack:608,target:1,spec:3,class:0},
+        ],
+        },{name:'Juggernaut',rarity:1,list:6,
+        stats:[
+            {damage:3,alt:0,cost:2,attack:609,target:0,spec:0,class:2},
+            {damage:5,alt:0,cost:2,attack:609,target:0,spec:0,class:2},
+        ],
+        },{name:'Overpower',rarity:2,list:6,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:610,target:0,spec:3,class:2},
+            {damage:2,alt:0,cost:1,attack:610,target:0,spec:0,class:2},
         ],
         },
 

@@ -3017,6 +3017,16 @@ class attack{
                         this.battle.combatants[0].life+=this.alt
                     }
                 break
+                case 609:
+                    this.battle.combatants[0].status.main[126]+=this.damage
+                break
+                case 610:
+                    for(g=0,lg=this.battle.combatants[0].boost.main.length;g<lg;g++){
+                        if(this.battle.combatants[0].boost.main[g]>0){
+                            this.battle.combatants[0].boost.main[g]*=2
+                        }
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
