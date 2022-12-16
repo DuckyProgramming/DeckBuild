@@ -1351,7 +1351,7 @@ class attack{
                 case 277:
                     this.battle.combatants[0].status.main[39]+=this.damage
                 break
-                case 278:
+                case 278: case 604:
                     this.battle.combatants[0].status.main[47]+=this.damage
                 break
                 case 279:
@@ -2966,6 +2966,30 @@ class attack{
                 break
                 case 596:
                     this.battle.combatants[0].status.main[125]+=this.damage
+                break
+                case 601:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].class!=0){
+                            this.battle.hand.cards[g].used=true
+                            this.battle.hand.cards[g].exhaust=true
+                        }
+                    }
+                break
+                case 602:
+                    if(types.attack[this.battle.combatants[this.target].attacks[this.battle.combatants[this.target].intent]].class==0){
+                        this.battle.combatants[0].boost.main[0]+=this.damage
+                    }
+                break
+                case 603:
+                    if(this.mana>0){
+                        this.battle.takeAll(this.damage,this.user,1)
+                        for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+                            if(this.battle.combatants[g].life>0&&this.battle.combatants[g].team==1){
+                                this.attacks.push([0,this.alt*this.mana*10-10,g,this.damage])
+                            }
+                        }
+                    }
                 break
                 default:
             }

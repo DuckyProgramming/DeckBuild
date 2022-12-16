@@ -1109,7 +1109,7 @@ types={
             {damage:1,alt:1,cost:1,attack:226,target:0,spec:0,class:2},
             {damage:2,alt:1,cost:1,attack:226,target:0,spec:0,class:2},
         ],
-        },{name:'Blind',rarity:0,list:3,
+        },{name:'Target\nEyes',rarity:0,list:3,
         stats:[
             {damage:3,alt:1,cost:0,attack:227,target:1,spec:0,class:0},
             {damage:4,alt:1,cost:0,attack:227,target:1,spec:0,class:0},
@@ -3026,6 +3026,26 @@ types={
         stats:[
             {damage:5,alt:2,cost:1,attack:600,target:0,spec:0,class:1},
             {damage:8,alt:3,cost:1,attack:600,target:0,spec:0,class:1},
+        ],
+        },{name:'Sever',rarity:1,list:6,
+        stats:[
+            {damage:16,alt:0,cost:2,attack:601,target:1,spec:0,class:0},
+            {damage:22,alt:0,cost:2,attack:601,target:1,spec:0,class:0},
+        ],
+        },{name:'Spot\nWeakness',rarity:1,list:6,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:602,target:1,spec:0,class:2},
+            {damage:4,alt:0,cost:1,attack:602,target:1,spec:0,class:2},
+        ],
+        },{name:'Whirlwind',rarity:1,list:6,
+        stats:[
+            {damage:5,alt:1,cost:-1,attack:603,target:0,spec:0,class:0},
+            {damage:8,alt:1,cost:-1,attack:603,target:0,spec:0,class:0},
+        ],
+        },{name:'Swirl',rarity:2,list:6,
+        stats:[
+            {damage:99,alt:0,cost:3,attack:604,target:0,spec:0,class:2},
+            {damage:99,alt:0,cost:2,attack:604,target:0,spec:0,class:2},
         ],
         },
 

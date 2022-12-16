@@ -663,6 +663,10 @@ class card{
             case 598: this.desc+='Add '+this.damage+' Block\nEthereal'; break
             case 599: this.desc+='Deal '+this.damage+' Damage\nTemporarily Increase\nDamage by '+this.alt; break
             case 600: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Energy\nWhen Exhausted'; break
+            case 601: this.desc+='Deal '+this.damage+' Damage\nExhaust Non-Attacks\nin Your Hand'; break
+            case 602: this.desc+='If the Enemy\nIntends to Attack,\nGain '+this.damage+' Strength'; break
+            case 603: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nX Times'; break
+            case 604: this.desc+='Block is\nNot Removed\nat the End\nof Your Turn'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

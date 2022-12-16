@@ -101,11 +101,11 @@ class group{
                 }*/
                 //this.add(findCard(''),0,this.battle.player)
                 //this.add(findCard(''),0,this.battle.player)
-                this.add(594,0,this.battle.player)
-                this.add(595,0,this.battle.player)
-                this.add(596,0,this.battle.player)
-                this.add(597,0,this.battle.player)
                 this.add(598,0,this.battle.player)
+                this.add(599,0,this.battle.player)
+                this.add(600,0,this.battle.player)
+                this.add(601,0,this.battle.player)
+                this.add(602,0,this.battle.player)
             break
             case 7:
                 this.add(558,0,this.battle.player)
