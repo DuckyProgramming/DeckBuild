@@ -712,6 +712,10 @@ class battle{
                         }
                     }else if(f==109||f==113){
                         this.takeAll(this.combatants[e].status.main[f],-1,1)
+                    }else if(f==123){
+                        this.discarding+=this.combatants[e].status.main[f]
+                    }else if(f==124){
+                        this.combatants[e].boost.main[1]-=this.combatants[e].status.main[f]
                     }
                 }
                 if((f==11||f==37)&&this.combatants[e].status.main[f]>0){
@@ -722,7 +726,7 @@ class battle{
                 }else if(f==38&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].life=min(this.combatants[e].life+this.combatants[e].status.main[f],this.combatants[e].base.life)
                     this.combatants[e].status.main[f]--
-                }else if((f==9||f==47||f==64)&&this.combatants[e].status.main[f]>0){
+                }else if((f==9||f==12||f==47||f==64)&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].status.main[f]--
                 }else if(f==60&&this.combatants[e].status.main[f]>0){
                     this.hand.add(findCard('Miracle'),1,0)
@@ -741,7 +745,7 @@ class battle{
                     f!=52&&f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&
                     f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79&&
                     f!=80&&f!=81&&f!=82&&f!=85&&f!=88&&f!=91&&f!=95&&f!=96&&f!=97&&f!=101&&
-                    f!=103&&f!=107&&f!=108&&f!=112&&f!=113&&f!=114&&f!=116&&f!=120){
+                    f!=103&&f!=107&&f!=108&&f!=112&&f!=113&&f!=114&&f!=116&&f!=120&&f!=123&&f!=124){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[f]
                     }else if(f==67){
@@ -760,6 +764,8 @@ class battle{
                         this.combatants[e].status.main[109]+=this.combatants[e].status.main[f]
                     }else if(f==111){
                         this.combatants[e].status.main[110]+=this.combatants[e].status.main[f]
+                    }else if(f==122){
+                        this.combatants[e].status.main[121]+=this.combatants[e].status.main[f]
                     }
                     this.combatants[e].status.main[f]=0
                 }

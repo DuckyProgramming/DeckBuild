@@ -2943,6 +2943,27 @@ class attack{
                     this.battle.random.reserving++
                     this.battle.random.copying+=this.damage
                 break
+                case 592:
+                    this.battle.combatants[0].status.main[122]+=this.damage
+                break
+                case 593:
+                    this.battle.random.tempDrawAmount+=this.damage
+                    this.battle.random.drawing+=this.damage
+                    this.battle.combatants[0].status.main[123]+=this.alt
+                break
+                case 594:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].class!=0){
+                            this.battle.hand.cards[g].used=true
+                            this.battle.hand.cards[g].selectDiscard=true
+                        }
+                    }
+                break
+                case 595:
+                    this.battle.combatants[0].status.main[12]+=this.damage
+                    this.battle.combatants[0].status.main[124]+=this.alt
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

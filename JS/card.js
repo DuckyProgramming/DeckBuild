@@ -654,7 +654,10 @@ class card{
             case 589: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nHas No Effect if\nThere Are Cards\nin Your Draw Pile'; break
             case 590: this.desc+='Apply '+this.damage+'X\nWeak'; break
             case 591: this.desc+='Put '+this.damage+' Copies\nof a Card\non Top of\nYour Draw Pile\nIt Costs 0'; break
-            
+            case 592: this.desc+='Next Turn,\nYour Attacks Deal\nDouble Damage'; break
+            case 593: this.desc+='Draw '+this.damage+' More\nCard Every Turn\nDiscard '+this.alt+' Card\nEvery Turn'; break
+            case 594: this.desc+='Deal '+this.damage+' Damage\nDiscard All\nNon-Attacks'; break
+            case 595: this.desc+='Gain '+this.damage+' Intangible\nLose '+this.alt+' Dexterity\nPer Turn'
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

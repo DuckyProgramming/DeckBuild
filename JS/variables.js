@@ -2987,6 +2987,26 @@ types={
             {damage:3,alt:0,cost:2,attack:591,target:0,spec:3,class:2},
             {damage:5,alt:0,cost:2,attack:591,target:0,spec:3,class:2},
         ],
+        },{name:'Ghostly\nKiller',rarity:2,list:6,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:592,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:592,target:0,spec:0,class:2},
+        ],
+        },{name:'Convert',rarity:2,list:6,
+        stats:[
+            {damage:1,alt:1,cost:1,attack:593,target:0,spec:0,class:2},
+            {damage:1,alt:1,cost:0,attack:593,target:0,spec:0,class:2},
+        ],
+        },{name:'Unload',rarity:2,list:6,
+        stats:[
+            {damage:14,alt:0,cost:1,attack:594,target:1,spec:0,class:0},
+            {damage:18,alt:0,cost:1,attack:594,target:1,spec:0,class:0},
+        ],
+        },{name:'Wraith',rarity:2,list:6,
+        stats:[
+            {damage:2,alt:1,cost:1,attack:595,target:1,spec:0,class:0},
+            {damage:3,alt:1,cost:1,attack:595,target:1,spec:0,class:0},
+        ],
         },
 
 
