@@ -2991,6 +2991,32 @@ class attack{
                         }
                     }
                 break
+                case 605:
+                    this.battle.combatants[0].boost.main[1]-=this.damage
+                    this.battle.mana.max+=this.alt
+                    this.battle.mana.gen+=this.alt
+                break
+                case 606:
+                    this.battle.random.tempDrawAmount+=this.damage
+                    this.battle.random.drawing+=this.damage
+                    this.battle.combatants[0].status.main[71]+=this.alt
+                break
+                case 607:
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].class==1){
+                            this.battle.hand.cards[g].cost=0
+                            this.battle.hand.cards[g].base.cost=0
+                            this.battle.hand.cards[g].playExhaust=true
+                        }
+                    }
+                break
+                case 608:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].life<=0){
+                        this.battle.combatants[0].base.life+=this.alt
+                        this.battle.combatants[0].life+=this.alt
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

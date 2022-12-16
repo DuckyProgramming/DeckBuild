@@ -1735,7 +1735,7 @@ types={
         ],
         },{name:'Petal\nDance',rarity:1,list:4,
         stats:[
-            {damage:1,alt:6,cost:2,attack:188,target:0,spec:3,class:2},
+            {damage:1,alt:6,cost:1,attack:188,target:0,spec:3,class:2},
             {damage:2,alt:6,cost:1,attack:188,target:0,spec:3,class:2},
         ],
         },{name:'Plunge',rarity:1,list:4,
@@ -2632,7 +2632,7 @@ types={
             {damage:12,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
             {damage:20,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
         ],
-        },{name:'Blade\nDance',rarity:2,list:6,
+        },{name:'Blade\nDance',rarity:0,list:6,
         stats:[
             {damage:3,alt:0,cost:1,attack:26,target:0,spec:0,class:2},
             {damage:4,alt:0,cost:1,attack:26,target:0,spec:0,class:2},
@@ -2782,7 +2782,7 @@ types={
             {damage:1,alt:0,cost:0,attack:26,target:0,spec:2,class:2},
             {damage:2,alt:0,cost:0,attack:26,target:0,spec:2,class:2},
         ],
-        },{name:'Hold\nKnives',rarity:2,list:6,
+        },{name:'Hold\nKnives',rarity:1,list:6,
         stats:[
             {damage:0,alt:0,cost:1,attack:317,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:0,attack:317,target:0,spec:0,class:2},
@@ -2997,7 +2997,7 @@ types={
             {damage:1,alt:1,cost:1,attack:593,target:0,spec:0,class:2},
             {damage:1,alt:1,cost:0,attack:593,target:0,spec:0,class:2},
         ],
-        },{name:'Unload',rarity:2,list:6,
+        },{name:'Unload',rarity:1,list:6,
         stats:[
             {damage:14,alt:0,cost:1,attack:594,target:1,spec:0,class:0},
             {damage:18,alt:0,cost:1,attack:594,target:1,spec:0,class:0},
@@ -3042,10 +3042,30 @@ types={
             {damage:5,alt:1,cost:-1,attack:603,target:0,spec:0,class:0},
             {damage:8,alt:1,cost:-1,attack:603,target:0,spec:0,class:0},
         ],
-        },{name:'Swirl',rarity:2,list:6,
+        },{name:'Swirl',rarity:1,list:6,
         stats:[
             {damage:99,alt:0,cost:3,attack:604,target:0,spec:0,class:2},
             {damage:99,alt:0,cost:2,attack:604,target:0,spec:0,class:2},
+        ],
+        },{name:'Delimit',rarity:2,list:6,
+        stats:[
+            {damage:3,alt:1,cost:0,attack:605,target:0,spec:0,class:2},
+            {damage:2,alt:1,cost:0,attack:605,target:0,spec:0,class:2},
+        ],
+        },{name:'Brutality',rarity:2,list:6,
+        stats:[
+            {damage:1,alt:1,cost:0,attack:606,target:0,spec:10,class:2},
+            {damage:1,alt:1,cost:0,attack:606,target:0,spec:10,class:2},
+        ],
+        },{name:'Corruption',rarity:2,list:6,
+        stats:[
+            {damage:0,alt:0,cost:3,attack:607,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:2,attack:607,target:0,spec:0,class:2},
+        ],
+        },{name:'Consume',rarity:1,list:6,
+        stats:[
+            {damage:10,alt:3,cost:1,attack:608,target:1,spec:3,class:0},
+            {damage:12,alt:4,cost:1,attack:608,target:1,spec:3,class:0},
         ],
         },
 

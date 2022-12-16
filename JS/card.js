@@ -1,5 +1,5 @@
 class card{
-    constructor(layer,x,y,type,level,color,damage=types.card[type].stats[level].damage,alt=types.card[type].stats[level].alt,cost=types.card[type].stats[level].cost){
+    constructor(layer,x,y,type,level,color,damage=types.card[type].stats[level].damage,alt=types.card[type].stats[level].alt,cost=types.card[type].stats[level].cost,playExhaust=false){
         this.layer=layer
         this.position={x:x,y:y}
         this.type=type
@@ -11,6 +11,7 @@ class card{
         this.damage=damage
         this.alt=alt
         this.cost=cost
+        this.playExhaust=playExhaust
         this.attack=types.card[this.type].stats[this.level].attack
         this.target=types.card[this.type].stats[this.level].target
         this.spec=types.card[this.type].stats[this.level].spec
@@ -250,7 +251,7 @@ class card{
             case 185: this.desc+='Target Gains\n'+this.damage+' Weak\nPer Turn\n'+nfp(this.alt)+' Balance'; break
             case 186: this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Weak'; break
             case 187: this.desc+='Gain '+this.damage+' Block\nCounter With 1 Stun\n'+nfp(this.alt)+' Balance'; break
-            case 188: this.desc+='Draw '+this.damage+' More\nCard Per Turn\n'+nfp(this.alt)+' Balance'; break
+            case 188: this.desc+='Draw '+this.damage+' More\nCards Per Turn\n'+nfp(this.alt)+' Balance'; break
             case 189: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed\nDisarm'; break
             case 190: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Bonus\nDamage to Stunned\n'+nfp(-2)+' Balance'; break
             case 191: this.desc+='Deal '+this.damage+' to Stunned\nEnd Stun\n'+nfp(this.alt)+' Balance'; break
@@ -667,12 +668,16 @@ class card{
             case 602: this.desc+='If the Enemy\nIntends to Attack,\nGain '+this.damage+' Strength'; break
             case 603: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nX Times'; break
             case 604: this.desc+='Block is\nNot Removed\nat the End\nof Your Turn'; break
+            case 605: this.desc+='Gain '+this.damage+' Vulnerable\nIncrease Energy\nGain by '+this.alt; break
+            case 606: this.desc+='Draw '+this.damage+' More\nCards Per Turn\nLose '+this.alt+' Health\nPer Turn'; break
+            case 607: this.desc+='All Current\nSkills Cost 0\nand Exhaust'; break
+            case 608: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Gain\n'+this.alt+' Max Health'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
             this.desc+='\nRetain'
         }
-        if(this.spec==3||this.spec==8||this.spec==9||this.spec==14){
+        if(this.spec==3||this.spec==8||this.spec==9||this.spec==14||this.playExhaust){
             this.desc+='\nExhaust'
         }
         if(this.spec==12){
@@ -835,7 +840,7 @@ class card{
             this.size=round(this.size*5-1)*0.2
         }
         if(this.size<=0&&this.used){
-            if((this.spec==3||this.spec==8||this.spec==9||this.spec==13||this.spec==14)&&this.trigger||this.exhaust){
+            if((this.spec==3||this.spec==8||this.spec==9||this.spec==13||this.spec==14||this.playExhaust)&&this.trigger||this.exhaust){
                 this.remove=true
             }else if(this.spec==12){
                 this.draw=true
