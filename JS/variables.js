@@ -953,7 +953,7 @@ types={
         ],
         },{name:'Umbral\nForm',rarity:2,list:2,
         stats:[
-            {damage:1,alt:0,cost:3,attack:332,target:0,spec:13,class:2},
+            {damage:1,alt:0,cost:3,attack:332,target:0,spec:15,class:2},
             {damage:1,alt:0,cost:3,attack:332,target:0,spec:0,class:2},
         ],
         },{name:'Established',rarity:2,list:2,
@@ -2834,13 +2834,13 @@ types={
         ],
         },{name:'Carnage',rarity:1,list:6,
         stats:[
-            {damage:20,alt:0,cost:2,attack:1,target:1,spec:13,class:0},
-            {damage:28,alt:0,cost:2,attack:1,target:1,spec:13,class:0},
+            {damage:20,alt:0,cost:2,attack:597,target:1,spec:15,class:0},
+            {damage:28,alt:0,cost:2,attack:597,target:1,spec:15,class:0},
         ],
         },{name:'Pulsate',rarity:0,list:6,
         stats:[
-            {damage:3,alt:0,cost:0,attack:567,target:1,spec:13,class:0},
-            {damage:5,alt:0,cost:0,attack:567,target:1,spec:13,class:0},
+            {damage:3,alt:0,cost:0,attack:567,target:1,spec:0,class:0},
+            {damage:5,alt:0,cost:0,attack:567,target:1,spec:0,class:0},
         ],
         },{name:'Havoc',rarity:0,list:6,
         stats:[
@@ -3004,8 +3004,28 @@ types={
         ],
         },{name:'Wraith',rarity:2,list:6,
         stats:[
-            {damage:2,alt:1,cost:1,attack:595,target:1,spec:0,class:0},
-            {damage:3,alt:1,cost:1,attack:595,target:1,spec:0,class:0},
+            {damage:2,alt:1,cost:1,attack:595,target:1,spec:0,class:2},
+            {damage:3,alt:1,cost:1,attack:595,target:1,spec:0,class:2},
+        ],
+        },{name:'Particle\nBreath',rarity:1,list:6,
+        stats:[
+            {damage:6,alt:0,cost:1,attack:596,target:0,spec:0,class:2},
+            {damage:10,alt:0,cost:1,attack:596,target:0,spec:0,class:2},
+        ],
+        },{name:'Ghost\nArmor',rarity:1,list:6,
+        stats:[
+            {damage:10,alt:0,cost:1,attack:598,target:0,spec:15,class:1},
+            {damage:13,alt:0,cost:1,attack:598,target:0,spec:15,class:1},
+        ],
+        },{name:'Rampage',rarity:1,list:6,
+        stats:[
+            {damage:8,alt:4,cost:1,attack:599,target:1,spec:0,class:0},
+            {damage:8,alt:8,cost:1,attack:599,target:1,spec:0,class:0},
+        ],
+        },{name:'Sentinel',rarity:1,list:6,
+        stats:[
+            {damage:5,alt:2,cost:1,attack:600,target:0,spec:0,class:1},
+            {damage:8,alt:3,cost:1,attack:600,target:0,spec:0,class:1},
         ],
         },
 

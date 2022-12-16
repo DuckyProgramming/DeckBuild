@@ -357,17 +357,26 @@ class battle{
                 this.hand.cards.push(copyCard(this.reserve.cards[0]))
                 this.hand.cards[this.hand.cards.length-1].position.x=1206
                 this.hand.cards[this.hand.cards.length-1].position.y=500
+                if(this.relics.active[172]&&this.hand.cards[this.hand.cards.length-1].list==11){
+                    this.draw()
+                }
+                if(this.combatants[0].status.main[125]>0&&(this.hand.cards[this.hand.cards.length-1].list==10||this.hand.cards[this.hand.cards.length-1].list==11)){
+                    this.takeAll(this.combatants[0].status.main[125],-1,1)
+                }
                 if(this.reserve.cards[0].attack==579){
                     for(let g=0;g<this.reserve.cards[0].alt;g++){
                         this.hand.cards.push(copyCard(this.reserve.cards[0]))
                         this.hand.cards[this.hand.cards.length-1].position.x=1206
                         this.hand.cards[this.hand.cards.length-1].position.y=500
+                        if(this.relics.active[172]&&this.hand.cards[this.hand.cards.length-1].list==11){
+                            this.draw()
+                        }
+                        if(this.combatants[0].status.main[125]>0&&(this.hand.cards[this.hand.cards.length-1].list==10||this.hand.cards[this.hand.cards.length-1].list==11)){
+                            this.takeAll(this.combatants[0].status.main[125],-1,1)
+                        }
                     }
                 }
                 this.reserve.cards.splice(0,1)
-                if(this.relics.active[172]&&this.hand.cards[this.hand.cards.length-1].list==11){
-                    this.draw()
-                }
             }else{
                 this.hand.add(findCard('Empty'),0,0)
             }
@@ -605,7 +614,7 @@ class battle{
     }
     return(){
         while(this.discard.cards.length>0){
-            if(this.discard.cards[0].spec!=6&&this.discard.cards[0].spec!=13){
+            if(this.discard.cards[0].spec!=6&&this.discard.cards[0].spec!=13&&(this.discard.cards[0].spec!=15||this.discard.cards[0].trigger)){
                 this.reserve.cards.push(copyCard(this.discard.cards[0]))
             }
             this.discard.cards.splice(0,1)
@@ -613,7 +622,7 @@ class battle{
     }
     returnHand(){
         while(this.hand.cards.length>0){
-            if(this.hand.cards[0].spec!=6&&this.hand.cards[0].spec!=13){
+            if(this.hand.cards[0].spec!=6&&this.hand.cards[0].spec!=13&&(this.hand.cards[0].spec!=15||this.hand.cards[0].trigger)){
                 this.reserve.cards.push(copyCard(this.hand.cards[0]))
             }
             this.hand.cards.splice(0,1)
@@ -745,7 +754,8 @@ class battle{
                     f!=52&&f!=53&&f!=54&&f!=55&&f!=56&&f!=57&&f!=58&&f!=59&&f!=61&&f!=62&&
                     f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79&&
                     f!=80&&f!=81&&f!=82&&f!=85&&f!=88&&f!=91&&f!=95&&f!=96&&f!=97&&f!=101&&
-                    f!=103&&f!=107&&f!=108&&f!=112&&f!=113&&f!=114&&f!=116&&f!=120&&f!=123&&f!=124){
+                    f!=103&&f!=107&&f!=108&&f!=112&&f!=113&&f!=114&&f!=116&&f!=120&&f!=123&&f!=124&&
+                    f!=125){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[f]
                     }else if(f==67){

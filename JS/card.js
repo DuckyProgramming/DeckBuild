@@ -657,7 +657,12 @@ class card{
             case 592: this.desc+='Next Turn,\nYour Attacks Deal\nDouble Damage'; break
             case 593: this.desc+='Draw '+this.damage+' More\nCard Every Turn\nDiscard '+this.alt+' Card\nEvery Turn'; break
             case 594: this.desc+='Deal '+this.damage+' Damage\nDiscard All\nNon-Attacks'; break
-            case 595: this.desc+='Gain '+this.damage+' Intangible\nLose '+this.alt+' Dexterity\nPer Turn'
+            case 595: this.desc+='Gain '+this.damage+' Intangible\nLose '+this.alt+' Dexterity\nPer Turn'; break
+            case 596: this.desc+='When You Draw a\nStatus or Curse,\nDeal '+this.damage+' Damage\nto All Enemies'; break
+            case 597: this.desc+='Deal '+this.damage+' Damage\nEthereal'; break
+            case 598: this.desc+='Add '+this.damage+' Block\nEthereal'; break
+            case 599: this.desc+='Deal '+this.damage+' Damage\nTemporarily Increase\nDamage by '+this.alt; break
+            case 600: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Energy\nWhen Exhausted'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

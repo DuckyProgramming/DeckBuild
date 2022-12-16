@@ -53,7 +53,7 @@ class group{
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
-                }
+                }241
                 this.add(findCard('Charge'),0,this.battle.player)
                 this.add(findCard('Dualcast'),0,this.battle.player)
                 /*this.add(298,0,this.battle.player)
@@ -101,11 +101,11 @@ class group{
                 }*/
                 //this.add(findCard(''),0,this.battle.player)
                 //this.add(findCard(''),0,this.battle.player)
-                this.add(590,0,this.battle.player)
-                this.add(591,0,this.battle.player)
-                this.add(592,0,this.battle.player)
-                this.add(593,0,this.battle.player)
                 this.add(594,0,this.battle.player)
+                this.add(595,0,this.battle.player)
+                this.add(596,0,this.battle.player)
+                this.add(597,0,this.battle.player)
+                this.add(598,0,this.battle.player)
             break
             case 7:
                 this.add(558,0,this.battle.player)
@@ -396,10 +396,16 @@ class group{
                     }
                 }
                 this.battle.discard.cards.push(copyCard(this.cards[e]))
+                if(this.cards[e].trigger){
+                    this.battle.discard.cards[this.battle.discard.cards.length-1].trigger=true
+                }
                 this.cards.splice(e,1)
                 e--
                 le--
             }else if(this.cards[e].remove){
+                if(this.cards[e].attack==600){
+                    this.battle.mana.main+=this.cards[e].alt
+                }
                 this.cards.splice(e,1)
                 e--
                 le--
@@ -471,7 +477,9 @@ class group{
                             for(f=0,lf=this.cards.length;f<lf;f++){
                                 if(this.cards[f].trigger){
                                     this.cards[f].used=true
-                                    if(this.battle.attack.type==135){
+                                    if(this.battle.attack.type==599){
+                                        this.cards[e].damage+=this.cards[e].alt
+                                    }else if(this.battle.attack.type==135){
                                         this.cards[f].damage-=this.cards[f].alt
                                     }else if(this.battle.attack.type==232&&this.cards[f].cost>0){
                                         this.cards[f].cost-=this.cards[f].alt
