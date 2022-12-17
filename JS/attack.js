@@ -3173,6 +3173,36 @@ class attack{
                 case 634:
                     this.battle.combatants[0].status.main[130]+=this.damage
                 break
+                case 635:
+                    while(this.battle.reserve.cards.length>0){
+                        this.battle.hand.cards.push(copyCard(this.battle.reserve.cards[0]))
+                        this.battle.hand.cards[this.battle.hand.cards.length-1].position.x=1206
+                        this.battle.hand.cards[this.battle.hand.cards.length-1].position.y=500
+                        this.battle.reserve.cards.splice(0,1)
+                    }
+                    this.battle.return()
+                    while(this.battle.hand.cards.length>0){
+                        this.battle.discard.cards.push(copyCard(this.battle.hand.cards[0]))
+                        this.battle.discard.cards[this.battle.discard.cards.length-1].position.x=1206
+                        this.battle.discard.cards[this.battle.discard.cards.length-1].position.y=500
+                        this.battle.hand.cards.splice(0,1)
+                    }
+                break
+                case 636:
+                    if(this.battle.hand.cards.length==1){
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
+                break
+                case 637:
+                    if(this.battle.mana.main<=0){
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
+                break
+                case 638:
+                    this.battle.drop.addDrop(findCard('Peak'),this.damage,0)
+                    this.battle.reserve.addShuffle(findCard('Peak'),this.damage,0)
+                    this.attacks.push([8,20,0,'Trough'])
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

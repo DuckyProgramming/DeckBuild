@@ -108,9 +108,9 @@ class group{
                 this.add(642,0,this.battle.player)*/
             break
             case 7:
-                this.add(646,0,this.battle.player)
-                this.add(647,0,this.battle.player)
                 this.add(648,0,this.battle.player)
+                this.add(649,0,this.battle.player)
+                this.add(650,0,this.battle.player)
             break
         }
     }

@@ -3248,7 +3248,7 @@ types={
             {damage:3,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
             {damage:5,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
         ],
-        },{name:'Spare',rarity:1,list:7,
+        },{name:'Spare',rarity:0,list:7,
         stats:[
             {damage:1,alt:0,cost:0,attack:581,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:0,attack:581,target:0,spec:3,class:2},
@@ -3263,7 +3263,7 @@ types={
             {damage:1,alt:0,cost:1,attack:632,target:1,spec:0,class:0},
             {damage:2,alt:0,cost:1,attack:632,target:1,spec:0,class:0},
         ],
-        },{name:'Fuse',rarity:1,list:7,
+        },{name:'Fuse',rarity:2,list:7,
         stats:[
             {damage:8,alt:0,cost:5,attack:633,target:1,spec:0,class:0},
             {damage:12,alt:0,cost:5,attack:633,target:1,spec:0,class:0},
@@ -3273,9 +3273,29 @@ types={
             {damage:13,alt:0,cost:1,attack:634,target:0,spec:0,class:2},
             {damage:13,alt:0,cost:0,attack:634,target:0,spec:0,class:2},
         ],
+        },{name:'Swap\nTrick',rarity:1,list:7,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:635,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:635,target:0,spec:0,class:2},
+        ],
+        },{name:'Solstice',rarity:1,list:7,
+        stats:[
+            {damage:20,alt:0,cost:0,attack:636,target:1,spec:0,class:0},
+            {damage:30,alt:0,cost:0,attack:636,target:1,spec:0,class:0},
+        ],
+        },{name:'Handout',rarity:0,list:7,
+        stats:[
+            {damage:6,alt:0,cost:0,attack:637,target:1,spec:0,class:0},
+            {damage:9,alt:0,cost:0,attack:637,target:1,spec:0,class:0},
+        ],
+        },{name:'Square\nWave',rarity:1,list:7,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:638,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:0,attack:638,target:0,spec:0,class:2},
+        ],
         },
 
-        //2,1,1
+        //2,1
         
         
         {name:'Empty',rarity:-1,list:-1,
@@ -3469,7 +3489,12 @@ types={
             {damage:2,alt:2,cost:0,attack:563,target:1,spec:0,class:0},
             {damage:2,alt:2,cost:0,attack:563,target:1,spec:0,class:0},
         ],
-        },//12/16
+        },{name:'Peak',rarity:-1,list:0,
+        stats:[
+            {damage:18,alt:0,cost:1,attack:1,target:1,spec:9,class:0},
+            {damage:25,alt:0,cost:1,attack:1,target:1,spec:9,class:0},
+        ],
+        },//13/16
 
 
         {name:'Redraw',rarity:-3,list:0,
@@ -3685,13 +3710,18 @@ types={
             {damage:0,alt:0,cost:0,attack:-19,target:0,spec:1,class:-1},
             {damage:0,alt:0,cost:0,attack:-19,target:0,spec:1,class:-1},
         ],
+        },{name:'Trough',rarity:-2,list:11,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:0,target:0,spec:9,class:-1},
+            {damage:0,alt:0,cost:1,attack:0,target:0,spec:9,class:-1},
+        ],
         },{name:'Glued',rarity:-2,list:11,
         stats:[
-            {damage:0,alt:0,cost:2,attack:0,target:0,spec:3,class:-1},
-            {damage:0,alt:0,cost:2,attack:0,target:0,spec:3,class:-1},
+            {damage:0,alt:0,cost:2,attack:0,target:0,spec:9,class:-1},
+            {damage:0,alt:0,cost:2,attack:0,target:0,spec:9,class:-1},
         ],
         },
-        //14/16
+        //15/16
 
         /*{name:'Fortify',rarity:0,list:4,
         stats:[

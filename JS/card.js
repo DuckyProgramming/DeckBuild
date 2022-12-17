@@ -701,6 +701,10 @@ class card{
             case 632: this.desc+='Deal '+this.damage+' For\nEach Card Played\nThis Combat'; break
             case 633: this.desc+='Deal '+this.damage+' Damage\nCosts 1 Less\nWhen You Play\na Card'; break
             case 634: this.desc+='Every 13\nCards Played\nDeal '+this.damage+' Damage\nto All Enemies\nand Add '+this.damage+' Block'; break
+            case 635: this.desc+='Send Hand\nto Draw Pile\nSwap Draw and\nDiscard Piles'; break
+            case 636: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nOther Cards Are\nin Your Hand'; break
+            case 637: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nYou Have Mana'; break
+            case 638: if(this.damage>0){this.desc+='Shuffle a Peak+\nand a Trough into\nYour Draw Pile'}else{this.desc+='Shuffle a Peak\nand a Trough into\nYour Draw Pile'}; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -714,6 +718,9 @@ class card{
         }
         if(this.desc[this.desc.length-1]=='\n'){
             this.desc=this.desc.substr(0,this.desc.length-1)
+        }
+        if(this.desc[0]=='\n'){
+            this.desc=this.desc.substr(1,this.desc.length)
         }
     }
     display(deckSize=0,handSize=0,discardSize=0,drawSize=0,random=current.defaultRandom){
