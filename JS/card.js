@@ -705,6 +705,8 @@ class card{
             case 636: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nOther Cards Are\nin Your Hand'; break
             case 637: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nYou Have Mana'; break
             case 638: if(this.damage>0){this.desc+='Shuffle a Peak+\nand a Trough into\nYour Draw Pile'}else{this.desc+='Shuffle a Peak\nand a Trough into\nYour Draw Pile'}; break
+            case 639: this.desc+='Add '+this.damage+' Shivs\nto Your Hand\nor\nAdd '+this.damage+' Screens\nto Your Hand'; break
+            
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -734,10 +736,10 @@ class card{
             playerFill(this.layer,this.color,this.fade)
             this.layer.strokeWeight(5)
             this.layer.rect(0,0,this.width,this.height,5)
-            if(this.color==10){
+            if(this.color==stage.playerNumber+3){
                 this.layer.image(graphics.minor[8],-this.width/2-10,-this.height/2-10,this.width+20,this.height+20)
             }
-            if(this.attack==63||this.attack==280||this.attack==296||this.attack==367||this.attack==503){
+            if(this.attack==63||this.attack==280||this.attack==296||this.attack==367||this.attack==503||this.attack==639){
                 this.layer.rect(0,-this.height/4+5,this.width,this.height/2+10,5)
                 this.layer.rect(0,this.height/4+5,this.width,this.height/2-10,5)
             }
@@ -806,6 +808,9 @@ class card{
                     break
                     case 10:
                         this.layer.fill(200,this.fade)
+                    break
+                    case 11:
+                        this.layer.fill(100,this.fade)
                     break
                 }
                 this.layer.text(this.name+'+',0,-this.height/2+24)

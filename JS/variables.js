@@ -548,7 +548,7 @@ types={
             {damage:3,alt:0,cost:-1,attack:429,target:0,spec:3,class:2},
             {damage:4,alt:0,cost:-1,attack:429,target:0,spec:3,class:2},
         ],
-        },{name:'Bump',rarity:1,list:1,
+        },{name:'Jerk',rarity:1,list:1,
         stats:[
             {damage:4,alt:1,cost:1,attack:430,target:0,spec:0,class:2},
             {damage:6,alt:1,cost:1,attack:430,target:0,spec:0,class:2},
@@ -1020,6 +1020,11 @@ types={
         stats:[
             {damage:1,alt:0,cost:0,attack:555,target:0,spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:555,target:0,spec:0,class:2},
+        ],
+        },{name:'Spinning\nBack Strike',rarity:0,list:6,
+        stats:[
+            {damage:12,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
+            {damage:20,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
         ],
         },
         //gain 1 energy, draw 1 card, after turn 5
@@ -2630,12 +2635,7 @@ types={
         },
 
 
-        {name:'Spinning\nBack Slice',rarity:0,list:6,
-        stats:[
-            {damage:12,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
-            {damage:20,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
-        ],
-        },{name:'Blade\nDance',rarity:0,list:6,
+        {name:'Blade\nDance',rarity:0,list:6,
         stats:[
             {damage:3,alt:0,cost:1,attack:26,target:0,spec:0,class:2},
             {damage:4,alt:0,cost:1,attack:26,target:0,spec:0,class:2},
@@ -2780,7 +2780,7 @@ types={
             {damage:5,alt:1,cost:1,attack:287,target:1,spec:0,class:0},
             {damage:8,alt:1,cost:1,attack:287,target:1,spec:0,class:0},
         ],
-        },{name:'Backup\nBlade',rarity:0,list:6,
+        },{name:'Extra\nBlade',rarity:0,list:6,
         stats:[
             {damage:1,alt:0,cost:0,attack:26,target:0,spec:2,class:2},
             {damage:2,alt:0,cost:0,attack:26,target:0,spec:2,class:2},
@@ -3230,6 +3230,11 @@ types={
             {damage:0,alt:0,cost:0,attack:630,target:0,spec:2,class:2},
             {damage:0,alt:0,cost:0,attack:630,target:0,spec:0,class:2},
         ],
+        },{name:'Convoke',rarity:0,list:6,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:639,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:639,target:0,spec:0,class:2},
+        ],
         },
 
 
@@ -3245,8 +3250,8 @@ types={
         ],
         },{name:'Tap',rarity:0,list:7,
         stats:[
-            {damage:3,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
-            {damage:5,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
+            {damage:3,alt:0,cost:0,attack:1,target:1,spec:9,class:0},
+            {damage:5,alt:0,cost:0,attack:1,target:1,spec:9,class:0},
         ],
         },{name:'Spare',rarity:0,list:7,
         stats:[
@@ -3295,7 +3300,6 @@ types={
         ],
         },
 
-        //2,1
         
         
         {name:'Empty',rarity:-1,list:-1,
@@ -3458,6 +3462,11 @@ types={
         stats:[
             {damage:4,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
             {damage:6,alt:0,cost:0,attack:1,target:1,spec:3,class:0},
+        ],
+        },{name:'Screen',rarity:-1,list:0,
+        stats:[
+            {damage:4,alt:0,cost:0,attack:2,target:1,spec:3,class:0},
+            {damage:6,alt:0,cost:0,attack:2,target:1,spec:3,class:0},
         ],
         },{name:'Banked\nBalance',rarity:-1,list:0,
         stats:[

@@ -386,7 +386,7 @@ class battle{
                 }
                 this.reserve.cards.splice(0,1)
             }else{
-                this.hand.add(findCard('Empty'),0,0)
+                this.hand.add(findCard('Empty'),0,stage.playerNumber+4)
             }
         }
     }

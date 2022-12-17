@@ -3203,6 +3203,11 @@ class attack{
                     this.battle.reserve.addShuffle(findCard('Peak'),this.damage,0)
                     this.attacks.push([8,20,0,'Trough'])
                 break
+                case 639:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.hand.add(findCard('Screen'),0,0)
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

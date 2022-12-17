@@ -18,19 +18,19 @@ class group{
         }*/
         switch(type){
             case 1:
-                /*for(e=0;e<4;e++){
+                for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player) 
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Big\nStrike'),0,this.battle.player)
-                this.add(findCard('Triple\nPunch'),0,this.battle.player)*/
-                this.add(118,0,this.battle.player)
+                this.add(findCard('Triple\nPunch'),0,this.battle.player)
+                /*this.add(118,0,this.battle.player)
                 this.add(119,0,this.battle.player)
                 this.add(120,0,this.battle.player)
                 this.add(121,0,this.battle.player)
-                this.add(122,0,this.battle.player)
+                this.add(122,0,this.battle.player)*/
             break
             case 2:
                 /*for(e=0;e<4;e++){
@@ -53,7 +53,7 @@ class group{
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
-                }241
+                }
                 this.add(findCard('Charge'),0,this.battle.player)
                 this.add(findCard('Dualcast'),0,this.battle.player)
                 /*this.add(298,0,this.battle.player)
@@ -93,11 +93,12 @@ class group{
                 this.add(522,0,this.battle.player)*/
             break
             case 6:
+                this.add(findCard('Convoke'),0,this.battle.player)
                 for(e=0;e<4;e++){
-                    this.add(1,0,this.battle.player)
+                    //this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
-                    this.add(2,0,this.battle.player)
+                    //this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Survivor'),0,this.battle.player)
                 this.add(findCard('Neutralize'),0,this.battle.player)
@@ -617,6 +618,20 @@ class group{
                         }else{
                             this.battle.playCard()
                             this.battle.attack.update(402,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }
+                    }else if(this.cards[e].attack==639){
+                        if(inputs.rel.y>this.cards[e].position.y+10){
+                            this.battle.playCard()
+                            this.battle.attack.update(639,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }else{
+                            this.battle.playCard()
+                            this.battle.attack.update(26,this.cards[e].level,0)
                             this.battle.afterPlayCard()
                             this.cards[e].used=true
                             this.trigger=false

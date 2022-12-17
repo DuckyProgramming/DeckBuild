@@ -424,6 +424,10 @@ function playerFill(layer,player,fade){
 		case 10:
 			layer.fill(0,fade)
 		break
+		case 11:
+			layer.fill(240,fade)
+			layer.stroke(200,fade)
+		break
 	}
 }
 function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
