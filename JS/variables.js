@@ -2710,12 +2710,12 @@ types={
             {damage:8,alt:1,cost:1,attack:166,target:0,spec:0,class:1},
             {damage:12,alt:1,cost:1,attack:166,target:0,spec:0,class:1},
         ],
-        },{name:'Reflex',rarity:1,list:6,
+        },{name:'Reflex',rarity:0,list:6,
         stats:[
             {damage:2,alt:0,cost:0,attack:167,target:0,spec:1,class:2},
             {damage:3,alt:0,cost:0,attack:167,target:0,spec:1,class:2},
         ],
-        },{name:'Tactician',rarity:1,list:6,
+        },{name:'Tactician',rarity:0,list:6,
         stats:[
             {damage:1,alt:0,cost:0,attack:168,target:0,spec:1,class:2},
             {damage:1,alt:0,cost:0,attack:168,target:0,spec:1,class:2},
@@ -2755,12 +2755,12 @@ types={
             {damage:10,alt:2,cost:1,attack:282,target:0,spec:0,class:0},
             {damage:14,alt:2,cost:1,attack:282,target:0,spec:0,class:0},
         ],
-        },{name:'Closer',rarity:1,list:6,
+        },{name:'Closer',rarity:0,list:6,
         stats:[
             {damage:6,alt:0,cost:1,attack:283,target:1,spec:0,class:0},
             {damage:8,alt:0,cost:1,attack:283,target:1,spec:0,class:0},
         ],
-        },{name:'Masterful\nStab',rarity:2,list:6,
+        },{name:'Masterful\nStab',rarity:1,list:6,
         stats:[
             {damage:12,alt:0,cost:-2,attack:284,target:1,spec:0,class:0},
             {damage:16,alt:0,cost:-2,attack:284,target:1,spec:0,class:0},
@@ -2780,7 +2780,7 @@ types={
             {damage:5,alt:1,cost:1,attack:287,target:1,spec:0,class:0},
             {damage:8,alt:1,cost:1,attack:287,target:1,spec:0,class:0},
         ],
-        },{name:'Backup\nBlade',rarity:1,list:6,
+        },{name:'Backup\nBlade',rarity:0,list:6,
         stats:[
             {damage:1,alt:0,cost:0,attack:26,target:0,spec:2,class:2},
             {damage:2,alt:0,cost:0,attack:26,target:0,spec:2,class:2},
@@ -2795,7 +2795,7 @@ types={
             {damage:9,alt:6,cost:2,attack:557,target:1,spec:0,class:0},
             {damage:12,alt:9,cost:2,attack:557,target:1,spec:0,class:0},
         ],
-        },{name:'Mystery\nDust',rarity:1,list:6,
+        },{name:'Mystery\nDust',rarity:0,list:6,
         stats:[
             {damage:1,alt:0,cost:0,attack:559,target:1,spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:559,target:1,spec:0,class:2},
@@ -2805,12 +2805,12 @@ types={
             {damage:3,alt:0,cost:-1,attack:561,target:1,spec:0,class:0},
             {damage:5,alt:0,cost:-1,attack:561,target:1,spec:0,class:0},
         ],
-        },{name:'Chisel',rarity:1,list:6,
+        },{name:'Break\nOff',rarity:1,list:6,
         stats:[
             {damage:4,alt:0,cost:1,attack:562,target:1,spec:0,class:0},
             {damage:7,alt:0,cost:1,attack:562,target:1,spec:0,class:0},
         ],
-        },{name:'Crescent',rarity:1,list:6,
+        },{name:'Crescent',rarity:0,list:6,
         stats:[
             {damage:7,alt:7,cost:-1,attack:564,target:1,spec:0,class:0},
             {damage:10,alt:10,cost:-1,attack:564,target:1,spec:0,class:0},
@@ -2885,7 +2885,7 @@ types={
             {damage:18,alt:0,cost:-3,attack:573,target:1,spec:0,class:0},
             {damage:22,alt:0,cost:-3,attack:573,target:1,spec:0,class:0},
         ],
-        },{name:'Incision',rarity:1,list:6,
+        },{name:'Incision',rarity:0,list:6,
         stats:[
             {damage:2,alt:3,cost:0,attack:574,target:0,spec:0,class:2},
             {damage:3,alt:3,cost:0,attack:574,target:0,spec:0,class:2},
@@ -3125,12 +3125,53 @@ types={
             {damage:0,alt:0,cost:1,attack:619,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:0,attack:619,target:0,spec:0,class:2},
         ],
-        },{name:'Remember\nAttack',rarity:0,list:6,
+        },{name:'Distribute',rarity:0,list:6,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:620,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:1,attack:620,target:0,spec:0,class:2},
+        ],
+        },{name:'Remember\nStrike',rarity:0,list:6,
         stats:[
             {damage:15,alt:0,cost:0,attack:1,target:1,spec:16,class:0},
             {damage:24,alt:0,cost:0,attack:1,target:1,spec:16,class:0},
         ],
+        },{name:'Remember\nDefend',rarity:0,list:6,
+        stats:[
+            {damage:12,alt:0,cost:0,attack:2,target:0,spec:16,class:1},
+            {damage:20,alt:0,cost:0,attack:2,target:0,spec:16,class:1},
+        ],
+        },{name:'Remember\nThink',rarity:0,list:6,
+        stats:[
+            {damage:4,alt:0,cost:0,attack:4,target:0,spec:16,class:2},
+            {damage:6,alt:0,cost:0,attack:4,target:0,spec:16,class:2},
+        ],
+        },{name:'Remember\nMulti Strike',rarity:0,list:6,
+        stats:[
+            {damage:9,alt:0,cost:0,attack:12,target:0,spec:16,class:0},
+            {damage:15,alt:0,cost:0,attack:12,target:0,spec:16,class:0},
+        ],
+        },{name:'Remember\nTwin Strike',rarity:0,list:6,
+        stats:[
+            {damage:7,alt:2,cost:0,attack:3,target:1,spec:16,class:0},
+            {damage:11,alt:2,cost:0,attack:3,target:1,spec:16,class:0},
+        ],
+        },{name:'Remember\nPulse',rarity:2,list:6,
+        stats:[
+            {damage:3,alt:0,cost:0,attack:546,target:0,spec:16,class:0},
+            {damage:5,alt:0,cost:0,attack:546,target:0,spec:16,class:0},
+        ],
+        },{name:'Remember\nBlades',rarity:1,list:6,
+        stats:[
+            {damage:3,alt:0,cost:0,attack:26,target:0,spec:16,class:1},
+            {damage:4,alt:0,cost:0,attack:26,target:0,spec:16,class:1},
+        ],
+        },{name:'Remember\nRethink',rarity:1,list:6,
+        stats:[
+            {damage:2,alt:2,cost:0,attack:428,target:0,spec:16,class:1},
+            {damage:3,alt:3,cost:0,attack:428,target:0,spec:16,class:1},
+        ],
         },
+        //draw without losing memories
 
 
         {name:'Buster',rarity:0,list:7,

@@ -3087,6 +3087,14 @@ class attack{
                         }
                     }
                 break
+                case 620:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.battle.context=12
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

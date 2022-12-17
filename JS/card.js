@@ -111,7 +111,7 @@ class card{
             case 42: this.desc+='Deal '+this.damage+' Damage\nKnockdown'; break
             case 43: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Bonus\nDamage to Downed'; break
             case 44: this.desc+='Deal '+this.damage+' Damage\n+1 Per Combo\n'+this.alt+' Times\nEnd Combo'; break
-            case 45: this.desc+='Deal '+this.damage+' Damage\nGain 1 Dodge'; break
+            case 45: this.desc+='Deal '+this.damage+' Damage\nAdd 1 Dodge'; break
             case 46: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Damage\nto the Left'; break
             case 47: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Damage\nto the Right'; break
             case 48: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable'; break
@@ -367,14 +367,14 @@ class card{
             case 298: this.desc+='Deal '+this.damage+' Damage\nIf Balance is\nNegative, Add a\nFury to Your Hand\n'+nfp(2)+' Balance'; break
             case 299: this.desc+='Add '+this.damage+' Block\nIf Balance is\nPositive, Add a\nQuiet to Your Hand\n'+nfp(-2)+' Balance'; break
             case 300: this.desc+='Convert Combo/'+this.damage+'\nto Strength\nEnd Combo'; break
-            case 301: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Dodge\nCause an Enemy\nto Attack'; break
+            case 301: this.desc+='Add '+this.damage+' Block\nAdd '+this.alt+' Dodge\nCause an Enemy\nto Attack'; break
             case 302: this.desc+='Take '+this.damage+' Damage\nGain '+this.alt+' Strength'; break
             case 303: this.desc+='Discard 1 Card\nAdd '+this.damage+' Random\nCards'; break
             case 304: this.desc+='Gain '+this.damage+' Strength\nCannot Add Block\nfor '+this.alt+' Turns'; break
             case 305: this.desc+='Add '+this.damage+' Block\nCounter Once With\nPull Collision\nfor '+this.alt+' Damage'; break
             case 306: this.desc+='Counter '+this.damage+' All\nCounter Throw'; break
             case 307: if(this.alt>0){this.desc+='Add '+this.damage+' Random\nSkill to Your Hand\nIt Costs 0'}else{this.desc+='Add '+this.damage+' Random\nSkill to Your Hand\nIt Costs 0\nThis Turn'}; break
-            case 308: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nGain 1 Dodge'; break
+            case 308: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nAdd 1 Dodge'; break
             case 309: this.desc+='Add '+this.damage+' Block\nCannot Gain Block\nfor '+this.alt+' Turns'; break
             case 310: this.desc+='Increase Energy\nGain by '+this.damage; break
             case 311: this.desc+='Take '+this.damage+' Damage\nGain '+this.alt+' Conditioning'; break
@@ -533,8 +533,8 @@ class card{
             case 464: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nDraw '+this.alt+' Cards'; break
             case 465: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nDraw 1 Card\nIf Unblocked,\nApply 4 Frail'; break
             case 466: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nCannot be\nCountered'; break
-            case 467: this.desc+='Gain '+this.damage+' Dodge\nAdd '+this.alt+' Block\nNext Turn'; break
-            case 468: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Dodge\nNext Turn'; break
+            case 467: this.desc+='Add '+this.damage+' Dodge\nAdd '+this.alt+' Block\nNext Turn'; break
+            case 468: this.desc+='Add '+this.damage+' Block\nAdd '+this.alt+' Dodge\nNext Turn'; break
             case 469: this.desc+='Discard\nand Upgrade\nYour Hand'; break
             case 470: this.desc+='Whenever You\nDamage an Enemy,\nBuild '+this.damage+'\nof Construct'; break
             case 471: this.desc+='Gain '+this.damage+' Currency'; break
@@ -574,7 +574,7 @@ class card{
             case 505: this.desc+='Deal '+this.damage+'X Damage\nApply X Weak\nApply X Vulnerable'; break
             case 506: this.desc+='Gain '+this.damage+'\nRegeneration'; break
             case 507: this.desc+='Build '+this.damage+'\nof Construct\nBuild Increases\nby '+this.alt; break
-            case 508: this.desc+='If Construct\nis Built,\nGain '+this.damage+' Dodge'; break
+            case 508: this.desc+='If Construct\nis Built,\nAdd '+this.damage+' Dodge'; break
             case 509: this.desc+='Deal '+this.damage+' Damage\nReset Attacking\nIntents'; break
             case 510: this.desc+='Add '+this.damage+' Block\nReset Non-Attacking\nIntents'; break
             case 511: this.desc+='If Construct\nis Built,\nConstruct Reflects\nNext Attack'; break
@@ -686,6 +686,7 @@ class card{
             case 617: this.desc+='Put a Card\nFrom Your Draw\nPile into\nYour Hand'; break
             case 618: this.desc+='Return Discard\nPile to Hand'; break
             case 619: this.desc+='Put First Memory\nin Discard Pile\ninto Your Hand'; break
+            case 620: this.desc+='Draw '+this.damage+' Cards\nPut a\nDiscarded Card\ninto Your Hand'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
