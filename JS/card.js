@@ -687,6 +687,7 @@ class card{
             case 618: this.desc+='Return Discard\nPile to Hand'; break
             case 619: this.desc+='Put First Memory\nin Discard Pile\ninto Your Hand'; break
             case 620: this.desc+='Draw '+this.damage+' Cards\nPut a\nDiscarded Card\ninto Your Hand'; break
+            case 621: this.desc+='Put All Memories\nin Discard Pile\ninto Your Hand'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

@@ -3170,6 +3170,16 @@ types={
             {damage:2,alt:2,cost:0,attack:428,target:0,spec:16,class:1},
             {damage:3,alt:3,cost:0,attack:428,target:0,spec:16,class:1},
         ],
+        },{name:'Remember\nChain',rarity:2,list:6,
+        stats:[
+            {damage:2,alt:2,cost:0,attack:621,target:0,spec:16,class:1},
+            {damage:3,alt:3,cost:0,attack:621,target:0,spec:16,class:1},
+        ],
+        },{name:'Remember\nStrengthen',rarity:1,list:6,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:38,target:0,spec:16,class:1},
+            {damage:3,alt:0,cost:0,attack:38,target:0,spec:16,class:1},
+        ],
         },
         //draw without losing memories
 

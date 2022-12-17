@@ -3095,6 +3095,18 @@ class attack{
                     transition.scene='deck'
                     this.battle.context=12
                 break
+                case 621:
+                    for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
+                        if(this.battle.discard.cards[g].spec==16){
+                            this.battle.hand.cards.push(copyCard(this.battle.discard.cards[g]))
+                            this.battle.hand.cards[this.battle.hand.cards.length-1].position.x=1206
+                            this.battle.hand.cards[this.battle.hand.cards.length-1].position.y=500
+                            this.battle.discard.cards.splice(g,1)
+                            g--
+                            lg--
+                        }
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
