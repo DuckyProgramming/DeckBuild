@@ -108,9 +108,17 @@ class group{
                 this.add(642,0,this.battle.player)*/
             break
             case 7:
-                this.add(648,0,this.battle.player)
+                for(e=0;e<4;e++){
+                    this.add(1,0,this.battle.player)
+                }
+                for(e=0;e<4;e++){
+                    this.add(2,0,this.battle.player)
+                }
+                this.add(findCard('Tap'),0,this.battle.player)
+                this.add(findCard('Spare'),0,this.battle.player)
+                /*this.add(648,0,this.battle.player)
                 this.add(649,0,this.battle.player)
-                this.add(650,0,this.battle.player)
+                this.add(650,0,this.battle.player)*/
             break
         }
     }

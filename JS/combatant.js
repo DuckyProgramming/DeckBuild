@@ -2231,6 +2231,7 @@ class combatant{
 							this.layer.text(this.combo,0,-113)
 						break
 						case 1:
+							this.layer.noStroke()
 							this.layer.fill(255,this.fade/5)
 							switch(this.ammo.length){
 								case 3:

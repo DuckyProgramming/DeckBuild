@@ -938,8 +938,8 @@ types={
         ],
         },{name:'Particle\nStorm',rarity:2,list:2,
         stats:[
-            {damage:5,alt:5,cost:3,attack:247,target:0,spec:0,class:1},
-            {damage:6,alt:6,cost:3,attack:247,target:0,spec:0,class:1},
+            {damage:5,alt:5,cost:3,attack:247,target:0,spec:0,class:0},
+            {damage:6,alt:6,cost:3,attack:247,target:0,spec:0,class:0},
         ],
         },{name:'Lesson\nLearned',rarity:2,list:2,
         stats:[
@@ -1347,8 +1347,8 @@ types={
         ],
         },{name:'Shield\nEcho',rarity:0,list:3,
         stats:[
-            {damage:4,alt:0,cost:1,attack:345,target:0,spec:0,class:1},
-            {damage:6,alt:0,cost:1,attack:345,target:0,spec:0,class:1},
+            {damage:4,alt:0,cost:1,attack:345,target:0,spec:0,class:0},
+            {damage:6,alt:0,cost:1,attack:345,target:0,spec:0,class:0},
         ],
         },{name:'Absorption',rarity:1,list:3,
         stats:[
@@ -4049,7 +4049,7 @@ types={
             desc:'Gain 2 Energy\nafter Resting',
         },{
             name:'Combat Nap',id:9,rarity:0,list:0,
-            desc:'If You do not Attack\nGain 1 Energy Next Turn',
+            desc:'If You Do Not Attack\nGain 1 Energy Next Turn',
         },{
             name:'Plague Talisman',id:10,rarity:0,list:0,
             desc:'Apply 1 Weak to All\nEnemies the Start of Combat',
@@ -4406,7 +4406,7 @@ types={
             desc:'Gain 1 Base Energy,\nCannot Gain Currency',
         },{
             name:'Lighter',id:128,rarity:4,list:0,
-            desc:'Remove 2 Cards\nfrom Your Deck',
+            desc:'Remove Half of Your\nUnupgraded Cards',
         },{
             name:'Metallic Coating',id:129,rarity:4,list:0,
             desc:'Gain 1 Base Energy,\nCannot Upgrade at Rest',

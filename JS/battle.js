@@ -3479,9 +3479,9 @@ class battle{
                             }
                         break
                         case 82:
-                            if(this.page==0&&e==0){
+                            if(this.page==1&&e==0){
                                 this.getPotion(findPotion('Starflame'))
-                            }else if(this.page==1&&e==0){
+                            }else if(this.page==2&&e==0){
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+6)
                             }
                         break

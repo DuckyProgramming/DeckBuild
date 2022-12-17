@@ -208,10 +208,10 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 		case 1: case 6: case 7: case 8: case 10: case 12: case 16: case 18: case 20: case 25:
 			layer.text(damage,0,1)
 		break
-		case 2: case 4: case 5: case 11: case 13: case 19: case 24:
+		case 2: case 4: case 5: case 11: case 13: case 19:
 			layer.text('?',0,-2)
 		break
-		case 3:
+		case 3: case 24:
 			layer.textSize(16)
 			layer.text(damage+'x'+alt,0,0)
 		break

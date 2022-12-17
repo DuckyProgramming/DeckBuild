@@ -642,7 +642,7 @@ class card{
             case 573: this.desc+='Deal '+this.damage+' Damage\nCosts 1 Less For\nEach Time You Take\nUnblocked Damage'; break
             case 574: this.desc+='Gain '+this.damage+' Energy\nLose '+this.alt+' Health'; break
             case 575: this.desc+='Every Turn,\nDeal '+this.damage+' Damage\nto All Enemies\nand Take '+this.alt+' Damage'; break
-            case 576: this.desc+='All Enemies Gain\n'+this.alt+' Temporary Weak'; break
+            case 576: this.desc+='All Enemies Gain\n'+this.damage+' Temporary Weak'; break
             case 577: this.desc+='Counter '+this.damage+' All\nThis Combat'; break
             case 578: this.desc+='Deal '+this.damage+' Damage\nTarget Takes '+this.alt+'\nDamage Per\nCard Played'; break
             case 579: this.desc+='Is Copied '+this.alt+'\nTimes When Drawn\nDeal '+this.damage+' Damage'; break
