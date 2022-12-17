@@ -3224,6 +3224,32 @@ class attack{
                     this.battle.drop.addDrop(findCard('Dazed'),0,stage.playerNumber+1)
                     this.battle.reserve.addShuffle(findCard('Dazed'),0,stage.playerNumber+1)
                 break
+                case 644:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.counter.played==1){
+                        this.battle.combatants[this.target].boost.main[1]-=this.alt
+                    }
+                break
+                case 645:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                        this.battle.hand.cards[this.battle.hand.cards.length-1].cost=0
+                    }
+                    if(this.battle.counter.played==1){
+                        this.battle.mana.main+=this.alt
+                    }
+                break
+                case 646: case 647:
+                    this.hold.int=0
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].list==10||this.battle.hand.cards[g].list==11){
+                            this.hold.int=1
+                        }
+                    }
+                    if(this.hold.int==1&&this.type==646||this.hold.int==0&&this.type==647){
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

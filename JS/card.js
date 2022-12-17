@@ -711,6 +711,10 @@ class card{
             case 641: this.desc+='Draw '+this.damage+' Cards\nDraw '+this.alt+' More\nWhen Retained'; break
             case 642: this.desc+='Deal '+this.damage+' Damage'; break
             case 643: this.desc+='Deal '+this.damage+' Damage\nShuffle a Dazed\ninto Draw Pile'; break
+            case 644: this.desc+='Deal '+this.damage+' Damage\nIf First Card\nPlayed This Turn,\nApply '+this.alt+' Vulnerable'; break
+            case 645: this.desc+='Draw '+this.damage+' Card\nIt Costs 0 This Turn\nIf First Card\nPlayed This Turn,\nGain '+this.alt+' Energy'; break
+            case 646: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nThere Are No\nCurses or Statuses\nin Your Hand'; break
+            case 647: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nThere Are\nCurses or Statuses\nin Your Hand'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

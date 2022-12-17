@@ -1026,7 +1026,7 @@ types={
             {damage:12,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
             {damage:20,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
         ],
-        },{name:'Patience',rarity:0,list:2,
+        },{name:'Patience',rarity:1,list:2,
         stats:[
             {damage:1,alt:1,cost:0,attack:640,target:0,spec:0,class:2},
             {damage:1,alt:2,cost:0,attack:640,target:0,spec:0,class:2},
@@ -1036,10 +1036,30 @@ types={
             {damage:1,alt:1,cost:1,attack:641,target:0,spec:2,class:2},
             {damage:2,alt:1,cost:1,attack:641,target:0,spec:2,class:2},
         ],
-        },{name:'Spectral\nGrasp',rarity:1,list:2,
+        },{name:'Spectral\nGrasp',rarity:0,list:2,
         stats:[
             {damage:16,alt:2,cost:1,attack:642,target:1,spec:17,class:0},
             {damage:22,alt:2,cost:1,attack:642,target:1,spec:17,class:0},
+        ],
+        },{name:'Omen',rarity:0,list:2,
+        stats:[
+            {damage:6,alt:1,cost:1,attack:644,target:1,spec:0,class:0},
+            {damage:8,alt:2,cost:1,attack:644,target:1,spec:0,class:0},
+        ],
+        },{name:'Time\nSkip',rarity:1,list:2,
+        stats:[
+            {damage:1,alt:1,cost:1,attack:645,target:0,spec:3,class:2},
+            {damage:1,alt:2,cost:1,attack:645,target:0,spec:3,class:2},
+        ],
+        },{name:'Veiled\nEdge',rarity:1,list:2,
+        stats:[
+            {damage:10,alt:0,cost:0,attack:646,target:1,spec:0,class:0},
+            {damage:15,alt:0,cost:0,attack:646,target:1,spec:0,class:0},
+        ],
+        },{name:'Flagrant\nEdge',rarity:1,list:2,
+        stats:[
+            {damage:11,alt:0,cost:1,attack:647,target:1,spec:0,class:0},
+            {damage:16,alt:0,cost:1,attack:647,target:1,spec:0,class:0},
         ],
         },
 
