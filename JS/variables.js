@@ -2835,7 +2835,7 @@ types={
             {damage:14,alt:0,cost:0,attack:566,target:1,spec:0,class:0},
             {damage:18,alt:0,cost:0,attack:566,target:1,spec:0,class:0},
         ],
-        },{name:'Carnage',rarity:1,list:6,
+        },{name:'Carnage',rarity:0,list:6,
         stats:[
             {damage:20,alt:0,cost:2,attack:597,target:1,spec:15,class:0},
             {damage:28,alt:0,cost:2,attack:597,target:1,spec:15,class:0},
@@ -3015,7 +3015,7 @@ types={
             {damage:6,alt:0,cost:1,attack:596,target:0,spec:0,class:2},
             {damage:10,alt:0,cost:1,attack:596,target:0,spec:0,class:2},
         ],
-        },{name:'Ghost\nArmor',rarity:1,list:6,
+        },{name:'Ghost\nArmor',rarity:0,list:6,
         stats:[
             {damage:10,alt:0,cost:1,attack:598,target:0,spec:15,class:1},
             {damage:13,alt:0,cost:1,attack:598,target:0,spec:15,class:1},
@@ -3080,7 +3080,7 @@ types={
             {damage:2,alt:0,cost:1,attack:610,target:0,spec:3,class:2},
             {damage:2,alt:0,cost:1,attack:610,target:0,spec:0,class:2},
         ],
-        },{name:'Spinning\nBlades',rarity:0,list:6,
+        },{name:'Spinning\nBlades',rarity:1,list:6,
         stats:[
             {damage:1,alt:0,cost:1,attack:611,target:0,spec:0,class:1},
             {damage:1,alt:0,cost:1,attack:611,target:0,spec:10,class:1},
@@ -3210,9 +3210,27 @@ types={
             {damage:0,alt:0,cost:1,attack:626,target:0,spec:2,class:2},
             {damage:0,alt:0,cost:1,attack:626,target:0,spec:0,class:2},
         ],
+        },{name:'Ephemeral',rarity:0,list:6,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:627,target:0,spec:15,class:2},
+            {damage:5,alt:0,cost:1,attack:627,target:0,spec:15,class:2},
+        ],
+        },{name:'Mystery\nCannon',rarity:1,list:6,
+        stats:[
+            {damage:7,alt:1,cost:1,attack:628,target:1,spec:0,class:0},
+            {damage:10,alt:2,cost:1,attack:628,target:1,spec:0,class:0},
+        ],
+        },{name:'Ghostly\nPresence',rarity:2,list:6,
+        stats:[
+            {damage:1,alt:1,cost:1,attack:629,target:0,spec:0,class:2},
+            {damage:1,alt:2,cost:1,attack:629,target:0,spec:0,class:2},
+        ],
+        },{name:'Tick',rarity:1,list:6,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:630,target:0,spec:2,class:2},
+            {damage:0,alt:0,cost:0,attack:630,target:0,spec:0,class:2},
+        ],
         },
-        //memories
-        //ethereal
 
 
         {name:'Buster',rarity:0,list:7,

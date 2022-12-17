@@ -45,7 +45,7 @@ class attack{
                     }
                     this.attacks.push([0,this.alt*10-10,this.target,this.damage])
                 break
-                case 4:
+                case 4: case 627:
                     for(g=0;g<this.damage;g++){
                         this.battle.draw()
                     }
@@ -3146,6 +3146,23 @@ class attack{
                             this.battle.hand.cards[g].spec=16
                         }
                     }
+                break
+                case 628:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.hold.list=[]
+                    for(g=0,lg=this.battle.combatants[this.target].status.class.length;g<lg;g++){
+                        if(this.battle.combatants[this.target].status.class[g]==0){
+                            this.hold.list.push(g)
+                        }
+                    }
+                    this.battle.combatants[this.target].status.main[this.hold.list[floor(random(0,this.hold.list.length))]]+=this.alt
+                break
+                case 629:
+                    this.battle.combatants[0].status.main[129]+=this.damage
+                    this.battle.combatants[0].status.main[1]+=this.damage
+                break
+                case 630:
+                    this.battle.tickStatus()
                 break
                 default:
             }

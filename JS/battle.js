@@ -645,21 +645,14 @@ class battle{
             this.deck.cards.splice(index,1)
         }
     }
-    endTurn(){
-        this.counter.turn++
-        this.discarding=0
-        if(this.relics.active[79]){
-            this.mana.main+=this.mana.gen
-        }else{
-            this.mana.main=min(this.mana.max,this.mana.main+this.mana.gen)
-        }
+    tickStatus(){
         if(this.combatants[0].status.main[19]>0){
             this.combatants[0].life=0
         }
         this.mana.main+=this.combatants[0].status.main[1]
         this.combatants[0].mantra+=this.combatants[0].status.main[20]
         this.combatants[0].boost.main[2]+=this.combatants[0].status.main[32]
-        for(e=0,le=this.combatants.length;e<le;e++){
+        for(let e=0,le=this.combatants.length;e<le;e++){
             if(e==0&&this.combatants[e].status.main[47]<=0){
                 if(this.relics.active[69]){
                     this.combatants[e].block=max(0,this.combatants[e].block-15)
@@ -668,12 +661,12 @@ class battle{
                 }
             }
             this.combatants[e].setupIntent(-1)
-            for(f=0,lf=this.combatants[e].ammo.length;f<lf;f++){
+            for(let f=0,lf=this.combatants[e].ammo.length;f<lf;f++){
                 if(this.combatants[e].ammo[f]==4){
                     this.combatants[e].ammoDetail[f]+=3
                 }
             }
-            for(f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
+            for(let f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
                 if(f!=3&&this.combatants[e].status.main[88]<=0){
                     if(this.combatants[e].boost.main[f]>0){
                         this.combatants[e].boost.main[f]=max(0,this.combatants[e].boost.main[f]-1)
@@ -688,7 +681,7 @@ class battle{
             if(this.combatants[e].status.main[31]+this.combatants[e].status.main[40]>0){
                 this.combatants[e].addBlock(this.combatants[e].status.main[31]+this.combatants[e].status.main[40])
             }
-            for(f=0,lf=this.combatants[e].status.main.length;f<lf;f++){
+            for(let f=0,lf=this.combatants[e].status.main.length;f<lf;f++){
                 if(this.combatants[e].status.main[f]>0){
                     if(f==24){
                         this.combatants[e].take(this.combatants[e].status.main[f],e)
@@ -708,7 +701,7 @@ class battle{
                     }else if(f==73){
                         this.combatants[e].changeStance(2)
                     }else if(f==74){
-                        for(g=0;g<this.combatants[e].status.main[f];g++){
+                        for(let g=0;g<this.combatants[e].status.main[f];g++){
                             this.draw()
                         }
                     }else if(f==78){
@@ -718,7 +711,7 @@ class battle{
                     }else if(f==80){
                         this.combatants[e].boost.main[3]-=this.combatants[e].status.main[f]
                     }else if(f==92){
-                        for(g=0,lg=this.combatants[e].remember.boost.length;g<lg;g++){
+                        for(let g=0,lg=this.combatants[e].remember.boost.length;g<lg;g++){
                             this.combatants[e].boost.main[g]=this.combatants[e].remember.boost[g]
                         }
                     }else if(f==93){
@@ -784,6 +777,8 @@ class battle{
                         this.combatants[e].status.main[110]+=this.combatants[e].status.main[f]
                     }else if(f==122){
                         this.combatants[e].status.main[121]+=this.combatants[e].status.main[f]
+                    }else if(f==129){
+                        this.combatants[e].status.main[12]+=this.combatants[e].status.main[f]
                     }
                     this.combatants[e].status.main[f]=0
                 }
@@ -799,6 +794,16 @@ class battle{
         for(e=0;e<this.combatants[0].status.main[75];e++){
             this.hand.add(findCard('Insight'),0,0)
         }
+    }
+    endTurn(){
+        this.counter.turn++
+        this.discarding=0
+        if(this.relics.active[79]){
+            this.mana.main+=this.mana.gen
+        }else{
+            this.mana.main=min(this.mana.max,this.mana.main+this.mana.gen)
+        }
+        this.tickStatus()
         if(this.relics.active[9]&&this.random.attacked<=0){
             this.mana.main++
         }

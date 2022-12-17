@@ -693,6 +693,10 @@ class card{
             case 624: this.desc+='Add a Random\nMemory to\nYour Hand'; break
             case 625: this.desc+='Memories in Hand\nLose Memory'; break
             case 626: this.desc+='Cards in Hand\nCost 0 and\nBecome Memories'; break
+            case 627: this.desc+='Draw '+this.damage+' Cards\nEthereal'; break
+            case 628: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+'\nRandom Status'; break
+            case 629: this.desc+='Gain '+this.damage+' Intangible\nand '+this.alt+' Energy\nNext Turn'; break
+            case 630: this.desc+='Tick Statuses'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
