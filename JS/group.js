@@ -41,26 +41,26 @@ class group{
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
                 this.add(findCard('Vigilance'),0,this.battle.player)*/
-                this.add(202,0,this.battle.player)
-                this.add(203,0,this.battle.player)
-                this.add(204,0,this.battle.player)
-                this.add(205,0,this.battle.player)
                 this.add(206,0,this.battle.player)
+                this.add(207,0,this.battle.player)
+                this.add(208,0,this.battle.player)
+                this.add(209,0,this.battle.player)
+                this.add(210,0,this.battle.player)
             break
             case 3:
-                for(e=0;e<4;e++){
+                /*for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Charge'),0,this.battle.player)
-                this.add(findCard('Dualcast'),0,this.battle.player)
-                /*this.add(298,0,this.battle.player)
-                this.add(399,0,this.battle.player)
-                this.add(300,0,this.battle.player)
-                this.add(301,0,this.battle.player)
-                this.add(302,0,this.battle.player)*/
+                this.add(findCard('Dualcast'),0,this.battle.player)*/
+                this.add(302,0,this.battle.player)
+                this.add(303,0,this.battle.player)
+                this.add(304,0,this.battle.player)
+                this.add(305,0,this.battle.player)
+                this.add(306,0,this.battle.player)
             break
             case 4:
                 for(e=0;e<4;e++){
@@ -124,6 +124,7 @@ class group{
         }
     }
     add(type,level,color){
+        stage.id++
         this.calc.level=level
         if(this.calc.level==0&&(types.card[type].stats[level].class==0&&this.battle.relics.active[41]||types.card[type].stats[level].class==1&&this.battle.relics.active[42]||types.card[type].stats[level].class==2&&this.battle.relics.active[43])){
             this.calc.level++
@@ -135,6 +136,7 @@ class group{
             this.battle.relics.active[21]=false
         }else{
             this.cards.push(new card(this.layer,1206,500,type,this.calc.level,color))
+            this.cards[this.cards.length-1].id=stage.id
             if(types.card[type].stats[level].attack==1&&types.card[type].stats[level].spec==3){
                 this.cards[this.cards.length-1].damage+=this.battle.combatants[0].status.main[63]
             }
@@ -192,7 +194,9 @@ class group{
         }
     }
     addDrop(type,level,color){
+        stage.id++
         this.cards.push(new card(this.layer,50,-200,type,level,color))
+        this.cards[this.cards.length-1].id=stage.id
     }
     allUpgrade(){
         this.storage.cards=[]
@@ -258,7 +262,7 @@ class group{
             }
         }
         for(let e=0,le=this.cards.length;e<le;e++){
-            if((this.cards[e].attack==52||this.cards[e].attack==268)&&!this.cards[e].trigger){
+            if((this.cards[e].attack==52||this.cards[e].attack==268||this.cards[e].attack==641)&&!this.cards[e].trigger){
                 this.cards[e].damage+=this.cards[e].alt
                 if(this.battle.combatants[0].status.main[79]>0&&this.cards[e].cost>0){
                     this.cards[e].cost=max(0,this.cards[e].cost-this.battle.combatants[0].status.main[79])
@@ -288,6 +292,10 @@ class group{
                 }
             }else if(this.cards[e].retain){
                 this.cards[e].retain=false
+                if(this.battle.combatants[0].status.main[79]>0&&this.cards[e].cost>0){
+                    this.cards[e].cost=max(0,this.cards[e].cost-this.battle.combatants[0].status.main[79])
+                }
+            }else{
                 if(this.battle.combatants[0].status.main[79]>0&&this.cards[e].cost>0){
                     this.cards[e].cost=max(0,this.cards[e].cost-this.battle.combatants[0].status.main[79])
                 }
@@ -338,7 +346,7 @@ class group{
             this.cards[e].displayExtra([100,255,100],this.anim.transforming)
             this.cards[e].displayExtra([255,200,255],this.anim.forethinking)
             this.cards[e].displayExtra([255,150,0],this.anim.reserving)
-            this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length,this.battle.discard.cards.length,this.battle.reserve.cards.length,this.battle.random)
+            this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length,this.battle.discard.cards.length,this.battle.reserve.cards.length,this.battle.counter.turn,this.battle.random)
         }
     }
     displayView(level){
@@ -349,7 +357,7 @@ class group{
                 this.cards[e].anim.afford=0
                 this.cards[e].size=1
                 this.cards[e].fade=1
-                this.cards[e].display(le,this.battle.drawAmount,0,le,this.battle.defaultRandom)
+                this.cards[e].display(le,this.battle.drawAmount,0,le,0,this.battle.defaultRandom)
             }
         }else{
             for(e=0,le=this.cards.length;e<le;e++){
@@ -358,7 +366,7 @@ class group{
                 this.cards[e].anim.afford=0
                 this.cards[e].size=1
                 this.cards[e].fade=1
-                this.cards[e].display(le,this.battle.drawAmount,0,le,this.battle.defaultRandom)
+                this.cards[e].display(le,this.battle.drawAmount,0,le,0,this.battle.defaultRandom)
             }
         }
     }
@@ -563,6 +571,21 @@ class group{
                     this.battle.attack.type=this.cards[e].attack
                     this.battle.attack.level=this.cards[e].level
                     this.battle.attack.class=this.cards[e].class
+                    if(this.cards[e].spec==17){
+                        this.cards[e].alt--
+                        if(this.cards[e].alt<=0){
+                            for(f=0,lf=this.battle.hand.cards.length;f<lf;f++){
+                                if(this.battle.hand.cards[f].id==this.cards[e].id){
+                                    this.battle.hand.cards[f].exhaust=true
+                                }
+                            }
+                            for(f=0,lf=this.battle.deck.cards.length;f<lf;f++){
+                                if(this.battle.deck.cards[f].id==this.cards[e].id){
+                                    this.battle.deck.cards[f].remove=true
+                                }
+                            }
+                        }
+                    }
                     if(this.cards[e].attack==296&&inputs.rel.y>this.cards[e].position.y+10){
                         this.battle.attack.damage*=-1
                     }

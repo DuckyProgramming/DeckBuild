@@ -33,7 +33,7 @@ class attack{
                 case -22:
                     this.battle.currency.money-=10
                 break
-                case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329: case 560: case 565: case 573: case 579: case 597: case 599: case 633:
+                case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329: case 560: case 565: case 573: case 579: case 597: case 599: case 633: case 642:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2: case 231: case 241: case 268: case 598: case 600:
@@ -45,7 +45,7 @@ class attack{
                     }
                     this.attacks.push([0,this.alt*10-10,this.target,this.damage])
                 break
-                case 4: case 627:
+                case 4: case 627: case 641:
                     for(g=0;g<this.damage;g++){
                         this.battle.draw()
                     }
@@ -987,7 +987,8 @@ class attack{
                 case 204:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.combatants[0].meter+=this.alt
-                    this.battle.reserve.addShuffle(findCard('Winded'),0,0)
+                    this.battle.drop.addDrop(findCard('Winded'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Winded'),0,stage.playerNumber+1)
                 break
                 case 205:
                     this.battle.combatants[0].status.main[46]+=this.damage
@@ -1008,7 +1009,8 @@ class attack{
                 case 209:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.battle.combatants[0].meter+=this.alt
-                    this.battle.reserve.addShuffle(findCard('Dizzy'),0,0)
+                    this.battle.drop.addDrop(findCard('Dizzy'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Dizzy'),0,stage.playerNumber+1)
                 break
                 case 210:
                     this.battle.combatants[this.target].take(this.damage*this.battle.hand.cards.length,this.user)
@@ -1023,7 +1025,8 @@ class attack{
                         }
                     }
                     this.battle.combatants[0].armed=0
-                    this.battle.reserve.addShuffle(findCard('Struggle'),0,0)
+                    this.battle.drop.addDrop(findCard('Struggle'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Struggle'),0,stage.playerNumber+1)
                 break
                 case 212:
                     this.battle.combatants[0].meter*=2
@@ -3207,6 +3210,19 @@ class attack{
                     for(g=0;g<this.damage;g++){
                         this.battle.hand.add(findCard('Screen'),0,0)
                     }
+                break
+                case 640:
+                    if(this.battle.counter.turn>=5){
+                        this.battle.mana.main+=this.damage
+                        for(g=0;g<this.alt;g++){
+                            this.battle.draw()
+                        }
+                    }
+                break
+                case 643:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.drop.addDrop(findCard('Dazed'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Dazed'),0,stage.playerNumber+1)
                 break
                 default:
             }

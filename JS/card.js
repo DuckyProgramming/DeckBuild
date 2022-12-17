@@ -1,5 +1,5 @@
 class card{
-    constructor(layer,x,y,type,level,color,damage=types.card[type].stats[level].damage,alt=types.card[type].stats[level].alt,cost=types.card[type].stats[level].cost,spec=types.card[type].stats[level].spec,playExhaust=false){
+    constructor(layer,x,y,type,level,color,damage=types.card[type].stats[level].damage,alt=types.card[type].stats[level].alt,cost=types.card[type].stats[level].cost,spec=types.card[type].stats[level].spec,playExhaust=false,id){
         this.layer=layer
         this.position={x:x,y:y}
         this.type=type
@@ -13,6 +13,7 @@ class card{
         this.cost=cost
         this.spec=spec
         this.playExhaust=playExhaust
+        this.id=id
         this.attack=types.card[this.type].stats[this.level].attack
         this.target=types.card[this.type].stats[this.level].target
         this.class=types.card[this.type].stats[this.level].class
@@ -35,7 +36,7 @@ class card{
         this.drawTop=false
         this.selectDiscard=false
     }
-    displayName(deckSize,handSize,discardSize,drawSize,random){
+    displayName(deckSize,handSize,discardSize,drawSize,turn,random){
         this.desc=''
         if(this.spec==1||this.spec==6||this.spec==7){
             this.desc+='Unplayable\n'
@@ -706,7 +707,10 @@ class card{
             case 637: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nYou Have Mana'; break
             case 638: if(this.damage>0){this.desc+='Shuffle a Peak+\nand a Trough into\nYour Draw Pile'}else{this.desc+='Shuffle a Peak\nand a Trough into\nYour Draw Pile'}; break
             case 639: this.desc+='Add '+this.damage+' Shivs\nto Your Hand\nor\nAdd '+this.damage+' Screens\nto Your Hand'; break
-            
+            case 640: this.desc+='After Turn 5\n('+turn+')\nGain '+this.damage+' Energy\nDraw '+this.alt+' Cards'; break
+            case 641: this.desc+='Draw '+this.damage+' Cards\nDraw '+this.alt+' More\nWhen Retained'; break
+            case 642: this.desc+='Deal '+this.damage+' Damage'; break
+            case 643: this.desc+='Deal '+this.damage+' Damage\nShuffle a Dazed\ninto Draw Pile'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -718,6 +722,9 @@ class card{
         if(this.spec==12){
             this.desc+='\nReturn to Draw Pile'
         }
+        if(this.spec==17){
+            this.desc+='\nVanishing '+this.alt
+        }
         if(this.desc[this.desc.length-1]=='\n'){
             this.desc=this.desc.substr(0,this.desc.length-1)
         }
@@ -725,8 +732,8 @@ class card{
             this.desc=this.desc.substr(1,this.desc.length)
         }
     }
-    display(deckSize=0,handSize=0,discardSize=0,drawSize=0,random=current.defaultRandom){
-        this.displayName(deckSize,handSize,discardSize,drawSize,random)
+    display(deckSize=0,handSize=0,discardSize=0,drawSize=0,turn=0,random=current.defaultRandom){
+        this.displayName(deckSize,handSize,discardSize,drawSize,turn,random)
         if(this.size>0){
             this.layer.translate(this.position.x,this.position.y)
             this.layer.scale(this.size)
@@ -766,11 +773,17 @@ class card{
                 this.layer.fill(this.anim.afford*240,0,0,this.fade)
             }
             this.layer.noStroke()
+            this.layer.textSize(8)
+            if(dev.id){
+                this.layer.text(this.id,-this.width/2+10,this.height/2-10)
+            }
+            if(dev.attack){
+                this.layer.text(this.attack,this.width/2-10,this.height/2-10)
+            }
+            this.layer.textSize(20)
             if(this.cost==-1){
-                this.layer.textSize(20)
                 this.layer.text('X',-this.width/2+16,-this.height/2+20)
             }else if(this.spec!=1&&this.spec!=6&&this.spec!=7){
-                this.layer.textSize(20)
                 this.layer.text(this.cost,-this.width/2+16,-this.height/2+20)
             }
             this.layer.textSize(14)

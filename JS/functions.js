@@ -258,10 +258,12 @@ function updateMouse(layer){
 	inputs.rel.y=(inputs.mouse.y-height/2)/stage.scale/stage.quality+layer.height/2/stage.quality
 }
 function copyCard(base){
-	return new card(base.layer,base.position.x,base.position.y,base.type,base.level,base.color,base.damage,base.alt,base.base.cost,base.spec,base.playExhaust)
+	return new card(base.layer,base.position.x,base.position.y,base.type,base.level,base.color,base.damage,base.alt,base.base.cost,base.spec,base.playExhaust,base.id)
 }
 function reformCard(base){
-	return new card(base.layer,base.position.x,base.position.y,base.type,base.level,base.color)
+	m=new card(base.layer,base.position.x,base.position.y,base.type,base.level,base.color)
+	m.id=base.id
+	return m
 }
 function copyList(base){
 	i=[]

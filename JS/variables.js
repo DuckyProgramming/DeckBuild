@@ -1021,13 +1021,28 @@ types={
             {damage:1,alt:0,cost:0,attack:555,target:0,spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:555,target:0,spec:0,class:2},
         ],
-        },{name:'Spinning\nBack Strike',rarity:0,list:6,
+        },{name:'Spinning\nBack Strike',rarity:0,list:2,
         stats:[
             {damage:12,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
             {damage:20,alt:4,cost:2,attack:52,target:1,spec:2,class:0},
         ],
+        },{name:'Patience',rarity:0,list:2,
+        stats:[
+            {damage:1,alt:1,cost:0,attack:640,target:0,spec:0,class:2},
+            {damage:1,alt:2,cost:0,attack:640,target:0,spec:0,class:2},
+        ],
+        },{name:'Coalesce',rarity:1,list:2,
+        stats:[
+            {damage:1,alt:1,cost:1,attack:641,target:0,spec:2,class:2},
+            {damage:2,alt:1,cost:1,attack:641,target:0,spec:2,class:2},
+        ],
+        },{name:'Spectral\nGrasp',rarity:1,list:2,
+        stats:[
+            {damage:16,alt:2,cost:1,attack:642,target:1,spec:17,class:0},
+            {damage:22,alt:2,cost:1,attack:642,target:1,spec:17,class:0},
+        ],
         },
-        //gain 1 energy, draw 1 card, after turn 5
+
 
         
         {name:'Charge',rarity:0,list:3,
@@ -1532,6 +1547,8 @@ types={
         ],
         },
         //sequence
+        //add charges
+        //showdown
         
         
         {name:'Debilitate',rarity:2,list:4,
@@ -2013,6 +2030,11 @@ types={
         stats:[
             {damage:3,alt:2,cost:0,attack:391,target:0,spec:0,class:2},
             {damage:3,alt:2,cost:0,attack:391,target:0,spec:0,class:2},
+        ],
+        },{name:'Flowing\nMist',rarity:0,list:2,
+        stats:[
+            {damage:13,alt:0,cost:1,attack:643,target:1,spec:15,class:0},
+            {damage:18,alt:0,cost:1,attack:643,target:1,spec:15,class:0},
         ],
         },
         //nifty
@@ -3120,7 +3142,7 @@ types={
             {damage:0,alt:0,cost:2,attack:618,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:1,attack:618,target:0,spec:0,class:2},
         ],
-        },{name:'Memories',rarity:1,list:6,
+        },{name:'Memories',rarity:0,list:6,
         stats:[
             {damage:0,alt:0,cost:1,attack:619,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:0,attack:619,target:0,spec:0,class:2},
@@ -3190,7 +3212,7 @@ types={
             {damage:2,alt:0,cost:0,attack:96,target:0,spec:16,class:2},
             {damage:3,alt:0,cost:0,attack:96,target:0,spec:16,class:2},
         ],
-        },{name:'Extract',rarity:1,list:6,
+        },{name:'Extract',rarity:0,list:6,
         stats:[
             {damage:2,alt:0,cost:1,attack:623,target:0,spec:3,class:2},
             {damage:3,alt:0,cost:1,attack:623,target:0,spec:3,class:2},
@@ -3220,7 +3242,7 @@ types={
             {damage:7,alt:1,cost:1,attack:628,target:1,spec:0,class:0},
             {damage:10,alt:2,cost:1,attack:628,target:1,spec:0,class:0},
         ],
-        },{name:'Ghostly\nPresence',rarity:2,list:6,
+        },{name:'Ghostly\nPresence',rarity:1,list:6,
         stats:[
             {damage:1,alt:1,cost:1,attack:629,target:0,spec:0,class:2},
             {damage:1,alt:2,cost:1,attack:629,target:0,spec:0,class:2},
@@ -3503,7 +3525,7 @@ types={
             {damage:18,alt:0,cost:1,attack:1,target:1,spec:9,class:0},
             {damage:25,alt:0,cost:1,attack:1,target:1,spec:9,class:0},
         ],
-        },//13/16
+        },//14/16
 
 
         {name:'Redraw',rarity:-3,list:0,
@@ -7572,7 +7594,8 @@ zones=[
         events:[[],[],[],[],[],[],[],[]],
     },
 ]
-stage={scale:0,quality:1,scene:'menu',playerNumber:7,playerCombatantNumber:1,identifier:['']}
+dev={id:true,attack:true}
+stage={scale:0,quality:1,scene:'menu',playerNumber:7,playerCombatantNumber:1,identifier:[''],id:0}
 graphics={main:0,minor:[],symbol:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}

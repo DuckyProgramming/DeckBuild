@@ -2092,7 +2092,7 @@ class battle{
         this.layer.textSize(20)
         this.layer.text('Skip',450,450)
         for(e=0,le=this.choice.cards.length;e<le;e++){
-            this.choice.cards[e].display(this.deck.cards.length,this.drawAmount,0,this.deck.cards.length-this.drawAmount,this.defaultRandom)
+            this.choice.cards[e].display(this.deck.cards.length,this.drawAmount,0,this.deck.cards.length-this.drawAmount,0,this.defaultRandom)
         }
     }
     updateChoice(){
@@ -2446,7 +2446,7 @@ class battle{
     displayDeck(){
         if(this.context==1||this.context==4||this.context==16){
             this.deck.displayView(-1)
-            this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0,this.deck.cards.length-this.drawAmount,this.defaultRandom)
+            this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0,this.deck.cards.length-this.drawAmount,0,this.defaultRandom)
         }else if(this.context==2||this.context==3||this.context==10||this.context==11||this.context==12){
             this.discard.displayView(-1)
         }else if(this.context==5||this.context==6||this.context==9||this.context==14||this.context==15){
@@ -3807,7 +3807,7 @@ class battle{
     displayShop(){
         for(e=0,le=this.shop.cards.length;e<le;e++){
             if(this.shop.cards[e]!=0){
-                this.shop.cards[e].display(this.deck.cards.length,this.drawAmount,0)
+                this.shop.cards[e].display(this.deck.cards.length,this.drawAmount,0,this.deck.cards.length,0,this.defaultRandom)
             }
         }
         if(this.context!=1){
