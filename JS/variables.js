@@ -2960,7 +2960,7 @@ types={
             {damage:15,alt:2,cost:2,attack:585,target:1,spec:0,class:0},
             {damage:20,alt:2,cost:2,attack:585,target:1,spec:0,class:0},
         ],
-        },{name:'Reserve',rarity:1,list:6,
+        },{name:'Reserve',rarity:0,list:6,
         stats:[
             {damage:1,alt:0,cost:1,attack:586,target:0,spec:0,class:2},
             {damage:1,alt:0,cost:0,attack:586,target:0,spec:0,class:2},
@@ -3162,26 +3162,57 @@ types={
         ],
         },{name:'Remember\nBlades',rarity:1,list:6,
         stats:[
-            {damage:3,alt:0,cost:0,attack:26,target:0,spec:16,class:1},
-            {damage:4,alt:0,cost:0,attack:26,target:0,spec:16,class:1},
+            {damage:3,alt:0,cost:0,attack:26,target:0,spec:16,class:2},
+            {damage:4,alt:0,cost:0,attack:26,target:0,spec:16,class:2},
         ],
         },{name:'Remember\nRethink',rarity:1,list:6,
         stats:[
-            {damage:2,alt:2,cost:0,attack:428,target:0,spec:16,class:1},
-            {damage:3,alt:3,cost:0,attack:428,target:0,spec:16,class:1},
+            {damage:2,alt:2,cost:0,attack:428,target:0,spec:16,class:2},
+            {damage:3,alt:3,cost:0,attack:428,target:0,spec:16,class:2},
         ],
         },{name:'Remember\nChain',rarity:2,list:6,
         stats:[
-            {damage:2,alt:2,cost:0,attack:621,target:0,spec:16,class:1},
-            {damage:3,alt:3,cost:0,attack:621,target:0,spec:16,class:1},
+            {damage:2,alt:2,cost:0,attack:621,target:0,spec:16,class:2},
+            {damage:3,alt:3,cost:0,attack:621,target:0,spec:16,class:2},
         ],
         },{name:'Remember\nStrengthen',rarity:1,list:6,
         stats:[
-            {damage:2,alt:0,cost:0,attack:38,target:0,spec:16,class:1},
-            {damage:3,alt:0,cost:0,attack:38,target:0,spec:16,class:1},
+            {damage:2,alt:0,cost:0,attack:38,target:0,spec:16,class:2},
+            {damage:3,alt:0,cost:0,attack:38,target:0,spec:16,class:2},
+        ],
+        },{name:'Remember\nReduce',rarity:1,list:6,
+        stats:[
+            {damage:3,alt:0,cost:0,attack:622,target:1,spec:16,class:2},
+            {damage:5,alt:0,cost:0,attack:622,target:1,spec:16,class:2},
+        ],
+        },{name:'Remember\nEnergy',rarity:1,list:6,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:96,target:0,spec:16,class:2},
+            {damage:3,alt:0,cost:0,attack:96,target:0,spec:16,class:2},
+        ],
+        },{name:'Extract',rarity:1,list:6,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:623,target:0,spec:3,class:2},
+            {damage:3,alt:0,cost:1,attack:623,target:0,spec:3,class:2},
+        ],
+        },{name:'Bethink',rarity:1,list:6,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:624,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:0,attack:624,target:0,spec:3,class:2},
+        ],
+        },{name:'Memorialize',rarity:1,list:6,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:625,target:0,spec:2,class:2},
+            {damage:0,alt:0,cost:1,attack:625,target:0,spec:0,class:2},
+        ],
+        },{name:'By Heart',rarity:1,list:6,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:626,target:0,spec:2,class:2},
+            {damage:0,alt:0,cost:1,attack:626,target:0,spec:0,class:2},
         ],
         },
-        //draw without losing memories
+        //memories
+        //ethereal
 
 
         {name:'Buster',rarity:0,list:7,

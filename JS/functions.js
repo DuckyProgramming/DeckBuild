@@ -258,7 +258,7 @@ function updateMouse(layer){
 	inputs.rel.y=(inputs.mouse.y-height/2)/stage.scale/stage.quality+layer.height/2/stage.quality
 }
 function copyCard(base){
-	return new card(base.layer,base.position.x,base.position.y,base.type,base.level,base.color,base.damage,base.alt,base.base.cost,base.playExhaust)
+	return new card(base.layer,base.position.x,base.position.y,base.type,base.level,base.color,base.damage,base.alt,base.base.cost,base.spec,base.playExhaust)
 }
 function reformCard(base){
 	return new card(base.layer,base.position.x,base.position.y,base.type,base.level,base.color)

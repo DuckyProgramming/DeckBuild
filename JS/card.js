@@ -1,5 +1,5 @@
 class card{
-    constructor(layer,x,y,type,level,color,damage=types.card[type].stats[level].damage,alt=types.card[type].stats[level].alt,cost=types.card[type].stats[level].cost,playExhaust=false){
+    constructor(layer,x,y,type,level,color,damage=types.card[type].stats[level].damage,alt=types.card[type].stats[level].alt,cost=types.card[type].stats[level].cost,spec=types.card[type].stats[level].spec,playExhaust=false){
         this.layer=layer
         this.position={x:x,y:y}
         this.type=type
@@ -11,10 +11,10 @@ class card{
         this.damage=damage
         this.alt=alt
         this.cost=cost
+        this.spec=spec
         this.playExhaust=playExhaust
         this.attack=types.card[this.type].stats[this.level].attack
         this.target=types.card[this.type].stats[this.level].target
-        this.spec=types.card[this.type].stats[this.level].spec
         this.class=types.card[this.type].stats[this.level].class
         this.desc=''
         this.base={cost:this.cost}
@@ -688,6 +688,11 @@ class card{
             case 619: this.desc+='Put First Memory\nin Discard Pile\ninto Your Hand'; break
             case 620: this.desc+='Draw '+this.damage+' Cards\nPut a\nDiscarded Card\ninto Your Hand'; break
             case 621: this.desc+='Put All Memories\nin Discard Pile\ninto Your Hand'; break
+            case 622: this.desc+='Apply '+this.damage+' Weak\nApply '+this.damage+' Vulnerable'; break
+            case 623: this.desc+='Draw '+this.damage+' Cards\nDoes Not Discard\nMemories'; break
+            case 624: this.desc+='Add a Random\nMemory to\nYour Hand'; break
+            case 625: this.desc+='Memories in Hand\nLose Memory'; break
+            case 626: this.desc+='Cards in Hand\nCost 0 and\nBecome Memories'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

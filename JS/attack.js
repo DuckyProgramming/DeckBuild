@@ -3107,6 +3107,46 @@ class attack{
                         }
                     }
                 break
+                case 622:
+                    this.battle.combatants[this.target].boost.main[0]-=this.damage
+                    this.battle.combatants[this.target].boost.main[1]-=this.damage
+                break
+                case 623:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].spec==16&&this.battle.hand.cards[g].used){
+                            this.battle.hand.cards[g].used=false
+                        }
+                    }
+                break
+                case 624:
+                    this.hold.list=[]
+                    for(g=0,lg=types.card.length;g<lg;g++){
+                        if(types.card[g].stats[0].spec==16){
+                            this.hold.list.push(g)
+                        }
+                    }
+                    g=floor(random(0,this.hold.list.length))
+                    this.battle.hand.add(this.hold.list[g],0,types.card[this.hold.list[g]].list)
+                break
+                case 625:
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].spec==16){
+                            this.battle.hand.cards[g].spec=0
+                        }
+                    }
+                break
+                case 626:
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].spec!=16){
+                            this.battle.hand.cards[g].cost=0
+                            this.battle.hand.cards[g].base.cost=0
+                            this.battle.hand.cards[g].spec=16
+                        }
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
