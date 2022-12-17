@@ -3253,7 +3253,29 @@ types={
             {damage:1,alt:0,cost:0,attack:581,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:0,attack:581,target:0,spec:3,class:2},
         ],
+        },{name:'Count',rarity:1,list:7,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:631,target:1,spec:0,class:0},
+            {damage:5,alt:0,cost:1,attack:631,target:1,spec:0,class:0},
+        ],
+        },{name:'Long\nCount',rarity:1,list:7,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:632,target:1,spec:0,class:0},
+            {damage:2,alt:0,cost:1,attack:632,target:1,spec:0,class:0},
+        ],
+        },{name:'Fuse',rarity:1,list:7,
+        stats:[
+            {damage:8,alt:0,cost:5,attack:633,target:1,spec:0,class:0},
+            {damage:12,alt:0,cost:5,attack:633,target:1,spec:0,class:0},
+        ],
+        },{name:'Triskaide\nkaphobia',rarity:2,list:7,
+        stats:[
+            {damage:13,alt:0,cost:1,attack:634,target:0,spec:0,class:2},
+            {damage:13,alt:0,cost:0,attack:634,target:0,spec:0,class:2},
+        ],
         },
+
+        //2,1,1
         
         
         {name:'Empty',rarity:-1,list:-1,

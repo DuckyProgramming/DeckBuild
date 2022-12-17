@@ -756,7 +756,7 @@ class battle{
                     f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79&&
                     f!=80&&f!=81&&f!=82&&f!=85&&f!=88&&f!=91&&f!=95&&f!=96&&f!=97&&f!=101&&
                     f!=103&&f!=107&&f!=108&&f!=112&&f!=113&&f!=114&&f!=116&&f!=120&&f!=123&&f!=124&&
-                    f!=125&&f!=126&&f!=127&&f!=128){
+                    f!=125&&f!=126&&f!=127&&f!=128&&f!=130){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[f]
                     }else if(f==67){
@@ -1053,13 +1053,18 @@ class battle{
         for(g=0,lg=this.hand.cards.length;g<lg;g++){
             if(this.hand.cards[g].attack==-2){
                 this.combatants[0].take(this.hand.cards[g].damage,-1)
-            }
-            if(this.hand.cards[g].attack==149){
+            }else if(this.hand.cards[g].attack==633&&this.hand.cards[g].cost>0){
+                this.hand.cards[g].cost--
+            }else if(this.hand.cards[g].attack==149){
                 this.hand.cards[g].used=true
             }
         }
         if(this.random.played%10==0&&this.relics.active[46]){
             this.draw()
+        }
+        if(this.random.played%13==0&&this.combatants[0].status.main[130]>0){
+            this.takeAll(this.combatants[0].status.main[130],-1,1)
+            this.combatants[0].addBlock(this.combatants[0].status.main[130])
         }
         if(this.combatants[0].status.main[22]>0){
             for(g=0,lg=this.combatants.length;g<lg;g++){
