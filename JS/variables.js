@@ -2344,8 +2344,28 @@ types={
         ],
         },{name:'Blood\nPool',rarity:1,list:4,
         stats:[
-            {damage:2,alt:-8,cost:1,attack:702,target:0,spec:0,class:2},
-            {damage:3,alt:-8,cost:1,attack:702,target:0,spec:0,class:2},
+            {damage:2,alt:-8,cost:1,attack:704,target:0,spec:0,class:2},
+            {damage:3,alt:-8,cost:1,attack:704,target:0,spec:0,class:2},
+        ],
+        },{name:'Open\nWounds',rarity:0,list:4,
+        stats:[
+            {damage:7,alt:-2,cost:1,attack:705,target:1,spec:0,class:0},
+            {damage:10,alt:-2,cost:1,attack:705,target:1,spec:0,class:0},
+        ],
+        },{name:'Uncorruptible',rarity:2,list:4,
+        stats:[
+            {damage:99,alt:0,cost:1,attack:706,target:0,spec:3,class:2},
+            {damage:99,alt:0,cost:1,attack:706,target:0,spec:3,class:2},
+        ],
+        },{name:'Quick\nStab',rarity:0,list:4,
+        stats:[
+            {damage:2,alt:2,cost:0,attack:707,target:1,spec:11,class:0},
+            {damage:4,alt:2,cost:0,attack:707,target:1,spec:11,class:0},
+        ],
+        },{name:'Hemokinesis',rarity:1,list:4,
+        stats:[
+            {damage:0,alt:-4,cost:1,attack:708,target:0,spec:11,class:0},
+            {damage:4,alt:-4,cost:1,attack:708,target:0,spec:11,class:0},
         ],
         },
         //powers
@@ -2357,13 +2377,6 @@ types={
         //skirt
         //slip
         //expensive things
-        //attack 10 times for 1 each
-        //quick stab
-        //turn enemy bleed into block
-
-        //99 control
-        
-        //Deal 7(10) damage. If the enemy is Poisoned, deal 7(10) damage again.
 
         
         {name:'Build\nWall',rarity:0,list:5,

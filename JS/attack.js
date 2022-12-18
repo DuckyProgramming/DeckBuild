@@ -837,7 +837,7 @@ class attack{
                     this.battle.discarding++
                     this.battle.draw()
                 break
-                case 171:
+                case 171: case 706:
                     this.battle.combatants[0].status.main[36]+=this.damage
                 break
                 case 172:
@@ -3572,6 +3572,33 @@ class attack{
                 break
                 case 704:
                     this.battle.combatants[0].status.main[145]+=this.damage
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 705:
+                    if(this.battle.combatants[this.target].status.main[11]>0){
+                        this.battle.combatants[this.target].take(this.damage*2,this.user)
+                    }else{
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 707:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].block<=0){
+                        this.battle.combatants[this.target].status.main[11]+=this.alt
+                    }
+                    this.battle.combatants[0].meter-=2
+                break
+                case 708:
+                    this.hold.int=this.damage
+                    for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].team==1&&this.battle.combatants[g].life>0&&this.battle.combatants[g].status.main[11]>0){
+                            this.hold.int+=this.battle.combatants[g].status.main[11]*2
+                        }
+                    }
+                    if(this.hold.int>0){
+                        this.battle.combatants[0].addBlock(this.hold.int)
+                    }
                     this.battle.combatants[0].meter+=this.alt
                 break
                 default:

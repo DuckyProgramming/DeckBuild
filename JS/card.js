@@ -772,6 +772,10 @@ class card{
             case 702: this.desc+='Apply '+this.damage+' Bleed\nand '+this.alt+' Weak\nto All Enemies\n'+nfp(-3)+' Balance'; break
             case 703: this.desc+='Add '+this.damage+' Dodge\n'+nfp(this.alt)+' Balance'; break
             case 704: this.desc+='Apply '+this.damage+' Bleed\nPer Turn\nto All Enemies\n'+nfp(this.alt)+' Balance'; break
+            case 705: this.desc+='Deal '+this.damage+' Damage\nDeals Double Damage\nif Target Has Bleed\n'+nfp(this.alt)+' Balance'; break
+            case 706: this.desc+='You Cannot\nbe Debuffed'; break
+            case 707: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed\n'+nfp(-2)+' Balance'; break
+            case 708: if(this.damage>0){this.desc+='Gain Block\nEqual to 2x Enemy\nBleed +'+this.damage+'\n'+nfp(this.alt)+' Balance'}else{this.desc+='Gain Block\nEqual to 2x\nEnemy Bleed\n'+nfp(this.alt)+' Balance'} break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
