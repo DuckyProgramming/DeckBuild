@@ -3540,6 +3540,39 @@ class attack{
                     this.battle.mana.gen+=this.damage
                     this.battle.random.tempDrawAmount-=this.alt
                     this.battle.random.drawing-=this.alt
+                    this.battle.combatants[0].meter=0
+                break
+                case 700:
+                    this.battle.combatants[0].status.main[144]+=this.damage
+                break
+                case 701:
+                    this.hold.list=[]
+                    for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0&&this.battle.combatants[g].team==1){
+                            this.hold.list.push(g)
+                        }
+                    }
+                    for(g=0;g<this.alt;g++){
+                        this.battle.combatants[this.hold.list[floor(random(0,this.hold.list.length))]].status.main[11]+=this.damage
+                    }
+                    this.battle.combatants[0].meter+=3
+                break
+                case 702:
+                    for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].team==1&&this.battle.combatants[g].life>0){
+                            this.battle.combatants[g].status.main[11]+=this.damage
+                            this.battle.combatants[g].boost.main[0]-=this.alt
+                        }
+                    }
+                    this.battle.combatants[0].meter-=3
+                break
+                case 703:
+                    this.battle.combatants[0].status.main[6]+=this.damage
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 704:
+                    this.battle.combatants[0].status.main[145]+=this.damage
+                    this.battle.combatants[0].meter+=this.alt
                 break
                 default:
             }

@@ -214,7 +214,7 @@ class card{
             case 144: this.desc+='Add '+this.damage+'\nDodge'; break
             case 145: this.desc+='Add '+this.damage+' Dodge\nCounter '+this.alt+' Once'; break
             case 146: this.desc+='Add '+this.damage+' Block\nGain 2 Combo\nYou Must Attack\nor Take '+this.alt+' Damage'; break
-            case 147: this.desc+='Attacks Add '+this.damage+'\nBleed Current Turn'; break
+            case 147: this.desc+='Attacks Apply '+this.damage+'\nBleed This Turn'; break
             case 148: this.desc+='Redraw your hand\nExhaust\nEthereal'; break
             case 149: this.desc+='Add '+this.damage+' Dodge\nExhausted when\nAnother Card Played\nDiscard Hand\nExhaust\nEthereal'; break
             case 150: if(this.damage==0){this.desc+='Draw X Cards'}else{this.desc+='Draw X+'+this.damage+' Cards'}; break
@@ -674,7 +674,7 @@ class card{
             case 604: this.desc+='Block is\nNot Removed\nat the End\nof Your Turn'; break
             case 605: this.desc+='Gain '+this.damage+' Vulnerable\nIncrease Energy\nGain by '+this.alt; break
             case 606: this.desc+='Draw '+this.damage+' More\nCards Per Turn\nLose '+this.alt+' Health\nPer Turn'; break
-            case 607: this.desc+='All Current\nSkills Cost 0\nand Exhaust'; break
+            case 607: this.desc+='All Skills\nin Hand Cost 0\nand Exhaust'; break
             case 608: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Gain\n'+this.alt+' Max Health'; break
             case 609: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nWhen You Gain\nBlock'; break
             case 610: this.desc+='Double All\nYour Stat Buffs'; break
@@ -766,7 +766,12 @@ class card{
             case 696: this.desc+='Trigger a Weak\nEvoke on All Orbs'; break
             case 697: this.desc+='Lightning Charges\nDeal '+this.damage+' More\nPassive Damage'; break
             case 698: this.desc+='Add '+this.damage+' Dodge\nDiscard '+this.alt+' Card'; break
-            case 699: this.desc+='Increase Energy\nGain by '+this.damage+'\nDraw 1 Less\nCard Per Turn'; break
+            case 699: this.desc+='Increase Energy\nGain by '+this.damage+'\nDraw 1 Less\nCard Per Turn\nReset Balance'; break
+            case 700: this.desc+='All Attacks\nApply '+this.damage+' Bleed'; break
+            case 701: this.desc+='Apply '+this.damage+' Bleed\nto a Random\nEnemy '+this.alt+' Times\n'+nfp(3)+' Balance'; break
+            case 702: this.desc+='Apply '+this.damage+' Bleed\nand '+this.alt+' Weak\nto All Enemies\n'+nfp(-3)+' Balance'; break
+            case 703: this.desc+='Add '+this.damage+' Dodge\n'+nfp(this.alt)+' Balance'; break
+            case 704: this.desc+='Apply '+this.damage+' Bleed\nPer Turn\nto All Enemies\n'+nfp(this.alt)+' Balance'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

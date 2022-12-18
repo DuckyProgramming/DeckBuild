@@ -2314,8 +2314,8 @@ types={
         ],
         },{name:'Nifty',rarity:1,list:4,
         stats:[
-            {damage:3,alt:0,cost:2,attack:144,target:0,spec:3,class:1},
-            {damage:3,alt:0,cost:1,attack:144,target:0,spec:3,class:1},
+            {damage:3,alt:0,cost:2,attack:703,target:0,spec:3,class:1},
+            {damage:3,alt:0,cost:1,attack:703,target:0,spec:3,class:1},
         ],
         },{name:'Footwork',rarity:1,list:4,
         stats:[
@@ -2327,6 +2327,26 @@ types={
             {damage:1,alt:1,cost:1,attack:699,target:0,spec:0,class:2},
             {damage:1,alt:1,cost:1,attack:699,target:0,spec:0,class:2},
         ],
+        },{name:'Spikify',rarity:2,list:4,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:700,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:700,target:0,spec:0,class:2},
+        ],
+        },{name:'Spinning\nMulti Slice',rarity:1,list:4,
+        stats:[
+            {damage:4,alt:3,cost:2,attack:701,target:0,spec:0,class:2},
+            {damage:4,alt:4,cost:2,attack:701,target:0,spec:0,class:2},
+        ],
+        },{name:'Cripple',rarity:1,list:4,
+        stats:[
+            {damage:4,alt:2,cost:2,attack:702,target:0,spec:3,class:2},
+            {damage:7,alt:2,cost:2,attack:702,target:0,spec:3,class:2},
+        ],
+        },{name:'Blood\nPool',rarity:1,list:4,
+        stats:[
+            {damage:2,alt:-8,cost:1,attack:702,target:0,spec:0,class:2},
+            {damage:3,alt:-8,cost:1,attack:702,target:0,spec:0,class:2},
+        ],
         },
         //powers
         //deal damage, lose draw
@@ -2337,13 +2357,13 @@ types={
         //skirt
         //slip
         //expensive things
+        //attack 10 times for 1 each
+        //quick stab
+        //turn enemy bleed into block
 
         //99 control
         
-        //Whenever an attack deals unblocked damage, apply 1 Poison.
-        //Apply 3 poison to a random enemy 3(4) times.
-        //Apply 4(7) Poison and 2 Weak to ALL enemies. Exhaust.
-        //	At the start of your turn, apply 2(3) Poison to ALL enemies.
+        //Deal 7(10) damage. If the enemy is Poisoned, deal 7(10) damage again.
 
         
         {name:'Build\nWall',rarity:0,list:5,

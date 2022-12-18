@@ -752,6 +752,12 @@ class battle{
                     }else if(this.combatants[e].meter>0){
                         this.combatants[e].meter-=this.combatants[e].status.main[f]
                     }
+                }else if(f==145&&this.combatants[e].status.main[f]>0){
+                    for(g=0,lg=this.combatants.length;g<lg;g++){
+                        if(this.combatants[g].team==1&&this.combatants[g].life>0){
+                            this.combatants[g].status.main[11]+=this.combatants[e].status.main[f]
+                        }
+                    }
                 }else if(
                     f!=2&&f!=14&&f!=15&&f!=18&&f!=20&&f!=21&&f!=22&&f!=23&&f!=30&&f!=33&&
                     f!=35&&f!=36&&f!=39&&f!=40&&f!=41&&f!=42&&f!=46&&f!=48&&f!=50&&f!=51&&
@@ -760,7 +766,7 @@ class battle{
                     f!=80&&f!=81&&f!=82&&f!=85&&f!=88&&f!=91&&f!=95&&f!=96&&f!=97&&f!=101&&
                     f!=103&&f!=107&&f!=108&&f!=112&&f!=113&&f!=114&&f!=116&&f!=120&&f!=123&&f!=124&&
                     f!=125&&f!=126&&f!=127&&f!=128&&f!=130&&f!=131&&f!=132&&f!=135&&f!=136&&f!=137&&
-                    f!=138&&f!=140&&f!=141&&f!=142&&f!=143&&f!=6){
+                    f!=138&&f!=140&&f!=141&&f!=142&&f!=143&&f!=6&&f!=144){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[f]
                     }else if(f==67){

@@ -71,11 +71,11 @@ class group{
                 }
                 this.add(findCard('Peace'),0,this.battle.player)
                 this.add(findCard('Danger'),0,this.battle.player)*/
-                this.add(458,0,this.battle.player)
-                this.add(459,0,this.battle.player)
-                this.add(460,0,this.battle.player)
-                this.add(461,0,this.battle.player)
                 this.add(462,0,this.battle.player)
+                this.add(463,0,this.battle.player)
+                this.add(464,0,this.battle.player)
+                this.add(465,0,this.battle.player)
+                this.add(466,0,this.battle.player)
             break
             case 5:
                 for(e=0;e<4;e++){
