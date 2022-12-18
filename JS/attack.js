@@ -3601,6 +3601,16 @@ class attack{
                     }
                     this.battle.combatants[0].meter+=this.alt
                 break
+                case 709:
+                    this.battle.combatants[0].status.main[146]+=this.damage
+                    this.battle.combatants[0].meter+=this.alt
+                break
+                case 710:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.random.tempDrawAmount--
+                    this.battle.random.drawing--
+                    this.battle.combatants[0].meter+=this.alt
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

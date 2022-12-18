@@ -776,6 +776,8 @@ class card{
             case 706: this.desc+='You Cannot\nbe Debuffed'; break
             case 707: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed\n'+nfp(-2)+' Balance'; break
             case 708: if(this.damage>0){this.desc+='Gain Block\nEqual to 2x Enemy\nBleed +'+this.damage+'\n'+nfp(this.alt)+' Balance'}else{this.desc+='Gain Block\nEqual to 2x\nEnemy Bleed\n'+nfp(this.alt)+' Balance'} break
+            case 709: this.desc+='Gain '+this.damage+' Strength\nWhen You\nTake Damage\n'+nfp(this.alt)+' Balance'; break
+            case 710: this.desc+='Deal '+this.damage+' Damage\nDraw 1 Less\nCard Per Turn\n'+nfp(this.alt)+' Balance'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

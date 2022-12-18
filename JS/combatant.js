@@ -38,9 +38,9 @@ class combatant{
 			[150,50,25],[150,50,25],[255,180,150],[255,255,70],[10,125,230],[250,175,100],[240,120,0],[105,90,105],[145,235,255],[245,185,85],
 			[30,5,45],[145,195,210],[105,70,100],[150,220,230],[80,30,35],[80,40,60],[240,180,0],[40,80,20],[120,80,160],[100,50,175],
 			[70,10,105],[180,120,200],[200,40,160],[150,200,150],[255,200,255],[150,250,200],[160,230,245],[150,220,235],[140,210,225],[240,220,40],
-			[20,10,25],[50,255,50],[255,50,50],[255,240,150],[255,50,125],[200,75,150]],name:[
+			[20,10,25],[50,255,50],[255,50,50],[255,240,150],[255,50,125],[200,75,150],[75,100,50]],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
-			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Stance Change Block','Enter Wrath Draw','Every Block Weak All','Next Attack Damage','Die Next Turn',
+			'Reflect','Bleed','Intangible','Turn Strength On Hit','Smite Per Turn','Stance Change Block','Enter Wrath Draw','Every Block Weak All','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed Turn','Push Boost','Counter Bleed Once','Counter Push Once','Energy on Hit',
 			'First Attack Damage','Next Turn Block','Next Turn Dexterity','Buffer','Intangible','Armor','Control','Poison','Regeneration','Strength Per Turn',
 			'Metallicize','Add Bleed Once','Weak Per Turn','Counter Stun','Stun','Counter All 3 Times','Exhaust Draw','Block Store','Death Heal','Rearm Next Turn',
@@ -53,7 +53,7 @@ class combatant{
 			'Bomb 2','Bomb 3','Mark','End Turn Damage All','Upgrade Added','Extra Turn','Counter All This Combat','Take Damage Per Card Played','Free Card','No Draw',
 			'Explode on Death','Turn Double Damage','Next Turn Double Damage','Turn Discard','Lose Dexterity','Status or Curse Damage All','Block Damage All','Shiv on Damage','Play Shiv Draw','Next Turn Intangible',
 			'13 Card Damage All and Block','Triple Block','Block Gain Damage','Anti-Control','Endure','First Cost 2+ Card Energy','Stance Change Damage All','Stance Change Draw','Stance Change Random Cost Decrease','End Turn Block Attack',
-			'Dark Gain Increase','Hold Per Charge','Basic Charges Act as Explosive','Lightning Passive Increase','Add Bleed','Bleed All Per Turn'],class:[
+			'Dark Gain Increase','Hold Per Charge','Basic Charges Act as Explosive','Lightning Passive Increase','Add Bleed','Bleed All Per Turn','Strength on Hit'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
@@ -68,7 +68,7 @@ class combatant{
 			1,1,0,1,1,1,1,0,1,0,
 			0,1,1,1,0,1,1,1,1,1,
 			1,1,1,0,1,1,1,1,1,1,
-			1,1,1,1,1,1]}
+			1,1,1,1,1,1,1]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -2880,6 +2880,9 @@ class combatant{
 				if(user>=0&&this.battle.combatants[user].block<=0){
 					this.battle.combatants[user].status.main[11]+=this.remember.int
 				}
+			}
+			if(this.status.main[146]>0){
+				this.status.main[4]++
 			}
 			if(user>=0&&this.status.main[28]>0){
 				this.remember.int=this.status.main[28]

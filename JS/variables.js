@@ -2177,12 +2177,12 @@ types={
             {damage:4,alt:-3,cost:2,attack:215,target:0,spec:14,class:0},
             {damage:5,alt:-3,cost:2,attack:215,target:0,spec:14,class:0},
         ],
-        },{name:'Restrategize',rarity:1,list:4,
+        },{name:'Restrategize',rarity:0,list:4,
         stats:[
             {damage:1,alt:0,cost:1,attack:216,target:0,spec:0,class:2},
             {damage:2,alt:0,cost:1,attack:216,target:0,spec:0,class:2},
         ],
-        },{name:'Boomerang',rarity:1,list:4,
+        },{name:'Boomerang',rarity:0,list:4,
         stats:[
             {damage:12,alt:0,cost:1,attack:217,target:1,spec:11,class:0},
             {damage:20,alt:0,cost:1,attack:217,target:1,spec:11,class:0},
@@ -2214,15 +2214,15 @@ types={
         ],
         },{name:'Stress',rarity:0,list:4,
         stats:[
-            {damage:9,alt:0,cost:0,attack:291,target:0,spec:3,class:1},
-            {damage:15,alt:0,cost:0,attack:291,target:0,spec:3,class:1},
+            {damage:11,alt:0,cost:0,attack:291,target:0,spec:3,class:1},
+            {damage:16,alt:0,cost:0,attack:291,target:0,spec:3,class:1},
         ],
         },{name:'Old\nWounds',rarity:1,list:4,
         stats:[
             {damage:10,alt:6,cost:1,attack:292,target:1,spec:11,class:0},
             {damage:15,alt:8,cost:1,attack:292,target:1,spec:11,class:0},
         ],
-        },{name:'Gush of\nBlood',rarity:1,list:4,
+        },{name:'Gush of\nBlood',rarity:0,list:4,
         stats:[
             {damage:3,alt:-4,cost:1,attack:293,target:1,spec:0,class:2},
             {damage:4,alt:-4,cost:1,attack:293,target:1,spec:0,class:2},
@@ -2237,12 +2237,12 @@ types={
             {damage:2,alt:0,cost:1,attack:295,target:0,spec:0,class:2},
             {damage:2,alt:0,cost:0,attack:295,target:0,spec:0,class:2},
         ],
-        },{name:'Instability',rarity:2,list:4,
+        },{name:'Instability',rarity:0,list:4,
         stats:[
             {damage:5,alt:-5,cost:1,attack:296,target:0,spec:0,class:2},
             {damage:10,alt:-10,cost:1,attack:296,target:0,spec:0,class:2},
         ],
-        },{name:'Balance\nBlast',rarity:2,list:4,
+        },{name:'Balance\nBlast',rarity:1,list:4,
         stats:[
             {damage:3,alt:0,cost:2,attack:297,target:1,spec:3,class:0},
             {damage:3,alt:0,cost:1,attack:297,target:1,spec:3,class:0},
@@ -2257,7 +2257,7 @@ types={
             {damage:3,alt:0,cost:0,attack:299,target:0,spec:0,class:1},
             {damage:5,alt:1,cost:0,attack:299,target:0,spec:0,class:1},
         ],
-        },{name:'False\nSurrender',rarity:1,list:4,
+        },{name:'False\nSurrender',rarity:0,list:4,
         stats:[
             {damage:0,alt:0,cost:-1,attack:361,target:0,spec:0,class:2},
             {damage:1,alt:0,cost:-1,attack:361,target:0,spec:0,class:2},
@@ -2362,16 +2362,24 @@ types={
             {damage:2,alt:2,cost:0,attack:707,target:1,spec:11,class:0},
             {damage:4,alt:2,cost:0,attack:707,target:1,spec:11,class:0},
         ],
-        },{name:'Hemokinesis',rarity:1,list:4,
+        },{name:'Hemo\nkinesis',rarity:1,list:4,
         stats:[
             {damage:0,alt:-4,cost:1,attack:708,target:0,spec:11,class:0},
             {damage:4,alt:-4,cost:1,attack:708,target:0,spec:11,class:0},
         ],
+        },{name:'Absorb\nStrength',rarity:1,list:4,
+        stats:[
+            {damage:1,alt:5,cost:2,attack:709,target:0,spec:0,class:2},
+            {damage:1,alt:5,cost:1,attack:709,target:0,spec:0,class:2},
+        ],
+        },{name:'Consuming\nSlice',rarity:1,list:4,
+        stats:[
+            {damage:19,alt:-1,cost:1,attack:710,target:1,spec:0,class:0},
+            {damage:27,alt:-1,cost:1,attack:710,target:1,spec:0,class:0},
+        ],
         },
         //powers
-        //deal damage, lose draw
         //buff balance-related cards
-        //strength on hit
         //energy related cards
         //lament
         //skirt
@@ -2971,8 +2979,8 @@ types={
         ],
         },{name:'On a\nRoll',rarity:1,list:5,
         stats:[
+            {damage:2,alt:0,cost:1,attack:533,target:0,spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:533,target:0,spec:0,class:2},
-            {damage:4,alt:0,cost:1,attack:533,target:0,spec:0,class:2},
         ],
         },{name:'Lucky\nBullet',rarity:0,list:5,
         stats:[
