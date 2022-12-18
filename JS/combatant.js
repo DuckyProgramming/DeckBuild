@@ -37,7 +37,7 @@ class combatant{
 			[200,125,50],[200,180,160],[120,200,60],[80,100,140],[255,150,50],[255,200,50],[255,200,255],[240,220,200],[255,255,0],[150,50,25],
 			[150,50,25],[150,50,25],[255,180,150],[255,255,70],[10,125,230],[250,175,100],[240,120,0],[105,90,105],[145,235,255],[245,185,85],
 			[30,5,45],[145,195,210],[105,70,100],[150,220,230],[80,30,35],[80,40,60],[240,180,0],[40,80,20],[120,80,160],[100,50,175],
-			[70,10,105],[180,120,200],[200,40,160],[150,200,150],[255,200,255],[150,250,200]],name:[
+			[70,10,105],[180,120,200],[200,40,160],[150,200,150],[255,200,255],[150,250,200],[160,230,245],[150,220,235],[140,210,225]],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
 			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Stance Change Block','Enter Wrath Draw','Every Block Weak All','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Energy on Hit',
@@ -51,7 +51,7 @@ class combatant{
 			'Next Turn Strength','Build Per Turn','Next Turn Dodge','Build on Hit','Burn','Counter Burn','Sleep','Take Credit','5 Card Damage All','Bomb 1',
 			'Bomb 2','Bomb 3','Mark','End Turn Damage All','Upgrade Added','Extra Turn','Counter All This Combat','Take Damage Per Card Played','Free Card','No Draw',
 			'Explode on Death','Turn Double Damage','Next Turn Double Damage','Turn Discard','Lose Dexterity','Status or Curse Damage All','Block Damage All','Shiv on Damage','Play Shiv Draw','Next Turn Intangible',
-			'13 Card Damage All and Block','Triple Block','Block Gain Damage','Anti-Control','Endure','First Cost 2+ Card Energy'],class:[
+			'13 Card Damage All and Block','Triple Block','Block Gain Damage','Anti-Control','Endure','First Cost 2+ Card Energy','Stance Change Damage All','Stance Change Draw','Stance Change Random Cost Decrease'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
@@ -65,7 +65,7 @@ class combatant{
 			1,1,1,1,0,1,0,1,1,1,
 			1,1,0,1,1,1,1,0,1,0,
 			0,1,1,1,0,1,1,1,1,1,
-			1,1,1,0,1,1]}
+			1,1,1,0,1,1,1,1,1]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -2396,7 +2396,23 @@ class combatant{
 			if(stance==3){
 				this.battle.mana.main+=3
 			}
-			this.block+=this.status.main[15]
+			if(this.status.main[15]>0){
+				this.block+=this.status.main[15]
+			}
+			if(this.status.main[136]>0){
+				this.battle.takeAll(this.status.main[136],-1,1)
+			}
+			if(this.status.main[137]>0){
+				for(g=0;g<this.status.main[137];g++){
+					this.battle.draw()
+				}
+			}
+			if(this.status.main[138]>0){
+				g=floor(random(0,this.battle.hand.cards.length-1))
+				if(this.battle.hand.cards[g].cost>0){
+					this.battle.hand.cards[g].cost=max(0,this.battle.hand.cards[g].cost-this.status.main[138])
+				}
+			}
 			for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
 				if(this.battle.discard.cards[g].attack==99){
 					this.battle.hand.cards.push(copyCard(this.battle.discard.cards[g]))

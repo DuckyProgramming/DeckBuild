@@ -621,12 +621,12 @@ types={
         },
         
         
-        {name:'Vigilance',rarity:1,list:2,
+        {name:'Vigilance',rarity:0,list:2,
         stats:[
             {damage:8,alt:0,cost:2,attack:27,target:0,spec:0,class:1},
             {damage:12,alt:0,cost:2,attack:27,target:0,spec:0,class:1},
         ],
-        },{name:'Eruption',rarity:1,list:2,
+        },{name:'Eruption',rarity:0,list:2,
         stats:[
             {damage:9,alt:0,cost:2,attack:95,target:1,spec:0,class:0},
             {damage:9,alt:0,cost:1,attack:95,target:1,spec:0,class:0},
@@ -1166,11 +1166,43 @@ types={
             {damage:1,alt:2,cost:0,attack:667,target:0,spec:17,class:2},
             {damage:2,alt:2,cost:0,attack:667,target:0,spec:17,class:2},
         ],
+        },{name:'Indiscretion',rarity:0,list:2,
+        stats:[
+            {damage:8,alt:0,cost:2,attack:668,target:0,spec:0,class:1},
+            {damage:12,alt:0,cost:2,attack:668,target:0,spec:0,class:1},
+        ],
+        },{name:'Trickle',rarity:0,list:2,
+        stats:[
+            {damage:9,alt:0,cost:2,attack:669,target:1,spec:0,class:0},
+            {damage:9,alt:0,cost:1,attack:669,target:1,spec:0,class:0},
+        ],
+        },{name:'Quickswap',rarity:1,list:2,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:670,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:670,target:0,spec:0,class:2},
+        ],
+        },{name:'Stance\nChain',rarity:1,list:2,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:671,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:1,attack:671,target:0,spec:0,class:2},
+        ],
+        },{name:'Ideal\nPositioning',rarity:1,list:2,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:672,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:672,target:0,spec:10,class:2},
+        ],
+        },{name:'Passive-\nAggressive',rarity:1,list:2,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:673,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:673,target:0,spec:0,class:2},
+        ],
+        },{name:'Aggressive-\nPassive',rarity:1,list:2,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:674,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:674,target:0,spec:0,class:2},
+        ],
         },
-
-        //stance switch
-        //vanish
-        //dance
+        //retain
 
         
         {name:'Charge',rarity:0,list:3,

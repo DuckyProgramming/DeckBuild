@@ -735,6 +735,12 @@ class card{
             case 665: this.desc+='Gain '+this.damage+' Energy\nfor Every Enemy\nThat Intends\nto Attack'; break
             case 666: this.desc+='Draw '+this.damage+' Cards\nNext Card\nPlayed is Free'; break
             case 667: this.desc+='Exhaust Your Hand\nGain '+this.damage+' Strength\nfor Each Card\nin Your Hand'; break
+            case 668: this.desc+='Add '+this.damage+' Block\nEnter Wrath'; break
+            case 669: this.desc+='Deal '+this.damage+' Damage\nEnter Calm'; break
+            case 670: this.desc+='When You\nChange Stance,\nDeal '+this.damage+' Damage\nto All Enemies'; break
+            case 671: this.desc+='When You\nChange Stance,\nDraw '+this.damage+' Cards'; break
+            case 672: this.desc+='When You\nChange Stance,\na Random Card\nCosts '+this.damage+' Less'; break
+            
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
