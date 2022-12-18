@@ -3286,6 +3286,16 @@ class attack{
                     this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[132]+=this.alt
                 break
+                case 654:
+                    this.battle.combatants[this.target].status.main[133]+=this.damage
+                break
+                case 655:
+                    this.battle.combatants[this.target].take(this.battle.combatants[0].base.life-this.battle.combatants[0].life,-1)
+                break
+                case 656:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[134]+=this.alt
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

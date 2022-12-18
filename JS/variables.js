@@ -1086,6 +1086,21 @@ types={
             {damage:5,alt:1,cost:1,attack:653,target:0,spec:0,class:1},
             {damage:9,alt:1,cost:1,attack:653,target:0,spec:0,class:1},
         ],
+        },{name:'Contrary',rarity:1,list:2,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:654,target:1,spec:3,class:2},
+            {damage:3,alt:0,cost:1,attack:654,target:1,spec:3,class:2},
+        ],
+        },{name:'Sorrow',rarity:2,list:2,
+        stats:[
+            {damage:0,alt:0,cost:3,attack:655,target:1,spec:3,class:0},
+            {damage:0,alt:0,cost:2,attack:655,target:1,spec:3,class:0},
+        ],
+        },{name:'Endure',rarity:2,list:2,
+        stats:[
+            {damage:8,alt:1,cost:1,attack:656,target:0,spec:3,class:1},
+            {damage:16,alt:1,cost:1,attack:656,target:0,spec:3,class:1},
+        ],
         },
 
         //stance switch
@@ -1600,6 +1615,8 @@ types={
         //sequence
         //add charges
         //showdown
+        //damage per debuff
+        //termiante
         
         
         {name:'Debilitate',rarity:2,list:4,
@@ -2082,7 +2099,7 @@ types={
             {damage:3,alt:2,cost:0,attack:391,target:0,spec:0,class:2},
             {damage:3,alt:2,cost:0,attack:391,target:0,spec:0,class:2},
         ],
-        },{name:'Flowing\nMist',rarity:0,list:2,
+        },{name:'Flowing\nMist',rarity:0,list:4,
         stats:[
             {damage:13,alt:0,cost:1,attack:643,target:1,spec:15,class:0},
             {damage:18,alt:0,cost:1,attack:643,target:1,spec:15,class:0},

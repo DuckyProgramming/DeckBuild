@@ -721,6 +721,9 @@ class card{
             case 651: this.desc+='Add '+this.damage+' Block\nCalm: Gain '+this.alt+'\nAdditional Block'; break
             case 652: this.desc+='Add '+this.damage+' Block\nNext Block Gain\nis Tripled'; break
             case 653: this.desc+='Add '+this.damage+' Block\nNext Block Gain\nDeals Damage to\nFirst Enemy Equal\nto Block Gained'; break
+            case 654: this.desc+='Apply '+this.damage+'\nAnti-Control'; break
+            case 655: this.desc+='Deal Unblockable\nDamage Equal to\nYour Missing Health'; break
+            case 656: this.desc+='Add '+this.damage+' Block\nYou Cannot Die\nThis Turn'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
