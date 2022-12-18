@@ -1825,10 +1825,6 @@ types={
             {damage:3,alt:0,cost:1,attack:697,target:0,spec:0,class:2},
         ],
         },
-        //sequence
-        //showdown
-        //frost
-        //health charge
         
         
         {name:'Debilitate',rarity:2,list:4,
@@ -1848,13 +1844,13 @@ types={
         ],
         },{name:'Outburst',rarity:1,list:4,
         stats:[
-            {damage:1,alt:0,cost:1,attack:67,target:1,spec:0,class:0},
             {damage:1,alt:0,cost:0,attack:67,target:1,spec:0,class:0},
+            {damage:1,alt:0,cost:0,attack:67,target:1,spec:2,class:0},
         ],
         },{name:'Inburst',rarity:1,list:4,
         stats:[
-            {damage:1,alt:0,cost:1,attack:68,target:0,spec:0,class:1},
             {damage:1,alt:0,cost:0,attack:68,target:0,spec:0,class:1},
+            {damage:1,alt:0,cost:0,attack:68,target:0,spec:2,class:1},
         ],
         },{name:'Revert',rarity:0,list:4,
         stats:[
@@ -1893,8 +1889,8 @@ types={
         ],
         },{name:'Scratch',rarity:0,list:4,
         stats:[
-            {damage:5,alt:-7,cost:1,attack:76,target:1,spec:11,class:0},
-            {damage:7,alt:-7,cost:1,attack:76,target:1,spec:11,class:0},
+            {damage:6,alt:-7,cost:1,attack:76,target:1,spec:11,class:0},
+            {damage:9,alt:-7,cost:1,attack:76,target:1,spec:11,class:0},
         ],
         },{name:'Decisive\nStab',rarity:2,list:4,
         stats:[
@@ -1936,7 +1932,7 @@ types={
             {damage:12,alt:0,cost:2,attack:83,target:0,spec:11,class:0},
             {damage:20,alt:0,cost:2,attack:83,target:0,spec:11,class:0},
         ],
-        },{name:'Footwork',rarity:0,list:4,
+        },{name:'Scuffle',rarity:0,list:4,
         stats:[
             {damage:1,alt:1,cost:1,attack:84,target:0,spec:0,class:1},
             {damage:2,alt:1,cost:1,attack:84,target:0,spec:0,class:1},
@@ -1951,7 +1947,7 @@ types={
             {damage:4,alt:0,cost:1,attack:86,target:1,spec:0,class:0},
             {damage:8,alt:0,cost:1,attack:86,target:1,spec:0,class:0},
         ],
-        },{name:'Swivel',rarity:0,list:4,
+        },{name:'Pivot',rarity:0,list:4,
         stats:[
             {damage:3,alt:0,cost:1,attack:87,target:0,spec:0,class:1},
             {damage:7,alt:0,cost:1,attack:87,target:0,spec:0,class:1},
@@ -1978,18 +1974,18 @@ types={
         ],
         },{name:'Puncture',rarity:0,list:4,
         stats:[
-            {damage:2,alt:2,cost:1,attack:136,target:1,spec:11,class:0},
-            {damage:4,alt:4,cost:1,attack:136,target:1,spec:11,class:0},
+            {damage:3,alt:4,cost:1,attack:136,target:1,spec:11,class:0},
+            {damage:5,alt:6,cost:1,attack:136,target:1,spec:11,class:0},
         ],
         },{name:'Jumping\nStab',rarity:0,list:4,
         stats:[
-            {damage:9,alt:4,cost:2,attack:181,target:1,spec:11,class:0},
-            {damage:12,alt:6,cost:2,attack:181,target:1,spec:11,class:0},
+            {damage:9,alt:6,cost:2,attack:181,target:1,spec:11,class:0},
+            {damage:12,alt:9,cost:2,attack:181,target:1,spec:11,class:0},
         ],
         },{name:'Counter\nStab',rarity:0,list:4,
         stats:[
-            {damage:6,alt:3,cost:1,attack:153,target:0,spec:11,class:1},
-            {damage:10,alt:5,cost:1,attack:153,target:0,spec:11,class:1},
+            {damage:6,alt:5,cost:1,attack:153,target:0,spec:11,class:1},
+            {damage:10,alt:8,cost:1,attack:153,target:0,spec:11,class:1},
         ],
         },{name:'Extra\nCuts',rarity:1,list:4,
         stats:[
@@ -2003,8 +1999,8 @@ types={
         ],
         },{name:'Slash',rarity:0,list:4,
         stats:[
-            {damage:4,alt:2,cost:1,attack:180,target:1,spec:11,class:0},
-            {damage:6,alt:4,cost:1,attack:180,target:1,spec:11,class:0},
+            {damage:6,alt:2,cost:1,attack:180,target:1,spec:11,class:0},
+            {damage:8,alt:4,cost:1,attack:180,target:1,spec:11,class:0},
         ],
         },{name:'Syphon',rarity:0,list:4,
         stats:[
@@ -2316,15 +2312,31 @@ types={
             {damage:13,alt:0,cost:1,attack:643,target:1,spec:15,class:0},
             {damage:18,alt:0,cost:1,attack:643,target:1,spec:15,class:0},
         ],
+        },{name:'Nifty',rarity:1,list:4,
+        stats:[
+            {damage:3,alt:0,cost:2,attack:144,target:0,spec:3,class:1},
+            {damage:3,alt:0,cost:1,attack:144,target:0,spec:3,class:1},
+        ],
+        },{name:'Footwork',rarity:1,list:4,
+        stats:[
+            {damage:1,alt:1,cost:0,attack:698,target:0,spec:0,class:1},
+            {damage:1,alt:1,cost:0,attack:698,target:0,spec:2,class:1},
+        ],
+        },{name:'Fixate',rarity:2,list:4,
+        stats:[
+            {damage:1,alt:1,cost:1,attack:699,target:0,spec:0,class:2},
+            {damage:1,alt:1,cost:1,attack:699,target:0,spec:0,class:2},
+        ],
         },
-        //nifty
         //powers
         //deal damage, lose draw
-        //buff bleed
         //buff balance-related cards
         //strength on hit
         //energy related cards
         //lament
+        //skirt
+        //slip
+        //expensive things
 
         //99 control
         

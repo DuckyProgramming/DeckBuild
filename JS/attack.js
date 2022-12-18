@@ -3531,6 +3531,16 @@ class attack{
                 case 697:
                     this.battle.combatants[0].status.main[143]+=this.damage
                 break
+                case 698:
+                    this.battle.combatants[0].status.main[6]+=this.damage
+                    this.battle.discarding=this.alt
+                break
+                case 699:
+                    this.battle.mana.max+=this.damage
+                    this.battle.mana.gen+=this.damage
+                    this.battle.random.tempDrawAmount-=this.alt
+                    this.battle.random.drawing-=this.alt
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

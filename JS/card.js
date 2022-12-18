@@ -765,6 +765,8 @@ class card{
             case 695: this.desc+='Gain '+this.damage+' Orb\nSlots'; break
             case 696: this.desc+='Trigger a Weak\nEvoke on All Orbs'; break
             case 697: this.desc+='Lightning Charges\nDeal '+this.damage+' More\nPassive Damage'; break
+            case 698: this.desc+='Add '+this.damage+' Dodge\nDiscard '+this.alt+' Card'; break
+            case 699: this.desc+='Increase Energy\nGain by '+this.damage+'\nDraw 1 Less\nCard Per Turn'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

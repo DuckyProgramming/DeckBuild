@@ -33,49 +33,49 @@ class group{
                 this.add(122,0,this.battle.player)*/
             break
             case 2:
-                /*for(e=0;e<4;e++){
+                for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
-                this.add(findCard('Vigilance'),0,this.battle.player)*/
-                this.add(238,0,this.battle.player)
+                this.add(findCard('Vigilance'),0,this.battle.player)
+                /*this.add(238,0,this.battle.player)
                 this.add(239,0,this.battle.player)
                 this.add(240,0,this.battle.player)
                 this.add(241,0,this.battle.player)
-                this.add(242,0,this.battle.player)
+                this.add(242,0,this.battle.player)*/
             break
             case 3:
-                /*for(e=0;e<4;e++){
+                for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Charge'),0,this.battle.player)
-                this.add(findCard('Dualcast'),0,this.battle.player)*/
-                this.add(358,0,this.battle.player)
+                this.add(findCard('Dualcast'),0,this.battle.player)
+                /*this.add(358,0,this.battle.player)
                 this.add(359,0,this.battle.player)
                 this.add(360,0,this.battle.player)
                 this.add(361,0,this.battle.player)
-                this.add(362,0,this.battle.player)
+                this.add(362,0,this.battle.player)*/
             break
             case 4:
-                for(e=0;e<4;e++){
+                /*for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Peace'),0,this.battle.player)
-                this.add(findCard('Danger'),0,this.battle.player)
-                /*this.add(398,0,this.battle.player)
-                this.add(399,0,this.battle.player)
-                this.add(400,0,this.battle.player)
-                this.add(401,0,this.battle.player)
-                this.add(402,0,this.battle.player)*/
+                this.add(findCard('Danger'),0,this.battle.player)*/
+                this.add(458,0,this.battle.player)
+                this.add(459,0,this.battle.player)
+                this.add(460,0,this.battle.player)
+                this.add(461,0,this.battle.player)
+                this.add(462,0,this.battle.player)
             break
             case 5:
                 for(e=0;e<4;e++){
@@ -86,11 +86,11 @@ class group{
                 }
                 this.add(findCard('Build\nWall'),0,this.battle.player)
                 this.add(findCard('Construct'),0,this.battle.player)
-                /*this.add(518,0,this.battle.player)
-                this.add(519,0,this.battle.player)
-                this.add(520,0,this.battle.player)
-                this.add(521,0,this.battle.player)
-                this.add(522,0,this.battle.player)*/
+                /*this.add(598,0,this.battle.player)
+                this.add(599,0,this.battle.player)
+                this.add(600,0,this.battle.player)
+                this.add(601,0,this.battle.player)
+                this.add(602,0,this.battle.player)*/
             break
             case 6:
                 this.add(findCard('Convoke'),0,this.battle.player)
@@ -102,11 +102,11 @@ class group{
                 }
                 this.add(findCard('Survivor'),0,this.battle.player)
                 this.add(findCard('Neutralize'),0,this.battle.player)
-                /*this.add(638,0,this.battle.player)
-                this.add(639,0,this.battle.player)
-                this.add(640,0,this.battle.player)
-                this.add(641,0,this.battle.player)
-                this.add(642,0,this.battle.player)*/
+                /*this.add(718,0,this.battle.player)
+                this.add(719,0,this.battle.player)
+                this.add(720,0,this.battle.player)
+                this.add(721,0,this.battle.player)
+                this.add(722,0,this.battle.player)*/
             break
             case 7:
                 for(e=0;e<4;e++){
@@ -117,9 +117,9 @@ class group{
                 }
                 this.add(findCard('Tap'),0,this.battle.player)
                 this.add(findCard('Spare'),0,this.battle.player)
-                /*this.add(648,0,this.battle.player)
-                this.add(649,0,this.battle.player)
-                this.add(650,0,this.battle.player)*/
+                /*this.add(728,0,this.battle.player)
+                this.add(729,0,this.battle.player)
+                this.add(730,0,this.battle.player)*/
             break
         }
     }
