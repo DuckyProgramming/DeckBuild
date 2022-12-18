@@ -3472,6 +3472,24 @@ class attack{
                         }
                     }
                 break
+                case 686:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].status.main[31]+=this.alt
+                break
+                case 687:
+                    this.battle.combatants[0].status.main[140]+=this.damage
+                break
+                case 688:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[0].load(4,6)
+                break
+                case 689:
+                    for(g=0,lg=this.battle.combatants[0].ammo.length;g<lg;g++){
+                        if(this.battle.combatants[0].ammo[g]==4){
+                            this.battle.combatants[0].ammoDetail[g]*=this.damage
+                        }
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

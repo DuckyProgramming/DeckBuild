@@ -665,11 +665,6 @@ class battle{
                 }
             }
             this.combatants[e].setupIntent(-1)
-            for(let f=0,lf=this.combatants[e].ammo.length;f<lf;f++){
-                if(this.combatants[e].ammo[f]==4){
-                    this.combatants[e].ammoDetail[f]+=3
-                }
-            }
             for(let f=0,lf=this.combatants[e].boost.main.length;f<lf;f++){
                 if(f!=3&&this.combatants[e].status.main[88]<=0){
                     if(this.combatants[e].boost.main[f]>0){
@@ -761,7 +756,7 @@ class battle{
                     f!=80&&f!=81&&f!=82&&f!=85&&f!=88&&f!=91&&f!=95&&f!=96&&f!=97&&f!=101&&
                     f!=103&&f!=107&&f!=108&&f!=112&&f!=113&&f!=114&&f!=116&&f!=120&&f!=123&&f!=124&&
                     f!=125&&f!=126&&f!=127&&f!=128&&f!=130&&f!=131&&f!=132&&f!=135&&f!=136&&f!=137&&
-                    f!=138){
+                    f!=138&&f!=140){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[f]
                     }else if(f==67){

@@ -753,6 +753,10 @@ class card{
             case 683: this.desc+='Deal '+this.damage+' Damage\nAll Claws Gain\n+5 Damage'; break
             case 684: this.desc+='Hold '+this.damage+'\nBasic Charges\nAll Claws Gain\n+2 Damage'; break
             case 685: this.desc+='Draw '+this.damage+' Cards\nAdd '+this.alt+' Block\nPer Charge'; break
+            case 686: this.desc+='Deal '+this.damage+' Damage\nAdd '+this.alt+' Block\nNext Turn'; break
+            case 687: this.desc+='Dark Orbs Gain\nPower '+this.damage+' Faster\nPer Turn'; break
+            case 688: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+' Dark\nCharge'; break
+            case 689: this.desc+='All Held Dark\nOrbs Have '+this.damage+'x\nMore Power'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
