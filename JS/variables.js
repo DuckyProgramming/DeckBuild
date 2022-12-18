@@ -1246,8 +1246,8 @@ types={
         ],
         },{name:'Expel',rarity:1,list:3,
         stats:[
-            {damage:0,alt:0,cost:2,attack:17,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:1,attack:17,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:17,target:0,spec:0,class:2},
         ],
         },{name:'Compact',rarity:1,list:3,
         stats:[
@@ -1804,9 +1804,28 @@ types={
             {damage:3,alt:1,cost:0,attack:693,target:0,spec:3,class:2},
             {damage:4,alt:1,cost:0,attack:693,target:0,spec:3,class:2},
         ],
+        },{name:'Skim',rarity:1,list:3,
+        stats:[
+            {damage:3,alt:1,cost:0,attack:694,target:0,spec:3,class:2},
+            {damage:4,alt:1,cost:0,attack:694,target:0,spec:3,class:2},
+        ],
+        },{name:'Capacitor',rarity:0,list:3,
+        stats:[
+            {damage:3,alt:1,cost:0,attack:695,target:0,spec:3,class:2},
+            {damage:4,alt:1,cost:0,attack:695,target:0,spec:3,class:2},
+        ],
+        },{name:'Minor\nEvoke',rarity:0,list:3,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:696,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:696,target:0,spec:10,class:2},
+        ],
+        },{name:'Electro\ndynamics',rarity:1,list:3,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:697,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:697,target:0,spec:0,class:2},
+        ],
         },
         //sequence
-        //add charges
         //showdown
         //frost
         //health charge

@@ -761,6 +761,10 @@ class card{
             case 691: this.desc+='Hold '+this.damage+'\nBasic Charge\nEvery Turn'; break
             case 692: this.desc+='Basic Charges\nAct as Explosive\nCharges'; break
             case 693: this.desc+='Draw '+this.damage+' Cards\nLose '+this.alt+' Focus'; break
+            case 694: this.desc+='Draw '+this.damage+' Cards\nDiscard Them if\nThey Do Not Cost 0'; break
+            case 695: this.desc+='Gain '+this.damage+' Orb\nSlots'; break
+            case 696: this.desc+='Trigger a Weak\nEvoke on All Orbs'; break
+            case 697: this.desc+='Lightning Charges\nDeal '+this.damage+' More\nPassive Damage'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

@@ -3509,6 +3509,28 @@ class attack{
                     }
                     this.battle.combatants[0].boost.main[3]-=this.alt
                 break
+                case 694:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                        if(this.battle.hand.cards[this.battle.hand.cards.length-1].cost!=0){
+                            this.battle.hand.cards[this.battle.hand.cards.length-1].used=true
+                        }
+                    }
+                break
+                case 695:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.combatants[0].ammo.push(-1)
+                        this.battle.combatants[0].ammoDetail.push(0)
+                    }
+                break
+                case 696:
+                    for(g=0,lg=this.battle.combatants[0].ammo.length;g<lg;g++){
+                        this.battle.combatants[0].passiveEvoke(this.battle.combatants[0].ammo[g],this.battle.combatants[0].ammoDetail[g])
+                    }
+                break
+                case 697:
+                    this.battle.combatants[0].status.main[143]+=this.damage
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

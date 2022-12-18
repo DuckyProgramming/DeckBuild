@@ -38,7 +38,7 @@ class combatant{
 			[150,50,25],[150,50,25],[255,180,150],[255,255,70],[10,125,230],[250,175,100],[240,120,0],[105,90,105],[145,235,255],[245,185,85],
 			[30,5,45],[145,195,210],[105,70,100],[150,220,230],[80,30,35],[80,40,60],[240,180,0],[40,80,20],[120,80,160],[100,50,175],
 			[70,10,105],[180,120,200],[200,40,160],[150,200,150],[255,200,255],[150,250,200],[160,230,245],[150,220,235],[140,210,225],[240,220,40],
-			[20,10,25],[50,255,50],[255,50,50]],name:[
+			[20,10,25],[50,255,50],[255,50,50],[255,240,150]],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
 			'Reflect','Bleed','Intangible','Strength On Hit','Smite Per Turn','Stance Change Block','Enter Wrath Draw','Every Block Weak All','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed','Push Boost','Counter Bleed Once','Counter Push Once','Energy on Hit',
@@ -53,7 +53,7 @@ class combatant{
 			'Bomb 2','Bomb 3','Mark','End Turn Damage All','Upgrade Added','Extra Turn','Counter All This Combat','Take Damage Per Card Played','Free Card','No Draw',
 			'Explode on Death','Turn Double Damage','Next Turn Double Damage','Turn Discard','Lose Dexterity','Status or Curse Damage All','Block Damage All','Shiv on Damage','Play Shiv Draw','Next Turn Intangible',
 			'13 Card Damage All and Block','Triple Block','Block Gain Damage','Anti-Control','Endure','First Cost 2+ Card Energy','Stance Change Damage All','Stance Change Draw','Stance Change Random Cost Decrease','End Turn Block Attack',
-			'Dark Gain Increase','Hold Per Charge','Basic Charges Act as Explosive'],class:[
+			'Dark Gain Increase','Hold Per Charge','Basic Charges Act as Explosive','Lightning Passive Increase'],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
@@ -68,7 +68,7 @@ class combatant{
 			1,1,0,1,1,1,1,0,1,0,
 			0,1,1,1,0,1,1,1,1,1,
 			1,1,1,0,1,1,1,1,1,1,
-			1,1,1]}
+			1,1,1,1]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -2236,25 +2236,11 @@ class combatant{
 						case 1:
 							this.layer.noStroke()
 							this.layer.fill(255,this.fade/5)
-							switch(this.ammo.length){
-								case 3:
-									this.layer.ellipse(0,-118,20,20)
-									this.layer.ellipse(-25,-108,20,20)
-									this.layer.ellipse(25,-108,20,20)
-									displayAmmo(this.layer,25,-108,this.ammo[0],this.ammoDetail[0],this.fade)
-									displayAmmo(this.layer,0,-118,this.ammo[1],this.ammoDetail[1],this.fade)
-									displayAmmo(this.layer,-25,-108,this.ammo[2],this.ammoDetail[2],this.fade)
-								break
-								case 2:
-									this.layer.ellipse(-15,-113,20,20)
-									this.layer.ellipse(15,-113,20,20)
-									displayAmmo(this.layer,15,-113,this.ammo[0],this.ammoDetail[0],this.fade)
-									displayAmmo(this.layer,-15,-113,this.ammo[1],this.ammoDetail[1],this.fade)
-								break
-								case 1:
-									this.layer.ellipse(0,-118,20,20)
-									displayAmmo(this.layer,0,-118,this.ammo[0],this.ammoDetail[0],this.fade)
-								break
+							for(let f=0,lf=this.ammo.length;f<lf;f++){
+								this.layer.ellipse(-f*24+lf*12-12,-113,20,20)
+							}
+							for(let f=0,lf=this.ammo.length;f<lf;f++){
+								displayAmmo(this.layer,-f*24+lf*12-12,-113,this.ammo[f],this.ammoDetail[f],this.fade)
 							}
 						break
 						case 2:
@@ -2587,10 +2573,10 @@ class combatant{
 		for(g=0;g<this.ammo.length;g++){
 			switch(this.ammo[g]){
 				case 4:
-					this.ammoDetail[g]+=3+this.status.main[140]
+					this.ammoDetail[g]+=4+this.status.main[140]
 				break
 				case 5:
-					this.orbAttack(3,-1,0)
+					this.orbAttack(3+this.status.main[143],-1,0)
 				break
 				case 7:
 					this.battle.drop.addDrop(findCard('Burn'),0,0)
