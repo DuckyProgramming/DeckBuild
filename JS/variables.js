@@ -1193,13 +1193,33 @@ types={
         ],
         },{name:'Passive-\nAggressive',rarity:1,list:2,
         stats:[
-            {damage:2,alt:0,cost:1,attack:673,target:0,spec:0,class:2},
-            {damage:3,alt:0,cost:1,attack:673,target:0,spec:0,class:2},
+            {damage:27,alt:0,cost:2,attack:673,target:0,spec:0,class:2},
+            {damage:27,alt:0,cost:1,attack:673,target:0,spec:0,class:2},
         ],
         },{name:'Aggressive-\nPassive',rarity:1,list:2,
         stats:[
-            {damage:2,alt:0,cost:1,attack:674,target:0,spec:0,class:2},
-            {damage:3,alt:0,cost:1,attack:674,target:0,spec:0,class:2},
+            {damage:24,alt:0,cost:2,attack:674,target:0,spec:0,class:2},
+            {damage:36,alt:0,cost:2,attack:674,target:0,spec:0,class:2},
+        ],
+        },{name:'Mark\nBurst',rarity:1,list:2,
+        stats:[
+            {damage:2,alt:0,cost:1,attack:675,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:1,attack:675,target:0,spec:0,class:2},
+        ],
+        },{name:'Quickmark',rarity:0,list:2,
+        stats:[
+            {damage:6,alt:0,cost:0,attack:676,target:1,spec:0,class:2},
+            {damage:9,alt:0,cost:0,attack:676,target:1,spec:0,class:2},
+        ],
+        },{name:'Whack',rarity:0,list:2,
+        stats:[
+            {damage:7,alt:0,cost:1,attack:1,target:1,spec:2,class:0},
+            {damage:10,alt:0,cost:1,attack:1,target:1,spec:2,class:0},
+        ],
+        },{name:'Hold\nBack',rarity:1,list:2,
+        stats:[
+            {damage:5,alt:1,cost:1,attack:677,target:0,spec:2,class:1},
+            {damage:9,alt:1,cost:1,attack:677,target:0,spec:2,class:1},
         ],
         },
         //retain

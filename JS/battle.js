@@ -654,6 +654,9 @@ class battle{
         this.combatants[0].mantra+=this.combatants[0].status.main[20]
         this.combatants[0].boost.main[2]+=this.combatants[0].status.main[32]
         for(let e=0,le=this.combatants.length;e<le;e++){
+            if(this.combatants[e].status.main[139]>0){
+                this.combatants[e].orbAttack(this.combatants[e].block,-1,0)
+            }
             if(e==0&&this.combatants[e].status.main[47]<=0){
                 if(this.relics.active[69]){
                     this.combatants[e].block=max(0,this.combatants[e].block-15)

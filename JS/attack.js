@@ -3359,6 +3359,32 @@ class attack{
                 case 672:
                     this.battle.combatants[0].status.main[138]+=this.damage
                 break
+                case 673:
+                    if(this.battle.combatants[0].stance==1){
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                        this.battle.combatants[0].changeStance(0)
+                    }
+                break
+                case 674:
+                    if(this.battle.combatants[0].stance==2){
+                        this.battle.combatants[0].addBlock(this.damage)
+                        this.battle.combatants[0].changeStance(0)
+                    }
+                break
+                case 675:
+                    for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].life>0&&this.battle.combatants[g].team==1&&this.battle.combatants[g].status.main[112]>0){
+                            this.battle.combatants[g].take(this.battle.combatants[g].status.main[112]*this.damage,-1)
+                        }
+                    }
+                break
+                case 676:
+                    this.battle.combatants[this.target].status.main[112]+=this.damage
+                break
+                case 677:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[139]+=this.alt
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

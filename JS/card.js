@@ -740,7 +740,11 @@ class card{
             case 670: this.desc+='When You\nChange Stance,\nDeal '+this.damage+' Damage\nto All Enemies'; break
             case 671: this.desc+='When You\nChange Stance,\nDraw '+this.damage+' Cards'; break
             case 672: this.desc+='When You\nChange Stance,\na Random Card\nCosts '+this.damage+' Less'; break
-            
+            case 673: this.desc+='Calm:\nDeal '+this.damage+' Damage\nExit Stance'; break
+            case 674: this.desc+='Wrath:\nAdd '+this.damage+' Block\nExit Stance'; break
+            case 675: this.desc+='All Enemies Take\nUncounterable\nDamage Equal\nto '+this.damage+'x their Mark'; break
+            case 676: this.desc+='Apply '+this.damage+' Mark'; break
+            case 677: this.desc+='Add '+this.damage+' Block\nAt End of Turn,\nDeal Damage to\nFirst Enemy Equal\nto Unused Block'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
