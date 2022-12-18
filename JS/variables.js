@@ -1038,8 +1038,8 @@ types={
         ],
         },{name:'Spectral\nGrasp',rarity:0,list:2,
         stats:[
-            {damage:16,alt:2,cost:1,attack:642,target:1,spec:17,class:0},
-            {damage:22,alt:2,cost:1,attack:642,target:1,spec:17,class:0},
+            {damage:16,alt:4,cost:1,attack:642,target:1,spec:17,class:0},
+            {damage:22,alt:4,cost:1,attack:642,target:1,spec:17,class:0},
         ],
         },{name:'Omen',rarity:0,list:2,
         stats:[
@@ -1121,14 +1121,46 @@ types={
             {damage:1,alt:6,cost:1,attack:660,target:0,spec:0,class:0},
             {damage:1,alt:6,cost:0,attack:660,target:0,spec:0,class:0},
         ],
+        },{name:'Circling\nSpectre',rarity:0,list:2,
+        stats:[
+            {damage:8,alt:3,cost:0,attack:2,target:0,spec:17,class:0},
+            {damage:11,alt:3,cost:0,attack:2,target:0,spec:17,class:0},
+        ],
+        },{name:'Illusory\nGrace',rarity:0,list:2,
+        stats:[
+            {damage:1,alt:2,cost:0,attack:665,target:0,spec:17,class:0},
+            {damage:2,alt:2,cost:0,attack:665,target:0,spec:17,class:0},
+        ],
+        },{name:'Spiritual\nElegance',rarity:0,list:2,
+        stats:[
+            {damage:2,alt:5,cost:1,attack:666,target:0,spec:17,class:0},
+            {damage:3,alt:5,cost:1,attack:666,target:0,spec:17,class:0},
+        ],
+        },{name:'Dreams of\nPower',rarity:2,list:2,
+        stats:[
+            {damage:15,alt:1,cost:0,attack:662,target:1,spec:17,class:0},
+            {damage:20,alt:1,cost:0,attack:662,target:1,spec:17,class:0},
+        ],
+        },{name:'Dreams of\nInvincibility',rarity:2,list:2,
+        stats:[
+            {damage:100,alt:1,cost:0,attack:661,target:0,spec:17,class:1},
+            {damage:123,alt:1,cost:0,attack:661,target:0,spec:17,class:1},
+        ],
+        },{name:'Dreams of\nIntelligence',rarity:2,list:2,
+        stats:[
+            {damage:2,alt:1,cost:0,attack:663,target:0,spec:17,class:2},
+            {damage:4,alt:1,cost:0,attack:663,target:0,spec:17,class:2},
+        ],
+        },{name:'Dreams of\nSpeed',rarity:2,list:2,
+        stats:[
+            {damage:1,alt:1,cost:0,attack:664,target:0,spec:17,class:2},
+            {damage:2,alt:1,cost:0,attack:664,target:0,spec:17,class:2},
+        ],
         },
 
         //stance switch
         //vanish
         //dance
-
-        //release
-
 
         
         {name:'Charge',rarity:0,list:3,

@@ -2652,7 +2652,7 @@ class combatant{
 		}
 	}
 	take(damage,user,extra){
-		if(this.life>0){
+		if(this.life>0&&damage>0){
 			if(user>=0&&this.status.main[10]>0){
 				this.status.main[10]--
 				this.battle.combatants[user].take(damage,this.id)

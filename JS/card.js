@@ -273,7 +273,7 @@ class card{
             case 203: this.desc+='Reflect Next\n'+this.damage+' Attacks\nDisarm'; break
             case 204: this.desc+='Deal '+this.damage+' Damage\nAdd a Winded\nto Draw Pile\n'+nfp(this.alt)+' Balance'; break
             case 205: this.desc+='When a Card\nis Exhausted,\nDraw '+this.damage+' Cards\n'+nfp(this.alt)+' Balance'; break
-            case 206: this.desc+='Add '+this.damage+' Block\nSave Block\nfor 1 Turn\n'+nfp(this.alt)+' Balance'; break
+            case 206: this.desc+='Add '+this.damage+' Block\nRetain Block\nfor 1 Turn\n'+nfp(this.alt)+' Balance'; break
             case 207: this.desc+='When an\nEnemy Dies,\nHeal '+this.damage+' Health\n'+nfp(this.alt)+' Balance'; break
             case 208: this.desc+='Change Balance\nto Opposite'; break
             case 209: this.desc+='Deal '+this.damage+' Damage\nAdd a Dizzy\nto Draw Pile\n'+nfp(this.alt)+' Balance'; break
@@ -281,7 +281,7 @@ class card{
             case 211: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nAdd a Struggle\nto Draw Pile\n'+nfp(this.alt)+' Balance\nPer Enemy'; break
             case 212: this.desc+='Change Balance\nto Double'; break
             case 213: this.desc+='Increase Balance\nLimit by 5'; break
-            case 214: this.desc+='Take 4 Damage\nAdd '+this.damage+' Block\nSave Block\nfor 1 Turn\n'+nfp(this.alt)+' Balance'; break
+            case 214: this.desc+='Take 4 Damage\nAdd '+this.damage+' Block\nRetain Block\nfor 1 Turn\n'+nfp(this.alt)+' Balance'; break
             case 215: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nHeal Equal to\nDamage Dealt\n'+nfp(this.alt)+' Balance Per Enemy'; break
             case 216: this.desc+='Draw '+this.damage+' Cards\nRearm'; break
             case 217: this.desc+='Deal '+this.damage+' Damage\nDisarm\nRearm Next Turn'; break
@@ -616,7 +616,7 @@ class card{
             case 546: this.desc+='At the End\nof Your Turn,\nDeal '+this.damage+' Damage\nto All Enemies'; break
             case 547: if(this.damage<=0){this.desc+='Shuffle an\nExpunger with\nX into Your\nDraw Pile'}else{this.desc+='Shuffle an\nExpunger with\nX+'+this.damage+' into Your\nDraw Pile'}; break
             case 548: this.desc+='Upgrade All\nCards Added\nThis Combat'; break
-            case 549: this.desc+='Take an Extra Turn\nEnd Turn'; break
+            case 549: this.desc+='Take an Extra Turn'; break
             case 550: this.desc+='Wrath: Deal\n'+this.damage+' Damage'; break
             case 551: this.desc+='Calm: Add\n'+this.damage+' Block'; break
             case 552: this.desc+='Next '+this.damage+'\nAttacks Deal\n Double Damage\nEnter Wrath'; break
@@ -728,6 +728,12 @@ class card{
             case 658: this.desc+='The First Time You\nPlay an Attack Each\nTurn that Costs\n2 or More,\nGain '+this.damage+' Energy'; break
             case 659: this.desc+='Exhaust '+this.damage+' Card\nAdd Block Equal to\n'+this.alt+'x its Cost'; break
             case 660: this.desc+='Exhaust '+this.damage+' Card\nDeal Damage Equal\nto '+this.alt+'x its Cost\nto First Enemy'; break
+            case 661: this.desc+='Add '+this.damage+' Block\nRetain Unused\nBlock for the\nNext 2 Turns'; break
+            case 662: this.desc+='Deal '+this.damage+' Damage to\nAll Enemies and\n'+this.damage*2+' Damage to Target'; break
+            case 663: this.desc+='Draw '+this.damage+' Cards\nAll Cards Cost\n0 This Turn'; break
+            case 664: this.desc+='Gain '+this.damage+' Energy\nNext Turn\nTake an Extra Turn'; break
+            case 665: this.desc+='Gain '+this.damage+' Energy\nfor Every Enemy\nThat Intends\nto Attack'; break
+            case 666: this.desc+='Draw '+this.damage+' Cards\nNext Card\nPlayed is Free'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

@@ -3305,6 +3305,39 @@ class attack{
                 case 660:
                     this.battle.random.releasing=this.damage
                 break
+                case 661:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[47]+=2
+                break
+                case 662:
+                    this.battle.takeAll(this.damage,0,1)
+                    this.battle.combatants[this.target].take(this.damage*2,this.user)
+                break
+                case 663:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        this.battle.hand.cards[g].cost=0
+                    }
+                break
+                case 664:
+                    this.battle.combatants[0].status.main[1]+=this.damage
+                    this.battle.combatants[0].status.main[115]+=this.damage
+                break
+                case 665:
+                    for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].team==1&&this.battle.combatants[g].life>0&&types.attack[this.battle.combatants[g].attacks[this.battle.combatants[g].intent]].class==0){
+                            this.battle.mana.main+=this.damage
+                        }
+                    }
+                break
+                case 666:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                    this.battle.combatants[0].status.main[118]++
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
