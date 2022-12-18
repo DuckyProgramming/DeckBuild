@@ -3385,6 +3385,39 @@ class attack{
                     this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[139]+=this.alt
                 break
+                case 678:
+                    for(g=0,lg=this.battle.combatants[this.target].boost.main.length;g<lg;g++){
+                        if(this.battle.combatants[this.target].boost.main[g]<0){
+                            this.battle.combatants[this.target].take(abs(this.damage*this.battle.combatants[this.target].boost.main[g]),this.user)
+                        }
+                    }
+                    for(g=0,lg=this.battle.combatants[this.target].status.main.length;g<lg;g++){
+                        if(this.battle.combatants[this.target].status.main[g]>0&&this.battle.combatants[this.target].status.class[g]==0){
+                            this.battle.combatants[this.target].take(this.damage,this.user)
+                        }
+                    }
+                break
+                case 679:
+                    if(this.battle.combatants[this.target].life<=this.battle.combatants[this.target].base.life*this.damage/10){
+                        this.battle.combatants[this.target].life=0
+                    }
+                break
+                case 680:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.combatants[0].load(5,0)
+                    }
+                    for(g=0,lg=this.battle.combatants[0].ammo.length;g<lg;g++){
+                        if(this.battle.combatants[0].ammo[g]==5){
+                            this.battle.combatants[0].addBlock(this.alt)
+                        }
+                    }
+                break
+                case 681:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(types.attack[this.battle.combatants[this.target].attacks[this.battle.combatants[this.target].intent]].class==0){
+                        this.battle.combatants[0].load(8,0)
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

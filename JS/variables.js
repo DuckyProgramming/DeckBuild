@@ -1222,7 +1222,6 @@ types={
             {damage:9,alt:1,cost:1,attack:677,target:0,spec:2,class:1},
         ],
         },
-        //retain
 
         
         {name:'Charge',rarity:0,list:3,
@@ -1725,12 +1724,31 @@ types={
             {damage:1,alt:0,cost:2,attack:379,target:0,spec:0,class:2},
             {damage:1,alt:0,cost:1,attack:379,target:0,spec:0,class:2},
         ],
+        },{name:'Exploit\nWeakness',rarity:1,list:3,
+        stats:[
+            {damage:5,alt:0,cost:1,attack:678,target:1,spec:0,class:0},
+            {damage:8,alt:0,cost:1,attack:678,target:1,spec:0,class:0},
+        ],
+        },{name:'Terminate',rarity:2,list:3,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:679,target:1,spec:0,class:2},
+            {damage:3,alt:0,cost:0,attack:679,target:1,spec:0,class:2},
+        ],
+        },{name:'Lightning\nAura',rarity:2,list:3,
+        stats:[
+            {damage:2,alt:3,cost:2,attack:680,target:0,spec:0,class:1},
+            {damage:3,alt:5,cost:2,attack:680,target:0,spec:0,class:1},
+        ],
+        },{name:'Icy\nPalm',rarity:0,list:3,
+        stats:[
+            {damage:2,alt:1,cost:0,attack:681,target:1,spec:0,class:0},
+            {damage:4,alt:1,cost:0,attack:681,target:1,spec:0,class:0},
+        ],
         },
         //sequence
         //add charges
         //showdown
-        //damage per debuff
-        //termiante
+        //health charge
         
         
         {name:'Debilitate',rarity:2,list:4,

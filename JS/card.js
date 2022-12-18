@@ -745,6 +745,10 @@ class card{
             case 675: this.desc+='All Enemies Take\nUncounterable\nDamage Equal\nto '+this.damage+'x their Mark'; break
             case 676: this.desc+='Apply '+this.damage+' Mark'; break
             case 677: this.desc+='Add '+this.damage+' Block\nAt End of Turn,\nDeal Damage to\nFirst Enemy Equal\nto Unused Block'; break
+            case 678: this.desc+='Deal '+this.damage+' Damage\nFor Each Debuff\nof Target'; break
+            case 679: this.desc+='If Target Has\nLess Than '+(this.damage*10)+'%\nHealth, Kill it'; break
+            case 680: this.desc+='Hold '+this.damage+' Lightning\nCharges\nAdd '+this.alt+' Block\nFor Every Lightning\nCharge'; break
+            case 681: this.desc+='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nHold '+this.alt+' Frost Charge'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
