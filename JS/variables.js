@@ -1126,12 +1126,12 @@ types={
             {damage:8,alt:3,cost:0,attack:2,target:0,spec:17,class:0},
             {damage:11,alt:3,cost:0,attack:2,target:0,spec:17,class:0},
         ],
-        },{name:'Illusory\nGrace',rarity:0,list:2,
+        },{name:'Illusory\nGrace',rarity:1,list:2,
         stats:[
             {damage:1,alt:2,cost:0,attack:665,target:0,spec:17,class:0},
             {damage:2,alt:2,cost:0,attack:665,target:0,spec:17,class:0},
         ],
-        },{name:'Spiritual\nElegance',rarity:0,list:2,
+        },{name:'Spiritual\nElegance',rarity:1,list:2,
         stats:[
             {damage:2,alt:5,cost:1,attack:666,target:0,spec:17,class:0},
             {damage:3,alt:5,cost:1,attack:666,target:0,spec:17,class:0},
@@ -1155,6 +1155,16 @@ types={
         stats:[
             {damage:1,alt:1,cost:0,attack:664,target:0,spec:17,class:2},
             {damage:2,alt:1,cost:0,attack:664,target:0,spec:17,class:2},
+        ],
+        },{name:'Supernatural\nRejuvenation',rarity:1,list:2,
+        stats:[
+            {damage:4,alt:3,cost:1,attack:506,target:0,spec:17,class:0},
+            {damage:6,alt:3,cost:1,attack:506,target:0,spec:17,class:0},
+        ],
+        },{name:'Glimpse of\nEmptiness',rarity:1,list:2,
+        stats:[
+            {damage:1,alt:2,cost:0,attack:667,target:0,spec:17,class:2},
+            {damage:2,alt:2,cost:0,attack:667,target:0,spec:17,class:2},
         ],
         },
 

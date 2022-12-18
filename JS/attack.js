@@ -3338,6 +3338,9 @@ class attack{
                     }
                     this.battle.combatants[0].status.main[118]++
                 break
+                case 667:
+                    this.battle.combatants[0].boost.main[0]+=this.damage*this.battle.hand.cards.length
+                    this.battle.allDiscard()
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

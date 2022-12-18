@@ -734,6 +734,7 @@ class card{
             case 664: this.desc+='Gain '+this.damage+' Energy\nNext Turn\nTake an Extra Turn'; break
             case 665: this.desc+='Gain '+this.damage+' Energy\nfor Every Enemy\nThat Intends\nto Attack'; break
             case 666: this.desc+='Draw '+this.damage+' Cards\nNext Card\nPlayed is Free'; break
+            case 667: this.desc+='Exhaust Your Hand\nGain '+this.damage+' Strength\nfor Each Card\nin Your Hand'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
