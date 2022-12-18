@@ -715,6 +715,12 @@ class card{
             case 645: this.desc+='Draw '+this.damage+' Card\nIt Costs 0 This Turn\nIf First Card\nPlayed This Turn,\nGain '+this.alt+' Energy'; break
             case 646: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nThere Are No\nCurses or Statuses\nin Your Hand'; break
             case 647: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nThere Are\nCurses or Statuses\nin Your Hand'; break
+            case 648: this.desc+='Deal '+this.damage+' Damage\nIf First Card\nPlayed This Turn,\nDeals Double\nDamage'; break
+            case 649: this.desc+='Add '+this.damage+' Block\nAdd '+this.alt+' Spins to\nYour Draw Pile'; break
+            case 650: this.desc+='Add '+this.damage+' Dodge\nDiscard '+this.alt+'\nRandom Card'; break
+            case 651: this.desc+='Add '+this.damage+' Block\nCalm: Gain '+this.alt+'\nAdditional Block'; break
+            case 652: this.desc+='Add '+this.damage+' Block\nNext Block Gain\nis Tripled'; break
+            case 653: this.desc+='Add '+this.damage+' Block\nNext Block Gain\nDeals Damage to\nFirst Enemy Equal\nto Block Gained'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

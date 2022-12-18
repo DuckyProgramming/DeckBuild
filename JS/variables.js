@@ -1061,7 +1061,38 @@ types={
             {damage:11,alt:0,cost:1,attack:647,target:1,spec:0,class:0},
             {damage:16,alt:0,cost:1,attack:647,target:1,spec:0,class:0},
         ],
+        },{name:'Ambush',rarity:0,list:2,
+        stats:[
+            {damage:8,alt:2,cost:1,attack:648,target:1,spec:0,class:0},
+            {damage:8,alt:2,cost:1,attack:648,target:1,spec:2,class:0},
+        ],
+        },{name:'Pirouette',rarity:1,list:2,
+        stats:[
+            {damage:3,alt:2,cost:1,attack:649,target:0,spec:0,class:1},
+            {damage:6,alt:2,cost:1,attack:649,target:0,spec:0,class:1},
+        ],
+        },{name:'Desist',rarity:0,list:2,
+        stats:[
+            {damage:3,alt:9,cost:0,attack:651,target:0,spec:0,class:1},
+            {damage:4,alt:14,cost:0,attack:651,target:0,spec:0,class:1},
+        ],
+        },{name:'Twirl',rarity:0,list:2,
+        stats:[
+            {damage:6,alt:1,cost:2,attack:652,target:0,spec:0,class:1},
+            {damage:10,alt:1,cost:2,attack:652,target:0,spec:0,class:1},
+        ],
+        },{name:'Spiral',rarity:0,list:2,
+        stats:[
+            {damage:5,alt:1,cost:1,attack:653,target:0,spec:0,class:1},
+            {damage:9,alt:1,cost:1,attack:653,target:0,spec:0,class:1},
+        ],
         },
+
+        //stance switch
+        //vanish
+        //dance
+
+        //release
 
 
         
@@ -3545,7 +3576,12 @@ types={
             {damage:18,alt:0,cost:1,attack:1,target:1,spec:9,class:0},
             {damage:25,alt:0,cost:1,attack:1,target:1,spec:9,class:0},
         ],
-        },//14/16
+        },{name:'Spin',rarity:-1,list:0,
+        stats:[
+            {damage:1,alt:1,cost:0,attack:650,target:0,spec:3,class:2},
+            {damage:2,alt:1,cost:0,attack:650,target:0,spec:3,class:2},
+        ],
+        },//15/16
 
 
         {name:'Redraw',rarity:-3,list:0,

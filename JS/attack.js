@@ -3250,6 +3250,42 @@ class attack{
                         this.battle.combatants[this.target].take(this.damage,this.user)
                     }
                 break
+                case 648:
+                    if(this.battle.counter.played==1){
+                        this.battle.combatants[this.target].take(this.damage*this.alt,this.user)
+                    }else{
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
+                break
+                case 649:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.drop.addDrop(findCard('Spin'),0,0)
+                    this.battle.reserve.addShuffle(findCard('Spin'),0,0)
+                    if(this.alt>1){
+                        this.attacks.push([14,20,0,'Spin'])
+                    }
+                break
+                case 650:
+                    this.battle.combatants[0].status.main[6]+=this.damage
+                    for(g=0;g<this.alt;g++){
+                        this.battle.randomDiscard()
+                    }
+                break
+                case 651:
+                    if(this.battle.combatants[0].stance==1){
+                        this.battle.combatants[0].addBlock(this.alt+this.damage)
+                    }else{
+                        this.battle.combatants[0].addBlock(this.damage)
+                    }
+                break
+                case 652:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[131]+=this.alt
+                break
+                case 653:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[132]+=this.alt
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
@@ -3467,6 +3503,12 @@ class attack{
                 case 12:
                     if(this.attacks[g][1]%10==0&&this.battle.combatants[this.attacks[g][2]].block<=0){
                         this.battle.combatants[this.attacks[g][2]].status.main[11]+=this.attacks[g][3]
+                    }
+                break
+                case 14:
+                    if(this.attacks[g][1]==10){
+                        this.battle.drop.addDrop(findCard(this.attacks[g][3]),0,0)
+                        this.battle.reserve.addShuffle(findCard(this.attacks[g][3]),0,0)
                     }
                 break
                 default:
