@@ -724,6 +724,10 @@ class card{
             case 654: this.desc+='Apply '+this.damage+'\nAnti-Control'; break
             case 655: this.desc+='Deal Unblockable\nDamage Equal to\nYour Missing Health'; break
             case 656: this.desc+='Add '+this.damage+' Block\nYou Cannot Die\nThis Turn'; break
+            case 657: this.desc+='Add '+this.damage+' Block\nCosts 1 Less For\nEach Time You Take\nUnblocked Damage'; break
+            case 658: this.desc+='The First Time You\nPlay an Attack Each\nTurn that Costs\n2 or More,\nGain '+this.damage+' Energy'; break
+            case 659: this.desc+='Exhaust '+this.damage+' Card\nAdd Block Equal to\n'+this.alt+'x its Cost'; break
+            case 660: this.desc+='Exhaust '+this.damage+' Card\nDeal Damage Equal\nto '+this.alt+'x its Cost\nto First Enemy'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -894,11 +898,9 @@ class card{
     update(energy,combo,armed,random){
         if(this.base.cost==-2){
             this.cost=random.hits
-        }
-        if(this.base.cost==-3){
+        }else if(this.base.cost==-3){
             this.cost=max(0,4-random.hits)
-        }
-        if(this.base.cost==-4){
+        }else if(this.base.cost==-4){
             this.cost=max(0,3-random.discards)
         }
         if(this.size<1&&!this.used){

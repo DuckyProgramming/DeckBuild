@@ -10,7 +10,7 @@ class group{
         this.selcted=false
         this.trigger=false
         this.calc={level:0,cut:0,list:[]}
-        this.anim={discarding:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,selectCombo:false}
+        this.anim={discarding:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,exiling:0,releasing:0,selectCombo:false}
     }
     initial(type){
         /*for(e=0;e<20;e++){
@@ -41,11 +41,11 @@ class group{
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
                 this.add(findCard('Vigilance'),0,this.battle.player)*/
-                this.add(214,0,this.battle.player)
-                this.add(215,0,this.battle.player)
-                this.add(216,0,this.battle.player)
-                this.add(217,0,this.battle.player)
                 this.add(218,0,this.battle.player)
+                this.add(219,0,this.battle.player)
+                this.add(220,0,this.battle.player)
+                this.add(221,0,this.battle.player)
+                this.add(222,0,this.battle.player)
             break
             case 3:
                 /*for(e=0;e<4;e++){
@@ -338,6 +338,16 @@ class group{
         }else if(!this.battle.random.reserving&&this.anim.reserving>0){
             this.anim.reserving=round(this.anim.reserving*5-1)/5
         }
+        if(this.battle.random.exiling&&this.anim.exiling<1){
+            this.anim.exiling=round(this.anim.exiling*5+1)/5
+        }else if(!this.battle.random.exiling&&this.anim.exiling>0){
+            this.anim.exiling=round(this.anim.exiling*5-1)/5
+        }
+        if(this.battle.random.releasing&&this.anim.releasing<1){
+            this.anim.releasing=round(this.anim.releasing*5+1)/5
+        }else if(!this.battle.random.releasing&&this.anim.releasing>0){
+            this.anim.releasing=round(this.anim.releasing*5-1)/5
+        }
         for(e=0,le=this.cards.length;e<le;e++){
             this.cards[e].displayExtra([255,0,0],this.anim.discarding)
             this.cards[e].displayExtra([255,100,255],this.anim.doubling)
@@ -346,6 +356,8 @@ class group{
             this.cards[e].displayExtra([100,255,100],this.anim.transforming)
             this.cards[e].displayExtra([255,200,255],this.anim.forethinking)
             this.cards[e].displayExtra([255,150,0],this.anim.reserving)
+            this.cards[e].displayExtra([150,255,200],this.anim.exiling)
+            this.cards[e].displayExtra([100,255,255],this.anim.releasing)
             this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length,this.battle.discard.cards.length,this.battle.reserve.cards.length,this.battle.counter.turn,this.battle.random)
         }
     }
@@ -728,6 +740,16 @@ class group{
                         this.cards[e].cost=0
                         this.cards[e].base.cost=0
                     }
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.random.exiling>0){
+                    this.battle.random.exiling--
+                    this.battle.combatants[0].block+=this.cards[e].cost*5
+                    this.cards[e].used=true
+                    this.cards[e].exhaust=true
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.random.releasing>0){
+                    this.battle.random.releasing--
+                    this.battle.combatants[0].orbAttack(this.cards[e].cost*6,0,0)
+                    this.cards[e].used=true
+                    this.cards[e].exhaust=true
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&(this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7||this.cards[e].list==10&&this.battle.relics.active[38]||this.cards[e].list==11&&this.battle.relics.active[108])){
                     this.cards[e].select=true
                     this.select=true

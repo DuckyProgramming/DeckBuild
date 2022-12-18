@@ -1101,6 +1101,26 @@ types={
             {damage:8,alt:1,cost:1,attack:656,target:0,spec:3,class:1},
             {damage:16,alt:1,cost:1,attack:656,target:0,spec:3,class:1},
         ],
+        },{name:'Guardian\nAngel',rarity:1,list:2,
+        stats:[
+            {damage:12,alt:0,cost:-3,attack:657,target:0,spec:0,class:1},
+            {damage:18,alt:0,cost:-3,attack:657,target:0,spec:0,class:1},
+        ],
+        },{name:'Violent\nDisplay',rarity:2,list:2,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:658,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:658,target:0,spec:0,class:2},
+        ],
+        },{name:'Exile',rarity:1,list:2,
+        stats:[
+            {damage:1,alt:5,cost:1,attack:659,target:0,spec:0,class:1},
+            {damage:1,alt:5,cost:0,attack:659,target:0,spec:0,class:1},
+        ],
+        },{name:'Release',rarity:1,list:2,
+        stats:[
+            {damage:1,alt:6,cost:1,attack:660,target:0,spec:0,class:0},
+            {damage:1,alt:6,cost:0,attack:660,target:0,spec:0,class:0},
+        ],
         },
 
         //stance switch

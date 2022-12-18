@@ -37,7 +37,7 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,copying:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,copying:0,play2More:0,exiling:0,releasing:0}
         this.defaultRandom={attacked:0,orbs:0,shields:0,hits:0,discards:0}
         stage.identifier=types.combatant[this.player].identifiers
     }
@@ -79,6 +79,7 @@ class battle{
         this.random.forethinking=0
         this.random.reserving=0
         this.random.copying=0
+        this.random.play2More=0
         this.combatants[0].resetUnique()
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
@@ -756,7 +757,7 @@ class battle{
                     f!=63&&f!=68&&f!=69&&f!=70&&f!=72&&f!=75&&f!=76&&f!=77&&f!=78&&f!=79&&
                     f!=80&&f!=81&&f!=82&&f!=85&&f!=88&&f!=91&&f!=95&&f!=96&&f!=97&&f!=101&&
                     f!=103&&f!=107&&f!=108&&f!=112&&f!=113&&f!=114&&f!=116&&f!=120&&f!=123&&f!=124&&
-                    f!=125&&f!=126&&f!=127&&f!=128&&f!=130&&f!=131&&f!=132){
+                    f!=125&&f!=126&&f!=127&&f!=128&&f!=130&&f!=131&&f!=132&&f!=135){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[f]
                     }else if(f==67){
@@ -832,6 +833,7 @@ class battle{
         this.counter.played=0
         this.random.attacked=0
         this.random.discards=0
+        this.random.play2More=0
     }
     startTurn(){
         if(this.relics.active[15]&&this.counter.turn%3==0){
@@ -1008,6 +1010,14 @@ class battle{
                         for(h=0;h<this.combatants[0].status.main[128];h++){
                             this.draw()
                         }
+                    }
+                }
+            }
+            if(this.combatants[0].status.main[135]>0&&this.random.play2More==0){
+                for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                    if(this.hand.cards[g].trigger&&this.hand.cards[g].cost>=2){
+                        this.random.play2More++
+                        this.mana.main+=this.combatants[0].status.main[135]
                     }
                 }
             }

@@ -36,7 +36,7 @@ class attack{
                 case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329: case 560: case 565: case 573: case 579: case 597: case 599: case 633: case 642:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
-                case 2: case 231: case 241: case 268: case 598: case 600:
+                case 2: case 231: case 241: case 268: case 598: case 600: case 657:
                     this.battle.combatants[0].addBlock(this.damage)
                 break
                 case 3: case 51: case 135: case 582:
@@ -3295,6 +3295,15 @@ class attack{
                 case 656:
                     this.battle.combatants[0].addBlock(this.damage)
                     this.battle.combatants[0].status.main[134]+=this.alt
+                break
+                case 658:
+                    this.battle.combatants[0].status.main[135]+=this.damage
+                break
+                case 659:
+                    this.battle.random.exiling=this.damage
+                break
+                case 660:
+                    this.battle.random.releasing=this.damage
                 break
                 default:
             }
