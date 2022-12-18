@@ -1784,6 +1784,26 @@ types={
             {damage:2,alt:0,cost:2,attack:689,target:0,spec:3,class:2},
             {damage:2,alt:0,cost:1,attack:689,target:0,spec:3,class:2},
         ],
+        },{name:'Shield\nAura',rarity:1,list:3,
+        stats:[
+            {damage:0,alt:0,cost:2,attack:690,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:1,attack:690,target:0,spec:3,class:2},
+        ],
+        },{name:'Basic\nAura',rarity:0,list:3,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:691,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:691,target:0,spec:0,class:2},
+        ],
+        },{name:'Explosive\nAura',rarity:2,list:3,
+        stats:[
+            {damage:1,alt:0,cost:3,attack:692,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:2,attack:692,target:0,spec:3,class:2},
+        ],
+        },{name:'Accelerate',rarity:1,list:3,
+        stats:[
+            {damage:3,alt:1,cost:0,attack:693,target:0,spec:3,class:2},
+            {damage:4,alt:1,cost:0,attack:693,target:0,spec:3,class:2},
+        ],
         },
         //sequence
         //add charges

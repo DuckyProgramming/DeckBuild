@@ -56,11 +56,11 @@ class group{
                 }
                 this.add(findCard('Charge'),0,this.battle.player)
                 this.add(findCard('Dualcast'),0,this.battle.player)*/
-                this.add(354,0,this.battle.player)
-                this.add(355,0,this.battle.player)
-                this.add(356,0,this.battle.player)
-                this.add(357,0,this.battle.player)
                 this.add(358,0,this.battle.player)
+                this.add(359,0,this.battle.player)
+                this.add(360,0,this.battle.player)
+                this.add(361,0,this.battle.player)
+                this.add(362,0,this.battle.player)
             break
             case 4:
                 for(e=0;e<4;e++){
