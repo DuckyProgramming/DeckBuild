@@ -130,17 +130,17 @@ class attack{
                 case 22:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
-                        if(this.battle.hand.cards[g].attack==22){
+                        if(this.battle.hand.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
                             this.battle.hand.cards[g].damage+=2
                         }
                     }
                     for(g=0,lg=this.battle.reserve.cards.length;g<lg;g++){
-                        if(this.battle.reserve.cards[g].attack==22){
+                        if(this.battle.reserve.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
                             this.battle.reserve.cards[g].damage+=2
                         }
                     }
                     for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
-                        if(this.battle.discard.cards[g].attack==22){
+                        if(this.battle.discard.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
                             this.battle.discard.cards[g].damage+=2
                         }
                     }
@@ -3415,7 +3415,61 @@ class attack{
                 case 681:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     if(types.attack[this.battle.combatants[this.target].attacks[this.battle.combatants[this.target].intent]].class==0){
-                        this.battle.combatants[0].load(8,0)
+                        this.battle.combatants[0].load(2,0)
+                    }
+                break
+                case 682:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.combatants[0].load(5,0)
+                    }
+                    this.battle.combatants[0].autoEvoke()
+                break
+                case 683:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
+                            this.battle.hand.cards[g].damage+=5
+                        }
+                    }
+                    for(g=0,lg=this.battle.reserve.cards.length;g<lg;g++){
+                        if(this.battle.reserve.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
+                            this.battle.reserve.cards[g].damage+=5
+                        }
+                    }
+                    for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
+                        if(this.battle.discard.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
+                            this.battle.discard.cards[g].damage+=5
+                        }
+                    }
+                break
+                case 684:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.combatants[0].load(0,0)
+                    }
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
+                            this.battle.hand.cards[g].damage+=2
+                        }
+                    }
+                    for(g=0,lg=this.battle.reserve.cards.length;g<lg;g++){
+                        if(this.battle.reserve.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
+                            this.battle.reserve.cards[g].damage+=2
+                        }
+                    }
+                    for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
+                        if(this.battle.discard.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
+                            this.battle.discard.cards[g].damage+=2
+                        }
+                    }
+                break
+                case 685:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                    for(g=0,lg=this.battle.combatants[0].ammo.length;g<lg;g++){
+                        if(this.battle.combatants[0].ammo[g]>=0){
+                            this.battle.combatants[0].addBlock(this.alt)
+                        }
                     }
                 break
                 default:

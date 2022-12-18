@@ -3453,7 +3453,7 @@ class battle{
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
                             }else if(this.page==2&&e==0){
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-12)
-                                this.getRelic(findRelic('Bottled Ice'))
+                                this.getRelic(findRelic('Bottled Rock'))
                             }
                         break
                         case 78:

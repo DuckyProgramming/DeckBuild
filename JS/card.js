@@ -89,7 +89,7 @@ class card{
             case 19: this.desc+='Lose 1\nAmmo Slot'; break
             case 20: this.desc+='Hold '+this.damage+'\nEnergy Charge'; break
             case 21: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable'; break                
-            case 22: this.desc+='Deal '+this.damage+' Damage\nAll Claws gain\n+2 Damage'; break
+            case 22: this.desc+='Deal '+this.damage+' Damage\nAll Claws Gain\n+2 Damage'; break
             case 23: this.desc+='Deal '+this.damage+'X\nDamage'; break
             case 24: this.desc+='Deal '+this.damage+' Damage\nDraw '+this.alt+' Cards'; break
             case 25: this.desc+='Heal '+this.damage+' Health'; break
@@ -748,7 +748,11 @@ class card{
             case 678: this.desc+='Deal '+this.damage+' Damage\nFor Each Debuff\nof Target'; break
             case 679: this.desc+='If Target Has\nLess Than '+(this.damage*10)+'%\nHealth, Kill it'; break
             case 680: this.desc+='Hold '+this.damage+' Lightning\nCharges\nAdd '+this.alt+' Block\nFor Every Lightning\nCharge'; break
-            case 681: this.desc+='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nHold '+this.alt+' Frost Charge'; break
+            case 681: this.desc+='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nHold '+this.alt+' Shield\nCharge'; break
+            case 682: this.desc+='Hold '+this.damage+' Lightning\nCharges\nTrigger Weak Evokes\non All Orbs'; break
+            case 683: this.desc+='Deal '+this.damage+' Damage\nAll Claws Gain\n+5 Damage'; break
+            case 684: this.desc+='Hold '+this.damage+'\nBasic Charges\nAll Claws Gain\n+2 Damage'; break
+            case 685: this.desc+='Draw '+this.damage+' Cards\nAdd '+this.alt+' Block\nPer Charge'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

@@ -1419,7 +1419,7 @@ types={
             {damage:7,alt:2,cost:1,attack:247,target:0,spec:0,class:0},
             {damage:9,alt:2,cost:1,attack:247,target:0,spec:0,class:0},
         ],
-        },{name:'Discharge',rarity:1,list:3,
+        },{name:'Static\nDischarge',rarity:1,list:3,
         stats:[
             {damage:1,alt:0,cost:2,attack:248,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:2,attack:248,target:0,spec:8,class:2},
@@ -1739,15 +1739,36 @@ types={
             {damage:2,alt:3,cost:2,attack:680,target:0,spec:0,class:1},
             {damage:3,alt:5,cost:2,attack:680,target:0,spec:0,class:1},
         ],
-        },{name:'Icy\nPalm',rarity:0,list:3,
+        },{name:'Shield\nStop',rarity:0,list:3,
         stats:[
             {damage:2,alt:1,cost:0,attack:681,target:1,spec:0,class:0},
             {damage:4,alt:1,cost:0,attack:681,target:1,spec:0,class:0},
+        ],
+        },{name:'Secondary\nDischarge',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:682,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:1,attack:682,target:0,spec:0,class:2},
+        ],
+        },{name:'Hyper\nClaw',rarity:0,list:3,
+        stats:[
+            {damage:3,alt:0,cost:1,attack:683,target:1,spec:0,class:0},
+            {damage:5,alt:0,cost:1,attack:683,target:1,spec:0,class:0},
+        ],
+        },{name:'Clawing\nCharge',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:0,cost:1,attack:684,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:1,attack:684,target:0,spec:0,class:2},
+        ],
+        },{name:'Flux',rarity:1,list:3,
+        stats:[
+            {damage:1,alt:2,cost:0,attack:685,target:0,spec:0,class:2},
+            {damage:1,alt:3,cost:0,attack:685,target:0,spec:0,class:2},
         ],
         },
         //sequence
         //add charges
         //showdown
+        //frost
         //health charge
         
         
@@ -2071,7 +2092,7 @@ types={
             {damage:7,alt:-3,cost:0,attack:209,target:1,spec:0,class:0},
             {damage:10,alt:-3,cost:0,attack:209,target:1,spec:0,class:0},
         ],
-        },{name:'Discharge',rarity:2,list:4,
+        },{name:'Fiend\nFire',rarity:2,list:4,
         stats:[
             {damage:7,alt:-6,cost:2,attack:210,target:1,spec:3,class:0},
             {damage:7,alt:-6,cost:2,attack:210,target:1,spec:3,class:0},
@@ -4740,8 +4761,8 @@ types={
             name:'Bottled Flame',id:160,rarity:-1,list:3,
             desc:'At the Start of Combat,\nCharge 1 Flame Charge',
         },{
-            name:'Bottled Ice',id:161,rarity:-1,list:3,
-            desc:'At the Start of Combat,\nCharge 1 Ice Charge',
+            name:'Bottled Rock',id:161,rarity:-1,list:3,
+            desc:'At the Start of Combat,\nCharge 1 Rock Charge',
         },{
             name:'Bottled Life',id:162,rarity:-1,list:3,
             desc:'At the Start of Combat,\nCharge 1 Life Charge',
@@ -6869,13 +6890,13 @@ types={
                 },
             ],
         },{
-            name:'Permafrost',id:77,list:3,
+            name:'The Rock',id:77,list:3,
             pages:[
                 {
-                    desc:"The strange occurrences here never do stop, do they? In the middle of a cave, you find what appears to be an ice shrine.\n"+
-                    "It's much too old for any of the items stored inside to have value except for a single shard of ice.\n"+
-                    "It hasn't melted for thousands of years, and feels extremely cold to the touch. Probably a power source.\n"+
-                    "You try to take it, but as soon as you touch it, the frost spreads down your hand, freezing it.",
+                    desc:"The strange occurrences here never do stop, do they? In the middle of a cave, you find what appears to be an rock shrine.\n"+
+                    "It's much too old for any of the items stored inside to have value except for a single rock that remains.\n"+
+                    "It hasn't cracked for thousands of years, and vibrates slightly. Probably a power source.\n"+
+                    "You try to take it, but as soon as you touch it, you feel a jet of pain..",
                     option:['Pull your hand away','Leave it'],
                     optionDesc:['',''],
                     link:[1,2],
@@ -6885,7 +6906,7 @@ types={
                     optionDesc:['Lose 3 Health'],
                     link:[-1],
                 },{
-                    desc:"It freezes onto your hand and remains with you for the foreseeable future.",
+                    desc:"You pick it up and keep it with you for the foreseeable future.",
                     option:['Leave'],
                     optionDesc:['Lose 12 Health, Gain 1 Relic'],
                     link:[-1],

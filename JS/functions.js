@@ -93,7 +93,7 @@ function displayAmmo(layer,x,y,type,detail,fade){
 		break
 		case 8:
 			layer.noFill()
-			layer.stroke(155,255,255,fade)
+			layer.stroke(225,190,105,fade)
 			layer.strokeWeight(2)
 			layer.rect(0,0,7,7)
 		break
