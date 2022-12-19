@@ -3618,9 +3618,30 @@ class attack{
                         }
                     }
                     this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].meter+=this.alt
                 break
                 case 712:
                     this.battle.combatants[0].status.main[147]+=this.damage
+                break
+                case 713:
+                    this.battle.mana.main+=this.damage
+                    for(g=0;g<this.alt;g++){
+                        this.battle.draw()
+                    }
+                break
+                case 714:
+                    this.battle.combatants[0].status.main[148]+=this.damage
+                break
+                case 715:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(types.attack[this.battle.combatants[this.target].attacks[this.battle.combatants[this.target].intent]].class==0){
+                        this.battle.combatants[this.target].damage[this.battle.combatants[this.target].intent]=max(0,this.battle.combatants[this.target].damage[this.battle.combatants[this.target].intent]-this.alt)
+                    }
+                break
+                case 716:
+                    if(types.attack[this.battle.combatants[this.target].attacks[this.battle.combatants[this.target].intent]].class==0){
+                        this.battle.combatants[this.target].damage[this.battle.combatants[this.target].intent]=max(0,this.battle.combatants[this.target].damage[this.battle.combatants[this.target].intent]-this.damage)
+                    }
                 break
                 default:
             }

@@ -778,8 +778,12 @@ class card{
             case 708: if(this.damage>0){this.desc+='Gain Block\nEqual to 2x Enemy\nBleed +'+this.damage+'\n'+nfp(this.alt)+' Balance'}else{this.desc+='Gain Block\nEqual to 2x\nEnemy Bleed\n'+nfp(this.alt)+' Balance'} break
             case 709: this.desc+='Gain '+this.damage+' Strength\nWhen You\nTake Damage\n'+nfp(this.alt)+' Balance'; break
             case 710: this.desc+='Deal '+this.damage+' Damage\nDraw 1 Less\nCard Per Turn\n'+nfp(this.alt)+' Balance'; break
-            case 711: this.desc+='Discard All Attacks\nin Hand\nAdd '+this.damage+' Block'; break
+            case 711: this.desc+='Discard All Attacks\nin Hand\nAdd '+this.damage+' Block\n'+nfp(this.alt)+' Balance'; break
             case 712: this.desc+='You Can No\nLonger Be\nUnarmed'; break
+            case 713: this.desc+='Gain '+this.damage+' Energy'; if(this.alt>0){'\nDraw '+this.alt+' Cards'} break
+            case 714: this.desc+='Next '+this.damage+' Times\nYou are Armed,\nDeal 10 Damage\nto First Enemy\nand Disarm'; break
+            case 715: this.desc+='Deal '+this.damage+' Damage\nIf Target Intends\nto Attack,\nReduce Power of\nAttack by '+this.alt; break
+            case 716: this.desc+='If Target Intends\nto Attack,\nReduce Power of\nAttack by '+this.damage; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

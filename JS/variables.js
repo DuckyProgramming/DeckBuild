@@ -2102,7 +2102,7 @@ types={
             {damage:1,alt:-3,cost:2,attack:200,target:0,spec:11,class:1},  
             {damage:2,alt:-3,cost:2,attack:200,target:0,spec:11,class:1},
         ],
-        },{name:'Evade',rarity:2,list:4,
+        },{name:'Evade',rarity:1,list:4,
         stats:[
             {damage:2,alt:-5,cost:2,attack:201,target:0,spec:2,class:1},
             {damage:2,alt:-5,cost:2,attack:201,target:0,spec:2,class:1},
@@ -2379,21 +2379,36 @@ types={
         ],
         },{name:'All-Out\nDefense',rarity:1,list:4,
         stats:[
-            {damage:30,alt:0,cost:2,attack:711,target:0,spec:0,class:2},
-            {damage:40,alt:0,cost:2,attack:711,target:0,spec:0,class:2},
+            {damage:30,alt:5,cost:2,attack:711,target:0,spec:0,class:2},
+            {damage:40,alt:5,cost:2,attack:711,target:0,spec:0,class:2},
         ],
         },{name:'Magnetism',rarity:2,list:4,
         stats:[
             {damage:1,alt:0,cost:2,attack:712,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:1,attack:712,target:0,spec:3,class:2},
         ],
+        },{name:'Quicktime',rarity:1,list:4,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:713,target:0,spec:11,class:2},
+            {damage:1,alt:1,cost:0,attack:713,target:0,spec:11,class:2},
+        ],
+        },{name:'Autothrow',rarity:2,list:4,
+        stats:[
+            {damage:5,alt:0,cost:1,attack:714,target:0,spec:0,class:2},
+            {damage:10,alt:0,cost:1,attack:714,target:0,spec:0,class:2},
+        ],
+        },{name:'Lament',rarity:0,list:4,
+        stats:[
+            {damage:8,alt:2,cost:1,attack:715,target:1,spec:0,class:0},
+            {damage:12,alt:3,cost:1,attack:715,target:1,spec:0,class:0},
+        ],
+        },{name:'Impair',rarity:0,list:4,
+        stats:[
+            {damage:2,alt:0,cost:0,attack:716,target:1,spec:0,class:0},
+            {damage:3,alt:0,cost:0,attack:716,target:1,spec:0,class:0},
+        ],
         },
         //powers
-        //buff balance-related cards
-        //energy related cards
-        //lament
-        //skirt
-        //slip
         //expensive things
 
         
@@ -4203,7 +4218,7 @@ types={
         {class:1},
         {class:0},
         {class:1},
-        {class:1},
+        {class:2},
         {class:0},
         {class:0},//10
         {class:1},
@@ -4211,14 +4226,14 @@ types={
         {class:1},
         {class:0},
         {class:0},
-        {class:1},
+        {class:2},
         {class:0},
         {class:1},
         {class:1},
         {class:0},//20
         {class:1},
-        {class:1},
-        {class:1},
+        {class:2},
+        {class:2},
         {class:0},
         {class:1},
     ],encounter:[
