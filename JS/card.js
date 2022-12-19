@@ -778,6 +778,8 @@ class card{
             case 708: if(this.damage>0){this.desc+='Gain Block\nEqual to 2x Enemy\nBleed +'+this.damage+'\n'+nfp(this.alt)+' Balance'}else{this.desc+='Gain Block\nEqual to 2x\nEnemy Bleed\n'+nfp(this.alt)+' Balance'} break
             case 709: this.desc+='Gain '+this.damage+' Strength\nWhen You\nTake Damage\n'+nfp(this.alt)+' Balance'; break
             case 710: this.desc+='Deal '+this.damage+' Damage\nDraw 1 Less\nCard Per Turn\n'+nfp(this.alt)+' Balance'; break
+            case 711: this.desc+='Discard All Attacks\nin Hand\nAdd '+this.damage+' Block'; break
+            case 712: this.desc+='You Can No\nLonger Be\nUnarmed'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

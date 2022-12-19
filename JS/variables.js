@@ -2334,8 +2334,8 @@ types={
         ],
         },{name:'Spinning\nMulti Slice',rarity:1,list:4,
         stats:[
-            {damage:4,alt:3,cost:2,attack:701,target:0,spec:0,class:2},
-            {damage:4,alt:4,cost:2,attack:701,target:0,spec:0,class:2},
+            {damage:4,alt:3,cost:2,attack:701,target:0,spec:11,class:2},
+            {damage:4,alt:4,cost:2,attack:701,target:0,spec:11,class:2},
         ],
         },{name:'Cripple',rarity:1,list:4,
         stats:[
@@ -2364,8 +2364,8 @@ types={
         ],
         },{name:'Hemo\nkinesis',rarity:1,list:4,
         stats:[
-            {damage:0,alt:-4,cost:1,attack:708,target:0,spec:11,class:0},
-            {damage:4,alt:-4,cost:1,attack:708,target:0,spec:11,class:0},
+            {damage:0,alt:-4,cost:1,attack:708,target:0,spec:0,class:0},
+            {damage:4,alt:-4,cost:1,attack:708,target:0,spec:0,class:0},
         ],
         },{name:'Absorb\nStrength',rarity:1,list:4,
         stats:[
@@ -2374,8 +2374,18 @@ types={
         ],
         },{name:'Consuming\nSlice',rarity:1,list:4,
         stats:[
-            {damage:19,alt:-1,cost:1,attack:710,target:1,spec:0,class:0},
-            {damage:27,alt:-1,cost:1,attack:710,target:1,spec:0,class:0},
+            {damage:19,alt:-1,cost:1,attack:710,target:1,spec:11,class:0},
+            {damage:27,alt:-1,cost:1,attack:710,target:1,spec:11,class:0},
+        ],
+        },{name:'All-Out\nDefense',rarity:1,list:4,
+        stats:[
+            {damage:30,alt:0,cost:2,attack:711,target:0,spec:0,class:2},
+            {damage:40,alt:0,cost:2,attack:711,target:0,spec:0,class:2},
+        ],
+        },{name:'Magnetism',rarity:2,list:4,
+        stats:[
+            {damage:1,alt:0,cost:2,attack:712,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:1,attack:712,target:0,spec:3,class:2},
         ],
         },
         //powers

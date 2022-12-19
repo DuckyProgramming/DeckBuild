@@ -3611,6 +3611,17 @@ class attack{
                     this.battle.random.drawing--
                     this.battle.combatants[0].meter+=this.alt
                 break
+                case 711:
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].class==0){
+                            this.battle.hand.cards[g].used=true
+                        }
+                    }
+                    this.battle.combatants[0].addBlock(this.damage)
+                break
+                case 712:
+                    this.battle.combatants[0].status.main[147]+=this.damage
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
