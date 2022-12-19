@@ -1662,6 +1662,20 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 			layer.image(graphics.symbol[7],-10,-4,20,20)
 			layer.image(graphics.symbol[1],-8,-2,16,16)
 		break
+		case 51:
+			layer.image(graphics.symbol[47],-12,-8,16,16)
+			layer.image(graphics.symbol[15],0,-8,16,16)
+		break
+		case 52:
+			layer.image(graphics.symbol[1],-8,-18,16,16)
+			layer.image(graphics.symbol[12],-8,2,16,16)
+			layer.image(graphics.symbol[47],-8,-8,16,16)
+		break
+		case 53:
+			layer.text('+',6,0)
+			layer.image(graphics.symbol[5],-14,-8,16,16)
+			layer.image(graphics.symbol[5],-2,-8,16,16)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)
@@ -1715,4 +1729,5 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 44-FlameCharge
 45-IceCharge
 46-LifeCharge
+47-Construct
 */

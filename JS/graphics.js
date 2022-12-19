@@ -476,4 +476,10 @@ function setupGraphics(){
 	graphics.symbol[46].strokeWeight(18)
 	graphics.symbol[46].line(0,-24,0,24)
 	graphics.symbol[46].line(-24,0,24,0)
+	graphics.symbol[47].stroke(0)
+	graphics.symbol[47].noFill()
+	graphics.symbol[47].strokeWeight(16)
+	graphics.symbol[47].line(-12,12,12,-12)
+	graphics.symbol[47].arc(25,-25,40,40,45,225)
+	graphics.symbol[47].arc(-25,25,40,40,-135,45)
 }

@@ -5103,22 +5103,22 @@ types={
             name:'Cola',id:50,rarity:-1,list:0,
             desc:'Heal 20 Health, You Must\nAttack or Take 15 Damage',
         },{
-            name:'',id:49,rarity:0,list:5,
-            desc:'',
+            name:'Metal Juice',id:51,rarity:1,list:5,
+            desc:'Build All of Construct',
         },{
-            name:'',id:50,rarity:0,list:5,
-            desc:'',
+            name:'Mirror Coat',id:52,rarity:0,list:5,
+            desc:'Construct Reflects\nAttacks This Turn',
         },{
-            name:'',id:51,rarity:0,list:5,
-            desc:'',
-        },{
-            name:'',id:52,rarity:0,list:6,
-            desc:'',
-        },{
-            name:'',id:53,rarity:0,list:6,
-            desc:'',
+            name:'Pure Caffeine',id:53,rarity:0,list:5,
+            desc:'Draw 2 Cards,\nUpgrade 2 Cards',
         },{
             name:'',id:54,rarity:0,list:6,
+            desc:'',
+        },{
+            name:'',id:55,rarity:0,list:6,
+            desc:'',
+        },{
+            name:'',id:56,rarity:0,list:6,
             desc:'',
         },
     ],event:[
