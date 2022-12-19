@@ -784,6 +784,10 @@ class card{
             case 714: this.desc+='Next '+this.damage+' Times\nYou are Armed,\nDeal 10 Damage\nto First Enemy\nand Disarm'; break
             case 715: this.desc+='Deal '+this.damage+' Damage\nIf Target Intends\nto Attack,\nReduce Power of\nAttack by '+this.alt; break
             case 716: this.desc+='If Target Intends\nto Attack,\nReduce Power of\nAttack by '+this.damage; break
+            case 717: this.desc+='If Target Intends\nto Block,\nReduce Power of\nBlock by '+this.damage; break
+            case 718: this.desc+='Add '+this.damage+' Block\nPer Turn, Increasing\nBlock Gain by '+this.alt; break
+            case 719: this.desc+='Remove Primary\nEffect of Target'+"'"+'s\nCurrent Attack'; break
+            case 720: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable\nto Self and Target\n'+nfp(-4)+' Balance'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

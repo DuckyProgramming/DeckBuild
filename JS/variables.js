@@ -5,7 +5,9 @@ types={
             {damage:0,alt:0,cost:0,attack:0,target:0,spec:0,class:0},
             {damage:0,alt:0,cost:0,attack:0,target:0,spec:0,class:0},
         ],
-        },{name:'Strike',rarity:0,list:8,
+        },
+        
+        {name:'Strike',rarity:0,list:8,
         stats:[
             {damage:6,alt:0,cost:1,attack:1,target:1,spec:0,class:0},
             {damage:9,alt:0,cost:1,attack:1,target:1,spec:0,class:0},
@@ -16,7 +18,6 @@ types={
             {damage:8,alt:0,cost:1,attack:2,target:0,spec:0,class:1},
         ],
         },
-        
         
         {name:'Big\nStrike',rarity:0,list:1,
         stats:[
@@ -620,7 +621,6 @@ types={
         ],
         },
         
-        
         {name:'Vigilance',rarity:0,list:2,
         stats:[
             {damage:8,alt:0,cost:2,attack:27,target:0,spec:0,class:1},
@@ -1223,7 +1223,6 @@ types={
         ],
         },
 
-        
         {name:'Charge',rarity:0,list:3,
         stats:[
             {damage:1,alt:0,cost:0,attack:13,target:0,spec:0,class:2},
@@ -1826,7 +1825,6 @@ types={
         ],
         },
         
-        
         {name:'Debilitate',rarity:2,list:4,
         stats:[
             {damage:2,alt:2,cost:3,attack:64,target:0,spec:3,class:2},
@@ -1952,7 +1950,7 @@ types={
             {damage:3,alt:0,cost:1,attack:87,target:0,spec:0,class:1},
             {damage:7,alt:0,cost:1,attack:87,target:0,spec:0,class:1},
         ],
-        },{name:'Diversion',rarity:1,list:4,
+        },{name:'Diversion',rarity:0,list:4,
         stats:[
             {damage:21,alt:0,cost:1,attack:88,target:0,spec:11,class:1},
             {damage:35,alt:0,cost:1,attack:88,target:0,spec:11,class:1},
@@ -2077,7 +2075,7 @@ types={
             {damage:10,alt:2,cost:3,attack:196,target:0,spec:0,class:1},
             {damage:16,alt:2,cost:3,attack:196,target:0,spec:0,class:1},
         ],
-        },{name:'Flash',rarity:2,list:4,
+        },{name:'Flash',rarity:1,list:4,
         stats:[
             {damage:1,alt:0,cost:3,attack:197,target:0,spec:8,class:2},
             {damage:1,alt:0,cost:3,attack:197,target:0,spec:8,class:2},
@@ -2397,21 +2395,38 @@ types={
             {damage:5,alt:0,cost:1,attack:714,target:0,spec:0,class:2},
             {damage:10,alt:0,cost:1,attack:714,target:0,spec:0,class:2},
         ],
-        },{name:'Lament',rarity:0,list:4,
+        },{name:'Lament',rarity:1,list:4,
         stats:[
             {damage:8,alt:2,cost:1,attack:715,target:1,spec:0,class:0},
             {damage:12,alt:3,cost:1,attack:715,target:1,spec:0,class:0},
         ],
         },{name:'Impair',rarity:0,list:4,
         stats:[
-            {damage:2,alt:0,cost:0,attack:716,target:1,spec:0,class:0},
-            {damage:3,alt:0,cost:0,attack:716,target:1,spec:0,class:0},
+            {damage:2,alt:0,cost:0,attack:716,target:1,spec:0,class:2},
+            {damage:3,alt:0,cost:0,attack:716,target:1,spec:0,class:2},
+        ],
+        },{name:'Fracture',rarity:0,list:4,
+        stats:[
+            {damage:6,alt:0,cost:1,attack:717,target:1,spec:0,class:2},
+            {damage:8,alt:0,cost:1,attack:717,target:1,spec:0,class:2},
+        ],
+        },{name:'Foliage',rarity:1,list:4,
+        stats:[
+            {damage:2,alt:2,cost:1,attack:718,target:0,spec:0,class:2},
+            {damage:4,alt:2,cost:1,attack:718,target:0,spec:0,class:2},
+        ],
+        },{name:'Incapacitate',rarity:2,list:4,
+        stats:[
+            {damage:0,alt:0,cost:2,attack:719,target:1,spec:3,class:2},
+            {damage:0,alt:0,cost:1,attack:719,target:1,spec:3,class:2},
+        ],
+        },{name:'Shattering\nKick',rarity:1,list:4,
+        stats:[
+            {damage:22,alt:2,cost:2,attack:720,target:1,spec:0,class:0},
+            {damage:28,alt:3,cost:2,attack:720,target:1,spec:0,class:0},
         ],
         },
-        //powers
-        //expensive things
 
-        
         {name:'Build\nWall',rarity:0,list:5,
         stats:[
             {damage:0,alt:0,cost:0,attack:401,target:0,spec:10,class:3},
@@ -3013,7 +3028,6 @@ types={
             {damage:8,alt:2,cost:1,attack:534,target:1,spec:0,class:0},
         ],
         },
-
 
         {name:'Blade\nDance',rarity:0,list:6,
         stats:[
@@ -3617,7 +3631,6 @@ types={
         ],
         },
 
-
         {name:'Buster',rarity:0,list:7,
         stats:[
             {damage:5,alt:0,cost:1,attack:560,target:1,spec:0,class:0},
@@ -3679,8 +3692,6 @@ types={
             {damage:1,alt:0,cost:0,attack:638,target:0,spec:0,class:2},
         ],
         },
-
-        
         
         {name:'Empty',rarity:-1,list:-1,
         stats:[
@@ -3688,7 +3699,6 @@ types={
             {damage:0,alt:0,cost:0,attack:-3,target:0,spec:13,class:4},
         ],
         },
-        
         
         {name:'Swift\nStrike',rarity:1,list:0,
         stats:[
@@ -3812,7 +3822,6 @@ types={
         ],
         },
         
-        
         {name:'Insight',rarity:-1,list:0,
         stats:[
             {damage:2,alt:0,cost:0,attack:4,target:0,spec:9,class:2},
@@ -3890,7 +3899,6 @@ types={
         ],
         },//15/16
 
-
         {name:'Redraw',rarity:-3,list:0,
         stats:[
             {damage:0,alt:0,cost:0,attack:148,target:0,spec:13,class:2},
@@ -3958,7 +3966,6 @@ types={
         ],
         },
         //13/16
-        
         
         {name:'Clumsy',rarity:-1,list:10,
         stats:[
@@ -4037,8 +4044,7 @@ types={
         ],
         },
         //15/16
-        
-        
+
         {name:'Confusion',rarity:-2,list:11,
         stats:[
             {damage:0,alt:0,cost:0,attack:-1,target:0,spec:1,class:-1},

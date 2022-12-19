@@ -63,19 +63,19 @@ class group{
                 this.add(362,0,this.battle.player)*/
             break
             case 4:
-                /*for(e=0;e<4;e++){
+                for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Peace'),0,this.battle.player)
-                this.add(findCard('Danger'),0,this.battle.player)*/
-                this.add(474,0,this.battle.player)
-                this.add(475,0,this.battle.player)
-                this.add(476,0,this.battle.player)
-                this.add(477,0,this.battle.player)
-                this.add(478,0,this.battle.player)
+                this.add(findCard('Danger'),0,this.battle.player)
+                /*this.add(478,0,this.battle.player)
+                this.add(479,0,this.battle.player)
+                this.add(480,0,this.battle.player)
+                this.add(481,0,this.battle.player)
+                this.add(482,0,this.battle.player)*/
             break
             case 5:
                 for(e=0;e<4;e++){
@@ -109,17 +109,17 @@ class group{
                 this.add(722,0,this.battle.player)*/
             break
             case 7:
-                for(e=0;e<4;e++){
+                /*for(e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Tap'),0,this.battle.player)
-                this.add(findCard('Spare'),0,this.battle.player)
-                /*this.add(728,0,this.battle.player)
-                this.add(729,0,this.battle.player)
-                this.add(730,0,this.battle.player)*/
+                this.add(findCard('Spare'),0,this.battle.player)*/
+                this.add(735,0,this.battle.player)
+                this.add(736,0,this.battle.player)
+                this.add(737,0,this.battle.player)
             break
         }
     }

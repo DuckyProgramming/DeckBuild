@@ -3643,6 +3643,24 @@ class attack{
                         this.battle.combatants[this.target].damage[this.battle.combatants[this.target].intent]=max(0,this.battle.combatants[this.target].damage[this.battle.combatants[this.target].intent]-this.damage)
                     }
                 break
+                case 717:
+                    if(types.attack[this.battle.combatants[this.target].attacks[this.battle.combatants[this.target].intent]].class==2){
+                        this.battle.combatants[this.target].damage[this.battle.combatants[this.target].intent]=max(0,this.battle.combatants[this.target].damage[this.battle.combatants[this.target].intent]-this.damage)
+                    }
+                break
+                case 718:
+                    this.battle.combatants[0].status.main[40]+=this.damage
+                    this.battle.combatants[0].status.main[149]+=this.alt
+                break
+                case 719:
+                    this.battle.combatants[this.target].damage[this.battle.combatants[this.target].intent]=0
+                break
+                case 720:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.target].boost.main[1]-=this.alt
+                    this.battle.combatants[0].boost.main[1]-=this.alt
+                    this.battle.combatants[0].meter-=4
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
