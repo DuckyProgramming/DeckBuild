@@ -5112,14 +5112,14 @@ types={
             name:'Pure Caffeine',id:53,rarity:0,list:5,
             desc:'Draw 2 Cards,\nUpgrade 2 Cards',
         },{
-            name:'',id:54,rarity:0,list:6,
-            desc:'',
+            name:'Liquid Memories',id:54,rarity:1,list:6,
+            desc:'Return Memory Cards\nin Discard Pile to Hand',
         },{
-            name:'',id:55,rarity:0,list:6,
-            desc:'',
+            name:'Bottled Knife',id:55,rarity:0,list:6,
+            desc:'Add 2 Shivs\nto Your Hand',
         },{
-            name:'',id:56,rarity:0,list:6,
-            desc:'',
+            name:'Compression Brew',id:56,rarity:0,list:6,
+            desc:'When You Play a Card,\nTarget Takes 4 Damage',
         },
     ],event:[
         {
