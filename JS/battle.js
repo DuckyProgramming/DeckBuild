@@ -50,13 +50,15 @@ class battle{
         setupEncounter(this,type)
         this.create()
 
-        //current.getRelic(156)
+        //this.getRelic(156)
 
         //this.map.position[0]=0
         //transition.trigger=true
         //transition.scene='event'
         //this.map.complete[0][0]=1
         //this.event=findEvent('Punching Bag')
+
+        this.getPotion(49)
     }
     create(){
         this.end=false
@@ -122,13 +124,13 @@ class battle{
             this.eventList.push(zones[this.map.zone].events[this.player][g])
         }
         for(g=0,lg=types.relic.length;g<lg;g++){
-            if(g>=1&&types.relic[g].rarity>=0&&(types.relic[g].list==0||types.relic[g].list==this.player)){
+            if(g>=1&&types.relic[g].rarity>=0&&(types.relic[g].list==0||types.relic[g].list==this.player||this.player==stage.playerNumber)){
                 this.relics.list[types.relic[g].rarity].push(g)
             }
             this.relics.active.push(false)
         }
         for(g=0,lg=types.potion.length;g<lg;g++){
-            if(g>=1&&types.potion[g].rarity>=0&&(types.potion[g].list==0||types.potion[g].list==this.player)){
+            if(g>=1&&types.potion[g].rarity>=0&&(types.potion[g].list==0||types.potion[g].list==this.player||this.player==stage.playerNumber)){
                 this.potions.list[types.potion[g].rarity].push(g)
             }
         }

@@ -398,7 +398,7 @@ class card{
             case 328: this.desc+='Deal '+this.damage+' Damage\nWhen You Attack\nThis Enemy,\nGain '+this.alt+' Block'; break
             case 329: this.desc+='Deal '+this.damage+' Damage\nReturn on Scry'; break
             case 330: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Upgrade\na Random Card'; break
-            case 331: this.desc+='If Target Has\nLess Than '+this.damage+'\nHealth, Set its\nHealth to 0\n'+nfp(this.alt)+' Balance'; break
+            case 331: this.desc+='If Target Has\nLess Than '+this.damage+'\nHealth, Set its\nHealth to 0'; break
             case 332: if(this.spec==13){this.desc+='Gain '+this.damage+' Max Energy\nEvery Turn\nEthereal'}else{this.desc+='Gain '+this.damage+' Max Energy\nEvery Turn'}; break
             case 333: this.desc+='Retained Cards\nCost '+this.damage+' Less\nWhen Retained'; break
             case 334: this.desc+='Deal Damage Equal\nto '+this.damage+'x Number\nof Charges Held\nThis Combat\n('+random.orbs+')'; break
@@ -704,7 +704,7 @@ class card{
             case 634: this.desc+='Every 13\nCards Played\nDeal '+this.damage+' Damage\nto All Enemies\nand Add '+this.damage+' Block'; break
             case 635: this.desc+='Send Hand\nto Draw Pile\nSwap Draw and\nDiscard Piles'; break
             case 636: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nOther Cards Are\nin Your Hand'; break
-            case 637: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nYou Have Mana'; break
+            case 637: this.desc+='Deal '+this.damage+' Damage\nHas No Effect if\nYou Have More\nThan 0 Energy'; break
             case 638: if(this.damage>0){this.desc+='Shuffle a Peak+\nand a Trough into\nYour Draw Pile'}else{this.desc+='Shuffle a Peak\nand a Trough into\nYour Draw Pile'}; break
             case 639: this.desc+='Add '+this.damage+' Shivs\nto Your Hand\nor\nAdd '+this.damage+' Screens\nto Your Hand'; break
             case 640: this.desc+='After Turn 5\n('+turn+')\nGain '+this.damage+' Energy\nDraw '+this.alt+' Cards'; break

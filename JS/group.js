@@ -464,7 +464,7 @@ class group{
             }else if(!((inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250||this.cards[e].select)&&(!this.trigger||this.cards[e].trigger))&&this.cards[e].position.y<500){
                 this.cards[e].position.y+=20
             }
-            if((this.cards[e].position.x>e*80+126&&this.battle.player!=7||this.cards[e].position.x>e*140+126&&this.battle.player==7)&&(this.cards[e].position.x>this.cards[max(0,e-1)].position.x+80&&this.battle.player!=7||this.cards[e].position.x>this.cards[max(0,e-1)].position.x+140&&this.battle.player==7||e==0)){
+            if((this.cards[e].position.x>e*80+126&&this.battle.player!=stage.playerNumber||this.cards[e].position.x>e*140+126&&this.battle.player==stage.playerNumber)&&(this.cards[e].position.x>this.cards[max(0,e-1)].position.x+80&&this.battle.player!=stage.playerNumber||this.cards[e].position.x>this.cards[max(0,e-1)].position.x+140&&this.battle.player==stage.playerNumber||e==0)){
                 this.cards[e].position.x-=20
             }else if(this.cards[e].attack==121&&this.cards[e].position.x<=e*80+126&&!this.cards[e].used){
                 this.cards[e].used=true

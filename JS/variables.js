@@ -4950,6 +4950,9 @@ types={
         },*/
     ],potion:[
         {
+            name:'',id:0,rarity:0,list:-1,
+            desc:'',
+        },{
             name:'Liquid Rage',id:1,rarity:0,list:0,
             desc:'Add an Attack to Your\nHand. It Costs 0',
         },{
@@ -5076,19 +5079,19 @@ types={
             name:'Overdrive',id:42,rarity:2,list:2,
             desc:'Enter\nDivinity',
         },{
-            name:'Blinding Potion',id:43,rarity:0,list:3,
+            name:'Concentration Potion',id:43,rarity:0,list:3,
             desc:'Gain 2\nFocus',
         },{
             name:'Black Tonic',id:44,rarity:1,list:3,
-            desc:'Charge 1\nDark',
+            desc:'Hold 1\nDark Charge',
         },{
-            name:'White Tonic',id:45,rarity:0,list:3,
-            desc:'Charge 1\nEnergy',
+            name:'White Tonic',id:45,rarity:2,list:3,
+            desc:'Hold 1\nEnergy Charge',
         },{
-            name:'Negative Concoction',id:46,rarity:0,list:4,
+            name:'Negative Concoction',id:46,rarity:1,list:4,
             desc:'Set Balance to Minimum',
         },{
-            name:'Positive Concoction',id:47,rarity:2,list:4,
+            name:'Positive Concoction',id:47,rarity:1,list:4,
             desc:'Set Balance to Maximum',
         },{
             name:'Magnet Tonic',id:48,rarity:0,list:4,
@@ -5099,6 +5102,24 @@ types={
         },{
             name:'Cola',id:50,rarity:-1,list:0,
             desc:'Heal 20 Health, You Must\nAttack or Take 15 Damage',
+        },{
+            name:'',id:49,rarity:0,list:5,
+            desc:'',
+        },{
+            name:'',id:50,rarity:0,list:5,
+            desc:'',
+        },{
+            name:'',id:51,rarity:0,list:5,
+            desc:'',
+        },{
+            name:'',id:52,rarity:0,list:6,
+            desc:'',
+        },{
+            name:'',id:53,rarity:0,list:6,
+            desc:'',
+        },{
+            name:'',id:54,rarity:0,list:6,
+            desc:'',
         },
     ],event:[
         {
@@ -7948,7 +7969,7 @@ types={
                     link:[],
                 },
             ],
-        },//last guardian, leverage, the admiral, black market business, midnight climax, blitz, rocket troop, rally, edel, management revelation, the kids
+        },//last guardian, leverage, the admiral, black market business, midnight climax, blitz, rocket troop, rally, management revelation, the kids
     ],
 }
 listing={

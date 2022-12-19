@@ -314,8 +314,14 @@ function generateListing(cards,encounters,events){
 			if(cards[a].rarity<0){
 				listing.card[cards[a].list][3].push(a)
 			}else{
-				listing.card[cards[a].list][cards[a].rarity].push(a)
-				listing.card[stage.playerNumber][cards[a].rarity].push(a)
+				if(cards[a].list==stage.playerNumber){
+					for(g=0;g<5;g++){
+						listing.card[cards[a].list][cards[a].rarity].push(a)
+					}
+				}else{
+					listing.card[cards[a].list][cards[a].rarity].push(a)
+					listing.card[stage.playerNumber][cards[a].rarity].push(a)
+				}
 				listing.card[14][cards[a].rarity].push(a)
 			}
 		}
