@@ -3692,6 +3692,8 @@ types={
             {damage:1,alt:0,cost:0,attack:638,target:0,spec:0,class:2},
         ],
         },
+
+        //5,5,2
         
         {name:'Empty',rarity:-1,list:-1,
         stats:[
