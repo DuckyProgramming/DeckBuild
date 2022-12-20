@@ -3966,6 +3966,11 @@ types={
             {damage:6,alt:0,cost:0,attack:406,target:1,spec:0,class:0},
             {damage:9,alt:0,cost:0,attack:406,target:1,spec:0,class:0},
         ],
+        },{name:'Broken\nParts',rarity:-3,list:0,
+        stats:[
+            {damage:1,alt:1,cost:0,attack:721,target:0,spec:3,class:2},
+            {damage:2,alt:1,cost:0,attack:721,target:0,spec:3,class:2},
+        ],
         },
         //13/16
         
@@ -4667,7 +4672,7 @@ types={
             desc:'Every 5 Turns,\nGain 1 Intangible',
         },{
             name:'Soul in a Bottle',id:81,rarity:2,list:0,
-            desc:'Gain 50% HP Instead of\nDying, Only Usable Once',
+            desc:'Gain 10% HP Instead of\nDying, Only Usable Once',
         },{
             name:'Baguette',id:82,rarity:2,list:0,
             desc:'When Taken,\nGain 14 Max HP',
@@ -7926,6 +7931,33 @@ types={
                     "You barely get away. Unfortunately it feels like you sprained something however.",
                     option:['Escape'],
                     optionDesc:['Gain 1 Card, Become Cursed - Injury'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Junkyard',id:106,list:5,
+            pages:[
+                {
+                    desc:"On the ground before you is a massive pile of random materials.\n"+
+                    "You can spot many different parts that could be useful, but they're all random, and don't fit together.\n"+
+                    "You could definitely carry a lot of them, but that will drastically slow you down.",
+                    option:['Take All','Take Some','Leave it'],
+                    optionDesc:['','',''],
+                    link:[1,2],
+                },{
+                    desc:"You grab as much metal as you can carry with you and take it with you as you leave.",
+                    option:['Keep it'],
+                    optionDesc:['Gain 3 Broken Parts'],
+                    link:[-1],
+                },{
+                    desc:"You grab a couple pieces so you're not overuncumbered.",
+                    option:['Keep it'],
+                    optionDesc:['Gain 1 Broken Parts, Heal 5 Health'],
+                    link:[-1],
+                },{
+                    desc:"The parts are too random to be useful for anything.",
+                    option:['Leave'],
+                    optionDesc:['Heal 15 Health'],
                     link:[-1],
                 },
             ],

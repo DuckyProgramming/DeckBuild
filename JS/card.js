@@ -788,6 +788,7 @@ class card{
             case 718: this.desc+='Add '+this.damage+' Block\nPer Turn, Increasing\nBlock Gain by '+this.alt; break
             case 719: this.desc+='Remove Primary\nEffect of Target'+"'"+'s\nCurrent Attack'; break
             case 720: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable\nto Self and Target\n'+nfp(-4)+' Balance'; break
+            case 721: this.desc+='Draw '+this.damage+' Cards\nAdd '+this.alt+' Random\nConstruction Card\nto Your Hand'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

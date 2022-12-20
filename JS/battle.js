@@ -52,13 +52,13 @@ class battle{
 
         //this.getRelic(156)
 
-        //this.map.position[0]=0
-        //transition.trigger=true
-        //transition.scene='event'
-        //this.map.complete[0][0]=1
-        //this.event=findEvent('Punching Bag')
+        this.map.position[0]=0
+        transition.trigger=true
+        transition.scene='event'
+        this.map.complete[0][0]=1
+        this.event=106
 
-        this.getPotion(57)
+        //this.getPotion(57)
     }
     create(){
         this.end=false
@@ -3772,6 +3772,18 @@ class battle{
                                 transition.scene='choice'
                                 this.setupChoice(0,2,0)
                                 this.deck.add(findCard('Injury'),0,stage.playerNumber+2)
+                            }
+                        break
+                        case 106:
+                            if(this.page==1&&e==0){
+                                for(g=0;g<3;g++){
+                                    this.deck.add(findCard('Broken\nParts'),0,0)
+                                }
+                            }else if(this.page==2&&e==0){
+                                this.deck.add(findCard('Broken\nParts'),0,0)
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+5)
+                            }else if(this.page==3&&e==0){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
                             }
                         break
                     }

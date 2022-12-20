@@ -3661,6 +3661,14 @@ class attack{
                     this.battle.combatants[0].boost.main[1]-=this.alt
                     this.battle.combatants[0].meter-=4
                 break
+                case 721:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
+                    this.hold.list=[findCard('Construct'),findCard('Repair'),findCard('Duct Tape')]
+                    g=floor(random(0,this.hold.list.length))
+                    this.battle.hand.add(this.hold.list[g],0,types.card[this.hold.list[g]].list)
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
