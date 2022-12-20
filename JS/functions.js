@@ -1463,6 +1463,9 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[5],-20,-10,20,20)
 			layer.image(graphics.symbol[29],4,-8,16,16)
 		break
+		case 174:
+			layer.image(graphics.symbol[48],-12,-12,24,24)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)
@@ -1746,4 +1749,5 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 45-IceCharge
 46-LifeCharge
 47-Construct
+48-Duck
 */

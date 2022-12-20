@@ -4954,6 +4954,9 @@ types={
         },{
             name:'Angelic Sphere',id:173,rarity:-1,list:3,
             desc:'Draw 1 Card When\nYou Evoke an Orb',
+        },{
+            name:'Ducksquad Badge',id:174,rarity:-1,list:3,
+            desc:'You Do Not Have\nto Fight Ducks',
         },/*{
             name:'', d:15,rarity:4,list:0,
             desc:'',
@@ -8031,7 +8034,7 @@ types={
                 },
             ],
         },{
-            name:'Re-Tooling',id:110,list:-1,
+            name:'Re-Tooling',id:110,list:5,
             pages:[
                 {
                     desc:"You find an auto shop along the road and enter it to see whats inside.\n"+
@@ -8047,6 +8050,29 @@ types={
                 },{
                     desc:"You leave the auto shop, not havign found anything useful.",
                     option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Ducksquad',id:111,list:5,
+            pages:[
+                {
+                    desc:"A clump of ducks are hiding in the forest talking. When they see you, they invite you over.\n"+
+                    "They say they're forming a resistance against human domination on the planet.\n"+
+                    "One offers you something weird.\n"+
+                    '"'+"You'll need this to recognize other members of the order."+'"',
+                    option:['Take it','Run'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"You take the thing he offered.",
+                    option:['Leave'],
+                    optionDesc:['Gain 1 Relic'],
+                    link:[-1],
+                },{
+                    desc:"You run away. He chases you, but he's too slow to catch up.",
+                    option:['Get away'],
                     optionDesc:[''],
                     link:[-1],
                 },

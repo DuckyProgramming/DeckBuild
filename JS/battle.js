@@ -50,13 +50,13 @@ class battle{
         setupEncounter(this,type)
         this.create()
 
-        //this.getRelic(156)
+        this.getRelic(174)
 
-        this.map.position[0]=0
-        transition.trigger=true
-        transition.scene='event'
-        this.map.complete[0][0]=1
-        this.event=key
+        //this.map.position[0]=0
+        //transition.trigger=true
+        //transition.scene='event'
+        //this.map.complete[0][0]=1
+        //this.event=key
 
         //this.getPotion(57)
     }
@@ -3818,6 +3818,11 @@ class battle{
                                 this.currency.money-=40
                             }else if(this.page==1&&e==0){
                                 this.deck.add(findCard('Monkey\nWrench'),0,0)
+                            }
+                        break
+                        case 111:
+                            if(this.page==1&&e==0){
+                                this.getRelic(findRelic('Ducksquad Badge'))
                             }
                         break
                     }
