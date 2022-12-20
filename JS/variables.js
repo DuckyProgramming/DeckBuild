@@ -5115,11 +5115,14 @@ types={
             name:'Liquid Memories',id:54,rarity:1,list:6,
             desc:'Return Memory Cards\nin Discard Pile to Hand',
         },{
-            name:'Bottled Knife',id:55,rarity:0,list:6,
-            desc:'Add 2 Shivs\nto Your Hand',
+            name:'Deuterium Water',id:55,rarity:2,list:6,
+            desc:'Turn All Cards in Hand With\nAttributes Into Normal Cards',
         },{
-            name:'Compression Brew',id:56,rarity:0,list:6,
-            desc:'When You Play a Card,\nTarget Takes 4 Damage',
+            name:'Bonk',id:56,rarity:0,list:6,
+            desc:'Tick Statuses',
+        },{
+            name:'Time Stop',id:57,rarity:2,list:0,
+            desc:'Take an Extra Turn After Current Turn',
         },
     ],event:[
         {

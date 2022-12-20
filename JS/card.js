@@ -49,19 +49,19 @@ class card{
         }
         switch(this.attack){
             case -2: this.desc+='Take '+this.damage+' Damage\nPer Card Played'; break
-            case -3: this.desc+='Ethereal'; break
+            case -3: if(this.spec!=0){this.desc+='Ethereal'}; break
             case -4: this.desc+='At End of Turn,\nGain 1 Weak'; break
             case -5: this.desc+='Take 1 Damage\nPer Card Not Played'; break
             case -7: this.desc+='At End of Turn,\nGain 1 Vulnerable'; break
             case -8: this.desc+='When Removed,\nLose 3 Max Health'; break
-            case -9: this.desc+='When Drawn,\nLose 1 Energy\nEthereal'; break
+            case -9: this.desc+='When Drawn,\nLose 1 Energy'; if(this.spec!=0){this.desc+='\nEthereal'}; break
             case -10: this.desc+='At End of Turn,\nTake 2 Damage'; break
             case -11: this.desc+='Cannot Play more\nthan 3 Cards'; break
             case -12: this.desc+='Cannot Play more\nthan 1 Attack\nWhen Played,\nBreak Balance'; break
             case -13: this.desc+='Unremovable'; break
             case -14: this.desc+='At End of Turn,\nAdd 2 Bleed'; break
             case -15: this.desc+='When Drawn, Gain\n2 Temporary Weak'; break
-            case -16: this.desc+='When Drawn,\na Random Card\nGains 1 Cost\nEthereal'; break
+            case -16: this.desc+='When Drawn,\na Random Card\nGains 1 Cost'; if(this.spec!=0){this.desc+='\nEthereal'} break
             case -17: this.desc+='When Drawn,\nLose 1 Energy'; break
             case -18: this.desc+='All Cards\nCost 1 More'; break
             case -19: this.desc+='When Drawn,\nAttacks Deal\n2 Less Damage'; break
@@ -215,8 +215,8 @@ class card{
             case 145: this.desc+='Add '+this.damage+' Dodge\nCounter '+this.alt+' Once'; break
             case 146: this.desc+='Add '+this.damage+' Block\nGain 2 Combo\nYou Must Attack\nor Take '+this.alt+' Damage'; break
             case 147: this.desc+='Attacks Apply '+this.damage+'\nBleed This Turn'; break
-            case 148: this.desc+='Redraw your hand\nExhaust\nEthereal'; break
-            case 149: this.desc+='Add '+this.damage+' Dodge\nExhausted when\nAnother Card Played\nDiscard Hand\nExhaust\nEthereal'; break
+            case 148: this.desc+='Redraw your hand'; if(this.spec!=0){this.desc+='\nExhaust\nEthereal'} break
+            case 149: this.desc+='Add '+this.damage+' Dodge\nExhausted when\nAnother Card Played\nDiscard Hand'; if(this.spec!=0){this.desc+='\nExhaust\nEthereal'}; break
             case 150: if(this.damage==0){this.desc+='Draw X Cards'}else{this.desc+='Draw X+'+this.damage+' Cards'}; break
             case 151: this.desc+='Increase Collision\nDamage by '+this.damage; break
             case 152: if(this.damage==0){this.desc+='Pull Collision\nfor '+this.alt+' Damage'}else{this.desc+='Deal '+this.damage+' Damage\nPull Collision\nfor '+this.alt+' Damage'}; break
@@ -237,7 +237,7 @@ class card{
             case 167: this.desc+='When Discarded,\nDraw '+this.damage+' Cards'; break
             case 168: this.desc+='When Discarded,\nGain '+this.damage+' Energy'; break
             case 169: this.desc+='Discard '+this.damage+' Cards\nGain '+this.alt+' Energy'; break
-            case 170: this.desc+='Draw 1 Card\nDiscard 1 Card\nExhaust\nEthereal'; break
+            case 170: this.desc+='Draw 1 Card\nDiscard 1 Card'; if(this.spec!=0){this.desc+='\nExhaust\nEthereal'}; break
             case 171: this.desc+='Gain '+this.damage+'\nControl'; break
             case 172: this.desc+='Apply '+this.damage+'\nVulnerable'; break
             case 173: this.desc+='Apply '+this.damage+'\nPoison'; break
@@ -462,7 +462,7 @@ class card{
             case 392: this.desc+='Lose '+this.damage+' Health\nGain '+this.alt+' Strength'; break
             case 393: this.desc+='Lose '+this.damage+' Health\nGain '+this.alt+' Dexterity'; break
             case 394: this.desc+='Lose '+this.damage+' Health\nGain '+this.alt+' Energy'; break
-            case 395: this.desc+='Gain '+this.damage+' Intangible\nExhaust\nEthereal'; break
+            case 395: this.desc+='Gain '+this.damage+' Intangible'; if(this.spec!=0){this.desc+='\nExhaust\nEthereal'} break
             case 396: this.desc+='Deal '+this.damage+' Damage\nHeal '+this.alt+' Health'; break
             case 397: this.desc+='A Random Card\nin Your Hand\nCosts 0'; break
             case 398: this.desc+='Hold '+this.damage+' Light Charge\nGain '+this.alt+' Weak\nGain '+this.alt+' Frail'; break
@@ -664,8 +664,8 @@ class card{
             case 594: this.desc+='Deal '+this.damage+' Damage\nDiscard All\nNon-Attacks'; break
             case 595: this.desc+='Gain '+this.damage+' Intangible\nLose '+this.alt+' Dexterity\nPer Turn'; break
             case 596: this.desc+='When You Draw a\nStatus or Curse,\nDeal '+this.damage+' Damage\nto All Enemies'; break
-            case 597: this.desc+='Deal '+this.damage+' Damage\nEthereal'; break
-            case 598: this.desc+='Add '+this.damage+' Block\nEthereal'; break
+            case 597: this.desc+='Deal '+this.damage+' Damage'; if(this.spec!=0){this.desc+='\nEthereal'} break
+            case 598: this.desc+='Add '+this.damage+' Block'; if(this.spec!=0){this.desc+='\nEthereal'} break
             case 599: this.desc+='Deal '+this.damage+' Damage\nTemporarily Increase\nDamage by '+this.alt; break
             case 600: this.desc+='Add '+this.damage+' Block\nGain '+this.alt+' Energy\nWhen Exhausted'; break
             case 601: this.desc+='Deal '+this.damage+' Damage\nExhaust Non-Attacks\nin Your Hand'; break
@@ -694,7 +694,7 @@ class card{
             case 624: this.desc+='Add a Random\nMemory to\nYour Hand'; break
             case 625: this.desc+='Memories in Hand\nLose Memory'; break
             case 626: this.desc+='Cards in Hand\nCost 0 and\nBecome Memories'; break
-            case 627: this.desc+='Draw '+this.damage+' Cards\nEthereal'; break
+            case 627: this.desc+='Draw '+this.damage+' Cards'; if(this.spec!=0){this.desc+='\nEthereal'} break
             case 628: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+'\nRandom Status'; break
             case 629: this.desc+='Gain '+this.damage+' Intangible\nand '+this.alt+' Energy\nNext Turn'; break
             case 630: this.desc+='Tick Statuses'; break

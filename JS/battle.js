@@ -58,7 +58,7 @@ class battle{
         //this.map.complete[0][0]=1
         //this.event=findEvent('Punching Bag')
 
-        this.getPotion(54)
+        this.getPotion(57)
     }
     create(){
         this.end=false
@@ -1643,6 +1643,29 @@ class battle{
                                 this.draw()
                             }
                             this.random.upgrading=2*this.random.potionEffectiveness
+                        break
+                        case 54:
+                            for(g=0,lg=this.discard.cards.length;g<lg;g++){
+                                if(this.discard.cards[g].spec==16){
+                                    this.hand.cards.push(this.discard.cards[g])
+                                    this.hand.cards[this.hand.cards.length-1].position.x=1206
+                                    this.hand.cards[this.hand.cards.length-1].position.y=500
+                                    this.discard.cards.splice(g,1)
+                                    g--
+                                    lg--
+                                }
+                            }
+                        break
+                        case 55:
+                            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                                this.hand.cards[g].spec=0
+                            }
+                        break
+                        case 56:
+                            this.tickStatus()
+                        break
+                        case 57:
+                            this.combatants[0].status.main[115]++
                         break
                     }
                 }

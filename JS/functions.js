@@ -1677,10 +1677,20 @@ function displayPotionSymbol(layer,x,y,type,direction,size,flip){
 			layer.image(graphics.symbol[5],-2,-8,16,16)
 		break
 		case 54:
+			layer.text('M',0,0)
+			layer.image(graphics.symbol[5],-10,-10,20,20)
 		break
 		case 55:
+			layer.image(graphics.symbol[3],-8,-8,16,16)
+			layer.image(graphics.symbol[5],-12,-12,24,24)
 		break
 		case 56:
+			layer.image(graphics.symbol[27],-14,-8,16,16)
+			layer.image(graphics.symbol[36],0,-8,16,16)
+		break
+		case 57:
+			layer.image(graphics.symbol[1],-10,-16,20,20)
+			layer.image(graphics.symbol[1],-10,-4,20,20)
 		break
 	}
 	layer.scale(1/size,1/size/flip)
