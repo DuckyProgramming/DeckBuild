@@ -3971,8 +3971,13 @@ types={
             {damage:1,alt:1,cost:0,attack:721,target:0,spec:3,class:2},
             {damage:2,alt:1,cost:0,attack:721,target:0,spec:3,class:2},
         ],
+        },{name:'Monkey\nWrench',rarity:-3,list:0,
+        stats:[
+            {damage:4,alt:0,cost:0,attack:722,target:0,spec:3,class:2},
+            {damage:2,alt:0,cost:0,attack:722,target:0,spec:3,class:2},
+        ],
         },
-        //13/16
+        //15/16
         
         {name:'Clumsy',rarity:-1,list:10,
         stats:[
@@ -4672,7 +4677,7 @@ types={
             desc:'Every 5 Turns,\nGain 1 Intangible',
         },{
             name:'Soul in a Bottle',id:81,rarity:2,list:0,
-            desc:'Gain 10% HP Instead of\nDying, Only Usable Once',
+            desc:'Gain 50% HP Instead of\nDying, Only Usable Once',
         },{
             name:'Baguette',id:82,rarity:2,list:0,
             desc:'When Taken,\nGain 14 Max HP',
@@ -7961,6 +7966,91 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'Deluxe Building',id:107,list:5,
+            pages:[
+                {
+                    desc:"You find a blueprint on the ground. It looks old, but well designed.\n"+
+                    "Perhaps it's worth styding?",
+                    option:['Take it','Don'+"'"+'t'],
+                    optionDesc:['Gain a Random Upgraded Blueprint',''],
+                    link:[1,2],
+                },{
+                    desc:"You pick it up and study it, learning some new designs.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"You leave it where you found it.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Black Market Business',id:108,list:5,
+            pages:[
+                {
+                    desc:"A mysterious man in an alley invites you inside a hidden building.\n"+
+                    "When you enter, you find yourself in a massive black market full of valuable things.",
+                    option:['Browse the Stuff','Run'],
+                    optionDesc:['',''],
+                    link:[-1,1],
+                },{
+                    desc:"You get away, and nobody chases after you.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Duck Rights',id:109,list:5,
+            pages:[
+                {
+                    desc:"A rally is forming in a nearby town. A large group of ducks are beginning a protest.\n"+
+                    "They ask for better conditions and equality to humans in Konai, citing their longtime existence there.\n"+
+                    "They haven't noticed you yet, but you can join the rally.",
+                    option:['Join in','Stay out of it'],
+                    optionDesc:['',''],
+                    link:[1,3],
+                },{
+                    desc:"The organizer thanks you for joining in, but you know that it isn't going to change anything.",
+                    option:['Leave'],
+                    optionDesc:['Gain 25 Currency'],
+                    link:[-1],
+                },{
+                    desc:"The riot police arrive and disperse the crowd.",
+                    option:['Ouch'],
+                    optionDesc:['Lose 6 Health'],
+                    link:[-1],
+                },{
+                    desc:"You later hear that the riot police dispersed the situation.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Re-Tooling',id:110,list:-1,
+            pages:[
+                {
+                    desc:"You find an auto shop along the road and enter it to see whats inside.\n"+
+                    "Obviously you don't have a car, but you may be able to buy some tools.",
+                    option:['Buy a Tool','Don'+"'"+'t'],
+                    optionDesc:['Lose 40 Currency',''],
+                    link:[1,2],
+                },{
+                    desc:"You pay for the one tool that you don't already have.",
+                    option:['Take it'],
+                    optionDesc:['Gain 1 Monkey\nWrench'],
+                    link:[-1],
+                },{
+                    desc:"You leave the auto shop, not havign found anything useful.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
         
         
@@ -8004,7 +8094,7 @@ types={
                     link:[],
                 },
             ],
-        },//last guardian, leverage, the admiral, black market business, midnight climax, blitz, rocket troop, rally, management revelation, the kids
+        },//last guardian, leverage, the admiral, midnight climax, blitz, rocket troop, rally, management revelation, the kids
     ],
 }
 listing={

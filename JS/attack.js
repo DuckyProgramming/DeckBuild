@@ -3669,6 +3669,12 @@ class attack{
                     g=floor(random(0,this.hold.list.length))
                     this.battle.hand.add(this.hold.list[g],0,types.card[this.hold.list[g]].list)
                 break
+                case 722:
+                    if(this.battle.combatants[1].life<this.battle.combatants[1].base.life&&this.battle.combatants[1].built==0){
+                        this.battle.combatants[1].life=this.battle.combatants[1].base.life
+                    }
+                    this.battle.combatants[0].take(this.damage,-1)
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

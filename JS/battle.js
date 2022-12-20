@@ -41,7 +41,7 @@ class battle{
         this.defaultRandom={attacked:0,orbs:0,shields:0,hits:0,discards:0}
         stage.identifier=types.combatant[this.player].identifiers
     }
-    setupTesting(type){
+    setupTesting(type,key){
         this.initialEvent()
         this.setupMap()
         //this.draftDeck()
@@ -56,7 +56,7 @@ class battle{
         transition.trigger=true
         transition.scene='event'
         this.map.complete[0][0]=1
-        this.event=106
+        this.event=key
 
         //this.getPotion(57)
     }
@@ -3786,6 +3786,40 @@ class battle{
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
                             }
                         break
+                        case 107:
+                            if(this.page==0&&e==0){
+                                this.calc.list=[]
+                                for(g=0,lg=types.card.length;g<lg;g++){
+                                    if(types.card[g].list==this.player&&types.card[g].stats[1].class==3){
+                                        this.calc.list.push(g)
+                                    }
+                                }
+                                this.deck.add(this.calc.list[floor(random(0,this.calc.list.length))],1,this.player)
+                            }
+                        break
+                        case 108:
+                            if(this.page==0&&e==0){
+                                transition.trigger=true
+                                transition.scene='shop'
+                                this.setupShop(2)
+                            }
+                        break
+                        case 109:
+                            if(this.page==0&&e==0&&floor(random(0,2))==0){
+                                this.remember[0]=1
+                            }else if(this.page==1&&e==0){
+                                this.currency.money+=25
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-6)
+                            }
+                        break
+                        case 110:
+                            if(this.page==0&&e==0){
+                                this.currency.money-=40
+                            }else if(this.page==1&&e==0){
+                                this.deck.add(findCard('Monkey\nWrench'),0,0)
+                            }
+                        break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){
                         this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]
@@ -3824,7 +3858,7 @@ class battle{
                     }
                 }
                 this.costs.card[0][this.costs.sale]=round(this.costs.card[0][this.costs.sale]/2)
-                this.calc.list=listing.card[this.player]
+                this.calc.list=copyList(listing.card[this.player])
                 for(g=0;g<5;g++){
                     if(this.calc.list.length>0){
                         h=floor(random(0,this.calc.list[floor(g/2)].length))
@@ -3832,7 +3866,7 @@ class battle{
                         this.calc.list[floor(g/2)].splice(h,1)
                     }
                 }
-                this.calc.list2=listing.card[0]
+                this.calc.list2=copyList(listing.card[0])
                 for(g=0;g<2;g++){
                     if(this.calc.list2.length>0){
                         h=floor(random(0,this.calc.list2[g+1].length))
@@ -3842,7 +3876,7 @@ class battle{
                 }
                 this.relics.shop=[]
                 this.relics.size=[]
-                this.calc.list3=this.relics.list
+                this.calc.list3=copyList(this.relics.list)
                 for(g=0;g<6;g++){
                     if(this.calc.list3.length>0){
                         h=floor(random(0,this.calc.list3[floor(g/2)+floor(g/5)].length))
@@ -3855,7 +3889,7 @@ class battle{
             case 1:
                 this.relics.shop=[]
                 this.relics.size=[]
-                this.calc.list3=this.relics.list
+                this.calc.list3=copyList(this.relics.list)
                 for(g=0;g<2;g++){
                     this.costs.relic[g]=round(random(50,70))
                     this.costs.relic[2+g]=round(random(50,70))
@@ -3870,6 +3904,60 @@ class battle{
                         this.relics.shop.push(this.calc.list3[floor(g/4)+floor(g/10)][h])
                         this.relics.size.push(1)
                         this.calc.list3[floor(g/4)+floor(g/10)].splice(h,1)
+                    }
+                }
+            break
+            case 2:
+                this.costs.card[0][0]=round(random(96,128))
+                this.costs.card[0][1]=round(random(96,128))
+                this.costs.card[0][2]=round(random(96,128))
+                this.costs.card[0][3]=round(random(96,128))
+                this.costs.card[0][4]=round(random(96,128))
+                this.costs.card[1][0]=round(random(128,144))
+                this.costs.card[1][1]=round(random(128,144))
+                this.costs.relic[0]=round(random(144,160))
+                this.costs.relic[1]=round(random(144,160))
+                this.costs.relic[2]=round(random(144,160))
+                this.costs.relic[3]=round(random(144,160))
+                this.costs.relic[4]=round(random(72,88))
+                this.costs.relic[5]=round(random(72,88))
+                this.costs.sale=floor(random(0,5))
+                if(this.relics.active[109]){
+                    for(g=0,lg=this.costs.card.length;g<lg;g++){
+                        for(h=0,lh=this.costs.card[g].length;h<lh;h++){
+                            this.costs.card[g][h]=round(this.costs.card[g][h]/2)
+                        }
+                    }
+                    for(g=0,lg=this.costs.relic.length;g<lg;g++){
+                        this.costs.relic[g]=round(this.costs.relic[g]/2)
+                    }
+                }
+                this.costs.card[0][this.costs.sale]=round(this.costs.card[0][this.costs.sale]/2)
+                this.calc.list=copyList(listing.card[this.player])
+                for(g=0;g<5;g++){
+                    if(this.calc.list.length>0){
+                        h=floor(random(0,this.calc.list[2].length))
+                        this.shop.cards.push(new card(this.layer,75+g*150,200,this.calc.list[2][h],0,types.card[this.calc.list[2][h]].list))
+                        this.calc.list[2].splice(h,1)
+                    }
+                }
+                this.calc.list2=copyList(listing.card[0])
+                for(g=0;g<2;g++){
+                    if(this.calc.list2.length>0){
+                        h=floor(random(0,this.calc.list2[2].length))
+                        this.shop.cards.push(new card(this.layer,75+g*150,400,this.calc.list2[2][h],0,0))
+                        this.calc.list2[2].splice(h,1)
+                    }
+                }
+                this.relics.shop=[]
+                this.relics.size=[]
+                this.calc.list3=copyList(this.relics.list)
+                for(g=0;g<6;g++){
+                    if(this.calc.list3.length>0){
+                        h=floor(random(0,this.calc.list3[2+floor(g/4)].length))
+                        this.relics.shop.push(this.calc.list3[2+floor(g/4)][h])
+                        this.relics.size.push(1)
+                        this.calc.list3[2+floor(g/4)].splice(h,1)
                     }
                 }
             break
