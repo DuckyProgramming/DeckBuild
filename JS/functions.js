@@ -1508,6 +1508,21 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.text('R',0,6)
 			layer.image(graphics.symbol[5],-16,-16,32,32)
 		break
+		case 181:
+			layer.textSize(10)
+			layer.text('1',8,0)
+			layer.image(graphics.symbol[5],-18,-10,20,20)
+			layer.image(graphics.symbol[5],-2,-10,20,20)
+			layer.image(graphics.symbol[47],-14,-6,12,12)
+		break
+		case 182:
+			layer.textSize(10)
+			layer.text('1',9,0)
+			layer.text('E',-7,-4)
+			layer.text('M',-7,4)
+			layer.image(graphics.symbol[5],-1,-10,20,20)
+			layer.image(graphics.symbol[5],-19,-12,24,24)
+		break
 	}
 	layer.scale(1/size,1/size/flip)
 	layer.rotate(-direction)

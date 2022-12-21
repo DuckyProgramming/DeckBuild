@@ -426,6 +426,9 @@ class group{
                     if(this.battle.relics.active[96]){
                         this.battle.combatants[0].addBlock(3)
                     }
+                    if(this.battle.relics.active[182]&&this.cards[e].spec==16){
+                        this.battle.draw()
+                    }
                 }
                 this.battle.discard.cards.push(copyCard(this.cards[e]))
                 if(this.cards[e].trigger){

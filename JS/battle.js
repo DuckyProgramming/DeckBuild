@@ -49,15 +49,15 @@ class battle{
         stage.scene='battle'
         setupEncounter(this,type)
 
-        this.getRelic(key)
+        //this.getRelic(key)
 
         this.create()
 
-        //this.map.position[0]=0
-        //transition.trigger=true
-        //transition.scene='event'
-        //this.map.complete[0][0]=1
-        //this.event=key
+        this.map.position[0]=0
+        transition.trigger=true
+        transition.scene='event'
+        this.map.complete[0][0]=1
+        this.event=key
 
         //this.getPotion(57)
     }
@@ -1084,6 +1084,11 @@ class battle{
             }
             for(g=0;g<this.combatants[0].status.main[57];g++){
                 this.combatants[0].load(0,0)
+            }
+        }
+        if(this.attack.class==3){
+            if(this.relics.active[181]){
+                this.draw()
             }
         }
         for(g=0,lg=this.hand.cards.length;g<lg;g++){

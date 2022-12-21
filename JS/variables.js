@@ -4976,11 +4976,11 @@ types={
             name:'Memory Jar',id:180,rarity:2,list:5,
             desc:'Memories have Retain',
         },{
-            name:'',id:181,rarity:3,list:4,
-            desc:'',
+            name:'Extra Schematics',id:181,rarity:3,list:4,
+            desc:'When You Play a\nBlueprint, Draw 1 Card',
         },{
-            name:'',id:182,rarity:3,list:5,
-            desc:'',
+            name:'Star Chart',id:182,rarity:3,list:5,
+            desc:'Whenever You Discard\na Memory, Draw 1 Carde',
         },/*{
             name:'',id:18,rarity:4,list:0,
             desc:'',
