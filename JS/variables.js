@@ -4731,7 +4731,7 @@ types={
             desc:'Add 2 Shiv at the\nStart of Combat',
         },{
             name:'Lost Scroll',id:99,rarity:2,list:1,
-            desc:'Combo Cards Only Remove 2 Combo',
+            desc:'Combo Cards Only\nCost 2 Combo',
         },{
             name:'Holy Rage',id:100,rarity:2,list:2,
             desc:'Deal 3x Damage in Wrath\nand 4x Damage in Divinity',
@@ -4957,8 +4957,32 @@ types={
         },{
             name:'Ducksquad Badge',id:174,rarity:-1,list:3,
             desc:'You Do Not Have\nto Fight Ducks',
+        },{
+            name:'Opening',id:175,rarity:0,list:4,
+            desc:'All Builds Start\nWith 5 Progress',
+        },{
+            name:'',id:176,rarity:0,list:5,
+            desc:'',
+        },{
+            name:'Crack Shot',id:177,rarity:1,list:4,
+            desc:'Unblocked, Uncounterable\nAttacks Deal +1 Damage',
+        },{
+            name:'',id:178,rarity:1,list:5,
+            desc:'',
+        },{
+            name:'',id:179,rarity:2,list:4,
+            desc:'',
+        },{
+            name:'Memory Jar',id:180,rarity:2,list:5,
+            desc:'Memories have Retain',
+        },{
+            name:'',id:181,rarity:3,list:4,
+            desc:'',
+        },{
+            name:'',id:182,rarity:3,list:5,
+            desc:'',
         },/*{
-            name:'', d:15,rarity:4,list:0,
+            name:'',id:18,rarity:4,list:0,
             desc:'',
         },*/
     ],potion:[

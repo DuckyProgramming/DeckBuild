@@ -35,7 +35,7 @@ class battle{
         this.page=0
         this.discarding=0
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
-        this.relics={list:[[],[],[],[]],owned:[],active:[],shop:[],size:[]}
+        this.relics={list:[[],[],[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
         this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,copying:0,play2More:0,exiling:0,releasing:0}
         this.defaultRandom={attacked:0,orbs:0,shields:0,hits:0,discards:0}
@@ -50,7 +50,7 @@ class battle{
         setupEncounter(this,type)
         this.create()
 
-        this.getRelic(174)
+        this.getRelic(key)
 
         //this.map.position[0]=0
         //transition.trigger=true
@@ -1185,6 +1185,9 @@ class battle{
         this.combatants[1]=new combatant(this.layer,this,200,350,findCombatant(type),0,1)
         this.combatants[1].life=min(this.remember[0],this.combatants[1].base.life)
         this.combatants[1].collect.life=this.remember[0]
+        if(this.relics.active[175]){
+            this.combatants[1].life=min(this.combatants[1].base.life,this.combatants[1].life+5)
+        }
     }
     constructEffect(){
         if(this.combatants[1].built==1){
