@@ -1590,8 +1590,8 @@ types={
         ],
         },{name:'Lies',rarity:2,list:3,
         stats:[
-            {damage:0,alt:0,cost:3,attack:354,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:2,attack:354,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:1,attack:354,target:0,spec:0,class:2},
         ],
         },{name:'Others'+"'"+'\nMistakes',rarity:1,list:3,
         stats:[
@@ -8152,6 +8152,54 @@ types={
                     option:['Leave'],
                     optionDesc:[''],
                     link:[-1],
+                },
+            ],
+        },{
+            name:'Take Out the Trash',id:114,list:5,
+            pages:[
+                {
+                    desc:"You find your way to the waste disposal site, for some reason.\n"+
+                    "Your notice several boxes on the side, containing random stuff.\n"+
+                    "Suddenly, an employee notices you. You might be able to grab something before you run.",
+                    option:['Grab the "Random" Box','Grab the "Assorted" Box','Run'],
+                    optionDesc:['','',''],
+                    link:[1,2,3],
+                },{
+                    desc:"You grab the box, but you can't tell what's inside.",
+                    option:['Run'],
+                    optionDesc:['Gain 3 Random Cards'],
+                    link:[-1],
+                },{
+                    desc:"You grab the box, but you can't tell what's inside.",
+                    option:['Run'],
+                    optionDesc:['Gain 1 Relic'],
+                    link:[-1],
+                },{
+                    desc:"You get out of there.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Regular Maintenance',id:115,list:5,
+            pages:[
+                {
+                    desc:"You see a pothole in the road. Most people would disregard it, but...\n"+
+                    "You have to fix it!",
+                    option:['FIX IT','Resist the Urge'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"Why did you do that?",
+                    option:['?'],
+                    optionDesc:['Gain 1 Card'],
+                    link:[-1],
+                },{
+                    desc:"You have to do it!",
+                    option:['FIX IT'],
+                    optionDesc:[''],
+                    link:[1],
                 },
             ],
         },

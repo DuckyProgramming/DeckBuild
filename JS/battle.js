@@ -3869,6 +3869,27 @@ class battle{
                                 this.context=1
                             }
                         break
+                        case 114:
+                            if(this.page==1&&e==0){
+                                for(h=0;h<3;h++){
+                                    i=floor(random(0,3))
+                                    g=listing.card[14][i][floor(random(0,listing.card[14][i].length))]
+                                    this.deck.add(g,floor(random(0,2)),types.card[g].list)
+                                }
+                            }else if(this.page==2&&e==0){
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.relics.list[g].length))
+                                this.getRelic(this.relics.list[g][f])
+                                this.relics.list[g].splice(f,1)
+                            }
+                        break
+                        case 115:
+                            if(this.page==1&&e==0){
+                                transition.scene='choice'
+                                this.setupChoice(0,0,0)
+                            }
+                        break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){
                         this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]
