@@ -8101,6 +8101,59 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'Homeowners Association',id:112,list:5,
+            pages:[
+                {
+                    desc:"Two men are having a hard time assembling their new home. One of them looks at you.\n"+
+                    '"'+"You look like an engineer. Can you help us with this thing?"+'"\n'+
+                    "You arrive to see they're missing half the materials needed.",
+                    option:['Use Your Materials','Say No'],
+                    optionDesc:['Lose a Random Card',''],
+                    link:[1,2],
+                },{
+                    desc:"With the construction done, you receive your payment.",
+                    option:['Done'],
+                    optionDesc:['Gain 35 Currency'],
+                    link:[-1],
+                },{
+                    desc:"You shake your head and leave, letting them keep building on.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'The Shot',id:113,list:5,
+            pages:[
+                {
+                    desc:"A salesman offers you to pay for some practice shots on a target.",
+                    option:['Take the Shot','Decline'],
+                    optionDesc:['Lose 5 Currency',''],
+                    link:[1,3],
+                },{
+                    desc:"You miss the target.\n"+
+                    '"'+"Another round?"+'"',
+                    option:['Another Round','Decline'],
+                    optionDesc:['Lose 5 Currency',''],
+                    link:[1,4],
+                },{
+                    desc:"You hit the target!",
+                    option:['Nice'],
+                    optionDesc:['Upgrade a Card'],
+                    link:[-1],
+                },{
+                    desc:"You decide not to spend your money on taking shots.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"Having failed to hit the target, you leave the area.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
         
         

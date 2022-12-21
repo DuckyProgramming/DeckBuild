@@ -3850,6 +3850,25 @@ class battle{
                                 this.getRelic(findRelic('Ducksquad Badge'))
                             }
                         break
+                        case 112:
+                            if(this.page==0&&e==0){
+                                this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
+                            }else if(this.page==1&&e==0){
+                                this.currency.money+=35
+                            }
+                        break
+                        case 113:
+                            if((this.page==0||this.page==1)&&e==0){
+                                this.currency.money-=5
+                                if(floor(random(0,3))==0){
+                                    this.remember[0]=1
+                                }
+                            }else if(this.page==2&&e==0){
+                                transition.scene='deck'
+                                this.setupDeck(1)
+                                this.context=1
+                            }
+                        break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){
                         this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]

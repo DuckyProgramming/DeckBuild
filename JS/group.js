@@ -785,7 +785,8 @@ class group{
         for(let e=0,le=this.cards.length;e<le;e++){
             if(this.cards[e].select){
                 if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.cards[e].level==0&&context==1){
-                    this.cards[e]=new card(this.cards[e].layer,this.cards[e].x,this.cards[e].y,this.cards[e].type,this.cards[e].level+1,this.cards[e].color)
+                    this.cards[e].level++
+                    this.cards[e]=reformCard(this.cards[e])
                     transition.trigger=true
                     transition.scene='map'
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&context==4&&this.cards.length>0){

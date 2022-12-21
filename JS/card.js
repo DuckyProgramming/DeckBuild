@@ -852,13 +852,6 @@ class card{
                 this.layer.fill(this.anim.afford*240,0,0,this.fade)
             }
             this.layer.noStroke()
-            this.layer.textSize(8)
-            if(dev.id){
-                this.layer.text(this.id,-this.width/2+10,this.height/2-10)
-            }
-            if(dev.attack){
-                this.layer.text(this.attack,this.width/2-10,this.height/2-10)
-            }
             this.layer.textSize(20)
             if(this.cost==-1){
                 this.layer.text('X',-this.width/2+16,-this.height/2+20)
@@ -941,6 +934,17 @@ class card{
                         this.layer.text('Blueprint',0,this.height/2-10)
                     break
                 }
+            }
+            this.layer.textSize(8)
+            if(dev.id){
+                if(this.id==null){
+                    this.layer.text('-',-this.width/2+10,this.height/2-10)
+                }else{
+                    this.layer.text(this.id,-this.width/2+10,this.height/2-10)
+                }
+            }
+            if(dev.attack){
+                this.layer.text(this.attack,this.width/2-10,this.height/2-10)
             }
             this.layer.scale(1/this.size)
             this.layer.translate(-this.position.x,-this.position.y)
