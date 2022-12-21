@@ -4961,17 +4961,17 @@ types={
             name:'Opening',id:175,rarity:0,list:4,
             desc:'All Builds Start\nWith 5 Progress',
         },{
-            name:'',id:176,rarity:0,list:5,
-            desc:'',
+            name:'Constellation',id:176,rarity:0,list:5,
+            desc:'Every 7 Cards Played,\nDraw 1 Card and Discard 1 Card',
         },{
             name:'Crack Shot',id:177,rarity:1,list:4,
-            desc:'Unblocked, Uncounterable\nAttacks Deal +1 Damage',
+            desc:'Unblocked, Uncounterable\nAttacks Deal +2 Damage',
         },{
-            name:'',id:178,rarity:1,list:5,
-            desc:'',
+            name:'Box of Thoughts',id:178,rarity:1,list:5,
+            desc:'Add 1 Exhausting Memory\nto Your Hand Every Combat',
         },{
-            name:'',id:179,rarity:2,list:4,
-            desc:'',
+            name:'Cargo Pants',id:179,rarity:2,list:4,
+            desc:'The First Exhausting Card\nYou Play Isn'+'"'+'t Exhausted',
         },{
             name:'Memory Jar',id:180,rarity:2,list:5,
             desc:'Memories have Retain',

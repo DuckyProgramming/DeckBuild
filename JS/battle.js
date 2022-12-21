@@ -37,7 +37,7 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,copying:0,play2More:0,exiling:0,releasing:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,copying:0,play2More:0,exiling:0,releasing:0,exhausted:0}
         this.defaultRandom={attacked:0,orbs:0,shields:0,hits:0,discards:0}
         stage.identifier=types.combatant[this.player].identifiers
     }
@@ -48,9 +48,10 @@ class battle{
         this.deck.initial(this.player)
         stage.scene='battle'
         setupEncounter(this,type)
-        this.create()
 
         this.getRelic(key)
+
+        this.create()
 
         //this.map.position[0]=0
         //transition.trigger=true
@@ -82,6 +83,7 @@ class battle{
         this.random.reserving=0
         this.random.copying=0
         this.random.play2More=0
+        this.random.exhausted=0
         this.combatants[0].resetUnique()
         while(this.combatants.length>1){
             this.combatants.splice(this.combatants.length-1,1)
@@ -318,6 +320,17 @@ class battle{
             for(e=0;e<3;e++){
                 this.hand.add(findCard('Miracle'),0,0)
             }
+        }
+        if(this.relics.active[178]){
+            this.calc.list=[]
+            for(e=0,le=types.card.length;e<le;e++){
+                if(types.card[e].stats[0].spec==16){
+                    this.calc.list.push(e)
+                }
+            }
+            e=floor(random(0,this.calc.list.length))
+            this.hand.add(this.calc.list[e],0,types.card[this.calc.list[e]].list)
+            this.hand.cards[this.hand.cards.length-1].exhaust=true
         }
         for(e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].initialBuff()
@@ -1084,6 +1097,10 @@ class battle{
         }
         if(this.random.played%10==0&&this.relics.active[46]){
             this.draw()
+        }
+        if(this.random.played%7==0&&this.relics.active[176]){
+            this.draw()
+            this.discarding++
         }
         if(this.random.played%13==0&&this.combatants[0].status.main[130]>0){
             this.takeAll(this.combatants[0].status.main[130],-1,1)

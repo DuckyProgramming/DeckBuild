@@ -84,7 +84,7 @@ class group{
                 for(e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
-                this.add(findCard('Build\nWall'),0,this.battle.player)
+                this.add(findCard('Pistol'),0,this.battle.player)
                 this.add(findCard('Construct'),0,this.battle.player)
                 /*this.add(598,0,this.battle.player)
                 this.add(599,0,this.battle.player)
@@ -272,7 +272,7 @@ class group{
                 if(this.battle.combatants[0].status.main[79]>0&&this.cards[e].cost>0){
                     this.cards[e].cost=max(0,this.cards[e].cost-this.battle.combatants[0].status.main[79])
                 }
-            }else if((this.cards[e].spec!=2&&this.cards[e].spec!=9&&this.cards[e].spec!=12&&!this.cards[e].retain||this.cards[e].trigger)){
+            }else if((this.cards[e].spec!=2&&this.cards[e].spec!=9&&this.cards[e].spec!=12&&!this.cards[e].retain&&!(this.cards[e].spec==16&&this.battle.relics.active[180])||this.cards[e].trigger)){
                 if(this.battle.relics.active[133]){
                     this.battle.random.drawing--
                 }else{
@@ -397,7 +397,10 @@ class group{
                 if(this.battle.combatants[0].status.main[52]>0){
                     this.battle.combatants[0].status.main[52]--
                 }
-            }else if(this.cards[e].discard||this.cards[e].remove&&this.battle.relics.active[113]&&floor(random(0,2))==0){
+            }else if(this.cards[e].discard||this.cards[e].remove&&this.battle.relics.active[113]&&floor(random(0,2))==0||this.cards[e].remove&&this.battle.relics.active[179]&&this.battle.random.exhausted==0){
+                if(this.battle.relics.active[179]&&this.cards[e].remove){
+                    this.battle.random.exhausted++
+                }
                 if(this.cards[e].selectDiscard){
                     this.cards[e].selectDiscard=false
                     if(this.cards[e].attack==167){
@@ -438,6 +441,7 @@ class group{
                 this.cards.splice(e,1)
                 e--
                 le--
+                this.battle.random.exhausted++
                 if(this.battle.combatants[0].status[46]>0){
                     for(f=0;f<this.battle.combatants[0].status[46];f++){
                         this.battle.draw()

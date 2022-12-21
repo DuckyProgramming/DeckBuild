@@ -2727,7 +2727,7 @@ class combatant{
 				if(extra==1){
 					this.calc.damage+=this.battle.combatants[user].status.main[26]
 				}
-				if(this.id>0&&user==0){
+				if(this.id>0&&this.user==0){
 					if(this.battle.combatants[user].status.main[30]>0){
 						this.calc.damage+=this.battle.combatants[user].status.main[30]
 						this.battle.combatants[user].status.main[30]=0
@@ -2746,6 +2746,9 @@ class combatant{
 							this.battle.combatants[0].take(1,-1)
 						}
 					}
+				}
+				if(this.id>0&&this.battle.relics.active[177]&&user==-1&&this.block<=0){
+					this.calc.damage+=2
 				}
 				if(this.id==0){
 					this.battle.random.taken++
