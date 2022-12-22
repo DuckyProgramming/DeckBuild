@@ -4261,6 +4261,7 @@ types={
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
         {name:'Sharpshot',alt:'',life:240,height:75,behavior:0,attacks:[1,3,8,26],damage:[18,5,12,2],altAttack:[0,3,0,0],class:0,buff:1},
         {name:'Thornvine',alt:'',life:40,height:75,behavior:0,attacks:[1,27,28],damage:[3,2,2],altAttack:[0,0],class:0,buff:0},//70
+        {name:'Management Robot',alt:'',life:60,height:75,behavior:0,attacks:[1,3,29],damage:[10,4,4],altAttack:[0,2,0],class:0,buff:0},
     ],attack:[
         {class:0},//0
         {class:0},
@@ -4289,6 +4290,9 @@ types={
         {class:0},
         {class:1},
         {class:1},
+        {class:1},
+        {class:1},
+        {class:2},
     ],encounter:[
         {//0
             combatants:[0,0,0,0,0,0],
@@ -4465,7 +4469,7 @@ types={
             reinforce:[],
             threshold:2,class:2,zone:0,
             objective:[[0,0,6,0]],
-        },{
+        },{//35
             combatants:[69,0,0,0,0,0],
             reinforce:[],
             threshold:2,class:2,zone:0,
@@ -4473,8 +4477,18 @@ types={
         },{
             combatants:[70,70,0,0,0,0],
             reinforce:[],
+            threshold:3,class:0,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[71,0,0,0,0,0],
+            reinforce:[],
             threshold:2,class:0,zone:0,
-            objective:[[0,0,6,0]],
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[71,71,71,0,0,0],
+            reinforce:[],
+            threshold:3,class:1,zone:0,
+            objective:[[0,0,1,0]],
         },
     ],relic:[
         {

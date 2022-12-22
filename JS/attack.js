@@ -3729,7 +3729,7 @@ class attack{
                     this.battle.combatants[this.target].boost.main[0]-=this.damage
                 break
                 case 8:
-                    this.battle.combatants[this.user].block+=this.damage
+                    this.battle.combatants[this.user].addBlock(this.damage)
                 break
                 case 9:
                     this.battle.combatants[this.target].take(this.damage,this.user)
@@ -3765,7 +3765,7 @@ class attack{
                 case 14:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                     this.attacks.push([1,12,this.user,this.damage])
-                    this.battle.combatants[this.user].block+=this.alt
+                    this.battle.combatants[this.user].addBlock(this.alt)
                 break
                 case 15:
                     this.battle.combatants[this.target].take(this.damage,this.user)
@@ -3773,7 +3773,7 @@ class attack{
                     this.battle.combatants[this.target].boost.main[2]-=this.alt
                 break
                 case 16:
-                    this.battle.combatants[this.user].block+=this.damage
+                    this.battle.combatants[this.user].addBlock(this.damage)
                     this.battle.combatants[this.user].status.main[47]+=this.alt+1
                 break
                 case 17:
@@ -3798,11 +3798,11 @@ class attack{
                     this.battle.reserve.addShuffle(findCard('Burn'),0,stage.playerNumber+1)
                 break
                 case 22:
-                    this.battle.combatants[this.user].block+=this.damage
+                    this.battle.combatants[this.user].addBlock(this.damage)
                     this.battle.combatants[this.user].status.main[89]+=this.alt
                 break
                 case 23:
-                    this.battle.combatants[this.user].block+=this.damage
+                    this.battle.combatants[this.user].addBlock(this.damage)
                     this.battle.combatants[this.user].status.main[90]+=this.alt
                 break
                 case 24:
@@ -3823,6 +3823,13 @@ class attack{
                 break
                 case 28:
                     this.battle.combatants[this.target].status.main[71]+=this.damage
+                break
+                case 29:
+                    for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].team==1&&this.battle.combatants[g].life>0){
+                            this.battle.combatants[g].addBlock(this.damage)
+                        }
+                    }
                 break
                 default:
             }
