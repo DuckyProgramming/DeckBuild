@@ -868,8 +868,8 @@ types={
         ],
         },{name:'Perseverance',rarity:0,list:2,
         stats:[
-            {damage:5,alt:2,cost:1,attack:268,target:0,spec:0,class:1},
-            {damage:7,alt:3,cost:1,attack:268,target:0,spec:0,class:1},
+            {damage:5,alt:2,cost:1,attack:268,target:0,spec:2,class:1},
+            {damage:7,alt:3,cost:1,attack:268,target:0,spec:2,class:1},
         ],
         },{name:'Bearing',rarity:0,list:2,
         stats:[
@@ -4262,6 +4262,7 @@ types={
         {name:'Sharpshot',alt:'',life:240,height:75,behavior:0,attacks:[1,3,8,26],damage:[18,5,12,2],altAttack:[0,3,0,0],class:0,buff:1},
         {name:'Thornvine',alt:'',life:40,height:75,behavior:0,attacks:[1,27,28],damage:[3,2,2],altAttack:[0,0],class:0,buff:0},//70
         {name:'Management Robot',alt:'',life:60,height:75,behavior:0,attacks:[1,3,29],damage:[10,4,4],altAttack:[0,2,0],class:0,buff:0},
+        {name:'Management Drone',alt:'',life:50,height:60,behavior:0,attacks:[1,3,29],damage:[15,6,6],altAttack:[0,2,0],class:1,buff:10},
     ],attack:[
         {class:0},//0
         {class:0},
@@ -4489,6 +4490,11 @@ types={
             reinforce:[],
             threshold:3,class:1,zone:0,
             objective:[[0,0,1,0]],
+        },{
+            combatants:[72,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:0,zone:0,
+            objective:[[0,0,0,0]],
         },
     ],relic:[
         {

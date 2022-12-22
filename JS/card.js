@@ -225,9 +225,9 @@ class card{
             case 154: this.desc+='Add '+this.damage+' Block\nCounter Once With\nPush Collision\nfor '+this.alt+' Damage'; break
             case 155: this.desc+='Deal '+this.damage+' Damage\nDraw 1 Card\nIt Costs 0\nThis Turn'; break
             case 156: this.desc+='Reduce Cost of\nHand by '+this.damage; break
-            case 157: this.desc+='Deal '+this.damage+' Damage\nIf Last Card Played\nwas a Attack,\nGain 1 Energy'; break
+            case 157: this.desc+='Deal '+this.damage+' Damage\nIf Last Card Played\nwas an Attack,\nGain 1 Energy'; break
             case 158: this.desc+='Gain '+this.damage+' Faith\nAdd '+this.alt+' Block'; break
-            case 159: this.desc+='Deal '+this.damage+' Damage\nIf Last Card Played\nwas a Attack,\nApply '+this.alt+' Weak'; break
+            case 159: this.desc+='Deal '+this.damage+' Damage\nIf Last Card Played\nwas an Attack,\nApply '+this.alt+' Weak'; break
             case 160: this.desc+='Deal '+this.damage+' Damage\nIf Last Card Played\nwas a Skill,\nApply '+this.alt+' Vulnerable'; break
             case 161: this.desc+='Deal '+this.damage+' Damage\nAdd a Smite\nto Your Hand'; break
             case 162: this.desc+='Add '+this.damage+' Block\nScry '+this.alt; break
@@ -611,7 +611,7 @@ class card{
             case 540: this.desc+='When You Play 5\nCards in a Turn,\nDeal '+this.damage+' Damage\nto All Enemies'; break
             case 541: this.desc+='Do '+this.damage+' Damage\nto All Enemies\nin 3 Turns'; break
             case 542: this.desc+='Apply '+this.damage+' Mark\nAll Enemies Take\nUncounterable\nDamage Equal\nto their Mark'; break
-            case 543: this.desc+='Target Takes\nUncounterable\nDamage Equal '+this.damage+'x\n to their Mark'; break
+            case 543: this.desc+='Target Takes\nUncounterable\nDamage Equal to\n'+this.damage+'x their Mark'; break
             case 544: this.desc+='Shuffle a Beta\ninto Your\nDraw Pile'; break
             case 545: this.desc+='Shuffle a Omega\ninto Your\nDraw Pile'; break
             case 546: this.desc+='At the End\nof Your Turn,\nDeal '+this.damage+' Damage\nto All Enemies'; break
