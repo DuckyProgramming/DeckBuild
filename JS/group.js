@@ -93,12 +93,11 @@ class group{
                 this.add(602,0,this.battle.player)*/
             break
             case 6:
-                this.add(findCard('Convoke'),0,this.battle.player)
                 for(e=0;e<4;e++){
-                    //this.add(1,0,this.battle.player)
+                    this.add(1,0,this.battle.player)
                 }
                 for(e=0;e<4;e++){
-                    //this.add(2,0,this.battle.player)
+                    this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Survivor'),0,this.battle.player)
                 this.add(findCard('Neutralize'),0,this.battle.player)

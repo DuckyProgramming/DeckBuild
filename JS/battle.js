@@ -3890,6 +3890,15 @@ class battle{
                                 this.setupChoice(0,0,0)
                             }
                         break
+                        case 116:
+                            if(this.page==1&&e==0){
+                                transition.scene='deck'
+                                this.setupDeck(1)
+                                this.context=1
+                            }else if(this.page==2&&e==0){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+10)
+                            }
+                        break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){
                         this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]

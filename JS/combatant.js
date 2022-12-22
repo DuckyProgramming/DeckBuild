@@ -2727,7 +2727,7 @@ class combatant{
 				if(extra==1){
 					this.calc.damage+=this.battle.combatants[user].status.main[26]
 				}
-				if(this.id>0&&this.user==0){
+				if(this.id>0&&user==0){
 					if(this.battle.combatants[user].status.main[30]>0){
 						this.calc.damage+=this.battle.combatants[user].status.main[30]
 						this.battle.combatants[user].status.main[30]=0

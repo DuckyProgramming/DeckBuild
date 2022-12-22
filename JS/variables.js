@@ -1500,7 +1500,7 @@ types={
         ],
         },{name:'Shieldweb',rarity:1,list:3,
         stats:[
-            {damage:1,alt:0,cost:2,attack:337,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:337,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:1,attack:337,target:0,spec:0,class:2},
         ],
         },{name:'Lightspeed',rarity:1,list:3,
@@ -1580,8 +1580,8 @@ types={
         ],
         },{name:'Eminence',rarity:1,list:3,
         stats:[
-            {damage:9,alt:1,cost:2,attack:352,target:1,spec:0,class:0},
-            {damage:15,alt:1,cost:2,attack:352,target:1,spec:0,class:0},
+            {damage:12,alt:1,cost:2,attack:352,target:1,spec:0,class:0},
+            {damage:19,alt:1,cost:2,attack:352,target:1,spec:0,class:0},
         ],
         },{name:'Truth',rarity:1,list:3,
         stats:[
@@ -1595,8 +1595,8 @@ types={
         ],
         },{name:'Others'+"'"+'\nMistakes',rarity:1,list:3,
         stats:[
-            {damage:10,alt:1,cost:2,attack:355,target:1,spec:0,class:0},
             {damage:16,alt:1,cost:2,attack:355,target:1,spec:0,class:0},
+            {damage:22,alt:1,cost:2,attack:355,target:1,spec:0,class:0},
         ],
         },{name:'Enflame',rarity:1,list:3,
         stats:[
@@ -4470,7 +4470,7 @@ types={
             desc:'Counter 3 All\nAt All Times',
         },{
             name:'Bloody Cards',id:12,rarity:0,list:0,
-            desc:'Draw 3 Extra Cards at First\nDamage Taken per Combat',
+            desc:'Draw 3 Extra Cards at First\nDamage Taken Per Combat',
         },{
             name:'Deck of Greed',id:13,rarity:0,list:0,
             desc:'Gain 10 Currency\nWhen Card Added',
@@ -4485,7 +4485,7 @@ types={
             desc:'Gain 1 Energy at\nthe Start of Combat',
         },{
             name:'Scared Piggy',id:17,rarity:0,list:0,
-            desc:'Gain 10 Currency per Room\nUntil You Enter a Shop',
+            desc:'Gain 10 Currency Per Room\nUntil You Enter a Shop',
         },{
             name:'Pudding',id:18,rarity:0,list:0,
             desc:'Heal 15 HP\nWhen Entering a Shop',
@@ -4725,7 +4725,7 @@ types={
             desc:'Whenever You Discard\na Card, Gain 3 Block',
         },{
             name:'Card Wall',id:97,rarity:2,list:0,
-            desc:'At the End of Your Turn,\nGain 1 Block per Unplayed Card',
+            desc:'At the End of Your Turn,\nGain 1 Block Per Unplayed Card',
         },{
             name:'Teapot',id:98,rarity:2,list:0,
             desc:'Add 2 Shiv at the\nStart of Combat',
@@ -4839,7 +4839,7 @@ types={
             desc:'Gain 1 Energy on\nElite and Boss Combats',
         },{
             name:'Speed Gloves',id:135,rarity:4,list:0,
-            desc:'Draw 1 More\nCard per Turn',
+            desc:'Draw 1 More\nCard Per Turn',
         },{
             name:'Oath of Limits',id:136,rarity:4,list:0,
             desc:'Gain 1 Base Energy, Cannot\nPlay More Than 6 Cards',
@@ -4872,7 +4872,7 @@ types={
             desc:'Whenever You Take\nDamage, Draw 1 Card',
         },{
             name:'Magicians Soul',id:146,rarity:4,list:0,
-            desc:'Draw 2 More Cards per Turn,\nStart Combat Confused',
+            desc:'Draw 2 More Cards Per Turn,\nStart Combat Confused',
         },{
             name:'Cup',id:147,rarity:4,list:0,
             desc:'Cards of Cost 0 Have +4 Effect',
@@ -8200,6 +8200,70 @@ types={
                     option:['FIX IT'],
                     optionDesc:[''],
                     link:[1],
+                },
+            ],
+        },{
+            name:'Gateways',id:116,list:5,
+            pages:[
+                {
+                    desc:"While you travel, you begin to see Astral gates on your path.\n"+
+                    "Eventually, they start to lead toward a nearby mountain, off the road.\n"+
+                    "Obviously these things aren't real, but should you follow them?",
+                    option:['Follow Them','Ignore Them'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"At the top, you discover a glowing sphere.\n"+
+                    "Obviously none of this is real, but you touch it anyway.\n"+
+                    "The orb absorbs into your body, filling you with energy.",
+                    option:['Nice'],
+                    optionDesc:['Upgrade a Card'],
+                    link:[-1],
+                },{
+                    desc:"You don't have time for these games.",
+                    option:['Leave'],
+                    optionDesc:['Heal 10 Health'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'The Mirrors',id:117,list:5,
+            pages:[
+                {
+                    desc:"",
+                    option:['',''],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:['Duplicate a Card'],
+                    link:[-1],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:['Duplicate All Cards'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Call of the Void',id:118,list:5,
+            pages:[
+                {
+                    desc:"",
+                    option:['',''],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:['Remove a Card'],
+                    link:[-1],
+                },{
+                    desc:"",
+                    option:[''],
+                    optionDesc:['Remove All Cards'],
+                    link:[-1],
                 },
             ],
         },
