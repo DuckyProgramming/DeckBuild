@@ -3815,6 +3815,15 @@ class attack{
                 case 25:
                     this.battle.combatants[this.user].status.main[40]+=this.damage
                 break
+                case 26:
+                    this.battle.combatants[0].status.main[64]+=this.damage
+                break
+                case 27:
+                    this.battle.combatants[this.user].status.main[116]+=this.damage
+                break
+                case 28:
+                    this.battle.combatants[this.target].status.main[71]+=this.damage
+                break
                 default:
             }
         }

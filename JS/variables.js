@@ -4259,7 +4259,8 @@ types={
         {name:'Exhauster',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
-        //the sharpshooter
+        {name:'Sharpshot',alt:'',life:240,height:75,behavior:0,attacks:[1,3,8,26],damage:[18,5,12,2],altAttack:[0,3,0,0],class:0,buff:1},
+        {name:'Thornvine',alt:'',life:40,height:75,behavior:0,attacks:[1,27,28],damage:[3,2,2],altAttack:[0,0],class:0,buff:0},//70
     ],attack:[
         {class:0},//0
         {class:0},
@@ -4286,6 +4287,7 @@ types={
         {class:2},
         {class:2},
         {class:0},
+        {class:1},
         {class:1},
     ],encounter:[
         {//0
@@ -4462,6 +4464,16 @@ types={
             combatants:[54,0,0,0,0,0],
             reinforce:[],
             threshold:2,class:2,zone:0,
+            objective:[[0,0,6,0]],
+        },{
+            combatants:[69,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:2,zone:0,
+            objective:[[0,0,6,0]],
+        },{
+            combatants:[70,70,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:0,zone:0,
             objective:[[0,0,6,0]],
         },
     ],relic:[

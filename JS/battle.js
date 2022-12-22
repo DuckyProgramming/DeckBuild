@@ -53,11 +53,11 @@ class battle{
 
         this.create()
 
-        this.map.position[0]=0
-        transition.trigger=true
-        transition.scene='event'
-        this.map.complete[0][0]=1
-        this.event=key
+        //this.map.position[0]=0
+        //transition.trigger=true
+        //transition.scene='event'
+        //this.map.complete[0][0]=1
+        //this.event=key
 
         //this.getPotion(57)
     }
