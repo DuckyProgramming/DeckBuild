@@ -3314,7 +3314,7 @@ types={
             {damage:8,alt:1,cost:1,attack:24,target:1,spec:0,class:0},
             {damage:12,alt:1,cost:1,attack:24,target:1,spec:0,class:0},
         ],
-        },{name:'Residue',rarity:1,list:6,
+        },{name:'Magnetic\nField',rarity:1,list:6,
         stats:[
             {damage:3,alt:0,cost:1,attack:577,target:0,spec:0,class:2},
             {damage:5,alt:0,cost:1,attack:577,target:0,spec:0,class:2},
@@ -4060,8 +4060,13 @@ types={
         ],
         },{name:'Injury',rarity:-1,list:10,
         stats:[
-            {damage:0,alt:0,cost:0,attack:-1,target:0,spec:6,class:-2},
-            {damage:0,alt:0,cost:0,attack:-1,target:0,spec:6,class:-2},
+            {damage:0,alt:0,cost:0,attack:-1,target:0,spec:1,class:-2},
+            {damage:0,alt:0,cost:0,attack:-1,target:0,spec:1,class:-2},
+        ],
+        },{name:'Residue',rarity:-1,list:10,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-23,target:0,spec:1,class:-2},
+            {damage:0,alt:0,cost:0,attack:-23,target:0,spec:1,class:-2},
         ],
         },
         //15/16
@@ -8282,21 +8287,119 @@ types={
                 },
             ],
         },{
-            name:'',id:119,list:5,
+            name:'Cosmic Rays',id:119,list:5,
             pages:[
                 {
-                    desc:"",
-                    option:['',''],
+                    desc:"Ah, Management weapon testing has returned to the area.\n"+
+                    "Well, the fallout from the testing is going to be here any minute.",
+                    option:['Duck','It Won'+"'"+'t Hurt'],
                     optionDesc:['',''],
                     link:[1,2],
                 },{
-                    desc:"",
-                    option:[''],
-                    optionDesc:[''],
+                    desc:"There's not much you can do against the weapon testing,\n"+
+                    "but you can mitigate the damage a little.",
+                    option:['Ouch'],
+                    optionDesc:['Take 15 Damage'],
                     link:[-1],
                 },{
-                    desc:"",
-                    option:[''],
+                    desc:"That was probably painful.",
+                    option:['Ouch'],
+                    optionDesc:['Become Cursed - Residue'],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Blessings of the Sea',id:120,list:5,
+            pages:[
+                {
+                    desc:"Well, the things you used to believe in are very quickly proving false.\n"+
+                    "Given that the Management has made it clear that they decide what happens, and nobody else ever will.\n"+
+                    "One last thought couldn't hurt, could it?",
+                    option:['Pray','Forget'],
+                    optionDesc:['Lose 5 Health',''],
+                    link:[1,2],
+                },{
+                    desc:"The regret of loss weights heavily on you. This'll be the last time.\n"+
+                    "But there might be some hope left, if only it was that easy.",
+                    option:['Leave'],
+                    optionDesc:['Gain 1 Essence of the Sea'],
+                    link:[-1],
+                },{
+                    desc:"There's nothing left to hold onto.\n"+
+                    "It's better you don't go down with them.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Blessings of the Air',id:121,list:5,
+            pages:[
+                {
+                    desc:"Well, the things you used to believe in are very quickly proving false.\n"+
+                    "Given that the Management has made it clear that they decide what happens, and nobody else ever will.\n"+
+                    "One last thought couldn't hurt, could it?",
+                    option:['Pray','Forget'],
+                    optionDesc:['Lose 5 Health',''],
+                    link:[1,2],
+                },{
+                    desc:"The regret of loss weights heavily on you. This'll be the last time.\n"+
+                    "But there might be some hope left, if only it was that easy.",
+                    option:['Leave'],
+                    ioptionDesc:['Gain 1 Essence of the Air'],
+                    link:[-1],
+                },{
+                    desc:"There's nothing left to hold onto.\n"+
+                    "It's better you don't go down with them.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Blessings of the Earth',id:122,list:5,
+            pages:[
+                {
+                    desc:"Well, the things you used to believe in are very quickly proving false.\n"+
+                    "Given that the Management has made it clear that they decide what happens, and nobody else ever will.\n"+
+                    "One last thought couldn't hurt, could it?",
+                    option:['Pray','Forget'],
+                    optionDesc:['Lose 5 Health',''],
+                    link:[1,2],
+                },{
+                    desc:"The regret of loss weights heavily on you. This'll be the last time.\n"+
+                    "But there might be some hope left, if only it was that easy.",
+                    option:['Leave'],
+                    optionDesc:['Gain 1 Essence of the Earth'],
+                    link:[-1],
+                },{
+                    desc:"There's nothing left to hold onto.\n"+
+                    "It's better you don't go down with them.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Blessings of the Flame',id:123,list:5,
+            pages:[
+                {
+                    desc:"Well, the things you used to believe in are very quickly proving false.\n"+
+                    "Given that the Management has made it clear that they decide what happens, and nobody else ever will.\n"+
+                    "One last thought couldn't hurt, could it?",
+                    option:['Pray','Forget'],
+                    optionDesc:['Lose 5 Health',''],
+                    link:[1,2],
+                },{
+                    desc:"The regret of loss weights heavily on you. This'll be the last time.\n"+
+                    "But there might be some hope left, if only it was that easy.",
+                    option:['Leave'],
+                    optionDesc:['Gain 1 Essence of the Flame'],
+                    link:[-1],
+                },{
+                    desc:"There's nothing left to hold onto.\n"+
+                    "It's better you don't go down with them.",
+                    option:['Exit'],
                     optionDesc:[''],
                     link:[-1],
                 },

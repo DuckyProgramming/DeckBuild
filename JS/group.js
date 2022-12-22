@@ -288,6 +288,8 @@ class group{
                 }else if(this.cards[e].attack==-21){
                     this.battle.combatants[0].take(this.cards[e].damage,-1)
                     this.cards[e].damage++
+                }else if(this.cards[e].attack==-23){
+                    this.battle.combatants[0].status.main[133]++
                 }
             }else if(this.cards[e].retain){
                 this.cards[e].retain=false

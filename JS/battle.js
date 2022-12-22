@@ -783,7 +783,8 @@ class battle{
                     f!=80&&f!=81&&f!=82&&f!=85&&f!=88&&f!=91&&f!=95&&f!=96&&f!=97&&f!=101&&
                     f!=103&&f!=107&&f!=108&&f!=112&&f!=113&&f!=114&&f!=116&&f!=120&&f!=123&&f!=124&&
                     f!=125&&f!=126&&f!=127&&f!=128&&f!=130&&f!=131&&f!=132&&f!=135&&f!=136&&f!=137&&
-                    f!=138&&f!=140&&f!=141&&f!=142&&f!=143&&f!=6&&f!=144&&f!=146&&f!=147&&f!=148&&f!=149){
+                    f!=138&&f!=140&&f!=141&&f!=142&&f!=143&&f!=6&&f!=144&&f!=146&&f!=147&&f!=148&&
+                    f!=149&&f!=133){
                     if(f==44){
                         this.combatants[e].status.main[9]+=this.combatants[e].status.main[f]
                     }else if(f==67){
@@ -3920,6 +3921,13 @@ class battle{
                             }else if(this.page==2&&e==0){
                                 this.deck.cards=[]
                                 this.deck.add(findCard('Oroboros'),0,0)
+                            }
+                        break
+                        case 119:
+                            if(this.page==1&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-15)
+                            }else if(this.page==2&&e==0){
+                                this.deck.add(findCard('Residue'),0,stage.playerNumber+2)
                             }
                         break
                     }

@@ -68,6 +68,7 @@ class card{
             case -20: this.desc+='Take 1 Damage\nWhen You Damage\nan Enemy'; break
             case -21: this.desc+='At End of Turn,\nTake '+this.damage+' Damage\nIncreases by 1'; break
             case -22: this.desc+='Lose 10\nCurrency'; break
+            case -23: this.desc+='At End of Turn,\nGain 1 Anti-Control'; break
             case 1: this.desc+='Deal '+this.damage+'\nDamage'; break
             case 2: this.desc+='Add '+this.damage+'\nBlock'; break
             case 3: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times'; break
