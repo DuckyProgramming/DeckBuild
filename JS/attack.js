@@ -3675,9 +3675,20 @@ class attack{
                     }
                     this.battle.combatants[0].take(this.damage,-1)
                 break
-                case 723:
+                case 724:
                     this.battle.combatants[0].boost.main[0]+=this.damage
                     this.battle.combatants[0].boost.main[2]+=this.alt
+                break
+                case 725:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.combatants[0].status.main[47]++
+                break
+                case 726:
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                        this.battle.hand.cards[this.battle.hand.cards.length-1].cost=0
+                        this.battle.hand.cards[this.battle.hand.cards.length-1].base.cost=0
+                    }
                 break
                 default:
             }

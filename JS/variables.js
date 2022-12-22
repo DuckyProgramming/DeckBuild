@@ -3986,6 +3986,26 @@ types={
             {damage:6,alt:1,cost:1,attack:723,target:1,spec:0,class:0},
             {damage:9,alt:1,cost:1,attack:723,target:1,spec:0,class:0},
         ],
+        },{name:'Essence of\nthe Sea',rarity:-3,list:0,
+        stats:[
+            {damage:5,alt:3,cost:0,attack:546,target:0,spec:18,class:2},
+            {damage:7,alt:3,cost:0,attack:546,target:0,spec:18,class:2},
+        ],
+        },{name:'Essence of\nthe Air',rarity:-3,list:0,
+        stats:[
+            {damage:3,alt:3,cost:0,attack:726,target:0,spec:18,class:2},
+            {damage:4,alt:3,cost:0,attack:726,target:0,spec:18,class:2},
+        ],
+        },{name:'Essence of\nthe Earth',rarity:-3,list:0,
+        stats:[
+            {damage:20,alt:3,cost:0,attack:725,target:0,spec:18,class:1},
+            {damage:28,alt:3,cost:0,attack:725,target:0,spec:18,class:1},
+        ],
+        },{name:'Essence of\nthe Flame',rarity:-3,list:0,
+        stats:[
+            {damage:6,alt:3,cost:0,attack:514,target:1,spec:18,class:2},
+            {damage:8,alt:3,cost:0,attack:514,target:1,spec:18,class:2},
+        ],
         },
         
         {name:'Clumsy',rarity:-1,list:10,
@@ -4069,7 +4089,6 @@ types={
             {damage:0,alt:0,cost:0,attack:-23,target:0,spec:1,class:-2},
         ],
         },
-        //15/16
 
         {name:'Confusion',rarity:-2,list:11,
         stats:[
@@ -8346,7 +8365,7 @@ types={
                     desc:"The regret of loss weights heavily on you. This'll be the last time.\n"+
                     "But there might be some hope left, if only it was that easy.",
                     option:['Leave'],
-                    ioptionDesc:['Gain 1 Essence of the Air'],
+                    optionDesc:['Gain 1 Essence of the Air'],
                     link:[-1],
                 },{
                     desc:"There's nothing left to hold onto.\n"+

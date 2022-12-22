@@ -206,7 +206,7 @@ class battle{
     }
     drawInitial(){
         for(e=0,le=this.reserve.cards.length;e<le;e++){
-            if(this.reserve.cards[e].spec==7||this.reserve.cards[e].spec==8||this.reserve.cards[e].spec==10){
+            if(this.reserve.cards[e].spec==7||this.reserve.cards[e].spec==8||this.reserve.cards[e].spec==10||this.reserve.cards[e].spec==18){
                 if(this.reserve.cards[e].list==10){
                     this.random.tempDrawAmount--
                 }
@@ -3928,6 +3928,34 @@ class battle{
                                 this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-15)
                             }else if(this.page==2&&e==0){
                                 this.deck.add(findCard('Residue'),0,stage.playerNumber+2)
+                            }
+                        break
+                        case 120:
+                            if(this.page==0&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
+                            }else if(this.page==1&&e==0){
+                                this.deck.add(findCard('Essence of\nthe Sea'),0,0)
+                            }
+                        break
+                        case 121:
+                            if(this.page==0&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
+                            }else if(this.page==1&&e==0){
+                                this.deck.add(findCard('Essence of\nthe Air'),0,0)
+                            }
+                        break
+                        case 122:
+                            if(this.page==0&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
+                            }else if(this.page==1&&e==0){
+                                this.deck.add(findCard('Essence of\nthe Earth'),0,0)
+                            }
+                        break
+                        case 123:
+                            if(this.page==0&&e==0){
+                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
+                            }else if(this.page==1&&e==0){
+                                this.deck.add(findCard('Essence of\nthe Flame'),0,0)
                             }
                         break
                     }

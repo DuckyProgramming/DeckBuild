@@ -41,7 +41,7 @@ class card{
         if(this.spec==1||this.spec==6||this.spec==7){
             this.desc+='Unplayable\n'
         }
-        if(this.spec==7||this.spec==8||this.spec==10){
+        if(this.spec==7||this.spec==8||this.spec==10||this.spec==18){
             this.desc+='Innate\n'
         }
         if(this.spec==16){
@@ -793,6 +793,8 @@ class card{
             case 722: this.desc+='Build All\nof Construct\nTake '+this.damage+' Damage'; break
             case 723: this.desc+='Deal '+this.damage+' Damage\nIncrease Damage\nby '+this.alt+' Temporarily\nReturns When Played'; break
             case 724: this.desc+='Gain '+this.damage+' Strength\nGain '+this.alt+' Dexterity'; break
+            case 725: this.desc+='Add '+this.damage+' Block\nRetain Block\nfor 1 Turn'; break
+            case 726: this.desc+='Draw '+this.damage+' Cards\nThey Cost 0'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
@@ -804,7 +806,7 @@ class card{
         if(this.spec==12){
             this.desc+='\nReturn to Draw Pile'
         }
-        if(this.spec==17){
+        if(this.spec==17||this.spec==18){
             this.desc+='\nVanishing '+this.alt
         }
         if(this.desc[this.desc.length-1]=='\n'){

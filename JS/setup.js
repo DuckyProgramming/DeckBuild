@@ -4,7 +4,7 @@ function setup(){
     current=new battle(graphics.main,6)
     generateListing(types.card,types.encounter,types.event)
     
-    current.setupTesting(1,120)
+    current.setupTesting(1,124)
 }
 function windowResized(){
     resizeCanvas(windowWidth-50,windowHeight-50)

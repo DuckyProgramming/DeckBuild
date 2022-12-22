@@ -598,7 +598,7 @@ class group{
                     this.battle.attack.type=this.cards[e].attack
                     this.battle.attack.level=this.cards[e].level
                     this.battle.attack.class=this.cards[e].class
-                    if(this.cards[e].spec==17){
+                    if(this.cards[e].spec==17||this.cards[e].spec==18){
                         this.cards[e].alt--
                         if(this.cards[e].alt<=0){
                             for(f=0,lf=this.battle.hand.cards.length;f<lf;f++){
