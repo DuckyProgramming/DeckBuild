@@ -3899,6 +3899,29 @@ class battle{
                                 this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+10)
                             }
                         break
+                        case 117:
+                            if(this.page==1&&e==0){
+                                transition.trigger=true
+                                transition.scene='deck'
+                                this.setupDeck(14)
+                                this.context=14
+                            }else if(this.page==2&&e==0){
+                                for(g=0,lg=this.deck.cards.length;g<lg;g++){
+                                    this.deck.cards.push(copyCard(this.deck.cards[g]))
+                                }
+                            }
+                        break
+                        case 118:
+                            if(this.page==1&&e==0){
+                                transition.trigger=true
+                                transition.scene='deck'
+                                this.setupDeck(4)
+                                this.context=4
+                            }else if(this.page==2&&e==0){
+                                this.deck.cards=[]
+                                this.deck.add(findCard('Oroboros'),0,0)
+                            }
+                        break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){
                         this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]

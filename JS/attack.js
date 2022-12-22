@@ -33,7 +33,7 @@ class attack{
                 case -22:
                     this.battle.currency.money-=10
                 break
-                case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329: case 560: case 565: case 573: case 579: case 597: case 599: case 633: case 642:
+                case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329: case 560: case 565: case 573: case 579: case 597: case 599: case 633: case 642: case 723:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
                 case 2: case 231: case 241: case 268: case 598: case 600: case 657:
@@ -3674,6 +3674,10 @@ class attack{
                         this.battle.combatants[1].life=this.battle.combatants[1].base.life
                     }
                     this.battle.combatants[0].take(this.damage,-1)
+                break
+                case 723:
+                    this.battle.combatants[0].boost.main[0]+=this.damage
+                    this.battle.combatants[0].boost.main[2]+=this.alt
                 break
                 default:
             }

@@ -17,6 +17,11 @@ types={
             {damage:5,alt:0,cost:1,attack:2,target:0,spec:0,class:1},
             {damage:8,alt:0,cost:1,attack:2,target:0,spec:0,class:1},
         ],
+        },{name:'Buff',rarity:0,list:8,
+        stats:[
+            {damage:1,alt:1,cost:1,attack:723,target:0,spec:0,class:2},
+            {damage:1,alt:1,cost:1,attack:723,target:0,spec:0,class:2},
+        ],
         },
         
         {name:'Big\nStrike',rarity:0,list:1,
@@ -3976,8 +3981,12 @@ types={
             {damage:4,alt:0,cost:0,attack:722,target:0,spec:3,class:2},
             {damage:2,alt:0,cost:0,attack:722,target:0,spec:3,class:2},
         ],
+        },{name:'Oroboros',rarity:-3,list:0,
+        stats:[
+            {damage:6,alt:1,cost:1,attack:723,target:1,spec:0,class:0},
+            {damage:9,alt:1,cost:1,attack:723,target:1,spec:0,class:0},
+        ],
         },
-        //15/16
         
         {name:'Clumsy',rarity:-1,list:10,
         stats:[
@@ -8227,22 +8236,25 @@ types={
                 },
             ],
         },{
-            name:'The Mirrors',id:117,list:5,
+            name:'The Mirror',id:117,list:5,
             pages:[
                 {
-                    desc:"",
-                    option:['',''],
-                    optionDesc:['',''],
-                    link:[1,2],
+                    desc:"You see a strange mirror emanating a soft glow nearby.\n"+
+                    "You can see something reflected back at you, but it isn't yourself...",
+                    option:['Look into it','Look into it'],
+                    optionDesc:['Duplicate a Card','Duplicate All Cards'],
+                    link:[1,1],
                 },{
-                    desc:"",
-                    option:[''],
-                    optionDesc:['Duplicate a Card'],
+                    desc:"You watch as what you see floats out of the mirror and into your hand.\n"+
+                    "As you are left holding it, the mirror disappears.",
+                    option:['Take it'],
+                    optionDesc:[''],
                     link:[-1],
                 },{
-                    desc:"",
-                    option:[''],
-                    optionDesc:['Duplicate All Cards'],
+                    desc:"You watch as what you see floats out of the mirror and into your hand.\n"+
+                    "As you are left holding it, the mirror disappears.",
+                    option:['Take it'],
+                    optionDesc:[''],
                     link:[-1],
                 },
             ],
@@ -8250,6 +8262,29 @@ types={
             name:'Call of the Void',id:118,list:5,
             pages:[
                 {
+                    desc:"You see a sphere floating in the middle of the air. It's made of nothing.\n"+
+                    "Like, it's literally nothing. Not empty space, just nothing at all.\n"+
+                    "Probably a glitch or something...",
+                    option:['Put something in','Jump in'],
+                    optionDesc:['Remove a Card','Remove All Cards'],
+                    link:[1,2],
+                },{
+                    desc:"You throw the card into the sphere, where it ceases to exist.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"You wake up a short time later. You've forgotten everything, but,\n"+
+                    "The Cycle Must Repeat.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'',id:119,list:5,
+            pages:[
+                {
                     desc:"",
                     option:['',''],
                     optionDesc:['',''],
@@ -8257,12 +8292,12 @@ types={
                 },{
                     desc:"",
                     option:[''],
-                    optionDesc:['Remove a Card'],
+                    optionDesc:[''],
                     link:[-1],
                 },{
                     desc:"",
                     option:[''],
-                    optionDesc:['Remove All Cards'],
+                    optionDesc:[''],
                     link:[-1],
                 },
             ],

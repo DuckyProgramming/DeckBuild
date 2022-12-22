@@ -790,6 +790,8 @@ class card{
             case 720: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable\nto Self and Target\n'+nfp(-4)+' Balance'; break
             case 721: this.desc+='Draw '+this.damage+' Cards\nAdd '+this.alt+' Random\nConstruction Card\nto Your Hand'; break
             case 722: this.desc+='Build All\nof Construct\nTake '+this.damage+' Damage'; break
+            case 723: this.desc+='Deal '+this.damage+' Damage\nIncrease Damage\nby '+this.alt+' Temporarily\nReturns When Played'; break
+            case 724: this.desc+='Gain '+this.damage+' Strength\nGain '+this.alt+' Dexterity'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
