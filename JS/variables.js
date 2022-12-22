@@ -8423,6 +8423,51 @@ types={
                     link:[-1],
                 },
             ],
+        },{
+            name:'Chaotic Rift',id:124,list:5,
+            pages:[
+                {
+                    desc:"You see a rift floating in the air, random images flashing inside it.",
+                    option:['Put something inside','Jump in'],
+                    optionDesc:['Transform a Card','Transform All Cards'],
+                    link:[1,2],
+                },{
+                    desc:"It bounces through and comes out as something else.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },{
+                    desc:"The rift closes around you as you see thousands of possibilities.\n"+
+                    "After seeing what seems like the entire universe, the sensation ends.\n"+
+                    "You are very confused.",
+                    option:['Leave'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
+        },{
+            name:'Flash of Light',id:125,list:5,
+            pages:[
+                {
+                    desc:"A bright flash envelops your vision when you approach a new location.\n"+
+                    "Inside, things start to appear. Images of power, but also of danger.\n"+
+                    "Your eyes are increasingly filling with these sights.",
+                    option:['Take Them In','Close Your Eyes'],
+                    optionDesc:['',''],
+                    link:[1,2],
+                },{
+                    desc:"You must have been there for several minutes, just watching the images scatter.\n"+
+                    "At the end, you just hoped that this meant something worthwhile.",
+                    option:['Leave'],
+                    optionDesc:['Gain 1 Random Card'],
+                    link:[-1],
+                },{
+                    desc:"The flash soon recedes.",
+                    option:['Exit'],
+                    optionDesc:[''],
+                    link:[-1],
+                },
+            ],
         },
         
         

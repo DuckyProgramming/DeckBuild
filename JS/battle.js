@@ -3958,6 +3958,26 @@ class battle{
                                 this.deck.add(findCard('Essence of\nthe Flame'),0,0)
                             }
                         break
+                        case 124:
+                            if(this.page==1&&e==0){
+                                transition.trigger=true
+                                transition.scene='deck'
+                                this.setupDeck(15)
+                                this.context=15
+                            }else if(this.page==2&&e==0){
+                                for(g=0,lg=this.deck.cards.length;g<lg;g++){
+                                    f=floor(random(0,3))
+                                    this.deck.cards[g].type=listing.card[this.player][f][floor(random(0,listing.card[this.player][f].length))]
+                                    this.deck.cards[g].color=this.player
+                                    this.deck.cards[g]=reformCard(this.deck.cards[g])
+                                }
+                            }
+                        break
+                        case 125:
+                            if(this.page==1&&e==0){
+                                this.deck.add(listing.card[this.player][2][floor(random(0,listing.card[this.player][2].length))],0,this.player)
+                            }
+                        break
                     }
                     if(types.event[this.event].pages[this.page].link[e]!=-1){
                         this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]
