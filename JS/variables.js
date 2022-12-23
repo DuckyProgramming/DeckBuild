@@ -4289,7 +4289,9 @@ types={
         {name:'Moss Creature',alt:'',life:33,height:75,behavior:0,attacks:[3,8],damage:[3,6],altAttack:[2,0],class:0,buff:16},
         {name:'Goblin',alt:'',life:10,height:45,behavior:0,attacks:[1,1,1,2],damage:[1,2,3,0],altAttack:[0,0,0,'Light\nBleed'],class:0,buff:0},
         {name:'Auto-Detonator',alt:'',life:250,height:45,behavior:0,attacks:[8],damage:[1],altAttack:[0],class:1,buff:17},
-
+        {name:'Scrapper',alt:'',life:48,height:75,behavior:0,attacks:[1,30,8],damage:[7,4,12],altAttack:[0,0,0],class:0,buff:18},
+        {name:'Fat Scrapper',alt:'',life:80,height:75,behavior:1,attacks:[1,30,8,21,21],damage:[10,6,24],altAttack:[0,0,0,0],class:1,buff:18},
+        //looter
     ],attack:[
         {class:0},//0
         {class:0},
@@ -4321,6 +4323,7 @@ types={
         {class:1},
         {class:1},
         {class:2},
+        {class:0},//30
     ],encounter:[
         {//0
             combatants:[0,0,0,0,0,0],
@@ -4572,11 +4575,21 @@ types={
             reinforce:[82],
             threshold:6,class:0,zone:0,
             objective:[[0,0,0,0]],
-        },{
+        },{//50
             combatants:[83,0,0,0,0,0],
             reinforce:[],
             threshold:2,class:1,zone:2,
             objective:[[0,0,1,0]],
+        },{
+            combatants:[84,84,0,0,0,0],
+            reinforce:[],
+            threshold:3,class:0,zone:1,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[85,0,0,0,0,0],
+            reinforce:[84],
+            threshold:2,class:0,zone:1,
+            objective:[[0,0,0,0]],
         },
     ],relic:[
         {

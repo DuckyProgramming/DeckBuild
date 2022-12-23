@@ -3834,6 +3834,10 @@ class attack{
                         }
                     }
                 break
+                case 30:
+                    this.battle.combatants[this.target].take(this.damage,this.user,1)
+                    this.attacks.push([1,12,this.user,this.damage])
+                break
                 default:
             }
         }

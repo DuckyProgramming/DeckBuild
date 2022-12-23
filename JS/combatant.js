@@ -27,7 +27,7 @@ class combatant{
 			[255,125,0],[200,225,250],[150,0,0],[255,75,0],[200,125,50],[40,80,120],[120,200,120],[125,75,25],[25,125,175],[150,225,150],
 			[100,200,200],[200,0,50],[100,50,150],[50,100,50],[20,60,120],[170,240,255],[235,65,15],[210,200,245],[210,90,0],[50,0,0],
 			[255,200,255],[125,160,160],[200,25,125],[190,190,60],[225,225,75],[255,50,100],[150,150,50],[255,125,25],[255,175,75],[200,125,250],
-			[240,100,50],[150,175,200],[0,100,255],[200,255,255],[225,255,225],[140,160,180],[200,150,200],[100,200,50],[255,200,180],[40,80,180],
+			[240,100,50],[150,175,200],[0,100,255],[200,255,255],[225,255,225],[140,160,190],[200,150,200],[100,200,50],[255,200,180],[40,80,180],
 			[170,190,210],[255,75,150],[50,125,205],[175,225,175],[150,225,150],[255,105,0],[125,50,125],[140,160,180],[80,40,80],[138,141,207],
 			[139,150,193],[40,95,160],[255,245,15],[195,225,255],[145,155,65],[245,195,65],[240,255,255],[220,240,220],[215,235,255],[20,50,120],
 			[155,235,250],[5,145,250],[150,0,0],[215,210,210],[100,75,150],[255,75,175],[225,175,225],[40,80,120],[255,195,255],[235,125,230],
@@ -39,7 +39,7 @@ class combatant{
 			[30,5,45],[145,195,210],[105,70,100],[150,220,230],[80,30,35],[80,40,60],[240,180,0],[40,80,20],[120,80,160],[100,50,175],
 			[70,10,105],[180,120,200],[200,40,160],[150,200,150],[255,200,255],[150,250,200],[160,230,245],[150,220,235],[140,210,225],[240,220,40],
 			[20,10,25],[50,255,50],[255,50,50],[255,240,150],[255,50,125],[200,75,150],[75,100,50],[111,114,178],[88,82,128],[165,185,205],
-			[150,50,25],[150,50,25],[150,50,25],[150,50,25],[150,50,25],
+			[150,50,25],[150,50,25],[150,50,25],[150,50,25],[150,50,25],[140,160,180],
 		],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
 			'Reflect','Bleed','Intangible','Turn Strength On Hit','Smite Per Turn','Stance Change Block','Enter Wrath Draw','Every Block Weak All','Next Attack Damage','Die Next Turn',
@@ -56,7 +56,7 @@ class combatant{
 			'Explode on Death','Turn Double Damage','Next Turn Double Damage','Turn Discard','Lose Dexterity','Status or Curse Damage All','Block Damage All','Shiv on Damage','Play Shiv Draw','Next Turn Intangible',
 			'13 Card Damage All and Block','Triple Block','Block Gain Damage','Anti-Control','Endure','First Cost 2+ Card Energy','Stance Change Damage All','Stance Change Draw','Stance Change Random Cost Decrease','End Turn Block Attack',
 			'Dark Gain Increase','Hold Per Charge','Basic Charges Act as Explosive','Lightning Passive Increase','Add Bleed','Bleed All Per Turn','Strength on Hit','Permanent Armed','10 Damage First When Armed','Metallicize Per Turn',
-			'Bomb 4','Bomb 5','Bomb 6','Bomb 7','Bomb 8',
+			'Bomb 4','Bomb 5','Bomb 6','Bomb 7','Bomb 8','Basic Armor',
 		],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
@@ -153,6 +153,10 @@ class combatant{
 			break
 			case 17:
 				this.status.main[154]=100
+			break
+			case 18:
+				this.status.main[155]=5
+				this.block==5
 			break
 		}
 	}
@@ -2329,6 +2333,55 @@ class combatant{
 					this.layer.fill(225,225,25,this.fade)
 					this.layer.ellipse(0,-20,6,6)
 				break
+				case 84:
+					this.layer.stroke(110,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(120,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(100,this.fade)
+					this.layer.rect(0,-45,18,4)
+					this.layer.fill(60,this.fade)
+					this.layer.rect(0,-45,8,8)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,4,4)
+					this.layer.ellipse(12,-72,4,4)
+					this.layer.stroke(120,this.fade)
+					this.layer.strokeWeight(2)
+					this.layer.fill(200,this.fade/3)
+					this.layer.rect(8,-72,16,8,2)
+				break
+				case 85:
+					this.layer.stroke(110,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-24,-8,0)
+					this.layer.line(4,-24,8,0)
+					this.layer.line(-12,-36,-24,-24)
+					this.layer.line(12,-36,24,-24)
+					this.layer.noStroke()
+					this.layer.fill(120,this.fade)
+					this.layer.ellipse(0,-39,36,30)
+					this.layer.fill(100,this.fade)
+					this.layer.rect(0,-39,36,4)
+					this.layer.fill(60,this.fade)
+					this.layer.rect(0,-39,8,8)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-66,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-63,4,4)
+					this.layer.ellipse(12,-63,4,4)
+					this.layer.stroke(120,this.fade)
+					this.layer.strokeWeight(2)
+					this.layer.fill(200,this.fade/3)
+					this.layer.rect(8,-63,16,8,2)
+				break
+				
 
 				case 100:
 					this.layer.stroke(80,this.fade)
@@ -3110,6 +3163,9 @@ class combatant{
 				if(this.status.main[35]>0&&this.blocked!=0){
 					this.boost.main[0]++
 					this.status.main[1]++
+				}
+				if(this.status.main[155]>0){
+					this.status.main[155]--
 				}
 				if(this.status.main[56]>0){
 					this.load(5,0)
