@@ -409,7 +409,7 @@ class battle{
     drawEffect(attack){
         switch(attack){
             case -9: case -17:
-                this.mana.main--
+                this.combatants[0].status.main[1]--
             break
             case -15:
                 this.combatants[0].boost.main[4]-=2
@@ -427,6 +427,9 @@ class battle{
             break
             case -19:
                 this.combatants[0].status.main[99]-=2
+            break
+            case -24:
+                this.random.exhausting++
             break
         }
     }
@@ -1936,7 +1939,11 @@ class battle{
                     this.attack.target=0
                 }
                 this.attack.user=this.turn-100
-                this.attack.damage=round(this.combatants[this.turn-100].damage[this.combatants[this.turn-100].intent]*(2+max(0,this.combatants[this.turn-100].boost.main[0]))/(2-min(0,this.combatants[this.turn-100].boost.main[0])))
+                if(types.attack[this.combatants[this.turn-100].attacks[this.combatants[this.turn-100].intent]].class==0){
+                    this.attack.damage=round(this.combatants[this.turn-100].damage[this.combatants[this.turn-100].intent]*(2+max(0,this.combatants[this.turn-100].boost.main[0]))/(2-min(0,this.combatants[this.turn-100].boost.main[0])))
+                }else{
+                    this.attack.damage=round(this.combatants[this.turn-100].damage[this.combatants[this.turn-100].intent])
+                }
                 this.attack.alt=this.combatants[this.turn-100].altAttack[this.combatants[this.turn-100].intent]
                 this.attack.update(this.combatants[this.turn-100].attacks[this.combatants[this.turn-100].intent],0,1)
                 this.turn=200
@@ -1968,7 +1975,11 @@ class battle{
                     this.attack.target=0
                 }
                 this.attack.user=this.turn
-                this.attack.damage=round(this.combatants[this.turn].damage[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0])))
+                if(types.attack[this.combatants[this.turn].attacks[this.combatants[this.turn].intent]].class==0){
+                    this.attack.damage=round(this.combatants[this.turn].damage[this.combatants[this.turn].intent]*(2+max(0,this.combatants[this.turn].boost.main[0]))/(2-min(0,this.combatants[this.turn].boost.main[0])))
+                }else{
+                    this.attack.damage=round(this.combatants[this.turn].damage[this.combatants[this.turn].intent])
+                }
                 this.attack.alt=this.combatants[this.turn].altAttack[this.combatants[this.turn].intent]
                 this.attack.update(this.combatants[this.turn].attacks[this.combatants[this.turn].intent],0,1)
                 this.turnTimer=20

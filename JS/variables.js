@@ -4165,8 +4165,12 @@ types={
             {damage:0,alt:0,cost:2,attack:0,target:0,spec:9,class:-1},
             {damage:0,alt:0,cost:2,attack:0,target:0,spec:9,class:-1},
         ],
+        },{name:'Electrocuted',rarity:-2,list:11,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-24,target:0,spec:1,class:-1},
+            {damage:0,alt:0,cost:0,attack:-24,target:0,spec:1,class:-1},
+        ],
         },
-        //15/16
 
         /*{name:'Fortify',rarity:0,list:4,
         stats:[
@@ -4213,7 +4217,7 @@ types={
         {name:'Red',alt:'',life:36,height:80,behavior:0,attacks:[1,17,18],damage:[7,5,4],altAttack:[0,1,0],class:0,buff:0},//20
         {name:'Trenchcoat Man',alt:'',life:60,height:75,behavior:0,attacks:[1],damage:[8],altAttack:[0],class:0,buff:0},
         {name:'Trenchcoat Gunner',alt:'',life:45,height:75,behavior:0,attacks:[1],damage:[4],altAttack:[0],class:0,buff:4},
-        {name:'Goon',alt:'',life:45,height:75,behavior:0,attacks:[1,10,8],damage:[10,4,12],altAttack:['Arm\nInjury',0],class:0,buff:0},
+        {name:'Goon',alt:'',life:45,height:75,behavior:0,attacks:[1,10,8],damage:[10,4,12],altAttack:[0,'Arm\nInjury',0],class:0,buff:0},
         {name:'Prisoner',alt:'',life:28,height:75,behavior:0,attacks:[1,3,8],damage:[8,5,10],altAttack:[0,2,0],class:0,buff:0},
         {name:'Prison Guard',alt:'',life:56,height:75,behavior:0,attacks:[3,8],damage:[3,16],altAttack:[3,0],class:0,buff:7},
         {name:'Slaver',alt:'',life:46,height:75,behavior:0,attacks:[1,17],damage:[12,7],altAttack:[0,1],class:0,buff:0},
@@ -4263,6 +4267,10 @@ types={
         {name:'Thornvine',alt:'',life:40,height:75,behavior:0,attacks:[1,27,28],damage:[3,2,2],altAttack:[0,0],class:0,buff:0},//70
         {name:'Management Robot',alt:'',life:60,height:75,behavior:0,attacks:[1,3,29],damage:[10,4,4],altAttack:[0,2,0],class:0,buff:0},
         {name:'Management Drone',alt:'',life:50,height:60,behavior:0,attacks:[1,3,29],damage:[15,6,6],altAttack:[0,2,0],class:1,buff:10},
+        {name:'Management Soldier',alt:'',life:90,height:78,behavior:0,attacks:[10,6,29],damage:[4,12,3],altAttack:['Electrocuted','Dazed',0],class:0,buff:11},
+        {name:'Management Officer',alt:'',life:45,height:78,behavior:0,attacks:[7,6],damage:[2,8],altAttack:[0,'Dazed'],class:0,buff:12},
+        {name:'Management',alt:'Special Forces',life:120,height:78,behavior:1,attacks:[1,3,10,10],damage:[18,3,8,2],altAttack:[0,5,'Electrocuted','Void'],class:0,buff:11},
+        //gluer?
     ],attack:[
         {class:0},//0
         {class:0},
@@ -4492,6 +4500,21 @@ types={
             objective:[[0,0,1,0]],
         },{
             combatants:[72,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:0,zone:2,
+            objective:[[0,0,0,0]],
+        },{//40
+            combatants:[73,0,0,0,0,0],
+            reinforce:[73],
+            threshold:2,class:0,zone:2,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[74,0,0,0,0,0],
+            reinforce:[73,73],
+            threshold:2,class:1,zone:2,
+            objective:[[0,0,1,0]],
+        },{
+            combatants:[75,0,0,0,0,0],
             reinforce:[],
             threshold:2,class:0,zone:2,
             objective:[[0,0,0,0]],

@@ -726,7 +726,7 @@ class group{
                         this.cards[e].level++
                     }
                     this.cards[e]=reformCard(this.cards[e])
-                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.random.exhausting>0){
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.random.exhausting>0&&this.cards[e].attack!=-24){
                     this.battle.random.exhausting--
                     this.cards[e].used=true
                     this.cards[e].exhaust=true
