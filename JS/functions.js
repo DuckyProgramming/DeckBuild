@@ -318,6 +318,19 @@ function outEventText(){
 	}
 	print(i)
 }
+function outEncounter(){
+	i=''
+	for(a=0,la=zones.length;a<la;a++){
+		i+=a+':\n'
+		for(b=0,lb=zones[a].encounters.length;b<lb;b++){
+			i+='	'+b+': '+zones[a].encounters[b].length+'\n'
+		}
+	}
+	print(i)
+}
+function outCombatant(type){
+	print(types.combatant[type].name+'-'+types.combatant[type].life)
+}
 function generateListing(cards,encounters,events){
 	for(a=0,la=listing.card.length;a<la;a++){
 		for(b=0;b<4;b++){

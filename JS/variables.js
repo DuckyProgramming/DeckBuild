@@ -3221,8 +3221,8 @@ types={
         ],
         },{name:'Iron\nWave',rarity:0,list:6,
         stats:[
-            {damage:5,alt:5,cost:1,attack:563,target:0,spec:0,class:0},
-            {damage:7,alt:7,cost:1,attack:563,target:0,spec:0,class:0},
+            {damage:5,alt:5,cost:1,attack:563,target:1,spec:0,class:0},
+            {damage:7,alt:7,cost:1,attack:563,target:1,spec:0,class:0},
         ],
         },{name:'Overflow',rarity:0,list:6,
         stats:[
@@ -4298,12 +4298,12 @@ types={
         {//0
             combatants:[0,0,0,0,0,0],
             reinforce:[],
-            threshold:0,class:-1,zone:0,
+            threshold:0,class:-1,zone:-1,
             objective:[],
         },{
             combatants:[38,0,0,0,0,0],
             reinforce:[],
-            threshold:2,class:-1,zone:0,
+            threshold:2,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{
             combatants:[38,38,0,0,0,0],
@@ -4313,12 +4313,12 @@ types={
         },{
             combatants:[67,67,67,0,0,0],
             reinforce:[67,67,67,67,67],
-            threshold:6,class:-1,zone:0,
+            threshold:6,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{
             combatants:[68,68,8,0,0,0],
             reinforce:[],
-            threshold:4,class:-1,zone:0,
+            threshold:4,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{//5
             combatants:[9,9,0,0,0,0],
@@ -4328,32 +4328,32 @@ types={
         },{
             combatants:[10,10,0,0,0,0],
             reinforce:[],
-            threshold:3,class:1,zone:0,
+            threshold:3,class:1,zone:1,
             objective:[[0,0,1,0]],
         },{
             combatants:[11,0,0,0,0,0],
             reinforce:[],
-            threshold:0,class:2,zone:0,
+            threshold:0,class:2,zone:1,
             objective:[[0,0,6,0]],
         },{
             combatants:[12,12,0,0,0,0],
             reinforce:[12],
-            threshold:2,class:0,zone:0,
+            threshold:2,class:0,zone:1,
             objective:[[0,0,0,0]],
         },{
             combatants:[13,0,0,0,0,0],
             reinforce:[12,13,12],
-            threshold:2,class:1,zone:0,
+            threshold:2,class:1,zone:1,
             objective:[[0,0,0,0]],
         },{//10
             combatants:[12,0,0,0,0,0],
             reinforce:[14,14],
-            threshold:2,class:1,zone:0,
+            threshold:2,class:0,zone:1,
             objective:[[0,0,1,0]],
         },{
             combatants:[12,13,0,0,0,0],
             reinforce:[15,12],
-            threshold:3,class:1,zone:0,
+            threshold:3,class:1,zone:1,
             objective:[[0,0,1,0]],
         },{
             combatants:[16,0,0,0,0,0],
@@ -4368,12 +4368,12 @@ types={
         },{
             combatants:[19,0,0,0,0,0],
             reinforce:[19,18,19],
-            threshold:3,class:1,zone:0,
+            threshold:3,class:1,zone:1,
             objective:[[0,0,1,0]],
         },{//15
             combatants:[20,20,0,0,0,0],
             reinforce:[20],
-            threshold:3,class:1,zone:0,
+            threshold:3,class:0,zone:1,
             objective:[[0,0,1,0]],
         },{
             combatants:[19,0,0,0,0,0],
@@ -4383,72 +4383,72 @@ types={
         },{
             combatants:[21,21,21,22,0,0],
             reinforce:[],
-            threshold:5,class:-1,zone:0,
+            threshold:5,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{
             combatants:[23,23,0,0,0,0],
             reinforce:[],
-            threshold:3,class:-1,zone:0,
+            threshold:3,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{
             combatants:[24,25,0,0,0,0],
             reinforce:[24],
-            threshold:3,class:-1,zone:0,
+            threshold:3,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{//20
             combatants:[26,0,0,0,0,0],
             reinforce:[],
-            threshold:2,class:-1,zone:0,
+            threshold:2,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{
             combatants:[27,27,27,0,0,0],
             reinforce:[],
-            threshold:3,class:-1,zone:0,
+            threshold:3,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{
             combatants:[28,28,0,0,0,0],
             reinforce:[],
-            threshold:2,class:-1,zone:0,
+            threshold:2,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{
             combatants:[29,30,0,0,0,0],
             reinforce:[],
-            threshold:3,class:-1,zone:0,
+            threshold:3,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{
             combatants:[31,0,0,0,0,0],
             reinforce:[],
-            threshold:2,class:-1,zone:0,
+            threshold:2,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{//25
             combatants:[32,32,32,32,32,32],
             reinforce:[],
-            threshold:6,class:-1,zone:0,
+            threshold:6,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{
             combatants:[33,0,0,0,0,0],
             reinforce:[],
-            threshold:2,class:-1,zone:0,
+            threshold:2,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{
             combatants:[34,34,34,0,0,0],
             reinforce:[],
-            threshold:3,class:-1,zone:0,
+            threshold:3,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{
             combatants:[35,0,0,0,0,0],
             reinforce:[],
-            threshold:2,class:2,zone:0,
+            threshold:2,class:2,zone:1,
             objective:[[0,0,6,0]],
         },{
             combatants:[36,0,0,0,0,0],
             reinforce:[],
-            threshold:2,class:-1,zone:0,
+            threshold:2,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{//30
             combatants:[37,37,37,0,0,0],
             reinforce:[37,37,37,37,37],
-            threshold:6,class:-1,zone:0,
+            threshold:6,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{
             combatants:[51,0,0,0,0,0],
@@ -4473,7 +4473,7 @@ types={
         },{//35
             combatants:[69,0,0,0,0,0],
             reinforce:[],
-            threshold:2,class:2,zone:0,
+            threshold:2,class:2,zone:1,
             objective:[[0,0,6,0]],
         },{
             combatants:[70,70,0,0,0,0],
@@ -4483,17 +4483,17 @@ types={
         },{
             combatants:[71,0,0,0,0,0],
             reinforce:[],
-            threshold:2,class:0,zone:0,
+            threshold:2,class:0,zone:2,
             objective:[[0,0,0,0]],
         },{
             combatants:[71,71,71,0,0,0],
             reinforce:[],
-            threshold:3,class:1,zone:0,
+            threshold:3,class:1,zone:2,
             objective:[[0,0,1,0]],
         },{
             combatants:[72,0,0,0,0,0],
             reinforce:[],
-            threshold:2,class:0,zone:0,
+            threshold:2,class:0,zone:2,
             objective:[[0,0,0,0]],
         },
     ],relic:[
@@ -8556,7 +8556,11 @@ zones=[
         events:[[],[],[],[],[],[],[],[]],
     },{
         encounters:[[],[],[]],
-        special:[],
+        special:[1,4,3,17,18,19,20,21,22,23,24,25,26,27,29,30],
+        events:[[],[],[],[],[],[],[],[]],
+    },{
+        encounters:[[],[],[]],
+        special:[1,4,3,17,18,19,20,21,22,23,24,25,26,27,29,30],
         events:[[],[],[],[],[],[],[],[]],
     },
 ]
