@@ -4293,6 +4293,8 @@ types={
         {name:'Fat Scrapper',alt:'',life:80,height:75,behavior:1,attacks:[1,30,8,21,21],damage:[10,6,24],altAttack:[0,0,0,0],class:1,buff:18},
         {name:'Looter',alt:'',life:28,height:75,behavior:1,attacks:[32,8,31,31],damage:[0,6,6,9],altAttack:[0,0,10,10],class:0,buff:0},
         {name:'Mugger',alt:'',life:42,height:75,behavior:1,attacks:[32,8,3,31],damage:[0,6,4,9],altAttack:[0,0,2,15],class:0,buff:0},
+        {name:'Shinyshroom',alt:'',life:20,height:30,behavior:0,attacks:[33,1,8],damage:[4,4,4],altAttack:[0,0,0],class:0,buff:0},
+        {name:'Aggroshroom',alt:'',life:20,height:30,behavior:0,attacks:[33,3,7],damage:[1,1,1],altAttack:[0,3,0],class:0,buff:0},
         
     ],attack:[
         {class:0},//0
@@ -4327,6 +4329,7 @@ types={
         {class:2},
         {class:0},//30
         {class:0},
+        {class:1},
         {class:1},
     ],encounter:[
         {//0
@@ -4572,7 +4575,7 @@ types={
         },{
             combatants:[81,0,0,0,0,0],
             reinforce:[81,81],
-            threshold:3,class:1,zone:0,
+            threshold:3,class:0,zone:0,
             objective:[[0,0,0,0]],
         },{
             combatants:[82,82,82,82,82,82],
@@ -4609,6 +4612,16 @@ types={
             reinforce:[],
             threshold:2,class:1,zone:1,
             objective:[[0,0,1,0]],
+        },{
+            combatants:[88,0,0,0,0,0],
+            reinforce:[88],
+            threshold:3,class:0,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[89,0,0,0,0,0],
+            reinforce:[89],
+            threshold:3,class:0,zone:0,
+            objective:[[0,0,0,0]],
         },
     ],relic:[
         {

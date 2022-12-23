@@ -239,12 +239,16 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 			layer.rect(-6,0,24,6)
 			layer.triangle(6,-10,6,10,16,0)
 		break
+		case 33:
+			layer.fill(100,225,255,fade*3/4)
+			layer.triangle(-12,8,12,8,0,-12)
+		break
 	}
 	layer.fill(255,fade)
 	layer.textSize(20)
 	switch(type){
 		case 1: case 6: case 7: case 8: case 10: case 12: case 16: case 18: case 20: case 25:
-		case 26: case 27: case 28: case 29: case 30:
+		case 26: case 27: case 28: case 29: case 30: case 33:
 			layer.text(damage,0,1)
 		break
 		case 2: case 4: case 5: case 11: case 13: case 19:

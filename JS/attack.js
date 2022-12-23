@@ -3853,6 +3853,14 @@ class attack{
                         this.battle.objective.splice(this.battle.objective.length-1)
                     }
                 break
+                case 33:
+                    for(g=0,lg=this.battle.combatants[this.user].attacks.length;g<lg;g++){
+                        if(this.battle.combatants[this.user].attacks[g]!=33){
+                            this.battle.combatants[this.user].damage=copyList(this.battle.combatants[this.user].damage)
+                            this.battle.combatants[this.user].damage[g]+=this.damage
+                        }
+                    }
+                break
                 default:
             }
         }
