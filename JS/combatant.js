@@ -39,7 +39,7 @@ class combatant{
 			[30,5,45],[145,195,210],[105,70,100],[150,220,230],[80,30,35],[80,40,60],[240,180,0],[40,80,20],[120,80,160],[100,50,175],
 			[70,10,105],[180,120,200],[200,40,160],[150,200,150],[255,200,255],[150,250,200],[160,230,245],[150,220,235],[140,210,225],[240,220,40],
 			[20,10,25],[50,255,50],[255,50,50],[255,240,150],[255,50,125],[200,75,150],[75,100,50],[111,114,178],[88,82,128],[165,185,205],
-			[150,50,25],[150,50,25],[150,50,25],[150,50,25],[150,50,25],[140,160,180],
+			[150,50,25],[150,50,25],[150,50,25],[150,50,25],[150,50,25],[140,160,180],[255,255,50],
 		],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
 			'Reflect','Bleed','Intangible','Turn Strength On Hit','Smite Per Turn','Stance Change Block','Enter Wrath Draw','Every Block Weak All','Next Attack Damage','Die Next Turn',
@@ -56,7 +56,7 @@ class combatant{
 			'Explode on Death','Turn Double Damage','Next Turn Double Damage','Turn Discard','Lose Dexterity','Status or Curse Damage All','Block Damage All','Shiv on Damage','Play Shiv Draw','Next Turn Intangible',
 			'13 Card Damage All and Block','Triple Block','Block Gain Damage','Anti-Control','Endure','First Cost 2+ Card Energy','Stance Change Damage All','Stance Change Draw','Stance Change Random Cost Decrease','End Turn Block Attack',
 			'Dark Gain Increase','Hold Per Charge','Basic Charges Act as Explosive','Lightning Passive Increase','Add Bleed','Bleed All Per Turn','Strength on Hit','Permanent Armed','10 Damage First When Armed','Metallicize Per Turn',
-			'Bomb 4','Bomb 5','Bomb 6','Bomb 7','Bomb 8','Basic Armor',
+			'Bomb 4','Bomb 5','Bomb 6','Bomb 7','Bomb 8','Basic Armor','Stolen Gold',
 		],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
@@ -73,7 +73,7 @@ class combatant{
 			0,1,1,1,0,1,1,1,1,1,
 			1,1,1,0,1,1,1,1,1,1,
 			1,1,1,1,1,1,1,1,1,1,
-			1,1,1,1,1,
+			1,1,1,1,1,0,
 		]}
 		this.combo=0
 		this.stance=0
@@ -2381,6 +2381,45 @@ class combatant{
 					this.layer.fill(200,this.fade/3)
 					this.layer.rect(8,-63,16,8,2)
 				break
+				case 86:
+					this.layer.stroke(50,75,100,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(40,60,80,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(200,100,50,this.fade)
+					this.layer.arc(0,-75,33,33,-180,0)
+					this.layer.triangle(-15,-78,-30,-78,-28,-84)
+					this.layer.fill(160,80,40,this.fade)
+					this.layer.arc(0,-75,24,24,-180,0)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,4,4)
+					this.layer.ellipse(12,-72,4,4)
+				break
+				case 87:
+					this.layer.stroke(100,75,50,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(80,60,40,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(30,35,40,this.fade)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.rect(8,-72,12,3)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,4,4)
+					this.layer.ellipse(12,-72,4,4)
+				break
 				
 
 				case 100:
@@ -3423,6 +3462,9 @@ class combatant{
 				}
 				if(this.status.main[120]>0){
 					this.battle.takeAll(this.base.life,this.id,1)
+				}
+				if(this.status.main[156]>0){
+					this.battle.currency.money+=this.status.main[156]
 				}
 				if(this.name=='Big Slime'){
 					this.battle.quickReinforce(findCombatant('Slime'))

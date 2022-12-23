@@ -4291,7 +4291,9 @@ types={
         {name:'Auto-Detonator',alt:'',life:250,height:45,behavior:0,attacks:[8],damage:[1],altAttack:[0],class:1,buff:17},
         {name:'Scrapper',alt:'',life:48,height:75,behavior:0,attacks:[1,30,8],damage:[7,4,12],altAttack:[0,0,0],class:0,buff:18},
         {name:'Fat Scrapper',alt:'',life:80,height:75,behavior:1,attacks:[1,30,8,21,21],damage:[10,6,24],altAttack:[0,0,0,0],class:1,buff:18},
-        //looter
+        {name:'Looter',alt:'',life:28,height:75,behavior:1,attacks:[32,8,31,31],damage:[0,6,6,9],altAttack:[0,0,10,10],class:0,buff:0},
+        {name:'Mugger',alt:'',life:42,height:75,behavior:1,attacks:[32,8,3,31],damage:[0,6,4,9],altAttack:[0,0,2,15],class:0,buff:0},
+        
     ],attack:[
         {class:0},//0
         {class:0},
@@ -4324,6 +4326,8 @@ types={
         {class:1},
         {class:2},
         {class:0},//30
+        {class:0},
+        {class:1},
     ],encounter:[
         {//0
             combatants:[0,0,0,0,0,0],
@@ -4588,6 +4592,21 @@ types={
         },{
             combatants:[85,0,0,0,0,0],
             reinforce:[84],
+            threshold:2,class:0,zone:1,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[86,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:0,zone:1,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[87,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:0,zone:1,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[86,87,0,0,0,0],
+            reinforce:[],
             threshold:2,class:0,zone:1,
             objective:[[0,0,0,0]],
         },

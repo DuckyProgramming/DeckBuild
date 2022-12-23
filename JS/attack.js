@@ -3838,6 +3838,21 @@ class attack{
                     this.battle.combatants[this.target].take(this.damage,this.user,1)
                     this.attacks.push([1,12,this.user,this.damage])
                 break
+                case 31:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.attacks.push([1,12,this.user,this.damage])
+                    this.battle.currency.money-=this.alt
+                    this.battle.combatants[this.user].status.main[156]+=this.alt
+                break
+                case 32:
+                    for(g=0,lg=this.battle.combatants[this.user].status.main.length;g<lg;g++){
+                        this.battle.combatants[this.user].status.main[g]=0
+                    }
+                    this.battle.combatants[this.user].life=0
+                    while(this.battle.objective.length>1){
+                        this.battle.objective.splice(this.battle.objective.length-1)
+                    }
+                break
                 default:
             }
         }
