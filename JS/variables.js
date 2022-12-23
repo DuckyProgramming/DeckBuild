@@ -4607,8 +4607,8 @@ types={
         },{
             combatants:[86,87,0,0,0,0],
             reinforce:[],
-            threshold:2,class:0,zone:1,
-            objective:[[0,0,0,0]],
+            threshold:2,class:1,zone:1,
+            objective:[[0,0,1,0]],
         },
     ],relic:[
         {
