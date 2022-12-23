@@ -2203,6 +2203,14 @@ class combatant{
 					this.layer.fill(100,150,200,this.fade/2)
 					this.layer.rect(8,-75,20,6)
 				break
+				case 76:
+					this.layer.noStroke()
+					this.layer.fill(150,250,50,this.fade)
+					this.layer.ellipse(0,-30,90,67.5)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(36,-45,6,6)
+					this.layer.ellipse(12,-45,6,6)
+				break
 
 				case 100:
 					this.layer.stroke(80,this.fade)
@@ -3168,6 +3176,11 @@ class combatant{
 			if(this.boost.fade[g]>0&&this.boost.main[g]==0){
 				this.boost.fade[g]=round(this.boost.fade[g]*10-1)/10
 			}
+			if(this.team==0){
+				this.boost.main[g]=max(this.boost.main[g],-6)
+			}else if(this.team==1){
+				this.boost.main[g]=min(this.boost.main[g],6)
+			}
 		}
 		for(g=0,lg=this.status.main.length;g<lg;g++){
 			if(this.status.main[36]>0&&this.status.main[g]>0&&this.status.class[g]==0){
@@ -3236,6 +3249,10 @@ class combatant{
 				}
 				if(this.status.main[120]>0){
 					this.battle.takeAll(this.base.life,this.id,1)
+				}
+				if(this.name=='Big Slime'){
+					this.battle.quickReinforce(findCombatant('Slime'))
+					this.battle.quickReinforce(findCombatant('Slime'))
 				}
 			}
 		}

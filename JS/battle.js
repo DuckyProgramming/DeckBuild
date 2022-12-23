@@ -977,6 +977,23 @@ class battle{
         }
         this.endTurn()
     }
+    quickReinforce(type){
+        e=stage.playerCombatantNumber
+        while(e<this.combatants.length){
+            if(this.combatants[e].type==0&&this.combatants[e].id!=1){
+                this.combatants[e]=new combatant(this.layer,this,100+e*100,350,type,1,e)
+                this.combatants[e].initialBuff()
+                print('a')
+                this.combatants[e].attacks=copyList(this.combatants[e].attacks)
+                this.combatants[e].attacks.push(21)
+                this.combatants[e].behavior=1
+                this.combatants[e].intent=this.combatants[e].attacks.length-1
+                break
+            }
+            e++
+        }
+        this.counter.enemies.total++
+    }
     takeAll(damage,user,team){
         for(g=0,lg=this.combatants.length;g<lg;g++){
             if(this.combatants[g].life>0&&this.combatants[g].team==team){
