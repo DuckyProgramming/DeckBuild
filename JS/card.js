@@ -48,7 +48,7 @@ class card{
             this.desc+='Memory\n'
         }
         switch(this.attack){
-            case -2: this.desc+='Take '+this.damage+' Damage\nPer Card Played'; break
+            case -2: if(this.spec==6){this.desc+='Take '+this.damage+' Damage\nPer Card Played\nEthereal'}else{this.desc+='Take '+this.damage+' Damage\nPer Card Played'} break
             case -3: if(this.spec!=0){this.desc+='Ethereal'}; break
             case -4: this.desc+='At End of Turn,\nGain 1 Weak'; break
             case -5: this.desc+='Take 1 Damage\nPer Card Not Played'; break

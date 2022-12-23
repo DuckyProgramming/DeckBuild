@@ -810,6 +810,16 @@ class battle{
                         this.combatants[e].status.main[121]+=this.combatants[e].status.main[f]
                     }else if(f==129){
                         this.combatants[e].status.main[12]+=this.combatants[e].status.main[f]
+                    }else if(f==150){
+                        this.combatants[e].status.main[111]+=this.combatants[e].status.main[f]
+                    }else if(f==151){
+                        this.combatants[e].status.main[150]+=this.combatants[e].status.main[f]
+                    }else if(f==152){
+                        this.combatants[e].status.main[151]+=this.combatants[e].status.main[f]
+                    }else if(f==153){
+                        this.combatants[e].status.main[152]+=this.combatants[e].status.main[f]
+                    }else if(f==154){
+                        this.combatants[e].status.main[153]+=this.combatants[e].status.main[f]
                     }
                     this.combatants[e].status.main[f]=0
                 }

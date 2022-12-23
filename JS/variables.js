@@ -4175,6 +4175,11 @@ types={
             {damage:4,alt:0,cost:0,attack:-25,target:0,spec:3,class:-1},
             {damage:6,alt:0,cost:0,attack:-25,target:0,spec:3,class:-1},
         ],
+        },{name:'Light\nBleed',rarity:-2,list:11,
+        stats:[
+            {damage:1,alt:0,cost:0,attack:-2,target:0,spec:6,class:-1},
+            {damage:1,alt:0,cost:0,attack:-2,target:0,spec:6,class:-1},
+        ],
         },
         //17/20
 
@@ -4280,8 +4285,11 @@ types={
         {name:'Spike Slime',alt:'',life:14,height:45,behavior:0,attacks:[1,6,7],damage:[7,4,2],altAttack:[0,'Spiked',0],class:0,buff:13},
         {name:'Big Spike Slime',alt:'',life:28,height:65,behavior:0,attacks:[1,6,7],damage:[11,6,3],altAttack:[0,'Spiked',0],class:0,buff:14},
         {name:'Slimoid',alt:'',life:35,height:45,behavior:0,attacks:[1,6,7],damage:[12,6,2],altAttack:[0,'Glued',0],class:0,buff:15},
-        {name:'Big Slimoid',alt:'',life:70,height:65,behavior:0,attacks:[1,6,7],damage:[18,9,3],altAttack:[0,'Glued',0],class:0,buff:15},
-        //f
+        {name:'Big Slimoid',alt:'',life:70,height:65,behavior:0,attacks:[1,6,7],damage:[18,9,3],altAttack:[0,'Glued',0],class:0,buff:15},//80
+        {name:'Moss Creature',alt:'',life:33,height:75,behavior:0,attacks:[3,8],damage:[3,6],altAttack:[2,0],class:0,buff:16},
+        {name:'Goblin',alt:'',life:10,height:45,behavior:0,attacks:[1,1,1,2],damage:[1,2,3,0],altAttack:[0,0,0,'Light\nBleed'],class:0,buff:0},
+        {name:'Auto-Detonator',alt:'',life:250,height:45,behavior:0,attacks:[8],damage:[1],altAttack:[0],class:1,buff:17},
+
     ],attack:[
         {class:0},//0
         {class:0},
@@ -4533,7 +4541,7 @@ types={
             combatants:[9,76,0,0,0,0],
             reinforce:[],
             threshold:3,class:1,zone:0,
-            objective:[[0,0,0,0]],
+            objective:[[0,0,1,0]],
         },{
             combatants:[77,77,0,0,0,0],
             reinforce:[],
@@ -4543,7 +4551,7 @@ types={
             combatants:[77,78,0,0,0,0],
             reinforce:[],
             threshold:3,class:1,zone:0,
-            objective:[[0,0,0,0]],
+            objective:[[0,0,1,0]],
         },{
             combatants:[79,79,0,0,0,0],
             reinforce:[],
@@ -4553,7 +4561,22 @@ types={
             combatants:[79,80,0,0,0,0],
             reinforce:[],
             threshold:3,class:1,zone:2,
+            objective:[[0,0,1,0]],
+        },{
+            combatants:[81,0,0,0,0,0],
+            reinforce:[81,81],
+            threshold:3,class:1,zone:0,
             objective:[[0,0,0,0]],
+        },{
+            combatants:[82,82,82,82,82,82],
+            reinforce:[82],
+            threshold:6,class:0,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[83,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:1,zone:2,
+            objective:[[0,0,1,0]],
         },
     ],relic:[
         {

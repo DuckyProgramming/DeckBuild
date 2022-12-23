@@ -38,7 +38,9 @@ class combatant{
 			[150,50,25],[150,50,25],[255,180,150],[255,255,70],[10,125,230],[250,175,100],[240,120,0],[105,90,105],[145,235,255],[245,185,85],
 			[30,5,45],[145,195,210],[105,70,100],[150,220,230],[80,30,35],[80,40,60],[240,180,0],[40,80,20],[120,80,160],[100,50,175],
 			[70,10,105],[180,120,200],[200,40,160],[150,200,150],[255,200,255],[150,250,200],[160,230,245],[150,220,235],[140,210,225],[240,220,40],
-			[20,10,25],[50,255,50],[255,50,50],[255,240,150],[255,50,125],[200,75,150],[75,100,50],[111,114,178],[88,82,128],[165,185,205]],name:[
+			[20,10,25],[50,255,50],[255,50,50],[255,240,150],[255,50,125],[200,75,150],[75,100,50],[111,114,178],[88,82,128],[165,185,205],
+			[150,50,25],[150,50,25],[150,50,25],[150,50,25],[150,50,25],
+		],name:[
 			'Counter All','Next Turn Energy','Double Damage','Counter Once','Next Turn Strength','Downed','Dodge','Next Turn Weakness','Next Turn Frailness','Stun',
 			'Reflect','Bleed','Intangible','Turn Strength On Hit','Smite Per Turn','Stance Change Block','Enter Wrath Draw','Every Block Weak All','Next Attack Damage','Die Next Turn',
 			'Faith Gain','Shiv Gain','Card Play Damage All Enemies','Card Play Block','Must Act','Add Bleed Turn','Push Boost','Counter Bleed Once','Counter Push Once','Energy on Hit',
@@ -53,7 +55,9 @@ class combatant{
 			'Bomb 2','Bomb 3','Mark','End Turn Damage All','Upgrade Added','Extra Turn','Counter All This Combat','Take Damage Per Card Played','Free Card','No Draw',
 			'Explode on Death','Turn Double Damage','Next Turn Double Damage','Turn Discard','Lose Dexterity','Status or Curse Damage All','Block Damage All','Shiv on Damage','Play Shiv Draw','Next Turn Intangible',
 			'13 Card Damage All and Block','Triple Block','Block Gain Damage','Anti-Control','Endure','First Cost 2+ Card Energy','Stance Change Damage All','Stance Change Draw','Stance Change Random Cost Decrease','End Turn Block Attack',
-			'Dark Gain Increase','Hold Per Charge','Basic Charges Act as Explosive','Lightning Passive Increase','Add Bleed','Bleed All Per Turn','Strength on Hit','Permanent Armed','10 Damage First When Armed','Metallicize Per Turn'],class:[
+			'Dark Gain Increase','Hold Per Charge','Basic Charges Act as Explosive','Lightning Passive Increase','Add Bleed','Bleed All Per Turn','Strength on Hit','Permanent Armed','10 Damage First When Armed','Metallicize Per Turn',
+			'Bomb 4','Bomb 5','Bomb 6','Bomb 7','Bomb 8',
+		],class:[
 			1,1,1,1,1,0,1,0,0,0,
 			1,0,1,1,1,1,1,1,1,1,
 			1,1,1,1,0,1,1,1,1,1,
@@ -68,7 +72,9 @@ class combatant{
 			1,1,0,1,1,1,1,0,1,0,
 			0,1,1,1,0,1,1,1,1,1,
 			1,1,1,0,1,1,1,1,1,1,
-			1,1,1,1,1,1,1,1,1,1]}
+			1,1,1,1,1,1,1,1,1,1,
+			1,1,1,1,1,
+		]}
 		this.combo=0
 		this.stance=0
 		this.mantra=0
@@ -145,6 +151,9 @@ class combatant{
 			case 15:
 				this.status.main[10]=1
 			break
+			case 17:
+				this.status.main[154]=100
+			break
 		}
 	}
 	turnBuff(){
@@ -169,6 +178,9 @@ class combatant{
 			case 7:
 				this.status.main[3]=6
 				this.block+=8
+			break
+			case 16:
+				this.block+=3
 			break
 		}
 	}
@@ -2267,6 +2279,55 @@ class combatant{
 					this.layer.fill(0,this.fade)
 					this.layer.ellipse(36,-45,6,6)
 					this.layer.ellipse(12,-45,6,6)
+				break
+				case 81:
+					this.layer.stroke(40,80,40,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(40,80,40,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.arc(6,-75,18,15,0,180)
+					this.layer.fill(200,150,0,this.fade)
+					this.layer.ellipse(4,-72,4,4)
+					this.layer.ellipse(12,-72,4,4)
+				break
+				case 82:
+					this.layer.stroke(100,150,50,this.fade)
+					this.layer.strokeWeight(3)
+					this.layer.line(-2,-21,-6,0)
+					this.layer.line(2,-21,6,0)
+					this.layer.line(-5,-27,-10,-15)
+					this.layer.line(5,-27,10,-15)
+					this.layer.noStroke()
+					this.layer.fill(100,150,50,this.fade)
+					this.layer.ellipse(0,-24,12,24)
+					this.layer.fill(150,200,50,this.fade)
+					this.layer.ellipse(0,-45,24,24)
+					this.layer.triangle(-9,-48,-3,-54,-12,-57)
+					this.layer.triangle(9,-48,3,-54,12,-57)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(3,-44,4,4)
+					this.layer.ellipse(9,-44,4,4)
+				break
+				case 83:
+					this.layer.fill(175,this.fade)
+					this.layer.ellipse(0,-20,48,48)
+					this.layer.fill(125,this.fade)
+					this.layer.ellipse(0,-20,36,36)
+					this.layer.fill(225,225,25,this.fade)
+					this.layer.arc(0,-20,30,30,-120,-60)
+					this.layer.arc(0,-20,30,30,0,60)
+					this.layer.arc(0,-20,30,30,120,180)
+					this.layer.fill(125,this.fade)
+					this.layer.ellipse(0,-20,12,12)
+					this.layer.fill(225,225,25,this.fade)
+					this.layer.ellipse(0,-20,6,6)
 				break
 
 				case 100:

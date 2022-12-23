@@ -3703,8 +3703,8 @@ class attack{
                     this.attacks.push([1,12,this.user,this.damage])
                 break
                 case 2:
-                    this.battle.drop.addDrop(findCard('Confusion'),0,stage.playerNumber+1)
-                    this.battle.reserve.addShuffle(findCard('Confusion'),0,stage.playerNumber+1)
+                    this.battle.drop.addDrop(findCard(this.alt),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard(this.alt),0,stage.playerNumber+1)
                 break
                 case 3:
                     this.battle.combatants[this.target].take(this.damage,this.user)
