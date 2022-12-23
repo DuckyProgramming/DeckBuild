@@ -983,7 +983,6 @@ class battle{
             if(this.combatants[e].type==0&&this.combatants[e].id!=1){
                 this.combatants[e]=new combatant(this.layer,this,100+e*100,350,type,1,e)
                 this.combatants[e].initialBuff()
-                print('a')
                 this.combatants[e].attacks=copyList(this.combatants[e].attacks)
                 this.combatants[e].attacks.push(21)
                 this.combatants[e].behavior=1
@@ -2174,7 +2173,6 @@ class battle{
                         this.calc.list.push(listing.card[15][0][g])
                     }
                 }
-                print(this.calc.list)
                 for(g=0;g<3;g++){
                     if(this.calc.list.length>0){
                         h=floor(random(0,this.calc.list.length))

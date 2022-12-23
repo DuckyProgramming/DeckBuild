@@ -4162,15 +4162,21 @@ types={
         ],
         },{name:'Glued',rarity:-2,list:11,
         stats:[
-            {damage:0,alt:0,cost:2,attack:0,target:0,spec:9,class:-1},
-            {damage:0,alt:0,cost:2,attack:0,target:0,spec:9,class:-1},
+            {damage:0,alt:0,cost:2,attack:0,target:0,spec:3,class:-1},
+            {damage:0,alt:0,cost:2,attack:0,target:0,spec:3,class:-1},
         ],
         },{name:'Electrocuted',rarity:-2,list:11,
         stats:[
             {damage:0,alt:0,cost:0,attack:-24,target:0,spec:1,class:-1},
             {damage:0,alt:0,cost:0,attack:-24,target:0,spec:1,class:-1},
         ],
+        },{name:'Spiked',rarity:-2,list:11,
+        stats:[
+            {damage:4,alt:0,cost:0,attack:-25,target:0,spec:3,class:-1},
+            {damage:6,alt:0,cost:0,attack:-25,target:0,spec:3,class:-1},
+        ],
         },
+        //17/20
 
         /*{name:'Fortify',rarity:0,list:4,
         stats:[
@@ -4203,7 +4209,7 @@ types={
         {name:'Phantasm',alt:'',life:50,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Friend','Thing','____','Certes']},
         {name:'Gentleman',alt:'',life:70,height:75,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0,identifiers:['Brother','Mister','MCFN-3742105','Alexander']},
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
-        {name:'Slime',alt:'',life:20,height:45,behavior:0,attacks:[1,6,7],damage:[10,7,2],altAttack:[0,'Stuck',0],class:0,buff:0},
+        {name:'Slime',alt:'',life:20,height:45,behavior:0,attacks:[1,6,7],damage:[7,4,2],altAttack:[0,'Stuck',0],class:0,buff:0},
         {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0,buff:0},//10
         {name:'Roger Reviv',alt:'',life:300,height:75,behavior:1,attacks:[1,9,3,10],damage:[15,4,2,20],altAttack:[0,6,9,'Heavy\nBleed'],class:0,buff:1},
         {name:'Gangster',alt:'',life:40,height:75,behavior:0,attacks:[1,8],damage:[8,6],altAttack:[0,0],class:0,buff:2},
@@ -4270,8 +4276,11 @@ types={
         {name:'Management Soldier',alt:'',life:90,height:78,behavior:0,attacks:[10,6,29],damage:[4,12,3],altAttack:['Electrocuted','Dazed',0],class:0,buff:11},
         {name:'Management Officer',alt:'',life:45,height:78,behavior:0,attacks:[7,6],damage:[2,8],altAttack:[0,'Dazed'],class:0,buff:12},
         {name:'Management',alt:'Special Forces',life:120,height:78,behavior:1,attacks:[1,3,10,10],damage:[18,3,8,2],altAttack:[0,5,'Electrocuted','Void'],class:0,buff:11},
-        {name:'Big Slime',alt:'',life:40,height:65,behavior:0,attacks:[1,6,7],damage:[15,11,3],altAttack:[0,'Stuck',0],class:0,buff:0},
-        //gluer?
+        {name:'Big Slime',alt:'',life:40,height:65,behavior:0,attacks:[1,6,7],damage:[11,6,3],altAttack:[0,'Stuck',0],class:0,buff:0},
+        {name:'Spike Slime',alt:'',life:14,height:45,behavior:0,attacks:[1,6,7],damage:[7,4,2],altAttack:[0,'Spiked',0],class:0,buff:13},
+        {name:'Big Spike Slime',alt:'',life:28,height:65,behavior:0,attacks:[1,6,7],damage:[11,6,3],altAttack:[0,'Spiked',0],class:0,buff:14},
+        {name:'Slimoid',alt:'',life:35,height:45,behavior:0,attacks:[1,6,7],damage:[12,6,2],altAttack:[0,'Glued',0],class:0,buff:15},
+        {name:'Big Slimoid',alt:'',life:70,height:65,behavior:0,attacks:[1,6,7],damage:[18,9,3],altAttack:[0,'Glued',0],class:0,buff:15},
         //f
     ],attack:[
         {class:0},//0
@@ -4524,6 +4533,26 @@ types={
             combatants:[9,76,0,0,0,0],
             reinforce:[],
             threshold:3,class:1,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[77,77,0,0,0,0],
+            reinforce:[],
+            threshold:3,class:0,zone:0,
+            objective:[[0,0,0,0]],
+        },{//45
+            combatants:[77,78,0,0,0,0],
+            reinforce:[],
+            threshold:3,class:1,zone:0,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[79,79,0,0,0,0],
+            reinforce:[],
+            threshold:3,class:0,zone:2,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[79,80,0,0,0,0],
+            reinforce:[],
+            threshold:3,class:1,zone:2,
             objective:[[0,0,0,0]],
         },
     ],relic:[

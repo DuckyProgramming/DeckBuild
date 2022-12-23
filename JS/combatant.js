@@ -136,6 +136,15 @@ class combatant{
 			case 12:
 				this.status.main[4]=2
 			break
+			case 13:
+				this.status.main[116]=1
+			break
+			case 14:
+				this.status.main[116]=2
+			break
+			case 15:
+				this.status.main[10]=1
+			break
 		}
 	}
 	turnBuff(){
@@ -865,7 +874,7 @@ class combatant{
 					this.layer.fill(0,this.fade)
 					this.layer.ellipse(4,-72,8,6)
 					this.layer.ellipse(12,-72,8,6)
-					this.layer.rect(3,-72,24,2)
+					this.layer.rect(3,-72,24,2)                                                       
 					this.layer.stroke(100,this.fade)
 					this.layer.strokeWeight(2)
 					this.layer.noFill()
@@ -2211,6 +2220,54 @@ class combatant{
 					this.layer.ellipse(36,-45,6,6)
 					this.layer.ellipse(12,-45,6,6)
 				break
+				case 77:
+					this.layer.noStroke()
+					this.layer.fill(150,100,50,this.fade)
+					this.layer.ellipse(0,-20,60,45)
+					for(g=0;g<18;g++){
+						this.layer.triangle(sin(g*20-8)*28,cos(g*20-8)*21-20,sin(g*20+8)*28,cos(g*20+8)*21-20,sin(g*20)*36,cos(g*20)*27-20)
+					}
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(24,-30,6,6)
+					this.layer.ellipse(8,-30,6,6)
+				break
+				case 78:
+					this.layer.noStroke()
+					this.layer.fill(150,100,50,this.fade)
+					this.layer.ellipse(0,-30,90,67.5)
+					for(g=0;g<18;g++){
+						this.layer.triangle(sin(g*20-8)*42,cos(g*20-8)*31.5-30,sin(g*20+8)*42,cos(g*20+8)*31.5-30,sin(g*20)*54,cos(g*20)*40.5-30)
+					}
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(36,-45,6,6)
+					this.layer.ellipse(12,-45,6,6)
+				break
+				case 79:
+					this.layer.noStroke()
+					this.layer.fill(240,this.fade)
+					this.layer.rect(0,-20,12,46)
+					this.layer.rect(-12,-20,12,42)
+					this.layer.rect(-24,-20,12,20)
+					this.layer.rect(12,-20,12,42)
+					this.layer.rect(24,-20,12,20)
+					this.layer.ellipse(0,-20,60,45)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(24,-30,6,6)
+					this.layer.ellipse(8,-30,6,6)
+				break
+				case 80:
+					this.layer.noStroke()
+					this.layer.fill(240,this.fade)
+					this.layer.rect(0,-30,18,69)
+					this.layer.rect(-18,-30,18,63)
+					this.layer.rect(-36,-30,18,30)
+					this.layer.rect(18,-30,18,63)
+					this.layer.rect(36,-30,18,30)
+					this.layer.ellipse(0,-30,90,67.5)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(36,-45,6,6)
+					this.layer.ellipse(12,-45,6,6)
+				break
 
 				case 100:
 					this.layer.stroke(80,this.fade)
@@ -3253,6 +3310,10 @@ class combatant{
 				if(this.name=='Big Slime'){
 					this.battle.quickReinforce(findCombatant('Slime'))
 					this.battle.quickReinforce(findCombatant('Slime'))
+				}
+				if(this.name=='Big Spike Slime'){
+					this.battle.quickReinforce(findCombatant('Spike Slime'))
+					this.battle.quickReinforce(findCombatant('Spike Slime'))
 				}
 			}
 		}

@@ -33,6 +33,9 @@ class attack{
                 case -22:
                     this.battle.currency.money-=10
                 break
+                case -25:
+                    this.battle.combatants[0].take(this.damage,0)
+                break
                 case 1: case 52: case 99: case 114: case 139: case 232: case 284: case 329: case 560: case 565: case 573: case 579: case 597: case 599: case 633: case 642: case 723:
                     this.battle.combatants[this.target].take(this.damage,this.user)
                 break
