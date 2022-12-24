@@ -3861,6 +3861,34 @@ class attack{
                         }
                     }
                 break
+                case 34:
+                    this.battle.combatants[this.user].boost.main[0]+=this.damage
+                    this.battle.combatants[this.user].addBlock(this.alt)
+                break
+                case 35:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.attacks.push([7,7+this.alt*5,this.user,this.damage,this.alt,this.target])
+                    this.battle.drop.addDrop(findCard('Burn'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Burn'),0,stage.playerNumber+1)
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        if(this.battle.hand.cards[g].attack==-10&&this.battle.hand.cards[g].color==stage.playerNumber+1){
+                            this.battle.hand.cards[g].level=1
+                        }
+                    }
+                    for(g=0,lg=this.battle.reserve.cards.length;g<lg;g++){
+                        if(this.battle.reserve.cards[g].attack==-10&&this.battle.reserve.cards[g].color==stage.playerNumber+1){
+                            this.battle.reserve.cards[g].level=1
+                        }
+                    }
+                    for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
+                        if(this.battle.discard.cards[g].attack==-10&&this.battle.discard.cards[g].color==stage.playerNumber+1){
+                            this.battle.discard.cards[g].level=1
+                        }
+                    }
+                break
+                case 36:
+                    this.battle.combatants[this.target].take(this.battle.combatants[this.target].life*this.alt/this.damage,this.user)
+                break
                 default:
             }
         }

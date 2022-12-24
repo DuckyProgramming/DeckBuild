@@ -208,6 +208,17 @@ class combatant{
 						this.intent=floor(random(0,this.attacks.length))
 					}
 				break
+				case 3:
+					if(this.battle.counter.turn==0){
+						this.intent=this.attacks.length-1
+					}else if(this.battle.counter.turn==1){
+						this.intent=this.attacks.length-2
+					}else if(this.battle.counter.turn%7==6){
+						this.intent=this.attacks.length-3
+					}else{
+						this.intent=floor(random(0,this.attacks.length-3))
+					}
+				break
 			}
 		}else{
 			this.intent=type
@@ -2438,9 +2449,27 @@ class combatant{
 					this.layer.fill(100,this.fade)
 					this.layer.rect(0,-5,8,10)
 				break
+				case 90:
+					this.layer.fill(100,65,90,this.fade)
+					this.layer.ellipse(0,-60,90,90)
+					this.layer.fill(170,90,150,this.fade)
+					this.layer.ellipse(0,-60,75,75)
+					this.layer.fill(230,130,210,this.fade)
+					this.layer.ellipse(0,-60,60,60)
+					this.layer.fill(225,220,185,this.fade)
+					regPoly(this.layer,-2,-60,6,18,0)
+					this.layer.fill(245,240,205,this.fade)
+					regPoly(this.layer,2,-60,6,18,0)
+					for(g=0;g<this.battle.counter.turn%7;g++){
+						this.layer.fill(150,255,50,this.fade)
+						this.layer.ellipse(cos(g*60-60)*40,sin(g*60-60)*45-60,12,12)
+						this.layer.fill(150,255,50,this.fade/2)
+						this.layer.ellipse(cos(g*60-60)*40,sin(g*60-60)*45-60,18,18)
+					}
+				break
 
 
-				case 100:
+				case 200:
 					this.layer.stroke(80,this.fade)
 					this.layer.strokeWeight(4)
 					this.layer.line(-4,-30,-8,0)

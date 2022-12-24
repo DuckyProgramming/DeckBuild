@@ -4216,7 +4216,7 @@ types={
         {name:'Big Thug',alt:'',life:90,height:90,behavior:0,attacks:[1,5],damage:[9,1],altAttack:[0,0],class:1,buff:0},
         {name:'Slime',alt:'',life:20,height:45,behavior:0,attacks:[1,6,7],damage:[7,4,2],altAttack:[0,'Stuck',0],class:0,buff:0},
         {name:'Cartel',alt:'',life:42,height:75,behavior:0,attacks:[1,8,9],damage:[10,12,2],altAttack:[0,0,5],class:0,buff:0},//10
-        {name:'Roger Reviv',alt:'',life:300,height:75,behavior:1,attacks:[1,9,3,10],damage:[15,4,2,20],altAttack:[0,6,9,'Heavy\nBleed'],class:0,buff:1},
+        {name:'Roger Reviv',alt:'',life:400,height:75,behavior:1,attacks:[1,9,3,10],damage:[15,4,2,20],altAttack:[0,6,9,'Heavy\nBleed'],class:0,buff:1},
         {name:'Gangster',alt:'',life:40,height:75,behavior:0,attacks:[1,8],damage:[8,6],altAttack:[0,0],class:0,buff:2},
         {name:'Batter',alt:'',life:48,height:75,behavior:0,attacks:[10,8,11],damage:[12,6,1],altAttack:['Concussion',0,0],class:0,buff:0},
         {name:'Slippery Gangster',alt:'',life:36,height:75,behavior:0,attacks:[1,3],damage:[8,3],altAttack:[0,2],class:0,buff:3},
@@ -4240,7 +4240,7 @@ types={
         {name:'Debt Collector',alt:'',life:64,height:75,behavior:0,attacks:[1],damage:[12],altAttack:[0],class:0,buff:0},
         {name:'Swordmaster',alt:'',life:105,height:75,behavior:0,attacks:[16,1,17],damage:[20,16,10],altAttack:[1,0,2],class:0,buff:0},
         {name:'Dark Man',alt:'',life:35,height:75,behavior:0,attacks:[1,3],damage:[6,2],altAttack:[0,2],class:0,buff:0},
-        {name:'The Reorganised',alt:'',life:200,height:75,behavior:0,attacks:[1,22,23],damage:[25,8,4],altAttack:[0,10,1],class:0,buff:9},
+        {name:'The Reorganised',alt:'',life:300,height:75,behavior:0,attacks:[1,22,23],damage:[25,8,4],altAttack:[0,10,1],class:0,buff:9},
         {name:'Billy Beatup',alt:'',life:75,height:75,behavior:0,attacks:[1,3],damage:[9,2],altAttack:[0,6],class:0,buff:0},
         {name:'Monkey Gangster',alt:'',life:24,height:60,behavior:0,attacks:[1,3],damage:[8,2],altAttack:[0,5],class:0,buff:0},
         {name:'Wild Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[4,2,3],altAttack:[0,3,0],class:0,buff:0},
@@ -4256,10 +4256,10 @@ types={
         {name:'Thorns',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Bufferer',alt:'',life:40,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Gun Rack',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},//50
-        {name:'Deca',alt:'',life:125,height:90,behavior:2,attacks:[8,24],damage:[16,10],altAttack:[0,2],class:1,buff:0},
+        {name:'Deca',alt:'',life:250,height:90,behavior:2,attacks:[8,24],damage:[16,10],altAttack:[0,2],class:1,buff:0},
         {name:'Rock Golem',alt:'',life:25,height:60,behavior:2,attacks:[8,6],damage:[4,5],altAttack:[0,'Dazed'],class:1,buff:0},
         {name:'Big Wild Duck',alt:'',life:50,height:81,behavior:0,attacks:[1,3,4],damage:[8,3,3],altAttack:[0,3,0],class:0,buff:0},
-        {name:'General Duckion',alt:'',life:120,height:81,behavior:0,attacks:[3,4,25],damage:[10,3,3,4],altAttack:[2,0,0],class:0,buff:0},
+        {name:'General Duckion',alt:'',life:210,height:81,behavior:0,attacks:[3,4,25],damage:[10,3,3,4],altAttack:[2,0,0],class:0,buff:0},
         {name:'Trap',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Multiturret',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
         {name:'Metallicizer',alt:'',life:50,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
@@ -4274,7 +4274,7 @@ types={
         {name:'Exhauster',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Monkey',alt:'',life:12,height:60,behavior:0,attacks:[3],damage:[1],altAttack:[5],class:0,buff:0},
         {name:'Thug',alt:'',life:30,height:75,behavior:0,attacks:[1,5],damage:[6,1],altAttack:[0,0],class:0,buff:0},
-        {name:'Sharpshot',alt:'',life:240,height:75,behavior:0,attacks:[1,3,8,26],damage:[18,5,12,2],altAttack:[0,3,0,0],class:0,buff:1},
+        {name:'Sharpshot',alt:'',life:360,height:75,behavior:0,attacks:[1,3,8,26],damage:[18,5,12,2],altAttack:[0,3,0,0],class:0,buff:1},
         {name:'Thornvine',alt:'',life:40,height:75,behavior:0,attacks:[1,27,28],damage:[3,2,2],altAttack:[0,0],class:0,buff:0},//70
         {name:'Management Robot',alt:'',life:60,height:75,behavior:0,attacks:[1,3,29],damage:[10,4,4],altAttack:[0,2,0],class:0,buff:0},
         {name:'Management Drone',alt:'',life:50,height:60,behavior:0,attacks:[1,3,29],damage:[15,6,6],altAttack:[0,2,0],class:1,buff:10},
@@ -4295,6 +4295,7 @@ types={
         {name:'Mugger',alt:'',life:42,height:75,behavior:1,attacks:[32,8,3,31],damage:[0,6,4,9],altAttack:[0,0,2,15],class:0,buff:0},
         {name:'Shinyshroom',alt:'',life:20,height:30,behavior:0,attacks:[33,1,8],damage:[4,4,4],altAttack:[0,0,0],class:0,buff:0},
         {name:'Aggroshroom',alt:'',life:20,height:30,behavior:0,attacks:[33,3,7],damage:[1,1,1],altAttack:[0,3,0],class:0,buff:0},
+        {name:'Hexaghost',alt:'',life:225,height:120,behavior:3,attacks:[3,20,34,35,36,21],damage:[5,6,2,2,3,0],altAttack:[2,0,12,6,1,0],class:0,buff:0},//90
         
     ],attack:[
         {class:0},//0
@@ -4331,6 +4332,9 @@ types={
         {class:0},
         {class:1},
         {class:1},
+        {class:2},
+        {class:0},
+        {class:0},
     ],encounter:[
         {//0
             combatants:[0,0,0,0,0,0],
@@ -4622,6 +4626,11 @@ types={
             reinforce:[89],
             threshold:3,class:0,zone:0,
             objective:[[0,0,0,0]],
+        },{
+            combatants:[90,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:2,zone:0,
+            objective:[[0,0,6,0]],
         },
     ],relic:[
         {

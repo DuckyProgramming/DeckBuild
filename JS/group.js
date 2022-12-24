@@ -282,7 +282,7 @@ class group{
                 }else if(this.cards[e].attack==-7){
                     this.battle.combatants[0].status.main[8]++
                 }else if(this.cards[e].attack==-10){
-                    this.battle.combatants[0].take(2,-1)
+                    this.battle.combatants[0].take(2+this.cards[e].level*2,-1)
                 }else if(this.cards[e].attack==-14){
                     this.battle.combatants[0].status.main[11]+=2
                 }else if(this.cards[e].attack==-21){
