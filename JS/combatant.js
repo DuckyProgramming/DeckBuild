@@ -158,6 +158,9 @@ class combatant{
 				this.status.main[155]=5
 				this.block==5
 			break
+			case 19:
+				this.status.main[31]=12
+			break
 		}
 	}
 	turnBuff(){
@@ -2607,7 +2610,31 @@ class combatant{
 					this.layer.noStroke()
 					this.layer.rect(47,-55,30,10)
 				break
-
+				case 97:
+					this.layer.stroke(65,85,85,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.stroke(85,195,135,this.fade)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(95,110,105,this.fade)
+					this.layer.ellipse(0,-47,18,42)
+					this.layer.fill(30,25,0,this.fade)
+					this.layer.rect(-7,-45,5,2)
+					this.layer.rect(0,-45,5,2)
+					this.layer.rect(7,-45,5,2)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-78,30,30)
+					this.layer.fill(255,this.fade)
+					this.layer.ellipse(4,-75,4,4)
+					this.layer.ellipse(12,-75,4,4)
+					this.layer.fill(80,90,95,this.fade)
+					this.layer.arc(0,-78,36,36,-180,0)
+					this.layer.fill(240,230,65,this.fade/2)
+					this.layer.rect(8,-75,20,6)
+				break
 
 				case 200:
 					this.layer.stroke(80,this.fade)

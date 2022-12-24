@@ -730,7 +730,7 @@ class group{
                     this.battle.random.exhausting--
                     this.cards[e].used=true
                     this.cards[e].exhaust=true
-                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.random.transforming>0){
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.random.transforming>0&&this.cards[e].attack!=-26){
                     this.battle.random.transforming--
                     g=floor(random(0,3))
                     this.cards[e].type=listing.card[this.battle.player][g][floor(random(0,listing.card[this.battle.player][g].length))]

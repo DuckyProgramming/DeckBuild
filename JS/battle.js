@@ -431,6 +431,9 @@ class battle{
             case -24:
                 this.random.exhausting++
             break
+            case -26:
+                this.random.transforming++
+            break
         }
     }
     getRelic(type){
