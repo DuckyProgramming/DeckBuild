@@ -4296,6 +4296,7 @@ types={
         {name:'Shinyshroom',alt:'',life:20,height:30,behavior:0,attacks:[33,1,8],damage:[4,4,4],altAttack:[0,0,0],class:0,buff:0},
         {name:'Aggroshroom',alt:'',life:20,height:30,behavior:0,attacks:[33,3,7],damage:[1,1,1],altAttack:[0,3,0],class:0,buff:0},
         {name:'Hexaghost',alt:'',life:225,height:120,behavior:3,attacks:[3,20,34,35,36,21],damage:[5,6,2,2,3,0],altAttack:[2,0,12,6,1,0],class:0,buff:0},//90
+        {name:'Bouncer',alt:'',life:21,height:75,behavior:4,attacks:[1,1,1,8],damage:[10,6,2,6],altAttack:[0,0,0,0],class:0,buff:0},
         
     ],attack:[
         {class:0},//0
@@ -4631,6 +4632,11 @@ types={
             reinforce:[],
             threshold:2,class:2,zone:0,
             objective:[[0,0,6,0]],
+        },{
+            combatants:[91,0,0,0,0,0],
+            reinforce:[91,91,91],
+            threshold:3,class:0,zone:1,
+            objective:[[0,0,0,0]],
         },
     ],relic:[
         {
