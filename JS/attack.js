@@ -3924,6 +3924,14 @@ class attack{
                         }
                     }
                 break
+                case 47:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.random.drawing--
+                    this.attacks.push([1,12,this.user,this.damage])
+                break
+                case 48:
+                    this.battle.quickReinforce(findCombatant('Management Robot'))
+                break
                 default:
             }
         }

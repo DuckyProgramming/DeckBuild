@@ -2594,6 +2594,19 @@ class combatant{
 					this.layer.noStroke()
 					this.layer.ellipse(2,-45,4,4)
 				break
+				case 96:
+					this.layer.fill(100,this.fade)
+					this.layer.stroke(120,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.ellipse(-30,-15,30,30)
+					this.layer.ellipse(30,-15,30,30)
+					this.layer.rect(0,-45,120,60)
+					this.layer.ellipse(0,-45,30,30)
+					this.layer.line(-45,-75,-45,-90)
+					this.layer.fill(50,50,200,this.fade)
+					this.layer.noStroke()
+					this.layer.rect(47,-55,30,10)
+				break
 
 
 				case 200:
@@ -3643,10 +3656,18 @@ class combatant{
 				if(this.name=='Big Slime'){
 					this.battle.quickReinforce(findCombatant('Slime'))
 					this.battle.quickReinforce(findCombatant('Slime'))
+					this.battle.end=false
 				}
 				if(this.name=='Big Spike Slime'){
 					this.battle.quickReinforce(findCombatant('Spike Slime'))
 					this.battle.quickReinforce(findCombatant('Spike Slime'))
+					this.battle.end=false
+				}
+				if(this.name=='Personnel Carrier'){
+					for(let g=0;g<4;g++){
+						this.battle.quickReinforce(findCombatant('Management Robot'))
+						this.battle.end=false
+					}
 				}
 			}
 		}

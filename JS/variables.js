@@ -4301,7 +4301,7 @@ types={
         {name:'Nerfer',alt:'',life:50,height:72,behavior:0,attacks:[1,1,8,41,42,43],damage:[5,7,6,3,3,3],altAttack:[0,0,0,0,0,0],class:0,buff:0},
         {name:'Buffer',alt:'',life:50,height:72,behavior:0,attacks:[1,1,8,44,45,46],damage:[5,7,6,3,3,3],altAttack:[0,0,0,0,0,0],class:0,buff:0},
         {name:'Security System',alt:'',life:45,height:75,behavior:1,attacks:[10,10,10,29,21],damage:[10,5,6,16,0],altAttack:['Wound','Burn','Slow\nBleed',0,0],class:0,buff:0},
-        //truck spawns 5 robots
+        {name:'Personnel Carrier',alt:'',life:180,height:75,behavior:4,attacks:[1,3,47,48],damage:[24,7,16,1],altAttack:[0,3,1,0],class:0,buff:0},
         //voider
     ],attack:[
         {class:0},//0
@@ -4350,6 +4350,8 @@ types={
         {class:1},
         {class:1},
         {class:1},
+        {class:1},
+        {class:0},
         {class:1},
         
     ],encounter:[
@@ -4668,6 +4670,11 @@ types={
             reinforce:[71],
             threshold:2,class:0,zone:2,
             objective:[[0,0,0,0]],
+        },{
+            combatants:[96,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:2,zone:2,
+            objective:[[0,0,6,0]],
         },
     ],relic:[
         {
