@@ -4300,7 +4300,9 @@ types={
         {name:'Agent Duck',alt:'',life:60,height:72,behavior:4,attacks:[37,38,39,40,8],damage:[6,15,4,24,12],altAttack:[3,0,'Confusion',0,0],class:0,buff:0},
         {name:'Nerfer',alt:'',life:50,height:72,behavior:0,attacks:[1,1,8,41,42,43],damage:[5,7,6,3,3,3],altAttack:[0,0,0,0,0,0],class:0,buff:0},
         {name:'Buffer',alt:'',life:50,height:72,behavior:0,attacks:[1,1,8,44,45,46],damage:[5,7,6,3,3,3],altAttack:[0,0,0,0,0,0],class:0,buff:0},
-        
+        {name:'Security System',alt:'',life:45,height:75,behavior:1,attacks:[10,10,10,29,21],damage:[10,5,6,16,0],altAttack:['Wound','Burn','Slow\nBleed',0,0],class:0,buff:0},
+        //truck spawns 5 robots
+        //voider
     ],attack:[
         {class:0},//0
         {class:0},
@@ -4660,6 +4662,11 @@ types={
             combatants:[93,94,0,0,0,0],
             reinforce:[],
             threshold:3,class:0,zone:1,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[95,0,0,0,0,0],
+            reinforce:[71],
+            threshold:2,class:0,zone:2,
             objective:[[0,0,0,0]],
         },
     ],relic:[

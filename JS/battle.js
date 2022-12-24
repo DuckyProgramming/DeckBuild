@@ -59,7 +59,7 @@ class battle{
         //this.map.complete[0][0]=1
         //this.event=key
 
-        //this.getPotion(57)
+        //this.getPotion(key)
     }
     create(){
         this.end=false
@@ -442,7 +442,7 @@ class battle{
                 this.combatants[0].life+=7
             break
             case 30: case 31: case 32:
-                for(h=0;h<2;h++){
+                for(let h=0;h<2;h++){
                     this.calc.list=[]
                     for(g=0,lg=this.deck.cards.length;g<lg;g++){
                         if(this.deck.cards[g].class==type-30&&this.deck.cards[g].level==0){
@@ -519,7 +519,7 @@ class battle{
             break
             case 124:
                 this.deck.add(findCard('Hoarding'),0,stage.playerNumber+2)
-                for(g=0;g<3;g++){
+                for(let g=0;g<3;g++){
                     f=floor(random(0,this.relics.list[g].length))
                     this.getRelic(this.relics.list[g][f])
                     this.relics.list[g].splice(f,1)
@@ -538,7 +538,7 @@ class battle{
                 this.mana.max++
                 this.mana.base++
                 this.calc.list=listing.card[10]
-                for(g=0;g<2;g++){
+                for(let g=0;g<2;g++){
                     if(this.calc.list.length>0){
                         h=floor(random(0,this.calc.list[3].length))
                         this.deck.add(this.calc.list[3][h],0,stage.playerNumber+2)
@@ -600,7 +600,7 @@ class battle{
                 g=this.calc.list[floor(random(0,this.calc.list.length))]
                 f=floor(random(0,this.potions.list[g].length))
                 this.getPotion(this.potions.list[g][f])
-                for(g=0;g<999;g++){
+                for(let g=0;g<999;g++){
                     h=floor(random(0,this.deck.cards.length))
                     if(this.deck.cards[h].level==0){
                         this.deck.cards[h].level++
