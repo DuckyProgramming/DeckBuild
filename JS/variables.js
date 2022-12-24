@@ -4297,6 +4297,9 @@ types={
         {name:'Aggroshroom',alt:'',life:20,height:30,behavior:0,attacks:[33,3,7],damage:[1,1,1],altAttack:[0,3,0],class:0,buff:0},
         {name:'Hexaghost',alt:'',life:225,height:120,behavior:3,attacks:[3,20,34,35,36,21],damage:[5,6,2,2,3,0],altAttack:[2,0,12,6,1,0],class:0,buff:0},//90
         {name:'Bouncer',alt:'',life:21,height:75,behavior:4,attacks:[1,1,1,8],damage:[10,6,2,6],altAttack:[0,0,0,0],class:0,buff:0},
+        {name:'Agent Duck',alt:'',life:60,height:72,behavior:4,attacks:[37,38,39,40,8],damage:[6,15,4,24,12],altAttack:[3,0,'Confusion',0,0],class:0,buff:0},
+        {name:'Nerfer',alt:'',life:50,height:72,behavior:0,attacks:[1,1,8,41,42,43],damage:[5,7,6,3,3,3],altAttack:[0,0,0,0,0,0],class:0,buff:0},
+        {name:'Buffer',alt:'',life:50,height:72,behavior:0,attacks:[1,1,8,44,45,46],damage:[5,7,6,3,3,3],altAttack:[0,0,0,0,0,0],class:0,buff:0},
         
     ],attack:[
         {class:0},//0
@@ -4336,6 +4339,17 @@ types={
         {class:2},
         {class:0},
         {class:0},
+        {class:0},
+        {class:0},
+        {class:0},
+        {class:0},//40
+        {class:1},
+        {class:1},
+        {class:1},
+        {class:1},
+        {class:1},
+        {class:1},
+        
     ],encounter:[
         {//0
             combatants:[0,0,0,0,0,0],
@@ -4393,10 +4407,10 @@ types={
             threshold:2,class:0,zone:1,
             objective:[[0,0,1,0]],
         },{
-            combatants:[12,13,0,0,0,0],
+            combatants:[12,0,0,0,0,0],
             reinforce:[15,12],
-            threshold:3,class:1,zone:1,
-            objective:[[0,0,1,0]],
+            threshold:2,class:0,zone:1,
+            objective:[[0,0,0,0]],
         },{
             combatants:[16,0,0,0,0,0],
             reinforce:[],
@@ -4635,6 +4649,16 @@ types={
         },{
             combatants:[91,0,0,0,0,0],
             reinforce:[91,91,91],
+            threshold:3,class:0,zone:1,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[92,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:1,zone:1,
+            objective:[[0,0,1,0]],
+        },{
+            combatants:[93,94,0,0,0,0],
+            reinforce:[],
             threshold:3,class:0,zone:1,
             objective:[[0,0,0,0]],
         },

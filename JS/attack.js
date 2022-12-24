@@ -3888,6 +3888,41 @@ class attack{
                 break
                 case 36:
                     this.battle.combatants[this.target].take(this.battle.combatants[this.target].life*this.alt/this.damage,this.user)
+                    this.attacks.push([1,12,this.user,this.damage])
+                break
+                case 37:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.user].combo++
+                    this.attacks.push([15,7+this.alt*5,this.user,this.damage,this.alt,this.target])
+                break
+                case 38:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.user].combo++
+                    this.attacks.push([1,12,this.user,this.damage])
+                break
+                case 39:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.user].combo++
+                    this.attacks.push([1,12,this.user,this.damage])
+                    if(this.battle.combatants[this.target].block<=0){
+                        this.battle.drop.addDrop(findCard(this.alt),0,stage.playerNumber+1)
+                        this.battle.reserve.addShuffle(findCard(this.alt),0,stage.playerNumber+1)
+                    }
+                break
+                case 40:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    this.battle.combatants[this.user].combo=0
+                    this.attacks.push([1,12,this.user,this.damage])
+                break
+                case 41: case 42: case 43:
+                    this.battle.combatants[this.target].boost.main[this.type-41]-=this.damage
+                break
+                case 44: case 45: case 46:
+                    for(g=0,lg=this.battle.combatants.length;g<lg;g++){
+                        if(this.battle.combatants[g].team==1&&this.battle.combatants[g].life>0){
+                            this.battle.combatants[g].boost.main[this.type-44]+=this.damage
+                        }
+                    }
                 break
                 default:
             }
@@ -3950,12 +3985,15 @@ class attack{
                         this.battle.combatants[this.attacks[g][2]+1].take(this.attacks[g][3]+this.battle.combatants[0].status.main[26],this.attacks[g][2],0)
                     }
                 break
-                case 7:
+                case 7: case 15:
                     if(this.attacks[g][1]>=1+this.attacks[g][4]*5){
                         this.battle.combatants[this.attacks[g][2]].position.x-=10
                     }else if(this.attacks[g][1]<6){
                         this.battle.combatants[this.attacks[g][2]].position.x+=10
                     }else if(this.attacks[g][1]%5==0){
+                        if(this.attacks[g][0]==15){
+                            this.battle.combatants[this.attacks[g][2]].combo++
+                        }
                         this.battle.combatants[this.attacks[g][5]].take(this.attacks[g][3],this.attacks[g][2],0)
                     }
                 break

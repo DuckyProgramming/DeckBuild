@@ -55,7 +55,7 @@ class card{
             case -7: this.desc+='At End of Turn,\nGain 1 Vulnerable'; break
             case -8: this.desc+='When Removed,\nLose 3 Max Health'; break
             case -9: this.desc+='When Drawn,\nLose 1 Energy'; if(this.spec!=0){this.desc+='\nEthereal'}; break
-            case -10: this.desc+='At End of Turn,\nTake 2 Damage'; break
+            case -10: this.desc+='At End of Turn,\nTake '+(2+this.level*2)+' Damage'; break
             case -11: this.desc+='Cannot Play more\nthan 3 Cards'; break
             case -12: this.desc+='Cannot Play more\nthan 1 Attack\nWhen Played,\nBreak Balance'; break
             case -13: this.desc+='Unremovable'; break
