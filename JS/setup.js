@@ -11,6 +11,5 @@ function windowResized(){
 }
 /*
 TODO
-Ascend 10-20
 12 Final Gentleman Cards (Including 1 Subsidiary)
 */

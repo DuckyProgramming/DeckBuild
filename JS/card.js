@@ -819,6 +819,13 @@ class card{
         if(this.desc[0]=='\n'){
             this.desc=this.desc.substr(1,this.desc.length)
         }
+        if(this.base.cost==-2){
+            this.cost=random.hits
+        }else if(this.base.cost==-3){
+            this.cost=max(0,4-random.hits)
+        }else if(this.base.cost==-4){
+            this.cost=max(0,3-random.discards)
+        }
     }
     display(deckSize=0,handSize=0,discardSize=0,drawSize=0,turn=0,random=current.defaultRandom){
         this.displayName(deckSize,handSize,discardSize,drawSize,turn,random)
@@ -971,13 +978,6 @@ class card{
         }
     }
     update(energy,combo,armed,random){
-        if(this.base.cost==-2){
-            this.cost=random.hits
-        }else if(this.base.cost==-3){
-            this.cost=max(0,4-random.hits)
-        }else if(this.base.cost==-4){
-            this.cost=max(0,3-random.discards)
-        }
         if(this.size<1&&!this.used){
             this.size=round(this.size*5+1)*0.2
         }else if(this.size>0&&this.used){
