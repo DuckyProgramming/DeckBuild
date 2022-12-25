@@ -3932,6 +3932,13 @@ class attack{
                 case 48:
                     this.battle.quickReinforce(findCombatant('Management Robot'))
                 break
+                case 49:
+                    this.battle.drop.addDrop(findCard('Dazed'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Dazed'),0,stage.playerNumber+1)
+                    for(g=0;g<3;g++){
+                        this.attacks.push([8,20+g*10,0,'Dazed'])
+                    }
+                break
                 default:
             }
         }

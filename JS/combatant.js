@@ -2635,6 +2635,22 @@ class combatant{
 					this.layer.fill(240,230,65,this.fade/2)
 					this.layer.rect(8,-75,20,6)
 				break
+				case 98:
+					this.layer.fill(100,this.fade)
+					this.layer.stroke(120,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.rect(-10,-8,16,16)
+					this.layer.rect(10,-8,16,16)
+					this.layer.rect(-16,-30,16,16)
+					this.layer.rect(16,-30,16,16)
+					this.layer.rect(0,-28,20,32)
+					this.layer.rect(0,-60,32,32)
+					this.layer.rect(13.5,-52,20,12)
+					this.layer.fill(50,50,200,this.fade)
+					this.layer.noStroke()
+					this.layer.ellipse(9-6,-64,4,4)
+					this.layer.ellipse(9+6,-64,4,4)
+				break
 
 				case 200:
 					this.layer.stroke(80,this.fade)

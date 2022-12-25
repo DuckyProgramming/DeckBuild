@@ -4307,7 +4307,8 @@ types={
         {name:'Buffer',alt:'',life:50,height:72,behavior:0,attacks:[1,1,8,44,45,46],damage:[5,7,6,3,3,3],altAttack:[0,0,0,0,0,0],class:0,buff:0},
         {name:'Security System',alt:'',life:45,height:75,behavior:1,attacks:[10,10,10,29,21],damage:[10,5,6,16,0],altAttack:['Wound','Burn','Slow\nBleed',0,0],class:0,buff:0},
         {name:'Personnel Carrier',alt:'',life:180,height:75,behavior:4,attacks:[1,3,47,48],damage:[24,7,16,1],altAttack:[0,3,1,0],class:0,buff:0},
-        {name:'Management Sniper',alt:'',life:55,height:78,behavior:1,attacks:[10,6,29,21],damage:[8,21,2,0],altAttack:['Confused','Stuck',0,0],class:0,buff:19},
+        {name:'Management Sniper',alt:'',life:75,height:78,behavior:1,attacks:[10,6,29,21],damage:[8,21,2,0],altAttack:['Confused','Stuck',0,0],class:0,buff:19},
+        {name:'Management',alt:'Robo-Duck',life:40,height:66,behavior:0,attacks:[1,3,49],damage:[10,5,3],altAttack:[0,3,0],class:0,buff:0},
         //mg autogun
         //voider
     ],attack:[
@@ -4359,6 +4360,7 @@ types={
         {class:1},
         {class:1},
         {class:0},
+        {class:1},
         {class:1},
         
     ],encounter:[
@@ -4684,8 +4686,13 @@ types={
             objective:[[0,0,6,0]],
         },{
             combatants:[97,0,0,0,0,0],
-            reinforce:[],
+            reinforce:[73],
             threshold:2,class:0,zone:2,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[98,98,0,0,0,0],
+            reinforce:[98],
+            threshold:3,class:0,zone:2,
             objective:[[0,0,0,0]],
         },
     ],relic:[
