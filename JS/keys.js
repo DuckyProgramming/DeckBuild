@@ -25,6 +25,11 @@ function keyPressed(){
             inputs.keys[1][3]=true
         break
     }
+    switch(stage.scene){
+        case 'dictionary':
+            current.onKeyDictionary(key,keyCode)
+        break
+    }
 }
 function keyReleased(){
     switch(key){

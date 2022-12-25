@@ -36,6 +36,7 @@ class battle{
         this.relics={list:[[],[],[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
         this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,copying:0,play2More:0,exiling:0,releasing:0,exhausted:0}
+        this.dict={suggestions:[],collect:[],typing:'',allowedCharacter:false,allowed:["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0","-",",",".","'","'","/"," ","(",")"]}
         this.defaultRandom={attacked:0,orbs:0,shields:0,hits:0,discards:0}
         this.combatants.push(new combatant(this.layer,this,100,350,this.player,0,0))
         this.combatants.push(new combatant(this.layer,this,200,350,0,0,1))
@@ -1759,6 +1760,7 @@ class battle{
         this.layer.quad(-92+this.anim.turn*100,390,-68+this.anim.turn*100,358,-44+this.anim.turn*100,390,-68+this.anim.turn*100,422)
         playerFill(this.layer,this.player,1)
         this.layer.strokeWeight(5)
+        this.layer.rect(-68+this.anim.turn*100,445,40,30,5)
         this.layer.rect(-68+this.anim.turn*100,485,40,30,5)
         this.layer.rect(-68+this.anim.turn*100,525,40,30,5)
         this.layer.rect(-68+this.anim.turn*100,565,40,30,5)
@@ -1773,6 +1775,7 @@ class battle{
         this.layer.text('Discard',-68+this.anim.turn*100,519)
         this.layer.text('('+this.discard.cards.length+')',-68+this.anim.turn*100,531)
         this.layer.text('End',-68+this.anim.turn*100,565)
+        this.layer.text('Dicti\nonary',-68+this.anim.turn*100,445)
         this.layer.fill(50)
         this.layer.text('Draw',-68+this.anim.turn*100,479)
         for(let e=0,le=this.combatants.length;e<le;e++){
@@ -2112,6 +2115,9 @@ class battle{
                 this.context=3
             }else if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:565},width:40,height:30})){
                 this.close()
+            }else if(pointInsideBox({position:inputs.rel},{position:{x:-68+this.anim.turn*100,y:445},width:40,height:30})){
+                transition.trigger=true
+                transition.scene='dictionary'
             }
         }
     }
@@ -4449,9 +4455,83 @@ class battle{
             }
         }
     }
+    displayDictionary(){
+        this.layer.stroke(100)
+        this.layer.strokeWeight(4)
+        this.layer.fill(200)
+        this.layer.rect(130,60,220,40,3)
+        this.layer.rect(130,20,120,20,3)
+        for(e=0,le=this.dict.suggestions.length;e<le;e++){
+            this.layer.rect(130,110+e*60,180,60,3)
+            this.layer.rect(430,110+e*60,420,40,3)
+        }
+        this.layer.fill(0)
+        this.layer.noStroke()
+        this.layer.textSize(15)
+        this.layer.text('Back',130,20)
+        this.layer.text(this.dict.typing,130,60)
+        for(e=0,le=this.dict.suggestions.length;e<le;e++){
+            this.layer.text(types.dictionary[this.dict.suggestions[e]].name,130,110+e*60)
+        }
+        this.layer.textSize(10)
+        for(e=0,le=this.dict.suggestions.length;e<le;e++){
+            this.layer.text(types.dictionary[this.dict.suggestions[e]].desc,430,110+e*60)
+        }
+    }
+    updateDictionary(){
+    }
+    onClickDictionary(){
+        if(pointInsideBox({position:inputs.rel},{position:{x:130,y:20},width:120,height:20})){
+            transition.trigger=true
+            transition.scene='battle'
+        }
+    }
+    onKeyDictionary(key,code){
+        this.dict.allowedCharacter=false
+        for(e=0,le=this.dict.allowed.length;e<le;e++){
+            if(key==this.dict.allowed[e]){
+                this.dict.allowedCharacter=true
+            }
+        }
+        if(code==BACKSPACE){
+            this.dict.typing=this.dict.typing.substr(0,this.dict.typing.length-1)
+            if(this.dict.typing.length>0){
+                this.createSuggestions(this.dict.typing)
+            }
+        }
+        else if(this.dict.allowedCharacter){
+            this.dict.typing+=key
+            this.createSuggestions(this.dict.typing)
+        }
+    }
     updateFull(){
         if(this.relics.active[127]){
             this.currency.money=0
+        }
+    }
+    createSuggestions(base){
+        this.dict.suggestions=[]
+        this.dict.collect=[]
+        for(e=0,le=types.dictionary.length;e<le;e++){
+            for(f=0,lf=types.dictionary[e].name.length-base.length+1;f<lf;f++){
+                if(types.dictionary[e].name.substr(f,f+base.length).toLowerCase()==base.toLowerCase()){
+                    this.dict.collect.push(e)
+                    break
+                }
+            }
+        }
+        for(e=0;e<30;e++){
+            for(f=0,lf=this.dict.collect.length;f<lf;f++){
+                if(types.dictionary[this.dict.collect[f]].name.length==e){
+                    this.dict.suggestions.push(this.dict.collect[f])
+                    this.dict.collect.splice(f,1)
+                    f--
+                    lf--
+                }
+            }
+            if(this.dict.collect.length==0){
+                break
+            }
         }
     }
 }

@@ -4749,7 +4749,7 @@ types={
             objective:[[0,0,0,0]],
         },{
             combatants:[102,0,0,0,0,0],
-            reinforce:[0],
+            reinforce:[],
             threshold:3,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{
@@ -8886,7 +8886,7 @@ types={
         {name:'Balance',desc:'Moves Along Line, If Below Negative Limit, Take 10 Damage,\mIf Below Positive Damage, Lose All Energy'},
         {name:'Armed',desc:'Some Cards Are Only Usable While Armed or Unarmed'},
         {name:'Build',desc:'Fills up Health of Unbuilt Construct'},
-        {name:'Construct',desc:'Ally to Player,\nSome Constructs Take Damage For Player, Once Built'},
+        {name:'Construct',desc:'Ally to Player,\nSome Constructs Take Damage For Player When Built'},
         {name:'Built',desc:'Construct Becomes Built Once Health is Filled'},
         {name:'Potion',desc:'Click on Potion to Get a Temporary Advantage'},
         {name:'Relic',desc:'Permanent Beneficial Effect'},

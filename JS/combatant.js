@@ -3372,7 +3372,7 @@ class combatant{
 				if(this.id==0){
 					this.battle.random.taken++
 					if(this.battle.relics.active[11]){
-						this.battle.combatants[user].take(3,this.id)
+						this.battle.combatants[user].take(3,-1)
 					}
 					if(this.battle.relics.active[12]&&this.battle.random.taken==1){
 						for(g=0;g<3;g++){

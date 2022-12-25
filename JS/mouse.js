@@ -26,6 +26,9 @@ function mouseClicked(){
             case 'bosschoice':
                 current.onClickBossChoice()
             break
+            case 'dictionary':
+                current.onClickDictionary()
+            break
         }
     }
 }
