@@ -101,6 +101,20 @@ class combatant{
 			this.remember.boost.push(this.boost.main[g])
 		}
 		this.setupIntent(-1)
+		if(stage.ascend>=2&&this.battle.random.class==0||stage.ascend>=3&&this.battle.random.class==1||stage.ascend>=4&&this.battle.random.class==2){
+			for(e=0,le=this.attacks.length;e<le;e++){
+				if(types.attack[this.attacks[e]].class==0){
+					this.damage[e]=round(this.damage[e]*1.2)
+				}
+			}
+		}
+		if(this.id==0&&this.team==0&&stage.ascend>=6){
+			this.life-=round(this.base.life)/5
+		}
+		if(stage.ascend>=7&&this.battle.random.class==0||stage.ascend>=8&&this.battle.random.class==1||stage.ascend>=9&&this.battle.random.class==2){
+			this.base.life=round(this.base.life*12)/10
+			this.life=round(this.life*12)/10
+		}
     }
 	resetUnique(){
 		this.block=0

@@ -10,8 +10,6 @@ class battle{
         this.attack=new attack(this.layer,this,5)
         this.particles=[]
         this.combatants=[]
-        this.combatants.push(new combatant(this.layer,this,100,350,this.player,0,0))
-        this.combatants.push(new combatant(this.layer,this,200,350,0,0,1))
         this.choice={cards:[]}
         this.shop={cards:[]}
         this.mana={main:3,gen:3,max:3,base:3}
@@ -39,6 +37,8 @@ class battle{
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
         this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,copying:0,play2More:0,exiling:0,releasing:0,exhausted:0}
         this.defaultRandom={attacked:0,orbs:0,shields:0,hits:0,discards:0}
+        this.combatants.push(new combatant(this.layer,this,100,350,this.player,0,0))
+        this.combatants.push(new combatant(this.layer,this,200,350,0,0,1))
         stage.identifier=types.combatant[this.player].identifiers
     }
     setupTesting(type,key){
@@ -141,6 +141,9 @@ class battle{
         }else{
             this.drawAmount=5
         }
+        if(stage.ascend>=10){
+            this.deck.add(findCard('Ascender\nBane'),0,stage.playerNumber+2)
+        }
     }
     actComplete(){
         transition.trigger=true
@@ -191,7 +194,11 @@ class battle{
                 this.objective.push([1,floor(random(2,9)),2,floor(random(1,7))*5])
             break
             case 2:
-                this.objective.push([1,10,3,40])
+                if(stage.ascend>=5){
+                    this.objective.push([1,10,3,40])
+                }else{
+                    this.objective.push([0,0,3,100])
+                }
             break
         }
     }
@@ -2300,7 +2307,7 @@ class battle{
                     this.map.main[e].push(5)
                 }else if(floor(random(0,3))==0||e<2){
                     this.map.main[e].push(0)
-                }else if(floor(random(0,4))==0){
+                }else if(floor(random(0,6))==0&&stage.ascend<1||stage.ascend>=1&&floor(random(0,4))==0){
                     this.map.main[e].push(1)
                 }else if(floor(random(0,3))==0){
                     this.map.main[e].push(2)

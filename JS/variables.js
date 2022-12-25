@@ -4088,6 +4088,11 @@ types={
             {damage:0,alt:0,cost:0,attack:-23,target:0,spec:1,class:-2},
             {damage:0,alt:0,cost:0,attack:-23,target:0,spec:1,class:-2},
         ],
+        },{name:'Ascender\nBane',rarity:-1,list:10,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-3,target:0,spec:6,class:-2},
+            {damage:0,alt:0,cost:0,attack:-3,target:0,spec:6,class:-2},
+        ],
         },
 
         {name:'Hurt',rarity:-2,list:11,
@@ -8796,6 +8801,17 @@ types={
                 },
             ],
         },
+    ],ascend:[
+        {name:'More Elites',desc:'Elites are More Likely to Spawn'},
+        {nane:'Enemy Power',desc:'Normal Enemies Deal More Damage'},
+        {nane:'Elite Power',desc:'Elites Deal More Damage'},
+        {nane:'Boss Power',desc:'Bosses Deal More Damage'},
+        {nane:'Boss Heal',desc:'Harder to Heal After Boss Battles'},
+        {nane:'Start Injured',desc:'Lose 20% of Health at Start'},
+        {nane:'Enemy HP',desc:'Normal Enemies Have More Health'},
+        {nane:'Elite HP',desc:'Elites Have More Health'},
+        {nane:'Boss HP',desc:'Bosses Have More Health'},
+        {nane:'Start Cursed',desc:'Start With Ascender Bane'},
     ],
 }
 listing={
@@ -8817,7 +8833,7 @@ zones=[
     },
 ]
 dev={id:true,attack:true}
-stage={scale:0,quality:1,scene:'menu',playerNumber:7,playerCombatantNumber:1,identifier:[''],id:0}
+stage={scale:0,quality:1,scene:'menu',playerNumber:7,playerCombatantNumber:1,identifier:[''],id:0,ascend:10}
 graphics={main:0,minor:[],symbol:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}
