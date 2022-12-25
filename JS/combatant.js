@@ -164,6 +164,9 @@ class combatant{
 			case 20:
 				this.status.main[36]=1
 			break
+			case 21:
+				this.status.main[12]=1
+			break
 		}
 	}
 	turnBuff(){
@@ -2594,14 +2597,18 @@ class combatant{
 					this.layer.ellipse(4,-72,4,4)
 					this.layer.ellipse(12,-72,4,4)
 				break
-				case 95:
+				case 95: case 103:
 					this.layer.fill(100,this.fade)
 					this.layer.stroke(120,this.fade)
 					this.layer.strokeWeight(4)
 					this.layer.ellipse(0,-45,20,20)
+					this.layer.noFill()
 					for(let g=0;g<4;g++){
 						this.layer.line(sin(g*90)*10,cos(g*90)*10-45,sin(g*90)*15,cos(g*90)*15-45)
-						this.layer.line(sin(g*90+45)*10,cos(g*90+45)*10-45,sin(g*90+45)*25,cos(g*90+45)*25-45)
+						if(this.type==95){
+							this.layer.line(sin(g*90+45)*10,cos(g*90+45)*10-45,sin(g*90+45)*25,cos(g*90+45)*25-45)
+							this.layer.arc(0,-45,50,50,g*90+30,g*90+60)
+						}
 					}
 					this.layer.fill(50,50,200,this.fade)
 					this.layer.noStroke()
@@ -2740,38 +2747,27 @@ class combatant{
 
 				/*this.layer.noStroke();
 				this.layer.strokeWeight(3);
-				this.layer.stroke(185,180,165,this.fade);
+				this.layer.stroke(0,this.fade);
 				this.layer.line(5*this.anim.direction,-8,12*(1-this.anim.trigger)+(5*this.anim.direction-sin(atan2(this.position.x+5*this.anim.direction-this.target.position.x,this.position.y-8-this.target.position.y))*24)*this.anim.trigger,16*(1-this.anim.trigger)+(-8-cos(atan2(this.position.x+5*this.anim.direction-this.target.position.x,this.position.y-8-this.target.position.y))*24)*this.anim.trigger);
 				this.layer.line(3,10,6+sin(-3+sin(this.rate*12)*15)*10,48);
 				this.layer.line(-3,10,-6-sin(-3+sin(this.rate*12)*15)*10,48);
 				this.layer.stroke(40,this.fade);
+				this.layer.strokeWeight(5);
 				this.layer.translate(5*this.anim.direction,-8);
 				this.layer.rotate(-atan2(this.position.x+5*this.anim.direction-this.target.position.x,this.position.y-8-this.target.position.y));
-				this.layer.line(-2*this.anim.direction,-24,-2*this.anim.direction,-36);
+				this.layer.line(-2*this.anim.direction,-24,-2*this.anim.direction,-48);
 				this.layer.line(-2*this.anim.direction,-24,4*this.anim.direction,-24);
 				this.layer.rotate(atan2(this.position.x+5*this.anim.direction-this.target.position.x,this.position.y-8-this.target.position.y));
 				this.layer.translate(-5*this.anim.direction,8);
 				this.layer.strokeWeight(0.5);
 				this.layer.noStroke();
-				this.layer.fill(185,180,165,this.fade);
+				this.layer.fill(0,this.fade);
 				this.layer.ellipse(0,-2,16,36);
-				this.layer.fill(10,10,10,this.fade);
-				this.layer.rect(0,-2,16,2);
-				this.layer.noStroke();
-				this.layer.fill(255,230,145,this.fade);
 				this.layer.ellipse(0,-27,24,24);
-				this.layer.stroke(0,this.fade);
+				this.layer.stroke(255,this.fade);
 				this.layer.strokeWeight(3);
 				this.layer.point(max(-9,-4+this.anim.direction*6),-26);
-				this.layer.point(min(9,4+this.anim.direction*6),-26);
-				this.layer.stroke(50,50,200,this.fade);
-				this.layer.strokeWeight(4);
-				this.layer.point(2,-10);
-				this.layer.fill(120,135,95,this.fade);
-				this.layer.noStroke();
-				this.layer.arc(0,-27,30,30,-180,0);
-				this.layer.fill(10,this.fade/2);
-				this.layer.rect(max(-9,-4+this.anim.direction*6)/2+min(9,4+this.anim.direction*6)/2,-25,16,4);*/
+				this.layer.point(min(9,4+this.anim.direction*6),-26);*/
 
 				case 102:
 					this.layer.stroke(80,this.fade)

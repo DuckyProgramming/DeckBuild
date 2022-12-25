@@ -72,6 +72,7 @@ class card{
             case -24: this.desc+='When Drawn,\nExhaust 1 Card\nCannot be\nExhausted'; break
             case -25: this.desc+='Take '+this.damage+' Damage'; break
             case -26: this.desc+='When Drawn,\nTransform 1 Card\nCannot be\nTransformed'; break
+            case -27: this.desc+='When Drawn,\nExhaust 1\nRandom Card'; break
             case 1: this.desc+='Deal '+this.damage+'\nDamage'; break
             case 2: this.desc+='Add '+this.damage+'\nBlock'; break
             case 3: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times'; break

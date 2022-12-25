@@ -4185,6 +4185,11 @@ types={
             {damage:0,alt:0,cost:0,attack:-26,target:0,spec:1,class:-1},
             {damage:0,alt:0,cost:0,attack:-26,target:0,spec:1,class:-1},
         ],
+        },{name:'Convulsive',rarity:-2,list:11,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:-27,target:0,spec:1,class:-1},
+            {damage:0,alt:0,cost:0,attack:-27,target:0,spec:1,class:-1},
+        ],
         },
         //18/20
 
@@ -4313,7 +4318,9 @@ types={
         {name:'Management Custodian',alt:'',life:60,height:75,behavior:0,attacks:[51,52,53],damage:[2,1,1],altAttack:[0,0,0],class:0,buff:1},//100
         {name:'Management',alt:'Walker Driver',life:45,height:75,behavior:0,attacks:[1,3,8,10],damage:[18,5,8,10],altAttack:[0,4,0,'Slow\nBleed'],class:0,buff:0},
         {name:'Human',alt:'',life:30,height:75,behavior:0,attacks:[1,1,8],damage:[6,8,6],altAttack:[0,0,0],class:0,buff:0},
-        //void boss
+        {name:'Detector',alt:'',life:27,height:75,behavior:1,attacks:[10,10,10],damage:[4,2,2],altAttack:['Wound','Burn','Slow\nBleed'],class:0,buff:0},
+        {name:'Shadow Trooper',alt:'',life:450,height:75,behavior:4,attacks:[1,10,10],damage:[27,12,9],altAttack:[0,'Convulsive','Void'],class:0,buff:21},
+        //HYPER BEAM
     ],attack:[
         {class:0},//0
         {class:0},
@@ -4721,6 +4728,21 @@ types={
             reinforce:[0],
             threshold:3,class:-1,zone:-1,
             objective:[[0,0,0,0]],
+        },{
+            combatants:[103,0,0,0,0,0],
+            reinforce:[71,71],
+            threshold:3,class:0,zone:2,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[104,0,0,0,0,0],
+            reinforce:[],
+            threshold:3,class:2,zone:2,
+            objective:[[0,0,6,0]],
+        },{
+            combatants:[105,0,0,0,0,0],
+            reinforce:[],
+            threshold:3,class:2,zone:2,
+            objective:[[0,0,6,0]],
         },
     ],relic:[
         {
