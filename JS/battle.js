@@ -144,6 +144,9 @@ class battle{
         if(stage.ascend>=10){
             this.deck.add(findCard('Ascender\nBane'),0,stage.playerNumber+2)
         }
+        if(stage.ascend>=11){
+            this.potions.owned.splice(this.potions.owned.length-1,1)
+        }
     }
     actComplete(){
         transition.trigger=true
@@ -173,7 +176,7 @@ class battle{
                         this.objective[this.objective.length-1][3]=floor(random(1,5))*5
                     break
                 }
-                this.objective.push([1,floor(random(2,9)),2,floor(random(1,7))*5])
+                this.objective.push([1,floor(random(2,9)),2,floor(random(2,7))*5])
             break
             case 1:
                 for(let g=0;g<2;g++){
@@ -191,7 +194,7 @@ class battle{
                         break
                     }
                 }
-                this.objective.push([1,floor(random(2,9)),2,floor(random(1,7))*5])
+                this.objective.push([1,floor(random(2,9)),2,floor(random(2,7))*5])
             break
             case 2:
                 if(stage.ascend>=5){
@@ -1817,25 +1820,25 @@ class battle{
                 }
                 switch(this.objective[e][2]){
                     case 0:
-                        this.layer.text('Card',560,e*20+20)
+                        this.layer.text('Card',540,e*20+20)
                     break
                     case 1:
-                        this.layer.text('Card+',560,e*20+20)
+                        this.layer.text('Card+',540,e*20+20)
                     break
                     case 2:
-                        this.layer.text('$'+this.objective[e][3],560,e*20+20)
+                        this.layer.text('$'+this.objective[e][3],540,e*20+20)
                     break
                     case 3:
-                        this.layer.text(this.objective[e][3]+' HP',560,e*20+20)
+                        this.layer.text(this.objective[e][3]+' HP',540,e*20+20)
                     break
                     case 4:
-                        this.layer.text('Relic',560,e*20+20)
+                        this.layer.text('Relic',540,e*20+20)
                     break
                     case 5:
-                        this.layer.text('Potion',560,e*20+20)
+                        this.layer.text('Potion',540,e*20+20)
                     break
                     case 6:
-                        this.layer.text('Boss Relic',560,e*20+20)
+                        this.layer.text('Card, Boss Relic',540,e*20+20)
                     break
                 }
             }
@@ -1882,7 +1885,7 @@ class battle{
                         this.layer.text('New Potion',450,e*60+150)
                     break
                     case 6:
-                        this.layer.text('New Boss Relic',450,e*60+150)
+                        this.layer.text('New Card, New Boss Relic',450,e*60+150)
                     break
                 }
             }
@@ -2088,8 +2091,9 @@ class battle{
                                 this.getPotion(this.potions.list[g][f])
                             break
                             case 6:
-                                transition.scene='bosschoice'
-                                this.setupBossChoice(0)
+                                transition.scene='choice'
+                                this.setupChoice(0,2,0)
+                                this.context=-69
                             break
                         }
                     }
@@ -2246,7 +2250,10 @@ class battle{
     onClickChoice(){
         if(pointInsideBox({position:inputs.rel},{position:{x:450,y:450},width:80,height:40})){
             transition.trigger=true
-            if(this.context==-1){
+            if(this.context==-69){
+                transition.scene='bosschoice'
+                this.setupBossChoice(0)
+            }else if(this.context==-1){
                 transition.scene='shop'
             }else{
                 transition.scene='map'
@@ -2288,6 +2295,9 @@ class battle{
                 }
             }else if(this.context==-2||this.context==-3||this.context==-4||this.context==-5||this.context==-6){
                 transition.scene='battle'
+            }else if(this.context==-69){
+                transition.scene='bosschoice'
+                this.setupBossChoice(0)
             }
         }
     }

@@ -111,7 +111,7 @@ class combatant{
 		if(this.id==0&&this.team==0&&stage.ascend>=6){
 			this.life-=round(this.base.life)/5
 		}
-		if(stage.ascend>=7&&this.battle.random.class==0||stage.ascend>=8&&this.battle.random.class==1||stage.ascend>=9&&this.battle.random.class==2){
+		if((stage.ascend>=7&&this.battle.random.class==0||stage.ascend>=8&&this.battle.random.class==1||stage.ascend>=9&&this.battle.random.class==2)&&this.team==1){
 			this.base.life=round(this.base.life*12)/10
 			this.life=round(this.life*12)/10
 		}

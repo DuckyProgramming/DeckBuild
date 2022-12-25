@@ -10,7 +10,11 @@ function setupEncounter(battle,type){
 	battle.generation.threshold=types.encounter[type].threshold
 	battle.objective=[]
 	for(i=0,li=types.encounter[type].objective.length;i<li;i++){
-		battle.objective.push(types.encounter[type].objective[i])
+		if(types.encounter[type].objective[i][2]==1&&floor(random(0,2))==0&&stage.ascend>=12){
+			battle.objective.push([types.encounter[type].objective[i][0],types.encounter[type].objective[i][1],0,types.encounter[type].objective[i][2]])
+		}else{
+			battle.objective.push(types.encounter[type].objective[i])
+		}
 	}
 }
 function displayTransition(layer,transition){

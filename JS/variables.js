@@ -8812,6 +8812,8 @@ types={
         {nane:'Elite HP',desc:'Elites Have More Health'},
         {nane:'Boss HP',desc:'Bosses Have More Health'},
         {nane:'Start Cursed',desc:'Start With Ascender Bane'},
+        {nane:'Less Potions',desc:'Lose 1 Potion Slot'},
+        {nane:'Less Upgrades',desc:'Upgraded Cards are Less Common'},
     ],
 }
 listing={
@@ -8833,7 +8835,7 @@ zones=[
     },
 ]
 dev={id:true,attack:true}
-stage={scale:0,quality:1,scene:'menu',playerNumber:7,playerCombatantNumber:1,identifier:[''],id:0,ascend:10}
+stage={scale:0,quality:1,scene:'menu',playerNumber:7,playerCombatantNumber:1,identifier:[''],id:0,ascend:12}
 graphics={main:0,minor:[],symbol:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}
