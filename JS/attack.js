@@ -3942,6 +3942,15 @@ class attack{
                 case 50:
                     this.battle.quickReinforce(findCombatant('Management Soldier'))
                 break
+                case 51:
+                    this.battle.random.drawing-=this.damage
+                break
+                case 52:
+                    this.battle.combatants[this.target].status.main[1]-=this.damage
+                break
+                case 53:
+                    this.battle.combatants[this.target].status.main[133]+=this.damage
+                break
                 default:
             }
         }

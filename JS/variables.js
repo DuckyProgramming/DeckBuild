@@ -4310,8 +4310,7 @@ types={
         {name:'Management Sniper',alt:'',life:75,height:78,behavior:1,attacks:[10,6,29,21],damage:[8,21,2,0],altAttack:['Confused','Stuck',0,0],class:0,buff:19},
         {name:'Management',alt:'Robo-Duck',life:40,height:66,behavior:0,attacks:[1,3,49],damage:[10,5,3],altAttack:[0,3,0],class:0,buff:0},
         {name:'Management Caller',alt:'',life:135,height:78,behavior:5,attacks:[7,6,50,21,21],damage:[2,2,0,0,0],altAttack:[0,'Dazed',0,0,0],class:0,buff:20},
-        //mg autogun
-        //voider
+        {name:'Management Custodian',alt:'',life:60,height:75,behavior:0,attacks:[51,52,53],damage:[2,1,1],altAttack:[0,0,0],class:0,buff:1},//100
     ],attack:[
         {class:0},//0
         {class:0},
@@ -4364,7 +4363,10 @@ types={
         {class:1},
         {class:1},
         {class:1},//50
-        
+        {class:1},
+        {class:1},
+        {class:1},
+
     ],encounter:[
         {//0
             combatants:[0,0,0,0,0,0],
@@ -4701,6 +4703,11 @@ types={
             reinforce:[],
             threshold:3,class:1,zone:2,
             objective:[[0,0,1,0]],
+        },{
+            combatants:[100,73,0,0,0,0],
+            reinforce:[73],
+            threshold:3,class:0,zone:2,
+            objective:[[0,0,0,0]],
         },
     ],relic:[
         {
