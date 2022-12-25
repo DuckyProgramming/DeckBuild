@@ -22,6 +22,21 @@ types={
             {damage:1,alt:1,cost:1,attack:723,target:0,spec:0,class:2},
             {damage:1,alt:1,cost:1,attack:723,target:0,spec:0,class:2},
         ],
+        },{name:'Strike-',rarity:-1,list:8,
+        stats:[
+            {damage:5,alt:0,cost:1,attack:1,target:1,spec:0,class:0},
+            {damage:8,alt:0,cost:1,attack:1,target:1,spec:0,class:0},
+        ],
+        },{name:'Defend-',rarity:-1,list:8,
+        stats:[
+            {damage:4,alt:0,cost:1,attack:2,target:0,spec:0,class:1},
+            {damage:7,alt:0,cost:1,attack:2,target:0,spec:0,class:1},
+        ],
+        },{name:'Buff-',rarity:0,list:8,
+        stats:[
+            {damage:1,alt:1,cost:1,attack:723,target:0,spec:3,class:2},
+            {damage:1,alt:1,cost:1,attack:723,target:0,spec:3,class:2},
+        ],
         },
         
         {name:'Big\nStrike',rarity:0,list:1,
@@ -8808,12 +8823,20 @@ types={
         {nane:'Boss Power',desc:'Bosses Deal More Damage'},
         {nane:'Boss Heal',desc:'Harder to Heal After Boss Battles'},
         {nane:'Start Injured',desc:'Lose 20% of Health at Start'},
-        {nane:'Enemy HP',desc:'Normal Enemies Have More Health'},
-        {nane:'Elite HP',desc:'Elites Have More Health'},
-        {nane:'Boss HP',desc:'Bosses Have More Health'},
+        {nane:'Enemy HP',desc:'Normal Enemies Have More Health and Block'},
+        {nane:'Elite HP',desc:'Elites Have More Health and Block'},
+        {nane:'Boss HP',desc:'Bosses Have More Health and Block'},
         {nane:'Start Cursed',desc:'Start With Ascender Bane'},
         {nane:'Less Potions',desc:'Lose 1 Potion Slot'},
         {nane:'Less Upgrades',desc:'Upgraded Cards are Less Common'},
+        {nane:'Poor Bosses',desc:'Bosses Do Not Drop Currency'},
+        {nane:'Less Max Health',desc:'Lose 10% Max Health'},
+        {nane:'Event Battles',desc:'Events Might be Fights'},
+        {nane:'Expensive Shops',desc:'Shop Items Cost 10% More'},
+        {nane:'Enemy Tactics',desc:'Normal Enemies Deal Are More Dangerous'},
+        {nane:'Elite Tactics',desc:'Elites Deal Are More Dangerous'},
+        {nane:'Boss Tactics',desc:'Bosses Deal Are More Dangerous'},
+        {name:'Bad Cards',desc:'Strikes and Defends are Worse'},
     ],
 }
 listing={
@@ -8835,7 +8858,7 @@ zones=[
     },
 ]
 dev={id:true,attack:true}
-stage={scale:0,quality:1,scene:'menu',playerNumber:7,playerCombatantNumber:1,identifier:[''],id:0,ascend:12}
+stage={scale:0,quality:1,scene:'menu',playerNumber:7,playerCombatantNumber:1,identifier:[''],id:0,ascend:0}
 graphics={main:0,minor:[],symbol:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}

@@ -197,6 +197,9 @@ class battle{
                 this.objective.push([1,floor(random(2,9)),2,floor(random(2,7))*5])
             break
             case 2:
+                if(stage.ascend<13){
+                    this.objective.push([0,0,2,100])
+                }
                 if(stage.ascend>=5){
                     this.objective.push([1,10,3,40])
                 }else{
@@ -2454,11 +2457,34 @@ class battle{
                             }
                         break
                         case 3:
-                            transition.scene='event'
-                            e=floor(random(0,this.eventList.length))
-                            this.event=this.eventList[e]
-                            this.eventList.splice(e,1)
-                            this.page=0
+                            if(stage.ascend>=15&&floor(random(0,10))==0){
+                                transition.scene='battle'
+                                this.random.class=1
+                                setupEncounter(this,zones[this.map.zone].encounters[1][floor(random(0,zones[this.map.zone].encounters[1].length))])
+                                this.create()
+                                if(this.relics.active[23]){
+                                    for(let g=0,lg=this.combatants.length;g<lg;g++){
+                                        if(this.combatants[g].team==1){
+                                            this.combatants[g].life*=0.8
+                                        }
+                                    }
+                                }
+                            }else if(stage.ascend>=15&&floor(random(0,3))==0){
+                                transition.scene='battle'
+                                this.random.class=0
+                                if(this.map.position[0]==0){
+                                    setupEncounter(this,zones[this.map.zone].special[0])
+                                }else{
+                                    setupEncounter(this,zones[this.map.zone].encounters[0][floor(random(0,zones[this.map.zone].encounters[0].length))])
+                                }
+                                this.create()
+                            }else{
+                                transition.scene='event'
+                                e=floor(random(0,this.eventList.length))
+                                this.event=this.eventList[e]
+                                this.eventList.splice(e,1)
+                                this.page=0
+                            }
                         break
                         case 4:
                             transition.scene='shop'
@@ -4072,6 +4098,16 @@ class battle{
                     }
                     for(let g=0,lg=this.costs.relic.length;g<lg;g++){
                         this.costs.relic[g]=round(this.costs.relic[g]/2)
+                    }
+                }
+                if(stage.ascend>=16){
+                    for(let g=0,lg=this.costs.card.length;g<lg;g++){
+                        for(let h=0,lh=this.costs.card[g].length;h<lh;h++){
+                            this.costs.card[g][h]=round(this.costs.card[g][h]*1.1)
+                        }
+                    }
+                    for(let g=0,lg=this.costs.relic.length;g<lg;g++){
+                        this.costs.relic[g]=round(this.costs.relic[g]*1.1)
                     }
                 }
                 this.costs.card[0][this.costs.sale]=round(this.costs.card[0][this.costs.sale]/2)

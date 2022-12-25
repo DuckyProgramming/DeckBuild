@@ -13,9 +13,6 @@ class group{
         this.anim={discarding:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,exiling:0,releasing:0,selectCombo:false}
     }
     initial(type){
-        /*for(let e=0;e<20;e++){
-            this.add(floor(random(3,103)),0,this.battle.player)
-        }*/
         switch(type){
             case 1:
                 for(let e=0;e<4;e++){
@@ -26,11 +23,6 @@ class group{
                 }
                 this.add(findCard('Big\nStrike'),0,this.battle.player)
                 this.add(findCard('Triple\nPunch'),0,this.battle.player)
-                /*this.add(119,0,this.battle.player)
-                this.add(120,0,this.battle.player)
-                this.add(121,0,this.battle.player)
-                this.add(122,0,this.battle.player)
-                this.add(123,0,this.battle.player)*/
             break
             case 2:
                 for(let e=0;e<4;e++){
@@ -41,11 +33,6 @@ class group{
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
                 this.add(findCard('Vigilance'),0,this.battle.player)
-                /*this.add(239,0,this.battle.player)
-                this.add(240,0,this.battle.player)
-                this.add(241,0,this.battle.player)
-                this.add(242,0,this.battle.player)
-                this.add(243,0,this.battle.player)*/
             break
             case 3:
                 for(let e=0;e<4;e++){
@@ -56,11 +43,6 @@ class group{
                 }
                 this.add(findCard('Charge'),0,this.battle.player)
                 this.add(findCard('Dualcast'),0,this.battle.player)
-                /*this.add(359,0,this.battle.player)
-                this.add(360,0,this.battle.player)
-                this.add(361,0,this.battle.player)
-                this.add(362,0,this.battle.player)
-                this.add(363,0,this.battle.player)*/
             break
             case 4:
                 for(let e=0;e<4;e++){
@@ -71,11 +53,6 @@ class group{
                 }
                 this.add(findCard('Peace'),0,this.battle.player)
                 this.add(findCard('Danger'),0,this.battle.player)
-                /*this.add(479,0,this.battle.player)
-                this.add(480,0,this.battle.player)
-                this.add(481,0,this.battle.player)
-                this.add(482,0,this.battle.player)
-                this.add(483,0,this.battle.player)*/
             break
             case 5:
                 for(let e=0;e<4;e++){
@@ -86,11 +63,6 @@ class group{
                 }
                 this.add(findCard('Pistol'),0,this.battle.player)
                 this.add(findCard('Construct'),0,this.battle.player)
-                /*this.add(599,0,this.battle.player)
-                this.add(600,0,this.battle.player)
-                this.add(601,0,this.battle.player)
-                this.add(602,0,this.battle.player)
-                this.add(603,0,this.battle.player)*/
             break
             case 6:
                 for(let e=0;e<4;e++){
@@ -101,11 +73,6 @@ class group{
                 }
                 this.add(findCard('Survivor'),0,this.battle.player)
                 this.add(findCard('Neutralize'),0,this.battle.player)
-                /*this.add(719,0,this.battle.player)
-                this.add(720,0,this.battle.player)
-                this.add(721,0,this.battle.player)
-                this.add(722,0,this.battle.player)
-                this.add(723,0,this.battle.player)*/
             break
             case 7:
                 /*for(let e=0;e<4;e++){
@@ -120,6 +87,14 @@ class group{
                 this.add(737,0,this.battle.player)
                 this.add(738,0,this.battle.player)
             break
+        }
+        if(stage.ascend>=20){
+            for(let e=0,le=this.cards.length;e<le;e++){
+                if(this.cards[e].list==stage.playerNumber+1){
+                    this.cards[e].type+=3
+                    this.cards[e]=reformCard(this.cards[e])
+                }
+            }
         }
     }
     add(type,level,color){
