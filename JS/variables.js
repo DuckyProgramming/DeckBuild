@@ -4319,7 +4319,7 @@ types={
         {name:'Management',alt:'Walker Driver',life:45,height:75,behavior:0,attacks:[1,3,8,10],damage:[18,5,8,10],altAttack:[0,4,0,'Slow\nBleed'],class:0,buff:0},
         {name:'Human',alt:'',life:30,height:75,behavior:0,attacks:[1,1,8],damage:[6,8,6],altAttack:[0,0,0],class:0,buff:0},
         {name:'Detector',alt:'',life:27,height:75,behavior:1,attacks:[10,10,10],damage:[4,2,2],altAttack:['Wound','Burn','Slow\nBleed'],class:0,buff:0},
-        {name:'Shadow Trooper',alt:'',life:450,height:75,behavior:4,attacks:[1,10,10],damage:[27,12,9],altAttack:[0,'Convulsive','Void'],class:0,buff:21},
+        {name:'Shadow Trooper',alt:'',life:450,height:75,behavior:4,attacks:[1,10,10,54],damage:[27,12,9,1],altAttack:[0,'Convulsive','Void',0],class:0,buff:21},
         //HYPER BEAM
     ],attack:[
         {class:0},//0
@@ -4376,7 +4376,7 @@ types={
         {class:1},
         {class:1},
         {class:1},
-
+        {class:1},
     ],encounter:[
         {//0
             combatants:[0,0,0,0,0,0],

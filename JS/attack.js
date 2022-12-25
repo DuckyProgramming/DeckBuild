@@ -3951,6 +3951,9 @@ class attack{
                 case 53:
                     this.battle.combatants[this.target].status.main[133]+=this.damage
                 break
+                case 54:
+                    this.battle.combatants[this.user].status.main[129]+=this.damage
+                break
                 default:
             }
         }

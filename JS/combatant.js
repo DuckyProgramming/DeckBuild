@@ -2723,7 +2723,6 @@ class combatant{
 					this.layer.strokeWeight(4)
 					this.layer.line(-4,-30,-8,0)
 					this.layer.line(4,-30,8,0)
-					this.layer.stroke(40,this.fade)
 					this.layer.line(-6,-48,-15,-24)
 					this.layer.line(6,-48,15,-24)
 					this.layer.noStroke()
@@ -2742,6 +2741,38 @@ class combatant{
 					this.layer.arc(0,-78,36,36,-180,0)
 					this.layer.fill(10,this.fade/2)
 					this.layer.rect(8,-75,20,6)
+				break
+				case 102:
+					this.layer.stroke(80,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(80,this.fade)
+					this.layer.ellipse(0,-45,18,36)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-75,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-72,4,4)
+					this.layer.ellipse(12,-72,4,4)
+				break
+				case 104:
+					this.layer.stroke(0,this.fade/5)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(0,this.fade/5)
+					this.layer.ellipse(0,-47,18,42)
+					this.layer.ellipse(0,-78,30,30)
+					this.layer.arc(0,-78,36,36,-180,0)
+					this.layer.fill(255,this.fade)
+					this.layer.ellipse(4,-75,4,4)
+					this.layer.ellipse(12,-75,4,4)
 				break
 
 
@@ -2769,22 +2800,7 @@ class combatant{
 				this.layer.point(max(-9,-4+this.anim.direction*6),-26);
 				this.layer.point(min(9,4+this.anim.direction*6),-26);*/
 
-				case 102:
-					this.layer.stroke(80,this.fade)
-					this.layer.strokeWeight(4)
-					this.layer.line(-4,-30,-8,0)
-					this.layer.line(4,-30,8,0)
-					this.layer.line(-6,-48,-15,-24)
-					this.layer.line(6,-48,15,-24)
-					this.layer.noStroke()
-					this.layer.fill(80,this.fade)
-					this.layer.ellipse(0,-45,18,36)
-					this.layer.fill(240,220,180,this.fade)
-					this.layer.ellipse(0,-75,30,30)
-					this.layer.fill(0,this.fade)
-					this.layer.ellipse(4,-72,4,4)
-					this.layer.ellipse(12,-72,4,4)
-				break
+				
 				/*case 35:
 					this.layer.translate(0,-1.25)
 					if(this.anim[1]<1){
