@@ -2711,8 +2711,69 @@ class combatant{
 					this.layer.rect(0,-81,30,8)
 					this.layer.rect(21,-79,12,4)
 				break
+				case 101:
+					this.layer.stroke(185,180,165,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.stroke(40,this.fade)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(185,180,165,this.fade)
+					this.layer.ellipse(0,-47,18,42)
+					this.layer.fill(30,25,0,this.fade)
+					this.layer.rect(-7,-45,5,2)
+					this.layer.rect(0,-45,5,2)
+					this.layer.rect(7,-45,5,2)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-78,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-75,4,4)
+					this.layer.ellipse(12,-75,4,4)
+					this.layer.fill(120,135,95,this.fade)
+					this.layer.arc(0,-78,36,36,-180,0)
+					this.layer.fill(10,this.fade/2)
+					this.layer.rect(8,-75,20,6)
+				break
 
-				case 200:
+
+				/*this.layer.noStroke();
+				this.layer.strokeWeight(3);
+				this.layer.stroke(185,180,165,this.fade);
+				this.layer.line(5*this.anim.direction,-8,12*(1-this.anim.trigger)+(5*this.anim.direction-sin(atan2(this.position.x+5*this.anim.direction-this.target.position.x,this.position.y-8-this.target.position.y))*24)*this.anim.trigger,16*(1-this.anim.trigger)+(-8-cos(atan2(this.position.x+5*this.anim.direction-this.target.position.x,this.position.y-8-this.target.position.y))*24)*this.anim.trigger);
+				this.layer.line(3,10,6+sin(-3+sin(this.rate*12)*15)*10,48);
+				this.layer.line(-3,10,-6-sin(-3+sin(this.rate*12)*15)*10,48);
+				this.layer.stroke(40,this.fade);
+				this.layer.translate(5*this.anim.direction,-8);
+				this.layer.rotate(-atan2(this.position.x+5*this.anim.direction-this.target.position.x,this.position.y-8-this.target.position.y));
+				this.layer.line(-2*this.anim.direction,-24,-2*this.anim.direction,-36);
+				this.layer.line(-2*this.anim.direction,-24,4*this.anim.direction,-24);
+				this.layer.rotate(atan2(this.position.x+5*this.anim.direction-this.target.position.x,this.position.y-8-this.target.position.y));
+				this.layer.translate(-5*this.anim.direction,8);
+				this.layer.strokeWeight(0.5);
+				this.layer.noStroke();
+				this.layer.fill(185,180,165,this.fade);
+				this.layer.ellipse(0,-2,16,36);
+				this.layer.fill(10,10,10,this.fade);
+				this.layer.rect(0,-2,16,2);
+				this.layer.noStroke();
+				this.layer.fill(255,230,145,this.fade);
+				this.layer.ellipse(0,-27,24,24);
+				this.layer.stroke(0,this.fade);
+				this.layer.strokeWeight(3);
+				this.layer.point(max(-9,-4+this.anim.direction*6),-26);
+				this.layer.point(min(9,4+this.anim.direction*6),-26);
+				this.layer.stroke(50,50,200,this.fade);
+				this.layer.strokeWeight(4);
+				this.layer.point(2,-10);
+				this.layer.fill(120,135,95,this.fade);
+				this.layer.noStroke();
+				this.layer.arc(0,-27,30,30,-180,0);
+				this.layer.fill(10,this.fade/2);
+				this.layer.rect(max(-9,-4+this.anim.direction*6)/2+min(9,4+this.anim.direction*6)/2,-25,16,4);*/
+
+				case 102:
 					this.layer.stroke(80,this.fade)
 					this.layer.strokeWeight(4)
 					this.layer.line(-4,-30,-8,0)

@@ -4311,6 +4311,9 @@ types={
         {name:'Management',alt:'Robo-Duck',life:40,height:66,behavior:0,attacks:[1,3,49],damage:[10,5,3],altAttack:[0,3,0],class:0,buff:0},
         {name:'Management Caller',alt:'',life:135,height:78,behavior:5,attacks:[7,6,50,21,21],damage:[2,2,0,0,0],altAttack:[0,'Dazed',0,0,0],class:0,buff:20},
         {name:'Management Custodian',alt:'',life:60,height:75,behavior:0,attacks:[51,52,53],damage:[2,1,1],altAttack:[0,0,0],class:0,buff:1},//100
+        {name:'Management',alt:'Walker Driver',life:45,height:75,behavior:0,attacks:[1,3,8,10],damage:[18,5,8,10],altAttack:[0,4,0,'Slow\nBleed'],class:0,buff:0},
+        {name:'Human',alt:'',life:30,height:75,behavior:0,attacks:[1,1,8],damage:[6,8,6],altAttack:[0,0,0],class:0,buff:0},
+        //void boss
     ],attack:[
         {class:0},//0
         {class:0},
@@ -4556,7 +4559,7 @@ types={
         },{
             combatants:[71,0,0,0,0,0],
             reinforce:[],
-            threshold:2,class:0,zone:2,
+            threshold:2,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },{
             combatants:[71,71,71,0,0,0],
@@ -4707,6 +4710,16 @@ types={
             combatants:[100,73,0,0,0,0],
             reinforce:[73],
             threshold:3,class:0,zone:2,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[101,71,0,0,0,0],
+            reinforce:[71],
+            threshold:3,class:0,zone:2,
+            objective:[[0,0,0,0]],
+        },{
+            combatants:[102,0,0,0,0,0],
+            reinforce:[0],
+            threshold:3,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },
     ],relic:[
@@ -8756,7 +8769,7 @@ types={
                     link:[],
                 },
             ],
-        },//last guardian, leverage, the admiral, midnight climax, blitz, rocket troop, rally, management revelation, the kids
+        },
     ],
 }
 listing={
@@ -8769,11 +8782,11 @@ zones=[
         events:[[],[],[],[],[],[],[],[]],
     },{
         encounters:[[],[],[]],
-        special:[1,4,3,17,18,19,20,21,22,23,24,25,26,27,29,30],
+        special:[69,1,4,3,17,18,19,20,21,22,23,24,25,26,27,29,30],
         events:[[],[],[],[],[],[],[],[]],
     },{
         encounters:[[],[],[]],
-        special:[1,4,3,17,18,19,20,21,22,23,24,25,26,27,29,30],
+        special:[37,4,3,17,18,19,20,21,22,23,24,25,26,27,29,30],
         events:[[],[],[],[],[],[],[],[]],
     },
 ]
