@@ -4190,8 +4190,12 @@ types={
             {damage:0,alt:0,cost:0,attack:-27,target:0,spec:1,class:-1},
             {damage:0,alt:0,cost:0,attack:-27,target:0,spec:1,class:-1},
         ],
+        },{name:'Voidstuck',rarity:-2,list:11,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:-9,target:0,spec:0,class:-1},
+            {damage:0,alt:0,cost:1,attack:-9,target:0,spec:0,class:-1},
+        ],
         },
-        //18/20
 
         /*{name:'Fortify',rarity:0,list:4,
         stats:[
@@ -4305,13 +4309,13 @@ types={
         {name:'Mugger',alt:'',life:42,height:75,behavior:1,attacks:[32,8,3,31],damage:[0,6,4,9],altAttack:[0,0,2,15],class:0,buff:0},
         {name:'Shinyshroom',alt:'',life:20,height:30,behavior:0,attacks:[33,1,8],damage:[4,4,4],altAttack:[0,0,0],class:0,buff:0},
         {name:'Aggroshroom',alt:'',life:20,height:30,behavior:0,attacks:[33,3,7],damage:[1,1,1],altAttack:[0,3,0],class:0,buff:0},
-        {name:'Hexaghost',alt:'',life:225,height:120,behavior:3,attacks:[3,20,34,35,36,21],damage:[5,6,2,2,3,0],altAttack:[2,0,12,6,1,0],class:0,buff:0},//90
+        {name:'Hexaghost',alt:'',life:225,height:120,behavior:3,attacks:[3,20,34,35,36,21],damage:[5,6,2,2,3,0],altAttack:[2,0,12,6,1,0],class:1,buff:0},//90
         {name:'Bouncer',alt:'',life:21,height:75,behavior:4,attacks:[1,1,1,8],damage:[10,6,2,6],altAttack:[0,0,0,0],class:0,buff:0},
         {name:'Agent Duck',alt:'',life:60,height:72,behavior:4,attacks:[37,38,39,40,8],damage:[6,15,4,24,12],altAttack:[3,0,'Hurt',0,0],class:0,buff:0},
         {name:'Nerfer',alt:'',life:50,height:72,behavior:0,attacks:[1,1,8,41,42,43],damage:[5,7,6,3,3,3],altAttack:[0,0,0,0,0,0],class:0,buff:0},
         {name:'Buffer',alt:'',life:50,height:72,behavior:0,attacks:[1,1,8,44,45,46],damage:[5,7,6,3,3,3],altAttack:[0,0,0,0,0,0],class:0,buff:0},
         {name:'Security System',alt:'',life:45,height:75,behavior:1,attacks:[10,10,10,29,21],damage:[10,5,6,16,0],altAttack:['Wound','Burn','Slow\nBleed',0,0],class:0,buff:0},
-        {name:'Personnel Carrier',alt:'',life:180,height:75,behavior:4,attacks:[1,3,47,48],damage:[24,7,16,1],altAttack:[0,3,1,0],class:0,buff:0},
+        {name:'Personnel Carrier',alt:'',life:180,height:75,behavior:4,attacks:[1,3,47,48],damage:[24,7,16,1],altAttack:[0,3,1,0],class:1,buff:0},
         {name:'Management Sniper',alt:'',life:75,height:78,behavior:1,attacks:[10,6,29,21],damage:[8,21,2,0],altAttack:['Confused','Stuck',0,0],class:0,buff:19},
         {name:'Management',alt:'Robo-Duck',life:40,height:66,behavior:0,attacks:[1,3,49],damage:[10,5,3],altAttack:[0,3,0],class:0,buff:0},
         {name:'Management Caller',alt:'',life:135,height:78,behavior:5,attacks:[7,6,50,21,21],damage:[2,2,0,0,0],altAttack:[0,'Dazed',0,0,0],class:0,buff:20},
@@ -4320,7 +4324,7 @@ types={
         {name:'Human',alt:'',life:30,height:75,behavior:0,attacks:[1,1,8],damage:[6,8,6],altAttack:[0,0,0],class:0,buff:0},
         {name:'Detector',alt:'',life:27,height:75,behavior:1,attacks:[10,10,10],damage:[4,2,2],altAttack:['Wound','Burn','Slow\nBleed'],class:0,buff:0},
         {name:'Shadow Trooper',alt:'',life:450,height:75,behavior:4,attacks:[1,10,10,54],damage:[27,12,9,1],altAttack:[0,'Convulsive','Void',0],class:0,buff:21},
-        //HYPER BEAM
+        {name:'Purge X02',alt:'',life:450,height:75,behavior:4,attacks:[16,21,10,21,3,21,1,21],damage:[100,0,20,0,8,0,60,0],altAttack:[5,0,'Voidstuck',0,6,0,0,0],class:1,buff:1},
     ],attack:[
         {class:0},//0
         {class:0},
