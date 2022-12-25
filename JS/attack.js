@@ -3939,6 +3939,9 @@ class attack{
                         this.attacks.push([8,20+g*10,0,'Dazed'])
                     }
                 break
+                case 50:
+                    this.battle.quickReinforce(findCombatant('Management Soldier'))
+                break
                 default:
             }
         }

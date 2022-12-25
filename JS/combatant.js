@@ -161,6 +161,9 @@ class combatant{
 			case 19:
 				this.status.main[31]=12
 			break
+			case 20:
+				this.status.main[36]=1
+			break
 		}
 	}
 	turnBuff(){
@@ -224,6 +227,13 @@ class combatant{
 				break
 				case 4:
 					this.intent=this.battle.counter.turn%this.attacks.length
+				break
+				case 5:
+					if(this.battle.counter.turn%this.attacks.length>=2){
+						this.intent=this.battle.counter.turn%this.attacks.length
+					}else{
+						this.intent=floor(random(0,2))
+					}
 				break
 			}
 		}else{
@@ -2651,6 +2661,32 @@ class combatant{
 					this.layer.ellipse(9-6,-64,4,4)
 					this.layer.ellipse(9+6,-64,4,4)
 				break
+				case 99:
+					this.layer.stroke(100,this.fade)
+					this.layer.strokeWeight(4)
+					this.layer.line(-4,-30,-8,0)
+					this.layer.line(4,-30,8,0)
+					this.layer.line(-6,-48,-15,-24)
+					this.layer.line(6,-48,15,-24)
+					this.layer.noStroke()
+					this.layer.fill(100,this.fade)
+					this.layer.ellipse(0,-47,18,42)
+					this.layer.fill(60,this.fade)
+					this.layer.rect(0,-45,20,3)
+					this.layer.fill(240,220,180,this.fade)
+					this.layer.ellipse(0,-78,30,30)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(4,-75,4,4)
+					this.layer.ellipse(12,-75,4,4)
+					this.layer.fill(50,50,200,this.fade)
+					this.layer.ellipse(-3,-57,5,5)
+					this.layer.stroke(40,this.fade)
+					this.layer.strokeWeight(1)
+					this.layer.fill(255,this.fade/5)
+					this.layer.ellipse(4,-74,6,5)
+					this.layer.ellipse(12,-74,6,5)
+					this.layer.line(7,-74,9,-74)
+				break
 
 				case 200:
 					this.layer.stroke(80,this.fade)
@@ -3706,11 +3742,16 @@ class combatant{
 					this.battle.quickReinforce(findCombatant('Spike Slime'))
 					this.battle.end=false
 				}
+				if(this.name=='Big Slimoid'){
+					this.battle.quickReinforce(findCombatant('Slimoid'))
+					this.battle.quickReinforce(findCombatant('Slimoid'))
+					this.battle.end=false
+				}
 				if(this.name=='Personnel Carrier'){
 					for(let g=0;g<4;g++){
 						this.battle.quickReinforce(findCombatant('Management Robot'))
-						this.battle.end=false
 					}
+					this.battle.end=false
 				}
 			}
 		}

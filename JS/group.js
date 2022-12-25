@@ -13,15 +13,15 @@ class group{
         this.anim={discarding:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,exiling:0,releasing:0,selectCombo:false}
     }
     initial(type){
-        /*for(e=0;e<20;e++){
+        /*for(let e=0;e<20;e++){
             this.add(floor(random(3,103)),0,this.battle.player)
         }*/
         switch(type){
             case 1:
-                for(e=0;e<4;e++){
+                for(let e=0;e<4;e++){
                     this.add(1,0,this.battle.player) 
                 }
-                for(e=0;e<4;e++){
+                for(let e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Big\nStrike'),0,this.battle.player)
@@ -33,10 +33,10 @@ class group{
                 this.add(123,0,this.battle.player)*/
             break
             case 2:
-                for(e=0;e<4;e++){
+                for(let e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
-                for(e=0;e<4;e++){
+                for(let e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Eruption'),0,this.battle.player)
@@ -48,10 +48,10 @@ class group{
                 this.add(243,0,this.battle.player)*/
             break
             case 3:
-                for(e=0;e<4;e++){
+                for(let e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
-                for(e=0;e<4;e++){
+                for(let e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Charge'),0,this.battle.player)
@@ -63,10 +63,10 @@ class group{
                 this.add(363,0,this.battle.player)*/
             break
             case 4:
-                for(e=0;e<4;e++){
+                for(let e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
-                for(e=0;e<4;e++){
+                for(let e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Peace'),0,this.battle.player)
@@ -78,10 +78,10 @@ class group{
                 this.add(483,0,this.battle.player)*/
             break
             case 5:
-                for(e=0;e<4;e++){
+                for(let e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
-                for(e=0;e<4;e++){
+                for(let e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Pistol'),0,this.battle.player)
@@ -93,10 +93,10 @@ class group{
                 this.add(603,0,this.battle.player)*/
             break
             case 6:
-                for(e=0;e<4;e++){
+                for(let e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
-                for(e=0;e<4;e++){
+                for(let e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Survivor'),0,this.battle.player)
@@ -108,10 +108,10 @@ class group{
                 this.add(723,0,this.battle.player)*/
             break
             case 7:
-                /*for(e=0;e<4;e++){
+                /*for(let e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
-                for(e=0;e<4;e++){
+                for(let e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Tap'),0,this.battle.player)
@@ -211,7 +211,7 @@ class group{
     }
     randomUpgrade(){
         this.calc.list=[]
-        for(h=0,lh=this.cards.length;h<lh;h++){
+        for(let h=0,lh=this.cards.length;h<lh;h++){
             if(this.cards[h].level==0&&!this.cards[h].trigger){
                 this.calc.list.push(h)
             }
@@ -349,7 +349,7 @@ class group{
         }else if(!this.battle.random.releasing&&this.anim.releasing>0){
             this.anim.releasing=round(this.anim.releasing*5-1)/5
         }
-        for(e=0,le=this.cards.length;e<le;e++){
+        for(let e=0,le=this.cards.length;e<le;e++){
             this.cards[e].displayExtra([255,0,0],this.anim.discarding)
             this.cards[e].displayExtra([255,100,255],this.anim.doubling)
             this.cards[e].displayExtra([255,255,50],this.anim.upgrading)
@@ -364,7 +364,7 @@ class group{
     }
     displayView(level){
         if(level>=0){
-            for(e=0,le=min(level,this.cards.length);e<le;e++){
+            for(let e=0,le=min(level,this.cards.length);e<le;e++){
                 this.cards[e].position.x=75+(e%6)*150
                 this.cards[e].position.y=100+floor(e/6)*200-this.scroll
                 this.cards[e].anim.afford=0
@@ -373,7 +373,7 @@ class group{
                 this.cards[e].display(le,this.battle.drawAmount,0,le,0,this.battle.defaultRandom)
             }
         }else{
-            for(e=0,le=this.cards.length;e<le;e++){
+            for(let e=0,le=this.cards.length;e<le;e++){
                 this.cards[e].position.x=75+(e%6)*150
                 this.cards[e].position.y=100+floor(e/6)*200-this.scroll
                 this.cards[e].anim.afford=0
@@ -384,7 +384,7 @@ class group{
         }
     }
     update(){
-        for(e=0,le=this.cards.length;e<le;e++){
+        for(let e=0,le=this.cards.length;e<le;e++){
             if(this.cards[e].drawTop){
                 this.battle.reserve.pushTop(copyCard(this.cards[e]))
                 this.cards.splice(e,1)
@@ -405,7 +405,7 @@ class group{
                 if(this.cards[e].selectDiscard){
                     this.cards[e].selectDiscard=false
                     if(this.cards[e].attack==167){
-                        for(f=0;f<this.cards[e].damage;f++){
+                        for(let f=0;f<this.cards[e].damage;f++){
                             this.battle.draw()
                         }
                     }else if(this.cards[e].attack==168){
@@ -417,7 +417,7 @@ class group{
                 if(!this.cards[e].trigger){
                     if(this.battle.relics.active[95]){
                         this.calc.list=[]
-                        for(f=0,lf=this.battle.combatants.length;f<lf;f++){
+                        for(let f=0,lf=this.battle.combatants.length;f<lf;f++){
                             if(this.battle.combatants[f].life>0&&this.battle.combatants[f].team==1){
                                 this.calc.list.push(f)
                             }
@@ -447,7 +447,7 @@ class group{
                 le--
                 this.battle.random.exhausted++
                 if(this.battle.combatants[0].status[46]>0){
-                    for(f=0;f<this.battle.combatants[0].status[46];f++){
+                    for(let f=0;f<this.battle.combatants[0].status[46];f++){
                         this.battle.draw()
                     }
                 }
@@ -455,7 +455,7 @@ class group{
                     this.battle.randomAdd()
                 }
                 if(this.battle.relics.active[93]){
-                    for(f=0,lf=this.battle.combatants.length;f<lf;f++){
+                    for(let f=0,lf=this.battle.combatants.length;f<lf;f++){
                         if(this.battle.combatants[f].team==1){
                             this.battle.combatants[f].take(3,0)
                         }
@@ -465,7 +465,7 @@ class group{
         }
     }
     updateHand(){
-        for(e=0,le=this.cards.length;e<le;e++){
+        for(let e=0,le=this.cards.length;e<le;e++){
             this.cards[e].update(this.battle.mana,this.battle.combatants[0].combo,this.battle.combatants[0].armed,this.battle.random)
             if((inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>350||this.cards[e].select)&&(!this.trigger||this.cards[e].trigger)&&this.cards[e].position.y>320){
                 this.cards[e].position.y-=20
@@ -477,14 +477,14 @@ class group{
             }else if(this.cards[e].attack==121&&this.cards[e].position.x<=e*80+126&&!this.cards[e].used){
                 this.cards[e].used=true
                 this.cards[e].exhaust=true
-                for(f=0;f<this.cards[e].damage;f++){
+                for(let f=0;f<this.cards[e].damage;f++){
                     this.add(findCard('Miracle'),0,0)
                 }
             }
         }
     }
     updateDrop(){
-        for(e=0,le=this.cards.length;e<le;e++){
+        for(let e=0,le=this.cards.length;e<le;e++){
             this.cards[e].size=0.5
             this.cards[e].position.y+=20
             if(this.cards[e].position.y>800){
@@ -493,7 +493,7 @@ class group{
         }
     }
     updateView(){
-        for(e=0,le=this.cards.length;e<le;e++){
+        for(let e=0,le=this.cards.length;e<le;e++){
             this.cards[e].update(0,0,0,{hits:0})
         }
     }
@@ -501,7 +501,7 @@ class group{
         if(this.trigger){
             switch(this.battle.attack.targetType){
                 case 1:
-                    for(e=0,le=this.battle.combatants.length;e<le;e++){
+                    for(let e=0,le=this.battle.combatants.length;e<le;e++){
                         if(this.battle.combatants[e].team==1&&pointInsideBox({position:inputs.rel},{position:{x:this.battle.combatants[e].position.x,y:this.battle.combatants[e].position.y-this.battle.combatants[e].height/2},width:80,height:160})&&this.battle.combatants[e].life>0){
                             this.battle.attack.target=e
                             this.battle.playCard()
@@ -511,7 +511,7 @@ class group{
                                 this.battle.attack.update(this.battle.attack.type,this.battle.attack.level,0)
                             }
                             this.battle.afterPlayCard()
-                            for(f=0,lf=this.cards.length;f<lf;f++){
+                            for(let f=0,lf=this.cards.length;f<lf;f++){
                                 if(this.cards[f].trigger){
                                     if(this.battle.attack.type==723){
                                         this.cards[f].trigger=false
@@ -538,7 +538,7 @@ class group{
             }
         }else{
             this.selected=false
-            for(e=0,le=this.cards.length;e<le;e++){
+            for(let e=0,le=this.cards.length;e<le;e++){
                 if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>this.cards[e].position.y-this.cards[e].height/2&&inputs.rel.y<this.cards[e].position.y+this.cards[e].height/2&&this.select&&this.cards[e].select&&(this.battle.mana.main>=this.cards[e].cost&&this.cards[e].spec!=4||this.battle.combatants[0].combo>=this.cards[e].cost&&this.cards[e].spec==4||this.battle.combatants[0].status.main[76]>0&&this.cards[e].class==0||this.battle.combatants[0].status.main[118]>0)&&!((this.cards[e].spec==5||this.cards[e].spec==11||this.cards[e].spec==14)&&this.battle.combatants[0].armed!=1)){
                     this.trigger=true
                     this.cards[e].trigger=true
@@ -601,12 +601,12 @@ class group{
                     if(this.cards[e].spec==17||this.cards[e].spec==18){
                         this.cards[e].alt--
                         if(this.cards[e].alt<=0){
-                            for(f=0,lf=this.battle.hand.cards.length;f<lf;f++){
+                            for(let f=0,lf=this.battle.hand.cards.length;f<lf;f++){
                                 if(this.battle.hand.cards[f].id==this.cards[e].id){
                                     this.battle.hand.cards[f].exhaust=true
                                 }
                             }
-                            for(f=0,lf=this.battle.deck.cards.length;f<lf;f++){
+                            for(let f=0,lf=this.battle.deck.cards.length;f<lf;f++){
                                 if(this.battle.deck.cards[f].id==this.cards[e].id){
                                     this.battle.deck.cards[f].remove=true
                                 }
@@ -780,7 +780,7 @@ class group{
                 this.select=false
             }
             if(this.trigger){
-                for(e=0,le=this.cards.length;e<le;e++){
+                for(let e=0,le=this.cards.length;e<le;e++){
                     if(this.cards[e].select&&!this.cards[e].trigger){
                         this.cards[e].select=false
                     }

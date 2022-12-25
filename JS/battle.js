@@ -89,10 +89,10 @@ class battle{
             this.combatants.splice(this.combatants.length-1,1)
         }
         this.combatants.push(new combatant(this.layer,this,200,350,0,0,1))
-        for(e=0,le=this.generation.combatants.length;e<le;e++){
+        for(let e=0,le=this.generation.combatants.length;e<le;e++){
             this.combatants.push(new combatant(this.layer,this,300+e*100,350,this.generation.combatants[e],1,e+2))
         }
-        for(e=0,le=this.deck.cards.length;e<le;e++){
+        for(let e=0,le=this.deck.cards.length;e<le;e++){
             this.deck.cards[e].position.x=1206
             this.deck.cards[e].position.y=500
         }
@@ -110,7 +110,7 @@ class battle{
         this.turnDraw()
         this.bonusObjective(this.random.class)
         if(this.relics.active[146]){
-            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+            for(let g=0,lg=this.hand.cards.length;g<lg;g++){
                 this.hand.cards[g].cost=floor(random(0,4))
             }
         }
@@ -119,19 +119,19 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:80}
         this.relics={list:[[],[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        for(g=0,lg=zones[this.map.zone].events[0].length;g<lg;g++){
+        for(let g=0,lg=zones[this.map.zone].events[0].length;g<lg;g++){
             this.eventList.push(zones[this.map.zone].events[0][g])
         }
-        for(g=0,lg=zones[this.map.zone].events[this.player].length;g<lg;g++){
+        for(let g=0,lg=zones[this.map.zone].events[this.player].length;g<lg;g++){
             this.eventList.push(zones[this.map.zone].events[this.player][g])
         }
-        for(g=0,lg=types.relic.length;g<lg;g++){
+        for(let g=0,lg=types.relic.length;g<lg;g++){
             if(g>=1&&types.relic[g].rarity>=0&&(types.relic[g].list==0||types.relic[g].list==this.player||this.player==stage.playerNumber)){
                 this.relics.list[types.relic[g].rarity].push(g)
             }
             this.relics.active.push(false)
         }
-        for(g=0,lg=types.potion.length;g<lg;g++){
+        for(let g=0,lg=types.potion.length;g<lg;g++){
             if(g>=1&&types.potion[g].rarity>=0&&(types.potion[g].list==0||types.potion[g].list==this.player||this.player==stage.playerNumber)){
                 this.potions.list[types.potion[g].rarity].push(g)
             }
@@ -173,7 +173,7 @@ class battle{
                 this.objective.push([1,floor(random(2,9)),2,floor(random(1,7))*5])
             break
             case 1:
-                for(g=0;g<2;g++){
+                for(let g=0;g<2;g++){
                     if(floor(random(0,4))<3){
                         this.objective.push([1,floor(random(2,9)),floor(random(2,6)),0])
                     }else{
@@ -200,12 +200,12 @@ class battle{
         this.hand.cards=[]
         this.drop.cards=[]
         this.discard.cards=[]
-        for(e=0,le=this.deck.cards.length;e<le;e++){
+        for(let e=0,le=this.deck.cards.length;e<le;e++){
             this.reserve.cards.push(copyCard(this.deck.cards[e]))
         }
     }
     drawInitial(){
-        for(e=0,le=this.reserve.cards.length;e<le;e++){
+        for(let e=0,le=this.reserve.cards.length;e<le;e++){
             if(this.reserve.cards[e].spec==7||this.reserve.cards[e].spec==8||this.reserve.cards[e].spec==10||this.reserve.cards[e].spec==18){
                 if(this.reserve.cards[e].list==10){
                     this.random.tempDrawAmount--
@@ -234,7 +234,7 @@ class battle{
             this.mana.main+=2
         }
         if(this.relics.active[10]){
-            for(e=0,le=this.combatants.length;e<le;e++){
+            for(let e=0,le=this.combatants.length;e<le;e++){
                 if(this.combatants[e].team==1){
                     this.combatants[e].boost.main[1]--
                 }
@@ -256,7 +256,7 @@ class battle{
             this.combatants[0].stance=1
         }
         if(this.relics.active[72]){
-            for(e=0,le=this.deck.cards.length;e<le;e++){
+            for(let e=0,le=this.deck.cards.length;e<le;e++){
                 if(this.deck.cards[e].list==10){
                     this.combatants[0].boost.main[0]++
                 }
@@ -307,7 +307,7 @@ class battle{
             this.combatants[0].combo+=4
         }
         if(this.relics.active[131]){
-            for(e=0,le=this.combatants.length;e<le;e++){
+            for(let e=0,le=this.combatants.length;e<le;e++){
                 if(this.combatants[e].team==1){
                     this.combatants[e].boost.main[0]++
                 }
@@ -317,13 +317,13 @@ class battle{
             this.hand.add(findCard('Wound'),0,stage.playerNumber+1)
         }
         if(this.relics.active[149]){
-            for(e=0;e<3;e++){
+            for(let e=0;e<3;e++){
                 this.hand.add(findCard('Miracle'),0,0)
             }
         }
         if(this.relics.active[178]){
             this.calc.list=[]
-            for(e=0,le=types.card.length;e<le;e++){
+            for(let e=0,le=types.card.length;e<le;e++){
                 if(types.card[e].stats[0].spec==16){
                     this.calc.list.push(e)
                 }
@@ -332,7 +332,7 @@ class battle{
             this.hand.add(this.calc.list[e],0,types.card[this.calc.list[e]].list)
             this.hand.cards[this.hand.cards.length-1].exhaust=true
         }
-        for(e=0,le=this.combatants.length;e<le;e++){
+        for(let e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].initialBuff()
         }
         this.startTurn()
@@ -347,7 +347,7 @@ class battle{
         if(this.combatants[0].status.main[119]>0){
             this.combatants[0].status.main[119]=0
         }
-        for(e=0,le=this.random.drawing;e<le;e++){
+        for(let e=0,le=this.random.drawing;e<le;e++){
             this.draw()
         }
         this.random.drawing=this.drawAmount+this.random.tempDrawAmount
@@ -447,7 +447,7 @@ class battle{
             case 30: case 31: case 32:
                 for(let h=0;h<2;h++){
                     this.calc.list=[]
-                    for(g=0,lg=this.deck.cards.length;g<lg;g++){
+                    for(let g=0,lg=this.deck.cards.length;g<lg;g++){
                         if(this.deck.cards[g].class==type-30&&this.deck.cards[g].level==0){
                             this.calc.list.push(g)
                         }
@@ -776,7 +776,7 @@ class battle{
                         this.combatants[e].meter-=this.combatants[e].status.main[f]
                     }
                 }else if(f==145&&this.combatants[e].status.main[f]>0){
-                    for(g=0,lg=this.combatants.length;g<lg;g++){
+                    for(let g=0,lg=this.combatants.length;g<lg;g++){
                         if(this.combatants[g].team==1&&this.combatants[g].life>0){
                             this.combatants[g].status.main[11]+=this.combatants[e].status.main[f]
                         }
@@ -829,13 +829,13 @@ class battle{
             }
             this.combatants[e].turnBuff()
         }
-        for(e=0;e<this.combatants[0].status.main[14];e++){
+        for(let e=0;e<this.combatants[0].status.main[14];e++){
             this.hand.add(findCard('Smite'),0,0)
         }
-        for(e=0;e<this.combatants[0].status.main[21];e++){
+        for(let e=0;e<this.combatants[0].status.main[21];e++){
             this.hand.add(findCard('Shiv'),0,0)
         }
-        for(e=0;e<this.combatants[0].status.main[75];e++){
+        for(let e=0;e<this.combatants[0].status.main[75];e++){
             this.hand.add(findCard('Insight'),0,0)
         }
     }
@@ -858,14 +858,14 @@ class battle{
             this.combatants[0].addBlock(18)
         }
         if(this.relics.active[88]&&this.counter.turn==6){
-            for(e=0,le=this.combatants.length;e<le;e++){
+            for(let e=0,le=this.combatants.length;e<le;e++){
                 if(this.combatants[e].team==1){
                     this.combatants[e].take(52,-1)
                 }
             }
         }
         if(this.relics.active[85]&&this.counter.played<3){
-            for(e=0;e<3;e++){
+            for(let e=0;e<3;e++){
                 this.draw()
             }
         }
@@ -889,7 +889,7 @@ class battle{
             this.combatants[0].mantra++
         }
         if(this.relics.active[50]){
-            for(e=0,le=this.combatants.length;e<le;e++){
+            for(let e=0,le=this.combatants.length;e<le;e++){
                 if(this.combatants[e].team==1){
                     this.combatants[e].take(3,-1)
                 }
@@ -899,7 +899,7 @@ class battle{
             this.combatants[0].status.main[34]++
         }
         if(this.relics.active[116]){
-            for(e=0,le=this.combatants.length;e<le;e++){
+            for(let e=0,le=this.combatants.length;e<le;e++){
                 if(this.combatants[e].team==0&&this.counter.turn==0){
                     this.combatants[e].boost.main[0]+=2
                 }else{
@@ -908,7 +908,7 @@ class battle{
             }
         }
         if(this.relics.active[117]){
-            for(e=0,le=this.combatants.length;e<le;e++){
+            for(let e=0,le=this.combatants.length;e<le;e++){
                 if(this.combatants[e].team==1){
                     this.combatants[e].status.main[37]+=2
                 }
@@ -927,25 +927,25 @@ class battle{
             this.context=-6
         }
         if(this.combatants[0].status.main[54]>0){
-            for(g=0;g<this.combatants[0].status.main[54];g++){
+            for(let g=0;g<this.combatants[0].status.main[54];g++){
                 this.hand.add(listing.card[this.player][0][floor(random(0,listing.card[this.player][0].length))],0,this.player)
             }
         }
         if(this.combatants[0].status.main[55]>0){
-            for(g=0;g<this.combatants[0].status.main[55];g++){
+            for(let g=0;g<this.combatants[0].status.main[55];g++){
                 this.combatants[0].passiveEvoke(this.combatants[0].ammo[0],this.combatants[0].ammoDetail[0])
             }
         }
         if(this.combatants[0].status.main[58]>0){
             this.calc.list=[]
-            for(g=0,lg=listing.card[this.player].length;g<lg;g++){
-                for(h=0,lh=listing.card[this.player][g].length;h<lh;h++){
+            for(let g=0,lg=listing.card[this.player].length;g<lg;g++){
+                for(let h=0,lh=listing.card[this.player][g].length;h<lh;h++){
                     if(types.card[listing.card[this.player][g][h]].stats[0].class==2){
                         this.calc.list.push(listing.card[this.player][g][h])
                     }
                 }
             }
-            for(g=0;g<this.combatants[0].status.main[58];g++){
+            for(let g=0;g<this.combatants[0].status.main[58];g++){
                 if(this.calc.list.length>0){
                     g=floor(random(0,this.calc.list.length))
                     this.hand.add(this.calc.list[g],0,this.player)
@@ -967,7 +967,7 @@ class battle{
     }
     resetTurnProxy(){
         this.counter.enemies.alive=0
-        for(e=0,le=this.combatants.length;e<le;e++){
+        for(let e=0,le=this.combatants.length;e<le;e++){
             if(this.combatants[e].team==1&&this.combatants[e].life>0){
                 this.counter.enemies.alive++
             }
@@ -985,7 +985,7 @@ class battle{
             }
         }
         this.turnDraw()
-        for(e=0,le=this.hand.cards.length;e<le;e++){
+        for(let e=0,le=this.hand.cards.length;e<le;e++){
             this.hand.cards[e].position.y=500
         }
         this.endTurn()
@@ -1007,7 +1007,7 @@ class battle{
         this.counter.enemies.total++
     }
     takeAll(damage,user,team){
-        for(g=0,lg=this.combatants.length;g<lg;g++){
+        for(let g=0,lg=this.combatants.length;g<lg;g++){
             if(this.combatants[g].life>0&&this.combatants[g].team==team){
                 this.combatants[g].take(damage,user)
             }
@@ -1028,7 +1028,7 @@ class battle{
         }else if(this.attack.class==0){
             this.combatants[0].status.main[24]=0
         }
-        for(g=0,lg=this.hand.cards.length;g<lg;g++){
+        for(let g=0,lg=this.hand.cards.length;g<lg;g++){
             if(this.hand.cards[g].attack==-12&&this.attack.class==0||this.hand.cards[g].attack==-11&&this.counter.played>=3){
                 this.allDiscard()
             }else if(this.hand.cards[g].attack==315){
@@ -1055,25 +1055,25 @@ class battle{
                 this.combatants[0].boost.main[2]++
                 this.combatants[0].status.main[32]--
             }
-            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+            for(let g=0,lg=this.hand.cards.length;g<lg;g++){
                 if((this.hand.cards[g].attack==193||this.hand.cards[g].attack==195||this.hand.cards[g].attack==196)&&this.hand.cards[g].cost>0){
                     this.hand.cards[g].cost--
                 }
             }
-            for(g=0;g<this.combatants[0].status.main[96];g++){
+            for(let g=0;g<this.combatants[0].status.main[96];g++){
                 this.draw()
             }
             if(this.combatants[0].status.main[128]>0){
-                for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                for(let g=0,lg=this.hand.cards.length;g<lg;g++){
                     if(this.hand.cards[g].trigger&&this.hand.cards[g].attack==1&&this.hand.cards[g].spec==3){
-                        for(h=0;h<this.combatants[0].status.main[128];h++){
+                        for(let h=0;h<this.combatants[0].status.main[128];h++){
                             this.draw()
                         }
                     }
                 }
             }
             if(this.combatants[0].status.main[135]>0&&this.random.play2More==0){
-                for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                for(let g=0,lg=this.hand.cards.length;g<lg;g++){
                     if(this.hand.cards[g].trigger&&this.hand.cards[g].cost>=2){
                         this.random.play2More++
                         this.mana.main+=this.combatants[0].status.main[135]
@@ -1084,13 +1084,13 @@ class battle{
         if(this.attack.class==1){
             this.random.skills++
             if(this.random.skills%3==0&&this.relics.active[48]){
-                for(g=0,lg=this.combatants.length;g<lg;g++){
+                for(let g=0,lg=this.combatants.length;g<lg;g++){
                     if(this.combatants[g].team==1){
                         this.combatants[g].take(5,-1)
                     }
                 }
             }
-            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+            for(let g=0,lg=this.hand.cards.length;g<lg;g++){
                 if(this.hand.cards[g].attack==194&&this.hand.cards[g].cost>0){
                     this.hand.cards[g].cost--
                 }
@@ -1107,15 +1107,15 @@ class battle{
                 this.combatants[0].life=min(this.combatants[0].life+2*this.random.healEffectiveness,this.combatants[0].base.life)
             }
             if(this.combatants[0].status.main[53]>0){
-                for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                for(let g=0,lg=this.hand.cards.length;g<lg;g++){
                     if(this.hand.cards[g].trigger&&this.hand.cards[g].cost!=0){
-                        for(h=0;h<this.combatants[0].status.main[53];h++){
+                        for(let h=0;h<this.combatants[0].status.main[53];h++){
                             this.draw()
                         }
                     }
                 }
             }
-            for(g=0;g<this.combatants[0].status.main[57];g++){
+            for(let g=0;g<this.combatants[0].status.main[57];g++){
                 this.combatants[0].load(0,0)
             }
         }
@@ -1124,7 +1124,7 @@ class battle{
                 this.draw()
             }
         }
-        for(g=0,lg=this.hand.cards.length;g<lg;g++){
+        for(let g=0,lg=this.hand.cards.length;g<lg;g++){
             if(this.hand.cards[g].attack==-2){
                 this.combatants[0].take(this.hand.cards[g].damage,-1)
             }else if(this.hand.cards[g].attack==633&&this.hand.cards[g].cost>0){
@@ -1145,7 +1145,7 @@ class battle{
             this.combatants[0].addBlock(this.combatants[0].status.main[130])
         }
         if(this.combatants[0].status.main[22]>0){
-            for(g=0,lg=this.combatants.length;g<lg;g++){
+            for(let g=0,lg=this.combatants.length;g<lg;g++){
                 if(this.combatants[g].team==1&&this.combatants[g].status.main[22]>0&&this.combatants[g].life>0){
                     this.combatants[g].take(this.combatants[0].status.main[22],0)
                 }
@@ -1154,14 +1154,14 @@ class battle{
         if(this.combatants[0].status.main[23]>0){
             this.combatants[0].addBlock(this.combatants[0].status.main[23])
         }
-        for(g=0,lg=this.combatants.length;g<lg;g++){
+        for(let g=0,lg=this.combatants.length;g<lg;g++){
             if(this.combatants[g].team==1&&this.combatants[g].life>0&&this.combatants[g].status.main[117]>0){
                 this.combatants[g].take(this.combatants[g].status.main[117],g)
             }
         }
     }
     afterPlayCard(){
-        for(g=0,lg=this.combatants.length;g<lg;g++){
+        for(let g=0,lg=this.combatants.length;g<lg;g++){
             if(this.combatants[g].team==1&&this.combatants[g].life>0&&this.combatants[g].status.main[70]>0){
                 this.combatants[0].take(this.combatants[g].status.main[70],g)
             }
@@ -1210,7 +1210,7 @@ class battle{
         }
     }
     allExhaust(type){
-        for(g=0,lg=this.hand.cards.length;g<lg;g++){
+        for(let g=0,lg=this.hand.cards.length;g<lg;g++){
             if(!this.hand.cards[g].trigger&&(type==-1||type==this.hand.cards[g].class)){
                 this.hand.cards[g].used=true
                 this.hand.cards[g].exhaust=true
@@ -1339,7 +1339,7 @@ class battle{
     }
     close(){
         if(this.relics.active[97]){
-            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+            for(let g=0,lg=this.hand.cards.length;g<lg;g++){
                 if(!this.hand.cards[g].trigger){
                     this.combatants[0].block++
                 }
@@ -1361,7 +1361,7 @@ class battle{
 				this.combatants[0].mantra-=12
             }
         }
-        for(e=0,le=this.combatants.length;e<le;e++){
+        for(let e=0,le=this.combatants.length;e<le;e++){
             if(this.combatants[e].team==1&&this.combatants[e].status.main[47]<=0){
                 this.combatants[e].block=0
             }
@@ -1375,9 +1375,9 @@ class battle{
         }
     }
     displayRelics(){
-        for(e=0,le=this.relics.owned.length;e<le;e++){
-            displayRelicSymbol(this.layer,25+e*50,60,this.relics.owned[e],0,1,1,this.relics.active[this.relics.owned[e]])
-            if(dist(inputs.rel.x,inputs.rel.y,25+e*50,60)<20){
+        for(let e=0,le=this.relics.owned.length;e<le;e++){
+            displayRelicSymbol(this.layer,25+(e%18)*50,60+floor(e/18)*50,this.relics.owned[e],0,1,1,this.relics.active[this.relics.owned[e]])
+            if(dist(inputs.rel.x,inputs.rel.y,25+(e%18)*50,60+floor(e/18)*50)<20){
                 this.layer.noStroke()
                 this.layer.fill(180)
                 this.layer.rect(130,120,240,60,5)
@@ -1390,7 +1390,7 @@ class battle{
         }
     }
     displayPotions(){
-        for(e=0,le=this.potions.owned.length;e<le;e++){
+        for(let e=0,le=this.potions.owned.length;e<le;e++){
             displayPotionSymbol(this.layer,100+e*50,20,this.potions.owned[e],0,1,1)
             if(dist(inputs.rel.x,inputs.rel.y,100+e*50,20)<15&&this.potions.owned[e]>=0){
                 this.layer.noStroke()
@@ -1406,7 +1406,7 @@ class battle{
     }
     onClickPotions(){
         if(!this.relics.active[143]){
-            for(e=0,le=this.potions.owned.length;e<le;e++){
+            for(let e=0,le=this.potions.owned.length;e<le;e++){
                 if(dist(inputs.rel.x,inputs.rel.y,100+e*50,20)<15&&this.potions.owned[e]>=0){
                     this.remember=[this.potions.owned[e]]
                     if(this.relics.active[139]){
@@ -1419,19 +1419,19 @@ class battle{
                     switch(this.remember[0]){
                         case 1:
                             this.calc.list=[]
-                            for(g=0,lg=types.card.length;g<lg;g++){
+                            for(let g=0,lg=types.card.length;g<lg;g++){
                                 if(types.card[g].list<=5&&types.card[g].stats[0].class==0){
                                     this.calc.list.push(g)
                                 }
                             }
-                            for(h=0;h<this.random.potionEffectiveness;h++){
+                            for(let h=0;h<this.random.potionEffectiveness;h++){
                                 g=floor(random(0,this.calc.list.length))
                                 this.hand.add(this.calc.list[g],0,types.card[this.calc.list[g]].list)
                                 this.hand.cards[this.hand.cards.length-1].cost=0
                             }
                         break
                         case 2:
-                            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                            for(let g=0,lg=this.hand.cards.length;g<lg;g++){
                                 if(this.hand.cards[g].level==0){
                                     this.hand.cards[g].level++
                                     this.hand.cards[g]=reformCard(this.hand.cards[g])
@@ -1445,7 +1445,7 @@ class battle{
                             this.combatants[0].life=min(this.combatants[0].life+this.combatants[0].base.life*0.2*this.random.potionEffectiveness,this.combatants[0].base.life)
                         break
                         case 5:
-                            for(g=0;g<2*this.random.potionEffectiveness;g++){
+                            for(let g=0;g<2*this.random.potionEffectiveness;g++){
                                 this.hand.add(findCard('Miracle'),0,0)
                             }
                         break
@@ -1466,7 +1466,7 @@ class battle{
                             this.mana.main+=2*this.random.potionEffectiveness
                         break
                         case 9:
-                            for(g=0,lg=this.combatants.length;g<lg;g++){
+                            for(let g=0,lg=this.combatants.length;g<lg;g++){
                                 if(this.combatants[g].team==1&&this.combatants[g].life>0){
                                     this.combatants[g].take(10*this.random.potionEffectiveness,0)
                                 }
@@ -1501,9 +1501,9 @@ class battle{
                             this.hand.trigger=true
                         break
                         case 14:
-                            for(h=0;h<this.random.potionEffectiveness;h++){
+                            for(let h=0;h<this.random.potionEffectiveness;h++){
                                 this.calc.list=[]
-                                for(g=0,lg=types.card.length;g<lg;g++){
+                                for(let g=0,lg=types.card.length;g<lg;g++){
                                     if(types.card[g].list<=5&&types.card[g].stats[0].class==1){
                                         this.calc.list.push(g)
                                     }
@@ -1514,9 +1514,9 @@ class battle{
                             }
                         break
                         case 15:
-                            for(h=0;h<this.random.potionEffectiveness;h++){
+                            for(let h=0;h<this.random.potionEffectiveness;h++){
                                 this.calc.list=[]
-                                for(g=0,lg=types.card.length;g<lg;g++){
+                                for(let g=0,lg=types.card.length;g<lg;g++){
                                     if(types.card[g].list<=5&&types.card[g].stats[0].class==2){
                                         this.calc.list.push(g)
                                     }
@@ -1534,7 +1534,7 @@ class battle{
                             this.combatants[0].boost.main[0]+=2*this.random.potionEffectiveness
                         break
                         case 18:
-                            for(g=0;g<3*this.random.potionEffectiveness;g++){
+                            for(let g=0;g<3*this.random.potionEffectiveness;g++){
                                 this.draw()
                             }
                         break
@@ -1550,7 +1550,7 @@ class battle{
                             this.combatants[0].status.main[36]+=this.random.potionEffectiveness
                         break
                         case 21:
-                            for(g=0;g<3*this.random.potionEffectiveness;g++){
+                            for(let g=0;g<3*this.random.potionEffectiveness;g++){
                                 this.hand.add(findCard('Shiv'),1,0)
                             }
                         break
@@ -1611,10 +1611,10 @@ class battle{
                             this.map.complete[this.map.position[0]][this.map.position[1]]=1
                         break
                         case 35:
-                            for(g=0;g<5*this.random.potionEffectiveness;g++){
+                            for(let g=0;g<5*this.random.potionEffectiveness;g++){
                                 this.draw()
                             }
-                            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                            for(let g=0,lg=this.hand.cards.length;g<lg;g++){
                                 this.hand.cards[g].cost=floor(random(0,4))
                             }
                         break
@@ -1627,18 +1627,18 @@ class battle{
                         case 38:
                             this.mana.main+=this.random.potionEffectiveness
                             this.remember[0]=0
-                            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                            for(let g=0,lg=this.hand.cards.length;g<lg;g++){
                                 if(this.hand.cards[g].class!=0){
                                     this.hand.cards[g].used=true
                                     this.remember[0]++
                                 }
                             }
-                            for(g=0;g<this.remember[0];g++){
+                            for(let g=0;g<this.remember[0];g++){
                                 this.draw()
                             }
                         break
                         case 39:
-                            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                            for(let g=0,lg=this.hand.cards.length;g<lg;g++){
                                 this.hand.cards[g].cost=max(this.hand.cards[g].cost-2*this.random.potionEffectiveness,0)
                             }
                         break
@@ -1697,13 +1697,13 @@ class battle{
                             }
                         break
                         case 53:
-                            for(g=0;g<2*this.random.potionEffectiveness;g++){
+                            for(let g=0;g<2*this.random.potionEffectiveness;g++){
                                 this.draw()
                             }
                             this.random.upgrading=2*this.random.potionEffectiveness
                         break
                         case 54:
-                            for(g=0,lg=this.discard.cards.length;g<lg;g++){
+                            for(let g=0,lg=this.discard.cards.length;g<lg;g++){
                                 if(this.discard.cards[g].spec==16){
                                     this.hand.cards.push(this.discard.cards[g])
                                     this.hand.cards[this.hand.cards.length-1].position.x=1206
@@ -1715,7 +1715,7 @@ class battle{
                             }
                         break
                         case 55:
-                            for(g=0,lg=this.hand.cards.length;g<lg;g++){
+                            for(let g=0,lg=this.hand.cards.length;g<lg;g++){
                                 this.hand.cards[g].spec=0
                             }
                         break
@@ -1731,7 +1731,7 @@ class battle{
         }
     }
     display(){
-        for(e=0,le=this.combatants.length;e<le;e++){
+        for(let e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].display(0)
         }
         this.layer.noStroke()
@@ -1759,12 +1759,12 @@ class battle{
         this.layer.text('End',-68+this.anim.turn*100,565)
         this.layer.fill(50)
         this.layer.text('Draw',-68+this.anim.turn*100,479)
-        for(e=0,le=this.combatants.length;e<le;e++){
+        for(let e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].displayInfo()
         }
         this.hand.display()
         this.drop.display()
-        for(e=0,le=this.particles.length;e<le;e++){
+        for(let e=0,le=this.particles.length;e<le;e++){
             this.particles[e].display()
         }
         this.layer.noStroke()
@@ -1788,7 +1788,7 @@ class battle{
         this.layer.rect(450,this.objective.length*60+140,150,40,10)
         if(this.anim.end<1){
             this.layer.textSize(12)
-            for(e=0,le=this.objective.length;e<le;e++){
+            for(let e=0,le=this.objective.length;e<le;e++){
                 if(this.objective[e][0]==1&&this.counter.turn>this.objective[e][1]||this.objective[e][0]==2&&this.counter.taken>=this.objective[e][1]){
                     this.layer.fill(150,1-this.anim.end)
                 }else{
@@ -1835,7 +1835,7 @@ class battle{
             this.layer.textSize(18)
             this.layer.fill(255,this.anim.end)
             this.layer.text('End',450,this.objective.length*60+140)
-            for(e=0,le=this.objective.length;e<le;e++){
+            for(let e=0,le=this.objective.length;e<le;e++){
                 if(this.objective[e][0]==1&&this.counter.turn>this.objective[e][1]||this.objective[e][0]==2&&this.counter.taken>=this.objective[e][1]){
                     this.layer.fill(150,this.anim.end)
                 }else{
@@ -1897,7 +1897,7 @@ class battle{
             }
             if(this.player==7&&this.hand.cards.length<3){
                 if(this.reserve.cards.length<=0){
-                    for(g=0,lg=this.discard.cards.length;g<lg;g++){
+                    for(let g=0,lg=this.discard.cards.length;g<lg;g++){
                         if(this.discard.cards[g].attack==560){
                             this.reserve.cards.push(this.discard.cards[g])
                             this.discard.cards.splice(g,1)
@@ -1912,7 +1912,7 @@ class battle{
             }
         }
         this.counter.enemies.alive=0
-        for(e=0,le=this.combatants.length;e<le;e++){
+        for(let e=0,le=this.combatants.length;e<le;e++){
             if(this.combatants[e].team==1&&this.combatants[e].life>0){
                 this.counter.enemies.alive++
             }
@@ -1920,7 +1920,7 @@ class battle{
         if(this.counter.enemies.alive<=0&&this.generation.reinforce.length<=0){
             this.end=true
         }
-        for(e=0,le=this.particles.length;e<le;e++){
+        for(let e=0,le=this.particles.length;e<le;e++){
             this.particles[e].update()
             if(this.particles[e].remove){
                 this.particles.splice(e,1)
@@ -1928,7 +1928,7 @@ class battle{
                 le--
             }
         }
-        for(e=0,le=this.combatants.length;e<le;e++){
+        for(let e=0,le=this.combatants.length;e<le;e++){
             this.combatants[e].update()
         }
         if((this.turn==0||this.turn>=100)&&this.anim.turn<1){
@@ -2039,7 +2039,7 @@ class battle{
                 if(this.relics.active[167]&&this.counter.taken==0){
                     this.random.strengthBase++
                 }
-                for(e=0,le=this.objective.length;e<le;e++){
+                for(let e=0,le=this.objective.length;e<le;e++){
                     if(this.objective[e][0]==0||this.objective[e][0]==1&&this.counter.turn<=this.objective[e][1]||this.objective[e][0]==2&&this.counter.taken<this.objective[e][1]){
                         switch(this.objective[e][2]){
                             case 0:
@@ -2111,7 +2111,7 @@ class battle{
                 }
                 if(this.relics.active[123]){
                     if(this.relics.active[55]){
-                        for(g=0;g<2;g++){
+                        for(let g=0;g<2;g++){
                             if(this.calc.list.length>0){
                                 h=floor(random(0,this.calc.list.length))
                                 this.choice.cards.push(new card(this.layer,300+g*300,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
@@ -2127,7 +2127,7 @@ class battle{
                     }
                 }else{
                     if(this.relics.active[55]){
-                        for(g=0;g<4;g++){
+                        for(let g=0;g<4;g++){
                             if(this.calc.list.length>0){
                                 h=floor(random(0,this.calc.list.length))
                                 this.choice.cards.push(new card(this.layer,180+g*180,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
@@ -2135,7 +2135,7 @@ class battle{
                             }
                         }
                     }else{
-                        for(g=0;g<3;g++){
+                        for(let g=0;g<3;g++){
                             if(this.calc.list.length>0){
                                 h=floor(random(0,this.calc.list.length))
                                 this.choice.cards.push(new card(this.layer,225+g*225,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
@@ -2156,12 +2156,12 @@ class battle{
             break
             case 3:
                 this.calc.list=[]
-                for(g=0;g<3;g++){
-                    for(h=0,lh=listing.card[this.player][g].length;h<lh;h++){
+                for(let g=0;g<3;g++){
+                    for(let h=0,lh=listing.card[this.player][g].length;h<lh;h++){
                         this.calc.list.push(listing.card[this.player][g][h])
                     }
                 }
-                for(g=0;g<5;g++){
+                for(let g=0;g<5;g++){
                     if(this.calc.list.length>0){
                         h=floor(random(0,this.calc.list.length))
                         this.choice.cards.push(new card(this.layer,150+g*150,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
@@ -2171,7 +2171,7 @@ class battle{
             break
             case 4:
                 this.calc.list=copyList(listing.card[0][rarity])
-                for(g=0;g<3;g++){
+                for(let g=0;g<3;g++){
                     if(this.calc.list.length>0){
                         h=floor(random(0,this.calc.list.length))
                         this.choice.cards.push(new card(this.layer,225+g*225,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
@@ -2181,12 +2181,12 @@ class battle{
             break
             case 5:
                 this.calc.list=[]
-                for(g=0,lg=listing.card[15][0].length;g<lg;g++){
+                for(let g=0,lg=listing.card[15][0].length;g<lg;g++){
                     if(types.card[listing.card[15][0][g]].stats[0].class==0){
                         this.calc.list.push(listing.card[15][0][g])
                     }
                 }
-                for(g=0;g<3;g++){
+                for(let g=0;g<3;g++){
                     if(this.calc.list.length>0){
                         h=floor(random(0,this.calc.list.length))
                         this.choice.cards.push(new card(this.layer,225+g*225,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
@@ -2196,7 +2196,7 @@ class battle{
             break
             case 6:
                 this.calc.list=copyList(listing.card[15][0])
-                for(g=0;g<3;g++){
+                for(let g=0;g<3;g++){
                     if(this.calc.list.length>0){
                         h=floor(random(0,this.calc.list.length))
                         this.choice.cards.push(new card(this.layer,225+g*225,300,this.calc.list[h],level,types.card[this.calc.list[h]].list))
@@ -2205,7 +2205,7 @@ class battle{
                 }
             break
         }
-        for(g=0,lg=this.choice.cards.length;g<lg;g++){
+        for(let g=0,lg=this.choice.cards.length;g<lg;g++){
             this.choice.cards[g].size=1
         }
     }
@@ -2218,12 +2218,12 @@ class battle{
         this.layer.text('Add a Card',450,150)
         this.layer.textSize(20)
         this.layer.text('Skip',450,450)
-        for(e=0,le=this.choice.cards.length;e<le;e++){
+        for(let e=0,le=this.choice.cards.length;e<le;e++){
             this.choice.cards[e].display(this.deck.cards.length,this.drawAmount,0,this.deck.cards.length-this.drawAmount,0,this.defaultRandom)
         }
     }
     updateChoice(){
-        for(e=0,le=this.choice.cards.length;e<le;e++){
+        for(let e=0,le=this.choice.cards.length;e<le;e++){
             if(this.choice.cards[e].used&&this.choice.cards[e].size>0){
                 this.choice.cards[e].size=round(this.choice.cards[e].size*10-1)/10
             }
@@ -2242,7 +2242,7 @@ class battle{
                 transition.scene='map'
             }
         }
-        for(e=0,le=this.choice.cards.length;e<le;e++){
+        for(let e=0,le=this.choice.cards.length;e<le;e++){
             if(pointInsideBox({position:inputs.rel},this.choice.cards[e])&&this.choice.cards[e].size>=1){
                 this.random.picked++
                 if((this.random.picked==1&&!this.relics.active[86]||this.random.picked==2)&&this.context!=-1){
@@ -2287,12 +2287,12 @@ class battle{
         this.map.position=[-1,0]
         this.map.scroll=0
         this.map.scrollGoal=0
-        for(e=0;e<15;e++){
+        for(let e=0;e<15;e++){
             this.map.main.push([])
             this.map.complete.push([])
         }
-        for(e=0,le=this.map.main.length;e<le;e++){
-            for(f=0;f<min(5,8-abs(7-e));f++){
+        for(let e=0,le=this.map.main.length;e<le;e++){
+            for(let f=0;f<min(5,8-abs(7-e));f++){
                 if(e==this.map.main.length-1){
                     this.map.main[e].push(5)
                 }else if(floor(random(0,3))==0||e<2){
@@ -2314,9 +2314,9 @@ class battle{
         this.displayRelics()
         this.layer.stroke(150)
         this.layer.strokeWeight(3)
-        for(e=0,le=this.map.main.length-1;e<le;e++){
-            for(f=0,lf=this.map.main[e].length;f<lf;f++){
-                for(g=0,lg=this.map.main[e+1].length;g<lg;g++){
+        for(let e=0,le=this.map.main.length-1;e<le;e++){
+            for(let f=0,lf=this.map.main[e].length;f<lf;f++){
+                for(let g=0,lg=this.map.main[e+1].length;g<lg;g++){
                     if((g==f||g==f+1)&&this.map.main[e].length==this.map.main[e+1].length-1||(g==f-1||g==f||g==f+1)&&this.map.main[e].length==this.map.main[e+1].length||(g==f-1||g==f)&&this.map.main[e].length==this.map.main[e+1].length+1){
                         this.layer.line(530-this.map.main[e].length*80+f*160,300+e*100-this.map.scroll,530-this.map.main[e+1].length*80+g*160,400+e*100-this.map.scroll)
                     }
@@ -2331,8 +2331,8 @@ class battle{
         this.layer.textSize(12)
         this.layer.text('Deck',32,565)
         this.layer.textSize(20)
-        for(e=0,le=this.map.main.length;e<le;e++){
-            for(f=0,lf=this.map.main[e].length;f<lf;f++){
+        for(let e=0,le=this.map.main.length;e<le;e++){
+            for(let f=0,lf=this.map.main[e].length;f<lf;f++){
                 if(this.map.complete[e][f]==1){
                     this.layer.fill(100,255,100)
                 }else{
@@ -2413,7 +2413,7 @@ class battle{
                             setupEncounter(this,zones[this.map.zone].encounters[1][floor(random(0,zones[this.map.zone].encounters[1].length))])
                             this.create()
                             if(this.relics.active[23]){
-                                for(g=0,lg=this.combatants.length;g<lg;g++){
+                                for(let g=0,lg=this.combatants.length;g<lg;g++){
                                     if(this.combatants[g].team==1){
                                         this.combatants[g].life*=0.8
                                     }
@@ -2474,14 +2474,14 @@ class battle{
         this.layer.rect(450,475,910,250)
         this.combatants[0].displayInfo()
         this.layer.fill(160)
-        for(e=0,le=this.restOptions.length;e<le;e++){
+        for(let e=0,le=this.restOptions.length;e<le;e++){
             this.layer.rect(525+e*150-le*75,300,120,60,5)
         }
         this.layer.fill(0)
         this.layer.textSize(60)
         this.layer.text('Rest Site',450,150)
         this.layer.textSize(20)
-        for(e=0,le=this.restOptions.length;e<le;e++){
+        for(let e=0,le=this.restOptions.length;e<le;e++){
             switch(this.restOptions[e]){
                 case 0:
                     this.layer.text('Skip',525+e*150-le*75,300)
@@ -2512,7 +2512,7 @@ class battle{
     }
     onClickRest(){
         if(!transition.trigger){
-            for(e=0,le=this.restOptions.length;e<le;e++){
+            for(let e=0,le=this.restOptions.length;e<le;e++){
                 if(pointInsideBox({position:inputs.rel},{position:{x:525+e*150-le*75,y:300},width:120,height:60})){
                     transition.trigger=true
                     this.map.complete[this.map.position[0]][this.map.position[1]]=1
@@ -2642,7 +2642,7 @@ class battle{
                 transition.scene='battle'
             }
             if(this.context==7||this.context==8||this.context==13){
-                for(g=0,lg=this.discard.cards.length;g<lg;g++){
+                for(let g=0,lg=this.discard.cards.length;g<lg;g++){
                     if(this.discard.cards[g].attack==329){
                         this.hand.cards.push(copyCard(this.discard.cards[g]))
                         this.hand.cards[this.hand.cards.length-1].position.x=1206
@@ -2671,7 +2671,7 @@ class battle{
         this.layer.fill(80,85,90)
         this.layer.rect(450,475,910,250)
         this.layer.fill(160)
-        for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
+        for(let e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
             this.layer.rect(450,350+e*60,200,50,5)
         }
         this.layer.fill(255,225,0)
@@ -2688,7 +2688,7 @@ class battle{
         this.layer.text(types.event[this.event].name,450,50)
         this.layer.textSize(15)
         this.layer.text(types.event[this.event].pages[this.page].desc,450,200)
-        for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
+        for(let e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
             if(types.event[this.event].pages[this.page].optionDesc[e]==''){
                 this.layer.text(types.event[this.event].pages[this.page].option[e],450,350+e*60)
             }else{
@@ -2696,7 +2696,7 @@ class battle{
             }
         }
         this.layer.textSize(10)
-        for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
+        for(let e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
             this.layer.text(types.event[this.event].pages[this.page].optionDesc[e],450,360+e*60)
         }
         this.combatants[0].displayInfo()
@@ -2911,7 +2911,7 @@ class battle{
                                 setupEncounter(current,zones[0].special[3])
                                 this.create()
                                 transition.scene='battle'
-                                for(f=0,lf=this.combatants.length;f<lf;f++){
+                                for(let f=0,lf=this.combatants.length;f<lf;f++){
                                     if(this.combatants[f].team==1){
                                         this.combatants[f].life=round(this.combatants[f].life*random(0.8,1))
                                     }
@@ -3033,7 +3033,7 @@ class battle{
                         break
                         case 27:
                             if(this.page==1&&e==0){
-                                for(g=0,lg=this.deck.cards.length;g<lg;g++){
+                                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
                                     if(this.deck.cards[g].list==10){
                                         this.deck.cards.splice(g,1)
                                         g--
@@ -3131,7 +3131,7 @@ class battle{
                                 this.combatants[0].base.life*=0.5
                                 this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
                             }else if(this.page==1&&e==0){
-                                for(g=0;g<5;g++){
+                                for(let g=0;g<5;g++){
                                     this.deck.add(findCard('Apparition'),0,0)
                                 }
                             }
@@ -3242,7 +3242,7 @@ class battle{
                             if(this.page==0&&e==0){
                                 this.combatants[0].base.life*=0.75
                                 this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
-                                for(g=0,lg=this.deck.cards.length;g<lg;g++){
+                                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
                                     if(this.deck.cards[g].list==stage.playerNumber+1&&this.deck.cards[g].attack==1){
                                         this.deck.cards.splice(g,1)
                                         g--
@@ -3250,7 +3250,7 @@ class battle{
                                     }
                                 }
                             }else if(this.page==1&&e==0){
-                                for(g=0;g<5;g++){
+                                for(let g=0;g<5;g++){
                                     this.deck.add(findCard('Bite'),0,0)
                                 }
                             }
@@ -3372,7 +3372,7 @@ class battle{
                         break
                         case 58:
                             if(this.page==0&&e==0){
-                                for(h=0;h<3;h++){
+                                for(let h=0;h<3;h++){
                                     this.calc.list=[0,0,0,1,1,2]
                                     g=this.calc.list[floor(random(0,this.calc.list.length))]
                                     f=floor(random(0,this.relics.list[g].length))
@@ -3462,7 +3462,7 @@ class battle{
                             if(this.page==0&&e==0){
                                 this.currency.main+=100
                                 g=findEvent('Debt Squad')
-                                for(f=0;f<25;f++){
+                                for(let f=0;f<25;f++){
                                     this.eventList.push(g)
                                 }
                             }
@@ -3572,7 +3572,7 @@ class battle{
                         case 78:
                             if(this.page==1&&e==0){
                                 this.calc.list=[findCard('Charge'),findCard('Detonate'),findCard('Shielding'),findCard('Energize'),findCard('Darkness'),findCard('Zap'),findCard('Illuminate'),findCard('Enflame')]
-                                for(g=0;g<3;g++){
+                                for(let g=0;g<3;g++){
                                     h=floor(random(0,this.calc.list.length))
                                     this.deck.add(this.calc.list[h],floor(random(0,2)),this.player)
                                     this.calc.list.splice(h,1)
@@ -3841,7 +3841,7 @@ class battle{
                         break
                         case 106:
                             if(this.page==1&&e==0){
-                                for(g=0;g<3;g++){
+                                for(let g=0;g<3;g++){
                                     this.deck.add(findCard('Broken\nParts'),0,0)
                                 }
                             }else if(this.page==2&&e==0){
@@ -3854,7 +3854,7 @@ class battle{
                         case 107:
                             if(this.page==0&&e==0){
                                 this.calc.list=[]
-                                for(g=0,lg=types.card.length;g<lg;g++){
+                                for(let g=0,lg=types.card.length;g<lg;g++){
                                     if(types.card[g].list==this.player&&types.card[g].stats[1].class==3){
                                         this.calc.list.push(g)
                                     }
@@ -3911,7 +3911,7 @@ class battle{
                         break
                         case 114:
                             if(this.page==1&&e==0){
-                                for(h=0;h<3;h++){
+                                for(let h=0;h<3;h++){
                                     i=floor(random(0,3))
                                     g=listing.card[14][i][floor(random(0,listing.card[14][i].length))]
                                     this.deck.add(g,floor(random(0,2)),types.card[g].list)
@@ -3946,7 +3946,7 @@ class battle{
                                 this.setupDeck(14)
                                 this.context=14
                             }else if(this.page==2&&e==0){
-                                for(g=0,lg=this.deck.cards.length;g<lg;g++){
+                                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
                                     this.deck.cards.push(copyCard(this.deck.cards[g]))
                                 }
                             }
@@ -4004,7 +4004,7 @@ class battle{
                                 this.setupDeck(15)
                                 this.context=15
                             }else if(this.page==2&&e==0){
-                                for(g=0,lg=this.deck.cards.length;g<lg;g++){
+                                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
                                     f=floor(random(0,3))
                                     this.deck.cards[g].type=listing.card[this.player][f][floor(random(0,listing.card[this.player][f].length))]
                                     this.deck.cards[g].color=this.player
@@ -4045,18 +4045,18 @@ class battle{
                 this.costs.relic[5]=round(random(90,110))
                 this.costs.sale=floor(random(0,5))
                 if(this.relics.active[109]){
-                    for(g=0,lg=this.costs.card.length;g<lg;g++){
-                        for(h=0,lh=this.costs.card[g].length;h<lh;h++){
+                    for(let g=0,lg=this.costs.card.length;g<lg;g++){
+                        for(let h=0,lh=this.costs.card[g].length;h<lh;h++){
                             this.costs.card[g][h]=round(this.costs.card[g][h]/2)
                         }
                     }
-                    for(g=0,lg=this.costs.relic.length;g<lg;g++){
+                    for(let g=0,lg=this.costs.relic.length;g<lg;g++){
                         this.costs.relic[g]=round(this.costs.relic[g]/2)
                     }
                 }
                 this.costs.card[0][this.costs.sale]=round(this.costs.card[0][this.costs.sale]/2)
                 this.calc.list=copyList(listing.card[this.player])
-                for(g=0;g<5;g++){
+                for(let g=0;g<5;g++){
                     if(this.calc.list.length>0){
                         h=floor(random(0,this.calc.list[floor(g/2)].length))
                         this.shop.cards.push(new card(this.layer,75+g*150,200,this.calc.list[floor(g/2)][h],0,types.card[this.calc.list[floor(g/2)][h]].list))
@@ -4064,7 +4064,7 @@ class battle{
                     }
                 }
                 this.calc.list2=copyList(listing.card[0])
-                for(g=0;g<2;g++){
+                for(let g=0;g<2;g++){
                     if(this.calc.list2.length>0){
                         h=floor(random(0,this.calc.list2[g+1].length))
                         this.shop.cards.push(new card(this.layer,75+g*150,400,this.calc.list2[g+1][h],0,0))
@@ -4074,7 +4074,7 @@ class battle{
                 this.relics.shop=[]
                 this.relics.size=[]
                 this.calc.list3=copyList(this.relics.list)
-                for(g=0;g<6;g++){
+                for(let g=0;g<6;g++){
                     if(this.calc.list3.length>0){
                         h=floor(random(0,this.calc.list3[floor(g/2)+floor(g/5)].length))
                         this.relics.shop.push(this.calc.list3[floor(g/2)+floor(g/5)][h])
@@ -4087,7 +4087,7 @@ class battle{
                 this.relics.shop=[]
                 this.relics.size=[]
                 this.calc.list3=copyList(this.relics.list)
-                for(g=0;g<2;g++){
+                for(let g=0;g<2;g++){
                     this.costs.relic[g]=round(random(50,70))
                     this.costs.relic[2+g]=round(random(50,70))
                     this.costs.relic[4+g]=round(random(100,120))
@@ -4095,7 +4095,7 @@ class battle{
                     this.costs.relic[8+g]=round(random(180,200))
                     this.costs.relic[10+g]=round(random(90,110))
                 }
-                for(g=0;g<12;g++){
+                for(let g=0;g<12;g++){
                     if(this.calc.list3.length>0){
                         h=floor(random(0,this.calc.list3[floor(g/4)+floor(g/10)].length))
                         this.relics.shop.push(this.calc.list3[floor(g/4)+floor(g/10)][h])
@@ -4120,18 +4120,18 @@ class battle{
                 this.costs.relic[5]=round(random(72,88))
                 this.costs.sale=floor(random(0,5))
                 if(this.relics.active[109]){
-                    for(g=0,lg=this.costs.card.length;g<lg;g++){
-                        for(h=0,lh=this.costs.card[g].length;h<lh;h++){
+                    for(let g=0,lg=this.costs.card.length;g<lg;g++){
+                        for(let h=0,lh=this.costs.card[g].length;h<lh;h++){
                             this.costs.card[g][h]=round(this.costs.card[g][h]/2)
                         }
                     }
-                    for(g=0,lg=this.costs.relic.length;g<lg;g++){
+                    for(let g=0,lg=this.costs.relic.length;g<lg;g++){
                         this.costs.relic[g]=round(this.costs.relic[g]/2)
                     }
                 }
                 this.costs.card[0][this.costs.sale]=round(this.costs.card[0][this.costs.sale]/2)
                 this.calc.list=copyList(listing.card[this.player])
-                for(g=0;g<5;g++){
+                for(let g=0;g<5;g++){
                     if(this.calc.list.length>0){
                         h=floor(random(0,this.calc.list[2].length))
                         this.shop.cards.push(new card(this.layer,75+g*150,200,this.calc.list[2][h],0,types.card[this.calc.list[2][h]].list))
@@ -4139,7 +4139,7 @@ class battle{
                     }
                 }
                 this.calc.list2=copyList(listing.card[0])
-                for(g=0;g<2;g++){
+                for(let g=0;g<2;g++){
                     if(this.calc.list2.length>0){
                         h=floor(random(0,this.calc.list2[2].length))
                         this.shop.cards.push(new card(this.layer,75+g*150,400,this.calc.list2[2][h],0,0))
@@ -4149,7 +4149,7 @@ class battle{
                 this.relics.shop=[]
                 this.relics.size=[]
                 this.calc.list3=copyList(this.relics.list)
-                for(g=0;g<6;g++){
+                for(let g=0;g<6;g++){
                     if(this.calc.list3.length>0){
                         h=floor(random(0,this.calc.list3[2+floor(g/4)].length))
                         this.relics.shop.push(this.calc.list3[2+floor(g/4)][h])
@@ -4159,12 +4159,12 @@ class battle{
                 }
             break
         }
-        for(g=0,lg=this.shop.cards.length;g<lg;g++){
+        for(let g=0,lg=this.shop.cards.length;g<lg;g++){
             this.shop.cards[g].size=1
         }
     }
     displayShop(){
-        for(e=0,le=this.shop.cards.length;e<le;e++){
+        for(let e=0,le=this.shop.cards.length;e<le;e++){
             if(this.shop.cards[e]!=0){
                 this.shop.cards[e].display(this.deck.cards.length,this.drawAmount,0,this.deck.cards.length,0,this.defaultRandom)
             }
@@ -4191,7 +4191,7 @@ class battle{
         if(this.context!=1){
             this.layer.text(this.costs.remove,825,400)
         }
-        for(g=0;g<min(5,this.shop.cards.length);g++){
+        for(let g=0;g<min(5,this.shop.cards.length);g++){
             if(this.shop.cards[g]!=0){
                 this.layer.fill(255,225,0,this.shop.cards[g].size)
                 this.layer.text(this.costs.card[0][g],this.shop.cards[g].position.x,this.shop.cards[g].position.y+100)
@@ -4200,13 +4200,13 @@ class battle{
                 }
             }
         }
-        for(g=0;g<min(2,this.shop.cards.length-5);g++){
+        for(let g=0;g<min(2,this.shop.cards.length-5);g++){
             if(this.shop.cards[g+5]!=0){
                 this.layer.fill(255,225,0,this.shop.cards[g+5].size)
                 this.layer.text(this.costs.card[1][g],this.shop.cards[g+5].position.x,this.shop.cards[g+5].position.y+100)
             }
         }
-        for(e=0,le=this.relics.shop.length;e<le;e++){
+        for(let e=0,le=this.relics.shop.length;e<le;e++){
             this.layer.fill(255,225,0,this.relics.size[e])
             if(this.context==1){
                 this.layer.text(this.costs.relic[e],225+(e%4)*150,240+floor(e/4)*100)
@@ -4221,7 +4221,7 @@ class battle{
         this.layer.textSize(20)
         this.layer.text('Exit',850,570)
         if(this.context==1){
-            for(e=0,le=this.relics.shop.length;e<le;e++){
+            for(let e=0,le=this.relics.shop.length;e<le;e++){
                 if(this.relics.size[e]>0){
                     displayRelicSymbol(this.layer,225+(e%4)*150,200+floor(e/4)*100,this.relics.shop[e],0,this.relics.size[e],1,true)
                 }
@@ -4237,7 +4237,7 @@ class battle{
                 }
             }
         }else{
-            for(e=0,le=this.relics.shop.length;e<le;e++){
+            for(let e=0,le=this.relics.shop.length;e<le;e++){
                 if(this.relics.size[e]>0){
                     displayRelicSymbol(this.layer,375+(e%3)*150,350+floor(e/3)*100,this.relics.shop[e],0,this.relics.size[e],1,true)
                 }
@@ -4258,7 +4258,7 @@ class battle{
         if(this.relics.active[25]){
             this.costs.remove=60
         }
-        for(e=0,le=this.shop.cards.length;e<le;e++){
+        for(let e=0,le=this.shop.cards.length;e<le;e++){
             if(this.shop.cards[e].used){
                 this.shop.cards[e].size-=0.1
                 if(this.shop.cards[e].size<=0){
@@ -4297,7 +4297,7 @@ class battle{
                 this.shop.cards[e].size=round(this.shop.cards[e].size*10+1)/10
             }
         }
-        for(e=0,le=this.relics.shop.length;e<le;e++){
+        for(let e=0,le=this.relics.shop.length;e<le;e++){
             if(this.relics.size[e]<1&&this.relics.size[e]>0){
                 this.relics.size[e]=round(this.relics.size[e]*10-1)/10
             }
@@ -4315,7 +4315,7 @@ class battle{
             this.setupDeck(6)
             this.context=6
         }
-        for(e=0,le=this.shop.cards.length;e<le;e++){
+        for(let e=0,le=this.shop.cards.length;e<le;e++){
             if(this.shop.cards[e]!=0){
                 if(pointInsideBox({position:inputs.rel},this.shop.cards[e])&&this.currency.money>=this.costs.card[floor(e/5)][e%5]&&!this.shop.cards[e].used){
                     this.deck.add(this.shop.cards[e].type,this.shop.cards[e].level,this.shop.cards[e].color)
@@ -4324,7 +4324,7 @@ class battle{
                 }
             }
         }
-        for(e=0,le=this.relics.shop.length;e<le;e++){
+        for(let e=0,le=this.relics.shop.length;e<le;e++){
             if((dist(inputs.rel.x,inputs.rel.y,375+(e%3)*150,350+floor(e/3)*100)<20&&this.context!=1||dist(inputs.rel.x,inputs.rel.y,225+(e%4)*150,200+floor(e/4)*100)<20&&this.context==1)&&this.relics.size[e]>=1&&this.currency.money>=this.costs.relic[e]){
                 this.getRelic(this.relics.shop[e])
                 this.currency.money-=this.costs.relic[e]
@@ -4337,7 +4337,7 @@ class battle{
             case 0:
                 this.relics.shop=[]
                 this.calc.list3=this.relics.list
-                for(g=0;g<3;g++){
+                for(let g=0;g<3;g++){
                     if(this.calc.list3.length>0){
                         h=floor(random(0,this.calc.list3[4].length))
                         this.relics.shop.push(this.calc.list3[4][h])
@@ -4368,7 +4368,7 @@ class battle{
         this.layer.fill(0)
         this.layer.textSize(20)
         this.layer.text('Skip',850,570)
-        for(e=0,le=this.relics.shop.length;e<le;e++){
+        for(let e=0,le=this.relics.shop.length;e<le;e++){
             if(this.relics.size[e]>0){
                 displayRelicSymbol(this.layer,225+e*225,300,this.relics.shop[e],0,3,1,true)
             }
@@ -4386,7 +4386,7 @@ class battle{
         if(pointInsideBox({position:inputs.rel},{position:{x:850,y:570},width:80,height:40})){
             this.actComplete()
         }
-        for(e=0,le=this.relics.shop.length;e<le;e++){
+        for(let e=0,le=this.relics.shop.length;e<le;e++){
             if(dist(inputs.rel.x,inputs.rel.y,225+e*225,300)<60){
                 this.getRelic(this.relics.shop[e])
                 this.actComplete()
