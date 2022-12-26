@@ -4399,6 +4399,7 @@ class battle{
         switch(spec){
             case 0:
                 this.relics.shop=[]
+                this.relics.size=[]
                 this.calc.list3=this.relics.list
                 for(let g=0;g<3;g++){
                     if(this.calc.list3.length>0){

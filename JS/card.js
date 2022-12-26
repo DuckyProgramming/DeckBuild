@@ -189,11 +189,11 @@ class card{
             case 114: this.desc+='Deal '+this.damage+' Damage\nReduce Cost by 1\nwhen Retained'; break
             case 115: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nEnter Wrath'; break
             case 116: this.desc+='Deal '+this.damage+' Damage\nGain Block Equal\nto Unblocked\nDamage Dealt'; break
-            case 117: this.desc+='When You Gain\nBlock This Turn\nApply 1 Weak\nto All Enemies'; break
+            case 117: this.desc+='When You Gain\nBlock This Turn\nApply '+this.damage+' Weak\nto All Enemies'; break
             case 118: this.desc+='Next Attack Deals\n'+this.damage+' More Damage'; break
             case 119: this.desc+='Gain '+this.damage+' Faith\nDie Next Turn'; break
             case 120: this.desc+='Deal '+this.damage+' Damage\nDeal Extra Damage\nEqual to '+this.alt+'\nTimes Faith'; break
-            case 121: this.desc+='When Drawn,\nAdd 2 Miracles to\nHand and Exhaust'; break
+            case 121: this.desc+='When Drawn,\nAdd '+this.damage+' Miracles to\nHand and Exhaust'; break
             case 122: this.desc+='Gain '+this.damage+' Faith\nat the Start\nof Your Turn'; break
             case 123: this.desc+='Draw to '+this.damage+'\nCards'; break
             case 124: this.desc+='Gain Block\nEqual to Number of\nCards in Deck\n('+deckSize+')'; break
