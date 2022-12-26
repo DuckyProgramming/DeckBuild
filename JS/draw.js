@@ -8,10 +8,6 @@ function draw(){
             graphics.main.background(0)
             displayMenu(graphics.main)
         break
-        case 'blessing':
-            graphics.main.background(20,30,40)
-            displayGeneration(graphics.main)
-        break
         case 'battle':
             graphics.main.background(40,48,50)
             displayMoon(graphics.main)
@@ -66,4 +62,5 @@ function draw(){
     displayTransition(graphics.main,transition)
     image(graphics.main,width/2-stage.scale*graphics.main.width/2,height/2-stage.scale*graphics.main.height/2,stage.scale*graphics.main.width,stage.scale*graphics.main.height)
     updateMouse(graphics.main)
+    stage.timer--
 }

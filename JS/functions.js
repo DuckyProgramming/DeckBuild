@@ -20,7 +20,7 @@ function setupEncounter(battle,type){
 function displayMenu(layer){
 	layer.translate(175,0)
 	layer.noFill()
-	layer.stroke(150,200,200)
+	layer.stroke(150,225-sin(stage.timer*2)*25,175+sin(stage.timer*2)*25)
 	layer.strokeWeight(5)
 	layer.line(50,50,50,150)
 	layer.arc(60,100,100,100,-90,90)
@@ -39,10 +39,57 @@ function displayMenu(layer){
 	layer.arc(467.5,125,50,50,51,309)
 	layer.line(492.5,50,492.5,150)
 	layer.translate(-175,0)
-	layer.rect(450,350,120,60,5)
-	layer.line(400,350,480,350)
+	layer.rect(450,350,120,80,5)
+	layer.line(410,350,470,350)
+	layer.line(490,350,465,325)
+	layer.line(490,350,465,375)
+	layer.rect(100,350,60,160,5)
+	layer.line(80,315,120,315)
+	layer.line(80,385,120,385)
+	layer.rect(240,365,220,60,5)
+	layer.rect(240,320,140,30,5)
+	layer.line(100,285,115,300)
+	layer.line(100,285,85,300)
+	layer.line(100,415,115,400)
+	layer.line(100,415,85,400)
+	layer.rect(800,350,60,160,5)
+	layer.line(820,315,780,315)
+	layer.line(820,385,780,385)
+	layer.rect(690,350,160,40,5)
+	layer.line(800,285,815,300)
+	layer.line(800,285,785,300)
+	layer.line(800,415,815,400)
+	layer.line(800,415,785,400)
+	layer.noStroke()
+	layer.fill(150,225-sin(stage.timer*2)*25,175+sin(stage.timer*2)*25)
+	layer.textSize(30)
+	layer.text(stage.ascend,100,350)
+	layer.text(stage.character,800,350)
+	layer.textSize(15)
+	layer.text(types.ascend[stage.ascend].name,240,320)
+	layer.text(types.combatant[stage.character].name,690,350)
+	layer.textSize(10)
+	layer.text(types.ascend[stage.ascend].desc,240,365)
 }
-function displayGeneration(layer){
+function onClickMenu(mouse){
+	if(pointInsideBox({position:mouse},{position:{x:100,y:292.5},width:150,height:45})&&stage.ascend<20){
+		stage.ascend++
+	}
+	if(pointInsideBox({position:mouse},{position:{x:100,y:407.5},width:150,height:45})&&stage.ascend>0){
+		stage.ascend--
+	}
+	if(pointInsideBox({position:mouse},{position:{x:800,y:292.5},width:150,height:45})&&stage.character<7){
+		stage.character++
+	}
+	if(pointInsideBox({position:mouse},{position:{x:800,y:407.5},width:150,height:45})&&stage.character>1){
+		stage.character--
+	}
+	if(pointInsideBox({position:mouse},{position:{x:450,y:350},width:120,height:80})){
+		current=new battle(graphics.main,stage.character)
+		current.setupTesting()
+		transition.trigger=true
+		transition.scene='map'
+	}
 }
 function displayTransition(layer,transition){
 	layer.noStroke()

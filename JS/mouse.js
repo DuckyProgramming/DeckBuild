@@ -3,6 +3,7 @@ function mouseClicked(){
     if(!transition.trigger){
         switch(stage.scene){
             case 'menu':
+                onClickMenu(inputs.rel)
             break
             case 'battle':
                 current.onClick()

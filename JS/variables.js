@@ -8875,25 +8875,26 @@ types={
             ],
         },
     ],ascend:[
+        {name:'Base',desc:'No Changes'},
         {name:'More Elites',desc:'Elites are More Likely to Spawn'},
-        {nane:'Enemy Power',desc:'Normal Enemies Deal More Damage'},
-        {nane:'Elite Power',desc:'Elites Deal More Damage'},
-        {nane:'Boss Power',desc:'Bosses Deal More Damage'},
-        {nane:'Boss Heal',desc:'Harder to Heal After Boss Battles'},
-        {nane:'Start Injured',desc:'Lose 20% of Health at Start'},
-        {nane:'Enemy HP',desc:'Normal Enemies Have More Health and Block'},
-        {nane:'Elite HP',desc:'Elites Have More Health and Block'},
-        {nane:'Boss HP',desc:'Bosses Have More Health and Block'},
-        {nane:'Start Cursed',desc:'Start With Ascender Bane'},
-        {nane:'Less Potions',desc:'Lose 1 Potion Slot'},
-        {nane:'Less Upgrades',desc:'Upgraded Cards are Less Common'},
-        {nane:'Poor Bosses',desc:'Bosses Do Not Drop Currency'},
-        {nane:'Less Max Health',desc:'Lose 10% Max Health'},
-        {nane:'Event Battles',desc:'Events Might be Fights'},
-        {nane:'Expensive Shops',desc:'Shop Items Cost 10% More'},
-        {nane:'Enemy Tactics',desc:'Normal Enemies Deal Are More Dangerous'},
-        {nane:'Elite Tactics',desc:'Elites Deal Are More Dangerous'},
-        {nane:'Boss Tactics',desc:'Bosses Deal Are More Dangerous'},
+        {name:'Enemy Power',desc:'Normal Enemies Deal More Damage'},
+        {name:'Elite Power',desc:'Elites Deal More Damage'},
+        {name:'Boss Power',desc:'Bosses Deal More Damage'},
+        {name:'Boss Heal',desc:'Harder to Heal After Boss Battles'},
+        {name:'Start Injured',desc:'Lose 20% of Health at Start'},
+        {name:'Enemy HP',desc:'Normal Enemies Have More Health\nand Gain More Block'},
+        {name:'Elite HP',desc:'Elites Have More Health\nand Gain More Block'},
+        {name:'Boss HP',desc:'Bosses Have More Health\nand Gain More Block'},
+        {name:'Start Cursed',desc:'Start With Ascender Bane'},
+        {name:'Less Potions',desc:'Lose 1 Potion Slot'},
+        {name:'Less Upgrades',desc:'Upgraded Cards are Less Common'},
+        {name:'Poor Bosses',desc:'Bosses Do Not Drop Currency'},
+        {name:'Less Max Health',desc:'Lose 10% Max Health'},
+        {name:'Event Battles',desc:'Events Might be Fights'},
+        {name:'Expensive Shops',desc:'Shop Items Cost 10% More'},
+        {name:'Enemy Tactics',desc:'Normal Enemies Are More Dangerous'},
+        {name:'Elite Tactics',desc:'Elites Are More Dangerous'},
+        {name:'Boss Tactics',desc:'Bosses Are More Dangerous'},
         {name:'Bad Cards',desc:'Strikes and Defends are Worse'},
     ],dictionary:[
         {name:'Energy',desc:'Cards Require Energy to Play\nEnergy is Replenished Each Turn'},
@@ -8970,7 +8971,7 @@ zones=[
 ]
 
 dev={id:true,attack:true}
-stage={scale:0,quality:1,scene:'menu',playerNumber:7,playerCombatantNumber:1,identifier:[''],id:0,ascend:0}
+stage={scale:0,quality:1,scene:'menu',playerNumber:7,playerCombatantNumber:1,identifier:[''],id:0,ascend:0,character:1,timer:0}
 graphics={main:0,minor:[],symbol:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}
