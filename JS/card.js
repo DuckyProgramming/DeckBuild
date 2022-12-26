@@ -805,6 +805,9 @@ class card{
             case 730: this.desc+='Exhaust All\nStatus Cards in\nYour Discard Pile'; break
             case 731: this.desc+='Deal '+this.damage+' Damage\nReturn Half of\nDiscard Pile\nto Draw Pile'; break
             case 732: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Add '+this.alt+'\nCopies of This\nCard to Draw Pile'; break
+            case 733: this.desc+='Gain '+this.damage+' Energy\nTake '+this.alt+' Damage'; break
+            case 734: this.desc+='Remove a\nCard From\nYour Deck'; break
+            case 735: this.desc+='Add '+this.damage+' Block\nExhaust '+this.alt+' Card'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

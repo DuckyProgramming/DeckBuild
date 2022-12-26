@@ -3735,6 +3735,20 @@ class attack{
                         }
                     }
                 break
+                case 733:
+                    this.battle.mana.main+=this.damage
+                    this.battle.combatants[0].take(this.alt,-1)
+                break
+                case 734:
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.battle.setupDeck(18)
+                    this.battle.context=18
+                break
+                case 735:
+                    this.battle.combatants[0].addBlock(this.damage)
+                    this.battle.random.exhausting+=this.alt
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

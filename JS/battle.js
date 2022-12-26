@@ -2624,7 +2624,7 @@ class battle{
         }
     }
     displayDeck(){
-        if(this.context==1||this.context==4||this.context==16){
+        if(this.context==1||this.context==4||this.context==16||this.context==18){
             this.deck.displayView(-1)
             this.choice.cards[0].display(this.deck.cards.length,this.drawAmount,0,this.deck.cards.length-this.drawAmount,0,this.defaultRandom)
         }else if(this.context==2||this.context==3||this.context==10||this.context==11||this.context==12){
@@ -2641,7 +2641,7 @@ class battle{
         this.layer.textSize(20)
         if(this.context==3||this.context==5||this.context==6){
             this.layer.text('Back',850,570)
-        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11||this.context==12||this.context==13||this.context==14||this.context==15||this.context==16||this.context==17){
+        }else if(this.context==1||this.context==2||this.context==4||this.context==7||this.context==8||this.context==9||this.context==10||this.context==11||this.context==12||this.context==13||this.context==14||this.context==15||this.context==16||this.context==17||this.context==18){
             this.layer.text('Skip',850,570)
         }
         if(this.context==6){
@@ -2671,7 +2671,7 @@ class battle{
                 this.choice.cards[g].position.y+=30
             }
         }
-        if(this.context==1||this.context==4||this.context==5||this.context==6||this.context==9||this.context==14||this.context==15||this.context==16){
+        if(this.context==1||this.context==4||this.context==5||this.context==6||this.context==9||this.context==14||this.context==15||this.context==16||this.context==18){
             this.deck.updateView()
         }
     }
@@ -2683,7 +2683,7 @@ class battle{
             }else if(this.context==2){
                 this.close()
                 transition.scene='battle'
-            }else if(this.context==3||this.context==7||this.context==10||this.context==11||this.context==12||this.context==17){
+            }else if(this.context==3||this.context==7||this.context==10||this.context==11||this.context==12||this.context==17||this.context==18){
                 transition.scene='battle'
             }else if(this.context==6||this.context==9){
                 transition.scene='shop'
@@ -2710,7 +2710,7 @@ class battle{
                 }
             }
         }
-        if(this.context==1||this.context==4||this.context==6||this.context==9||this.context==14||this.context==15||this.context==16){
+        if(this.context==1||this.context==4||this.context==6||this.context==9||this.context==14||this.context==15||this.context==16||this.context==18){
             this.deck.onClickView(this.context,this.context2)
         }else if(this.context==2||this.context==10||this.context==11||this.context==12){
             this.discard.onClickView(this.context,this.context2)

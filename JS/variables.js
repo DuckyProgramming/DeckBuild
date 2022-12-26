@@ -3741,9 +3741,25 @@ types={
             {damage:4,alt:2,cost:0,attack:732,target:1,spec:0,class:0},
             {damage:6,alt:3,cost:0,attack:732,target:1,spec:0,class:0},
         ],
+        },{name:'Pop',rarity:1,list:7,
+        stats:[
+            {damage:1,alt:2,cost:0,attack:733,target:0,spec:0,class:2},
+            {damage:2,alt:2,cost:0,attack:733,target:0,spec:0,class:2},
+        ],
+        },{name:'Trash',rarity:2,list:7,
+        stats:[
+            {damage:0,alt:0,cost:2,attack:734,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:1,attack:734,target:0,spec:3,class:2},
+        ],
+        },{name:'Ashes',rarity:1,list:7,
+        stats:[
+            {damage:5,alt:1,cost:0,attack:735,target:0,spec:0,class:1},
+            {damage:8,alt:1,cost:0,attack:735,target:0,spec:0,class:1},
+        ],
         },
+        //upgrade a random card
 
-        //3,3,1
+        //2,1
         
         {name:'Empty',rarity:-1,list:-1,
         stats:[
