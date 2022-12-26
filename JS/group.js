@@ -83,9 +83,9 @@ class group{
                 }
                 this.add(findCard('Tap'),0,this.battle.player)
                 this.add(findCard('Spare'),0,this.battle.player)*/
-                this.add(742,0,this.battle.player)
-                this.add(743,0,this.battle.player)
-                this.add(744,0,this.battle.player)
+                this.add(745,0,this.battle.player)
+                this.add(746,0,this.battle.player)
+                this.add(747,0,this.battle.player)
             break
         }
         if(stage.ascend>=20){

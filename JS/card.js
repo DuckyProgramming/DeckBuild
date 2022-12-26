@@ -803,6 +803,8 @@ class card{
             case 728: this.desc+='Becomes Card\nto the Right'; break
             case 729: this.desc+='Exhuast All\nStatus Cards in\nYour Draw Pile'; break
             case 730: this.desc+='Exhaust All\nStatus Cards in\nYour Discard Pile'; break
+            case 731: this.desc+='Deal '+this.damage+' Damage\nReturn Half of\nDiscard Pile\nto Draw Pile'; break
+            case 732: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Add '+this.alt+'\nCopies of This\nCard to Draw Pile'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

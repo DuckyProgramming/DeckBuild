@@ -3731,9 +3731,19 @@ types={
             {damage:0,alt:0,cost:1,attack:730,target:0,spec:3,class:2},
             {damage:0,alt:0,cost:1,attack:730,target:0,spec:0,class:2},
         ],
+        },{name:'Not So\nFast',rarity:2,list:7,
+        stats:[
+            {damage:8,alt:0,cost:1,attack:731,target:1,spec:3,class:0},
+            {damage:13,alt:0,cost:1,attack:731,target:1,spec:0,class:0},
+        ],
+        },{name:'Slap',rarity:0,list:7,
+        stats:[
+            {damage:4,alt:2,cost:0,attack:732,target:1,spec:0,class:0},
+            {damage:6,alt:3,cost:0,attack:732,target:1,spec:0,class:0},
+        ],
         },
 
-        //5,3,2
+        //3,3,1
         
         {name:'Empty',rarity:-1,list:-1,
         stats:[

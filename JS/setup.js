@@ -11,5 +11,5 @@ function windowResized(){
 }
 /*
 TODO
-12 Final Gentleman Cards (Including 1 Subsidiary)
+6 Final Gentleman Cards (Including 1 Subsidiary)
 */

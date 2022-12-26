@@ -3712,6 +3712,29 @@ class attack{
                         }
                     }
                 break
+                case 731:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
+                        if((g+lg)%2==0){
+                            this.battle.reserve.cards.push(copyCard(this.battle.discard.cards[g]))
+                            this.battle.discard.cards.splice(g,1)
+                            g--
+                            lg--
+                        }
+                    }
+                break
+                case 732:
+                    this.battle.combatants[this.target].take(this.damage,this.user)
+                    if(this.battle.combatants[this.target].life<=0){
+                        for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                            if(this.battle.hand.cards[g].trigger&&this.battle.hand.cards[g].attack==732){
+                                for(h=0;h<this.alt;h++){
+                                    this.battle.reserve.cards.push(copyCard(this.battle.hand.cards[g]))
+                                }
+                            }
+                        }
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
