@@ -375,7 +375,7 @@ class card{
             case 300: this.desc+='Convert Combo/'+this.damage+'\nto Strength\nEnd Combo'; break
             case 301: this.desc+='Add '+this.damage+' Block\nAdd '+this.alt+' Dodge\nCause an Enemy\nto Attack'; break
             case 302: this.desc+='Take '+this.damage+' Damage\nGain '+this.alt+' Strength'; break
-            case 303: this.desc+='Discard 1 Card\nAdd '+this.damage+' Random\nCards'; break
+            case 303: this.desc+='Discard '+this.damage+' Card\nAdd '+this.alt+' Random\nCards'; break
             case 304: this.desc+='Gain '+this.damage+' Strength\nCannot Add Block\nfor '+this.alt+' Turns'; break
             case 305: this.desc+='Add '+this.damage+' Block\nCounter Once With\nPull Collision\nfor '+this.alt+' Damage'; break
             case 306: this.desc+='Counter '+this.damage+' All\nCounter Throw'; break

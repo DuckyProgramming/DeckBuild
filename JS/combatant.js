@@ -3360,6 +3360,10 @@ class combatant{
 					if(this.battle.combatants[0].status.main[71]>0){
 						this.battle.combatants[0].status.main[71]--
 					}
+					if(this.battle.combatants[0].status.main[72]>0&&this.life<=this.base.life*3/4){
+						this.battle.combatants[0].status.main[72]--
+						this.battle.mana.gen++
+					}
 					for(let g=0,lg=this.battle.hand.cards.length;g<lg;g++){
 						if(this.battle.hand.cards[g].attack==-20){
 							this.battle.combatants[0].take(1,-1)

@@ -1476,8 +1476,8 @@ class attack{
                     this.battle.combatants[0].boost.main[0]+=this.alt
                 break
                 case 303:
-                    this.battle.randomDiscard()
-                    for(g=0;g<this.damage;g++){
+                    this.battle.discarding+=this.damage
+                    for(g=0;g<this.alt;g++){
                         h=floor(random(0,2))
                         this.battle.hand.add(listing.card[this.battle.player][h][floor(random(0,listing.card[this.battle.player][h].length))],0,this.battle.player)
                     }

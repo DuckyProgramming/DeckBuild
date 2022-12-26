@@ -97,7 +97,6 @@ class battle{
             this.deck.cards[e].position.x=1206
             this.deck.cards[e].position.y=500
         }
-        this.combatants[0].boost.main[0]+=this.random.strengthBase
         this.counter.enemies.total+=this.generation.reinforce.length
         this.random.tempDrawAmount=0
         this.initialReserve()
@@ -110,6 +109,7 @@ class battle{
         this.drawInitial()
         this.turnDraw()
         this.bonusObjective(this.random.class)
+        this.combatants[0].boost.main[0]+=this.random.strengthBase
         if(this.relics.active[146]){
             for(let g=0,lg=this.hand.cards.length;g<lg;g++){
                 this.hand.cards[g].cost=floor(random(0,4))
@@ -2631,7 +2631,9 @@ class battle{
             this.discard.displayView(-1)
         }else if(this.context==5||this.context==6||this.context==9||this.context==14||this.context==15){
             this.deck.displayView(-1)
-        }else if(this.context==7||this.context==8||this.context==13||this.context==17){
+        }else if(this.context==17){
+            this.reserve.displayView(-1)
+        }else if(this.context==7||this.context==8||this.context==13){
             this.reserve.displayView(this.context2)
         }
         this.layer.noStroke()

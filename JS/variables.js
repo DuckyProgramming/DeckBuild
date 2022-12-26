@@ -331,8 +331,8 @@ types={
         ],
         },{name:'Uncontrolled\nPower',rarity:2,list:1,
         stats:[
-            {damage:18,alt:8,cost:2,attack:139,target:1,spec:0,class:0},
             {damage:24,alt:8,cost:2,attack:139,target:1,spec:0,class:0},
+            {damage:33,alt:8,cost:2,attack:139,target:1,spec:0,class:0},
         ],
         },{name:'This is\nPersonal',rarity:2,list:1,
         stats:[
@@ -461,8 +461,8 @@ types={
         ],
         },{name:'Change\nof Heart',rarity:1,list:1,
         stats:[
-            {damage:1,alt:0,cost:1,attack:303,target:0,spec:0,class:2},
-            {damage:2,alt:0,cost:1,attack:303,target:0,spec:0,class:2},
+            {damage:1,alt:1,cost:0,attack:303,target:0,spec:0,class:2},
+            {damage:1,alt:2,cost:0,attack:303,target:0,spec:0,class:2},
         ],
         },{name:'Commit',rarity:1,list:1,
         stats:[
@@ -4032,7 +4032,7 @@ types={
         },{name:'Philosophy',rarity:-3,list:0,
         stats:[
             {damage:2,alt:1,cost:0,attack:398,target:0,spec:8,class:2},
-            {damage:2,alt:1,cost:0,attack:398,target:0,spec:8,class:2},
+            {damage:3,alt:1,cost:0,attack:398,target:0,spec:8,class:2},
         ],
         },{name:'MBF-32\nShield',rarity:-3,list:0,
         stats:[
@@ -4339,7 +4339,7 @@ types={
         {name:'Dark Man',alt:'',life:35,height:75,behavior:0,attacks:[1,3],damage:[6,2],altAttack:[0,2],class:0,buff:0},
         {name:'The Reorganised',alt:'',life:300,height:75,behavior:0,attacks:[1,22,23],damage:[25,8,4],altAttack:[0,10,1],class:0,buff:9},
         {name:'Billy Beatup',alt:'',life:75,height:75,behavior:0,attacks:[1,3],damage:[9,2],altAttack:[0,6],class:0,buff:0},
-        {name:'Monkey Gangster',alt:'',life:24,height:60,behavior:0,attacks:[1,3],damage:[8,2],altAttack:[0,5],class:0,buff:0},
+        {name:'Monkey Gangster',alt:'',life:24,height:60,behavior:0,attacks:[1,3],damage:[4,2],altAttack:[0,3],class:0,buff:0},
         {name:'Wild Duck',alt:'',life:20,height:66,behavior:0,attacks:[1,3,4],damage:[4,2,3],altAttack:[0,3,0],class:0,buff:0},
         {name:'Wall',alt:'',life:40,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
         {name:'Spikes',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},//40
@@ -4384,7 +4384,7 @@ types={
         {name:'Slimoid',alt:'',life:35,height:45,behavior:0,attacks:[1,6,7],damage:[12,6,2],altAttack:[0,'Glued',0],class:0,buff:15},
         {name:'Big Slimoid',alt:'',life:70,height:65,behavior:0,attacks:[1,6,7],damage:[18,9,3],altAttack:[0,'Glued',0],class:0,buff:15},//80
         {name:'Moss Creature',alt:'',life:33,height:75,behavior:0,attacks:[3,8],damage:[3,6],altAttack:[2,0],class:0,buff:16},
-        {name:'Goblin',alt:'',life:10,height:45,behavior:0,attacks:[1,1,1,2],damage:[1,2,3,0],altAttack:[0,0,0,'Light\nBleed'],class:0,buff:0},
+        {name:'Goblin',alt:'',life:10,height:45,behavior:0,attacks:[1,1,1,2,21,21],damage:[1,2,3,0,0,0],altAttack:[0,0,0,'Light\nBleed',0,0],class:0,buff:0},
         {name:'Auto-Detonator',alt:'',life:250,height:45,behavior:0,attacks:[8],damage:[1],altAttack:[0],class:1,buff:17},
         {name:'Scrapper',alt:'',life:48,height:75,behavior:0,attacks:[1,30,8],damage:[7,4,12],altAttack:[0,0,0],class:0,buff:18},
         {name:'Fat Scrapper',alt:'',life:80,height:75,behavior:1,attacks:[1,30,8,21,21],damage:[10,6,24],altAttack:[0,0,0,0],class:1,buff:18},
