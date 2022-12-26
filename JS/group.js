@@ -662,6 +662,8 @@ class group{
                         this.battle.playCard()
                         if(e<le-1){
                             this.cards[e]=copyCard(this.cards[e+1])
+                        }else{
+                            this.cards[e].used=true
                         }
                         this.battle.afterPlayCard()
                         this.trigger=false
@@ -672,6 +674,8 @@ class group{
                             this.cards[e]=copyCard(this.cards[e+1])
                             this.cards[e].damage*=this.calc.level
                             this.cards[e].alt*=this.calc.level
+                        }else{
+                            this.cards[e].used=true
                         }
                         this.battle.afterPlayCard()
                         this.trigger=false

@@ -2714,8 +2714,8 @@ types={
         ],
         },{name:'Drill',rarity:0,list:5,
         stats:[
-            {damage:8,alt:1,cost:1,attack:458,target:1,spec:0,class:0},
-            {damage:12,alt:1,cost:1,attack:458,target:1,spec:0,class:0},
+            {damage:10,alt:1,cost:1,attack:458,target:1,spec:0,class:0},
+            {damage:14,alt:1,cost:1,attack:458,target:1,spec:0,class:0},
         ],
         },{name:'Drinks',rarity:2,list:5,
         stats:[
@@ -2897,7 +2897,7 @@ types={
             {damage:3,alt:0,cost:0,attack:504,target:1,spec:0,class:0},
             {damage:4,alt:0,cost:0,attack:504,target:1,spec:0,class:0},
         ],
-        },{name:'Sever',rarity:2,list:5,
+        },{name:'Decompose',rarity:2,list:5,
         stats:[
             {damage:3,alt:1,cost:-1,attack:505,target:1,spec:0,class:0},
             {damage:5,alt:1,cost:-1,attack:505,target:1,spec:0,class:0},
@@ -4356,7 +4356,7 @@ types={
         {name:'Deca',alt:'',life:250,height:90,behavior:2,attacks:[8,24],damage:[12,8],altAttack:[0,2],class:1,buff:0},
         {name:'Rock Golem',alt:'',life:25,height:60,behavior:2,attacks:[8,6],damage:[4,5],altAttack:[0,'Dazed'],class:1,buff:0},
         {name:'Big Wild Duck',alt:'',life:50,height:81,behavior:0,attacks:[1,3,4],damage:[8,3,3],altAttack:[0,3,0],class:0,buff:0},
-        {name:'General Duckion',alt:'',life:210,height:81,behavior:0,attacks:[3,4,25],damage:[10,3,3,4],altAttack:[2,0,0],class:0,buff:0},
+        {name:'General Duckion',alt:'',life:210,height:81,behavior:0,attacks:[3,4,25],damage:[8,3,3,4],altAttack:[2,0,0],class:0,buff:0},
         {name:'Trap',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Multiturret',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:0,buff:0},
         {name:'Metallicizer',alt:'',life:50,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
@@ -5212,10 +5212,10 @@ types={
             desc:'Gain 1 Base Energy,\nCannot Heal at Rest',
         },{
             name:'Demonic Deal',id:126,rarity:4,list:0,
-            desc:'Gain 1 Base Energy,\nGain 3 Curses',
+            desc:'Gain 1 Base Energy,\nGain 2 Curses',
         },{
             name:'Oath of Gold',id:127,rarity:4,list:0,
-            desc:'Gain 1 Base Energy,\nCannot Gain Currency',
+            desc:'Gain 1 Base Energy,\nCannot Have Currency',
         },{
             name:'Lighter',id:128,rarity:4,list:0,
             desc:'Remove Half of Your\nUnupgraded Cards',

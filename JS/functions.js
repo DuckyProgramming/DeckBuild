@@ -1519,7 +1519,7 @@ function displayRelicSymbol(layer,x,y,type,direction,size,flip,active){
 			layer.image(graphics.symbol[2],-6,-15,12,12)
 			layer.image(graphics.symbol[18],6,-9,12,12)
 			layer.image(graphics.symbol[14],-9,0,18,18)
-			layer.image(graphics.symbol[15],-7,2,14,14)
+			layer.image(graphics.symbol[11],-7,2,14,14)
 		break
 		case 152:
 			layer.textSize(10)

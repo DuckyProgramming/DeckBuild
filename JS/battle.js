@@ -2487,9 +2487,9 @@ class battle{
                                 this.create()
                             }else{
                                 transition.scene='event'
-                                e=floor(random(0,this.eventList.length))
-                                this.event=this.eventList[e]
-                                this.eventList.splice(e,1)
+                                g=floor(random(0,this.eventList.length))
+                                this.event=this.eventList[g]
+                                this.eventList.splice(g,1)
                                 this.page=0
                             }
                         break
@@ -4437,6 +4437,9 @@ class battle{
         for(let e=0,le=this.relics.shop.length;e<le;e++){
             if(this.relics.size[e]>0){
                 displayRelicSymbol(this.layer,225+e*225,300,this.relics.shop[e],0,3,1,true)
+                this.layer.fill(0)
+                this.layer.textSize(24)
+                this.layer.text(types.relic[this.relics.shop[e]].name,225+e*225,200)
             }
             if(dist(inputs.rel.x,inputs.rel.y,225+e*225,300)<60){
                 this.layer.noStroke()
