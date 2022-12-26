@@ -75,17 +75,14 @@ class group{
                 this.add(findCard('Neutralize'),0,this.battle.player)
             break
             case 7:
-                /*for(let e=0;e<4;e++){
+                for(let e=0;e<4;e++){
                     this.add(1,0,this.battle.player)
                 }
                 for(let e=0;e<4;e++){
                     this.add(2,0,this.battle.player)
                 }
                 this.add(findCard('Tap'),0,this.battle.player)
-                this.add(findCard('Spare'),0,this.battle.player)*/
-                this.add(748,0,this.battle.player)
-                this.add(749,0,this.battle.player)
-                this.add(750,0,this.battle.player)
+                this.add(findCard('Spare'),0,this.battle.player)
             break
         }
         if(stage.ascend>=20){
@@ -665,6 +662,16 @@ class group{
                         this.battle.playCard()
                         if(e<le-1){
                             this.cards[e]=copyCard(this.cards[e+1])
+                        }
+                        this.battle.afterPlayCard()
+                        this.trigger=false
+                    }else if(this.cards[e].attack==737){
+                        this.battle.playCard()
+                        if(e<le-1){
+                            this.calc.level=this.cards[e].damage
+                            this.cards[e]=copyCard(this.cards[e+1])
+                            this.cards[e].damage*=this.calc.level
+                            this.cards[e].alt*=this.calc.level
                         }
                         this.battle.afterPlayCard()
                         this.trigger=false

@@ -3749,6 +3749,9 @@ class attack{
                     this.battle.combatants[0].addBlock(this.damage)
                     this.battle.random.exhausting+=this.alt
                 break
+                case 736:
+                    this.battle.deck.randomUpgrade()
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class
