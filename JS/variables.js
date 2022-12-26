@@ -3768,8 +3768,8 @@ types={
         ],
         },{name:'Rap',rarity:0,list:7,
         stats:[
-            {damage:1,alt:3,cost:0,attack:3,target:1,spec:9,class:0},
-            {damage:1,alt:5,cost:0,attack:3,target:1,spec:9,class:0},
+            {damage:1,alt:4,cost:1,attack:738,target:1,spec:9,class:0},
+            {damage:1,alt:8,cost:1,attack:738,target:1,spec:9,class:0},
         ],
         },
 
@@ -3977,7 +3977,12 @@ types={
             {damage:1,alt:1,cost:0,attack:650,target:0,spec:3,class:2},
             {damage:2,alt:1,cost:0,attack:650,target:0,spec:3,class:2},
         ],
-        },//15/16
+        },{name:'Whap',rarity:0,list:7,
+        stats:[
+            {damage:1,alt:2,cost:0,attack:3,target:1,spec:0,class:0},
+            {damage:1,alt:2,cost:0,attack:3,target:1,spec:0,class:0},
+        ],
+        },
 
         {name:'Redraw',rarity:-3,list:0,
         stats:[
@@ -4313,7 +4318,7 @@ types={
         {name:'Batter',alt:'',life:48,height:75,behavior:0,attacks:[10,8,11],damage:[12,6,1],altAttack:['Concussion',0,0],class:0,buff:0},
         {name:'Slippery Gangster',alt:'',life:36,height:75,behavior:0,attacks:[1,3],damage:[8,3],altAttack:[0,2],class:0,buff:3},
         {name:'Gangster Gunner',alt:'',life:24,height:75,behavior:0,attacks:[1],damage:[4],altAttack:[0],class:0,buff:4},
-        {name:'Snaky Plant',alt:'',life:120,height:75,behavior:1,attacks:[1,3,13,12],damage:[18,4,0,6],altAttack:[0,4,0,0],class:1,buff:0},
+        {name:'Snaky Plant',alt:'',life:80,height:75,behavior:1,attacks:[1,3,13,12],damage:[18,4,0,6],altAttack:[0,4,0,0],class:1,buff:0},
         {name:'Spheron',alt:'',life:20,height:60,behavior:1,attacks:[3,8,14,15],damage:[10,25,10,10],altAttack:[2,0,15,2],class:0,buff:5},
         {name:'Enforcer',alt:'',life:80,height:90,behavior:0,attacks:[1,3,16],damage:[9,8,8],altAttack:[0,2,1],class:1,buff:6},
         {name:'Ninja',alt:'',life:32,height:75,behavior:0,attacks:[1,3],damage:[9,4],altAttack:[0,2],class:0,buff:0},
@@ -4348,7 +4353,7 @@ types={
         {name:'Thorns',alt:'',life:20,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Bufferer',alt:'',life:40,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},
         {name:'Gun Rack',alt:'',life:30,height:60,behavior:0,attacks:[],damage:[],altAttack:[],class:-1,buff:0},//50
-        {name:'Deca',alt:'',life:250,height:90,behavior:2,attacks:[8,24],damage:[16,10],altAttack:[0,2],class:1,buff:0},
+        {name:'Deca',alt:'',life:250,height:90,behavior:2,attacks:[8,24],damage:[12,8],altAttack:[0,2],class:1,buff:0},
         {name:'Rock Golem',alt:'',life:25,height:60,behavior:2,attacks:[8,6],damage:[4,5],altAttack:[0,'Dazed'],class:1,buff:0},
         {name:'Big Wild Duck',alt:'',life:50,height:81,behavior:0,attacks:[1,3,4],damage:[8,3,3],altAttack:[0,3,0],class:0,buff:0},
         {name:'General Duckion',alt:'',life:210,height:81,behavior:0,attacks:[3,4,25],damage:[10,3,3,4],altAttack:[2,0,0],class:0,buff:0},

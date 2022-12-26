@@ -3752,6 +3752,15 @@ class attack{
                 case 736:
                     this.battle.deck.randomUpgrade()
                 break
+                case 738:
+                    if(this.alt>0){
+                        this.battle.combatants[this.target].take(this.damage,this.user)
+                    }
+                    this.attacks.push([0,this.alt*10-10,this.target,this.damage])
+                    this.battle.drop.addDrop(findCard('Whap'),this.damage,0)
+                    this.battle.reserve.addShuffle(findCard('Whap'),this.damage,0)
+                    this.attacks.push([14,20,0,'Whap'])
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

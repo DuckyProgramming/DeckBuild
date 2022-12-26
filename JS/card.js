@@ -810,6 +810,7 @@ class card{
             case 735: this.desc+='Add '+this.damage+' Block\nExhaust '+this.alt+' Card'; break
             case 736: this.desc+='Upgrade a\nRandom Card\nPermanently'; break
             case 737: this.desc+='Becomes Card\nto the Right\nWith '+this.damage+'x Effect'; break
+            case 738: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nAdd 2 Whaps to\nYour Draw Pile'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){
