@@ -799,6 +799,10 @@ class card{
             case 724: this.desc+='Gain '+this.damage+' Strength\nGain '+this.alt+' Dexterity'; break
             case 725: this.desc+='Add '+this.damage+' Block\nRetain Block\nfor 1 Turn'; break
             case 726: this.desc+='Draw '+this.damage+' Cards\nThey Cost 0'; break
+            case 727: this.desc+='Discard\nYour Hand'; break
+            case 728: this.desc+='Becomes Card\nto the Right'; break
+            case 729: this.desc+='Exhuast All\nStatus Cards in\nYour Draw Pile'; break
+            case 730: this.desc+='Exhaust All\nStatus Cards in\nYour Discard Pile'; break
             default:
         }
         if(this.spec==2||this.spec==5||this.spec==9){

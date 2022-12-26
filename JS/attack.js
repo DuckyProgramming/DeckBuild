@@ -3693,6 +3693,25 @@ class attack{
                         this.battle.hand.cards[this.battle.hand.cards.length-1].base.cost=0
                     }
                 break
+                case 727:
+                    for(g=0,lg=this.battle.hand.cards.length;g<lg;g++){
+                        this.battle.hand.cards[g].used=true
+                    }
+                break
+                case 729:
+                    for(g=0,lg=this.battle.reserve.cards.length;g<lg;g++){
+                        if(this.battle.reserve.cards[g].list==11){
+                            this.battle.reserve.cards[g].remove=true
+                        }
+                    }
+                break
+                case 730:
+                    for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
+                        if(this.battle.discard.cards[g].list==11){
+                            this.battle.discard.cards[g].remove=true
+                        }
+                    }
+                break
                 default:
             }
             this.battle.combatants[0].lastPlay=this.class

@@ -3137,7 +3137,7 @@ types={
         },{name:'Concentrate',rarity:1,list:6,
         stats:[
             {damage:3,alt:2,cost:0,attack:169,target:0,spec:0,class:2},
-            {damage:3,alt:2,cost:0,attack:169,target:0,spec:0,class:2},
+            {damage:2,alt:2,cost:0,attack:169,target:0,spec:0,class:2},
         ],
         },{name:'Neutralize',rarity:0,list:6,
         stats:[
@@ -3669,7 +3669,7 @@ types={
         },{name:'Spare',rarity:0,list:7,
         stats:[
             {damage:1,alt:0,cost:0,attack:581,target:0,spec:3,class:2},
-            {damage:1,alt:0,cost:0,attack:581,target:0,spec:3,class:2},
+            {damage:1,alt:0,cost:0,attack:581,target:0,spec:0,class:2},
         ],
         },{name:'Count',rarity:1,list:7,
         stats:[
@@ -3711,9 +3711,29 @@ types={
             {damage:0,alt:0,cost:0,attack:638,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:0,attack:638,target:0,spec:0,class:2},
         ],
+        },{name:'Chuck',rarity:1,list:7,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:727,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:727,target:0,spec:9,class:2},
+        ],
+        },{name:'Copy',rarity:1,list:7,
+        stats:[
+            {damage:0,alt:0,cost:0,attack:728,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:728,target:0,spec:2,class:2},
+        ],
+        },{name:'Forward\nCleanse',rarity:0,list:7,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:729,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:1,attack:729,target:0,spec:0,class:2},
+        ],
+        },{name:'Backward\nCleanse',rarity:0,list:7,
+        stats:[
+            {damage:0,alt:0,cost:1,attack:730,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:1,attack:730,target:0,spec:0,class:2},
+        ],
         },
 
-        //5,5,2
+        //5,3,2
         
         {name:'Empty',rarity:-1,list:-1,
         stats:[
@@ -5221,7 +5241,7 @@ types={
             desc:'Add 3 Miracles at\nthe Start of Combat',
         },{
             name:'Thieves Bag',id:150,rarity:4,list:0,
-            desc:'Gain 1 Potion, 50 Currency, 5 Max HP,\nChoose 1 Card, Upgrade 1 Random Card',
+            desc:'Gain 1 Potion, 50 Currency, 5 Max HP,\nand Upgrade 1 Random Card',
         },{
             name:'Triebflugeljager',id:151,rarity:3,list:0,
             desc:'When You Play an Attack, a Skill,\nand a Power, remove Debuffs',
@@ -8860,7 +8880,7 @@ types={
         {name:'Retain Block',desc:'Block is Not Lost After Turn'},
         {name:'Bleed',desc:'Deal Damage Every Turn,\nTicks Down by 1'},
         {name:'Poison',desc:'Deal Damage Every Turn,\nTicks Down by 1'},
-        {name:'Fire',desc:'Deal Damage Every Turn'},
+        {name:'Burn',desc:'Deal Damage Every Turn'},
         {name:'Upgrade',desc:'Makes Cards More Powerful'},
         {name:'Transform',desc:'Card Becomes a Random Other Card'},
         {name:'Remove',desc:'Is Removed From Deck Permanently'},

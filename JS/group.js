@@ -83,9 +83,9 @@ class group{
                 }
                 this.add(findCard('Tap'),0,this.battle.player)
                 this.add(findCard('Spare'),0,this.battle.player)*/
-                this.add(739,0,this.battle.player)
-                this.add(740,0,this.battle.player)
-                this.add(741,0,this.battle.player)
+                this.add(742,0,this.battle.player)
+                this.add(743,0,this.battle.player)
+                this.add(744,0,this.battle.player)
             break
         }
         if(stage.ascend>=20){
@@ -661,6 +661,13 @@ class group{
                             this.cards[e].used=true
                             this.trigger=false
                         }
+                    }else if(this.cards[e].attack==728){
+                        this.battle.playCard()
+                        if(e<le-1){
+                            this.cards[e]=copyCard(this.cards[e+1])
+                        }
+                        this.battle.afterPlayCard()
+                        this.trigger=false
                     }else if(this.cards[e].target==0||(this.cards[e].attack==564&&this.battle.attack.mana%2==1)){
                         this.battle.playCard()
                         this.battle.attack.update(this.cards[e].attack,this.cards[e].level,0)

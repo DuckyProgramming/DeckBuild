@@ -358,6 +358,10 @@ class battle{
         }
     }
     turnDraw(){
+        if(this.player==stage.playerNumber){
+            this.return()
+            this.reserve.shuffle()
+        }
         if(this.combatants[0].status.main[119]>0){
             this.combatants[0].status.main[119]=0
         }
@@ -629,9 +633,6 @@ class battle{
                     }
                 }
                 transition.trigger++
-                transition.scene='choice'
-                this.setupChoice(this.player,2,0)
-                this.context=-4
             break
             case 157:
                 this.random.healEffectiveness=0
