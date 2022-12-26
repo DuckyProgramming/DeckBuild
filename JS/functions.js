@@ -17,6 +17,33 @@ function setupEncounter(battle,type){
 		}
 	}
 }
+function displayMenu(layer){
+	layer.translate(175,0)
+	layer.noFill()
+	layer.stroke(150,200,200)
+	layer.strokeWeight(5)
+	layer.line(50,50,50,150)
+	layer.arc(60,100,100,100,-90,90)
+	layer.line(140,125,165,125)
+	layer.arc(140,125,50,50,90,339)
+	layer.arc(200,125,50,50,60,300)
+	layer.line(230,50,230,150)
+	layer.line(240,100,275,100)
+	layer.line(240,110,275,150)
+	layer.line(285,50,285,150)
+	layer.arc(310,125,50,50,-129,129)
+	layer.arc(370,110,50,80,-15,195)
+	layer.line(410,100,410,150)
+	layer.ellipse(410,85,10,10)
+	layer.line(430,50,430,150)
+	layer.arc(467.5,125,50,50,51,309)
+	layer.line(492.5,50,492.5,150)
+	layer.translate(-175,0)
+	layer.rect(450,350,120,60,5)
+	layer.line(400,350,480,350)
+}
+function displayGeneration(layer){
+}
 function displayTransition(layer,transition){
 	layer.noStroke()
 	layer.fill(0)

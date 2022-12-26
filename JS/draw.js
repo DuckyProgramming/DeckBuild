@@ -4,6 +4,14 @@ function draw(){
     graphics.main.push()
     graphics.main.scale(stage.quality)
     switch(stage.scene){
+        case 'menu':
+            graphics.main.background(0)
+            displayMenu(graphics.main)
+        break
+        case 'blessing':
+            graphics.main.background(20,30,40)
+            displayGeneration(graphics.main)
+        break
         case 'battle':
             graphics.main.background(40,48,50)
             displayMoon(graphics.main)

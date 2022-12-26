@@ -42,13 +42,13 @@ class battle{
         this.combatants.push(new combatant(this.layer,this,200,350,0,0,1))
         stage.identifier=types.combatant[this.player].identifiers
     }
-    setupTesting(type,key){
+    setupTesting(/*type,key*/){
         this.initialEvent()
         this.setupMap()
         //this.draftDeck()
         this.deck.initial(this.player)
-        stage.scene='battle'
-        setupEncounter(this,type)
+        //stage.scene='battle'
+        //setupEncounter(this,type)
 
         //this.getRelic(key)
 

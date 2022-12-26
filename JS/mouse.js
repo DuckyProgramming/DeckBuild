@@ -2,6 +2,8 @@ function mouseClicked(){
     updateMouse(graphics.main)
     if(!transition.trigger){
         switch(stage.scene){
+            case 'menu':
+            break
             case 'battle':
                 current.onClick()
             break
