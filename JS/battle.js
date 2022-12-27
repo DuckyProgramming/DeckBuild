@@ -180,7 +180,7 @@ class battle{
                 this.objective.push([1,floor(random(2,9)),2,floor(random(2,7))*5])
             break
             case 1:
-                for(let g=0;g<2;g++){
+                for(let g=0;g<3;g++){
                     if(floor(random(0,4))<3){
                         this.objective.push([1,floor(random(2,9)),floor(random(2,6)),0])
                     }else{
@@ -535,7 +535,7 @@ class battle{
                     }
                 }
             break
-            case 123: case 127: case 131: case 132: case 136: case 143:
+            case 123: case 127: case 131: case 132: case 136: case 143: case 144:
                 this.mana.gen++
                 this.mana.main++
                 this.mana.max++

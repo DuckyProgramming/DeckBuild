@@ -138,12 +138,12 @@ class attack{
                         }
                     }
                     for(g=0,lg=this.battle.reserve.cards.length;g<lg;g++){
-                        if(this.battle.reserve.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
+                        if(this.battle.reserve.cards[g].attack==22||this.battle.reserve.cards[g].attack==683){
                             this.battle.reserve.cards[g].damage+=2
                         }
                     }
                     for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
-                        if(this.battle.discard.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
+                        if(this.battle.discard.cards[g].attack==22||this.battle.discard.cards[g].attack==683){
                             this.battle.discard.cards[g].damage+=2
                         }
                     }
@@ -1959,7 +1959,7 @@ class attack{
                 case 397:
                     this.hold.list=[]
                     for(let g=0,lg=this.battle.hand.cards.length;g<lg;g++){
-                        if(this.battle.hand.cards[g].cost!=0){
+                        if(this.battle.hand.cards[g].base.cost!=0){
                             this.hold.list.push(g)
                         }
                     }
@@ -3435,12 +3435,12 @@ class attack{
                         }
                     }
                     for(g=0,lg=this.battle.reserve.cards.length;g<lg;g++){
-                        if(this.battle.reserve.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
+                        if(this.battle.reserve.cards[g].attack==22||this.battle.reserve.cards[g].attack==683){
                             this.battle.reserve.cards[g].damage+=5
                         }
                     }
                     for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
-                        if(this.battle.discard.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
+                        if(this.battle.discard.cards[g].attack==22||this.battle.discard.cards[g].attack==683){
                             this.battle.discard.cards[g].damage+=5
                         }
                     }
@@ -3455,12 +3455,12 @@ class attack{
                         }
                     }
                     for(g=0,lg=this.battle.reserve.cards.length;g<lg;g++){
-                        if(this.battle.reserve.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
+                        if(this.battle.reserve.cards[g].attack==22||this.battle.reserve.cards[g].attack==683){
                             this.battle.reserve.cards[g].damage+=2
                         }
                     }
                     for(g=0,lg=this.battle.discard.cards.length;g<lg;g++){
-                        if(this.battle.discard.cards[g].attack==22||this.battle.hand.cards[g].attack==683){
+                        if(this.battle.discard.cards[g].attack==22||this.battle.discard.cards[g].attack==683){
                             this.battle.discard.cards[g].damage+=2
                         }
                     }

@@ -56,8 +56,8 @@ types={
         ],
         },{name:'Weaken',rarity:0,list:1,
         stats:[
-            {damage:2,alt:0,cost:0,attack:5,target:1,spec:0,class:2},
-            {damage:3,alt:0,cost:0,attack:5,target:1,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:5,target:1,spec:3,class:2},
+            {damage:3,alt:0,cost:0,attack:5,target:1,spec:3,class:2},
         ],
         },{name:'Electrify',rarity:1,list:1,
         stats:[
@@ -207,7 +207,7 @@ types={
         },{name:'Link',rarity:0,list:1,
         stats:[
             {damage:3,alt:0,cost:2,attack:4,target:0,spec:4,class:2},
-            {damage:3,alt:0,cost:2,attack:4,target:0,spec:4,class:2},
+            {damage:4,alt:0,cost:2,attack:4,target:0,spec:4,class:2},
         ],
         },{name:'Ground\nPound',rarity:1,list:1,
         stats:[
@@ -1580,8 +1580,8 @@ types={
         ],
         },{name:'Deflagrate',rarity:2,list:3,
         stats:[
-            {damage:0,alt:0,cost:2,attack:348,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:1,attack:348,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:348,target:0,spec:0,class:2},
         ],
         },{name:'Pinpoint\nBeam',rarity:0,list:3,
         stats:[
@@ -1650,8 +1650,8 @@ types={
         ],
         },{name:'Recursion',rarity:0,list:3,
         stats:[
-            {damage:2,alt:0,cost:1,attack:33,target:0,spec:0,class:2},
-            {damage:3,alt:0,cost:1,attack:33,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:33,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:33,target:0,spec:0,class:2},
         ],
         },{name:'Hydra',rarity:1,list:3,
         stats:[
@@ -4026,7 +4026,7 @@ types={
         ],
         },{name:'Madness',rarity:-3,list:0,
         stats:[
-            {damage:0,alt:0,cost:1,attack:397,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:397,target:0,spec:9,class:2},
             {damage:0,alt:0,cost:0,attack:397,target:0,spec:3,class:2},
         ],
         },{name:'Philosophy',rarity:-3,list:0,
@@ -5211,7 +5211,7 @@ types={
             name:'Furnace',id:123,rarity:4,list:0,
             desc:'Gain 1 Base Energy, Have 2\nLess Cards to Choose From',
         },{
-            name:'Relic / Curse',id:124,rarity:4,list:0,
+            name:'Shipping Package',id:124,rarity:4,list:0,
             desc:'When Taken, Gain 3 Relics,\nand a Special Curse',
         },{
             name:'Oath of Darkness',id:125,rarity:4,list:0,
@@ -7542,7 +7542,7 @@ types={
                     link:[-1],
                 },{
                     desc:"You run away, the Charges following you for a few seconds before returning to their initial positions.",
-                    option:[''],
+                    option:['Escaped'],
                     optionDesc:[''],
                     link:[-1],
                 },
