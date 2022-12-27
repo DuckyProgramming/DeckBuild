@@ -30,7 +30,22 @@ function keyPressed(){
             current.onKeyDictionary(key,keyCode)
         break
         case 'battle':
-            current.hand.onKey(key)
+            current.onKey(key,keyCode)
+        break
+        case 'choice':
+            current.onKeyChoice(key,keyCode)
+        break
+        case 'map':
+            current.onKeyMap(key,keyCode)
+        break
+        case 'rest':
+            current.onKeyRest(key,keyCode)
+        break
+        case 'event':
+            current.onKeyEvent(key,keyCode)
+        break
+        case 'bosschoice':
+            current.onKeyBossChoice(key,keyCode)
         break
     }
 }

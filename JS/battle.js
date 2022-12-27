@@ -1215,8 +1215,10 @@ class battle{
         this.calc.list=listing.card[this.player]
         if(this.calc.list.length>0){
             g=floor(random(0,this.calc.list.length))
-            h=floor(random(0,this.calc.list[g].length))
-            this.hand.add(this.calc.list[g][h],0,types.card[this.calc.list[g][h]].list)
+            if(this.calc.list[g].length>0){
+                h=floor(random(0,this.calc.list[g].length))
+                this.deck.add(this.calc.list[g][h],0,types.card[this.calc.list[g][h]].list)
+            }
         }
     }
     allDiscard(){
@@ -2122,6 +2124,89 @@ class battle{
             }
         }
     }
+    onKey(key,code){
+        if(this.end){
+            if(code==ENTER){
+                transition.trigger=true
+                transition.scene='map'
+                if(this.map.position[0]>=0){
+                    this.map.complete[this.map.position[0]][this.map.position[1]]=1
+                }   
+                if(this.relics.active[3]){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+2)
+                }
+                if(this.relics.active[49]&&this.combatants[0].life<this.combatants[0].base.life/2){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+12)
+                }
+                if(this.relics.active[137]){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+6)
+                }
+                if(this.relics.active[167]&&this.counter.taken==0){
+                    this.random.strengthBase++
+                }
+                for(let e=0,le=this.objective.length;e<le;e++){
+                    if(this.objective[e][0]==0||this.objective[e][0]==1&&this.counter.turn<=this.objective[e][1]||this.objective[e][0]==2&&this.counter.taken<this.objective[e][1]){
+                        switch(this.objective[e][2]){
+                            case 0:
+                                transition.scene='choice'
+                                this.setupChoice(0,floor(random(0,1.5)),0)
+                            break
+                            case 1:
+                                transition.scene='choice'
+                                if(this.relics.active[159]){
+                                    this.setupChoice(1,floor(random(1,2.5)),0)
+                                }else{
+                                    this.setupChoice(1,floor(random(0,1.5)),0)
+                                }
+                            break
+                            case 2:
+                                if(this.relics.active[164]){
+                                    this.currency.money+=round(this.objective[e][3]*1.5)
+                                }else{
+                                    this.currency.money+=this.objective[e][3]
+                                }
+                            break
+                            case 3:
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+this.objective[e][3])
+                            break
+                            case 4:
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.relics.list[g].length))
+                                this.getRelic(this.relics.list[g][f])
+                                this.relics.list[g].splice(f,1)
+                            break
+                            case 5:
+                                this.calc.list=[0,0,0,1,1,2]
+                                g=this.calc.list[floor(random(0,this.calc.list.length))]
+                                f=floor(random(0,this.potions.list[g].length))
+                                this.getPotion(this.potions.list[g][f])
+                            break
+                            case 6:
+                                transition.scene='choice'
+                                this.setupChoice(0,2,0)
+                                this.context=-69
+                            break
+                        }
+                    }
+                }
+            }
+        }else if(this.turn==0&&this.combatants[0].life>0){
+            this.onClickPotions()
+            this.hand.onKeyHand(key,code)
+            if(key=='d'){
+                transition.trigger=true
+                transition.scene='deck'
+                this.setupDeck(1)
+                this.context=3
+            }else if(code==ENTER){
+                this.close()
+            }else if(key=='i'){
+                transition.trigger=true
+                transition.scene='dictionary'
+            }
+        }
+    }
     setupChoice(level,rarity,spec){
         this.choice.cards=[]
         this.context=0
@@ -2271,6 +2356,60 @@ class battle{
         }
         for(let e=0,le=this.choice.cards.length;e<le;e++){
             if(pointInsideBox({position:inputs.rel},this.choice.cards[e])&&this.choice.cards[e].size>=1){
+                this.random.picked++
+                if((this.random.picked==1&&!this.relics.active[86]||this.random.picked==2)&&this.context!=-1){
+                    transition.trigger=true
+                    transition.scene='map'
+                }
+                if(this.context==-6){
+                    this.reserve.addShuffle(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                }else if(this.context==-5){
+                    this.hand.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                    this.hand.cards[this.hand.cards.length-1].cost=0
+                }else if(this.context==-3){
+                    this.hand.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                    this.hand.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                }else if(this.context==-2){
+                    this.hand.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                }else{
+                    this.deck.add(this.choice.cards[e].type,this.choice.cards[e].level,this.choice.cards[e].color)
+                }
+                this.choice.cards[e].used=true
+            }
+        }
+        if(transition.scene=='map'){
+            if(this.context==1){
+                transition.scene='rest'
+            }else if(this.context==2){
+                this.random.chosen++
+                if(this.random.chosen>=15){
+                    transition.scene='map'
+                }else{
+                    transition.scene='choice'
+                    this.context=3
+                }
+            }else if(this.context==-2||this.context==-3||this.context==-4||this.context==-5||this.context==-6){
+                transition.scene='battle'
+            }else if(this.context==-69){
+                transition.scene='bosschoice'
+                this.setupBossChoice(0)
+            }
+        }
+    }
+    onKeyChoice(key,code){
+        if(code==ENTER){
+            transition.trigger=true
+            if(this.context==-69){
+                transition.scene='bosschoice'
+                this.setupBossChoice(0)
+            }else if(this.context==-1){
+                transition.scene='shop'
+            }else{
+                transition.scene='map'
+            }
+        }
+        for(let e=0,le=this.choice.cards.length;e<le;e++){
+            if(int(key)==(e+1)&&this.choice.cards[e].size>=1){
                 this.random.picked++
                 if((this.random.picked==1&&!this.relics.active[86]||this.random.picked==2)&&this.context!=-1){
                     transition.trigger=true
@@ -2522,6 +2661,123 @@ class battle{
             }
         }
     }
+    onKeyMap(key,code){
+        if(key=='d'){
+            transition.trigger=true
+            transition.scene='deck'
+            this.setupDeck(5)
+            this.context=5
+        }
+        for(let e=0,le=this.map.main.length;e<le;e++){
+            for(let f=0,lf=this.map.main[e].length;f<lf;f++){
+                if(int(key)==(f+1)&&e==this.map.position[0]+1&&!transition.trigger&&(this.map.position[0]==-1||(f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e].length-1||(f==this.map.position[1]-1||f==this.map.position[1]||f==this.map.position[1]+1)&&this.map.main[this.map.position[0]].length==this.map.main[e].length||(f==this.map.position[1]-1||f==this.map.position[1])&&this.map.main[this.map.position[0]].length==this.map.main[e].length+1)){
+                    this.map.position[0]=e
+                    this.map.position[1]=f
+                    this.map.scrollGoal+=100
+                    transition.trigger=true
+                    this.resetCombatant()
+                    if(floor(random(0,5))==0&&this.currency.money<0){
+                        this.deck.add(findCard('Debt'),0,stage.playerNumber+2)
+                    }
+                    if(this.relics.active[171]){
+                        this.currency.money+=10
+                    }
+                    switch(this.map.main[e][f]){
+                        case 0:
+                            transition.scene='battle'
+                            this.random.class=0
+                            if(this.map.position[0]==0){
+                                setupEncounter(this,zones[this.map.zone].special[0])
+                            }else if(this.map.position[0]==1&&this.map.zone==0){
+                                setupEncounter(this,73)
+                            }else{
+                                setupEncounter(this,zones[this.map.zone].encounters[0][floor(random(0,zones[this.map.zone].encounters[0].length))])
+                            }
+                            this.create()
+                        break
+                        case 1:
+                            transition.scene='battle'
+                            this.random.class=1
+                            setupEncounter(this,zones[this.map.zone].encounters[1][floor(random(0,zones[this.map.zone].encounters[1].length))])
+                            this.create()
+                            if(this.relics.active[23]){
+                                for(let g=0,lg=this.combatants.length;g<lg;g++){
+                                    if(this.combatants[g].team==1){
+                                        this.combatants[g].life*=0.8
+                                    }
+                                }
+                            }
+                        break
+                        case 2:
+                            if(this.relics.active[14]){
+                                this.setupChoice(0,floor(random(0,1.5)),0)
+                                this.context=1
+                                transition.scene='choice'
+                            }else{
+                                transition.scene='rest'
+                            }
+                            this.random.rested=true
+                            if(this.relics.active[40]){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+this.deck.cards.length/2)
+                            }
+                        break
+                        case 3:
+                            if(stage.ascend>=15&&floor(random(0,10))==0){
+                                transition.scene='battle'
+                                this.random.class=1
+                                setupEncounter(this,zones[this.map.zone].encounters[1][floor(random(0,zones[this.map.zone].encounters[1].length))])
+                                this.create()
+                                if(this.relics.active[23]){
+                                    for(let g=0,lg=this.combatants.length;g<lg;g++){
+                                        if(this.combatants[g].team==1){
+                                            this.combatants[g].life*=0.8
+                                        }
+                                    }
+                                }
+                            }else if(stage.ascend>=15&&floor(random(0,3))==0){
+                                transition.scene='battle'
+                                this.random.class=0
+                                if(this.map.position[0]==0){
+                                    setupEncounter(this,zones[this.map.zone].special[0])
+                                }else{
+                                    setupEncounter(this,zones[this.map.zone].encounters[0][floor(random(0,zones[this.map.zone].encounters[0].length))])
+                                }
+                                this.create()
+                            }else{
+                                transition.scene='event'
+                                g=floor(random(0,this.eventList.length))
+                                this.event=this.eventList[g]
+                                this.eventList.splice(g,1)
+                                this.page=0
+                            }
+                        break
+                        case 4:
+                            transition.scene='shop'
+                            this.setupShop(0)
+                            if(this.relics.active[17]){
+                                this.relics.active[17]=false
+                            }
+                            if(this.relics.active[18]){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
+                            }
+                        break
+                        case 5:
+                            transition.scene='battle'
+                            this.random.class=2
+                            setupEncounter(this,zones[this.map.zone].encounters[2][floor(random(0,zones[this.map.zone].encounters[2].length))])
+                            this.create()
+                            if(this.relics.active[53]){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+25)
+                            }
+                        break
+                    }
+                    if(this.relics.active[17]){
+                        this.currency.money+=10
+                    }
+                }
+            }
+        }
+    }
     displayRest(){
         this.combatants[0].display(1)
         this.layer.noStroke()
@@ -2569,6 +2825,55 @@ class battle{
         if(!transition.trigger){
             for(let e=0,le=this.restOptions.length;e<le;e++){
                 if(pointInsideBox({position:inputs.rel},{position:{x:525+e*150-le*75,y:300},width:120,height:60})){
+                    transition.trigger=true
+                    this.map.complete[this.map.position[0]][this.map.position[1]]=1
+                    switch(this.restOptions[e]){
+                        case 0:
+                            transition.scene='map'
+                        break
+                        case 1:
+                            this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+this.combatants[0].base.life/5)
+                            transition.scene='map'
+                            if(this.relics.active[24]){
+                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
+                            }
+                        break
+                        case 2:
+                            transition.scene='deck'
+                            this.context=1
+                            this.setupDeck(1)
+                        break
+                        case 3:
+                            this.combatants[0].base.life+=4
+                            this.combatants[0].life+=4
+                            transition.scene='map'
+                        break
+                        case 4:
+                            this.random.strengthBase++
+                            transition.scene='map'
+                        break
+                        case 5:
+                            transition.scene='deck'
+                            this.setupDeck(4)
+                            this.context=4
+                        break
+                        case 6:
+                            this.calc.list=[0,0,0,1,1,2]
+                            g=this.calc.list[floor(random(0,this.calc.list.length))]
+                            f=floor(random(0,this.relics.list[g].length))
+                            this.getRelic(this.relics.list[g][f])
+                            this.relics.list[0].splice(f,1)
+                            transition.scene='map'
+                        break
+                    }
+                }
+            }
+        }
+    }
+    onKeyRest(key,code){
+        if(!transition.trigger){
+            for(let e=0,le=this.restOptions.length;e<le;e++){
+                if(int(key)==(e+1)){
                     transition.trigger=true
                     this.map.complete[this.map.position[0]][this.map.position[1]]=1
                     switch(this.restOptions[e]){
@@ -2824,1262 +3129,1278 @@ class battle{
     }
     onClickEvent(){
         if(!transition.trigger){
-            for(let e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
+            for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
                 if(pointInsideBox({position:inputs.rel},{position:{x:450,y:350+e*60},width:200,height:50})){
-                    if(types.event[this.event].pages[this.page].link[e]==-1){
-                        this.map.complete[this.map.position[0]][this.map.position[1]]=1
-                        transition.trigger=true
-                        transition.scene='map'
-                    }
-                    this.remember[0,0]=0
-                    switch(types.event[this.event].id){
-                        case 1:
-                            if(this.page==0&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-4)
-                            }else if(this.page==1&&e==0){
-                                transition.scene='choice'
-                                this.setupChoice(0,1,0)
-                            }
-                        break
-                        case 2:
-                            if(this.page==1&&e==0){
-                                this.currency.money+=100
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+40)
-                            }
-                        break
-                        case 3:
-                            if(this.page==0&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-10)
-                            }else if(this.page==1&&e==0){
-                                transition.scene='deck'
-                                this.setupDeck(1)
-                                this.context=1
-                            }
-                        break
-                        case 4:
-                            if(this.page==1&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-20)
-                                this.currency.money+=150
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=this.combatants[0].base.life
-                            }
-                        break
-                        case 5:
-                            if(this.page==0&&floor(random(0,3))==0){
-                                this.remember[0]=1
-                            }else if(this.page==1&&e==0){
-                                this.currency.money+=50
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-15)
-                            }
-                        break
-                        case 6:
-                            if(this.page==0&&e==0&&floor(random(0,4))==0){
-                                this.remember[0]=1
-                            }else if(this.page==1&&e==0){
-                                this.setupChoice(0,0,1)
-                                transition.scene='choice'
-                            }else if(this.page==2&&e==0&&this.currency.money>0){
-                                this.currency.money=0
-                            }
-                        break
-                        case 7:
-                            if((this.page==0||this.page==1)&&e==0&&floor(random(0,2))==0){
-                                this.remember[0]=3-types.event[this.event].pages[this.page].link[e]
-                            }else if((this.page==0||this.page==1)&&e==1){
-                                setupEncounter(current,zones[0].special[1])
-                                this.create()
-                                transition.scene='battle'
-                            }else if(this.page==3&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-6)
-                                setupEncounter(current,zones[0].special[1])
-                                this.create()
-                                transition.scene='battle'
-                            }
-                        break
-                        case 8:
-                            if(this.page==1&&e==0){
-                                this.deck.add(findCard('Imbalance'),0,stage.playerNumber+2)
-                            }else if(this.page==2&&e==0){
-                                this.deck.add(findCard('Doubt'),0,stage.playerNumber+2)
-                            }else if(this.page==3&&e==0){
-                                this.deck.add(findCard('Shame'),0,stage.playerNumber+2)
-                            }
-                        break
-                        case 9:
-                            if(this.page==0&&e==0){
-                                transition.scene='deck'
-                                this.setupDeck(1)
-                                this.context=1
-                            }else if(this.page==0&&e==1){
-                                this.setupChoice(0,floor(random(1,2.5)),0)
-                                transition.scene='choice'
-                            }else if(this.page==0&&e==2){
-                                transition.scene='deck'
-                                this.setupDeck(4)
-                                this.context=4
-                            }
-                        break
-                        case 10:
-                            if(this.page==0&&floor(random(0,3))==0){
-                                this.remember[0]=1
-                            }else if(this.page==1&&e==0){
-                                this.currency.money+=15
-                                this.setupChoice(0,floor(random(1,2.5)),0)
-                                transition.scene='choice'
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-8)
-                            }else if(this.page==4&&e==0){
-                                this.currency.money+=15
-                            }
-                        break
-                        case 11:
-                            if(this.page==1&&e==0){
-                                transition.scene='deck'
-                                this.setupDeck(1)
-                                this.context=1
-                            }else if(this.page==2&&e==0){
-                                this.deck.add(findCard('Pain'),0,stage.playerNumber+2)
-                                current.getRelic(findRelic('Bent Pliers'))
-                            }
-                        break
-                        case 12:
-                            if(this.page==0&&e==0){
-                                setupEncounter(current,zones[0].special[2])
-                                this.create()
-                                transition.scene='battle'
-                            }else if(this.page==1&&e==0){
-                                this.loseRelic()
-                            }
-                        break
-                        case 13:
-                            if(this.page==1&&e==0){
-                                this.loseRelic()
-                            }else if(this.page==2&&e==0){
-                                this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
-                                this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
-                            }else if(this.page==3&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-13)
-                            }
-                        break
-                        case 14:
-                            if(this.page==0&&e==0){
-                                setupEncounter(current,zones[0].special[3])
-                                this.create()
-                                transition.scene='battle'
-                                for(let f=0,lf=this.combatants.length;f<lf;f++){
-                                    if(this.combatants[f].team==1){
-                                        this.combatants[f].life=round(this.combatants[f].life*random(0.8,1))
-                                    }
-                                }
-                            }else if(this.page==0&&e==2&&floor(random(0,3))==0){
-                                this.remember[0]=1
-                            }else if(this.page==1&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-7)
-                            }else if(this.page==3&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-11)
-                                setupEncounter(current,zones[0].special[3])
-                                this.create()
-                                transition.scene='battle'
-                            }
-                        break
-                        case 15:
-                            if(this.page==0&&e==0){
-                                this.deck.add(findCard('Mixture A'),0,0)
-                            }else if(this.page==0&&e==1){
-                                this.deck.add(findCard('Mixture B'),0,0)
-                            }else if(this.page==0&&e==2){
-                                this.deck.add(findCard('Mixture C'),0,0)
-                            }
-                        break
-                        case 16:
-                            if(this.page==0&&(e==0||e==1)&&floor(random(0,3))==0){
-                                this.remember[0]=1
-                            }else if(this.page==1&&e==0){
-                                this.currency.money+=50
-                            }else if((this.page==2||this.page==3)&&e==0){
-                                this.currency.money-=50
-                            }else if(this.page==4&&e==0){
-                                this.currency.money+=150
-                            }
-                        break
-                        case 17:
-                            if(this.page==0&&(e==0||e==1||e==2)&&floor(random(0,3))==0){
-                                this.remember[0]=1
-                            }else if(this.page==1){
-                                this.currency.money+=100
-                            }else if(this.page==2){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-30)
-                            }
-                        break
-                        case 18:
-                            if(this.page==1&&e==0){
-                                setupEncounter(current,zones[0].special[4])
-                                this.create()
-                                transition.scene='battle'
-                            }
-                        break
-                        case 19:
-                            if(this.page==0&&e==0){
-                                transition.trigger=true
-                                transition.scene='deck'
-                                this.setupDeck(14)
-                                this.context=14
-                            }
-                        break
-                        case 20:
-                            if(this.page==1&&e==0){
-                                this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
-                            }else if(this.page==3&&e==0){
-                                this.currency.money-=20
-                            }
-                        break
-                        case 21:
-                            if(this.page==0&&e==0){
-                                this.currency.money-=50
-                                this.eventList.push(findEvent('Payout'))
-                            }
-                        break
-                        case 22:
-                            if(this.page==0&&e==0){
-                                this.currency.money+=250
-                            }
-                        break
-                        case 23:
-                            if(this.page==0&&e==0){
-                                this.currency.money-=60
-                            }else if(this.page==0&&e==1){
-                                setupEncounter(current,zones[0].special[5])
-                                this.create()
-                                transition.scene='battle'
-                            }
-                        break
-                        case 24:
-                            if(this.page==0&&e==0&&floor(random(0,3))==0){
-                                this.remember[0]=1
-                            }else if(this.page==1){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-20)
-                            }else if(this.page==2){
-                                this.currency.money+=200
-                            }
-                        break
-                        case 25:
-                            if((this.page==0||this.page==1)&&e==0&&floor(random(0,3))==0){
-                                this.remember[0]=2-this.page
-                            }else if((this.page==0||this.page==1||this.page==2)&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
-                            }else if(this.page==3&&e==0){
-                                this.calc.list=[0,0,0,1,1,2]
-                                g=this.calc.list[floor(random(0,this.calc.list.length))]
-                                f=floor(random(0,this.relics.list[g].length))
-                                this.getRelic(this.relics.list[g][f])
-                                this.relics.list[g].splice(f,1)
-                            }
-                        break
-                        case 26:
-                            if(this.page==0&&e==1&&floor(random(0,2))==0){
-                                this.remember[0]=1
-                            }else if(this.page==2&&e==0){
-                                this.currency.money+=100
-                            }else if(this.page==3&&e==0){
-                                this.currency.money-=50
-                            }
-                        break
-                        case 27:
-                            if(this.page==1&&e==0){
-                                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
-                                    if(this.deck.cards[g].list==10){
-                                        this.deck.cards.splice(g,1)
-                                        g--
-                                        lg--
-                                    }
-                                }
-                            }
-                        break
-                        case 28:
-                            if(this.page==1&&e==0){
-                                this.currency.money+=75
-                            }else if(this.page==2&&e==0){
-                                this.currency.money+=175
-                                this.deck.add(findCard('Regret'),0,stage.playerNumber+2)
-                            }
-                        break
-                        case 29:
-                            if(this.page==1&&e==0){
-                                transition.scene='deck'
-                                this.setupDeck(1)
-                                this.context=1
-                            }
-                        break
-                        case 30:
-                            if(this.page==1&&e==0){
-                                transition.scene='deck'
-                                this.setupDeck(15)
-                                this.context=15
-                            }
-                        break
-                        case 31:
-                            if(this.page==1&&e==0){
-                                transition.scene='deck'
-                                this.setupDeck(4)
-                                this.context=4
-                            }
-                        break
-                        case 32:
-                            if(this.page==1&&e==0){
-                                this.combatants[0].life+=5
-                                this.combatants[0].base.life+=5
-                            }else if(this.page==2&&e==0){
-                                this.calc.list=[0,0,0,1,1,2]
-                                g=this.calc.list[floor(random(0,this.calc.list.length))]
-                                f=floor(random(0,this.relics.list[g].length))
-                                this.getRelic(this.relics.list[g][f])
-                                this.relics.list[g].splice(f,1)
-                                this.deck.add(findCard('Regret'),0,stage.playerNumber+2)
-                            }
-                        break
-                        case 33:
-                            if(this.page==0&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-12)
-                            }else if(this.page==1&&e==0){
-                                this.deck.randomUpgrade()
-                                this.deck.randomUpgrade()
-                            }
-                        break
-                        case 34:
-                            if(this.page==0&&e==0){
-                                this.currency.main-=35
-                            }else if(this.page==0&&e==1){
-                                this.currency.main-=50
-                            }else if(this.page==1&&e==0){
-                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
-                            }else if(this.page==2&&e==0){
-                                transition.scene='deck'
-                                this.setupDeck(4)
-                                this.context=4
-                            }
-                        break
-                        case 35:
-                            if(this.page==0&&e==0){
-                                this.currency.money+=175
-                            }else if(this.page==1&&e==0){
-                                this.deck.add(findCard('Doubt'),0,stage.playerNumber+2)
-                            }
-                        break
-                        case 36:
-                            if(this.page==1&&e==0){
-                                transition.scene='deck'
-                                this.setupDeck(4)
-                                this.context=4
-                            }else if(this.page==2&&e==0){
-                                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
-                                    if(this.deck.cards[g].list==stage.playerNumber+1&&this.deck.cards[g].level==0){
-                                        this.deck.cards[g].level++
-                                        this.deck.cards[g]=reformCard(this.deck.cards[g])
-                                    }
-                                }
-                            }
-                        break
-                        case 37:
-                            if(this.page==0&&e==0){
-                                this.combatants[0].base.life*=0.5
-                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
-                            }else if(this.page==1&&e==0){
-                                for(let g=0;g<5;g++){
-                                    this.deck.add(findCard('Apparition'),0,0)
-                                }
-                            }
-                        break
-                        case 38:
-                            if(this.page==0&&(e==0||e==1)){
-                                this.currency.money-=50
-                                if(floor(random(0,2))==0){
-                                    this.remember[0]=1
-                                }
-                            }else if(this.page==1&&e==0){
-                                this.currency.money+=100
-                            }
-                        break
-                        case 39:
-                            if(this.page==1&&e==0){
-                                transition.scene='choice'
-                                this.setupChoice(0,0,3)
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+25)
-                            }
-                        break
-                        case 40:
-                            if(this.page==0&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-18)
-                            }else if(this.page==1&&e==0){
-                                this.combatants[0].life+=5
-                                this.combatants[0].base.life+=5
-                            }else if(this.page==2&&e==0){
-                                this.deck.add(findCard('Decay'),0,stage.playerNumber+2)
-                            }
-                        break
-                        case 41:
-                            if(this.page==0&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-1)
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-2)
-                            }else if(this.page==3&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
-                            }else if(this.page==4&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-10)
-                            }else if(this.page==5&&e==0){
-                                current.getRelic(findRelic('Audrian Codex'))
-                                this.eventList.push(findEvent('Collector'))
-                            }
-                        break
-                        case 42:
-                            if(this.page==0&&e==0){
-                                setupEncounter(current,zones[0].special[6])
-                                this.create()
-                                transition.scene='battle'
-                            }else if(this.page==1&&e==0){
-                                this.deck.add(findCard('Guilt'),0,stage.playerNumber+2)
-                            }
-                        break
-                        case 43:
-                            if(this.page==1&&e==0){
-                                this.currency.money+=300
-                                this.relics.active[findRelic('Audrian Codex')]=false
-                            }else if(this.page==2&&e==0){
-                                this.relics.active[findRelic('Audrian Codex')]=false
-                            }
-                        break
-                        case 44:
-                            if(this.page==0&&e==0){
-                                this.calc.list=[0,0,0,1,1,2]
-                                g=this.calc.list[floor(random(0,this.calc.list.length))]
-                                f=floor(random(0,this.relics.list[g].length))
-                                this.getRelic(this.relics.list[g][f])
-                                this.relics.list[g].splice(f,1)
-                            }else if(this.page==1&&e==0){
-                                this.deck.add(findCard('Writhe'),0,stage.playerNumber+2)
-                            }
-                        break
-                        case 45:
-                            if(this.page==0&&(e==0||e==1||e==2)){
-                                this.combatants[0].life-=8
-                            }else if(this.page==1&&e==0){
-                                this.currency.money+=45
-                            }else if(this.page==2&&e==0){
-                                this.deck.add(listing.card[0][1][floor(random(0,listing.card[0][1].length))],0,0)
-                            }else if(this.page==3&&e==0){
-                                this.calc.list=[0,0,0,1,1,2]
-                                g=this.calc.list[floor(random(0,this.calc.list.length))]
-                                f=floor(random(0,this.potions.list[g].length))
-                                this.getPotion(this.potions.list[g][f])
-                            }
-                        break
-                        case 46:
-                            if(this.page==0&&e==0){
-                                this.currency.money-=50
-                            }else if(this.page==1&&e==0){
-                                this.calc.list=[0,0,0,1,1,2]
-                                g=this.calc.list[floor(random(0,this.calc.list.length))]
-                                f=floor(random(0,this.relics.list[g].length))
-                                this.getRelic(this.relics.list[g][f])
-                                this.relics.list[g].splice(f,1)
-                            }else if(this.page==2&&e==0){
-                                this.calc.list=[0,0,0,1,1,2]
-                                g=this.calc.list[floor(random(0,this.calc.list.length))]
-                                f=floor(random(0,this.relics.list[g].length))
-                                this.getRelic(this.relics.list[g][f])
-                                this.relics.list[g].splice(f,1)
-                                this.deck.add(findCard('Shame'),0,stage.playerNumber+2)
-                            }
-                        break
-                        case 47:
-                            if(this.page==0&&e==0){
-                                this.combatants[0].base.life*=0.75
-                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
-                                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
-                                    if(this.deck.cards[g].list==stage.playerNumber+1&&this.deck.cards[g].attack==1){
-                                        this.deck.cards.splice(g,1)
-                                        g--
-                                        lg--
-                                    }
-                                }
-                            }else if(this.page==1&&e==0){
-                                for(let g=0;g<5;g++){
-                                    this.deck.add(findCard('Bite'),0,0)
-                                }
-                            }
-                        break
-                        case 48:
-                            if(this.page==0&&e==0){
-                                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
-                                    if(this.deck.cards[g].level==0){
-                                        this.deck.cards[g].level++
-                                        this.deck.cards[g]=reformCard(this.deck.cards[g])
-                                    }
-                                }
-                            }else if(this.page==0&&e==1){
-                                this.currency.money+=999
-                            }else if(this.page==0&&e==2){
-                                this.combatants[0].life+=this.combatants[0].base.life*0.5
-                                this.combatants[0].base.life*=1.5
-                            }else if(this.page==1&&e==0){
-                                this.getRelic(findRelic('Too Much Knowledge'))
-                            }else if(this.page==2&&e==0){
-                                this.deck.add(findCard('Normality'),0,stage.playerNumber+2)
-                                this.deck.add(findCard('Normality'),0,stage.playerNumber+2)
-                            }else if(this.page==3&&e==0){
-                                this.deck.add(findCard('Doubt'),0,stage.playerNumber+2)
-                            }
-                        break
-                        case 49:
-                            if(this.page==0){
-                                this.remember[1]=floor(random(0,4))
-                            }else if(this.page==1&&e==0){
-                                this.deck.add(listing.card[0][1][floor(random(0,listing.card[0][1].length))],0,0)
-                            }else if(this.page==2&&e==0){
-                                this.deck.add(listing.card[0][2][floor(random(0,listing.card[0][2].length))],0,0)
-                            }
-                        break
-                        case 50:
-                            if(this.page==1&&e==0){
-                                this.deck.add(findCard('Madness'),0,0)
-                                this.deck.add(findCard('Madness'),0,0)
-                                this.combatants[0].base.life-=10
-                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
-                            }else if(this.page==2&&e==0){
-                                this.deck.add(findCard('Writhe'),0,stage.playerNumber+2)
-                            }else if(this.page==3&&e==0){
-                                this.combatants[0].base.life-=5
-                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
-                            }
-                        break
-                        case 51:
-                            if(this.page==0){
-                                this.eventList.push(findEvent('The God'))
-                            }
-                            if(this.page==1&&e==0){
-                                this.combatants[0].life=this.combatants[0].base.life
-                            }else if(this.page==2&&e==0){
-                                this.calc.list=[0,0,0,1,1,2]
-                                g=this.calc.list[floor(random(0,this.calc.list.length))]
-                                f=floor(random(0,this.relics.list[g].length))
-                                this.getRelic(this.relics.list[g][f])
-                                this.relics.list[g].splice(f,1)
-                            }else if(this.page==3&&e==0){
-                                this.calc.list=[0,0,0,1,1,2]
-                                g=this.calc.list[floor(random(0,this.calc.list.length))]
-                                f=floor(random(0,this.potions.list[g].length))
-                                this.getPotion(this.potions.list[g][f])
-                            }
-                        break
-                        case 52:
-                            if(this.page==1&&e==0){
-                                this.currency.money+=10
-                            }else if(this.page==2&&e==0){
-                                this.eventList.push(findEvent('Return of Duck'))
-                            }else if(this.page==3&&e==0){
-                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+20)
-                            }
-                        break
-                        case 53:
-                            if(this.page==0&&e==0){
-                                this.getRelic(findRelic('McDuck Burger'))
-                            }
-                        break
-                        case 54:
-                            if(this.page==1&&e==0){
-                                this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-6)
-                            }
-                        break
-                        case 55:
-                            if((this.page==2||this.page==4)&&e==0){
-                                this.calc.list=listing.card[this.player]
-                                if(this.calc.list.length>0){
-                                    g=floor(random(0,this.calc.list.length))
-                                    h=floor(random(0,this.calc.list[g].length))
-                                    this.deck.add(this.calc.list[g][h],0,types.card[this.calc.list[g][h]].list)
-                                }
-                            }else if(this.page==5&&e==0){
-                                this.combatants[0].base.meterControl+=2
-                            }
-                        break
-                        case 56:
-                            if(this.page==0&&e==0){
-                                this.currency.money+=50
-                            }else if(this.page==0&&e==1){
-                                this.currency.money-=25
-                            }else if(this.page==1&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-11)
-                            }
-                        break
-                        case 57:
-                            if(this.page==1&&e==0){
-                                setupEncounter(current,zones[0].special[7])
-                                this.create()
-                                transition.scene='battle'
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+20)
-                                this.deck.add(findCard('Parasite'),0,stage.playerNumber+2)
-                            }
-                        break
-                        case 58:
-                            if(this.page==0&&e==0){
-                                for(let h=0;h<3;h++){
-                                    this.calc.list=[0,0,0,1,1,2]
-                                    g=this.calc.list[floor(random(0,this.calc.list.length))]
-                                    f=floor(random(0,this.relics.list[g].length))
-                                    this.getRelic(this.relics.list[g][f])
-                                    this.relics.list[g].splice(f,1)
-                                }
-                            }else if(this.page==1&&e==0){
-                                setupEncounter(current,zones[0].special[8])
-                                this.create()
-                                transition.scene='battle'
-                            }
-                        break
-                        case 59:
-                            if(this.page==0&&e==1&&this.currency.money>0){
-                                this.currency.money=0
-                            }else if(this.page==1&&e==0){
-                                setupEncounter(current,zones[0].special[9])
-                                this.create()
-                                transition.scene='battle'
-                            }
-                        break
-                        case 60:
-                            if(this.page==1&&e==0){
-                                setupEncounter(current,zones[0].special[10])
-                                this.create()
-                                transition.scene='battle'
-                            }
-                        break
-                        case 61:
-                            if(this.page==1&&e==0){
-                                transition.trigger=true
-                                transition.scene='deck'
-                                this.setupDeck(1)
-                                this.context=1
-                            }else if(this.page==2&&e==0){
-                                transition.scene='choice'
-                                this.setupChoice(0,1,0)
-                            }else if(this.page==3&&e==0){
-                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+5)
-                            }
-                        break
-                        case 62:
-                            if(this.page==0&&(e==0||e==1)){
-                                this.currency.money-=25
-                            }else if(this.page==1&&e==0){
-                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life+=4
-                                this.combatants[0].base.life+=4
-                            }else if(this.page==3&&e==0){
-                                this.currency.money+=10
-                            }
-                        break
-                        case 63:
-                            if(this.page==1&&e==0){
-                                this.calc.list=[0,0,0,1,1,2]
-                                g=this.calc.list[floor(random(0,this.calc.list.length))]
-                                f=floor(random(0,this.relics.list[g].length))
-                                this.getRelic(this.relics.list[g][f])
-                                this.relics.list[g].splice(f,1)
-                                this.currency.money+=45
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-25)
-                            }
-                        break
-                        case 64:
-                            if(this.page==1&&e==0){
-                                this.deck.add(findCard('Philosophy'),0,0)
-                            }
-                        break
-                        case 65:
-                            if(this.page==1&&e==0){
-                                this.deck.add(findCard('Anxiety'),0,stage.playerNumber+2)
-                            }else if(this.page==2&&e==0){
-                                transition.scene='choice'
-                                this.setupChoice(0,2,0)
-                            }
-                        break
-                        case 66:
-                            if(this.page==0&&e==0){
-                                transition.trigger=true
-                                transition.scene='shop'
-                                this.setupShop(1)
-                            }
-                        break
-                        case 67:
-                            if(this.page==0&&e==0){
-                                this.currency.main+=100
-                                g=findEvent('Debt Squad')
-                                for(let f=0;f<25;f++){
-                                    this.eventList.push(g)
-                                }
-                            }
-                        break
-                        case 68:
-                            if((this.page==0||this.page==1)&&e==0){
-                                setupEncounter(current,zones[0].special[11])
-                                this.create()
-                                transition.scene='battle'
-                            }else if(this.page==0&&e==1&&this.currency.money>0){
-                                this.currency.money=0
-                            }else if(this.page==1&&e==1){
-                                transition.trigger=false
-                            }
-                        break
-                        case 69:
-                            if(this.page==1&&e==0){
-                                setupEncounter(current,zones[0].special[12])
-                                this.create()
-                                transition.scene='battle'
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].base.life-=3
-                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
-                            }
-                        break
-                        case 70:
-                            if(this.page==1&&e==0){
-                                this.loseRelic()
-                                if(this.currency.money>0){
-                                    this.currency.money=0
-                                }
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].base.life-=9
-                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
-                            }else if(this.page==3&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-27)
-                            }else if(this.page==4&&e==0){
-                                setupEncounter(current,zones[0].special[13])
-                                this.create()
-                                transition.scene='battle'
-                            }
-                        break
-                        case 71:
-                            if(this.page==0&&e==0){
-                                transition.trigger=true
-                                transition.scene='deck'
-                                this.setupDeck(16)
-                                this.context=16
-                            }
-                        break
-                        case 72:
-                            if(this.page==0&&e==0){
-                                this.currency.money-=40
-                            }else if(this.page==0&&e==1){
-                                this.currency.money-=60
-                            }else if(this.page==1&&e==0){
-                                this.deck.randomUpgrade()
-                                this.deck.randomUpgrade()
-                            }else if(this.page==2&&e==0){
-                                transition.trigger=true
-                                transition.scene='deck'
-                                this.setupDeck(4)
-                                this.context=4
-                            }else if(this.page==3&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-1)
-                            }
-                        break
-                        case 73:
-                            if(this.page==0&&e==0){
-                                this.loseRelic()
-                                this.getRelic(findRelic('Klein Box'))
-                            }
-                        break
-                        case 74:
-                            if(this.page==0&&e==0){
-                                this.combatants[0].base.life-=2
-                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
-                            }else if(this.page==1&&e==0){
-                                transition.scene='choice'
-                                this.setupChoice(0,2,0)
-                            }
-                        break
-                        case 75:
-                            if(this.page==0&&e==0){
-                                transition.scene='choice'
-                                this.setupChoice(0,1,0)
-                            }else if(this.page==0&&e==1){
-                                transition.trigger=true
-                                transition.scene='deck'
-                                this.setupDeck(1)
-                                this.context=1
-                            }
-                        break
-                        case 76:
-                            if(this.page==1&&e==0){
-                                this.getRelic(findRelic('Bottled Flame'))
-                            }
-                        break
-                        case 77:
-                            if(this.page==1&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-12)
-                                this.getRelic(findRelic('Bottled Rock'))
-                            }
-                        break
-                        case 78:
-                            if(this.page==1&&e==0){
-                                this.calc.list=[findCard('Charge'),findCard('Detonate'),findCard('Shielding'),findCard('Energize'),findCard('Darkness'),findCard('Zap'),findCard('Illuminate'),findCard('Enflame')]
-                                for(let g=0;g<3;g++){
-                                    h=floor(random(0,this.calc.list.length))
-                                    this.deck.add(this.calc.list[h],floor(random(0,2)),this.player)
-                                    this.calc.list.splice(h,1)
-                                }
-                            }
-                        break
-                        case 79:
-                            if(this.page==2&&e==0){
-                                this.deck.add(findCard('MBF-32\nShield'),0,0)
-                            }
-                        break
-                        case 80:
-                            if(this.page==0&&e==0&&floor(random(0,2))==0){
-                                this.remember[0]=1
-                            }else if(this.page==1&&e==0){
-                                transition.trigger=true
-                                transition.scene='deck'
-                                this.setupDeck(1)
-                                this.context=1
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-20)
-                                this.getRelic(findRelic('Martyrdom'))
-                            }
-                        break
-                        case 81:
-                            if(this.page==0&&e==0){
-                                this.combatants[0].base.life-=10
-                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
-                            }else if(this.page==1&&e==0){
-                                this.getRelic(findRelic('Bottled Life'))
-                            }
-                        break
-                        case 82:
-                            if(this.page==1&&e==0){
-                                this.getPotion(findPotion('Starflame'))
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+6)
-                            }
-                        break
-                        case 83:
-                            if((this.page==1||this.page==2)&&e==0){
-                                transition.trigger=true
-                                transition.scene='deck'
-                                this.setupDeck(1)
-                                this.context=1
-                            }
-                        break
-                        case 84:
-                            if(this.page==2&&e==0){
-                                transition.scene='choice'
-                                this.setupChoice(0,1,0)
-                            }
-                        break
-                        case 85:
-                            if(this.page==0&&e==0){
-                                setupEncounter(current,zones[0].special[14])
-                                this.create()
-                                transition.scene='battle'
-                                this.objective=[[0,0,0,0],[0,0,2,75]]
-                            }else if(this.page==0&&e==1&&floor(random(0,2))==0){
-                                this.remember[0]=1
-                            }else if(this.page==1&&e==0){
-                                this.currency.money+=125
-                            }else if(this.page==2&&e==0){
-                                this.currency.money-=125
-                            }
-                        break
-                        case 86:
-                            if(this.page==1&&e==0){
-                                this.deck.add(findCard('Pistol'),0,0)
-                            }else if(this.page==12&&e==0){
-                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+12)
-                            }
-                        break
-                        case 87:
-                            if(this.page==0&&e==0){
-                                this.getRelic(findRelic('Gold Bar'))
-                            }else if(this.page==3&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-16)
-                            }else if(this.page==4&&e==0){
-                                this.combatants[0].base.life-=10
-                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
-                            }else if(this.page==5&&e==0){
-                                this.deck.add(findCard('Injury'),0,stage.playerNumber+2)
-                            }
-                        break
-                        case 88:
-                            if(this.page==1&&e==0){
-                                this.getPotion(findPotion('Cola'))
-                            }
-                        break
-                        case 89:
-                            if(this.page==1&&e==0){
-                                this.getRelic(findRelic('Dev Console'))
-                            }
-                        break
-                        case 90:
-                            if(this.page==1&&e==0){
-                                this.combatants[0].base.life=round(this.combatants[0].base.life*0.5)
-                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
-                                this.getRelic(findRelic('Orb of Discord'))
-                            }
-                        break
-                        case 91:
-                            if(this.page==2&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
-                            }else if(this.page==3&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-9)
-                                this.combatants[0].base.meterControl+=2
-                            }
-                        break
-                        case 92:
-                            if(this.page==1&&e==0){
-                                this.getRelic(findRelic('Management Pin'))
-                            }else if(this.page==2&&e==0){
-                                this.getRelic(findRelic('Shattered Pin'))
-                            }else if(this.page==3&&e==0){
-                                this.currency.money+=235
-                            }
-                        break
-                        case 93:
-                            if(this.page==0&&e==0&&floor(random(0,2))==0){
-                                this.remember[0]=1
-                            }else if(this.page==1&&e==0){
-                                this.currency.money+=9
-                                transition.scene='choice'
-                                this.setupChoice(0,1,0)
-                            }else if(this.page==4&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-14)
-                            }else if(this.page==5&&e==0){
-                                this.combatants[0].base.life-=3
-                                this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
-                            }
-                        break
-                        case 94:
-                            if(this.page==0&&(e==0||e==1)&&floor(random(0,4))==0){
-                                this.remember[0]=1
-                            }else if(this.page==1&&e==0){
-                                this.currency.money+=40
-                            }else if(this.page==2&&e==0){
-                                this.currency.money+=60
-                            }else if(this.page==3&&e==0){
-                                this.currency.money+=9
-                                transition.scene='choice'
-                                this.setupChoice(0,2,0)
-                            }else if(this.page==4&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-20)
-                            }
-                        break
-                        case 95:
-                            if(this.page==1&&e==0){
-                                this.calc.list=[0,0,0,1,1,2]
-                                g=this.calc.list[floor(random(0,this.calc.list.length))]
-                                f=floor(random(0,this.relics.list[g].length))
-                                this.getRelic(this.relics.list[g][f])
-                                this.relics.list[g].splice(f,1)
-                            }else if(this.page==2&&e==0){
-                                transition.scene='choice'
-                                this.setupChoice(0,2,0)
-                            }
-                        break
-                        case 96:
-                            if(this.page==1&&e==0){
-                                this.getRelic(findRelic('Internal Wrath'))
-                            }else if(this.page==2&&e==0){
-                                this.getRelic(findRelic('Internal Calm'))
-                            }
-                        break
-                        case 97:
-                            if(this.page==0&&e==0){
-                                this.currency.money-=100
-                            }else if(this.page==1&&e==0){
-                                this.getRelic(findRelic('Stocks'))
-                            }
-                        break
-                        case 98:
-                            if(this.page==0&&e==0&&floor(random(0,2))==0){
-                                this.remember[0]=1
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-6)
-                            }else if((this.page==3||this.page==4)&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
-                            }else if(this.page==6&&e==0){
-                                this.calc.list=[0,0,0,1,1,2]
-                                g=this.calc.list[floor(random(0,this.calc.list.length))]
-                                f=floor(random(0,this.relics.list[g].length))
-                                this.getRelic(this.relics.list[g][f])
-                                this.relics.list[g].splice(f,1)
-                            }
-                        break
-                        case 99:
-                            if(this.page==0&&e==0&&floor(random(0,2))==0){
-                                this.remember[0]=1
-                            }else if(this.page==2&&e==0){
-                                transition.scene='choice'
-                                this.setupChoice(0,1,0)
-                            }else if(this.page==3&&e==0){
-                                this.deck.add(listing.card[this.player][2][floor(random(0,listing.card[this.player][2].length))],0,0)
-                            }
-                        break
-                        case 100:
-                            if(this.page==1&&e==0){
-                                this.getRelic(findRelic('Survival Notes'))
-                            }else if(this.page==2&&e==0){
-                                this.currency.money+=55
-                            }
-                        break
-                        case 101:
-                            if(this.page==1&&e==0){
-                                this.calc.list=listing.card[this.player]
-                                if(this.calc.list.length>0){
-                                    g=floor(random(0,this.calc.list.length))
-                                    h=floor(random(0,this.calc.list[g].length))
-                                    this.deck.add(this.calc.list[g][h],0,types.card[this.calc.list[g][h]].list)
-                                }
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-99)
-                            }else if(this.page==3&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-9)
-                            }
-                        break
-                        case 102:
-                            if((this.page==0||this.page==1)&&e==1){
-                                setupEncounter(current,zones[0].special[15])
-                                this.create()
-                                transition.scene='battle'
-                            }else if(this.page==1&&e==0){
-                                this.currency.money-=40
-                            }
-                        break
-                        case 103:
-                            if(this.page==1&&e==0){
-                                this.mana.gen--
-                                this.mana.main--
-                                this.mana.max--
-                                this.mana.base--
-                                this.getRelic(findRelic('Angelic Sphere'))
-                            }
-                        break
-                        case 104:
-                            if(this.page==0&&(e==0||e==1)&&floor(random(0,2))==0){
-                                this.remember[0]=1
-                            }else if(this.page==1&&e==0){
-                                this.combatants[0].life=this.combatants[0].base.life
-                                transition.scene='deck'
-                                this.setupDeck(4)
-                                this.context=4
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-15)
-                            }else if(this.page==3&&e==0){
-                                transition.scene='deck'
-                                this.setupDeck(4)
-                                this.context=4
-                            }else if(this.page==4&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
-                            }
-                        break
-                        case 105:
-                            if(this.page==4&&e==0){
-                                this.combatants[0].base.meterControl+=2
-                            }else if(this.page==5&&e==0){
-                                transition.scene='choice'
-                                this.setupChoice(0,2,0)
-                                this.deck.add(findCard('Injury'),0,stage.playerNumber+2)
-                            }
-                        break
-                        case 106:
-                            if(this.page==1&&e==0){
-                                for(let g=0;g<3;g++){
-                                    this.deck.add(findCard('Broken\nParts'),0,0)
-                                }
-                            }else if(this.page==2&&e==0){
-                                this.deck.add(findCard('Broken\nParts'),0,0)
-                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+5)
-                            }else if(this.page==3&&e==0){
-                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
-                            }
-                        break
-                        case 107:
-                            if(this.page==0&&e==0){
-                                this.calc.list=[]
-                                for(let g=0,lg=types.card.length;g<lg;g++){
-                                    if(types.card[g].list==this.player&&types.card[g].stats[1].class==3){
-                                        this.calc.list.push(g)
-                                    }
-                                }
-                                this.deck.add(this.calc.list[floor(random(0,this.calc.list.length))],1,this.player)
-                            }
-                        break
-                        case 108:
-                            if(this.page==0&&e==0){
-                                transition.trigger=true
-                                transition.scene='shop'
-                                this.setupShop(2)
-                            }
-                        break
-                        case 109:
-                            if(this.page==0&&e==0&&floor(random(0,2))==0){
-                                this.remember[0]=1
-                            }else if(this.page==1&&e==0){
-                                this.currency.money+=25
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-6)
-                            }
-                        break
-                        case 110:
-                            if(this.page==0&&e==0){
-                                this.currency.money-=40
-                            }else if(this.page==1&&e==0){
-                                this.deck.add(findCard('Monkey\nWrench'),0,0)
-                            }
-                        break
-                        case 111:
-                            if(this.page==1&&e==0){
-                                this.getRelic(findRelic('Ducksquad Badge'))
-                            }
-                        break
-                        case 112:
-                            if(this.page==0&&e==0){
-                                this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
-                            }else if(this.page==1&&e==0){
-                                this.currency.money+=35
-                            }
-                        break
-                        case 113:
-                            if((this.page==0||this.page==1)&&e==0){
-                                this.currency.money-=5
-                                if(floor(random(0,3))==0){
-                                    this.remember[0]=1
-                                }
-                            }else if(this.page==2&&e==0){
-                                transition.scene='deck'
-                                this.setupDeck(1)
-                                this.context=1
-                            }
-                        break
-                        case 114:
-                            if(this.page==1&&e==0){
-                                for(let h=0;h<3;h++){
-                                    i=floor(random(0,3))
-                                    g=listing.card[14][i][floor(random(0,listing.card[14][i].length))]
-                                    this.deck.add(g,floor(random(0,2)),types.card[g].list)
-                                }
-                            }else if(this.page==2&&e==0){
-                                this.calc.list=[0,0,0,1,1,2]
-                                g=this.calc.list[floor(random(0,this.calc.list.length))]
-                                f=floor(random(0,this.relics.list[g].length))
-                                this.getRelic(this.relics.list[g][f])
-                                this.relics.list[g].splice(f,1)
-                            }
-                        break
-                        case 115:
-                            if(this.page==1&&e==0){
-                                transition.scene='choice'
-                                this.setupChoice(0,0,0)
-                            }
-                        break
-                        case 116:
-                            if(this.page==1&&e==0){
-                                transition.scene='deck'
-                                this.setupDeck(1)
-                                this.context=1
-                            }else if(this.page==2&&e==0){
-                                this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+10)
-                            }
-                        break
-                        case 117:
-                            if(this.page==1&&e==0){
-                                transition.trigger=true
-                                transition.scene='deck'
-                                this.setupDeck(14)
-                                this.context=14
-                            }else if(this.page==2&&e==0){
-                                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
-                                    this.deck.cards.push(copyCard(this.deck.cards[g]))
-                                }
-                            }
-                        break
-                        case 118:
-                            if(this.page==1&&e==0){
-                                transition.trigger=true
-                                transition.scene='deck'
-                                this.setupDeck(4)
-                                this.context=4
-                            }else if(this.page==2&&e==0){
-                                this.deck.cards=[]
-                                this.deck.add(findCard('Oroboros'),0,0)
-                            }
-                        break
-                        case 119:
-                            if(this.page==1&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-15)
-                            }else if(this.page==2&&e==0){
-                                this.deck.add(findCard('Residue'),0,stage.playerNumber+2)
-                            }
-                        break
-                        case 120:
-                            if(this.page==0&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
-                            }else if(this.page==1&&e==0){
-                                this.deck.add(findCard('Essence of\nthe Sea'),0,0)
-                            }
-                        break
-                        case 121:
-                            if(this.page==0&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
-                            }else if(this.page==1&&e==0){
-                                this.deck.add(findCard('Essence of\nthe Air'),0,0)
-                            }
-                        break
-                        case 122:
-                            if(this.page==0&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
-                            }else if(this.page==1&&e==0){
-                                this.deck.add(findCard('Essence of\nthe Earth'),0,0)
-                            }
-                        break
-                        case 123:
-                            if(this.page==0&&e==0){
-                                this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
-                            }else if(this.page==1&&e==0){
-                                this.deck.add(findCard('Essence of\nthe Flame'),0,0)
-                            }
-                        break
-                        case 124:
-                            if(this.page==1&&e==0){
-                                transition.trigger=true
-                                transition.scene='deck'
-                                this.setupDeck(15)
-                                this.context=15
-                            }else if(this.page==2&&e==0){
-                                for(let g=0,lg=this.deck.cards.length;g<lg;g++){
-                                    f=floor(random(0,3))
-                                    this.deck.cards[g].type=listing.card[this.player][f][floor(random(0,listing.card[this.player][f].length))]
-                                    this.deck.cards[g].color=this.player
-                                    this.deck.cards[g]=reformCard(this.deck.cards[g])
-                                }
-                            }
-                        break
-                        case 125:
-                            if(this.page==1&&e==0){
-                                this.deck.add(listing.card[this.player][2][floor(random(0,listing.card[this.player][2].length))],0,this.player)
-                            }
-                        break
-                    }
-                    if(types.event[this.event].pages[this.page].link[e]!=-1){
-                        this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]
-                    }
+                    this.triggerEvent()
                 }
             }
+        }
+    }
+    onKeyEvent(key,code){
+        if(!transition.trigger){
+            for(e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
+                if(int(key)==(e+1)){
+                    this.triggerEvent()
+                }
+            }
+        }
+    }
+    triggerEvent(){
+        if(types.event[this.event].pages[this.page].link[e]==-1){
+            this.map.complete[this.map.position[0]][this.map.position[1]]=1
+            transition.trigger=true
+            transition.scene='map'
+        }
+        this.remember[0,0]=0
+        switch(types.event[this.event].id){
+            case 1:
+                if(this.page==0&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-4)
+                }else if(this.page==1&&e==0){
+                    transition.scene='choice'
+                    this.setupChoice(0,1,0)
+                }
+            break
+            case 2:
+                if(this.page==1&&e==0){
+                    this.currency.money+=100
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+40)
+                }
+            break
+            case 3:
+                if(this.page==0&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-10)
+                }else if(this.page==1&&e==0){
+                    transition.scene='deck'
+                    this.setupDeck(1)
+                    this.context=1
+                }
+            break
+            case 4:
+                if(this.page==1&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-20)
+                    this.currency.money+=150
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=this.combatants[0].base.life
+                }
+            break
+            case 5:
+                if(this.page==0&&floor(random(0,3))==0){
+                    this.remember[0]=1
+                }else if(this.page==1&&e==0){
+                    this.currency.money+=50
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-15)
+                }
+            break
+            case 6:
+                if(this.page==0&&e==0&&floor(random(0,4))==0){
+                    this.remember[0]=1
+                }else if(this.page==1&&e==0){
+                    this.setupChoice(0,0,1)
+                    transition.scene='choice'
+                }else if(this.page==2&&e==0&&this.currency.money>0){
+                    this.currency.money=0
+                }
+            break
+            case 7:
+                if((this.page==0||this.page==1)&&e==0&&floor(random(0,2))==0){
+                    this.remember[0]=3-types.event[this.event].pages[this.page].link[e]
+                }else if((this.page==0||this.page==1)&&e==1){
+                    setupEncounter(current,zones[0].special[1])
+                    this.create()
+                    transition.scene='battle'
+                }else if(this.page==3&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-6)
+                    setupEncounter(current,zones[0].special[1])
+                    this.create()
+                    transition.scene='battle'
+                }
+            break
+            case 8:
+                if(this.page==1&&e==0){
+                    this.deck.add(findCard('Imbalance'),0,stage.playerNumber+2)
+                }else if(this.page==2&&e==0){
+                    this.deck.add(findCard('Doubt'),0,stage.playerNumber+2)
+                }else if(this.page==3&&e==0){
+                    this.deck.add(findCard('Shame'),0,stage.playerNumber+2)
+                }
+            break
+            case 9:
+                if(this.page==0&&e==0){
+                    transition.scene='deck'
+                    this.setupDeck(1)
+                    this.context=1
+                }else if(this.page==0&&e==1){
+                    this.setupChoice(0,floor(random(1,2.5)),0)
+                    transition.scene='choice'
+                }else if(this.page==0&&e==2){
+                    transition.scene='deck'
+                    this.setupDeck(4)
+                    this.context=4
+                }
+            break
+            case 10:
+                if(this.page==0&&floor(random(0,3))==0){
+                    this.remember[0]=1
+                }else if(this.page==1&&e==0){
+                    this.currency.money+=15
+                    this.setupChoice(0,floor(random(1,2.5)),0)
+                    transition.scene='choice'
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-8)
+                }else if(this.page==4&&e==0){
+                    this.currency.money+=15
+                }
+            break
+            case 11:
+                if(this.page==1&&e==0){
+                    transition.scene='deck'
+                    this.setupDeck(1)
+                    this.context=1
+                }else if(this.page==2&&e==0){
+                    this.deck.add(findCard('Pain'),0,stage.playerNumber+2)
+                    current.getRelic(findRelic('Bent Pliers'))
+                }
+            break
+            case 12:
+                if(this.page==0&&e==0){
+                    setupEncounter(current,zones[0].special[2])
+                    this.create()
+                    transition.scene='battle'
+                }else if(this.page==1&&e==0){
+                    this.loseRelic()
+                }
+            break
+            case 13:
+                if(this.page==1&&e==0){
+                    this.loseRelic()
+                }else if(this.page==2&&e==0){
+                    this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
+                    this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
+                }else if(this.page==3&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-13)
+                }
+            break
+            case 14:
+                if(this.page==0&&e==0){
+                    setupEncounter(current,zones[0].special[3])
+                    this.create()
+                    transition.scene='battle'
+                    for(let f=0,lf=this.combatants.length;f<lf;f++){
+                        if(this.combatants[f].team==1){
+                            this.combatants[f].life=round(this.combatants[f].life*random(0.8,1))
+                        }
+                    }
+                }else if(this.page==0&&e==2&&floor(random(0,3))==0){
+                    this.remember[0]=1
+                }else if(this.page==1&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-7)
+                }else if(this.page==3&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-11)
+                    setupEncounter(current,zones[0].special[3])
+                    this.create()
+                    transition.scene='battle'
+                }
+            break
+            case 15:
+                if(this.page==0&&e==0){
+                    this.deck.add(findCard('Mixture A'),0,0)
+                }else if(this.page==0&&e==1){
+                    this.deck.add(findCard('Mixture B'),0,0)
+                }else if(this.page==0&&e==2){
+                    this.deck.add(findCard('Mixture C'),0,0)
+                }
+            break
+            case 16:
+                if(this.page==0&&(e==0||e==1)&&floor(random(0,3))==0){
+                    this.remember[0]=1
+                }else if(this.page==1&&e==0){
+                    this.currency.money+=50
+                }else if((this.page==2||this.page==3)&&e==0){
+                    this.currency.money-=50
+                }else if(this.page==4&&e==0){
+                    this.currency.money+=150
+                }
+            break
+            case 17:
+                if(this.page==0&&(e==0||e==1||e==2)&&floor(random(0,3))==0){
+                    this.remember[0]=1
+                }else if(this.page==1){
+                    this.currency.money+=100
+                }else if(this.page==2){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-30)
+                }
+            break
+            case 18:
+                if(this.page==1&&e==0){
+                    setupEncounter(current,zones[0].special[4])
+                    this.create()
+                    transition.scene='battle'
+                }
+            break
+            case 19:
+                if(this.page==0&&e==0){
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.setupDeck(14)
+                    this.context=14
+                }
+            break
+            case 20:
+                if(this.page==1&&e==0){
+                    this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
+                }else if(this.page==3&&e==0){
+                    this.currency.money-=20
+                }
+            break
+            case 21:
+                if(this.page==0&&e==0){
+                    this.currency.money-=50
+                    this.eventList.push(findEvent('Payout'))
+                }
+            break
+            case 22:
+                if(this.page==0&&e==0){
+                    this.currency.money+=250
+                }
+            break
+            case 23:
+                if(this.page==0&&e==0){
+                    this.currency.money-=60
+                }else if(this.page==0&&e==1){
+                    setupEncounter(current,zones[0].special[5])
+                    this.create()
+                    transition.scene='battle'
+                }
+            break
+            case 24:
+                if(this.page==0&&e==0&&floor(random(0,3))==0){
+                    this.remember[0]=1
+                }else if(this.page==1){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-20)
+                }else if(this.page==2){
+                    this.currency.money+=200
+                }
+            break
+            case 25:
+                if((this.page==0||this.page==1)&&e==0&&floor(random(0,3))==0){
+                    this.remember[0]=2-this.page
+                }else if((this.page==0||this.page==1||this.page==2)&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
+                }else if(this.page==3&&e==0){
+                    this.calc.list=[0,0,0,1,1,2]
+                    g=this.calc.list[floor(random(0,this.calc.list.length))]
+                    f=floor(random(0,this.relics.list[g].length))
+                    this.getRelic(this.relics.list[g][f])
+                    this.relics.list[g].splice(f,1)
+                }
+            break
+            case 26:
+                if(this.page==0&&e==1&&floor(random(0,2))==0){
+                    this.remember[0]=1
+                }else if(this.page==2&&e==0){
+                    this.currency.money+=100
+                }else if(this.page==3&&e==0){
+                    this.currency.money-=50
+                }
+            break
+            case 27:
+                if(this.page==1&&e==0){
+                    for(let g=0,lg=this.deck.cards.length;g<lg;g++){
+                        if(this.deck.cards[g].list==10){
+                            this.deck.cards.splice(g,1)
+                            g--
+                            lg--
+                        }
+                    }
+                }
+            break
+            case 28:
+                if(this.page==1&&e==0){
+                    this.currency.money+=75
+                }else if(this.page==2&&e==0){
+                    this.currency.money+=175
+                    this.deck.add(findCard('Regret'),0,stage.playerNumber+2)
+                }
+            break
+            case 29:
+                if(this.page==1&&e==0){
+                    transition.scene='deck'
+                    this.setupDeck(1)
+                    this.context=1
+                }
+            break
+            case 30:
+                if(this.page==1&&e==0){
+                    transition.scene='deck'
+                    this.setupDeck(15)
+                    this.context=15
+                }
+            break
+            case 31:
+                if(this.page==1&&e==0){
+                    transition.scene='deck'
+                    this.setupDeck(4)
+                    this.context=4
+                }
+            break
+            case 32:
+                if(this.page==1&&e==0){
+                    this.combatants[0].life+=5
+                    this.combatants[0].base.life+=5
+                }else if(this.page==2&&e==0){
+                    this.calc.list=[0,0,0,1,1,2]
+                    g=this.calc.list[floor(random(0,this.calc.list.length))]
+                    f=floor(random(0,this.relics.list[g].length))
+                    this.getRelic(this.relics.list[g][f])
+                    this.relics.list[g].splice(f,1)
+                    this.deck.add(findCard('Regret'),0,stage.playerNumber+2)
+                }
+            break
+            case 33:
+                if(this.page==0&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-12)
+                }else if(this.page==1&&e==0){
+                    this.deck.randomUpgrade()
+                    this.deck.randomUpgrade()
+                }
+            break
+            case 34:
+                if(this.page==0&&e==0){
+                    this.currency.main-=35
+                }else if(this.page==0&&e==1){
+                    this.currency.main-=50
+                }else if(this.page==1&&e==0){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
+                }else if(this.page==2&&e==0){
+                    transition.scene='deck'
+                    this.setupDeck(4)
+                    this.context=4
+                }
+            break
+            case 35:
+                if(this.page==0&&e==0){
+                    this.currency.money+=175
+                }else if(this.page==1&&e==0){
+                    this.deck.add(findCard('Doubt'),0,stage.playerNumber+2)
+                }
+            break
+            case 36:
+                if(this.page==1&&e==0){
+                    transition.scene='deck'
+                    this.setupDeck(4)
+                    this.context=4
+                }else if(this.page==2&&e==0){
+                    for(let g=0,lg=this.deck.cards.length;g<lg;g++){
+                        if(this.deck.cards[g].list==stage.playerNumber+1&&this.deck.cards[g].level==0){
+                            this.deck.cards[g].level++
+                            this.deck.cards[g]=reformCard(this.deck.cards[g])
+                        }
+                    }
+                }
+            break
+            case 37:
+                if(this.page==0&&e==0){
+                    this.combatants[0].base.life*=0.5
+                    this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                }else if(this.page==1&&e==0){
+                    for(let g=0;g<5;g++){
+                        this.deck.add(findCard('Apparition'),0,0)
+                    }
+                }
+            break
+            case 38:
+                if(this.page==0&&(e==0||e==1)){
+                    this.currency.money-=50
+                    if(floor(random(0,2))==0){
+                        this.remember[0]=1
+                    }
+                }else if(this.page==1&&e==0){
+                    this.currency.money+=100
+                }
+            break
+            case 39:
+                if(this.page==1&&e==0){
+                    transition.scene='choice'
+                    this.setupChoice(0,0,3)
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+25)
+                }
+            break
+            case 40:
+                if(this.page==0&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-18)
+                }else if(this.page==1&&e==0){
+                    this.combatants[0].life+=5
+                    this.combatants[0].base.life+=5
+                }else if(this.page==2&&e==0){
+                    this.deck.add(findCard('Decay'),0,stage.playerNumber+2)
+                }
+            break
+            case 41:
+                if(this.page==0&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-1)
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-2)
+                }else if(this.page==3&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
+                }else if(this.page==4&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-10)
+                }else if(this.page==5&&e==0){
+                    current.getRelic(findRelic('Audrian Codex'))
+                    this.eventList.push(findEvent('Collector'))
+                }
+            break
+            case 42:
+                if(this.page==0&&e==0){
+                    setupEncounter(current,zones[0].special[6])
+                    this.create()
+                    transition.scene='battle'
+                }else if(this.page==1&&e==0){
+                    this.deck.add(findCard('Guilt'),0,stage.playerNumber+2)
+                }
+            break
+            case 43:
+                if(this.page==1&&e==0){
+                    this.currency.money+=300
+                    this.relics.active[findRelic('Audrian Codex')]=false
+                }else if(this.page==2&&e==0){
+                    this.relics.active[findRelic('Audrian Codex')]=false
+                }
+            break
+            case 44:
+                if(this.page==0&&e==0){
+                    this.calc.list=[0,0,0,1,1,2]
+                    g=this.calc.list[floor(random(0,this.calc.list.length))]
+                    f=floor(random(0,this.relics.list[g].length))
+                    this.getRelic(this.relics.list[g][f])
+                    this.relics.list[g].splice(f,1)
+                }else if(this.page==1&&e==0){
+                    this.deck.add(findCard('Writhe'),0,stage.playerNumber+2)
+                }
+            break
+            case 45:
+                if(this.page==0&&(e==0||e==1||e==2)){
+                    this.combatants[0].life-=8
+                }else if(this.page==1&&e==0){
+                    this.currency.money+=45
+                }else if(this.page==2&&e==0){
+                    this.deck.add(listing.card[0][1][floor(random(0,listing.card[0][1].length))],0,0)
+                }else if(this.page==3&&e==0){
+                    this.calc.list=[0,0,0,1,1,2]
+                    g=this.calc.list[floor(random(0,this.calc.list.length))]
+                    f=floor(random(0,this.potions.list[g].length))
+                    this.getPotion(this.potions.list[g][f])
+                }
+            break
+            case 46:
+                if(this.page==0&&e==0){
+                    this.currency.money-=50
+                }else if(this.page==1&&e==0){
+                    this.calc.list=[0,0,0,1,1,2]
+                    g=this.calc.list[floor(random(0,this.calc.list.length))]
+                    f=floor(random(0,this.relics.list[g].length))
+                    this.getRelic(this.relics.list[g][f])
+                    this.relics.list[g].splice(f,1)
+                }else if(this.page==2&&e==0){
+                    this.calc.list=[0,0,0,1,1,2]
+                    g=this.calc.list[floor(random(0,this.calc.list.length))]
+                    f=floor(random(0,this.relics.list[g].length))
+                    this.getRelic(this.relics.list[g][f])
+                    this.relics.list[g].splice(f,1)
+                    this.deck.add(findCard('Shame'),0,stage.playerNumber+2)
+                }
+            break
+            case 47:
+                if(this.page==0&&e==0){
+                    this.combatants[0].base.life*=0.75
+                    this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                    for(let g=0,lg=this.deck.cards.length;g<lg;g++){
+                        if(this.deck.cards[g].list==stage.playerNumber+1&&this.deck.cards[g].attack==1){
+                            this.deck.cards.splice(g,1)
+                            g--
+                            lg--
+                        }
+                    }
+                }else if(this.page==1&&e==0){
+                    for(let g=0;g<5;g++){
+                        this.deck.add(findCard('Bite'),0,0)
+                    }
+                }
+            break
+            case 48:
+                if(this.page==0&&e==0){
+                    for(let g=0,lg=this.deck.cards.length;g<lg;g++){
+                        if(this.deck.cards[g].level==0){
+                            this.deck.cards[g].level++
+                            this.deck.cards[g]=reformCard(this.deck.cards[g])
+                        }
+                    }
+                }else if(this.page==0&&e==1){
+                    this.currency.money+=999
+                }else if(this.page==0&&e==2){
+                    this.combatants[0].life+=this.combatants[0].base.life*0.5
+                    this.combatants[0].base.life*=1.5
+                }else if(this.page==1&&e==0){
+                    this.getRelic(findRelic('Too Much Knowledge'))
+                }else if(this.page==2&&e==0){
+                    this.deck.add(findCard('Normality'),0,stage.playerNumber+2)
+                    this.deck.add(findCard('Normality'),0,stage.playerNumber+2)
+                }else if(this.page==3&&e==0){
+                    this.deck.add(findCard('Doubt'),0,stage.playerNumber+2)
+                }
+            break
+            case 49:
+                if(this.page==0){
+                    this.remember[1]=floor(random(0,4))
+                }else if(this.page==1&&e==0){
+                    this.deck.add(listing.card[0][1][floor(random(0,listing.card[0][1].length))],0,0)
+                }else if(this.page==2&&e==0){
+                    this.deck.add(listing.card[0][2][floor(random(0,listing.card[0][2].length))],0,0)
+                }
+            break
+            case 50:
+                if(this.page==1&&e==0){
+                    this.deck.add(findCard('Madness'),0,0)
+                    this.deck.add(findCard('Madness'),0,0)
+                    this.combatants[0].base.life-=10
+                    this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                }else if(this.page==2&&e==0){
+                    this.deck.add(findCard('Writhe'),0,stage.playerNumber+2)
+                }else if(this.page==3&&e==0){
+                    this.combatants[0].base.life-=5
+                    this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                }
+            break
+            case 51:
+                if(this.page==0){
+                    this.eventList.push(findEvent('The God'))
+                }
+                if(this.page==1&&e==0){
+                    this.combatants[0].life=this.combatants[0].base.life
+                }else if(this.page==2&&e==0){
+                    this.calc.list=[0,0,0,1,1,2]
+                    g=this.calc.list[floor(random(0,this.calc.list.length))]
+                    f=floor(random(0,this.relics.list[g].length))
+                    this.getRelic(this.relics.list[g][f])
+                    this.relics.list[g].splice(f,1)
+                }else if(this.page==3&&e==0){
+                    this.calc.list=[0,0,0,1,1,2]
+                    g=this.calc.list[floor(random(0,this.calc.list.length))]
+                    f=floor(random(0,this.potions.list[g].length))
+                    this.getPotion(this.potions.list[g][f])
+                }
+            break
+            case 52:
+                if(this.page==1&&e==0){
+                    this.currency.money+=10
+                }else if(this.page==2&&e==0){
+                    this.eventList.push(findEvent('Return of Duck'))
+                }else if(this.page==3&&e==0){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+20)
+                }
+            break
+            case 53:
+                if(this.page==0&&e==0){
+                    this.getRelic(findRelic('McDuck Burger'))
+                }
+            break
+            case 54:
+                if(this.page==1&&e==0){
+                    this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-6)
+                }
+            break
+            case 55:
+                if((this.page==2||this.page==4)&&e==0){
+                    this.calc.list=listing.card[this.player]
+                    if(this.calc.list.length>0){
+                        g=floor(random(0,this.calc.list.length))
+                        if(this.calc.list[g].length>0){
+                            h=floor(random(0,this.calc.list[g].length))
+                            this.deck.add(this.calc.list[g][h],0,types.card[this.calc.list[g][h]].list)
+                        }
+                    }
+                }else if(this.page==5&&e==0){
+                    this.combatants[0].base.meterControl+=2
+                }
+            break
+            case 56:
+                if(this.page==0&&e==0){
+                    this.currency.money+=50
+                }else if(this.page==0&&e==1){
+                    this.currency.money-=25
+                }else if(this.page==1&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-11)
+                }
+            break
+            case 57:
+                if(this.page==1&&e==0){
+                    setupEncounter(current,zones[0].special[7])
+                    this.create()
+                    transition.scene='battle'
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+20)
+                    this.deck.add(findCard('Parasite'),0,stage.playerNumber+2)
+                }
+            break
+            case 58:
+                if(this.page==0&&e==0){
+                    for(let h=0;h<3;h++){
+                        this.calc.list=[0,0,0,1,1,2]
+                        g=this.calc.list[floor(random(0,this.calc.list.length))]
+                        f=floor(random(0,this.relics.list[g].length))
+                        this.getRelic(this.relics.list[g][f])
+                        this.relics.list[g].splice(f,1)
+                    }
+                }else if(this.page==1&&e==0){
+                    setupEncounter(current,zones[0].special[8])
+                    this.create()
+                    transition.scene='battle'
+                }
+            break
+            case 59:
+                if(this.page==0&&e==1&&this.currency.money>0){
+                    this.currency.money=0
+                }else if(this.page==1&&e==0){
+                    setupEncounter(current,zones[0].special[9])
+                    this.create()
+                    transition.scene='battle'
+                }
+            break
+            case 60:
+                if(this.page==1&&e==0){
+                    setupEncounter(current,zones[0].special[10])
+                    this.create()
+                    transition.scene='battle'
+                }
+            break
+            case 61:
+                if(this.page==1&&e==0){
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.setupDeck(1)
+                    this.context=1
+                }else if(this.page==2&&e==0){
+                    transition.scene='choice'
+                    this.setupChoice(0,1,0)
+                }else if(this.page==3&&e==0){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+5)
+                }
+            break
+            case 62:
+                if(this.page==0&&(e==0||e==1)){
+                    this.currency.money-=25
+                }else if(this.page==1&&e==0){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life+=4
+                    this.combatants[0].base.life+=4
+                }else if(this.page==3&&e==0){
+                    this.currency.money+=10
+                }
+            break
+            case 63:
+                if(this.page==1&&e==0){
+                    this.calc.list=[0,0,0,1,1,2]
+                    g=this.calc.list[floor(random(0,this.calc.list.length))]
+                    f=floor(random(0,this.relics.list[g].length))
+                    this.getRelic(this.relics.list[g][f])
+                    this.relics.list[g].splice(f,1)
+                    this.currency.money+=45
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-25)
+                }
+            break
+            case 64:
+                if(this.page==1&&e==0){
+                    this.deck.add(findCard('Philosophy'),0,0)
+                }
+            break
+            case 65:
+                if(this.page==1&&e==0){
+                    this.deck.add(findCard('Anxiety'),0,stage.playerNumber+2)
+                }else if(this.page==2&&e==0){
+                    transition.scene='choice'
+                    this.setupChoice(0,2,0)
+                }
+            break
+            case 66:
+                if(this.page==0&&e==0){
+                    transition.trigger=true
+                    transition.scene='shop'
+                    this.setupShop(1)
+                }
+            break
+            case 67:
+                if(this.page==0&&e==0){
+                    this.currency.main+=100
+                    g=findEvent('Debt Squad')
+                    for(let f=0;f<25;f++){
+                        this.eventList.push(g)
+                    }
+                }
+            break
+            case 68:
+                if((this.page==0||this.page==1)&&e==0){
+                    setupEncounter(current,zones[0].special[11])
+                    this.create()
+                    transition.scene='battle'
+                }else if(this.page==0&&e==1&&this.currency.money>0){
+                    this.currency.money=0
+                }else if(this.page==1&&e==1){
+                    transition.trigger=false
+                }
+            break
+            case 69:
+                if(this.page==1&&e==0){
+                    setupEncounter(current,zones[0].special[12])
+                    this.create()
+                    transition.scene='battle'
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].base.life-=3
+                    this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                }
+            break
+            case 70:
+                if(this.page==1&&e==0){
+                    this.loseRelic()
+                    if(this.currency.money>0){
+                        this.currency.money=0
+                    }
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].base.life-=9
+                    this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                }else if(this.page==3&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-27)
+                }else if(this.page==4&&e==0){
+                    setupEncounter(current,zones[0].special[13])
+                    this.create()
+                    transition.scene='battle'
+                }
+            break
+            case 71:
+                if(this.page==0&&e==0){
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.setupDeck(16)
+                    this.context=16
+                }
+            break
+            case 72:
+                if(this.page==0&&e==0){
+                    this.currency.money-=40
+                }else if(this.page==0&&e==1){
+                    this.currency.money-=60
+                }else if(this.page==1&&e==0){
+                    this.deck.randomUpgrade()
+                    this.deck.randomUpgrade()
+                }else if(this.page==2&&e==0){
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.setupDeck(4)
+                    this.context=4
+                }else if(this.page==3&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-1)
+                }
+            break
+            case 73:
+                if(this.page==0&&e==0){
+                    this.loseRelic()
+                    this.getRelic(findRelic('Klein Box'))
+                }
+            break
+            case 74:
+                if(this.page==0&&e==0){
+                    this.combatants[0].base.life-=2
+                    this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                }else if(this.page==1&&e==0){
+                    transition.scene='choice'
+                    this.setupChoice(0,2,0)
+                }
+            break
+            case 75:
+                if(this.page==0&&e==0){
+                    transition.scene='choice'
+                    this.setupChoice(0,1,0)
+                }else if(this.page==0&&e==1){
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.setupDeck(1)
+                    this.context=1
+                }
+            break
+            case 76:
+                if(this.page==1&&e==0){
+                    this.getRelic(findRelic('Bottled Flame'))
+                }
+            break
+            case 77:
+                if(this.page==1&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-12)
+                    this.getRelic(findRelic('Bottled Rock'))
+                }
+            break
+            case 78:
+                if(this.page==1&&e==0){
+                    this.calc.list=[findCard('Charge'),findCard('Detonate'),findCard('Shielding'),findCard('Energize'),findCard('Darkness'),findCard('Zap'),findCard('Illuminate'),findCard('Enflame')]
+                    for(let g=0;g<3;g++){
+                        h=floor(random(0,this.calc.list.length))
+                        this.deck.add(this.calc.list[h],floor(random(0,2)),this.player)
+                        this.calc.list.splice(h,1)
+                    }
+                }
+            break
+            case 79:
+                if(this.page==2&&e==0){
+                    this.deck.add(findCard('MBF-32\nShield'),0,0)
+                }
+            break
+            case 80:
+                if(this.page==0&&e==0&&floor(random(0,2))==0){
+                    this.remember[0]=1
+                }else if(this.page==1&&e==0){
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.setupDeck(1)
+                    this.context=1
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-20)
+                    this.getRelic(findRelic('Martyrdom'))
+                }
+            break
+            case 81:
+                if(this.page==0&&e==0){
+                    this.combatants[0].base.life-=10
+                    this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                }else if(this.page==1&&e==0){
+                    this.getRelic(findRelic('Bottled Life'))
+                }
+            break
+            case 82:
+                if(this.page==1&&e==0){
+                    this.getPotion(findPotion('Starflame'))
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+6)
+                }
+            break
+            case 83:
+                if((this.page==1||this.page==2)&&e==0){
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.setupDeck(1)
+                    this.context=1
+                }
+            break
+            case 84:
+                if(this.page==2&&e==0){
+                    transition.scene='choice'
+                    this.setupChoice(0,1,0)
+                }
+            break
+            case 85:
+                if(this.page==0&&e==0){
+                    setupEncounter(current,zones[0].special[14])
+                    this.create()
+                    transition.scene='battle'
+                    this.objective=[[0,0,0,0],[0,0,2,75]]
+                }else if(this.page==0&&e==1&&floor(random(0,2))==0){
+                    this.remember[0]=1
+                }else if(this.page==1&&e==0){
+                    this.currency.money+=125
+                }else if(this.page==2&&e==0){
+                    this.currency.money-=125
+                }
+            break
+            case 86:
+                if(this.page==1&&e==0){
+                    this.deck.add(findCard('Pistol'),0,0)
+                }else if(this.page==12&&e==0){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+12)
+                }
+            break
+            case 87:
+                if(this.page==0&&e==0){
+                    this.getRelic(findRelic('Gold Bar'))
+                }else if(this.page==3&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-16)
+                }else if(this.page==4&&e==0){
+                    this.combatants[0].base.life-=10
+                    this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                }else if(this.page==5&&e==0){
+                    this.deck.add(findCard('Injury'),0,stage.playerNumber+2)
+                }
+            break
+            case 88:
+                if(this.page==1&&e==0){
+                    this.getPotion(findPotion('Cola'))
+                }
+            break
+            case 89:
+                if(this.page==1&&e==0){
+                    this.getRelic(findRelic('Dev Console'))
+                }
+            break
+            case 90:
+                if(this.page==1&&e==0){
+                    this.combatants[0].base.life=round(this.combatants[0].base.life*0.5)
+                    this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                    this.getRelic(findRelic('Orb of Discord'))
+                }
+            break
+            case 91:
+                if(this.page==2&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
+                }else if(this.page==3&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-9)
+                    this.combatants[0].base.meterControl+=2
+                }
+            break
+            case 92:
+                if(this.page==1&&e==0){
+                    this.getRelic(findRelic('Management Pin'))
+                }else if(this.page==2&&e==0){
+                    this.getRelic(findRelic('Shattered Pin'))
+                }else if(this.page==3&&e==0){
+                    this.currency.money+=235
+                }
+            break
+            case 93:
+                if(this.page==0&&e==0&&floor(random(0,2))==0){
+                    this.remember[0]=1
+                }else if(this.page==1&&e==0){
+                    this.currency.money+=9
+                    transition.scene='choice'
+                    this.setupChoice(0,1,0)
+                }else if(this.page==4&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-14)
+                }else if(this.page==5&&e==0){
+                    this.combatants[0].base.life-=3
+                    this.combatants[0].life=min(this.combatants[0].life,this.combatants[0].base.life)
+                }
+            break
+            case 94:
+                if(this.page==0&&(e==0||e==1)&&floor(random(0,4))==0){
+                    this.remember[0]=1
+                }else if(this.page==1&&e==0){
+                    this.currency.money+=40
+                }else if(this.page==2&&e==0){
+                    this.currency.money+=60
+                }else if(this.page==3&&e==0){
+                    this.currency.money+=9
+                    transition.scene='choice'
+                    this.setupChoice(0,2,0)
+                }else if(this.page==4&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-20)
+                }
+            break
+            case 95:
+                if(this.page==1&&e==0){
+                    this.calc.list=[0,0,0,1,1,2]
+                    g=this.calc.list[floor(random(0,this.calc.list.length))]
+                    f=floor(random(0,this.relics.list[g].length))
+                    this.getRelic(this.relics.list[g][f])
+                    this.relics.list[g].splice(f,1)
+                }else if(this.page==2&&e==0){
+                    transition.scene='choice'
+                    this.setupChoice(0,2,0)
+                }
+            break
+            case 96:
+                if(this.page==1&&e==0){
+                    this.getRelic(findRelic('Internal Wrath'))
+                }else if(this.page==2&&e==0){
+                    this.getRelic(findRelic('Internal Calm'))
+                }
+            break
+            case 97:
+                if(this.page==0&&e==0){
+                    this.currency.money-=100
+                }else if(this.page==1&&e==0){
+                    this.getRelic(findRelic('Stocks'))
+                }
+            break
+            case 98:
+                if(this.page==0&&e==0&&floor(random(0,2))==0){
+                    this.remember[0]=1
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-6)
+                }else if((this.page==3||this.page==4)&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
+                }else if(this.page==6&&e==0){
+                    this.calc.list=[0,0,0,1,1,2]
+                    g=this.calc.list[floor(random(0,this.calc.list.length))]
+                    f=floor(random(0,this.relics.list[g].length))
+                    this.getRelic(this.relics.list[g][f])
+                    this.relics.list[g].splice(f,1)
+                }
+            break
+            case 99:
+                if(this.page==0&&e==0&&floor(random(0,2))==0){
+                    this.remember[0]=1
+                }else if(this.page==2&&e==0){
+                    transition.scene='choice'
+                    this.setupChoice(0,1,0)
+                }else if(this.page==3&&e==0){
+                    this.deck.add(listing.card[this.player][2][floor(random(0,listing.card[this.player][2].length))],0,0)
+                }
+            break
+            case 100:
+                if(this.page==1&&e==0){
+                    this.getRelic(findRelic('Survival Notes'))
+                }else if(this.page==2&&e==0){
+                    this.currency.money+=55
+                }
+            break
+            case 101:
+                if(this.page==1&&e==0){
+                    this.calc.list=listing.card[this.player]
+                    if(this.calc.list.length>0){
+                        g=floor(random(0,this.calc.list.length))
+                        if(this.calc.list[g].length>0){
+                            h=floor(random(0,this.calc.list[g].length))
+                            this.deck.add(this.calc.list[g][h],0,types.card[this.calc.list[g][h]].list)
+                        }
+                    }
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-99)
+                }else if(this.page==3&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-9)
+                }
+            break
+            case 102:
+                if((this.page==0||this.page==1)&&e==1){
+                    setupEncounter(current,zones[0].special[15])
+                    this.create()
+                    transition.scene='battle'
+                }else if(this.page==1&&e==0){
+                    this.currency.money-=40
+                }
+            break
+            case 103:
+                if(this.page==1&&e==0){
+                    this.mana.gen--
+                    this.mana.main--
+                    this.mana.max--
+                    this.mana.base--
+                    this.getRelic(findRelic('Angelic Sphere'))
+                }
+            break
+            case 104:
+                if(this.page==0&&(e==0||e==1)&&floor(random(0,2))==0){
+                    this.remember[0]=1
+                }else if(this.page==1&&e==0){
+                    this.combatants[0].life=this.combatants[0].base.life
+                    transition.scene='deck'
+                    this.setupDeck(4)
+                    this.context=4
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-15)
+                }else if(this.page==3&&e==0){
+                    transition.scene='deck'
+                    this.setupDeck(4)
+                    this.context=4
+                }else if(this.page==4&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
+                }
+            break
+            case 105:
+                if(this.page==4&&e==0){
+                    this.combatants[0].base.meterControl+=2
+                }else if(this.page==5&&e==0){
+                    transition.scene='choice'
+                    this.setupChoice(0,2,0)
+                    this.deck.add(findCard('Injury'),0,stage.playerNumber+2)
+                }
+            break
+            case 106:
+                if(this.page==1&&e==0){
+                    for(let g=0;g<3;g++){
+                        this.deck.add(findCard('Broken\nParts'),0,0)
+                    }
+                }else if(this.page==2&&e==0){
+                    this.deck.add(findCard('Broken\nParts'),0,0)
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+5)
+                }else if(this.page==3&&e==0){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+15)
+                }
+            break
+            case 107:
+                if(this.page==0&&e==0){
+                    this.calc.list=[]
+                    for(let g=0,lg=types.card.length;g<lg;g++){
+                        if(types.card[g].list==this.player&&types.card[g].stats[1].class==3){
+                            this.calc.list.push(g)
+                        }
+                    }
+                    this.deck.add(this.calc.list[floor(random(0,this.calc.list.length))],1,this.player)
+                }
+            break
+            case 108:
+                if(this.page==0&&e==0){
+                    transition.trigger=true
+                    transition.scene='shop'
+                    this.setupShop(2)
+                }
+            break
+            case 109:
+                if(this.page==0&&e==0&&floor(random(0,2))==0){
+                    this.remember[0]=1
+                }else if(this.page==1&&e==0){
+                    this.currency.money+=25
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-6)
+                }
+            break
+            case 110:
+                if(this.page==0&&e==0){
+                    this.currency.money-=40
+                }else if(this.page==1&&e==0){
+                    this.deck.add(findCard('Monkey\nWrench'),0,0)
+                }
+            break
+            case 111:
+                if(this.page==1&&e==0){
+                    this.getRelic(findRelic('Ducksquad Badge'))
+                }
+            break
+            case 112:
+                if(this.page==0&&e==0){
+                    this.deck.cards.splice(floor(random(0,this.deck.cards.length)),1)
+                }else if(this.page==1&&e==0){
+                    this.currency.money+=35
+                }
+            break
+            case 113:
+                if((this.page==0||this.page==1)&&e==0){
+                    this.currency.money-=5
+                    if(floor(random(0,3))==0){
+                        this.remember[0]=1
+                    }
+                }else if(this.page==2&&e==0){
+                    transition.scene='deck'
+                    this.setupDeck(1)
+                    this.context=1
+                }
+            break
+            case 114:
+                if(this.page==1&&e==0){
+                    for(let h=0;h<3;h++){
+                        i=floor(random(0,3))
+                        g=listing.card[14][i][floor(random(0,listing.card[14][i].length))]
+                        this.deck.add(g,floor(random(0,2)),types.card[g].list)
+                    }
+                }else if(this.page==2&&e==0){
+                    this.calc.list=[0,0,0,1,1,2]
+                    g=this.calc.list[floor(random(0,this.calc.list.length))]
+                    f=floor(random(0,this.relics.list[g].length))
+                    this.getRelic(this.relics.list[g][f])
+                    this.relics.list[g].splice(f,1)
+                }
+            break
+            case 115:
+                if(this.page==1&&e==0){
+                    transition.scene='choice'
+                    this.setupChoice(0,0,0)
+                }
+            break
+            case 116:
+                if(this.page==1&&e==0){
+                    transition.scene='deck'
+                    this.setupDeck(1)
+                    this.context=1
+                }else if(this.page==2&&e==0){
+                    this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+10)
+                }
+            break
+            case 117:
+                if(this.page==1&&e==0){
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.setupDeck(14)
+                    this.context=14
+                }else if(this.page==2&&e==0){
+                    for(let g=0,lg=this.deck.cards.length;g<lg;g++){
+                        this.deck.cards.push(copyCard(this.deck.cards[g]))
+                    }
+                }
+            break
+            case 118:
+                if(this.page==1&&e==0){
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.setupDeck(4)
+                    this.context=4
+                }else if(this.page==2&&e==0){
+                    this.deck.cards=[]
+                    this.deck.add(findCard('Oroboros'),0,0)
+                }
+            break
+            case 119:
+                if(this.page==1&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-15)
+                }else if(this.page==2&&e==0){
+                    this.deck.add(findCard('Residue'),0,stage.playerNumber+2)
+                }
+            break
+            case 120:
+                if(this.page==0&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
+                }else if(this.page==1&&e==0){
+                    this.deck.add(findCard('Essence of\nthe Sea'),0,0)
+                }
+            break
+            case 121:
+                if(this.page==0&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
+                }else if(this.page==1&&e==0){
+                    this.deck.add(findCard('Essence of\nthe Air'),0,0)
+                }
+            break
+            case 122:
+                if(this.page==0&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
+                }else if(this.page==1&&e==0){
+                    this.deck.add(findCard('Essence of\nthe Earth'),0,0)
+                }
+            break
+            case 123:
+                if(this.page==0&&e==0){
+                    this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-5)
+                }else if(this.page==1&&e==0){
+                    this.deck.add(findCard('Essence of\nthe Flame'),0,0)
+                }
+            break
+            case 124:
+                if(this.page==1&&e==0){
+                    transition.trigger=true
+                    transition.scene='deck'
+                    this.setupDeck(15)
+                    this.context=15
+                }else if(this.page==2&&e==0){
+                    for(let g=0,lg=this.deck.cards.length;g<lg;g++){
+                        f=floor(random(0,3))
+                        this.deck.cards[g].type=listing.card[this.player][f][floor(random(0,listing.card[this.player][f].length))]
+                        this.deck.cards[g].color=this.player
+                        this.deck.cards[g]=reformCard(this.deck.cards[g])
+                    }
+                }
+            break
+            case 125:
+                if(this.page==1&&e==0){
+                    this.deck.add(listing.card[this.player][2][floor(random(0,listing.card[this.player][2].length))],0,this.player)
+                }
+            break
+        }
+        if(types.event[this.event].pages[this.page].link[e]!=-1){
+            this.page=types.event[this.event].pages[this.page].link[e]+this.remember[0]
         }
     }
     setupShop(spec){
@@ -4464,6 +4785,17 @@ class battle{
             }
         }
     }
+    onKeyBossChoice(key,code){
+        if(code==ENTER){
+            this.actComplete()
+        }
+        for(let e=0,le=this.relics.shop.length;e<le;e++){
+            if(int(key)==(e+1)){
+                this.getRelic(this.relics.shop[e])
+                this.actComplete()
+            }
+        }
+    }
     displayDictionary(){
         this.layer.stroke(100)
         this.layer.strokeWeight(4)
@@ -4486,8 +4818,6 @@ class battle{
         for(e=0,le=this.dict.suggestions.length;e<le;e++){
             this.layer.text(types.dictionary[this.dict.suggestions[e]].desc,430,110+e*60)
         }
-    }
-    updateDictionary(){
     }
     onClickDictionary(){
         if(pointInsideBox({position:inputs.rel},{position:{x:130,y:20},width:120,height:20})){

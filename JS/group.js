@@ -783,7 +783,7 @@ class group{
             }
         }
     }
-    onKey(key){
+    onKeyHand(key,code){
         if(this.trigger){
             switch(this.battle.attack.targetType){
                 case 1:
