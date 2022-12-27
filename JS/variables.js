@@ -1852,13 +1852,13 @@ types={
         ],
         },{name:'Danger',rarity:0,list:4,
         stats:[
-            {damage:8,alt:-4,cost:1,attack:65,target:1,spec:0,class:0},
-            {damage:12,alt:-4,cost:1,attack:65,target:1,spec:0,class:0},
+            {damage:9,alt:-4,cost:1,attack:65,target:1,spec:0,class:0},
+            {damage:13,alt:-4,cost:1,attack:65,target:1,spec:0,class:0},
         ],
         },{name:'Peace',rarity:0,list:4,
         stats:[
-            {damage:7,alt:4,cost:1,attack:66,target:0,spec:0,class:1},
-            {damage:11,alt:4,cost:1,attack:66,target:0,spec:0,class:1},
+            {damage:8,alt:4,cost:1,attack:66,target:0,spec:0,class:1},
+            {damage:12,alt:4,cost:1,attack:66,target:0,spec:0,class:1},
         ],
         },{name:'Outburst',rarity:1,list:4,
         stats:[
@@ -1872,8 +1872,8 @@ types={
         ],
         },{name:'Revert',rarity:0,list:4,
         stats:[
-            {damage:0,alt:0,cost:0,attack:69,target:0,spec:0,class:2},
-            {damage:0,alt:0,cost:0,attack:69,target:0,spec:2,class:2},
+            {damage:1,alt:0,cost:0,attack:69,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:69,target:0,spec:0,class:2},
         ],
         },{name:'Serenity',rarity:0,list:4,
         stats:[
@@ -1882,8 +1882,8 @@ types={
         ],
         },{name:'Windslash',rarity:0,list:4,
         stats:[
-            {damage:8,alt:-2,cost:2,attack:71,target:0,spec:11,class:0},
             {damage:13,alt:-2,cost:2,attack:71,target:0,spec:11,class:0},
+            {damage:18,alt:-2,cost:2,attack:71,target:0,spec:11,class:0},
         ],
         },{name:'Petal\nCloud',rarity:0,list:4,
         stats:[
@@ -2290,7 +2290,7 @@ types={
             {damage:4,alt:0,cost:1,attack:380,target:0,spec:10,class:2},
             {damage:5,alt:0,cost:1,attack:380,target:0,spec:10,class:2},
         ],
-        },{name:'Balance\nBuffer',rarity:0,list:4,
+        },{name:'Balance\nBoost',rarity:0,list:4,
         stats:[
             {damage:1,alt:0,cost:1,attack:381,target:0,spec:0,class:2},
             {damage:1,alt:0,cost:0,attack:381,target:0,spec:0,class:2},
@@ -2322,8 +2322,8 @@ types={
         ],
         },{name:'Tide',rarity:1,list:4,
         stats:[
-            {damage:3,alt:2,cost:0,attack:391,target:0,spec:0,class:2},
-            {damage:3,alt:2,cost:0,attack:391,target:0,spec:0,class:2},
+            {damage:1,alt:2,cost:0,attack:391,target:0,spec:0,class:2},
+            {damage:2,alt:2,cost:0,attack:391,target:0,spec:0,class:2},
         ],
         },{name:'Flowing\nMist',rarity:0,list:4,
         stats:[
@@ -4951,7 +4951,7 @@ types={
             desc:'Gain 1 Focus at\nthe Start of Combat',
         },{
             name:'Gymnastic Guide',id:37,rarity:0,list:4,
-            desc:'When Taken, Gain\n+2 Max Balance',
+            desc:'When Taken, Gain\n-2 Max Balance',
         },{
             name:'Cursed Holy Water',id:38,rarity:1,list:0,
             desc:'You Can Play and Exhaust\nCurses, Taking 1 Damage',
@@ -5041,7 +5041,7 @@ types={
             desc:'At the Start of Combat,\nCharge 1 Basic Charge',
         },{
             name:'Unbalanced Scale',id:67,rarity:1,list:4,
-            desc:'Reduce the Effect\nof Breaking Balance',
+            desc:'1.5x the Effect\nof Breaking Balance',
         },{
             name:'Enchanted Steak',id:68,rarity:2,list:0,
             desc:'Whenever You Play a\nPower, Heal 2 HP',
@@ -5305,7 +5305,7 @@ types={
             desc:'Trigger a Weak Evoke on Your\nRightmost Charge When You Take a hit',
         },{
             name:'Duality Charm',id:155,rarity:4,list:4,
-            desc:'When Balance Broken, Trigger the Opposite\nAffect on the Other End of Spectrum',
+            desc:'When Balance Broken, Trigger the\nAffect on the Other End of Spectrum',
         },{
             name:'Audrian Codex',id:156,rarity:-1,list:0,
             desc:'Every Turn, Choose a Random Card\nto Shuffle into Your Draw Pile',
@@ -6989,10 +6989,10 @@ types={
                     link:[-1],
                 },{
                     desc:"You tell him that you know him, and that while you would definitely like to kill him, you won't.\n"+
-                    "For how brutal the Management can be, not ever one of their employees must be punished.\n"+
+                    "For how brutal the Management can be, not every one of their employees must be punished.\n"+
                     "You leave him alive, but changed forever.",
                     option:['Leave'],
-                    optionDesc:['Gain +2 Max Balance'],
+                    optionDesc:['Gain -2 Max Balance'],
                     link:[-1],
                 },
             ],
@@ -7910,7 +7910,7 @@ types={
                     "You struggle to get him off of you, but he manages to stab your arm before you do so.\n"+
                     "When you try to finish him off, he runs away, leaving you somewhat confused.",
                     option:['Why?'],
-                    optionDesc:['Lose 9 Health, Gain +2 Max Balance'],
+                    optionDesc:['Lose 9 Health, Gain -2 Max Balance'],
                     link:[-1],
                 },{
                     desc:"He sees the threat and runs off before a fight starts.",
@@ -8360,7 +8360,7 @@ types={
                     "So it was the Manager himself who wanted to meet with you. But why would he?\n"+
                     "The beaureaucrat holds the door open as you leave, confused.",
                     option:['Leave'],
-                    optionDesc:['Gain +2 Max Balance'],
+                    optionDesc:['Gain -2 Max Balance'],
                     link:[-1],
                 },{
                     desc:"You take one guard out, but he manages to raise the alarm before he dies.\n"+
@@ -8953,7 +8953,7 @@ types={
         {name:'Hold',desc:'Add Charge to First Empty Slot,\mif No Empty Slots, Evokes First Charge'},
         {name:'Evoke',desc:'Uses Charge, Triggers an Effect'},
         {name:'Weak Evoke',desc:'Triggers a Weaker Effect, Does Not Remove Charge'},
-        {name:'Balance',desc:'Moves Along Line, If Below Negative Limit, Take 10 Damage,\mIf Below Positive Damage, Lose All Energy'},
+        {name:'Balance',desc:'Moves Along Line, If Below Negative\nLimit, Next Attack Deals Double Damage,\nIf Below Positive Damage, Gain 1 Energy'},
         {name:'Armed',desc:'Some Cards Are Only Usable While Armed or Unarmed'},
         {name:'Build',desc:'Fills up Health of Unbuilt Construct'},
         {name:'Construct',desc:'Ally to Player,\nSome Constructs Take Damage For Player When Built'},

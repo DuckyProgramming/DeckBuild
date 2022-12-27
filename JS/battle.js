@@ -483,7 +483,7 @@ class battle{
                 }
             break
             case 37:
-                this.combatants[0].base.meterControl+=2
+                this.combatants[0].base.meterControl-=2
             break
             case 54:
                 this.combatants[0].base.life+=10
@@ -791,7 +791,7 @@ class battle{
                     if(this.combatants[e].meter<0){
                         this.combatants[e].meter-=this.combatants[e].status.main[f]
                     }else if(this.combatants[e].meter>0){
-                        this.combatants[e].meter-=this.combatants[e].status.main[f]
+                        this.combatants[e].meter+=this.combatants[e].status.main[f]
                     }
                 }else if(f==145&&this.combatants[e].status.main[f]>0){
                     for(let g=0,lg=this.combatants.length;g<lg;g++){
@@ -3746,7 +3746,7 @@ class battle{
                         }
                     }
                 }else if(this.page==5&&e==0){
-                    this.combatants[0].base.meterControl+=2
+                    this.combatants[0].base.meterControl-=2
                 }
             break
             case 56:
@@ -4079,7 +4079,7 @@ class battle{
                     this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-3)
                 }else if(this.page==3&&e==0){
                     this.combatants[0].life=max(min(1,this.combatants[0].life),this.combatants[0].life-9)
-                    this.combatants[0].base.meterControl+=2
+                    this.combatants[0].base.meterControl-=2
                 }
             break
             case 92:
@@ -4232,7 +4232,7 @@ class battle{
             break
             case 105:
                 if(this.page==4&&e==0){
-                    this.combatants[0].base.meterControl+=2
+                    this.combatants[0].base.meterControl-=2
                 }else if(this.page==5&&e==0){
                     transition.scene='choice'
                     this.setupChoice(0,2,0)

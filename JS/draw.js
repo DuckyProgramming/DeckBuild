@@ -53,7 +53,6 @@ function draw(){
         case 'dictionary':
             graphics.main.background(80,85,90)
             current.displayDictionary()
-            current.updateDictionary()
         break
     }
     graphics.main.pop()

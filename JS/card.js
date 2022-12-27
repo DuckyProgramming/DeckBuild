@@ -141,7 +141,7 @@ class card{
             case 66: this.desc+='Add '+this.damage+' Block\n'+nfp(this.alt)+' Balance'; break
             case 67: this.desc+='If Balance\nis Positive,\nDeal Damage\nEqual to Balance\nReset Balance'; break
             case 68: this.desc+='If Balance\nis Negative, Add\nBlock Equal to\nNegative Balance\nReset Balance'; break
-            case 69: this.desc+='Reset Balance'; break
+            case 69: this.desc+='Reset Balance\nDraw '+this.damage+' Cards'; break
             case 70: this.desc+='Draw '+this.damage+' Cards\n'+nfp(this.alt)+' Balance'; break
             case 71: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\n'+nfp(this.alt)+' Balance\nPer Enemy'; break
             case 72: this.desc+='Deal '+this.damage+' Damage\nApply 1 Stun\n'+nfp(this.alt)+' Balance'; break
@@ -453,7 +453,7 @@ class card{
             case 378: this.desc+='Gain '+this.damage+' Control'; break
             case 379: this.desc+='Hold '+this.damage+' Dark\nCharge When You\nTake Damage'; break
             case 380: this.desc+='Draw '+this.damage+' Cards\nNext Turn'; break
-            case 381: this.desc+='Negate the\nNext Time you\nBreak Balance'; break
+            case 381: this.desc+='Double the\nNext Time you\nBreak Balance'; break
             case 382: this.desc+='If Unarmed\nAdd '+this.damage+' Block\nCounter Once With\nPush Collision\nfor '+this.damage+' Damage'; break
             case 383: this.desc+='If Unarmed\nApply '+this.damage+' Bleed\nApply '+this.alt+' Vulnerable'; break
             case 384: this.desc+='Gain '+this.damage+' Block\nCounter Once With\n1 Stun\n'+nfp(this.alt)+' Balance'; break

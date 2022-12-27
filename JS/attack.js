@@ -365,6 +365,9 @@ class attack{
                 break
                 case 69:
                     this.battle.combatants[0].meter=0
+                    for(g=0;g<this.damage;g++){
+                        this.battle.draw()
+                    }
                 break
                 case 70:
                     for(g=0;g<this.damage;g++){

@@ -3600,11 +3600,16 @@ class combatant{
 				this.meter=0
 				if(this.status.main[82]>0){
 					this.status.main[82]--
+					if(this.battle.relics.active[67]){
+						this.status.main[2]+=3
+					}else{
+						this.status.main[2]+=2
+					}
 				}else{
 					if(this.battle.relics.active[67]){
-						this.take(5,0)
+						this.status.main[2]+=2
 					}else{
-						this.take(10,0)
+						this.status.main[2]++
 					}
 				}
 				if(this.battle.relics.active[155]){
@@ -3620,12 +3625,16 @@ class combatant{
 			}else if(this.meter>this.base.meter){
 				this.meter=0
 				if(this.status.main[82]>0){
-					this.status.main[82]--
+					if(this.battle.relics.active[67]){
+						this.battle.mana.main+=3
+					}else{
+						this.battle.mana.main+=2
+					}
 				}else{
 					if(this.battle.relics.active[67]){
-						this.battle.mana.main=max(0,this.battle.mana.main-1)
+						this.battle.mana.main+=2
 					}else{
-						this.battle.mana.main=0
+						this.battle.mana.main++
 					}
 				}
 				if(this.battle.relics.active[155]){
