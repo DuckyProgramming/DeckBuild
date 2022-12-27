@@ -250,7 +250,7 @@ class battle{
         if(this.relics.active[10]){
             for(let e=0,le=this.combatants.length;e<le;e++){
                 if(this.combatants[e].team==1){
-                    this.combatants[e].boost.main[1]--
+                    this.combatants[e].boost.main[0]--
                 }
             }
         }
@@ -2969,6 +2969,9 @@ class battle{
         }
     }
     updateDeck(){
+        if(this.relics.active[25]){
+            this.costs.remove=60
+        }
         if((inputs.keys[0][2]||inputs.keys[1][2])&&this.deck.scroll<floor((this.deck.cards.length-1)/6)*200-400){
             this.deck.scroll+=30
             for(let g=0,lg=this.choice.cards.length;g<lg;g++){

@@ -260,7 +260,7 @@ function displayIntent(layer,x,y,fade,size,damage,alt,type){
 			layer.fill(255,50,50,fade*3/4)
 			layer.triangle(-20,0,15,-6,15,6)
 		break
-		case 19:
+		case 18:
 			layer.fill(255,125,125,fade*3/4)
 			layer.rect(0,0,8,24)
 			layer.rect(0,0,24,8)

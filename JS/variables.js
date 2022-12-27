@@ -1988,7 +1988,7 @@ types={
         },{name:'Sleeve\nSwipe',rarity:0,list:4,
         stats:[
             {damage:4,alt:-1,cost:1,attack:91,target:1,spec:10,class:0},
-            {damage:4,alt:-1,cost:0,attack:91,target:1,spec:10,class:0},
+            {damage:6,alt:-1,cost:0,attack:91,target:1,spec:10,class:0},
         ],
         },{name:'Puncture',rarity:0,list:4,
         stats:[
@@ -2042,8 +2042,8 @@ types={
         ],
         },{name:'Disjoint',rarity:0,list:4,
         stats:[
-            {damage:11,alt:1,cost:1,attack:186,target:1,spec:0,class:0},
-            {damage:15,alt:1,cost:1,attack:186,target:1,spec:0,class:0},
+            {damage:14,alt:1,cost:1,attack:186,target:1,spec:0,class:0},
+            {damage:20,alt:1,cost:1,attack:186,target:1,spec:0,class:0},
         ],
         },{name:'Petal\nShield',rarity:0,list:4,
         stats:[
@@ -2217,8 +2217,8 @@ types={
         ],
         },{name:'Body\nBlow',rarity:0,list:4,
         stats:[
-            {damage:4,alt:6,cost:1,attack:289,target:1,spec:0,class:0},
-            {damage:8,alt:9,cost:1,attack:289,target:1,spec:0,class:0},
+            {damage:4,alt:12,cost:1,attack:289,target:1,spec:0,class:0},
+            {damage:8,alt:18,cost:1,attack:289,target:1,spec:0,class:0},
         ],
         },{name:'Spartan\nKick',rarity:2,list:4,
         stats:[
@@ -2332,8 +2332,8 @@ types={
         ],
         },{name:'Nifty',rarity:1,list:4,
         stats:[
-            {damage:3,alt:0,cost:2,attack:703,target:0,spec:3,class:1},
-            {damage:3,alt:0,cost:1,attack:703,target:0,spec:3,class:1},
+            {damage:3,alt:3,cost:2,attack:703,target:0,spec:3,class:1},
+            {damage:3,alt:3,cost:1,attack:703,target:0,spec:3,class:1},
         ],
         },{name:'Footwork',rarity:1,list:4,
         stats:[
@@ -2347,8 +2347,8 @@ types={
         ],
         },{name:'Spikify',rarity:2,list:4,
         stats:[
-            {damage:1,alt:0,cost:2,attack:700,target:0,spec:0,class:2},
             {damage:1,alt:0,cost:1,attack:700,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:1,attack:700,target:0,spec:0,class:2},
         ],
         },{name:'Spinning\nMulti Slice',rarity:1,list:4,
         stats:[
@@ -4834,7 +4834,7 @@ types={
         },{
             combatants:[106,0,0,0,0,0],
             reinforce:[],
-            threshold:2,class:0,zone:2,
+            threshold:2,class:-1,zone:-1,
             objective:[[0,0,0,0]],
         },
     ],relic:[
@@ -5319,73 +5319,73 @@ types={
             name:'Klein Box',id:159,rarity:-1,list:0,
             desc:'Cards Earned from\nElite Fights are Rarer',
         },{
-            name:'Bottled Flame',id:160,rarity:-1,list:3,
+            name:'Bottled Flame',id:160,rarity:-1,list:0,
             desc:'At the Start of Combat,\nCharge 1 Flame Charge',
         },{
-            name:'Bottled Rock',id:161,rarity:-1,list:3,
+            name:'Bottled Rock',id:161,rarity:-1,list:0,
             desc:'At the Start of Combat,\nCharge 1 Rock Charge',
         },{
-            name:'Bottled Life',id:162,rarity:-1,list:3,
+            name:'Bottled Life',id:162,rarity:-1,list:0,
             desc:'At the Start of Combat,\nCharge 1 Life Charge',
         },{
-            name:'Martyrdom',id:163,rarity:-1,list:3,
+            name:'Martyrdom',id:163,rarity:-1,list:0,
             desc:'When You Take Unblocked\nDamage, Gain 5 Currency',
         },{
-            name:'Gold Bar',id:164,rarity:-1,list:3,
+            name:'Gold Bar',id:164,rarity:-1,list:0,
             desc:'Gain 50% More\nMoney from Fights',
         },{
-            name:'Dev Console',id:165,rarity:-1,list:3,
+            name:'Dev Console',id:165,rarity:-1,list:0,
             desc:'When Taken, Have\n999 Max Health',
         },{
-            name:'Orb of Discord',id:166,rarity:-1,list:3,
+            name:'Orb of Discord',id:166,rarity:-1,list:0,
             desc:'When you Evoke an Charge, 50%\nChange to Hold Another Random One',
         },{
-            name:'Management Pin',id:167,rarity:-1,list:3,
+            name:'Management Pin',id:167,rarity:-1,list:0,
             desc:'When You Take No Damage in\nCombat, Gain 1 Starting Strength',
         },{
-            name:'Shattered Pin',id:168,rarity:-1,list:3,
+            name:'Shattered Pin',id:168,rarity:-1,list:0,
             desc:'When an Enemy Dies,\nHeal 4 Health',
         },{
-            name:'Internal Wrath',id:169,rarity:-1,list:3,
+            name:'Internal Wrath',id:169,rarity:-1,list:0,
             desc:'When You Enter Wrath,\nGain 1 Strength',
         },{
-            name:'Internal Calm',id:170,rarity:-1,list:3,
+            name:'Internal Calm',id:170,rarity:-1,list:0,
             desc:'When You Enter Wrath,\nGain 1 Dexterity',
         },{
-            name:'Stocks',id:171,rarity:-1,list:3,
+            name:'Stocks',id:171,rarity:-1,list:0,
             desc:'Gain 10 Currency\nPer Room',
         },{
-            name:'Survival Notes',id:172,rarity:-1,list:3,
+            name:'Survival Notes',id:172,rarity:-1,list:0,
             desc:'Draw 1 Card When\nYou Draw a Status',
         },{
-            name:'Angelic Sphere',id:173,rarity:-1,list:3,
+            name:'Angelic Sphere',id:173,rarity:-1,list:0,
             desc:'Draw 1 Card When\nYou Evoke an Orb',
         },{
-            name:'Ducksquad Badge',id:174,rarity:-1,list:3,
+            name:'Ducksquad Badge',id:174,rarity:-1,list:0,
             desc:'You Do Not Have\nto Fight Ducks',
         },{
-            name:'Opening',id:175,rarity:0,list:4,
+            name:'Opening',id:175,rarity:0,list:5,
             desc:'All Builds Start\nWith 5 Progress',
         },{
-            name:'Constellation',id:176,rarity:0,list:5,
+            name:'Constellation',id:176,rarity:0,list:6,
             desc:'Every 7 Cards Played,\nDraw 1 Card and Discard 1 Card',
         },{
-            name:'Crack Shot',id:177,rarity:1,list:4,
+            name:'Crack Shot',id:177,rarity:1,list:5,
             desc:'Unblocked, Uncounterable\nAttacks Deal +2 Damage',
         },{
-            name:'Box of Thoughts',id:178,rarity:1,list:5,
+            name:'Box of Thoughts',id:178,rarity:1,list:6,
             desc:'Add 1 Exhausting Memory\nto Your Hand Every Combat',
         },{
-            name:'Cargo Pants',id:179,rarity:2,list:4,
+            name:'Cargo Pants',id:179,rarity:2,list:5,
             desc:'The First Exhausting Card\nYou Play Isn'+'"'+'t Exhausted',
         },{
-            name:'Memory Jar',id:180,rarity:2,list:5,
+            name:'Memory Jar',id:180,rarity:2,list:6,
             desc:'Memories have Retain',
         },{
-            name:'Extra Schematics',id:181,rarity:3,list:4,
+            name:'Extra Schematics',id:181,rarity:3,list:5,
             desc:'When You Play a\nBlueprint, Draw 1 Card',
         },{
-            name:'Star Chart',id:182,rarity:3,list:5,
+            name:'Star Chart',id:182,rarity:3,list:6,
             desc:'Whenever You Discard\na Memory, Draw 1 Carde',
         },/*{
             name:'',id:18,rarity:4,list:0,

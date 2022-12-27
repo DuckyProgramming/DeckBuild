@@ -363,7 +363,7 @@ class card{
             case 288: this.desc+='Deal '+this.damage+' Damage\nIf Target Has\nLess Than '+this.damage/2+'\nHealth, Set its\nHealth to 0\n'+nfp(this.alt)+' Balance'; break
             case 289: this.desc+='Deal '+this.damage+' Damage\nDeal '+this.alt+' Bonus\nDamage to Stunned'; break
             case 290: this.desc+='Convert Self\nBleed to Health'; break
-            case 291: this.desc+='Add '+this.damage+' Block\nDecrease Balance\nLimit by 5'; break
+            case 291: this.desc+='Add '+this.damage+' Block\nIncrease Balance\nLimit by 5'; break
             case 292: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Bleed\nApply 4 Bleed to Self\n'+nfp(-7)+' Balance'; break
             case 293: this.desc+='Multiply Bleed of\nTarget by '+this.damage+'\n'+nfp(this.alt)+' Balance'; break
             case 294: this.desc+='If Balance\nis Positive,\nGain Strength\nEqual to Balance/'+this.damage+'\nReset Balance'; break

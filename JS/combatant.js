@@ -3613,7 +3613,7 @@ class combatant{
 					}
 				}
 				if(this.battle.relics.active[155]){
-					this.battle.mana.main=max(this.battle.mana.main+1,this.battle.mana.main*2)
+					this.battle.mana.main++
 				}
 				if(this.battle.relics.active[121]){
 					for(g=0,lg=this.battle.combatants.length;g<lg;g++){
@@ -3638,7 +3638,7 @@ class combatant{
 					}
 				}
 				if(this.battle.relics.active[155]){
-					this.life=min(this.life+10,this.base.life)
+					this.status.main[2]++
 				}
 				if(this.battle.relics.active[121]){
 					for(g=0,lg=this.battle.combatants.length;g<lg;g++){

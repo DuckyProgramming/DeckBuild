@@ -488,14 +488,13 @@ class attack{
                     }
                 break
                 case 91:
-                    this.battle.combatants[this.target].take(this.damage+this.alt*this.combo,this.user)
+                    this.battle.combatants[this.target].take(this.damage,this.user)
                     if(this.target>1){
-                        this.battle.combatants[this.target-1].take(this.damage+this.alt*this.combo,0)
+                        this.battle.combatants[this.target-1].take(this.damage,this.user)
                     }
                     if(this.target<this.battle.combatants.length-1){
-                        this.battle.combatants[this.target+1].take(this.damage+this.alt*this.combo,0)
+                        this.battle.combatants[this.target+1].take(this.damage,this.user)
                     }
-                    this.battle.combatants[0].combo=0
                     this.battle.combatants[0].meter+=this.alt
                 break
                 case 92:
@@ -1419,7 +1418,7 @@ class attack{
                 break
                 case 291:
                     this.battle.combatants[0].addBlock(this.damage)
-                    this.battle.combatants[0].base.meter=max(0,this.battle.combatants[0].base.meter-5)
+                    this.battle.combatants[0].base.meter=max(0,this.battle.combatants[0].base.meter+5)
                 break
                 case 292:
                     this.battle.combatants[this.target].take(this.damage,this.user)
