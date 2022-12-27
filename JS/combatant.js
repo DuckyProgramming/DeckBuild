@@ -183,7 +183,7 @@ class combatant{
 				this.status.main[116]=2
 			break
 			case 15:
-				this.status.main[10]=1
+				this.status.main[45]=1
 			break
 			case 17:
 				this.status.main[154]=100
