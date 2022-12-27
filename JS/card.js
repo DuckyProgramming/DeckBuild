@@ -85,14 +85,14 @@ class card{
             case 10: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Gain\n'+this.alt+' Energy'; break
             case 11: this.desc+='Deal '+this.damage+' Damage\nGain '+this.alt+' Energy\nNext Turn'; break
             case 12: this.desc+='Deal '+this.damage+' Damage\nto All Enemies'; break
-            case 13: this.desc+='Hold '+this.damage+'\nBasic Charge'; break
+            case 13: this.desc+='Hold '+this.damage+'\nBasic Charge'; if(this.damage>1){this.desc+='s'} break
             case 14: this.desc+='Evoke 1st Charge\n'+this.damage+' Times'; break
             case 15: this.desc+='Hold '+this.damage+'\nExplosive Charge'; break
-            case 16: this.desc+='Hold '+this.damage+'\nShield Charge'; break
+            case 16: this.desc+='Hold '+this.damage+'\nShield Charge'; if(this.damage>1){this.desc+='s'} break
             case 17: this.desc+='Evoke All\nCharges'; break
             case 18: this.desc+='Deal '+this.damage+' Damage\nDiscard '+this.alt+' Cards'; break
             case 19: this.desc+='Lose 1\nAmmo Slot'; break
-            case 20: this.desc+='Hold '+this.damage+'\nEnergy Charge'; break
+            case 20: this.desc+='Hold '+this.damage+'\nEnergy Charge'; if(this.damage>1){this.desc+='s'} break
             case 21: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable'; break                
             case 22: this.desc+='Deal '+this.damage+' Damage\nAll Claws Gain\n+2 Damage'; break
             case 23: this.desc+='Deal '+this.damage+'X\nDamage'; break
@@ -246,7 +246,7 @@ class card{
             case 171: this.desc+='Gain '+this.damage+'\nControl'; break
             case 172: this.desc+='Apply '+this.damage+'\nVulnerable'; break
             case 173: this.desc+='Apply '+this.damage+'\nPoison'; break
-            case 174: this.desc+='Hold '+this.damage+'\nDark Charge'; break
+            case 174: this.desc+='Hold '+this.damage+'\nDark Charge'; if(this.damage>1){this.desc+='s'} break
             case 175: this.desc+='Deal '+this.damage+' Damage\nfor Every Combo'; break
             case 176: this.desc+='Add '+this.damage+' Dodge\nGain '+this.alt+' Strength'; break
             case 177: this.desc+='Deal '+this.damage+' Damage\nDeal Double Damage\nto Heavy Enemies'; break
@@ -292,13 +292,13 @@ class card{
             case 217: this.desc+='Deal '+this.damage+' Damage\nDisarm\nRearm Next Turn'; break
             case 218: this.desc+='Add '+this.damage+' Block\nPer Turn if Armed\n'+nfp(this.alt)+' Balance'; break
             case 219: this.desc+='When You Take\nUnblocked Damage,\nGain 1 Energy\nand 1 Strength'; break
-            case 220: this.desc+='Hold '+this.damage+'\nLightning Charge'; break
-            case 221: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nBasic Charge'; break
+            case 220: this.desc+='Hold '+this.damage+'\nLightning Charge'; if(this.damage>1){this.desc+='s'} break
+            case 221: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nBasic Charge'; if(this.alt>1){this.desc+='s'} break
             case 222: this.desc+='Deal '+this.damage+' Damage\nPer Charge'; break
             case 223: this.desc+='Add '+this.damage+' Block\nGain 1 Energy\nNext Turn'; break
-            case 224: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nShield Charges'; break
+            case 224: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nShield Charge'; if(this.alt>1){this.desc+='s'} break
             case 225: this.desc+='Deal '+this.damage+' Damage\nDraw '+this.alt+' Cards\nPer Charge'; break
-            case 226: this.desc+='Draw '+this.damage+' Cards\nHold '+this.alt+'\nShield Charge'; break
+            case 226: this.desc+='Draw '+this.damage+' Cards\nHold '+this.alt+'\nShield Charge'; if(this.alt>1){this.desc+='s'} break
             case 227: this.desc+='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nApply 1 Weak'; break
             case 228: this.desc+='Add '+this.damage+' Block\nPut a\nDiscarded Card\ninto Your Hand'; break
             case 229: this.desc+='Deal '+this.damage+' Damage\nNext Card\nPlayed Returns\nto Draw Pile'; break
@@ -310,7 +310,7 @@ class card{
             case 235: this.desc+='Gain Energy for\nEvery '+this.damage+' Cards\nin Draw Pile\n('+drawSize+')'; break
             case 236: this.desc+='Add '+this.damage+' Block\nIf You Have\nNo Block'; break
             case 237: this.desc+='Gain '+this.damage+'\nFocus'; break
-            case 238: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nHold '+this.alt+'\nDark Charge'; break
+            case 238: this.desc+='Deal '+this.damage+' Damage\nto All Enemies\nHold '+this.alt+'\nDark Charge'; if(this.alt>1){this.desc+='s'} break
             case 239: this.desc+='Double\nYour Energy'; break
             case 240: this.desc+='Add '+this.damage+' Block\nRetain Your Hand'; break
             case 241: this.desc+='Add '+this.damage+' Block\nTemporarily Increase\nBlock by '+this.alt; break
@@ -320,8 +320,8 @@ class card{
             case 245: this.desc+='Draw '+this.damage+' Cards\nAdd a Burn\nto Draw Pile'; break
             case 246: this.desc+='Lose '+this.damage+' Focus\nGain '+this.damage+' Strength\nGain '+this.damage+' Dexterity'; break
             case 247: this.desc+='Deal '+this.damage+' Damage\nto a Random Enemy\n'+this.alt+' Times'; break
-            case 248: this.desc+='When You\nTake Damage,\nHold '+this.damage+'\nLightning Charge'; break
-            case 249: this.desc+='When You\nPlay a Power,\nHold '+this.damage+'\nBasic Charge'; break
+            case 248: this.desc+='When You\nTake Damage,\nHold '+this.damage+'\nLightning Charge'; if(this.damage>1){this.desc+='s'} break
+            case 249: this.desc+='When You\nPlay a Power,\nHold '+this.damage+'\nBasic Charge'; if(this.damage>1){this.desc+='s'} break
             case 250: this.desc+='Hold X\nBasic Charges'; break
             case 251: this.desc+='Add a Random\nPower to\nYour Hand\nIt costs 0'; break
             case 252: this.desc+='Hold 1\nExplosive Charge\nPer Enemy'; break
@@ -329,7 +329,7 @@ class card{
             case 254: this.desc+='At the Start of\nYour Turn, Add\na Power Card\nto Your Hand'; break
             case 255: if(this.alt==0){this.desc+='Remove All Charges,\nGain 1 Energy and\nDraw 1 Card\nPer Charge'}else{this.desc+='Evoke All Charges,\nGain 1 Energy and\nDraw 1 Card\nPer Charge'}; break
             case 256: this.desc+='Deal '+this.damage+' Damage\nLose '+this.alt+' Focus'; break
-            case 257: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+' Energy\nCharges'; break
+            case 257: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+' Energy\nCharge'; if(this.alt>1){this.desc+='s'} break
             case 258: if(this.damage==0){this.desc+='Evoke 1st Charge\nX Times'}else{this.desc+='Evoke 1st Charge\nX+'+this.damage+' Times'}; break
             case 259: this.desc+='Hold '+this.damage+' Shield Charge\nHold '+this.damage+' Dark Charge\nHold '+this.damage+' Lightning\nCharge'; break
             case 260: this.desc+='Convert '+this.damage+'x Combo\nto Health\nEnd Combo'; break
@@ -418,24 +418,24 @@ class card{
             case 343: this.desc+='Evoke 1st Charge\nfor Every Enemy'; break
             case 344: this.desc+='Evoke Last Charge\n'+this.damage+' Times'; break
             case 345: this.desc+='Add Block Equal\nto '+this.damage+'x Number of\nShield Charges Held\nThis Combat\n('+random.shields+')'; break
-            case 346: this.desc+='Add '+this.damage+' Block\nHold '+this.alt+'\nShield Charges'; break
+            case 346: this.desc+='Add '+this.damage+' Block\nHold '+this.alt+'\nShield Charge'; if(this.damage>1){this.desc+='s'} break
             case 347: this.desc+='Gain '+this.damage+' Strength\nPer Shield Charge'; break
             case 348: this.desc+='Evoke All\nExplosive Charges\nReplace Them\nWith Basic Charges'; break
             case 349: this.desc+='Deal '+this.damage+' Damage\nDouble Vulnerable\non Target'; break
             case 350: this.desc+='Apply '+this.damage+' Vulnerable\nApply '+this.alt+' Lock-On'; break
-            case 351: this.desc+='Hold '+this.damage+'\nLight Charge'; break
-            case 352: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nLight Charge'; break
+            case 351: this.desc+='Hold '+this.damage+'\nLight Charge'; if(this.damage>1){this.desc+='s'} break
+            case 352: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nLight Charge'; if(this.alt>1){this.desc+='s'} break
             case 353: this.desc+='Hold '+this.damage+'\nLight Charges'; break
             case 354: this.desc+='Evoke All\nLight Charges\nReplace Them\nWith Explosive\nCharges'; break
-            case 355: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Hold '+this.alt+'\nLight Charge'; break
+            case 355: this.desc+='Deal '+this.damage+' Damage\nIf Fatal, Hold '+this.alt+'\nLight Charge'; if(this.alt>1){this.desc+='s'} break
             case 356: this.desc+='Hold '+this.damage+'\nFlame Charge'; break
             case 357: this.desc+='Hold '+this.damage+' Energy Charge\nHold '+this.damage+' Light Charge\nHold '+this.damage+' Flame Charge'; break
-            case 358: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nFlame Charges'; break
+            case 358: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+'\nFlame Charge'; if(this.alt>1){this.desc+='s'} break
             case 359: this.desc+='Hold '+this.damage+'\nFlame Charge\nPer Burn in\nYour Deck'; break
             case 360: this.desc+='Hold '+this.damage+'\nRandom Charges'; break
             case 361: if(this.damage>0){this.desc+='End Your Turn\nRetain Your Energy\nfor Next Turn\nGain '+this.damage+' Energy'}else{this.desc+='End Your Turn\nRetain Your Energy\nfor Next Turn'}; break
             case 362: this.desc+='Gain '+this.damage+' Energy\nCause an Enemy\nto Attack'; break
-            case 363: this.desc+='Evoke 1st Charge\nHold that Charge\n'+this.damage+' Times'; break
+            case 363: this.desc+='Evoke 1st Charge\nHold that Charge\n'+this.damage+' Time'; if(this.damage>1){this.desc+='s'} break
             case 364: this.desc+='If 1st Charge\nis a Shield\nCharge, Evoke it,\nAdding '+this.damage+' Buffer'; break
             case 365: this.desc+='Deal '+this.damage+' Damage\n'+this.alt+' Times\nHold 1 Lightning\nCharge'; break
             case 366: this.desc+='If 1st Charge\nis an Explosive\nCharge, Evoke it,\nDealing All Damage\nto 1 Enemy'; break
@@ -470,7 +470,7 @@ class card{
             case 395: this.desc+='Gain '+this.damage+' Intangible'; if(this.spec!=0){this.desc+='\nExhaust\nEthereal'} break
             case 396: this.desc+='Deal '+this.damage+' Damage\nHeal '+this.alt+' Health'; break
             case 397: this.desc+='A Random Card\nin Your Hand\nCosts 0'; break
-            case 398: this.desc+='Hold '+this.damage+' Light Charge\nGain '+this.alt+' Weak\nGain '+this.alt+' Frail'; break
+            case 398: this.desc+='Hold '+this.damage+' Light Charge'; if(this.damage>1){this.desc+='s'} this.desc+='\nGain '+this.alt+' Weak\nGain '+this.alt+' Frail'; break
             case 399: this.desc+='Gain '+this.damage+'\nArmor'; break
             case 400: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Frail\nNo Combo Gain'; break
             case 401: this.desc+='Set Construct to\nWall'; if(this.damage>0){this.desc+='\nBuild '+this.damage+' of Construct'} break
@@ -753,17 +753,17 @@ class card{
             case 678: this.desc+='Deal '+this.damage+' Damage\nFor Each Debuff\nof Target'; break
             case 679: this.desc+='If Target Has\nLess Than '+(this.damage*10)+'%\nHealth, Kill it'; break
             case 680: this.desc+='Hold '+this.damage+' Lightning\nCharges\nAdd '+this.alt+' Block\nFor Every Lightning\nCharge'; break
-            case 681: this.desc+='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nHold '+this.alt+' Shield\nCharge'; break
+            case 681: this.desc+='Deal '+this.damage+' Damage\nIf the Enemy\nIntends to Attack,\nHold '+this.alt+' Shield\nCharge'; if(this.alt>1){this.desc+='s'} break
             case 682: this.desc+='Hold '+this.damage+' Lightning\nCharges\nTrigger Weak Evokes\non All Orbs'; break
             case 683: this.desc+='Deal '+this.damage+' Damage\nAll Claws Gain\n+5 Damage'; break
-            case 684: this.desc+='Hold '+this.damage+'\nBasic Charges\nAll Claws Gain\n+2 Damage'; break
+            case 684: this.desc+='Hold '+this.damage+'\nBasic Charge'; if(this.damage>1){this.desc+='s'} this.desc+='\nAll Claws Gain\n+2 Damage'; break
             case 685: this.desc+='Draw '+this.damage+' Cards\nAdd '+this.alt+' Block\nPer Charge'; break
             case 686: this.desc+='Deal '+this.damage+' Damage\nAdd '+this.alt+' Block\nNext Turn'; break
-            case 687: this.desc+='Dark Charge Gain\nPower '+this.damage+' Faster\nPer Turn'; break
-            case 688: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+' Dark\nCharge'; break
+            case 687: this.desc+='Dark Charges Gain\nPower '+this.damage+' Faster\nPer Turn'; break
+            case 688: this.desc+='Deal '+this.damage+' Damage\nHold '+this.alt+' Dark\nCharge'; if(this.alt>1){this.desc+='s'} break
             case 689: this.desc+='All Held Dark\nCharges Have '+this.damage+'x\nMore Power'; break
             case 690: this.desc+='Fill All Empty\nCharge Slots With\nShield Charges'; break
-            case 691: this.desc+='Hold '+this.damage+'\nBasic Charge\nEvery Turn'; break
+            case 691: this.desc+='Hold '+this.damage+'\nBasic Charge'; if(this.damage>1){this.desc+='s'} this.desc+='\nEvery Turn'; break
             case 692: this.desc+='Basic Charges\nAct as Explosive\nCharges'; break
             case 693: this.desc+='Draw '+this.damage+' Cards\nLose '+this.alt+' Focus'; break
             case 694: this.desc+='Draw '+this.damage+' Cards\nDiscard Them if\nThey Do Not Cost 0'; break

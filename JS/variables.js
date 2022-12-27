@@ -1416,7 +1416,7 @@ types={
         },{name:'Possibilities',rarity:1,list:3,
         stats:[
             {damage:1,alt:0,cost:1,attack:243,target:0,spec:0,class:2},
-            {damage:1,alt:0,cost:1,attack:243,target:0,spec:7,class:2},
+            {damage:1,alt:0,cost:1,attack:243,target:0,spec:10,class:2},
         ],
         },{name:'Loop',rarity:1,list:3,
         stats:[
@@ -1690,8 +1690,8 @@ types={
         ],
         },{name:'Contain',rarity:0,list:3,
         stats:[
-            {damage:2,alt:0,cost:1,attack:370,target:0,spec:0,class:2},
-            {damage:3,alt:0,cost:1,attack:370,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:1,attack:370,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:370,target:0,spec:0,class:2},
         ],
         },{name:'Quick\nShot',rarity:0,list:3,
         stats:[
@@ -1740,8 +1740,8 @@ types={
         ],
         },{name:'Abyss',rarity:2,list:3,
         stats:[
-            {damage:1,alt:0,cost:2,attack:379,target:0,spec:0,class:2},
             {damage:1,alt:0,cost:1,attack:379,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:379,target:0,spec:0,class:2},
         ],
         },{name:'Exploit\nWeakness',rarity:1,list:3,
         stats:[
@@ -2670,7 +2670,7 @@ types={
         },{name:'Coffee',rarity:0,list:5,
         stats:[
             {damage:2,alt:0,cost:0,attack:449,target:0,spec:0,class:2},
-            {damage:2,alt:0,cost:0,attack:449,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:0,attack:449,target:0,spec:0,class:2},
         ],
         },{name:'Extend',rarity:0,list:5,
         stats:[
@@ -2699,8 +2699,8 @@ types={
         ],
         },{name:'Bullet\nSpray',rarity:1,list:5,
         stats:[
-            {damage:2,alt:12,cost:3,attack:455,target:0,spec:0,class:0},
-            {damage:3,alt:15,cost:3,attack:455,target:0,spec:0,class:0},
+            {damage:3,alt:12,cost:3,attack:455,target:0,spec:0,class:0},
+            {damage:4,alt:15,cost:3,attack:455,target:0,spec:0,class:0},
         ],
         },{name:'Methods',rarity:0,list:5,
         stats:[
@@ -3516,8 +3516,8 @@ types={
         ],
         },{name:'Interior\nBurst',rarity:0,list:6,
         stats:[
-            {damage:4,alt:4,cost:1,attack:615,target:1,spec:0,class:0},
-            {damage:6,alt:8,cost:1,attack:615,target:1,spec:0,class:0},
+            {damage:4,alt:8,cost:1,attack:615,target:1,spec:0,class:0},
+            {damage:6,alt:10,cost:1,attack:615,target:1,spec:0,class:0},
         ],
         },{name:'Facade',rarity:0,list:6,
         stats:[
@@ -4378,11 +4378,11 @@ types={
         {name:'Management Soldier',alt:'',life:90,height:78,behavior:0,attacks:[10,6,29],damage:[4,12,3],altAttack:['Electrocuted','Dazed',0],class:0,buff:11},
         {name:'Management Officer',alt:'',life:45,height:78,behavior:0,attacks:[7,6],damage:[2,8],altAttack:[0,'Dazed'],class:0,buff:12},
         {name:'Management',alt:'Special Forces',life:120,height:78,behavior:1,attacks:[1,3,10,10],damage:[18,3,8,2],altAttack:[0,5,'Electrocuted','Void'],class:0,buff:11},
-        {name:'Big Slime',alt:'',life:40,height:65,behavior:0,attacks:[1,6,7],damage:[11,6,3],altAttack:[0,'Stuck',0],class:0,buff:0},
+        {name:'Big Slime',alt:'',life:40,height:65,behavior:0,attacks:[1,6,7],damage:[11,6,2],altAttack:[0,'Stuck',0],class:0,buff:0},
         {name:'Spike Slime',alt:'',life:14,height:45,behavior:0,attacks:[1,6,7],damage:[7,4,2],altAttack:[0,'Spiked',0],class:0,buff:13},
-        {name:'Big Spike Slime',alt:'',life:28,height:65,behavior:0,attacks:[1,6,7],damage:[11,6,3],altAttack:[0,'Spiked',0],class:0,buff:14},
+        {name:'Big Spike Slime',alt:'',life:28,height:65,behavior:0,attacks:[1,6,7],damage:[11,6,2],altAttack:[0,'Spiked',0],class:0,buff:14},
         {name:'Slimoid',alt:'',life:35,height:45,behavior:0,attacks:[1,6,7],damage:[12,6,2],altAttack:[0,'Glued',0],class:0,buff:15},
-        {name:'Big Slimoid',alt:'',life:70,height:65,behavior:0,attacks:[1,6,7],damage:[18,9,3],altAttack:[0,'Glued',0],class:0,buff:15},//80
+        {name:'Big Slimoid',alt:'',life:70,height:65,behavior:0,attacks:[1,6,7],damage:[18,9,2],altAttack:[0,'Glued',0],class:0,buff:15},//80
         {name:'Moss Creature',alt:'',life:33,height:75,behavior:0,attacks:[3,8],damage:[3,6],altAttack:[2,0],class:0,buff:16},
         {name:'Goblin',alt:'',life:10,height:45,behavior:0,attacks:[1,1,1,3,3,2,21,21,21,21],damage:[1,2,3,1,1,0,0,0,0,0],altAttack:[0,0,0,2,3,'Light\nBleed',0,0,0,0],class:0,buff:0},
         {name:'Auto-Detonator',alt:'',life:250,height:45,behavior:0,attacks:[8],damage:[1],altAttack:[0],class:1,buff:17},

@@ -1110,6 +1110,7 @@ class battle{
             }
             for(let g=0,lg=this.hand.cards.length;g<lg;g++){
                 if(this.hand.cards[g].attack==194&&this.hand.cards[g].cost>0){
+
                     this.hand.cards[g].cost--
                 }
             }
@@ -1126,7 +1127,7 @@ class battle{
             }
             if(this.combatants[0].status.main[53]>0){
                 for(let g=0,lg=this.hand.cards.length;g<lg;g++){
-                    if(this.hand.cards[g].trigger&&this.hand.cards[g].cost!=0){
+                    if(this.hand.cards[g].trigger&&this.hand.cards[g].base.cost!=0){
                         for(let h=0;h<this.combatants[0].status.main[53];h++){
                             this.draw()
                         }
@@ -3095,6 +3096,24 @@ class battle{
                     "The supervisor waves his hand. The machine stops. You're finally able to recover and reevaluate the situation.\n"+
                     "He smiles and writes something down on a notepad, handing it to one of the scientists."
                 break
+                case 4:
+                    types.event[this.event].pages[this.page].desc+="PRIDE\n"+"Finally, you have escaped the ghetto.\n"+
+                    "There was a time when some officer could tell you what to do, but now, you are free.\n"+
+                    "But with the guards still chasing you, there's only one place to go."+
+                    "You fly toward the Empire of Konai."
+                break
+                case 5:
+                    types.event[this.event].pages[this.page].desc+="EMPTINESS\n"+"How did you get here, you no longer know.\n"+
+                    "You know absolutely nothing. The beam recedes, taking your memories with it..\n"+
+                    "There's nothing you can do; your mind is spinning from the shock."+
+                    "The only way is forward."
+                break
+                case 6:
+                    types.event[this.event].pages[this.page].desc+="FAILURE\n"+"The hammer has come down.\n"+
+                    "The lawyers talk amongst themselves, happy that they've received their verdict.\n"+
+                    "The judge signs a couple papers before leaving you to your fate."+
+                    "The soldiers take you away, but..."
+                break
             }
         }else if(types.event[this.event].id==51){
             types.event[this.event].pages[this.page].desc="You see a strange blue glow coming from a nearby lake. As you approach, you notice a woman sitting on a ledge.\n"+
@@ -3656,7 +3675,7 @@ class battle{
             break
             case 49:
                 if(this.page==0){
-                    this.remember[1]=floor(random(0,4))
+                    this.remember[1]=floor(random(0,7))
                 }else if(this.page==1&&e==0){
                     this.deck.add(listing.card[0][1][floor(random(0,listing.card[0][1].length))],0,0)
                 }else if(this.page==2&&e==0){
