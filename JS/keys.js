@@ -29,6 +29,9 @@ function keyPressed(){
         case 'dictionary':
             current.onKeyDictionary(key,keyCode)
         break
+        case 'battle':
+            current.hand.onKey(key)
+        break
     }
 }
 function keyReleased(){

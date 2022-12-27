@@ -773,10 +773,10 @@ class battle{
                     }
                 }
                 if((f==11||f==37)&&this.combatants[e].status.main[f]>0){
-                    this.combatants[e].take(this.combatants[e].status.main[f],e)
+                    this.combatants[e].take(this.combatants[e].status.main[f],-1)
                     this.combatants[e].status.main[f]--
                 }else if((f==71||f==104)&&this.combatants[e].status.main[f]>0){
-                    this.combatants[e].take(this.combatants[e].status.main[f],e)
+                    this.combatants[e].take(this.combatants[e].status.main[f],-1)
                 }else if(f==38&&this.combatants[e].status.main[f]>0){
                     this.combatants[e].life=min(this.combatants[e].life+this.combatants[e].status.main[f],this.combatants[e].base.life)
                     this.combatants[e].status.main[f]--
@@ -2317,12 +2317,12 @@ class battle{
         this.map.position=[-1,0]
         this.map.scroll=0
         this.map.scrollGoal=0
-        for(let e=0;e<15;e++){
+        for(let e=0;e<19;e++){
             this.map.main.push([])
             this.map.complete.push([])
         }
         for(let e=0,le=this.map.main.length;e<le;e++){
-            for(let f=0;f<min(5,8-abs(7-e));f++){
+            for(let f=0;f<min(5,10-abs(9-e));f++){
                 if(e==this.map.main.length-1){
                     this.map.main[e].push(5)
                 }else if(floor(random(0,3))==0||e<2){
@@ -2432,6 +2432,8 @@ class battle{
                             this.random.class=0
                             if(this.map.position[0]==0){
                                 setupEncounter(this,zones[this.map.zone].special[0])
+                            }else if(this.map.position[0]==1&&this.map.zone==0){
+                                setupEncounter(this,73)
                             }else{
                                 setupEncounter(this,zones[this.map.zone].encounters[0][floor(random(0,zones[this.map.zone].encounters[0].length))])
                             }

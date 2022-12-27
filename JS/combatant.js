@@ -2834,6 +2834,24 @@ class combatant{
 					this.layer.line(-16,-88,16,-88)
 					this.layer.quad(-12,-88,12,-88,8,-94,-8,-94)
 				break
+				case 106:
+					this.layer.stroke(50,150,100,this.fade)
+					this.layer.strokeWeight(3)
+					this.layer.line(-2,-30,-6,0)
+					this.layer.line(2,-30,6,0)
+					this.layer.line(-3,-39,-9,-21)
+					this.layer.line(3,-39,9,-21)
+					this.layer.noStroke()
+					this.layer.fill(50,150,100,this.fade)
+					this.layer.ellipse(0,-33,9,36)
+					this.layer.fill(50,200,150,this.fade)
+					this.layer.ellipse(0,-60,27,27)
+					this.layer.triangle(-9,-63,-3,-69,-18,-67)
+					this.layer.triangle(9,-63,3,-69,18,-67)
+					this.layer.fill(0,this.fade)
+					this.layer.ellipse(3,-55,4,4)
+					this.layer.ellipse(10,-55,4,4)
+				break
 			}
 			if(this.team==0&&detail==0){
 				for(let e=0,le=this.uniqueDisplay.length;e<le;e++){
@@ -2909,7 +2927,7 @@ class combatant{
 		}
 		this.layer.fill(0,this.fade)
 		this.layer.textSize(8)
-		this.layer.text(max(0,ceil(this.life*10)/10)+"/"+max(0,ceil(this.base.life)),0,21)
+		this.layer.text(max(0,ceil(this.life*10)/10)+"/"+max(0,ceil(this.base.life*10)/10),0,21)
 		if(this.fades.block>0){
 			this.layer.text(ceil(this.block*10)/10,-30,20)
 		}
@@ -3375,7 +3393,7 @@ class combatant{
 				}
 				if(this.id==0){
 					this.battle.random.taken++
-					if(this.battle.relics.active[11]){
+					if(this.battle.relics.active[11]&&user>0){
 						this.battle.combatants[user].take(3,-1)
 					}
 					if(this.battle.relics.active[12]&&this.battle.random.taken==1){

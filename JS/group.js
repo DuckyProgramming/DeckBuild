@@ -394,7 +394,9 @@ class group{
                                 this.calc.list.push(f)
                             }
                         }
-                        this.battle.combatants[this.calc.list[floor(random(0,this.calc.list.length))]].take(3,0)
+                        if(this.calc.list.length>0){
+                            this.battle.combatants[this.calc.list[floor(random(0,this.calc.list.length))]].take(3,0)
+                        }
                     }
                     if(this.battle.relics.active[96]){
                         this.battle.combatants[0].addBlock(3)
@@ -759,6 +761,318 @@ class group{
                     this.cards[e].used=true
                     this.cards[e].exhaust=true
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.select&&!this.cards[e].trigger&&(this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7||this.cards[e].list==10&&this.battle.relics.active[38]||this.cards[e].list==11&&this.battle.relics.active[108])){
+                    this.cards[e].select=true
+                    this.select=true
+                    this.selected=true
+                    if(this.cards[e].spec==4){
+                        this.anim.selectCombo=true
+                    }else{
+                        this.anim.selectCombo=false
+                    }
+                }
+            }
+            if(!this.selected){
+                this.select=false
+            }
+            if(this.trigger){
+                for(let e=0,le=this.cards.length;e<le;e++){
+                    if(this.cards[e].select&&!this.cards[e].trigger){
+                        this.cards[e].select=false
+                    }
+                }
+            }
+        }
+    }
+    onKey(key){
+        if(this.trigger){
+            switch(this.battle.attack.targetType){
+                case 1:
+                    for(let e=0,le=this.battle.combatants.length;e<le;e++){
+                        if(this.battle.combatants[e].team==1&&(key==' '&&pointInsideBox({position:inputs.rel},{position:{x:this.battle.combatants[e].position.x,y:this.battle.combatants[e].position.y-this.battle.combatants[e].height/2},width:80,height:160})||int(key)==(e-stage.playerCombatantNumber))&&this.battle.combatants[e].life>0){
+                            this.battle.attack.target=e
+                            this.battle.playCard()
+                            if(this.battle.attack.type==63){
+                                this.battle.attack.update(1,this.battle.attack.level,0)
+                            }else{
+                                this.battle.attack.update(this.battle.attack.type,this.battle.attack.level,0)
+                            }
+                            this.battle.afterPlayCard()
+                            for(let f=0,lf=this.cards.length;f<lf;f++){
+                                if(this.cards[f].trigger){
+                                    if(this.battle.attack.type==723){
+                                        this.cards[f].trigger=false
+                                        this.cards[f].select=false
+                                        this.cards[f].position.x=1260
+                                        this.cards[f].position.y=500
+                                    }else{
+                                        this.cards[f].used=true
+                                    }
+                                    if(this.battle.attack.type==599||this.battle.attack.type==723){
+                                        this.cards[f].damage+=this.cards[f].alt
+                                    }else if(this.battle.attack.type==135){
+                                        this.cards[f].damage-=this.cards[f].alt
+                                    }else if(this.battle.attack.type==232&&this.cards[f].cost>0){
+                                        this.cards[f].cost-=this.cards[f].alt
+                                        this.cards[f].base.cost-=this.cards[f].alt
+                                    }
+                                }
+                            }
+                            this.trigger=false
+                        }
+                    }
+                break
+            }
+        }else{
+            this.selected=false
+            for(let e=0,le=this.cards.length;e<le;e++){
+                if(int(key)==(e+1)&&this.select&&this.cards[e].select&&(this.battle.mana.main>=this.cards[e].cost&&this.cards[e].spec!=4||this.battle.combatants[0].combo>=this.cards[e].cost&&this.cards[e].spec==4||this.battle.combatants[0].status.main[76]>0&&this.cards[e].class==0||this.battle.combatants[0].status.main[118]>0)&&!((this.cards[e].spec==5||this.cards[e].spec==11||this.cards[e].spec==14)&&this.battle.combatants[0].armed!=1)){
+                    this.trigger=true
+                    this.cards[e].trigger=true
+                    this.select=false
+                    if(this.battle.random.doubling>0){
+                        this.battle.random.doubling--
+                        this.cards.push(copyCard(this.cards[e]))
+                        this.cards[this.cards.length-1].position.x=1206
+                        this.cards[this.cards.length-1].position.y=500
+                    }
+                    if(this.cards[e].class==0){
+                        if(this.battle.relics.active[61]){
+                            this.battle.attack.damage=round(this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0]*1.5)))
+                        }else{
+                            this.battle.attack.damage=round(this.cards[e].damage*(2+max(0,this.battle.combatants[0].boost.main[0]))/(2-min(0,this.battle.combatants[0].boost.main[0])))
+                        }
+                        if(this.battle.combatants[0].status.main[18]>0){
+                            this.battle.attack.damage+=this.battle.combatants[0].status.main[18]
+                            this.battle.combatants[0].status.main[18]=0
+                        }
+                        if(this.battle.relics.active[19]&&this.battle.random.attacks%10==0){
+                            this.battle.attack.damage*=2
+                        }
+                    }else{
+                        this.battle.attack.damage=round(this.cards[e].damage)
+                    }
+                    this.battle.attack.alt=round(this.cards[e].alt)
+                    this.battle.attack.mana=this.battle.mana.main
+                    this.battle.attack.combo=this.battle.combatants[0].combo
+                    this.battle.attack.color=this.cards[e].color
+                    if(this.battle.combatants[0].status.main[76]>0&&this.cards[e].class==0&&this.cards[e].cost>0){
+                        this.cards[e].cost=0
+                        this.battle.combatants[0].status.main[76]=0
+                    }
+                    if(this.battle.combatants[0].status.main[118]>0&&this.cards[e].cost>0){
+                        this.cards[e].cost=0
+                        this.battle.combatants[0].status.main[118]=0
+                    }
+                    if(this.cards[e].spec==4){
+                        if(this.battle.relics.active[99]){
+                            this.battle.combatants[0].combo-=min(this.cards[e].cost,2)
+                        }else{
+                            this.battle.combatants[0].combo-=this.cards[e].cost
+                        }
+                    }else if(this.cards[e].cost==-1){
+                        this.battle.mana.main=0
+                        if(this.battle.relics.active[103]){
+                            this.battle.attack.mana+=2
+                        }
+                    }else{
+                        this.battle.mana.main-=this.cards[e].cost
+                    }
+                    if(this.cards[e].cost==0&&this.battle.relics.active[147]){
+                        this.battle.attack.damage+=4
+                    }
+                    this.battle.attack.user=0
+                    this.battle.attack.type=this.cards[e].attack
+                    this.battle.attack.level=this.cards[e].level
+                    this.battle.attack.class=this.cards[e].class
+                    if(this.cards[e].spec==17||this.cards[e].spec==18){
+                        this.cards[e].alt--
+                        if(this.cards[e].alt<=0){
+                            for(let f=0,lf=this.battle.hand.cards.length;f<lf;f++){
+                                if(this.battle.hand.cards[f].id==this.cards[e].id){
+                                    this.battle.hand.cards[f].exhaust=true
+                                }
+                            }
+                            for(let f=0,lf=this.battle.deck.cards.length;f<lf;f++){
+                                if(this.battle.deck.cards[f].id==this.cards[e].id){
+                                    this.battle.deck.cards[f].remove=true
+                                }
+                            }
+                        }
+                    }
+                    if(this.cards[e].attack==296&&inputs.rel.y>this.cards[e].position.y+10){
+                        this.battle.attack.damage*=-1
+                    }
+                    if(this.cards[e].attack==63){
+                        if(inputs.rel.y>this.cards[e].position.y+10){
+                            this.battle.playCard()
+                            this.battle.attack.update(2,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }else{
+                            this.battle.attack.targetType=this.cards[e].target
+                        }
+                    }else if(this.cards[e].attack==280){
+                        if(inputs.rel.y>this.cards[e].position.y+10){
+                            this.battle.playCard()
+                            this.battle.attack.update(103,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }else{
+                            this.battle.playCard()
+                            this.battle.attack.update(100,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }
+                    }else if(this.cards[e].attack==341){
+                        this.battle.attack.update(this.cards[e].attack,this.cards[e].level,0)
+                        this.trigger=false
+                        break
+                    }else if(this.cards[e].attack==367){
+                        if(inputs.rel.y>this.cards[e].position.y+10){
+                            this.battle.playCard()
+                            this.battle.attack.update(351,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }else{
+                            this.battle.playCard()
+                            this.battle.attack.update(174,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }
+                    }else if(this.cards[e].attack==503){
+                        if(inputs.rel.y>this.cards[e].position.y+10){
+                            this.battle.playCard()
+                            this.battle.attack.update(403,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }else{
+                            this.battle.playCard()
+                            this.battle.attack.update(402,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }
+                    }else if(this.cards[e].attack==639){
+                        if(inputs.rel.y>this.cards[e].position.y+10){
+                            this.battle.playCard()
+                            this.battle.attack.update(639,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }else{
+                            this.battle.playCard()
+                            this.battle.attack.update(26,this.cards[e].level,0)
+                            this.battle.afterPlayCard()
+                            this.cards[e].used=true
+                            this.trigger=false
+                        }
+                    }else if(this.cards[e].attack==728){
+                        this.battle.playCard()
+                        if(e<le-1){
+                            this.cards[e]=copyCard(this.cards[e+1])
+                        }else{
+                            this.cards[e].used=true
+                        }
+                        this.battle.afterPlayCard()
+                        this.trigger=false
+                    }else if(this.cards[e].attack==737){
+                        this.battle.playCard()
+                        if(e<le-1){
+                            this.calc.level=this.cards[e].damage
+                            this.cards[e]=copyCard(this.cards[e+1])
+                            this.cards[e].damage*=this.calc.level
+                            this.cards[e].alt*=this.calc.level
+                        }else{
+                            this.cards[e].used=true
+                        }
+                        this.battle.afterPlayCard()
+                        this.trigger=false
+                    }else if(this.cards[e].target==0||(this.cards[e].attack==564&&this.battle.attack.mana%2==1)){
+                        this.battle.playCard()
+                        this.battle.attack.update(this.cards[e].attack,this.cards[e].level,0)
+                        this.battle.afterPlayCard()
+                        this.cards[e].used=true
+                        this.trigger=false
+                        if(this.battle.attack.type==231){
+                            this.cards[e].damage-=this.cards[e].alt
+                        }else if(this.battle.attack.type==241||this.battle.attack.type==507){
+                            this.cards[e].damage+=this.cards[e].alt
+                        }
+                    }else{
+                        if(this.cards[e].attack==565){
+                            this.battle.discard.cards.push(copyCard(this.cards[e]))
+                        }
+                        this.battle.attack.targetType=this.cards[e].target
+                    }
+                    if(this.cards[e].list==10&&this.battle.relics.active[38]){
+                        this.cards[e].exhaust=true
+                        this.battle.combatants[0].take(1,0)
+                    }
+                }
+                if(this.select&&this.cards[e].select){
+                    this.cards[e].select=false
+                    this.select=false
+                }
+                if(int(key)==(e+1)&&!this.cards[e].used&&this.battle.discarding>0){
+                    this.battle.discarding--
+                    this.battle.random.discards++
+                    this.cards[e].used=true
+                    this.cards[e].selectDiscard=true
+                    if(this.battle.random.discards==1&&this.battle.relics.active[148]){
+                        this.battle.mana.main++
+                    }
+                }else if(int(key)==(e+1)&&!this.cards[e].used&&this.battle.random.upgrading>0){
+                    this.battle.random.upgrading--
+                    if(this.cards[e].level<1){
+                        this.cards[e].level++
+                    }
+                    this.cards[e]=reformCard(this.cards[e])
+                }else if(int(key)==(e+1)&&!this.cards[e].used&&this.battle.random.exhausting>0&&this.cards[e].attack!=-24){
+                    this.battle.random.exhausting--
+                    this.cards[e].used=true
+                    this.cards[e].exhaust=true
+                }else if(int(key)==(e+1)&&!this.cards[e].used&&this.battle.random.transforming>0&&this.cards[e].attack!=-26){
+                    this.battle.random.transforming--
+                    g=floor(random(0,3))
+                    this.cards[e].type=listing.card[this.battle.player][g][floor(random(0,listing.card[this.battle.player][g].length))]
+                    this.cards[e].color=this.battle.player
+                    this.cards[e]=reformCard(this.cards[e])
+                }else if(int(key)==(e+1)&&!this.cards[e].used&&this.battle.random.forethinking>0){
+                    this.battle.random.forethinking--
+                    this.cards[e].used=true
+                    this.cards[e].draw=true
+                    this.cards[e].cost=0
+                    this.cards[e].base.cost=0
+                }else if(int(key)==(e+1)&&!this.cards[e].used&&this.battle.random.reserving>0){
+                    this.battle.random.reserving--
+                    if(this.battle.random.copying>0){
+                        for(let f=0;f<this.battle.random.copying;f++){
+                            this.battle.reserve.pushTop(copyCard(this.cards[e]))
+                        }
+                        this.battle.random.copying=0
+                    }else{
+                        this.cards[e].used=true
+                        this.cards[e].drawTop=true
+                        this.cards[e].cost=0
+                        this.cards[e].base.cost=0
+                    }
+                }else if(int(key)==(e+1)&&!this.cards[e].used&&this.battle.random.exiling>0){
+                    this.battle.random.exiling--
+                    this.battle.combatants[0].block+=this.cards[e].cost*5
+                    this.cards[e].used=true
+                    this.cards[e].exhaust=true
+                }else if(int(key)==(e+1)&&!this.cards[e].used&&this.battle.random.releasing>0){
+                    this.battle.random.releasing--
+                    this.battle.combatants[0].orbAttack(this.cards[e].cost*6,0,0)
+                    this.cards[e].used=true
+                    this.cards[e].exhaust=true
+                }else if(int(key)==(e+1)&&!this.select&&!this.cards[e].trigger&&(this.cards[e].spec!=1&&this.cards[e].spec!=6&&this.cards[e].spec!=7||this.cards[e].list==10&&this.battle.relics.active[38]||this.cards[e].list==11&&this.battle.relics.active[108])){
                     this.cards[e].select=true
                     this.select=true
                     this.selected=true

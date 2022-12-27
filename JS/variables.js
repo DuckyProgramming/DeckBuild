@@ -1810,8 +1810,8 @@ types={
         ],
         },{name:'Basic\nAura',rarity:0,list:3,
         stats:[
-            {damage:1,alt:0,cost:2,attack:691,target:0,spec:0,class:2},
             {damage:1,alt:0,cost:1,attack:691,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:691,target:0,spec:0,class:2},
         ],
         },{name:'Explosive\nAura',rarity:2,list:3,
         stats:[
@@ -1840,8 +1840,8 @@ types={
         ],
         },{name:'Electro\ndynamics',rarity:1,list:3,
         stats:[
-            {damage:2,alt:0,cost:1,attack:697,target:0,spec:0,class:2},
-            {damage:3,alt:0,cost:1,attack:697,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:697,target:0,spec:0,class:2},
+            {damage:3,alt:0,cost:0,attack:697,target:0,spec:0,class:2},
         ],
         },
         
@@ -2207,8 +2207,8 @@ types={
         ],
         },{name:'Sustain',rarity:1,list:4,
         stats:[
-            {damage:4,alt:3,cost:2,attack:218,target:0,spec:3,class:1},
-            {damage:6,alt:3,cost:2,attack:218,target:0,spec:3,class:1},
+            {damage:4,alt:3,cost:1,attack:218,target:0,spec:3,class:1},
+            {damage:6,alt:3,cost:1,attack:218,target:0,spec:3,class:1},
         ],
         },{name:'Resist',rarity:2,list:4,
         stats:[
@@ -4021,8 +4021,8 @@ types={
         ],
         },{name:'Bite',rarity:-3,list:0,
         stats:[
-            {damage:7,alt:2,cost:1,attack:396,target:1,spec:0,class:2},
-            {damage:10,alt:3,cost:1,attack:396,target:1,spec:0,class:2},
+            {damage:7,alt:2,cost:1,attack:396,target:1,spec:0,class:0},
+            {damage:10,alt:3,cost:1,attack:396,target:1,spec:0,class:0},
         ],
         },{name:'Madness',rarity:-3,list:0,
         stats:[
@@ -4384,14 +4384,14 @@ types={
         {name:'Slimoid',alt:'',life:35,height:45,behavior:0,attacks:[1,6,7],damage:[12,6,2],altAttack:[0,'Glued',0],class:0,buff:15},
         {name:'Big Slimoid',alt:'',life:70,height:65,behavior:0,attacks:[1,6,7],damage:[18,9,3],altAttack:[0,'Glued',0],class:0,buff:15},//80
         {name:'Moss Creature',alt:'',life:33,height:75,behavior:0,attacks:[3,8],damage:[3,6],altAttack:[2,0],class:0,buff:16},
-        {name:'Goblin',alt:'',life:10,height:45,behavior:0,attacks:[1,1,1,2,21,21],damage:[1,2,3,0,0,0],altAttack:[0,0,0,'Light\nBleed',0,0],class:0,buff:0},
+        {name:'Goblin',alt:'',life:10,height:45,behavior:0,attacks:[1,1,1,3,3,2,21,21,21,21],damage:[1,2,3,1,1,0,0,0,0,0],altAttack:[0,0,0,2,3,'Light\nBleed',0,0,0,0],class:0,buff:0},
         {name:'Auto-Detonator',alt:'',life:250,height:45,behavior:0,attacks:[8],damage:[1],altAttack:[0],class:1,buff:17},
         {name:'Scrapper',alt:'',life:48,height:75,behavior:0,attacks:[1,30,8],damage:[7,4,12],altAttack:[0,0,0],class:0,buff:18},
         {name:'Fat Scrapper',alt:'',life:80,height:75,behavior:1,attacks:[1,30,8,21,21],damage:[10,6,24],altAttack:[0,0,0,0],class:1,buff:18},
         {name:'Looter',alt:'',life:28,height:75,behavior:1,attacks:[32,8,31,31],damage:[0,6,6,9],altAttack:[0,0,10,10],class:0,buff:0},
         {name:'Mugger',alt:'',life:42,height:75,behavior:1,attacks:[32,8,3,31],damage:[0,6,4,9],altAttack:[0,0,2,15],class:0,buff:0},
-        {name:'Shinyshroom',alt:'',life:20,height:30,behavior:0,attacks:[33,1,8],damage:[4,4,4],altAttack:[0,0,0],class:0,buff:0},
-        {name:'Aggroshroom',alt:'',life:20,height:30,behavior:0,attacks:[33,3,7],damage:[1,1,1],altAttack:[0,3,0],class:0,buff:0},
+        {name:'Shinyshroom',alt:'',life:33,height:30,behavior:0,attacks:[33,1,8],damage:[4,4,4],altAttack:[0,0,0],class:0,buff:0},
+        {name:'Aggroshroom',alt:'',life:33,height:30,behavior:0,attacks:[33,3,7],damage:[1,1,1],altAttack:[0,3,0],class:0,buff:0},
         {name:'Hexaghost',alt:'',life:225,height:120,behavior:3,attacks:[3,20,34,35,36,21],damage:[5,6,2,2,3,0],altAttack:[2,0,12,6,1,0],class:1,buff:0},//90
         {name:'Bouncer',alt:'',life:21,height:75,behavior:4,attacks:[1,1,1,8],damage:[10,6,2,6],altAttack:[0,0,0,0],class:0,buff:0},
         {name:'Agent Duck',alt:'',life:60,height:72,behavior:4,attacks:[37,38,39,40,8],damage:[6,15,4,24,12],altAttack:[3,0,'Hurt',0,0],class:0,buff:0},
@@ -4408,6 +4408,7 @@ types={
         {name:'Detector',alt:'',life:27,height:75,behavior:1,attacks:[10,10,10],damage:[4,2,2],altAttack:['Wound','Burn','Slow\nBleed'],class:0,buff:0},
         {name:'Shadow Trooper',alt:'',life:450,height:75,behavior:4,attacks:[1,10,10,54],damage:[27,12,9,1],altAttack:[0,'Convulsive','Void',0],class:0,buff:21},
         {name:'Purge X02',alt:'',life:450,height:75,behavior:4,attacks:[16,21,10,21,3,21,1,21],damage:[100,0,20,0,8,0,60,0],altAttack:[5,0,'Voidstuck',0,6,0,0,0],class:1,buff:1},
+        {name:'Gremlin',alt:'',life:25,height:60,behavior:4,attacks:[10,21,1],damage:[5,0,10],altAttack:['Dazed',0,0],class:0,buff:0},
     ],attack:[
         {class:0},//0
         {class:0},
@@ -4830,6 +4831,11 @@ types={
             reinforce:[],
             threshold:3,class:2,zone:2,
             objective:[[0,0,6,0]],
+        },{
+            combatants:[106,0,0,0,0,0],
+            reinforce:[],
+            threshold:2,class:0,zone:2,
+            objective:[[0,0,0,0]],
         },
     ],relic:[
         {
