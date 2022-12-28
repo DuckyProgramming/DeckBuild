@@ -1138,7 +1138,7 @@ class attack{
                 break
                 case 234:
                     this.battle.mana.main+=this.damage
-                    this.battle.reserve.addShuffle(findCard('Void'),0,0)
+                    this.battle.reserve.addShuffle(findCard('Void'),0,stage.playerNumber+1)
                 break
                 case 235:
                     this.battle.mana.main+=floor(this.battle.reserve.cards.length/this.damage)

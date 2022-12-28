@@ -91,7 +91,7 @@ class card{
             case 16: this.desc+='Hold '+this.damage+'\nShield Charge'; if(this.damage>1){this.desc+='s'} break
             case 17: this.desc+='Evoke All\nCharges'; break
             case 18: this.desc+='Deal '+this.damage+' Damage\nDiscard '+this.alt+' Cards'; break
-            case 19: this.desc+='Lose 1\nAmmo Slot'; break
+            case 19: this.desc+='Lose 1\nCharge Slot'; break
             case 20: this.desc+='Hold '+this.damage+'\nEnergy Charge'; if(this.damage>1){this.desc+='s'} break
             case 21: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+' Vulnerable'; break                
             case 22: this.desc+='Deal '+this.damage+' Damage\nAll Claws Gain\n+2 Damage'; break
