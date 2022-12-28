@@ -105,6 +105,7 @@ class battle{
         this.mana.main=this.mana.max
         this.mana.gen=this.mana.max
         this.random.drawing=this.drawAmount+this.random.tempDrawAmount
+        this.turn=0
         this.resetCombatant()
         this.drawInitial()
         this.turnDraw()
@@ -198,13 +199,15 @@ class battle{
                 this.objective.push([1,floor(random(2,9)),2,floor(random(2,7))*5])
             break
             case 2:
-                if(stage.ascend<13){
-                    this.objective.push([0,0,2,100])
-                }
-                if(stage.ascend>=5){
-                    this.objective.push([1,10,3,40])
-                }else{
-                    this.objective.push([0,0,3,100])
+                if(this.map.zone!=2){
+                    if(stage.ascend<13){
+                        this.objective.push([0,0,2,100])
+                    }
+                    if(stage.ascend>=5){
+                        this.objective.push([1,10,3,40])
+                    }else{
+                        this.objective.push([0,0,3,100])
+                    }
                 }
             break
         }
@@ -689,7 +692,7 @@ class battle{
         if(this.combatants[0].status.main[19]>0){
             this.combatants[0].life=0
         }
-        this.mana.main+=this.combatants[0].status.main[1]
+        this.mana.main=max(0,this.combatants[0].status.main[1])
         this.combatants[0].mantra+=this.combatants[0].status.main[20]
         this.combatants[0].boost.main[2]+=this.combatants[0].status.main[32]
         for(let e=0,le=this.combatants.length;e<le;e++){
@@ -1401,12 +1404,12 @@ class battle{
             if(dist(inputs.rel.x,inputs.rel.y,25+(e%18)*50,60+floor(e/18)*50)<20){
                 this.layer.noStroke()
                 this.layer.fill(180)
-                this.layer.rect(130,120,240,60,5)
+                this.layer.rect(130,120+floor((le-1)/18)*50,240,60,5)
                 this.layer.fill(0)
                 this.layer.textSize(18)
-                this.layer.text(types.relic[this.relics.owned[e]].name,130,105)
+                this.layer.text(types.relic[this.relics.owned[e]].name,130,105+floor((le-1)/18)*50)
                 this.layer.textSize(12)
-                this.layer.text(types.relic[this.relics.owned[e]].desc,130,130)
+                this.layer.text(types.relic[this.relics.owned[e]].desc,130,130+floor((le-1)/18)*50)
             }
         }
     }
@@ -1416,12 +1419,12 @@ class battle{
             if(dist(inputs.rel.x,inputs.rel.y,100+e*50,20)<15&&this.potions.owned[e]>=0){
                 this.layer.noStroke()
                 this.layer.fill(180)
-                this.layer.rect(130,120,240,60,5)
+                this.layer.rect(130,120+floor((this.relics.owned.length-1)/18)*50,240,60,5)
                 this.layer.fill(0)
                 this.layer.textSize(18)
-                this.layer.text(types.potion[this.potions.owned[e]].name,130,105)
+                this.layer.text(types.potion[this.potions.owned[e]].name,130,105+floor((this.relics.owned.length-1)/18)*50)
                 this.layer.textSize(12)
-                this.layer.text(types.potion[this.potions.owned[e]].desc,130,130)
+                this.layer.text(types.potion[this.potions.owned[e]].desc,130,130+floor((this.relics.owned.length-1)/18)*50)
             }
         }
     }
@@ -1850,6 +1853,9 @@ class battle{
                     case 6:
                         this.layer.text('Card, Boss Relic',540,e*20+20)
                     break
+                    case 7:
+                        this.layer.text('Victory',540,e*20+20)
+                    break
                 }
             }
         }
@@ -1896,6 +1902,9 @@ class battle{
                     break
                     case 6:
                         this.layer.text('New Card, New Boss Relic',450,e*60+150)
+                    break
+                    case 7:
+                        this.layer.text('Game Complete!',450,e*60+150)
                     break
                 }
             }
@@ -2105,6 +2114,9 @@ class battle{
                                 this.setupChoice(0,2,0)
                                 this.context=-69
                             break
+                            case 7:
+                                transition.trigger=false
+                            break
                         }
                     }
                 }
@@ -2187,6 +2199,9 @@ class battle{
                                 transition.scene='choice'
                                 this.setupChoice(0,2,0)
                                 this.context=-69
+                            break
+                            case 7:
+                                transition.trigger=false
                             break
                         }
                     }

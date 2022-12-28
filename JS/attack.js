@@ -1178,7 +1178,8 @@ class attack{
                     for(g=0;g<this.damage;g++){
                         this.battle.draw()
                     }
-                    this.battle.reserve.addShuffle(findCard('Burn'),0,0)
+                    this.battle.drop.addDrop(findCard('Burn'),0,stage.playerNumber+1)
+                    this.battle.reserve.addShuffle(findCard('Burn'),0,stage.playerNumber+1)
                 break
                 case 246:
                     this.battle.combatants[0].boost.main[0]+=this.damage

@@ -2589,8 +2589,8 @@ types={
         ],
         },{name:'Shotgun',rarity:0,list:5,
         stats:[
-            {damage:9,alt:0,cost:2,attack:407,target:1,spec:0,class:0},
-            {damage:13,alt:0,cost:2,attack:407,target:1,spec:0,class:0},
+            {damage:11,alt:0,cost:2,attack:407,target:1,spec:0,class:0},
+            {damage:17,alt:0,cost:2,attack:407,target:1,spec:0,class:0},
         ],
         },{name:'Circuit',rarity:0,list:5,
         stats:[
@@ -2607,7 +2607,7 @@ types={
             {damage:12,alt:0,cost:1,attack:406,target:1,spec:8,class:0},
             {damage:17,alt:0,cost:1,attack:406,target:1,spec:8,class:0},
         ],
-        },{name:'Clean Slate',rarity:1,list:5,
+        },{name:'Clean\nSlate',rarity:1,list:5,
         stats:[
             {damage:0,alt:0,cost:0,attack:412,target:0,spec:0,class:0},
             {damage:0,alt:0,cost:0,attack:412,target:0,spec:2,class:0},
@@ -2739,18 +2739,18 @@ types={
         ],
         },{name:'Slap',rarity:0,list:5,
         stats:[
-            {damage:4,alt:2,cost:1,attack:463,target:1,spec:2,class:0},
-            {damage:6,alt:2,cost:1,attack:463,target:1,spec:2,class:0},
+            {damage:5,alt:2,cost:1,attack:463,target:1,spec:9,class:0},
+            {damage:7,alt:2,cost:1,attack:463,target:1,spec:9,class:0},
         ],
         },{name:'Slap\nParade',rarity:0,list:5,
         stats:[
-            {damage:4,alt:1,cost:1,attack:464,target:0,spec:2,class:0},
-            {damage:6,alt:1,cost:1,attack:464,target:0,spec:2,class:0},
+            {damage:4,alt:1,cost:1,attack:464,target:0,spec:9,class:0},
+            {damage:6,alt:1,cost:1,attack:464,target:0,spec:9,class:0},
         ],
         },{name:'Thunder\nSlap',rarity:1,list:5,
         stats:[
-            {damage:8,alt:1,cost:2,attack:465,target:1,spec:2,class:0},
-            {damage:12,alt:1,cost:2,attack:465,target:1,spec:2,class:0},
+            {damage:10,alt:1,cost:2,attack:465,target:1,spec:9,class:0},
+            {damage:15,alt:1,cost:2,attack:465,target:1,spec:9,class:0},
         ],
         },{name:'Line Up',rarity:1,list:5,
         stats:[
@@ -2794,8 +2794,8 @@ types={
         ],
         },{name:'Breaking\nShot',rarity:1,list:5,
         stats:[
-            {damage:4,alt:3,cost:1,attack:473,target:1,spec:0,class:0},
-            {damage:6,alt:4,cost:1,attack:473,target:1,spec:0,class:0},
+            {damage:5,alt:3,cost:1,attack:473,target:1,spec:0,class:0},
+            {damage:8,alt:4,cost:1,attack:473,target:1,spec:0,class:0},
         ],
         },{name:'Clear Up',rarity:0,list:5,
         stats:[
@@ -2804,8 +2804,8 @@ types={
         ],
         },{name:'Genevon',rarity:2,list:5,
         stats:[
-            {damage:9,alt:1,cost:1,attack:475,target:1,spec:0,class:1},
-            {damage:13,alt:1,cost:1,attack:475,target:1,spec:0,class:1},
+            {damage:12,alt:1,cost:1,attack:475,target:1,spec:0,class:1},
+            {damage:16,alt:1,cost:1,attack:475,target:1,spec:0,class:1},
         ],
         },{name:'Regulate',rarity:1,list:5,
         stats:[
@@ -2849,8 +2849,8 @@ types={
         ],
         },{name:'Hypothetical',rarity:2,list:5,
         stats:[
-            {damage:1,alt:0,cost:2,attack:495,target:0,spec:0,class:2},
             {damage:1,alt:0,cost:1,attack:495,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:1,attack:495,target:0,spec:2,class:2},
         ],
         },{name:'Disposal',rarity:0,list:5,
         stats:[
@@ -2932,10 +2932,10 @@ types={
             {damage:1,alt:0,cost:1,attack:511,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:1,attack:511,target:0,spec:0,class:2},
         ],
-        },{name:'Barbed\nWire',rarity:1,list:5,
+        },{name:'Spiked\nPlates',rarity:1,list:5,
         stats:[
-            {damage:8,alt:0,cost:1,attack:512,target:0,spec:0,class:2},
-            {damage:12,alt:0,cost:1,attack:512,target:0,spec:0,class:2},
+            {damage:10,alt:0,cost:1,attack:512,target:0,spec:0,class:2},
+            {damage:15,alt:0,cost:1,attack:512,target:0,spec:0,class:2},
         ],
         },{name:'Barbed\nWire',rarity:1,list:5,
         stats:[
@@ -4319,7 +4319,7 @@ types={
         {name:'Slippery Gangster',alt:'',life:36,height:75,behavior:0,attacks:[1,3],damage:[8,3],altAttack:[0,2],class:0,buff:3},
         {name:'Gangster Gunner',alt:'',life:24,height:75,behavior:0,attacks:[1],damage:[4],altAttack:[0],class:0,buff:4},
         {name:'Snaky Plant',alt:'',life:80,height:75,behavior:1,attacks:[1,3,13,12],damage:[18,4,0,6],altAttack:[0,4,0,0],class:1,buff:0},
-        {name:'Spheron',alt:'',life:20,height:60,behavior:1,attacks:[3,8,14,15],damage:[10,25,10,10],altAttack:[2,0,15,2],class:0,buff:5},
+        {name:'Spheron',alt:'',life:20,height:60,behavior:1,attacks:[3,8,14,15],damage:[10,15,10,10],altAttack:[2,0,5,2],class:0,buff:5},
         {name:'Enforcer',alt:'',life:80,height:90,behavior:0,attacks:[1,3,16],damage:[9,8,8],altAttack:[0,2,1],class:1,buff:6},
         {name:'Ninja',alt:'',life:32,height:75,behavior:0,attacks:[1,3],damage:[9,4],altAttack:[0,2],class:0,buff:0},
         {name:'Red',alt:'',life:36,height:80,behavior:0,attacks:[1,17,18],damage:[7,5,4],altAttack:[0,1,0],class:0,buff:0},//20
@@ -4785,7 +4785,7 @@ types={
             combatants:[96,0,0,0,0,0],
             reinforce:[],
             threshold:2,class:2,zone:2,
-            objective:[[0,0,6,0]],
+            objective:[[0,0,7,0]],
         },{
             combatants:[97,0,0,0,0,0],
             reinforce:[73],
@@ -4825,12 +4825,12 @@ types={
             combatants:[104,0,0,0,0,0],
             reinforce:[],
             threshold:3,class:2,zone:2,
-            objective:[[0,0,6,0]],
+            objective:[[0,0,7,0]],
         },{
             combatants:[105,0,0,0,0,0],
             reinforce:[],
             threshold:3,class:2,zone:2,
-            objective:[[0,0,6,0]],
+            objective:[[0,0,7,0]],
         },{
             combatants:[106,0,0,0,0,0],
             reinforce:[],
@@ -8609,7 +8609,7 @@ types={
                 },
             ],
         },{
-            name:'Gateways',id:116,list:5,
+            name:'Gateways',id:116,list:6,
             pages:[
                 {
                     desc:"While you travel, you begin to see Astral gates on your path.\n"+
@@ -8633,7 +8633,7 @@ types={
                 },
             ],
         },{
-            name:'The Mirror',id:117,list:5,
+            name:'The Mirror',id:117,list:6,
             pages:[
                 {
                     desc:"You see a strange mirror emanating a soft glow nearby.\n"+
@@ -8656,7 +8656,7 @@ types={
                 },
             ],
         },{
-            name:'Call of the Void',id:118,list:5,
+            name:'Call of the Void',id:118,list:6,
             pages:[
                 {
                     desc:"You see a sphere floating in the middle of the air. It's made of nothing.\n"+
@@ -8679,7 +8679,7 @@ types={
                 },
             ],
         },{
-            name:'Cosmic Rays',id:119,list:5,
+            name:'Cosmic Rays',id:119,list:6,
             pages:[
                 {
                     desc:"Ah, Management weapon testing has returned to the area.\n"+
@@ -8701,7 +8701,7 @@ types={
                 },
             ],
         },{
-            name:'Blessings of the Sea',id:120,list:5,
+            name:'Blessings of the Sea',id:120,list:6,
             pages:[
                 {
                     desc:"Well, the things you used to believe in are very quickly proving false.\n"+
@@ -8725,7 +8725,7 @@ types={
                 },
             ],
         },{
-            name:'Blessings of the Air',id:121,list:5,
+            name:'Blessings of the Air',id:121,list:6,
             pages:[
                 {
                     desc:"Well, the things you used to believe in are very quickly proving false.\n"+
@@ -8749,7 +8749,7 @@ types={
                 },
             ],
         },{
-            name:'Blessings of the Earth',id:122,list:5,
+            name:'Blessings of the Earth',id:122,list:6,
             pages:[
                 {
                     desc:"Well, the things you used to believe in are very quickly proving false.\n"+
@@ -8773,7 +8773,7 @@ types={
                 },
             ],
         },{
-            name:'Blessings of the Flame',id:123,list:5,
+            name:'Blessings of the Flame',id:123,list:6,
             pages:[
                 {
                     desc:"Well, the things you used to believe in are very quickly proving false.\n"+
@@ -8797,7 +8797,7 @@ types={
                 },
             ],
         },{
-            name:'Chaotic Rift',id:124,list:5,
+            name:'Chaotic Rift',id:124,list:6,
             pages:[
                 {
                     desc:"You see a rift floating in the air, random images flashing inside it.",
@@ -8819,7 +8819,7 @@ types={
                 },
             ],
         },{
-            name:'Flash of Light',id:125,list:5,
+            name:'Flash of Light',id:125,list:6,
             pages:[
                 {
                     desc:"A bright flash envelops your vision when you approach a new location.\n"+

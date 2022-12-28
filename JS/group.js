@@ -886,6 +886,11 @@ class group{
                     this.battle.attack.class=this.cards[e].class
                     if(this.cards[e].spec==17||this.cards[e].spec==18){
                         this.cards[e].alt--
+                        for(let f=0,lf=this.battle.deck.cards.length;f<lf;f++){
+                            if(this.battle.deck.cards[f].id==this.cards[e].id){
+                                this.battle.deck.cards[f].alt--
+                            }
+                        }
                         if(this.cards[e].alt<=0){
                             for(let f=0,lf=this.battle.hand.cards.length;f<lf;f++){
                                 if(this.battle.hand.cards[f].id==this.cards[e].id){

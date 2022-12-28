@@ -157,7 +157,7 @@ class combatant{
 				this.status.main[70]=2
 			break
 			case 5:
-				this.addBlock(40,0)
+				this.addBlock(20,0)
 				this.status.main[47]=99
 			break
 			case 8:
@@ -205,8 +205,6 @@ class combatant{
 	}
 	turnBuff(){
 		this.standardBuff()
-		switch(this.buff){
-		}
 	}
 	standardBuff(){
 		switch(this.buff){
