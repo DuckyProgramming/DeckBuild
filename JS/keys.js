@@ -26,6 +26,9 @@ function keyPressed(){
         break
     }
     switch(stage.scene){
+        case 'menu':
+            onKeyMenu(key,keyCode)
+        break
         case 'dictionary':
             current.onKeyDictionary(key,keyCode)
         break

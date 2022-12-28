@@ -72,19 +72,38 @@ function displayMenu(layer){
 	layer.text(types.ascend[stage.ascend].desc,240,365)
 }
 function onClickMenu(mouse){
-	if(pointInsideBox({position:mouse},{position:{x:100,y:292.5},width:150,height:45})&&stage.ascend<20){
+	if(pointInsideBox({position:mouse},{position:{x:100,y:292.5},width:60,height:45})&&stage.ascend<20){
 		stage.ascend++
 	}
-	if(pointInsideBox({position:mouse},{position:{x:100,y:407.5},width:150,height:45})&&stage.ascend>0){
+	if(pointInsideBox({position:mouse},{position:{x:100,y:407.5},width:60,height:45})&&stage.ascend>0){
 		stage.ascend--
 	}
-	if(pointInsideBox({position:mouse},{position:{x:800,y:292.5},width:150,height:45})&&stage.character<7){
+	if(pointInsideBox({position:mouse},{position:{x:800,y:292.5},width:60,height:45})&&stage.character<7){
 		stage.character++
 	}
-	if(pointInsideBox({position:mouse},{position:{x:800,y:407.5},width:150,height:45})&&stage.character>1){
+	if(pointInsideBox({position:mouse},{position:{x:800,y:407.5},width:60,height:45})&&stage.character>1){
 		stage.character--
 	}
 	if(pointInsideBox({position:mouse},{position:{x:450,y:350},width:120,height:80})){
+		current=new battle(graphics.main,stage.character)
+		current.setupTesting()
+		transition.trigger=true
+		transition.scene='map'
+	}
+}
+function onKeyMenu(key,code){
+	if(key=='w'&&stage.ascend<20){
+		stage.ascend++
+	}
+	if(key=='s'&&stage.ascend>0){
+		stage.ascend--
+	}
+	for(let e=0;e<7;e++){
+		if(int(key)==(e+1)){
+			stage.character=e+1
+		}
+	}
+	if(code==ENTER){
 		current=new battle(graphics.main,stage.character)
 		current.setupTesting()
 		transition.trigger=true

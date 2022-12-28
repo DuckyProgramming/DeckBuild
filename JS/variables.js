@@ -3934,8 +3934,8 @@ types={
         ],
         },{name:'Screen',rarity:-1,list:0,
         stats:[
-            {damage:4,alt:0,cost:0,attack:2,target:1,spec:3,class:0},
-            {damage:6,alt:0,cost:0,attack:2,target:1,spec:3,class:0},
+            {damage:4,alt:0,cost:0,attack:2,target:9,spec:3,class:0},
+            {damage:6,alt:0,cost:0,attack:2,target:9,spec:3,class:0},
         ],
         },{name:'Banked\nBalance',rarity:-1,list:0,
         stats:[
