@@ -253,7 +253,7 @@ class battle{
         if(this.relics.active[10]){
             for(let e=0,le=this.combatants.length;e<le;e++){
                 if(this.combatants[e].team==1){
-                    this.combatants[e].boost.main[0]--
+                    this.combatants[e].boost.main[1]--
                 }
             }
         }

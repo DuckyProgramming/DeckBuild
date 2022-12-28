@@ -4870,7 +4870,7 @@ types={
             desc:'If You Do Not Attack\nGain 1 Energy Next Turn',
         },{
             name:'Plague Talisman',id:10,rarity:0,list:0,
-            desc:'Apply 1 Weak to All\nEnemies the Start of Combat',
+            desc:'Apply 1 Vulnerable to All\nEnemies the Start of Combat',
         },{
             name:'Cactus Armor',id:11,rarity:0,list:0,
             desc:'Counter 3 All\nAt All Times',

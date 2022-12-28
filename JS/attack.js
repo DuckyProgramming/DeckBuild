@@ -321,9 +321,8 @@ class attack{
                         }
                     }
                     for(g=0;g<this.damage;g++){
-                        this.battle.reserve.addShuffle(this.hold.list[floor(random(0,this.hold.list.length))],0,this.battle.player)
-                        this.battle.reserve.cards[this.battle.reserve.cards.length-1].cost=0
-                        this.battle.reserve.cards[this.battle.reserve.cards.length-1].base.cost=0
+                        h=this.hold.list[floor(random(0,this.hold.list.length))]
+                        this.battle.reserve.addShuffleCost(h,0,types.card[h].list,0)
                     }
                 break
                 case 60:

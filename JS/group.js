@@ -153,6 +153,22 @@ class group{
             this.storage.cards.splice(0,1)
         }
     }
+    addShuffleCost(type,level,color,cost){
+        this.calc.cut=floor(random(0,this.cards.length))
+        for(let g=this.calc.cut,lg=this.cards.length;g<lg;g++){
+            this.storage.cards.push(this.cards[g])
+            this.cards.splice(g,1)
+            g--
+            lg--
+        }
+        this.add(type,level,color)
+        this.cards[this.cards.length-1].cost=cost
+        this.cards[this.cards.length-1].base.cost=cost
+        while(this.storage.cards.length>0){
+            this.cards.push(copyCard(this.storage.cards[0]))
+            this.storage.cards.splice(0,1)
+        }
+    }
     pushTop(card){
         for(let g=0,lg=this.cards.length;g<lg;g++){
             this.storage.cards.push(this.cards[g])
