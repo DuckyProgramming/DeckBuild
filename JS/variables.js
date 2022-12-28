@@ -3061,8 +3061,8 @@ types={
         ],
         },{name:'Dagger\nSpray',rarity:0,list:6,
         stats:[
-            {damage:2,alt:2,cost:1,attack:126,target:0,spec:0,class:0},
-            {damage:4,alt:2,cost:1,attack:126,target:0,spec:0,class:0},
+            {damage:2,alt:3,cost:1,attack:126,target:0,spec:0,class:0},
+            {damage:4,alt:3,cost:1,attack:126,target:0,spec:0,class:0},
         ],
         },{name:'Dagger\nThrow',rarity:0,list:6,
         stats:[
@@ -3314,7 +3314,7 @@ types={
             {damage:2,alt:0,cost:1,attack:436,target:0,spec:0,class:2},
             {damage:3,alt:0,cost:1,attack:436,target:0,spec:0,class:2},
         ],
-        },{name:'Piercing Wail',rarity:0,list:6,
+        },{name:'Piercing\nWail',rarity:0,list:6,
         stats:[
             {damage:6,alt:0,cost:1,attack:576,target:0,spec:3,class:2},
             {damage:8,alt:0,cost:1,attack:576,target:0,spec:3,class:2},
@@ -3964,8 +3964,8 @@ types={
         ],
         },{name:'Chip',rarity:-1,list:0,
         stats:[
-            {damage:2,alt:2,cost:0,attack:563,target:1,spec:0,class:0},
-            {damage:2,alt:2,cost:0,attack:563,target:1,spec:0,class:0},
+            {damage:3,alt:3,cost:0,attack:563,target:1,spec:0,class:0},
+            {damage:4,alt:4,cost:0,attack:563,target:1,spec:0,class:0},
         ],
         },{name:'Peak',rarity:-1,list:0,
         stats:[
@@ -3989,7 +3989,7 @@ types={
             {damage:0,alt:0,cost:0,attack:148,target:0,spec:13,class:2},
             {damage:0,alt:0,cost:0,attack:148,target:0,spec:13,class:2},
         ],
-        },{name:'Step',rarity:-3,list:0,
+        },{name:'Run',rarity:-3,list:0,
         stats:[
             {damage:1,alt:0,cost:1,attack:149,target:0,spec:13,class:2},
             {damage:1,alt:0,cost:0,attack:149,target:0,spec:13,class:2},
@@ -4846,7 +4846,7 @@ types={
             desc:'Add 1 Redraw at\nthe Start of Combat', 
         },{
             name:'Good Shoes',id:2,rarity:1,list:0,
-            desc:'Add 1 Step\nEvery Turn', 
+            desc:'Add 1 Run\nEvery Turn', 
         },{
             name:'Beans',id:3,rarity:0,list:0,
             desc:'Heal 2 HP\nat the End of Combat',

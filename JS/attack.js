@@ -2717,7 +2717,7 @@ class attack{
                     this.battle.context=-5
                 break
                 case 538:
-                    this.battle.random.forethinking=this.damag
+                    this.battle.random.forethinking=this.damage
                 break
                 case 539:
                     for(g=0;g<this.damage;g++){

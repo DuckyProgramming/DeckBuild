@@ -95,30 +95,32 @@ class group{
         }
     }
     add(type,level,color){
-        stage.id++
-        this.calc.level=level
-        if(this.calc.level==0&&(types.card[type].stats[level].class==0&&this.battle.relics.active[41]||types.card[type].stats[level].class==1&&this.battle.relics.active[42]||types.card[type].stats[level].class==2&&this.battle.relics.active[43])){
-            this.calc.level++
-        }
-        if(this.calc.level==0&&this.battle.combatants[0].status.main[114]>0){
-            this.calc.level++
-        }
-        if(types.card[type].list==10&&this.battle.relics.active[21]){
-            this.battle.relics.active[21]=false
-        }else{
-            this.cards.push(new card(this.layer,1206,500,type,this.calc.level,color))
-            this.cards[this.cards.length-1].id=stage.id
-            if(types.card[type].stats[level].attack==1&&types.card[type].stats[level].spec==3){
-                this.cards[this.cards.length-1].damage+=this.battle.combatants[0].status.main[63]
+        if(type>0){
+            stage.id++
+            this.calc.level=level
+            if(this.calc.level==0&&(types.card[type].stats[level].class==0&&this.battle.relics.active[41]||types.card[type].stats[level].class==1&&this.battle.relics.active[42]||types.card[type].stats[level].class==2&&this.battle.relics.active[43])){
+                this.calc.level++
             }
-        }
-        if(types.card[type].list==10&&this.battle.relics.active[39]){
-            this.battle.combatants[0].base.life+=6
-            this.battle.combatants[0].life+=6
-        }
-        if(this.id==2&&stage.scene=='choice'){
-            if(this.battle.relics.active[13]){
-                this.battle.currency.money+=10
+            if(this.calc.level==0&&this.battle.combatants[0].status.main[114]>0){
+                this.calc.level++
+            }
+            if(types.card[type].list==10&&this.battle.relics.active[21]){
+                this.battle.relics.active[21]=false
+            }else{
+                this.cards.push(new card(this.layer,1206,500,type,this.calc.level,color))
+                this.cards[this.cards.length-1].id=stage.id
+                if(types.card[type].stats[level].attack==1&&types.card[type].stats[level].spec==3){
+                    this.cards[this.cards.length-1].damage+=this.battle.combatants[0].status.main[63]
+                }
+            }
+            if(types.card[type].list==10&&this.battle.relics.active[39]){
+                this.battle.combatants[0].base.life+=6
+                this.battle.combatants[0].life+=6
+            }
+            if(this.id==2&&stage.scene=='choice'){
+                if(this.battle.relics.active[13]){
+                    this.battle.currency.money+=10
+                }
             }
         }
     }

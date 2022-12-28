@@ -373,7 +373,7 @@ class battle{
         }
         this.random.drawing=this.drawAmount+this.random.tempDrawAmount
         if(this.relics.active[2]){
-            this.hand.add(findCard('Avoid'),0,0)
+            this.hand.add(findCard('Run'),0,0)
         }
         if(this.relics.active[29]){
             e=floor(random(0,this.hand.cards.length))
@@ -692,7 +692,7 @@ class battle{
         if(this.combatants[0].status.main[19]>0){
             this.combatants[0].life=0
         }
-        this.mana.main=max(0,this.combatants[0].status.main[1])
+        this.mana.main=max(0,this.mana.main+this.combatants[0].status.main[1])
         this.combatants[0].mantra+=this.combatants[0].status.main[20]
         this.combatants[0].boost.main[2]+=this.combatants[0].status.main[32]
         for(let e=0,le=this.combatants.length;e<le;e++){
