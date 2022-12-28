@@ -3132,14 +3132,14 @@ class combatant{
 				if(this.status.main[142]>0){
 					this.orbAttack(12,-1,1)
 				}else{
-					this.orbAttack(8,-1,0)
+					this.orbAttack(5,-1,0)
 				}
 			break
 			case 1:
-				this.orbAttack(12,-1,1)
+				this.orbAttack(6,-1,1)
 			break
 			case 2:
-				this.block+=10*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))
+				this.addBlock(10*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3])))
 			break
 			case 3:
 				this.battle.mana.main+=3
@@ -3159,7 +3159,7 @@ class combatant{
 				this.orbAttack(16,-1,0)
 			break
 			case 8:
-				this.block+=20*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))
+				this.addBlock(20*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3])))
 			break
 			case 9:
 				this.life=min(this.life+5*this.battle.random.healEffectiveness,this.base.life)
@@ -3175,14 +3175,14 @@ class combatant{
 				if(this.status.main[142]>0){
 					this.orbAttack(4,-1,2)
 				}else{
-					this.orbAttack(3,-1,0)
+					this.orbAttack(2,-1,0)
 				}
 			break
 			case 1:
 				this.orbAttack(4,-1,2)
 			break
 			case 2:
-				this.block+=3*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))
+				this.addBlock(2*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3])))
 			break
 			case 3:
 				this.battle.mana.main++
@@ -3200,7 +3200,7 @@ class combatant{
 				this.orbAttack(6,-1,0)
 			break
 			case 8:
-				this.block+=6*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3]))
+				this.addBlock(6*(2+max(0,this.boost.main[3]))/(2-min(0,this.boost.main[3])))
 			break
 		}
 	}
