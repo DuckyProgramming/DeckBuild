@@ -3133,7 +3133,7 @@ class battle{
                     "The soldiers take you away, but..."
                 break
             }
-        }else if(types.event[this.event].id==51){
+        }else if(types.event[this.event].id==51&&this.page==0){
             types.event[this.event].pages[this.page].desc="You see a strange blue glow coming from a nearby lake. As you approach, you notice a woman sitting on a ledge.\n"+
             '"'+"I've been watching you, "+stage.identifier[3]+", having taken interest in your adventure. But there isn't much I can do right now."+'"\n'+
             '"'+"He'll always be watching, so I can only help you in a few ways."+'"\n'+
