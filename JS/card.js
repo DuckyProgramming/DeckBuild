@@ -703,8 +703,8 @@ class card{
             case 628: this.desc+='Deal '+this.damage+' Damage\nApply '+this.alt+'\nRandom Status'; break
             case 629: this.desc+='Gain '+this.damage+' Intangible\nand '+this.alt+' Energy\nNext Turn'; break
             case 630: this.desc+='Tick Statuses'; break
-            case 631: this.desc+='Deal '+this.damage+' For\nEach Card Played\nThis Turn'; break
-            case 632: this.desc+='Deal '+this.damage+' For\nEach Card Played\nThis Combat'; break
+            case 631: this.desc+='Deal '+this.damage+' Damage For\nEach Card Played\nThis Turn'; break
+            case 632: this.desc+='Deal '+this.damage+' Damage For\nEach Card Played\nThis Combat'; break
             case 633: this.desc+='Deal '+this.damage+' Damage\nCosts 1 Less\nWhen You Play\na Card'; break
             case 634: this.desc+='Every 13\nCards Played\nDeal '+this.damage+' Damage\nto All Enemies\nand Add '+this.damage+' Block'; break
             case 635: this.desc+='Send Hand\nto Draw Pile\nSwap Draw and\nDiscard Piles'; break
