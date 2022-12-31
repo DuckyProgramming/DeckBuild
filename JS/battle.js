@@ -1784,7 +1784,8 @@ class battle{
         this.layer.text('Discard',-68+this.anim.turn*100,519)
         this.layer.text('('+this.discard.cards.length+')',-68+this.anim.turn*100,531)
         this.layer.text('End',-68+this.anim.turn*100,565)
-        this.layer.text('Dicti\nonary',-68+this.anim.turn*100,445)
+        this.layer.text('Dicti',-68+this.anim.turn*100,439)
+        this.layer.text('onary',-68+this.anim.turn*100,451)
         this.layer.fill(50)
         this.layer.text('Draw',-68+this.anim.turn*100,479)
         for(let e=0,le=this.combatants.length;e<le;e++){
