@@ -40,6 +40,7 @@ function displayMenu(layer){
 	layer.line(492.5,50,492.5,150)
 	layer.translate(-175,0)
 	layer.rect(450,350,120,80,5)
+	layer.rect(450,440,160,60,5)
 	layer.line(410,350,470,350)
 	layer.line(490,350,465,325)
 	layer.line(490,350,465,375)
@@ -68,6 +69,11 @@ function displayMenu(layer){
 	layer.textSize(15)
 	layer.text(types.ascend[stage.ascend].name,240,320)
 	layer.text(types.combatant[stage.character].name,690,350)
+	if(stage.draft==0){
+		layer.text('Default\nDeck',450,440)
+	}else if(stage.draft==1){
+		layer.text('Draft\nDeck',450,440)
+	}
 	layer.textSize(10)
 	layer.text(types.ascend[stage.ascend].desc,240,365)
 }
@@ -86,9 +92,16 @@ function onClickMenu(mouse){
 	}
 	if(pointInsideBox({position:mouse},{position:{x:450,y:350},width:120,height:80})){
 		current=new battle(graphics.main,stage.character)
-		current.setupTesting()
+		current.setupTesting(stage.draft)
 		transition.trigger=true
-		transition.scene='map'
+		if(stage.draft==1){
+			transition.scene='choice'
+		}else if(stage.draft==0){
+			transition.scene='map'
+		}
+	}
+	if(pointInsideBox({position:mouse},{position:{x:450,y:440},width:160,height:60})){
+		stage.draft=1-stage.draft
 	}
 }
 function onKeyMenu(key,code){
@@ -105,9 +118,16 @@ function onKeyMenu(key,code){
 	}
 	if(code==ENTER){
 		current=new battle(graphics.main,stage.character)
-		current.setupTesting()
+		current.setupTesting(stage.draft)
 		transition.trigger=true
-		transition.scene='map'
+		if(stage.draft==1){
+			transition.scene='choice'
+		}else if(stage.draft==0){
+			transition.scene='map'
+		}
+	}
+	if(code==SHIFT){
+		stage.draft=1-stage.draft
 	}
 }
 function displayTransition(layer,transition){
@@ -511,7 +531,7 @@ function generateListing(cards,encounters,events){
 					}
 				}else{
 					listing.card[cards[a].list][cards[a].rarity].push(a)
-					if(cards[a].list!=stage.playerNumber+1){
+					if(cards[a].list!=stage.playerNumber+1&&cards[a].list!=0){
 						listing.card[stage.playerNumber][cards[a].rarity].push(a)
 					}
 				}

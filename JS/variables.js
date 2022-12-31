@@ -3531,8 +3531,8 @@ types={
         ],
         },{name:'Respawn',rarity:1,list:6,
         stats:[
-            {damage:0,alt:0,cost:2,attack:618,target:0,spec:0,class:2},
             {damage:0,alt:0,cost:1,attack:618,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:0,attack:618,target:0,spec:0,class:2},
         ],
         },{name:'Memories',rarity:0,list:6,
         stats:[
@@ -8982,7 +8982,7 @@ zones=[
 ]
 
 dev={id:true,attack:true}
-stage={scale:0,quality:1,scene:'menu',playerNumber:7,playerCombatantNumber:1,identifier:[''],id:0,ascend:0,character:1,timer:0}
+stage={scale:0,quality:1,scene:'menu',playerNumber:7,playerCombatantNumber:1,identifier:[''],id:0,ascend:0,character:1,timer:0,draft:0}
 graphics={main:0,minor:[],symbol:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
 inputs={mouse:{x:0,y:0},rel:{x:0,y:0},keys:[[false,false,false,false],[false,false,false,false]]}

@@ -42,11 +42,14 @@ class battle{
         this.combatants.push(new combatant(this.layer,this,200,350,0,0,1))
         stage.identifier=types.combatant[this.player].identifiers
     }
-    setupTesting(/*type,key*/){
+    setupTesting(draft/*type,key*/){
         this.initialEvent()
         this.setupMap()
-        //this.draftDeck()
-        this.deck.initial(this.player)
+        if(stage.draft==1){
+            this.draftDeck()
+        }else{
+            this.deck.initial(this.player)
+        }
         //stage.scene='battle'
         //setupEncounter(this,type)
 
@@ -157,7 +160,6 @@ class battle{
         this.setupMap()
     }
     draftDeck(){
-        transition.scene='choice'
         this.setupChoice(0,0,0)
         this.context=3
         this.random.chosen=0
