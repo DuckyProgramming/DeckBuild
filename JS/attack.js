@@ -1886,7 +1886,7 @@ class attack{
                 break
                 case 377:
                     this.battle.combatants[this.target].boost.main[0]-=this.damage
-                    this.battle.combatants[0].load(7,0)
+                    this.battle.combatants[0].load(6,0)
                 break
                 case 378:
                     this.battle.combatants[0].status.main[36]+=this.damage

@@ -55,7 +55,7 @@ class combatant{
 			'Bomb 2','Bomb 3','Mark','End Turn Damage All','Upgrade Added','Extra Turn','Counter All This Combat','Take Damage Per Card Played','Free Card','No Draw',
 			'Explode on Death','Turn Double Damage','Next Turn Double Damage','Turn Discard','Lose Dexterity','Status or Curse Damage All','Block Damage All','Shiv on Damage','Play Shiv Draw','Next Turn Intangible',
 			'13 Card Damage All and Block','Triple Block','Block Gain Damage','Anti-Control','Endure','First Cost 2+ Card Energy','Stance Change Damage All','Stance Change Draw','Stance Change Random Cost Decrease','End Turn Block Attack',
-			'Dark Gain Increase','Hold Per Charge','Basic Charges Act as Explosive','Lightning Passive Increase','Add Bleed','Bleed All Per Turn','Strength on Hit','Permanent Armed','10 Damage First When Armed','Metallicize Per Turn',
+			'Dark Gain Increase','Basic Charge Per Turn','Basic Charges Act as Explosive','Lightning Passive Increase','Add Bleed','Bleed All Per Turn','Strength on Hit','Permanent Armed','10 Damage First When Armed','Metallicize Per Turn',
 			'Bomb 4','Bomb 5','Bomb 6','Bomb 7','Bomb 8','Basic Armor','Stolen Gold',
 		],class:[
 			1,1,1,1,1,0,1,0,0,0,

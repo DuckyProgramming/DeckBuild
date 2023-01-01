@@ -3055,8 +3055,10 @@ class battle{
         this.layer.fill(80,85,90)
         this.layer.rect(450,475,910,250)
         this.layer.fill(160)
-        for(let e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
-            this.layer.rect(450,350+e*60,200,50,5)
+        if(this.page>=0){
+            for(let e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
+                this.layer.rect(450,350+e*60,200,50,5)
+            }
         }
         this.layer.fill(255,225,0)
         this.layer.ellipse(20,16,16,16)
@@ -3071,17 +3073,19 @@ class battle{
         this.layer.textSize(45)
         this.layer.text(types.event[this.event].name,450,50)
         this.layer.textSize(15)
-        this.layer.text(types.event[this.event].pages[this.page].desc,450,200)
+        if(this.page>=0){
+            this.layer.text(types.event[this.event].pages[this.page].desc,450,200)
         for(let e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
-            if(types.event[this.event].pages[this.page].optionDesc[e]==''){
-                this.layer.text(types.event[this.event].pages[this.page].option[e],450,350+e*60)
-            }else{
-                this.layer.text(types.event[this.event].pages[this.page].option[e],450,340+e*60)
+                if(types.event[this.event].pages[this.page].optionDesc[e]==''){
+                    this.layer.text(types.event[this.event].pages[this.page].option[e],450,350+e*60)
+                }else{
+                    this.layer.text(types.event[this.event].pages[this.page].option[e],450,340+e*60)
+                }
             }
-        }
-        this.layer.textSize(10)
-        for(let e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
-            this.layer.text(types.event[this.event].pages[this.page].optionDesc[e],450,360+e*60)
+            this.layer.textSize(10)
+            for(let e=0,le=types.event[this.event].pages[this.page].option.length;e<le;e++){
+                this.layer.text(types.event[this.event].pages[this.page].optionDesc[e],450,360+e*60)
+            }
         }
         this.combatants[0].displayInfo()
     }

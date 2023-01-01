@@ -1585,8 +1585,8 @@ types={
         ],
         },{name:'Pinpoint\nBeam',rarity:0,list:3,
         stats:[
-            {damage:3,alt:2,cost:0,attack:349,target:1,spec:0,class:0},
             {damage:5,alt:2,cost:0,attack:349,target:1,spec:0,class:0},
+            {damage:7,alt:2,cost:0,attack:349,target:1,spec:0,class:0},
         ],
         },{name:'Seperate\nWeaknesses',rarity:0,list:3,
         stats:[
