@@ -3262,7 +3262,7 @@ types={
         },{name:'Havoc',rarity:0,list:6,
         stats:[
             {damage:2,alt:0,cost:1,attack:568,target:0,spec:3,class:2},
-            {damage:2,alt:0,cost:0,attack:568,target:0,spec:3,class:2},
+            {damage:3,alt:0,cost:0,attack:568,target:0,spec:3,class:2},
         ],
         },{name:'Recollection',rarity:0,list:6,
         stats:[
@@ -3616,8 +3616,8 @@ types={
         ],
         },{name:'Memorialize',rarity:1,list:6,
         stats:[
-            {damage:0,alt:0,cost:1,attack:625,target:0,spec:2,class:2},
             {damage:0,alt:0,cost:1,attack:625,target:0,spec:0,class:2},
+            {damage:0,alt:0,cost:1,attack:625,target:0,spec:2,class:2},
         ],
         },{name:'By Heart',rarity:1,list:6,
         stats:[
@@ -4026,8 +4026,8 @@ types={
         ],
         },{name:'Madness',rarity:-3,list:0,
         stats:[
-            {damage:0,alt:0,cost:0,attack:397,target:0,spec:9,class:2},
             {damage:0,alt:0,cost:0,attack:397,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:397,target:0,spec:9,class:2},
         ],
         },{name:'Philosophy',rarity:-3,list:0,
         stats:[
