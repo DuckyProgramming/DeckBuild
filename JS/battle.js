@@ -1227,6 +1227,16 @@ class battle{
             }
         }
     }
+    randomAddHand(){
+        this.calc.list=listing.card[this.player]
+        if(this.calc.list.length>0){
+            g=floor(random(0,this.calc.list.length))
+            if(this.calc.list[g].length>0){
+                h=floor(random(0,this.calc.list[g].length))
+                this.hand.add(this.calc.list[g][h],0,types.card[this.calc.list[g][h]].list)
+            }
+        }
+    }
     allDiscard(){
         for(let g=0,lg=this.hand.cards.length;g<lg;g++){
             if(!this.hand.cards[g].trigger||this.hand.cards[g].target==0){

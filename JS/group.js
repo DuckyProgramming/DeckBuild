@@ -444,7 +444,7 @@ class group{
                     }
                 }
                 if(this.battle.relics.active[71]){
-                    this.battle.randomAdd()
+                    this.battle.randomAddHand()
                 }
                 if(this.battle.relics.active[93]){
                     for(let f=0,lf=this.battle.combatants.length;f<lf;f++){
