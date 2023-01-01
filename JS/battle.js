@@ -4202,7 +4202,7 @@ class battle{
                     transition.scene='choice'
                     this.setupChoice(0,1,0)
                 }else if(this.page==3&&e==0){
-                    this.deck.add(listing.card[this.player][2][floor(random(0,listing.card[this.player][2].length))],0,0)
+                    this.deck.add(listing.card[this.player][2][floor(random(0,listing.card[this.player][2].length))],0,this.player)
                 }
             break
             case 100:

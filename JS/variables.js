@@ -2317,8 +2317,8 @@ types={
         ],
         },{name:'Bank\nBalance',rarity:1,list:4,
         stats:[
-            {damage:0,alt:0,cost:1,attack:389,target:0,spec:3,class:2},
             {damage:0,alt:0,cost:0,attack:389,target:0,spec:3,class:2},
+            {damage:0,alt:0,cost:0,attack:389,target:0,spec:9,class:2},
         ],
         },{name:'Tide',rarity:1,list:4,
         stats:[
