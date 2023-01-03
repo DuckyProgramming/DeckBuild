@@ -4074,7 +4074,7 @@ class battle{
             break
             case 86:
                 if(this.page==1&&e==0){
-                    this.deck.add(findCard('Pistol'),0,0)
+                    this.deck.add(findCard('Glock'),0,0)
                 }else if(this.page==12&&e==0){
                     this.combatants[0].life=min(this.combatants[0].base.life,this.combatants[0].life+12)
                 }

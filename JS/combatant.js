@@ -103,7 +103,7 @@ class combatant{
 		this.setupIntent(-1)
 		if((stage.ascend>=2&&this.battle.random.class==0||stage.ascend>=3&&this.battle.random.class==1||stage.ascend>=4&&this.battle.random.class==2)&&this.team==1){
 			for(let e=0,le=this.attacks.length;e<le;e++){
-				if(types.attack[this.attacks[e]].class==0){
+				if(types.attack[this.attacks[e]].class==0&&this.attacks[e]!=36){
 					this.damage[e]=round(this.damage[e]*1.2)
 				}
 			}

@@ -526,13 +526,13 @@ types={
         ],
         },{name:'Recycle',rarity:1,list:1,
         stats:[
-            {damage:4,alt:6,cost:2,attack:314,target:0,spec:0,class:2},
-            {damage:6,alt:10,cost:2,attack:314,target:0,spec:0,class:2},
+            {damage:4,alt:6,cost:1,attack:314,target:0,spec:0,class:2},
+            {damage:6,alt:10,cost:1,attack:314,target:0,spec:0,class:2},
         ],
         },{name:'One-Inch\nPunch',rarity:2,list:1,
         stats:[
-            {damage:25,alt:0,cost:4,attack:315,target:1,spec:4,class:0},
-            {damage:35,alt:0,cost:4,attack:315,target:1,spec:4,class:0},
+            {damage:45,alt:0,cost:4,attack:315,target:1,spec:4,class:0},
+            {damage:70,alt:0,cost:4,attack:315,target:1,spec:4,class:0},
         ],
         },{name:'Combo\nBlock',rarity:0,list:1,
         stats:[
@@ -5137,7 +5137,7 @@ types={
             desc:'Add 2 Shiv at the\nStart of Combat',
         },{
             name:'Lost Scroll',id:99,rarity:2,list:1,
-            desc:'Combo Cards Only\nCost 2 Combo',
+            desc:'Combo Cards Only\nSpend 2 Combo',
         },{
             name:'Holy Rage',id:100,rarity:2,list:2,
             desc:'Deal 3x Damage in Wrath\nand 4x Damage in Divinity',
@@ -5293,7 +5293,7 @@ types={
             desc:'Gain 1 Potion, 50 Currency, 5 Max HP,\nand Upgrade 1 Random Card',
         },{
             name:'Triebflugeljager',id:151,rarity:3,list:0,
-            desc:'When You Play an Attack, a Skill,\nand a Power, remove Debuffs',
+            desc:'When You Play an Attack, a Skill,\nand a Power, Remove All Your Debuffs',
         },{
             name:'Invigoration',id:152,rarity:4,list:1,
             desc:'Double Combo When\nan Enemy Dies',
