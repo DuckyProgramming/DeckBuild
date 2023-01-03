@@ -102,7 +102,7 @@ class combatant{
 		}
 		this.setupIntent(-1)
 		if((stage.ascend>=2&&this.battle.random.class==0||stage.ascend>=3&&this.battle.random.class==1||stage.ascend>=4&&this.battle.random.class==2)&&this.team==1){
-			for(e=0,le=this.attacks.length;e<le;e++){
+			for(let e=0,le=this.attacks.length;e<le;e++){
 				if(types.attack[this.attacks[e]].class==0){
 					this.damage[e]=round(this.damage[e]*1.2)
 				}
@@ -114,7 +114,7 @@ class combatant{
 		if((stage.ascend>=7&&this.battle.random.class==0||stage.ascend>=8&&this.battle.random.class==1||stage.ascend>=9&&this.battle.random.class==2)&&this.team==1){
 			this.base.life=round(this.base.life*12)/10
 			this.life=round(this.life*12)/10
-			for(e=0,le=this.attacks.length;e<le;e++){
+			for(let e=0,le=this.attacks.length;e<le;e++){
 				if(types.attack[this.attacks[e]].class==2){
 					this.damage[e]=round(this.damage[e]*1.2)
 				}
@@ -124,12 +124,12 @@ class combatant{
 			this.base.life-=round(this.base.life/10)
 		}
 		if((stage.ascend>=17&&this.battle.random.class==0||stage.ascend>=18&&this.battle.random.class==1||stage.ascend>=19&&this.battle.random.class==2)&&this.team==1){
-			for(e=0,le=this.attacks.length;e<le;e++){
+			for(let e=0,le=this.attacks.length;e<le;e++){
 				if(types.attack[this.attacks[e]].class==0&&this.altAttack[e]>0){
 					this.altAttack[e]=round(this.altAttack[e]*1.5)
 				}
 			}
-			for(e=0,le=this.attacks.length;e<le;e++){
+			for(let e=0,le=this.attacks.length;e<le;e++){
 				if(types.attack[this.attacks[e]].class==1){
 					this.damage[e]=round(this.damage[e]*1.5)
 				}
