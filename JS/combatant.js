@@ -2900,7 +2900,7 @@ class combatant{
 		}
 	}
 	displayInfo(){
-		if(this.life>0){
+		if(this.life>0||this.id==1){
 			this.layer.translate(this.base.position.x,this.base.position.y)
 			this.layer.noStroke()
 			this.layer.fill(0,this.fade)

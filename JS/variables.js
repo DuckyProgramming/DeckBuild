@@ -2619,8 +2619,8 @@ types={
         ],
         },{name:'Heavy\nBash',rarity:0,list:5,
         stats:[
-            {damage:9,alt:2,cost:1,attack:414,target:1,spec:0,class:0},
-            {damage:13,alt:2,cost:1,attack:414,target:1,spec:0,class:0},
+            {damage:12,alt:2,cost:1,attack:414,target:1,spec:0,class:0},
+            {damage:18,alt:2,cost:1,attack:414,target:1,spec:0,class:0},
         ],
         },{name:'Spiky\nWhack',rarity:0,list:5,
         stats:[
@@ -2799,13 +2799,13 @@ types={
         ],
         },{name:'Clear Up',rarity:0,list:5,
         stats:[
-            {damage:7,alt:1,cost:1,attack:474,target:1,spec:0,class:1},
-            {damage:11,alt:1,cost:1,attack:474,target:1,spec:0,class:1},
+            {damage:7,alt:1,cost:1,attack:474,target:1,spec:0,class:0},
+            {damage:11,alt:1,cost:1,attack:474,target:1,spec:0,class:0},
         ],
         },{name:'Genevon',rarity:2,list:5,
         stats:[
-            {damage:12,alt:1,cost:1,attack:475,target:1,spec:0,class:1},
-            {damage:16,alt:1,cost:1,attack:475,target:1,spec:0,class:1},
+            {damage:12,alt:1,cost:1,attack:475,target:1,spec:0,class:0},
+            {damage:16,alt:1,cost:1,attack:475,target:1,spec:0,class:0},
         ],
         },{name:'Regulate',rarity:1,list:5,
         stats:[
