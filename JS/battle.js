@@ -35,7 +35,7 @@ class battle{
         this.costs={card:[[0,0,0,0,0],[0,0]],relic:[0,0,0,0,0,0],sale:0,remove:0}
         this.relics={list:[[],[],[],[],[],[]],owned:[],active:[],shop:[],size:[]}
         this.potions={list:[[],[],[]],owned:[-1,-1,-1]}
-        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,copying:0,play2More:0,exiling:0,releasing:0,exhausted:0}
+        this.random={rested:false,attacked:0,taken:0,attacks:0,skills:0,played:0,healEffectiveness:1,strengthBase:0,picked:0,class:0,drawing:0,potionEffectiveness:1,discards:0,playClass:[0,0,0],tempDrawAmount:0,hits:0,orbs:0,shields:0,chosen:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,reserving2:0,copying:0,play2More:0,exiling:0,releasing:0,exhausted:0}
         this.dict={suggestions:[],collect:[],typing:'',allowedCharacter:false,allowed:["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0","-",",",".","'","'","/"," ","(",")"]}
         this.defaultRandom={attacked:0,orbs:0,shields:0,hits:0,discards:0}
         this.combatants.push(new combatant(this.layer,this,100,350,this.player,0,0))
@@ -85,6 +85,7 @@ class battle{
         this.random.transforming=0
         this.random.forethinking=0
         this.random.reserving=0
+        this.random.reserving2=0
         this.random.copying=0
         this.random.play2More=0
         this.random.exhausted=0

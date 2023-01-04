@@ -3256,8 +3256,8 @@ types={
         ],
         },{name:'Pulsate',rarity:0,list:6,
         stats:[
-            {damage:3,alt:0,cost:0,attack:567,target:0,spec:0,class:0},
-            {damage:5,alt:0,cost:0,attack:567,target:0,spec:0,class:0},
+            {damage:3,alt:0,cost:0,attack:567,target:0,spec:0,class:2},
+            {damage:5,alt:0,cost:0,attack:567,target:0,spec:0,class:2},
         ],
         },{name:'Havoc',rarity:0,list:6,
         stats:[
@@ -3511,8 +3511,8 @@ types={
         ],
         },{name:'Blade\nChain',rarity:1,list:6,
         stats:[
-            {damage:1,alt:1,cost:0,attack:614,target:0,spec:0,class:2},
-            {damage:1,alt:2,cost:0,attack:614,target:0,spec:0,class:2},
+            {damage:1,alt:0,cost:0,attack:614,target:0,spec:0,class:2},
+            {damage:2,alt:0,cost:0,attack:614,target:0,spec:0,class:2},
         ],
         },{name:'Interior\nBurst',rarity:0,list:6,
         stats:[
@@ -4059,7 +4059,7 @@ types={
             {damage:4,alt:0,cost:0,attack:722,target:0,spec:3,class:2},
             {damage:2,alt:0,cost:0,attack:722,target:0,spec:3,class:2},
         ],
-        },{name:'Oroboros',rarity:-3,list:0,
+        },{name:'Ouroboros',rarity:-3,list:0,
         stats:[
             {damage:6,alt:1,cost:1,attack:723,target:1,spec:0,class:0},
             {damage:9,alt:1,cost:1,attack:723,target:1,spec:0,class:0},

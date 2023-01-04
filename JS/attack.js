@@ -2948,7 +2948,7 @@ class attack{
                     this.battle.combatants[this.target].boost.main[0]-=this.mana*this.damage
                 break
                 case 591:
-                    this.battle.random.reserving++
+                    this.battle.random.reserving2++
                     this.battle.random.copying+=this.damage
                 break
                 case 592:

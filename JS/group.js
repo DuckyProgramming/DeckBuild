@@ -10,7 +10,7 @@ class group{
         this.selcted=false
         this.trigger=false
         this.calc={level:0,cut:0,list:[]}
-        this.anim={discarding:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,exiling:0,releasing:0,selectCombo:false}
+        this.anim={discarding:0,doubling:0,upgrading:0,exhausting:0,transforming:0,forethinking:0,reserving:0,reserving2:0,exiling:0,releasing:0,selectCombo:false}
     }
     initial(type){
         switch(type){
@@ -329,6 +329,11 @@ class group{
         }else if(!this.battle.random.reserving&&this.anim.reserving>0){
             this.anim.reserving=round(this.anim.reserving*5-1)/5
         }
+        if(this.battle.random.reserving2&&this.anim.reserving2<1){
+            this.anim.reserving2=round(this.anim.reserving2*5+1)/5
+        }else if(!this.battle.random.reserving2&&this.anim.reserving2>0){
+            this.anim.reserving2=round(this.anim.reserving2*5-1)/5
+        }
         if(this.battle.random.exiling&&this.anim.exiling<1){
             this.anim.exiling=round(this.anim.exiling*5+1)/5
         }else if(!this.battle.random.exiling&&this.anim.exiling>0){
@@ -347,6 +352,7 @@ class group{
             this.cards[e].displayExtra([100,255,100],this.anim.transforming)
             this.cards[e].displayExtra([255,200,255],this.anim.forethinking)
             this.cards[e].displayExtra([255,150,0],this.anim.reserving)
+            this.cards[e].displayExtra([255,150,50],this.anim.reserving2)
             this.cards[e].displayExtra([150,255,200],this.anim.exiling)
             this.cards[e].displayExtra([100,255,255],this.anim.releasing)
             this.cards[e].display(this.battle.deck.cards.length,this.battle.hand.cards.length,this.battle.discard.cards.length,this.battle.reserve.cards.length,this.battle.counter.turn,this.battle.random)
@@ -767,6 +773,16 @@ class group{
                         this.cards[e].drawTop=true
                         this.cards[e].cost=0
                         this.cards[e].base.cost=0
+                    }
+                }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.random.reserving2>0){
+                    this.battle.random.reserving2--
+                    if(this.battle.random.copying>0){
+                        for(let f=0;f<this.battle.random.copying;f++){
+                            this.battle.reserve.pushTop(copyCard(this.cards[e]))
+                            this.battle.reserve.cards[this.battle.reserve.cards.length-1].cost=0
+                            this.battle.reserve.cards[this.battle.reserve.cards.length-1].base.cost=0
+                        }
+                        this.battle.random.copying=0
                     }
                 }else if(inputs.rel.x>this.cards[e].position.x-this.cards[e].width/2&&inputs.rel.x<this.cards[e].position.x+this.cards[e].width/2&&inputs.rel.y>250&&!this.cards[e].used&&this.battle.random.exiling>0){
                     this.battle.random.exiling--
