@@ -2812,7 +2812,7 @@ types={
             {damage:1,alt:0,cost:0,attack:488,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:0,attack:488,target:0,spec:0,class:2},
         ],
-        },{name:'Copy',rarity:1,list:5,
+        },{name:'Borrow',rarity:1,list:5,
         stats:[
             {damage:0,alt:0,cost:1,attack:489,target:0,spec:3,class:2},
             {damage:1,alt:0,cost:1,attack:489,target:0,spec:0,class:2},
