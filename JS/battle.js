@@ -765,7 +765,7 @@ class battle{
                             this.combatants[1].life=min(this.combatants[1].life+this.combatants[e].status.main[f],this.combatants[1].base.life)
                         }
                     }else if(f==109||f==113){
-                        this.takeAll(this.combatants[e].status.main[f],-1,1)
+                        this.takeAll(this.combatants[e].status.main[f],-1,1-this.combatants[e].team)
                     }else if(f==123){
                         this.discarding+=this.combatants[e].status.main[f]
                     }else if(f==124){

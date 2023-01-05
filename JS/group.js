@@ -207,10 +207,10 @@ class group{
             }
         }
         if(this.calc.list.length>0){
-            h=this.calc.list[floor(random(0,this.calc.list.length))]
-            if(this.cards[h].level==0){
-                this.cards[h].level++
-                this.cards[h]=reformCard(this.cards[h])
+            g=this.calc.list[floor(random(0,this.calc.list.length))]
+            if(this.cards[g].level==0){
+                this.cards[g].level++
+                this.cards[g]=reformCard(this.cards[g])
             }
         }
     }

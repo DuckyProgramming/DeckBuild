@@ -679,7 +679,7 @@ class attack{
                     this.hold.int=this.battle.hand.cards.length
                     this.battle.allDiscard()
                     for(g=0;g<this.hold.int;g++){
-                        this.battle.hand.addShuffle(findCard('Shiv'),this.damage,0)
+                        this.battle.hand.add(findCard('Shiv'),this.damage,0)
                     }
                 break
                 case 133:
