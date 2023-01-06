@@ -828,8 +828,8 @@ types={
         ],
         },{name:'Spirit\nShield',rarity:0,list:2,
         stats:[
-            {damage:3,alt:0,cost:2,attack:124,target:0,spec:0,class:1},
-            {damage:4,alt:0,cost:2,attack:124,target:0,spec:0,class:1},
+            {damage:0,alt:0,cost:2,attack:124,target:0,spec:0,class:1},
+            {damage:0,alt:0,cost:2,attack:124,target:0,spec:2,class:1},
         ],
         },{name:'Follow\nUp',rarity:0,list:2,
         stats:[
@@ -5305,7 +5305,7 @@ types={
             desc:'Trigger a Weak Evoke on Your\nRightmost Charge When You Take a hit',
         },{
             name:'Duality Charm',id:155,rarity:4,list:4,
-            desc:'When Balance Broken, Trigger the\nAffect on the Other End of Spectrum',
+            desc:'When Balance Broken, Trigger the\nEffect on the Other End of Spectrum',
         },{
             name:'Audrian Codex',id:156,rarity:-1,list:0,
             desc:'Every Turn, Choose a Random Card\nto Shuffle into Your Draw Pile',
