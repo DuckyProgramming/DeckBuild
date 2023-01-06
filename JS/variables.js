@@ -467,7 +467,7 @@ types={
         },{name:'Commit',rarity:1,list:1,
         stats:[
             {damage:2,alt:1,cost:1,attack:304,target:0,spec:0,class:2},
-            {damage:2,alt:1,cost:0,attack:304,target:0,spec:0,class:2},
+            {damage:3,alt:1,cost:0,attack:304,target:0,spec:0,class:2},
         ],
         },{name:'Counter\nPull',rarity:1,list:1,
         stats:[
