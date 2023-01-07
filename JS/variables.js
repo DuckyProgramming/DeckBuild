@@ -3977,7 +3977,7 @@ types={
             {damage:1,alt:1,cost:0,attack:650,target:0,spec:3,class:2},
             {damage:2,alt:1,cost:0,attack:650,target:0,spec:3,class:2},
         ],
-        },{name:'Whap',rarity:0,list:7,
+        },{name:'Whap',rarity:-1,list:0,
         stats:[
             {damage:1,alt:2,cost:0,attack:3,target:1,spec:0,class:0},
             {damage:1,alt:2,cost:0,attack:3,target:1,spec:0,class:0},
@@ -8981,7 +8981,7 @@ zones=[
     },
 ]
 
-dev={id:true,attack:true}
+dev={id:false,attack:false}
 stage={scale:0,quality:1,scene:'menu',playerNumber:7,playerCombatantNumber:1,identifier:[''],id:0,ascend:0,character:1,timer:0,draft:0}
 graphics={main:0,minor:[],symbol:[]}
 transition={trigger:false,anim:0,scene:stage.scene}
