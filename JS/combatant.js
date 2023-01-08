@@ -3682,7 +3682,7 @@ class combatant{
 				this.boost.fade[g]=round(this.boost.fade[g]*10-1)/10
 			}
 			if(this.team==0){
-				this.boost.main[g]=max(this.boost.main[g],-6)
+				this.boost.main[g]=max(this.boost.main[g],-3)
 			}else if(this.team==1){
 				this.boost.main[g]=min(this.boost.main[g],6)
 			}

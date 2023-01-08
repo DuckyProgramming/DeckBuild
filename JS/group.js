@@ -590,7 +590,7 @@ class group{
                         this.battle.mana.main-=this.cards[e].cost
                     }
                     if(this.cards[e].cost==0&&this.battle.relics.active[147]){
-                        this.battle.attack.damage+=4
+                        this.battle.attack.damage*=2
                     }
                     this.battle.attack.user=0
                     this.battle.attack.type=this.cards[e].attack
@@ -912,7 +912,7 @@ class group{
                         this.battle.mana.main-=this.cards[e].cost
                     }
                     if(this.cards[e].cost==0&&this.battle.relics.active[147]){
-                        this.battle.attack.damage+=4
+                        this.battle.attack.damage*=2
                     }
                     this.battle.attack.user=0
                     this.battle.attack.type=this.cards[e].attack
