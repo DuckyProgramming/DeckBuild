@@ -3683,8 +3683,8 @@ types={
         ],
         },{name:'Fuse',rarity:2,list:7,
         stats:[
-            {damage:8,alt:0,cost:5,attack:633,target:1,spec:0,class:0},
-            {damage:12,alt:0,cost:5,attack:633,target:1,spec:0,class:0},
+            {damage:16,alt:0,cost:5,attack:633,target:1,spec:0,class:0},
+            {damage:24,alt:0,cost:5,attack:633,target:1,spec:0,class:0},
         ],
         },{name:'Triskaide\nkaphobia',rarity:2,list:7,
         stats:[
