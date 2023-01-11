@@ -1928,7 +1928,7 @@ types={
         },{name:'Evanes\ncence',rarity:1,list:4,
         stats:[
             {damage:1,alt:5,cost:1,attack:80,target:0,spec:0,class:1},
-            {damage:1,alt:5,cost:1,attack:80,target:0,spec:0,class:1},
+            {damage:1,alt:5,cost:1,attack:80,target:0,spec:2,class:1},
         ],
         },{name:'Silence',rarity:1,list:4,
         stats:[
